@@ -58,6 +58,18 @@ def generate_website():
     
     print(f"   ✅ Created: {OUTPUT_FILE}")
     
+    # Update sitemap with current date
+    sitemap_file = os.path.join(OUTPUT_DIR, "sitemap.xml")
+    if os.path.exists(sitemap_file):
+        from datetime import datetime
+        today = datetime.now().strftime('%Y-%m-%d')
+        with open(sitemap_file, 'r', encoding='utf-8') as f:
+            sitemap = f.read()
+        sitemap = re.sub(r'<lastmod>\d{4}-\d{2}-\d{2}</lastmod>', f'<lastmod>{today}</lastmod>', sitemap)
+        with open(sitemap_file, 'w', encoding='utf-8') as f:
+            f.write(sitemap)
+        print(f"   ✅ Updated sitemap date: {today}")
+    
     # Stats
     us_count = sum(1 for c in coupons if c.get('state') == 'US')
     with_loc = sum(1 for c in coupons if c.get('location_name'))
