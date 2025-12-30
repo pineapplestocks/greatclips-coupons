@@ -154,6 +154,21 @@ def fetch_offer_details(offer_urls):
                 time.sleep(1.5)
                 
                 page_text = page.inner_text("body")
+                page_html = page.content()
+                
+                # Try to extract coupon image
+                # Look for og:image meta tag first (most reliable)
+                og_image = re.search(r'<meta[^>]*property=["\']og:image["\'][^>]*content=["\']([^"\']+)["\']', page_html, re.IGNORECASE)
+                if not og_image:
+                    og_image = re.search(r'<meta[^>]*content=["\']([^"\']+)["\'][^>]*property=["\']og:image["\']', page_html, re.IGNORECASE)
+                
+                if og_image:
+                    coupon["image_url"] = og_image.group(1)
+                else:
+                    # Fallback: look for main coupon image
+                    img_match = re.search(r'<img[^>]*src=["\']([^"\']*(?:coupon|offer|haircut)[^"\']*)["\']', page_html, re.IGNORECASE)
+                    if img_match:
+                        coupon["image_url"] = img_match.group(1)
                 
                 # Extract "Valid at Great Clips..." text
                 valid_match = re.search(
