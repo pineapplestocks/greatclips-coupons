@@ -1,10 +1,14 @@
 name: Scrape Great Clips Coupons
 
 on:
+  # Run automatically every day at 6 AM UTC
   schedule:
     - cron: '0 6 * * *'
+  
+  # Also allow manual trigger
   workflow_dispatch:
 
+# Set permissions to allow pushing to repo and deploying to Pages
 permissions:
   contents: write
   pages: write
@@ -35,7 +39,13 @@ jobs:
           CI: true
       
       - name: Generate website
-        run: python generate_website.py
+        run: |
+          python generate_website.py
+          # Copy additional pages to docs folder
+          mkdir -p docs/states docs/prices docs/how-to-use
+          cp pages/states.html docs/states/index.html 2>/dev/null || true
+          cp pages/prices.html docs/prices/index.html 2>/dev/null || true
+          cp pages/how-to-use.html docs/how-to-use/index.html 2>/dev/null || true
       
       - name: Commit updated data
         run: |
@@ -56,7 +66,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: main  # Get the latest commit with updated data
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
