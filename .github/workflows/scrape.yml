@@ -41,9 +41,12 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
+          git stash --include-untracked || true
+          git pull --rebase origin main || true
+          git stash pop || true
           git add -A
           git diff --staged --quiet || git commit -m "Update coupons $(date +'%Y-%m-%d %H:%M')"
-          git push
+          git push origin main || git push origin main --force-with-lease
 
   deploy:
     needs: scrape
