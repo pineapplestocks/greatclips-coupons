@@ -142,6 +142,31 @@
         const COUPON_DATA = [];
         const LAST_UPDATED = "{{LAST_UPDATED}}";
 
+        // Format date like "December 31st, 2025"
+        function formatDate(dateStr) {
+            if (!dateStr || dateStr === 'Unknown') return 'Unknown';
+            try {
+                const date = new Date(dateStr);
+                const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                               'July', 'August', 'September', 'October', 'November', 'December'];
+                const day = date.getDate();
+                const month = months[date.getMonth()];
+                const year = date.getFullYear();
+                
+                // Add ordinal suffix (1st, 2nd, 3rd, 4th, etc.)
+                let suffix = 'th';
+                if (day === 1 || day === 21 || day === 31) suffix = 'st';
+                else if (day === 2 || day === 22) suffix = 'nd';
+                else if (day === 3 || day === 23) suffix = 'rd';
+                
+                return `${month} ${day}${suffix}, ${year}`;
+            } catch {
+                return dateStr;
+            }
+        }
+        
+        const FORMATTED_DATE = formatDate(LAST_UPDATED);
+
         // Check if coupon is universal (works at any US location)
         function isUniversal(coupon) {
             const loc = (coupon.location_name || '').trim();
@@ -217,13 +242,13 @@
                         <div class="text-center">
                             <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1.5 mb-4">
                                 <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-                                <span class="text-white/90 text-sm font-medium">Updated ${LAST_UPDATED}</span>
+                                <span class="text-white/90 text-sm font-medium">Updated ${FORMATTED_DATE}</span>
                             </div>
                             <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-3 tracking-tight">
                                 ✂️ Great Clips Coupons
                             </h1>
                             <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto">
-                                Find the best haircut deals near you
+                                Find your Great Clips coupon below, Not Junk
                             </p>
                         </div>
                     </div>
@@ -244,32 +269,40 @@
                                             <svg class="w-4 h-4 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
                                                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                                             </svg>
-                                            <span class="text-white text-sm font-semibold">FEATURED DEALS</span>
+                                            <span class="text-white text-sm font-semibold">BEST VALUE</span>
                                         </div>
-                                        <h2 class="text-2xl md:text-3xl font-bold text-white">Works at ANY US Location</h2>
-                                        <p class="text-white/70 mt-1">Use these coupons at any participating Great Clips salon</p>
+                                        <h2 class="text-2xl md:text-3xl font-bold text-white">Overall Best Coupon For Now</h2>
+                                        <p class="text-white/70 mt-1">If you cannot find your individual location - Valid 14 days after redeeming</p>
                                     </div>
                                 </div>
                                 
                                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${Math.min(universalCoupons.length, 4)} gap-4">
                                     ${universalCoupons.map(c => {
                                         const price = getPrice(c);
+                                        const hasImage = c.image_url && c.image_url.length > 0;
                                         return `
-                                        <div class="bg-white/15 backdrop-blur-sm rounded-xl p-5 hover:bg-white/25 transition-all duration-300 border border-white/20">
-                                            <div class="flex items-start justify-between mb-4">
-                                                <div class="bg-white rounded-lg px-4 py-2 shadow-lg">
-                                                    <span class="text-3xl font-extrabold gradient-text">${c.price || 'N/A'}</span>
-                                                </div>
-                                                <span class="text-white/60 text-sm bg-white/10 px-2 py-1 rounded">
-                                                    Exp: ${c.expiration || 'N/A'}
-                                                </span>
+                                        <div class="bg-white/15 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-white/25 transition-all duration-300 border border-white/20">
+                                            ${hasImage ? `
+                                            <div class="w-full h-40 overflow-hidden">
+                                                <img src="${c.image_url}" alt="Great Clips Coupon ${c.price || ''}" class="w-full h-full object-cover">
                                             </div>
-                                            <h3 class="text-white font-semibold text-lg mb-1">Any Great Clips</h3>
-                                            <p class="text-white/60 text-sm mb-4">Valid at all participating US salons</p>
-                                            <a href="${c.url}" target="_blank" 
-                                                class="block w-full bg-white text-purple-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-purple-50 transition-colors">
-                                                Get This Deal →
-                                            </a>
+                                            ` : ''}
+                                            <div class="p-5">
+                                                <div class="flex items-start justify-between mb-4">
+                                                    <div class="bg-white rounded-lg px-4 py-2 shadow-lg">
+                                                        <span class="text-3xl font-extrabold gradient-text">${c.price || 'N/A'}</span>
+                                                    </div>
+                                                    <span class="text-white/60 text-sm bg-white/10 px-2 py-1 rounded">
+                                                        Exp: ${c.expiration || 'N/A'}
+                                                    </span>
+                                                </div>
+                                                <h3 class="text-white font-semibold text-lg mb-1">Any Great Clips</h3>
+                                                <p class="text-white/60 text-sm mb-4">Valid at all participating US salons</p>
+                                                <a href="${c.url}" target="_blank" 
+                                                    class="block w-full bg-white text-purple-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-purple-50 transition-colors">
+                                                    Get your coupon now →
+                                                </a>
+                                            </div>
                                         </div>
                                         `;
                                     }).join('')}
