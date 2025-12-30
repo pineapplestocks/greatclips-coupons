@@ -45,9 +45,9 @@ def generate_website():
         html
     )
     
-    # Add last updated timestamp
+    # Add last updated timestamp (pass full ISO date for JS formatting)
     updated_at = data.get('scraped_at', 'Unknown')
-    html = html.replace('{{LAST_UPDATED}}', updated_at[:10] if updated_at else 'Unknown')
+    html = html.replace('{{LAST_UPDATED}}', updated_at if updated_at else 'Unknown')
     
     # Create output directory
     os.makedirs(OUTPUT_DIR, exist_ok=True)
