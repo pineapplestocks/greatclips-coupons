@@ -1,0 +1,34 @@
+{
+  "scraped_at": "2024-01-01T00:00:00",
+  "total_coupons": 3,
+  "coupons": [
+    {
+      "url": "https://offers.greatclips.com/sample1",
+      "coupon_code": "sample1",
+      "price": "$9.99",
+      "location_name": "All US Locations",
+      "state": "US",
+      "expiration": "12/31/2025"
+    },
+    {
+      "url": "https://offers.greatclips.com/sample2",
+      "coupon_code": "sample2",
+      "price": "$8.99",
+      "location_name": "Sample Plaza",
+      "address": "123 Main St",
+      "city": "Springfield",
+      "state": "MO",
+      "expiration": "01/15/2026"
+    },
+    {
+      "url": "https://offers.greatclips.com/sample3",
+      "coupon_code": "sample3",
+      "price": "$7.99",
+      "location_name": "Downtown Center",
+      "address": "456 Oak Ave",
+      "city": "Austin",
+      "state": "TX",
+      "expiration": "01/20/2026"
+    }
+  ]
+}

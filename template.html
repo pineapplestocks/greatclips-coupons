@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Clips Coupons - Find Haircut Deals Near You</title>
+    <meta name="description" content="Find Great Clips coupons and haircut deals near you. Updated daily with the latest discounts.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div id="app"></div>
+
+    <script>
+        // Coupon data will be injected here by generate_website.py
+        const COUPON_DATA = [];
+        const LAST_UPDATED = "{{LAST_UPDATED}}";
+
+        // Check if coupon is universal (works at any US location)
+        function isUniversal(coupon) {
+            const loc = (coupon.location_name || '').toUpperCase();
+            const state = (coupon.state || '').toUpperCase();
+            return state === 'US' || loc.includes('ALL') || loc.includes('US');
+        }
+
+        // Get price as number
+        function getPrice(coupon) {
+            try {
+                return parseFloat((coupon.price || '$999').replace('$', ''));
+            } catch {
+                return 999;
+            }
+        }
+
+        // Price badge color
+        function getPriceColor(price) {
+            if (price <= 5) return 'bg-green-100 text-green-800';
+            if (price <= 8) return 'bg-emerald-100 text-emerald-800';
+            if (price <= 10) return 'bg-yellow-100 text-yellow-800';
+            return 'bg-orange-100 text-orange-800';
+        }
+
+        // Render the app
+        function render() {
+            const app = document.getElementById('app');
+            
+            // Get filter values
+            const search = (document.getElementById('search')?.value || '').toLowerCase();
+            const stateFilter = document.getElementById('stateFilter')?.value || '';
+            const maxPrice = document.getElementById('maxPrice')?.value || '';
+            const sortBy = document.getElementById('sortBy')?.value || 'price';
+
+            // Filter coupons
+            let filtered = COUPON_DATA.filter(c => {
+                // Search
+                if (search) {
+                    const searchable = [c.location_name, c.city, c.address, c.state].join(' ').toLowerCase();
+                    if (!searchable.includes(search)) return false;
+                }
+                
+                // State filter (always show US coupons)
+                if (stateFilter && c.state !== stateFilter && !isUniversal(c)) return false;
+                
+                // Price filter
+                if (maxPrice && getPrice(c) > parseFloat(maxPrice)) return false;
+                
+                return true;
+            });
+
+            // Sort (universal first, then by criteria)
+            filtered.sort((a, b) => {
+                const aU = isUniversal(a), bU = isUniversal(b);
+                if (aU && !bU) return -1;
+                if (!aU && bU) return 1;
+                
+                if (sortBy === 'price') return getPrice(a) - getPrice(b);
+                if (sortBy === 'expiration') return new Date(a.expiration) - new Date(b.expiration);
+                if (sortBy === 'location') return (a.location_name || '').localeCompare(b.location_name || '');
+                return 0;
+            });
+
+            // Get unique states
+            const states = [...new Set(COUPON_DATA.map(c => c.state).filter(Boolean))].sort();
+            const universalCount = filtered.filter(isUniversal).length;
+
+            app.innerHTML = `
+                <!-- Header -->
+                <header class="bg-blue-600 text-white py-8">
+                    <div class="max-w-7xl mx-auto px-4">
+                        <h1 class="text-4xl font-bold text-center mb-2">✂️ Great Clips Coupons</h1>
+                        <p class="text-center text-blue-100 text-lg">Find the best haircut deals near you</p>
+                        <p class="text-center text-blue-200 text-sm mt-2">Last updated: ${LAST_UPDATED}</p>
+                    </div>
+                </header>
+
+                ${universalCount > 0 ? `
+                <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-3">
+                    <div class="max-w-7xl mx-auto px-4 text-center">
+                        <p class="font-medium">🇺🇸 <span class="font-bold">Universal coupons</span> work at ANY Great Clips in the US - shown first!</p>
+                    </div>
+                </div>
+                ` : ''}
+
+                <!-- Filters -->
+                <div class="max-w-7xl mx-auto px-4 py-6">
+                    <div class="bg-white rounded-xl shadow-sm p-6 mb-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                            <div class="lg:col-span-2">
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Search</label>
+                                <input type="text" id="search" placeholder="City, location, or address..."
+                                    value="${search}"
+                                    onkeyup="render()"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">State</label>
+                                <select id="stateFilter" onchange="render()"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                    <option value="">All States</option>
+                                    ${states.map(s => `<option value="${s}" ${stateFilter === s ? 'selected' : ''}>${s}</option>`).join('')}
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Max Price</label>
+                                <select id="maxPrice" onchange="render()"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                    <option value="">Any Price</option>
+                                    <option value="5" ${maxPrice === '5' ? 'selected' : ''}>Under $5</option>
+                                    <option value="8" ${maxPrice === '8' ? 'selected' : ''}>Under $8</option>
+                                    <option value="10" ${maxPrice === '10' ? 'selected' : ''}>Under $10</option>
+                                    <option value="12" ${maxPrice === '12' ? 'selected' : ''}>Under $12</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Sort By</label>
+                                <select id="sortBy" onchange="render()"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500">
+                                    <option value="price" ${sortBy === 'price' ? 'selected' : ''}>Price (Low to High)</option>
+                                    <option value="expiration" ${sortBy === 'expiration' ? 'selected' : ''}>Expiration Date</option>
+                                    <option value="location" ${sortBy === 'location' ? 'selected' : ''}>Location Name</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Results count -->
+                    <div class="mb-4 text-gray-600">
+                        Showing <span class="font-semibold">${filtered.length}</span> coupons
+                        ${stateFilter ? ` in <span class="font-semibold">${stateFilter}</span>` : ''}
+                        ${universalCount > 0 ? `<span class="text-blue-600 ml-2">(${universalCount} universal 🇺🇸)</span>` : ''}
+                    </div>
+
+                    <!-- Coupon grid -->
+                    ${filtered.length > 0 ? `
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        ${filtered.map(c => {
+                            const u = isUniversal(c);
+                            const price = getPrice(c);
+                            return `
+                            <div class="rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden ${u ? 'bg-gradient-to-br from-blue-50 to-indigo-100 border-2 border-blue-400 ring-2 ring-blue-200' : 'bg-white border border-gray-100'}">
+                                ${u ? '<div class="bg-blue-600 text-white text-center py-2 font-semibold text-sm">🇺🇸 WORKS AT ANY US LOCATION 🇺🇸</div>' : ''}
+                                <div class="p-6">
+                                    <div class="flex justify-between items-start mb-4">
+                                        <span class="inline-flex items-center px-3 py-1 rounded-full text-lg font-bold ${getPriceColor(price)}">
+                                            ${c.price || 'N/A'}
+                                        </span>
+                                        <span class="text-sm text-gray-500">Exp: ${c.expiration || 'N/A'}</span>
+                                    </div>
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">${c.location_name || 'Great Clips'}</h3>
+                                    ${u ? `
+                                        <div class="text-blue-700 mb-4">
+                                            <p class="text-sm font-medium">✓ Valid at all Great Clips locations in the US</p>
+                                        </div>
+                                    ` : `
+                                        <div class="text-gray-600 mb-4">
+                                            <p class="text-sm">${c.address || ''}</p>
+                                            <p class="text-sm font-medium">${c.city || ''}${c.city && c.state ? ', ' : ''}${c.state || ''}</p>
+                                        </div>
+                                    `}
+                                    <div class="flex gap-2">
+                                        <a href="${c.url}" target="_blank" 
+                                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg text-center transition-colors">
+                                            Get Coupon
+                                        </a>
+                                        <button onclick="navigator.clipboard.writeText('${c.url}'); this.textContent='✓'; setTimeout(() => this.textContent='📋', 2000)"
+                                            class="bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-3 px-4 rounded-lg transition-colors"
+                                            title="Copy link">📋</button>
+                                    </div>
+                                </div>
+                            </div>
+                            `;
+                        }).join('')}
+                    </div>
+                    ` : `
+                    <div class="text-center py-12">
+                        <p class="text-xl text-gray-500">No coupons found matching your criteria</p>
+                        <button onclick="document.getElementById('search').value=''; document.getElementById('stateFilter').value=''; document.getElementById('maxPrice').value=''; render()"
+                            class="mt-4 text-blue-600 hover:text-blue-800 font-medium">
+                            Clear all filters
+                        </button>
+                    </div>
+                    `}
+                </div>
+
+                <!-- Footer -->
+                <footer class="bg-gray-800 text-gray-300 py-8 mt-12">
+                    <div class="max-w-7xl mx-auto px-4 text-center">
+                        <p class="mb-2">Coupons are sourced from public Facebook ads and may expire.</p>
+                        <p class="text-sm text-gray-500">This site is not affiliated with Great Clips. Please verify coupons at the salon.</p>
+                    </div>
+                </footer>
+            `;
+        }
+
+        // Initial render
+        render();
+    </script>
+</body>
+</html>
