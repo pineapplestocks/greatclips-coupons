@@ -131,6 +131,25 @@
             0%, 100% { text-shadow: 0 0 20px rgba(250, 204, 21, 0.5); }
             50% { text-shadow: 0 0 30px rgba(250, 204, 21, 0.8); }
         }
+        .scissors-animation {
+            display: inline-block;
+            animation: snip 1.5s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+        }
+        @keyframes snip {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(-15deg) scale(1.1); }
+            50% { transform: rotate(10deg) scale(1); }
+            75% { transform: rotate(-5deg) scale(1.05); }
+        }
+        .updated-badge-glow {
+            animation: badge-glow 2s ease-in-out infinite;
+            border: 1px solid rgba(52, 211, 153, 0.3);
+        }
+        @keyframes badge-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(52, 211, 153, 0.3); }
+            50% { box-shadow: 0 0 25px rgba(52, 211, 153, 0.5); }
+        }
         .shimmer {
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
             background-size: 200% 100%;
@@ -248,12 +267,12 @@
                     <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"30\" height=\"30\" viewBox=\"0 0 30 30\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M15 0C6.716 0 0 6.716 0 15c0 8.284 6.716 15 15 15 8.284 0 15-6.716 15-15C30 6.716 23.284 0 15 0zm0 27C8.373 27 3 21.627 3 15S8.373 3 15 3s12 5.373 12 12-5.373 12-12 12z\" fill=\"%23fff\" fill-opacity=\".05\"/%3E%3C/svg%3E')] opacity-30"></div>
                     <div class="relative max-w-7xl mx-auto px-4 py-12 md:py-16">
                         <div class="text-center">
-                            <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1.5 mb-4">
-                                <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-                                <span class="text-white/90 text-sm font-medium">Updated ${FORMATTED_DATE}</span>
+                            <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1.5 mb-4 updated-badge-glow">
+                                <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse shadow-lg shadow-emerald-400/50"></span>
+                                <span class="text-white text-sm font-medium">Updated ${FORMATTED_DATE}</span>
                             </div>
                             <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-3 tracking-tight">
-                                ✂️ Great Clips Coupons
+                                <span class="inline-block scissors-animation">✂️</span> Great Clips Coupons
                             </h1>
                             <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto">
                                 Find your Great Clips coupon below, <span class="relative inline-block font-bold text-white underline decoration-yellow-400 decoration-4 underline-offset-4 not-junk-glow">Not Junk<span class="absolute -top-1 -right-6 text-xs bg-yellow-400 text-yellow-900 px-1.5 py-0.5 rounded-full font-bold transform rotate-12">✓</span></span>
