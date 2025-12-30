@@ -123,6 +123,14 @@
         .universal-glow {
             box-shadow: 0 0 40px rgba(139, 92, 246, 0.3);
         }
+        .not-junk-glow {
+            text-shadow: 0 0 20px rgba(250, 204, 21, 0.5);
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { text-shadow: 0 0 20px rgba(250, 204, 21, 0.5); }
+            50% { text-shadow: 0 0 30px rgba(250, 204, 21, 0.8); }
+        }
         .shimmer {
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
             background-size: 200% 100%;
@@ -248,7 +256,7 @@
                                 ✂️ Great Clips Coupons
                             </h1>
                             <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto">
-                                Find your Great Clips coupon below, Not Junk
+                                Find your Great Clips coupon below, <span class="relative inline-block font-bold text-white underline decoration-yellow-400 decoration-4 underline-offset-4 not-junk-glow">Not Junk<span class="absolute -top-1 -right-6 text-xs bg-yellow-400 text-yellow-900 px-1.5 py-0.5 rounded-full font-bold transform rotate-12">✓</span></span>
                             </p>
                         </div>
                     </div>
