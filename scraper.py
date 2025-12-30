@@ -184,17 +184,35 @@ def fetch_offer_details(offer_urls):
                     
                     print(f"  ✅ [{i}/{len(offer_urls)}] {code} - {coupon.get('location_name', 'Found')}")
                 else:
-                    # Check for US-wide coupon
-                    if re.search(r'(?:all|any)\s+(?:Great Clips\s+)?(?:location|salon)s?', page_text, re.IGNORECASE):
-                        coupon["location_name"] = "All US Locations"
+                    # Check for US-wide coupon - must say "participating US" or "all US" or "any Great Clips"
+                    # AND must NOT have a specific location in "Valid at Great Clips [Location]" format
+                    us_wide_match = re.search(
+                        r'(?:participating\s+US|all\s+US|any\s+(?:US\s+)?Great\s+Clips|all\s+Great\s+Clips\s+(?:locations?|salons?))',
+                        page_text, 
+                        re.IGNORECASE
+                    )
+                    has_specific_location = re.search(
+                        r'Valid at Great Clips\s+[A-Z][a-zA-Z\s]+\s+at\s+\d',
+                        page_text
+                    )
+                    
+                    if us_wide_match and not has_specific_location:
+                        coupon["location_name"] = ""
                         coupon["state"] = "US"
-                        print(f"  ✅ [{i}/{len(offer_urls)}] {code} - All US Locations")
+                        print(f"  ✅ [{i}/{len(offer_urls)}] {code} - US-Wide Coupon")
                     else:
                         # Try to get expiration at least
                         exp_match = re.search(r'Expires?\s*:?\s*(\d{1,2}/\d{1,2}/\d{4})', page_text, re.IGNORECASE)
                         if exp_match:
                             coupon["expiration"] = exp_match.group(1)
-                        print(f"  ⚠️ [{i}/{len(offer_urls)}] {code} - Limited info")
+                        
+                        # If we found a price but no location, it's likely a US-wide coupon
+                        # Mark as US since there's no specific location
+                        if not coupon.get("location_name") and not coupon.get("address") and not coupon.get("city"):
+                            coupon["state"] = "US"
+                            print(f"  ✅ [{i}/{len(offer_urls)}] {code} - US-Wide (no location)")
+                        else:
+                            print(f"  ⚠️ [{i}/{len(offer_urls)}] {code} - Limited info")
                 
                 # Get price
                 price_match = re.search(r'\$(\d+\.?\d{0,2})', page_text)
