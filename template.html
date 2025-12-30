@@ -201,6 +201,20 @@
         
         const FORMATTED_DATE = formatDate(LAST_UPDATED);
         
+        // Get expiration date - if none, return 14 days from today
+        function getExpiration(coupon) {
+            if (coupon.expiration && coupon.expiration !== 'N/A') {
+                return coupon.expiration;
+            }
+            // Calculate 14 days from today
+            const futureDate = new Date();
+            futureDate.setDate(futureDate.getDate() + 14);
+            const month = (futureDate.getMonth() + 1).toString().padStart(2, '0');
+            const day = futureDate.getDate().toString().padStart(2, '0');
+            const year = futureDate.getFullYear();
+            return `${month}/${day}/${year}`;
+        }
+        
         // Share coupon function - shares link to this website
         function shareCoupon(couponUrl, price) {
             const shareText = `I found a ${price} Great Clips coupon! Get yours at greatclipsdeal.com`;
@@ -345,7 +359,7 @@
                                         ${c.price || 'N/A'}
                                     </span>
                                     <span class="text-slate-400 text-sm">
-                                        ${c.expiration || 'N/A'}
+                                        ${getExpiration(c)}
                                     </span>
                                 </div>
                                 <h3 class="font-semibold text-slate-900 text-lg mb-1 line-clamp-2">${c.location_name || 'Great Clips'}</h3>
@@ -463,7 +477,7 @@
                                                         <span class="text-3xl font-extrabold gradient-text">${c.price || 'N/A'}</span>
                                                     </div>
                                                     <span class="text-white/60 text-sm bg-white/10 px-2 py-1 rounded">
-                                                        Exp: ${c.expiration || 'N/A'}
+                                                        Exp: ${getExpiration(c)}
                                                     </span>
                                                 </div>
                                                 <h3 class="text-white font-semibold text-lg mb-1">Any Great Clips</h3>
@@ -552,7 +566,7 @@
                                             ${c.price || 'N/A'}
                                         </span>
                                         <span class="text-slate-400 text-sm">
-                                            ${c.expiration || 'N/A'}
+                                            ${getExpiration(c)}
                                         </span>
                                     </div>
                                     <h3 class="font-semibold text-slate-900 text-lg mb-1 line-clamp-2">${c.location_name || 'Great Clips'}</h3>
