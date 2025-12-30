@@ -123,6 +123,33 @@
         .universal-glow {
             box-shadow: 0 0 40px rgba(139, 92, 246, 0.3);
         }
+        .not-junk-glow {
+            text-shadow: 0 0 20px rgba(250, 204, 21, 0.5);
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { text-shadow: 0 0 20px rgba(250, 204, 21, 0.5); }
+            50% { text-shadow: 0 0 30px rgba(250, 204, 21, 0.8); }
+        }
+        .scissors-animation {
+            display: inline-block;
+            animation: snip 1.5s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+        }
+        @keyframes snip {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(-15deg) scale(1.1); }
+            50% { transform: rotate(10deg) scale(1); }
+            75% { transform: rotate(-5deg) scale(1.05); }
+        }
+        .updated-badge-glow {
+            animation: badge-glow 2s ease-in-out infinite;
+            border: 1px solid rgba(52, 211, 153, 0.3);
+        }
+        @keyframes badge-glow {
+            0%, 100% { box-shadow: 0 0 15px rgba(52, 211, 153, 0.3); }
+            50% { box-shadow: 0 0 25px rgba(52, 211, 153, 0.5); }
+        }
         .shimmer {
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
             background-size: 200% 100%;
@@ -163,23 +190,23 @@
                 "price": "$3.00"
         },
         {
-                "url": "https://offers.greatclips.com/jrFLKSJ",
-                "coupon_code": "jrFLKSJ",
-                "valid_text": "Valid at Great Clips Point West at 1575 S Belt Line Rd in Coppell, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Point West",
-                "address": "1575 S Belt Line Rd",
-                "city": "Coppell,",
-                "state": "TX",
-                "expiration": "01/07/2026",
-                "price": "$3.00"
-        },
-        {
                 "url": "https://offers.greatclips.com/j0dJMp7",
                 "coupon_code": "j0dJMp7",
                 "valid_text": "Valid at Great Clips MacArthur Park Shopping Center at 7447 N MacArthur Blvd in Irving, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
                 "location_name": "MacArthur Park Shopping Center",
                 "address": "7447 N MacArthur Blvd",
                 "city": "Irving,",
+                "state": "TX",
+                "expiration": "01/07/2026",
+                "price": "$3.00"
+        },
+        {
+                "url": "https://offers.greatclips.com/jrFLKSJ",
+                "coupon_code": "jrFLKSJ",
+                "valid_text": "Valid at Great Clips Point West at 1575 S Belt Line Rd in Coppell, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Point West",
+                "address": "1575 S Belt Line Rd",
+                "city": "Coppell,",
                 "state": "TX",
                 "expiration": "01/07/2026",
                 "price": "$3.00"
@@ -196,43 +223,10 @@
                 "price": "$4.99"
         },
         {
-                "url": "https://offers.greatclips.com/mSTaA8s",
-                "coupon_code": "mSTaA8s",
-                "valid_text": "Valid at Great Clips Creekside Crossing at 1510 Dundas St E in Mississauga, ON. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Creekside Crossing",
-                "address": "1510 Dundas St E",
-                "city": "Mississauga,",
-                "state": "ON",
-                "expiration": "01/07/2026",
-                "price": "$5.00"
-        },
-        {
-                "url": "https://offers.greatclips.com/3sNI6tX",
-                "coupon_code": "3sNI6tX",
-                "valid_text": "Valid at Great Clips Foxcreek Plaza at 2501 Third Line in Oakville, ON. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Foxcreek Plaza",
-                "address": "2501 Third Line",
-                "city": "Oakville,",
-                "state": "ON",
-                "expiration": "01/07/2026",
-                "price": "$5.00"
-        },
-        {
                 "url": "https://offers.greatclips.com/9hKYiQx",
                 "coupon_code": "9hKYiQx",
                 "location_name": "",
                 "state": "US",
-                "price": "$5.00"
-        },
-        {
-                "url": "https://offers.greatclips.com/s93z2oE",
-                "coupon_code": "s93z2oE",
-                "valid_text": "Valid at Great Clips Dorval Crossing West at 280 North Service Rd W in Oakville, ON. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Dorval Crossing West",
-                "address": "280 North Service Rd W",
-                "city": "Oakville,",
-                "state": "ON",
-                "expiration": "01/07/2026",
                 "price": "$5.00"
         },
         {
@@ -247,12 +241,56 @@
                 "price": "$5.00"
         },
         {
-                "url": "https://offers.greatclips.com/QP0omuh",
-                "coupon_code": "QP0omuh",
-                "valid_text": "Valid at Great Clips Market Street at Ardmore at 1525 12th Ave NW in Ardmore, OK. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Market Street",
-                "address": "Ardmore at 1525 12th Ave NW",
-                "city": "Ardmore,",
+                "url": "https://offers.greatclips.com/3sNI6tX",
+                "coupon_code": "3sNI6tX",
+                "valid_text": "Valid at Great Clips Foxcreek Plaza at 2501 Third Line in Oakville, ON. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Foxcreek Plaza",
+                "address": "2501 Third Line",
+                "city": "Oakville,",
+                "state": "ON",
+                "expiration": "01/07/2026",
+                "price": "$5.00"
+        },
+        {
+                "url": "https://offers.greatclips.com/mSTaA8s",
+                "coupon_code": "mSTaA8s",
+                "valid_text": "Valid at Great Clips Creekside Crossing at 1510 Dundas St E in Mississauga, ON. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Creekside Crossing",
+                "address": "1510 Dundas St E",
+                "city": "Mississauga,",
+                "state": "ON",
+                "expiration": "01/07/2026",
+                "price": "$5.00"
+        },
+        {
+                "url": "https://offers.greatclips.com/s93z2oE",
+                "coupon_code": "s93z2oE",
+                "valid_text": "Valid at Great Clips Dorval Crossing West at 280 North Service Rd W in Oakville, ON. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Dorval Crossing West",
+                "address": "280 North Service Rd W",
+                "city": "Oakville,",
+                "state": "ON",
+                "expiration": "01/07/2026",
+                "price": "$5.00"
+        },
+        {
+                "url": "https://offers.greatclips.com/F9kJZ0f",
+                "coupon_code": "F9kJZ0f",
+                "valid_text": "Valid at Great Clips Left Bank Market at 628 Harrold St in Fort Worth, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Left Bank Market",
+                "address": "628 Harrold St",
+                "city": "Fort Worth,",
+                "state": "TX",
+                "expiration": "01/07/2026",
+                "price": "$5.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/JymEy9G",
+                "coupon_code": "JymEy9G",
+                "valid_text": "Valid at Great Clips Cross Creek Durant at 3601 W Main St in Durant, OK. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Cross Creek Durant",
+                "address": "3601 W Main St",
+                "city": "Durant,",
                 "state": "OK",
                 "expiration": "01/07/2026",
                 "price": "$5.99"
@@ -269,28 +307,6 @@
                 "price": "$5.99"
         },
         {
-                "url": "https://offers.greatclips.com/JymEy9G",
-                "coupon_code": "JymEy9G",
-                "valid_text": "Valid at Great Clips Cross Creek Durant at 3601 W Main St in Durant, OK. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Cross Creek Durant",
-                "address": "3601 W Main St",
-                "city": "Durant,",
-                "state": "OK",
-                "expiration": "01/07/2026",
-                "price": "$5.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/RnRpJxi",
-                "coupon_code": "RnRpJxi",
-                "valid_text": "Valid at Great Clips Paris at 3915 Lamar Ave in Paris, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Paris",
-                "address": "3915 Lamar Ave",
-                "city": "Paris,",
-                "state": "TX",
-                "expiration": "01/07/2026",
-                "price": "$5.99"
-        },
-        {
                 "url": "https://offers.greatclips.com/VWJ8cVd",
                 "coupon_code": "VWJ8cVd",
                 "valid_text": "Valid at Great Clips Eastchase Market at 1550 Eastchase Pkwy in Fort Worth, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
@@ -302,24 +318,13 @@
                 "price": "$5.99"
         },
         {
-                "url": "https://offers.greatclips.com/F9kJZ0f",
-                "coupon_code": "F9kJZ0f",
-                "valid_text": "Valid at Great Clips Left Bank Market at 628 Harrold St in Fort Worth, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Left Bank Market",
-                "address": "628 Harrold St",
-                "city": "Fort Worth,",
-                "state": "TX",
-                "expiration": "01/07/2026",
-                "price": "$5.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/9yOJBNh",
-                "coupon_code": "9yOJBNh",
-                "valid_text": "Valid at Great Clips Park Row Place at 2504 W Park Row Dr in Pantego, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Park Row Place",
-                "address": "2504 W Park Row Dr",
-                "city": "Pantego,",
-                "state": "TX",
+                "url": "https://offers.greatclips.com/QP0omuh",
+                "coupon_code": "QP0omuh",
+                "valid_text": "Valid at Great Clips Market Street at Ardmore at 1525 12th Ave NW in Ardmore, OK. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Market Street",
+                "address": "Ardmore at 1525 12th Ave NW",
+                "city": "Ardmore,",
+                "state": "OK",
                 "expiration": "01/07/2026",
                 "price": "$5.99"
         },
@@ -335,6 +340,28 @@
                 "price": "$5.99"
         },
         {
+                "url": "https://offers.greatclips.com/9yOJBNh",
+                "coupon_code": "9yOJBNh",
+                "valid_text": "Valid at Great Clips Park Row Place at 2504 W Park Row Dr in Pantego, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Park Row Place",
+                "address": "2504 W Park Row Dr",
+                "city": "Pantego,",
+                "state": "TX",
+                "expiration": "01/07/2026",
+                "price": "$5.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/RnRpJxi",
+                "coupon_code": "RnRpJxi",
+                "valid_text": "Valid at Great Clips Paris at 3915 Lamar Ave in Paris, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Paris",
+                "address": "3915 Lamar Ave",
+                "city": "Paris,",
+                "state": "TX",
+                "expiration": "01/07/2026",
+                "price": "$5.99"
+        },
+        {
                 "url": "https://offers.greatclips.com/EwwXxM2",
                 "coupon_code": "EwwXxM2",
                 "valid_text": "Valid at Great Clips Coal Creek Village at 6971 Coal Creek Pkwy SE in Newcastle, WA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/16/2026",
@@ -343,17 +370,6 @@
                 "city": "Newcastle,",
                 "state": "WA",
                 "expiration": "01/16/2026",
-                "price": "$6.00"
-        },
-        {
-                "url": "https://offers.greatclips.com/lfLfJEy",
-                "coupon_code": "lfLfJEy",
-                "valid_text": "Valid at Great Clips Lynnwood Crossing at 6208 196th St SW in Lynnwood, WA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/15/2026",
-                "location_name": "Lynnwood Crossing",
-                "address": "6208 196th St SW",
-                "city": "Lynnwood,",
-                "state": "WA",
-                "expiration": "01/15/2026",
                 "price": "$6.00"
         },
         {
@@ -368,37 +384,15 @@
                 "price": "$6.00"
         },
         {
-                "url": "https://offers.greatclips.com/XLLYeKv",
-                "coupon_code": "XLLYeKv",
-                "valid_text": "Valid at Great Clips Sherman Town Center at 4114 Hwy 75 N in Sherman, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 12/31/2025",
-                "location_name": "Sherman Town Center",
-                "address": "4114 Hwy 75 N",
-                "city": "Sherman,",
-                "state": "TX",
-                "expiration": "12/31/2025",
-                "price": "$6.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/y9u6dvr",
-                "coupon_code": "y9u6dvr",
-                "valid_text": "Valid at Great Clips Buffaloe Bend at 7320 Buffaloe Rd in Raleigh, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 12/31/2025",
-                "location_name": "Buffaloe Bend",
-                "address": "7320 Buffaloe Rd",
-                "city": "Raleigh,",
-                "state": "NC",
-                "expiration": "12/31/2025",
-                "price": "$6.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/NEGjpjx",
-                "coupon_code": "NEGjpjx",
-                "valid_text": "Valid at Great Clips Park Forest Northeast at 3767 Forest Ln in Dallas, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 12/31/2025",
-                "location_name": "Park Forest Northeast",
-                "address": "3767 Forest Ln",
-                "city": "Dallas,",
-                "state": "TX",
-                "expiration": "12/31/2025",
-                "price": "$6.99"
+                "url": "https://offers.greatclips.com/lfLfJEy",
+                "coupon_code": "lfLfJEy",
+                "valid_text": "Valid at Great Clips Lynnwood Crossing at 6208 196th St SW in Lynnwood, WA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/15/2026",
+                "location_name": "Lynnwood Crossing",
+                "address": "6208 196th St SW",
+                "city": "Lynnwood,",
+                "state": "WA",
+                "expiration": "01/15/2026",
+                "price": "$6.00"
         },
         {
                 "url": "https://offers.greatclips.com/IEQmnbp",
@@ -423,6 +417,17 @@
                 "price": "$6.99"
         },
         {
+                "url": "https://offers.greatclips.com/y9u6dvr",
+                "coupon_code": "y9u6dvr",
+                "valid_text": "Valid at Great Clips Buffaloe Bend at 7320 Buffaloe Rd in Raleigh, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 12/31/2025",
+                "location_name": "Buffaloe Bend",
+                "address": "7320 Buffaloe Rd",
+                "city": "Raleigh,",
+                "state": "NC",
+                "expiration": "12/31/2025",
+                "price": "$6.99"
+        },
+        {
                 "url": "https://offers.greatclips.com/w7ywFXV",
                 "coupon_code": "w7ywFXV",
                 "valid_text": "Valid at Great Clips Valley View Central at 13260 Josey Lane in Farmers Branch, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 12/31/2025",
@@ -434,37 +439,26 @@
                 "price": "$6.99"
         },
         {
-                "url": "https://offers.greatclips.com/3swged6",
-                "coupon_code": "3swged6",
-                "valid_text": "Valid at Great Clips Manvel Town Center at 17221 Hwy 6 in Manvel, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Manvel Town Center",
-                "address": "17221 Hwy 6",
-                "city": "Manvel,",
+                "url": "https://offers.greatclips.com/XLLYeKv",
+                "coupon_code": "XLLYeKv",
+                "valid_text": "Valid at Great Clips Sherman Town Center at 4114 Hwy 75 N in Sherman, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 12/31/2025",
+                "location_name": "Sherman Town Center",
+                "address": "4114 Hwy 75 N",
+                "city": "Sherman,",
                 "state": "TX",
-                "expiration": "01/07/2026",
-                "price": "$7.99"
+                "expiration": "12/31/2025",
+                "price": "$6.99"
         },
         {
-                "url": "https://offers.greatclips.com/7BsG8WS",
-                "coupon_code": "7BsG8WS",
-                "valid_text": "Valid at Great Clips The Point by Whole Foods at 1140 Woodruff Rd in Greenville, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
-                "location_name": "The Point by Whole Foods",
-                "address": "1140 Woodruff Rd",
-                "city": "Greenville,",
-                "state": "SC",
-                "expiration": "01/06/2026",
-                "price": "$7.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/S0dyuhM",
-                "coupon_code": "S0dyuhM",
-                "valid_text": "Valid at Great Clips Gateway Pavillions at 10030 W McDowell Rd in Avondale, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-                "location_name": "Gateway Pavillions",
-                "address": "10030 W McDowell Rd",
-                "city": "Avondale,",
-                "state": "AZ",
-                "expiration": "01/12/2026",
-                "price": "$7.99"
+                "url": "https://offers.greatclips.com/NEGjpjx",
+                "coupon_code": "NEGjpjx",
+                "valid_text": "Valid at Great Clips Park Forest Northeast at 3767 Forest Ln in Dallas, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 12/31/2025",
+                "location_name": "Park Forest Northeast",
+                "address": "3767 Forest Ln",
+                "city": "Dallas,",
+                "state": "TX",
+                "expiration": "12/31/2025",
+                "price": "$6.99"
         },
         {
                 "url": "https://offers.greatclips.com/0XXED0C",
@@ -473,17 +467,6 @@
                 "location_name": "Arrowhead Marketplace",
                 "address": "7942 W Bell Rd",
                 "city": "Glendale,",
-                "state": "AZ",
-                "expiration": "01/12/2026",
-                "price": "$7.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/pDIjYvq",
-                "coupon_code": "pDIjYvq",
-                "valid_text": "Valid at Great Clips Chandler Village Center at 3415 W Frye Rd in Chandler, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-                "location_name": "Chandler Village Center",
-                "address": "3415 W Frye Rd",
-                "city": "Chandler,",
                 "state": "AZ",
                 "expiration": "01/12/2026",
                 "price": "$7.99"
@@ -500,6 +483,28 @@
                 "price": "$7.99"
         },
         {
+                "url": "https://offers.greatclips.com/S0dyuhM",
+                "coupon_code": "S0dyuhM",
+                "valid_text": "Valid at Great Clips Gateway Pavillions at 10030 W McDowell Rd in Avondale, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
+                "location_name": "Gateway Pavillions",
+                "address": "10030 W McDowell Rd",
+                "city": "Avondale,",
+                "state": "AZ",
+                "expiration": "01/12/2026",
+                "price": "$7.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/GANHDec",
+                "coupon_code": "GANHDec",
+                "valid_text": "Valid at Great Clips Four Hills Shopping Center at 13170 Central Ave SE in Albuquerque, NM. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Four Hills Shopping Center",
+                "address": "13170 Central Ave SE",
+                "city": "Albuquerque,",
+                "state": "NM",
+                "expiration": "01/07/2026",
+                "price": "$7.99"
+        },
+        {
                 "url": "https://offers.greatclips.com/FdyvrJu",
                 "coupon_code": "FdyvrJu",
                 "valid_text": "Valid at Great Clips Ashmore Bridge Publix at 1313 Fork Shoals Rd in Greenville, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
@@ -511,25 +516,25 @@
                 "price": "$7.99"
         },
         {
-                "url": "https://offers.greatclips.com/eZF5UCV",
-                "coupon_code": "eZF5UCV",
-                "valid_text": "Valid at Great Clips Fry's Anderson Springs at 1960 W Ray Rd in Chandler, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-                "location_name": "Fry's Anderson Springs",
-                "address": "1960 W Ray Rd",
+                "url": "https://offers.greatclips.com/pDIjYvq",
+                "coupon_code": "pDIjYvq",
+                "valid_text": "Valid at Great Clips Chandler Village Center at 3415 W Frye Rd in Chandler, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
+                "location_name": "Chandler Village Center",
+                "address": "3415 W Frye Rd",
                 "city": "Chandler,",
                 "state": "AZ",
                 "expiration": "01/12/2026",
                 "price": "$7.99"
         },
         {
-                "url": "https://offers.greatclips.com/pd6qgY4",
-                "coupon_code": "pd6qgY4",
-                "valid_text": "Valid at Great Clips Bay Forest at 1926 El Dorado Boulevard in Houston, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Bay Forest",
-                "address": "1926 El Dorado Boulevard",
-                "city": "Houston,",
-                "state": "TX",
-                "expiration": "01/07/2026",
+                "url": "https://offers.greatclips.com/7BsG8WS",
+                "coupon_code": "7BsG8WS",
+                "valid_text": "Valid at Great Clips The Point by Whole Foods at 1140 Woodruff Rd in Greenville, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
+                "location_name": "The Point by Whole Foods",
+                "address": "1140 Woodruff Rd",
+                "city": "Greenville,",
+                "state": "SC",
+                "expiration": "01/06/2026",
                 "price": "$7.99"
         },
         {
@@ -544,11 +549,11 @@
                 "price": "$7.99"
         },
         {
-                "url": "https://offers.greatclips.com/MqO4hHF",
-                "coupon_code": "MqO4hHF",
-                "valid_text": "Valid at Great Clips Towne Park Plaza at 330 Eubank Blvd NE in Albuquerque, NM. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Towne Park Plaza",
-                "address": "330 Eubank Blvd NE",
+                "url": "https://offers.greatclips.com/ZmRBbWL",
+                "coupon_code": "ZmRBbWL",
+                "valid_text": "Valid at Great Clips Las Estancias at 3715 Las Estancias Way in Albuquerque, NM. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Las Estancias",
+                "address": "3715 Las Estancias Way",
                 "city": "Albuquerque,",
                 "state": "NM",
                 "expiration": "01/07/2026",
@@ -566,11 +571,33 @@
                 "price": "$7.99"
         },
         {
-                "url": "https://offers.greatclips.com/GANHDec",
-                "coupon_code": "GANHDec",
-                "valid_text": "Valid at Great Clips Four Hills Shopping Center at 13170 Central Ave SE in Albuquerque, NM. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Four Hills Shopping Center",
-                "address": "13170 Central Ave SE",
+                "url": "https://offers.greatclips.com/3swged6",
+                "coupon_code": "3swged6",
+                "valid_text": "Valid at Great Clips Manvel Town Center at 17221 Hwy 6 in Manvel, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Manvel Town Center",
+                "address": "17221 Hwy 6",
+                "city": "Manvel,",
+                "state": "TX",
+                "expiration": "01/07/2026",
+                "price": "$7.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/pd6qgY4",
+                "coupon_code": "pd6qgY4",
+                "valid_text": "Valid at Great Clips Bay Forest at 1926 El Dorado Boulevard in Houston, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Bay Forest",
+                "address": "1926 El Dorado Boulevard",
+                "city": "Houston,",
+                "state": "TX",
+                "expiration": "01/07/2026",
+                "price": "$7.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/MqO4hHF",
+                "coupon_code": "MqO4hHF",
+                "valid_text": "Valid at Great Clips Towne Park Plaza at 330 Eubank Blvd NE in Albuquerque, NM. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Towne Park Plaza",
+                "address": "330 Eubank Blvd NE",
                 "city": "Albuquerque,",
                 "state": "NM",
                 "expiration": "01/07/2026",
@@ -588,103 +615,15 @@
                 "price": "$7.99"
         },
         {
-                "url": "https://offers.greatclips.com/ZmRBbWL",
-                "coupon_code": "ZmRBbWL",
-                "valid_text": "Valid at Great Clips Las Estancias at 3715 Las Estancias Way in Albuquerque, NM. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Las Estancias",
-                "address": "3715 Las Estancias Way",
-                "city": "Albuquerque,",
-                "state": "NM",
-                "expiration": "01/07/2026",
+                "url": "https://offers.greatclips.com/eZF5UCV",
+                "coupon_code": "eZF5UCV",
+                "valid_text": "Valid at Great Clips Fry's Anderson Springs at 1960 W Ray Rd in Chandler, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
+                "location_name": "Fry's Anderson Springs",
+                "address": "1960 W Ray Rd",
+                "city": "Chandler,",
+                "state": "AZ",
+                "expiration": "01/12/2026",
                 "price": "$7.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/gY8Xeun",
-                "coupon_code": "gY8Xeun",
-                "valid_text": "Valid at Great Clips Ridgmar at 2400 Lands End Blvd in Fort Worth, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Ridgmar",
-                "address": "2400 Lands End Blvd",
-                "city": "Fort Worth,",
-                "state": "TX",
-                "expiration": "01/07/2026",
-                "price": "$8.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/mg9qQhH",
-                "coupon_code": "mg9qQhH",
-                "valid_text": "Valid at Great Clips River Falls Plaza at 2099 E Main St in Duncan, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
-                "location_name": "River Falls Plaza",
-                "address": "2099 E Main St",
-                "city": "Duncan,",
-                "state": "SC",
-                "expiration": "01/06/2026",
-                "price": "$8.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/bRIvIFO",
-                "coupon_code": "bRIvIFO",
-                "valid_text": "Valid at Great Clips Riverview Village at 2745 N Collins St in Arlington, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Riverview Village",
-                "address": "2745 N Collins St",
-                "city": "Arlington,",
-                "state": "TX",
-                "expiration": "01/07/2026",
-                "price": "$8.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/PAHABOb",
-                "coupon_code": "PAHABOb",
-                "valid_text": "Valid at Great Clips North Hurst at 775 Grapevine Hwy in Hurst, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "North Hurst",
-                "address": "775 Grapevine Hwy",
-                "city": "Hurst,",
-                "state": "TX",
-                "expiration": "01/07/2026",
-                "price": "$8.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/iRj0I2y",
-                "coupon_code": "iRj0I2y",
-                "valid_text": "Valid at Great Clips Harwood Central Village at 2105 Harwood Rd in Bedford, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/14/2026",
-                "location_name": "Harwood Central Village",
-                "address": "2105 Harwood Rd",
-                "city": "Bedford,",
-                "state": "TX",
-                "expiration": "01/14/2026",
-                "price": "$8.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/SaR1CBG",
-                "coupon_code": "SaR1CBG",
-                "valid_text": "Valid at Great Clips Euless at 1060 N Main St in Euless, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Euless",
-                "address": "1060 N Main St",
-                "city": "Euless,",
-                "state": "TX",
-                "expiration": "01/07/2026",
-                "price": "$8.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/bC3diCV",
-                "coupon_code": "bC3diCV",
-                "valid_text": "Valid at Great Clips The Plaza on San Felipe at 1705 S Voss Rd in Houston, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "The Plaza on San Felipe",
-                "address": "1705 S Voss Rd",
-                "city": "Houston,",
-                "state": "TX",
-                "expiration": "01/07/2026",
-                "price": "$8.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/WLLQ6C7",
-                "coupon_code": "WLLQ6C7",
-                "valid_text": "Valid at Great Clips Inman Food Lion at 11149 Asheville Hwy in Inman, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
-                "location_name": "Inman Food Lion",
-                "address": "11149 Asheville Hwy",
-                "city": "Inman,",
-                "state": "SC",
-                "expiration": "01/06/2026",
-                "price": "$8.99"
         },
         {
                 "url": "https://offers.greatclips.com/QAs8VA3",
@@ -709,28 +648,6 @@
                 "price": "$8.99"
         },
         {
-                "url": "https://offers.greatclips.com/Tcy8UiB",
-                "coupon_code": "Tcy8UiB",
-                "valid_text": "Valid at Great Clips Trinity Commons at 3000 S Hulen St in Fort Worth, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Trinity Commons",
-                "address": "3000 S Hulen St",
-                "city": "Fort Worth,",
-                "state": "TX",
-                "expiration": "01/07/2026",
-                "price": "$8.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/hCeDVL1",
-                "coupon_code": "hCeDVL1",
-                "valid_text": "Valid at Great Clips Thor Ranch at 9555 Spring Green Blvd in Katy, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Thor Ranch",
-                "address": "9555 Spring Green Blvd",
-                "city": "Katy,",
-                "state": "TX",
-                "expiration": "01/07/2026",
-                "price": "$8.99"
-        },
-        {
                 "url": "https://offers.greatclips.com/iMjnlTo",
                 "coupon_code": "iMjnlTo",
                 "valid_text": "Valid at Great Clips Cross Creek Ranch at 5102 FM 1463 Rd in Katy, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
@@ -742,23 +659,67 @@
                 "price": "$8.99"
         },
         {
-                "url": "https://offers.greatclips.com/ENr0AhU",
-                "coupon_code": "ENr0AhU",
-                "valid_text": "Valid at Great Clips Shoppes of Albertville at 7360 US-431 in Albertville, AL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/16/2026",
-                "location_name": "Shoppes of Albertville",
-                "address": "7360 US-431",
-                "city": "Albertville,",
-                "state": "AL",
-                "expiration": "01/16/2026",
+                "url": "https://offers.greatclips.com/mg9qQhH",
+                "coupon_code": "mg9qQhH",
+                "valid_text": "Valid at Great Clips River Falls Plaza at 2099 E Main St in Duncan, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
+                "location_name": "River Falls Plaza",
+                "address": "2099 E Main St",
+                "city": "Duncan,",
+                "state": "SC",
+                "expiration": "01/06/2026",
                 "price": "$8.99"
         },
         {
-                "url": "https://offers.greatclips.com/2HrzwWB",
-                "coupon_code": "2HrzwWB",
-                "valid_text": "Valid at Great Clips Aransas Pass Shopping Center at 2650 Demory Lane in Aransas Pass, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Aransas Pass Shopping Center",
-                "address": "2650 Demory Lane",
-                "city": "Aransas Pass,",
+                "url": "https://offers.greatclips.com/PAHABOb",
+                "coupon_code": "PAHABOb",
+                "valid_text": "Valid at Great Clips North Hurst at 775 Grapevine Hwy in Hurst, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "North Hurst",
+                "address": "775 Grapevine Hwy",
+                "city": "Hurst,",
+                "state": "TX",
+                "expiration": "01/07/2026",
+                "price": "$8.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/Tcy8UiB",
+                "coupon_code": "Tcy8UiB",
+                "valid_text": "Valid at Great Clips Trinity Commons at 3000 S Hulen St in Fort Worth, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Trinity Commons",
+                "address": "3000 S Hulen St",
+                "city": "Fort Worth,",
+                "state": "TX",
+                "expiration": "01/07/2026",
+                "price": "$8.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/bC3diCV",
+                "coupon_code": "bC3diCV",
+                "valid_text": "Valid at Great Clips The Plaza on San Felipe at 1705 S Voss Rd in Houston, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "The Plaza on San Felipe",
+                "address": "1705 S Voss Rd",
+                "city": "Houston,",
+                "state": "TX",
+                "expiration": "01/07/2026",
+                "price": "$8.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/iRj0I2y",
+                "coupon_code": "iRj0I2y",
+                "valid_text": "Valid at Great Clips Harwood Central Village at 2105 Harwood Rd in Bedford, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/14/2026",
+                "location_name": "Harwood Central Village",
+                "address": "2105 Harwood Rd",
+                "city": "Bedford,",
+                "state": "TX",
+                "expiration": "01/14/2026",
+                "price": "$8.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/hCeDVL1",
+                "coupon_code": "hCeDVL1",
+                "valid_text": "Valid at Great Clips Thor Ranch at 9555 Spring Green Blvd in Katy, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Thor Ranch",
+                "address": "9555 Spring Green Blvd",
+                "city": "Katy,",
                 "state": "TX",
                 "expiration": "01/07/2026",
                 "price": "$8.99"
@@ -775,14 +736,58 @@
                 "price": "$8.99"
         },
         {
-                "url": "https://offers.greatclips.com/SsIqUOt",
-                "coupon_code": "SsIqUOt",
-                "valid_text": "Valid at Great Clips Grand Morton Town Center at 22720 Morton Ranch Rd in Katy, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Grand Morton Town Center",
-                "address": "22720 Morton Ranch Rd",
-                "city": "Katy,",
+                "url": "https://offers.greatclips.com/gY8Xeun",
+                "coupon_code": "gY8Xeun",
+                "valid_text": "Valid at Great Clips Ridgmar at 2400 Lands End Blvd in Fort Worth, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Ridgmar",
+                "address": "2400 Lands End Blvd",
+                "city": "Fort Worth,",
                 "state": "TX",
                 "expiration": "01/07/2026",
+                "price": "$8.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/2HrzwWB",
+                "coupon_code": "2HrzwWB",
+                "valid_text": "Valid at Great Clips Aransas Pass Shopping Center at 2650 Demory Lane in Aransas Pass, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Aransas Pass Shopping Center",
+                "address": "2650 Demory Lane",
+                "city": "Aransas Pass,",
+                "state": "TX",
+                "expiration": "01/07/2026",
+                "price": "$8.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/SaR1CBG",
+                "coupon_code": "SaR1CBG",
+                "valid_text": "Valid at Great Clips Euless at 1060 N Main St in Euless, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Euless",
+                "address": "1060 N Main St",
+                "city": "Euless,",
+                "state": "TX",
+                "expiration": "01/07/2026",
+                "price": "$8.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/WLLQ6C7",
+                "coupon_code": "WLLQ6C7",
+                "valid_text": "Valid at Great Clips Inman Food Lion at 11149 Asheville Hwy in Inman, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
+                "location_name": "Inman Food Lion",
+                "address": "11149 Asheville Hwy",
+                "city": "Inman,",
+                "state": "SC",
+                "expiration": "01/06/2026",
+                "price": "$8.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/ENr0AhU",
+                "coupon_code": "ENr0AhU",
+                "valid_text": "Valid at Great Clips Shoppes of Albertville at 7360 US-431 in Albertville, AL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/16/2026",
+                "location_name": "Shoppes of Albertville",
+                "address": "7360 US-431",
+                "city": "Albertville,",
+                "state": "AL",
+                "expiration": "01/16/2026",
                 "price": "$8.99"
         },
         {
@@ -792,6 +797,17 @@
                 "location_name": "Kleinwood Center",
                 "address": "7312 Louetta Rd",
                 "city": "Spring,",
+                "state": "TX",
+                "expiration": "01/07/2026",
+                "price": "$8.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/SsIqUOt",
+                "coupon_code": "SsIqUOt",
+                "valid_text": "Valid at Great Clips Grand Morton Town Center at 22720 Morton Ranch Rd in Katy, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Grand Morton Town Center",
+                "address": "22720 Morton Ranch Rd",
+                "city": "Katy,",
                 "state": "TX",
                 "expiration": "01/07/2026",
                 "price": "$8.99"
@@ -819,6 +835,17 @@
                 "price": "$8.99"
         },
         {
+                "url": "https://offers.greatclips.com/bRIvIFO",
+                "coupon_code": "bRIvIFO",
+                "valid_text": "Valid at Great Clips Riverview Village at 2745 N Collins St in Arlington, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Riverview Village",
+                "address": "2745 N Collins St",
+                "city": "Arlington,",
+                "state": "TX",
+                "expiration": "01/07/2026",
+                "price": "$8.99"
+        },
+        {
                 "url": "https://offers.greatclips.com/D4G999L",
                 "coupon_code": "D4G999L",
                 "valid_text": "Valid at Great Clips Cherrydale Point at 3275 N Pleasantburg Dr in Greenville, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
@@ -830,34 +857,34 @@
                 "price": "$8.99"
         },
         {
-                "url": "https://offers.greatclips.com/bXOTPmd",
-                "coupon_code": "bXOTPmd",
-                "valid_text": "Valid at Great Clips Kimber-Lea at 3408 Midkiff in Midland, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Kimber-Lea",
-                "address": "3408 Midkiff",
-                "city": "Midland,",
-                "state": "TX",
-                "expiration": "01/07/2026",
-                "price": "$9.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/81yWUoL",
-                "coupon_code": "81yWUoL",
-                "valid_text": "Valid at Great Clips Bend Costco at 20789 NW Henry Ave in Bend, OR. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
-                "location_name": "Bend Costco",
-                "address": "20789 NW Henry Ave",
-                "city": "Bend,",
-                "state": "OR",
+                "url": "https://offers.greatclips.com/lYuVauY",
+                "coupon_code": "lYuVauY",
+                "valid_text": "Valid at Great Clips Gresham Plaza at 926 NE Main St in Simpsonville, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
+                "location_name": "Gresham Plaza",
+                "address": "926 NE Main St",
+                "city": "Simpsonville,",
+                "state": "SC",
                 "expiration": "01/06/2026",
                 "price": "$9.99"
         },
         {
-                "url": "https://offers.greatclips.com/0kXU79E",
-                "coupon_code": "0kXU79E",
-                "valid_text": "Valid at Great Clips East Pointe Shoppes at 2115B E Main St in Spartanburg, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
-                "location_name": "East Pointe Shoppes",
-                "address": "2115B E Main St",
-                "city": "Spartanburg,",
+                "url": "https://offers.greatclips.com/l8pcO1Y",
+                "coupon_code": "l8pcO1Y",
+                "valid_text": "Valid at Great Clips Pinole Vista Crossing at 1386 Fitzgerald Dr in Pinole, CA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/18/2026",
+                "location_name": "Pinole Vista Crossing",
+                "address": "1386 Fitzgerald Dr",
+                "city": "Pinole,",
+                "state": "CA",
+                "expiration": "01/18/2026",
+                "price": "$9.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/v2gCrVc",
+                "coupon_code": "v2gCrVc",
+                "valid_text": "Valid at Great Clips Rocky Creek Place at 2244 Boiling Springs Rd in Boiling Springs, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
+                "location_name": "Rocky Creek Place",
+                "address": "2244 Boiling Springs Rd",
+                "city": "Boiling Springs,",
                 "state": "SC",
                 "expiration": "01/06/2026",
                 "price": "$9.99"
@@ -874,13 +901,24 @@
                 "price": "$9.99"
         },
         {
-                "url": "https://offers.greatclips.com/WPbcXYx",
-                "coupon_code": "WPbcXYx",
-                "valid_text": "Valid at Great Clips Hampton Village at 2801 Wade Hampton Blvd in Taylors, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
-                "location_name": "Hampton Village",
-                "address": "2801 Wade Hampton Blvd",
-                "city": "Taylors,",
+                "url": "https://offers.greatclips.com/4anisKl",
+                "coupon_code": "4anisKl",
+                "valid_text": "Valid at Great Clips McBee Station at 400 E McBee Ave in Greenville, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
+                "location_name": "McBee Station",
+                "address": "400 E McBee Ave",
+                "city": "Greenville,",
                 "state": "SC",
+                "expiration": "01/06/2026",
+                "price": "$9.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/81yWUoL",
+                "coupon_code": "81yWUoL",
+                "valid_text": "Valid at Great Clips Bend Costco at 20789 NW Henry Ave in Bend, OR. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
+                "location_name": "Bend Costco",
+                "address": "20789 NW Henry Ave",
+                "city": "Bend,",
+                "state": "OR",
                 "expiration": "01/06/2026",
                 "price": "$9.99"
         },
@@ -896,23 +934,34 @@
                 "price": "$9.99"
         },
         {
-                "url": "https://offers.greatclips.com/l8pcO1Y",
-                "coupon_code": "l8pcO1Y",
-                "valid_text": "Valid at Great Clips Pinole Vista Crossing at 1386 Fitzgerald Dr in Pinole, CA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/18/2026",
-                "location_name": "Pinole Vista Crossing",
-                "address": "1386 Fitzgerald Dr",
-                "city": "Pinole,",
-                "state": "CA",
-                "expiration": "01/18/2026",
+                "url": "https://offers.greatclips.com/WPbcXYx",
+                "coupon_code": "WPbcXYx",
+                "valid_text": "Valid at Great Clips Hampton Village at 2801 Wade Hampton Blvd in Taylors, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
+                "location_name": "Hampton Village",
+                "address": "2801 Wade Hampton Blvd",
+                "city": "Taylors,",
+                "state": "SC",
+                "expiration": "01/06/2026",
                 "price": "$9.99"
         },
         {
-                "url": "https://offers.greatclips.com/lYuVauY",
-                "coupon_code": "lYuVauY",
-                "valid_text": "Valid at Great Clips Gresham Plaza at 926 NE Main St in Simpsonville, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
-                "location_name": "Gresham Plaza",
-                "address": "926 NE Main St",
-                "city": "Simpsonville,",
+                "url": "https://offers.greatclips.com/bXOTPmd",
+                "coupon_code": "bXOTPmd",
+                "valid_text": "Valid at Great Clips Kimber-Lea at 3408 Midkiff in Midland, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Kimber-Lea",
+                "address": "3408 Midkiff",
+                "city": "Midland,",
+                "state": "TX",
+                "expiration": "01/07/2026",
+                "price": "$9.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/0kXU79E",
+                "coupon_code": "0kXU79E",
+                "valid_text": "Valid at Great Clips East Pointe Shoppes at 2115B E Main St in Spartanburg, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
+                "location_name": "East Pointe Shoppes",
+                "address": "2115B E Main St",
+                "city": "Spartanburg,",
                 "state": "SC",
                 "expiration": "01/06/2026",
                 "price": "$9.99"
@@ -929,56 +978,12 @@
                 "price": "$9.99"
         },
         {
-                "url": "https://offers.greatclips.com/4anisKl",
-                "coupon_code": "4anisKl",
-                "valid_text": "Valid at Great Clips McBee Station at 400 E McBee Ave in Greenville, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
-                "location_name": "McBee Station",
-                "address": "400 E McBee Ave",
-                "city": "Greenville,",
-                "state": "SC",
-                "expiration": "01/06/2026",
-                "price": "$9.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/v2gCrVc",
-                "coupon_code": "v2gCrVc",
-                "valid_text": "Valid at Great Clips Rocky Creek Place at 2244 Boiling Springs Rd in Boiling Springs, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
-                "location_name": "Rocky Creek Place",
-                "address": "2244 Boiling Springs Rd",
-                "city": "Boiling Springs,",
-                "state": "SC",
-                "expiration": "01/06/2026",
-                "price": "$9.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/oUowvKs",
-                "coupon_code": "oUowvKs",
-                "valid_text": "Valid at Great Clips Mililani Mauka at 95-1057 Ainamakua Dr. in Mililani, HI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Mililani Mauka",
-                "address": "95-1057 Ainamakua Dr.",
-                "city": "Mililani,",
-                "state": "HI",
-                "expiration": "01/07/2026",
-                "price": "$10.00"
-        },
-        {
-                "url": "https://offers.greatclips.com/b9Brhky",
-                "coupon_code": "b9Brhky",
-                "valid_text": "Valid at Great Clips Kapolei Commons at 4450 Kapolei Parkway in Kapolei, HI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Kapolei Commons",
-                "address": "4450 Kapolei Parkway",
-                "city": "Kapolei,",
-                "state": "HI",
-                "expiration": "01/07/2026",
-                "price": "$10.00"
-        },
-        {
-                "url": "https://offers.greatclips.com/hQIbkYE",
-                "coupon_code": "hQIbkYE",
-                "valid_text": "Valid at Great Clips Hawaii Kai Towne Center at 333 Keahole St in Honolulu, HI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Hawaii Kai Towne Center",
-                "address": "333 Keahole St",
-                "city": "Honolulu,",
+                "url": "https://offers.greatclips.com/F5KvCzG",
+                "coupon_code": "F5KvCzG",
+                "valid_text": "Valid at Great Clips Ewa Town Center at 91-1401 Fort Weaver Rd in Ewa Beach, HI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Ewa Town Center",
+                "address": "91-1401 Fort Weaver Rd",
+                "city": "Ewa Beach,",
                 "state": "HI",
                 "expiration": "01/07/2026",
                 "price": "$10.00"
@@ -995,45 +1000,12 @@
                 "price": "$10.00"
         },
         {
-                "url": "https://offers.greatclips.com/gExfhez",
-                "coupon_code": "gExfhez",
-                "valid_text": "Valid at Great Clips Moanalua Shopping Center at 930 Valkenburgh St in Honolulu, HI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Moanalua Shopping Center",
-                "address": "930 Valkenburgh St",
-                "city": "Honolulu,",
-                "state": "HI",
-                "expiration": "01/07/2026",
-                "price": "$10.00"
-        },
-        {
-                "url": "https://offers.greatclips.com/F5KvCzG",
-                "coupon_code": "F5KvCzG",
-                "valid_text": "Valid at Great Clips Ewa Town Center at 91-1401 Fort Weaver Rd in Ewa Beach, HI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Ewa Town Center",
-                "address": "91-1401 Fort Weaver Rd",
-                "city": "Ewa Beach,",
-                "state": "HI",
-                "expiration": "01/07/2026",
-                "price": "$10.00"
-        },
-        {
-                "url": "https://offers.greatclips.com/yDOsZTR",
-                "coupon_code": "yDOsZTR",
-                "valid_text": "Valid at Great Clips Pearl Highlands at 1000 Kamehameha Hwy in Pearl City, HI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Pearl Highlands",
-                "address": "1000 Kamehameha Hwy",
-                "city": "Pearl City,",
-                "state": "HI",
-                "expiration": "01/07/2026",
-                "price": "$10.00"
-        },
-        {
-                "url": "https://offers.greatclips.com/So5fCTV",
-                "coupon_code": "So5fCTV",
-                "valid_text": "Valid at Great Clips Kailua at 111 Hekili St in Kailua, HI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Kailua",
-                "address": "111 Hekili St",
-                "city": "Kailua,",
+                "url": "https://offers.greatclips.com/b9Brhky",
+                "coupon_code": "b9Brhky",
+                "valid_text": "Valid at Great Clips Kapolei Commons at 4450 Kapolei Parkway in Kapolei, HI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Kapolei Commons",
+                "address": "4450 Kapolei Parkway",
+                "city": "Kapolei,",
                 "state": "HI",
                 "expiration": "01/07/2026",
                 "price": "$10.00"
@@ -1050,13 +1022,79 @@
                 "price": "$10.00"
         },
         {
-                "url": "https://offers.greatclips.com/yTejFNz",
-                "coupon_code": "yTejFNz",
-                "valid_text": "Valid at Great Clips Clear Creek Crossing at 12925 Albemarle Rd in Charlotte, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Clear Creek Crossing",
-                "address": "12925 Albemarle Rd",
-                "city": "Charlotte,",
-                "state": "NC",
+                "url": "https://offers.greatclips.com/yDOsZTR",
+                "coupon_code": "yDOsZTR",
+                "valid_text": "Valid at Great Clips Pearl Highlands at 1000 Kamehameha Hwy in Pearl City, HI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Pearl Highlands",
+                "address": "1000 Kamehameha Hwy",
+                "city": "Pearl City,",
+                "state": "HI",
+                "expiration": "01/07/2026",
+                "price": "$10.00"
+        },
+        {
+                "url": "https://offers.greatclips.com/gExfhez",
+                "coupon_code": "gExfhez",
+                "valid_text": "Valid at Great Clips Moanalua Shopping Center at 930 Valkenburgh St in Honolulu, HI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Moanalua Shopping Center",
+                "address": "930 Valkenburgh St",
+                "city": "Honolulu,",
+                "state": "HI",
+                "expiration": "01/07/2026",
+                "price": "$10.00"
+        },
+        {
+                "url": "https://offers.greatclips.com/So5fCTV",
+                "coupon_code": "So5fCTV",
+                "valid_text": "Valid at Great Clips Kailua at 111 Hekili St in Kailua, HI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Kailua",
+                "address": "111 Hekili St",
+                "city": "Kailua,",
+                "state": "HI",
+                "expiration": "01/07/2026",
+                "price": "$10.00"
+        },
+        {
+                "url": "https://offers.greatclips.com/oUowvKs",
+                "coupon_code": "oUowvKs",
+                "valid_text": "Valid at Great Clips Mililani Mauka at 95-1057 Ainamakua Dr. in Mililani, HI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Mililani Mauka",
+                "address": "95-1057 Ainamakua Dr.",
+                "city": "Mililani,",
+                "state": "HI",
+                "expiration": "01/07/2026",
+                "price": "$10.00"
+        },
+        {
+                "url": "https://offers.greatclips.com/hQIbkYE",
+                "coupon_code": "hQIbkYE",
+                "valid_text": "Valid at Great Clips Hawaii Kai Towne Center at 333 Keahole St in Honolulu, HI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Hawaii Kai Towne Center",
+                "address": "333 Keahole St",
+                "city": "Honolulu,",
+                "state": "HI",
+                "expiration": "01/07/2026",
+                "price": "$10.00"
+        },
+        {
+                "url": "https://offers.greatclips.com/6gks8gP",
+                "coupon_code": "6gks8gP",
+                "valid_text": "Valid at Great Clips Verdae Village at 101 Verdae Blvd in Greenville, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
+                "location_name": "Verdae Village",
+                "address": "101 Verdae Blvd",
+                "city": "Greenville,",
+                "state": "SC",
+                "expiration": "01/06/2026",
+                "price": "$10.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/Jexfoo3",
+                "coupon_code": "Jexfoo3",
+                "valid_text": "Valid at Great Clips Valley Mills HEB at 1821 S Valley Mills Dr in Waco, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Valley Mills HEB",
+                "address": "1821 S Valley Mills Dr",
+                "city": "Waco,",
+                "state": "TX",
                 "expiration": "01/07/2026",
                 "price": "$10.99"
         },
@@ -1072,46 +1110,13 @@
                 "price": "$10.99"
         },
         {
-                "url": "https://offers.greatclips.com/oUWiT30",
-                "coupon_code": "oUWiT30",
-                "valid_text": "Valid at Great Clips Tower Pointe at 4444 Hwy 6 S in College Station, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Tower Pointe",
-                "address": "4444 Hwy 6 S",
-                "city": "College Station,",
+                "url": "https://offers.greatclips.com/GwQyB02",
+                "coupon_code": "GwQyB02",
+                "valid_text": "Valid at Great Clips Westgate at 4477 S Lamar Blvd in Austin, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Westgate",
+                "address": "4477 S Lamar Blvd",
+                "city": "Austin,",
                 "state": "TX",
-                "expiration": "01/07/2026",
-                "price": "$10.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/NLELwwV",
-                "coupon_code": "NLELwwV",
-                "valid_text": "Valid at Great Clips The Crossing Shopping Center at 901 N Interstate Hwy 35 in Bellmead, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "The Crossing Shopping Center",
-                "address": "901 N Interstate Hwy 35",
-                "city": "Bellmead,",
-                "state": "TX",
-                "expiration": "01/07/2026",
-                "price": "$10.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/M78oeC6",
-                "coupon_code": "M78oeC6",
-                "valid_text": "Valid at Great Clips Pinnacle Point at 1816 Hendersonville Rd in Asheville, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
-                "location_name": "Pinnacle Point",
-                "address": "1816 Hendersonville Rd",
-                "city": "Asheville,",
-                "state": "NC",
-                "expiration": "01/06/2026",
-                "price": "$10.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/Pey6Z6K",
-                "coupon_code": "Pey6Z6K",
-                "valid_text": "Valid at Great Clips The Orchards at 834 E 800 N in Orem, UT. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "The Orchards",
-                "address": "834 E 800 N",
-                "city": "Orem,",
-                "state": "UT",
                 "expiration": "01/07/2026",
                 "price": "$10.99"
         },
@@ -1121,6 +1126,72 @@
                 "valid_text": "Valid at Great Clips Brazos Marketplace at 631 N Harvey Mitchell Pkwy in Bryan, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
                 "location_name": "Brazos Marketplace",
                 "address": "631 N Harvey Mitchell Pkwy",
+                "city": "Bryan,",
+                "state": "TX",
+                "expiration": "01/07/2026",
+                "price": "$10.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/yTejFNz",
+                "coupon_code": "yTejFNz",
+                "valid_text": "Valid at Great Clips Clear Creek Crossing at 12925 Albemarle Rd in Charlotte, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Clear Creek Crossing",
+                "address": "12925 Albemarle Rd",
+                "city": "Charlotte,",
+                "state": "NC",
+                "expiration": "01/07/2026",
+                "price": "$10.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/qBaam20",
+                "coupon_code": "qBaam20",
+                "valid_text": "Valid at Great Clips Lakewood Center at 1230 N Valley Mills Dr in Waco, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Lakewood Center",
+                "address": "1230 N Valley Mills Dr",
+                "city": "Waco,",
+                "state": "TX",
+                "expiration": "01/07/2026",
+                "price": "$10.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/tyPLS0x",
+                "coupon_code": "tyPLS0x",
+                "valid_text": "Valid at Great Clips Stonebridge Plaza at 151 Stonebridge Plaza Ave in North Chesterfield, VA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Stonebridge Plaza",
+                "address": "151 Stonebridge Plaza Ave",
+                "city": "North Chesterfield,",
+                "state": "VA",
+                "expiration": "01/07/2026",
+                "price": "$10.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/8O6owAb",
+                "coupon_code": "8O6owAb",
+                "valid_text": "Valid at Great Clips Forest City Walmart Shopping Center at 145 Plaza Dr in Forest City, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
+                "location_name": "Forest City Walmart Shopping Center",
+                "address": "145 Plaza Dr",
+                "city": "Forest City,",
+                "state": "NC",
+                "expiration": "01/06/2026",
+                "price": "$10.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/m38APfz",
+                "coupon_code": "m38APfz",
+                "valid_text": "Valid at Great Clips Springtown Shopping Center at 1180 Thorpe Ln in San Marcos, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Springtown Shopping Center",
+                "address": "1180 Thorpe Ln",
+                "city": "San Marcos,",
+                "state": "TX",
+                "expiration": "01/07/2026",
+                "price": "$10.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/DihJiU7",
+                "coupon_code": "DihJiU7",
+                "valid_text": "Valid at Great Clips Colony Park at 2305 Boonville Rd in Bryan, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Colony Park",
+                "address": "2305 Boonville Rd",
                 "city": "Bryan,",
                 "state": "TX",
                 "expiration": "01/07/2026",
@@ -1138,36 +1209,36 @@
                 "price": "$10.99"
         },
         {
-                "url": "https://offers.greatclips.com/FW9KWXq",
-                "coupon_code": "FW9KWXq",
-                "valid_text": "Valid at Great Clips Publix at County Line Road at 5170 County Line Rd in Lakeland, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/14/2026",
-                "location_name": "Publix",
-                "address": "County Line Road at 5170 County Line Rd",
-                "city": "Lakeland,",
-                "state": "FL",
-                "expiration": "01/14/2026",
+                "url": "https://offers.greatclips.com/OMfiwdU",
+                "coupon_code": "OMfiwdU",
+                "valid_text": "Valid at Great Clips Merrimon Square at 640 Merrimon Ave in Asheville, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
+                "location_name": "Merrimon Square",
+                "address": "640 Merrimon Ave",
+                "city": "Asheville,",
+                "state": "NC",
+                "expiration": "01/06/2026",
                 "price": "$10.99"
         },
         {
-                "url": "https://offers.greatclips.com/qCOxpk5",
-                "coupon_code": "qCOxpk5",
-                "valid_text": "Valid at Great Clips Woodway Plaza at 824 Hewitt Dr in Waco, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Woodway Plaza",
-                "address": "824 Hewitt Dr",
-                "city": "Waco,",
-                "state": "TX",
+                "url": "https://offers.greatclips.com/Fc2urqN",
+                "coupon_code": "Fc2urqN",
+                "valid_text": "Valid at Great Clips Oxbridge Square at 9909 Hull St Rd in Richmond, VA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Oxbridge Square",
+                "address": "9909 Hull St Rd",
+                "city": "Richmond,",
+                "state": "VA",
                 "expiration": "01/07/2026",
                 "price": "$10.99"
         },
         {
-                "url": "https://offers.greatclips.com/qBaam20",
-                "coupon_code": "qBaam20",
-                "valid_text": "Valid at Great Clips Lakewood Center at 1230 N Valley Mills Dr in Waco, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Lakewood Center",
-                "address": "1230 N Valley Mills Dr",
-                "city": "Waco,",
-                "state": "TX",
-                "expiration": "01/07/2026",
+                "url": "https://offers.greatclips.com/i8bpvf7",
+                "coupon_code": "i8bpvf7",
+                "valid_text": "Valid at Great Clips Furman Publix at 5052 Old Buncombe Rd in Greenville, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
+                "location_name": "Furman Publix",
+                "address": "5052 Old Buncombe Rd",
+                "city": "Greenville,",
+                "state": "SC",
+                "expiration": "01/06/2026",
                 "price": "$10.99"
         },
         {
@@ -1182,23 +1253,34 @@
                 "price": "$10.99"
         },
         {
-                "url": "https://offers.greatclips.com/Jexfoo3",
-                "coupon_code": "Jexfoo3",
-                "valid_text": "Valid at Great Clips Valley Mills HEB at 1821 S Valley Mills Dr in Waco, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Valley Mills HEB",
-                "address": "1821 S Valley Mills Dr",
-                "city": "Waco,",
+                "url": "https://offers.greatclips.com/FW9KWXq",
+                "coupon_code": "FW9KWXq",
+                "valid_text": "Valid at Great Clips Publix at County Line Road at 5170 County Line Rd in Lakeland, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/14/2026",
+                "location_name": "Publix",
+                "address": "County Line Road at 5170 County Line Rd",
+                "city": "Lakeland,",
+                "state": "FL",
+                "expiration": "01/14/2026",
+                "price": "$10.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/NLELwwV",
+                "coupon_code": "NLELwwV",
+                "valid_text": "Valid at Great Clips The Crossing Shopping Center at 901 N Interstate Hwy 35 in Bellmead, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "The Crossing Shopping Center",
+                "address": "901 N Interstate Hwy 35",
+                "city": "Bellmead,",
                 "state": "TX",
                 "expiration": "01/07/2026",
                 "price": "$10.99"
         },
         {
-                "url": "https://offers.greatclips.com/DihJiU7",
-                "coupon_code": "DihJiU7",
-                "valid_text": "Valid at Great Clips Colony Park at 2305 Boonville Rd in Bryan, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Colony Park",
-                "address": "2305 Boonville Rd",
-                "city": "Bryan,",
+                "url": "https://offers.greatclips.com/qCOxpk5",
+                "coupon_code": "qCOxpk5",
+                "valid_text": "Valid at Great Clips Woodway Plaza at 824 Hewitt Dr in Waco, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Woodway Plaza",
+                "address": "824 Hewitt Dr",
+                "city": "Waco,",
                 "state": "TX",
                 "expiration": "01/07/2026",
                 "price": "$10.99"
@@ -1215,45 +1297,23 @@
                 "price": "$10.99"
         },
         {
-                "url": "https://offers.greatclips.com/tyPLS0x",
-                "coupon_code": "tyPLS0x",
-                "valid_text": "Valid at Great Clips Stonebridge Plaza at 151 Stonebridge Plaza Ave in North Chesterfield, VA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Stonebridge Plaza",
-                "address": "151 Stonebridge Plaza Ave",
-                "city": "North Chesterfield,",
-                "state": "VA",
+                "url": "https://offers.greatclips.com/oUWiT30",
+                "coupon_code": "oUWiT30",
+                "valid_text": "Valid at Great Clips Tower Pointe at 4444 Hwy 6 S in College Station, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Tower Pointe",
+                "address": "4444 Hwy 6 S",
+                "city": "College Station,",
+                "state": "TX",
                 "expiration": "01/07/2026",
                 "price": "$10.99"
         },
         {
-                "url": "https://offers.greatclips.com/Fc2urqN",
-                "coupon_code": "Fc2urqN",
-                "valid_text": "Valid at Great Clips Oxbridge Square at 9909 Hull St Rd in Richmond, VA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Oxbridge Square",
-                "address": "9909 Hull St Rd",
-                "city": "Richmond,",
-                "state": "VA",
-                "expiration": "01/07/2026",
-                "price": "$10.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/OMfiwdU",
-                "coupon_code": "OMfiwdU",
-                "valid_text": "Valid at Great Clips Merrimon Square at 640 Merrimon Ave in Asheville, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
-                "location_name": "Merrimon Square",
-                "address": "640 Merrimon Ave",
+                "url": "https://offers.greatclips.com/M78oeC6",
+                "coupon_code": "M78oeC6",
+                "valid_text": "Valid at Great Clips Pinnacle Point at 1816 Hendersonville Rd in Asheville, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
+                "location_name": "Pinnacle Point",
+                "address": "1816 Hendersonville Rd",
                 "city": "Asheville,",
-                "state": "NC",
-                "expiration": "01/06/2026",
-                "price": "$10.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/8O6owAb",
-                "coupon_code": "8O6owAb",
-                "valid_text": "Valid at Great Clips Forest City Walmart Shopping Center at 145 Plaza Dr in Forest City, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
-                "location_name": "Forest City Walmart Shopping Center",
-                "address": "145 Plaza Dr",
-                "city": "Forest City,",
                 "state": "NC",
                 "expiration": "01/06/2026",
                 "price": "$10.99"
@@ -1270,48 +1330,37 @@
                 "price": "$10.99"
         },
         {
-                "url": "https://offers.greatclips.com/GwQyB02",
-                "coupon_code": "GwQyB02",
-                "valid_text": "Valid at Great Clips Westgate at 4477 S Lamar Blvd in Austin, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Westgate",
-                "address": "4477 S Lamar Blvd",
-                "city": "Austin,",
-                "state": "TX",
+                "url": "https://offers.greatclips.com/Pey6Z6K",
+                "coupon_code": "Pey6Z6K",
+                "valid_text": "Valid at Great Clips The Orchards at 834 E 800 N in Orem, UT. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "The Orchards",
+                "address": "834 E 800 N",
+                "city": "Orem,",
+                "state": "UT",
                 "expiration": "01/07/2026",
                 "price": "$10.99"
         },
         {
-                "url": "https://offers.greatclips.com/m38APfz",
-                "coupon_code": "m38APfz",
-                "valid_text": "Valid at Great Clips Springtown Shopping Center at 1180 Thorpe Ln in San Marcos, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Springtown Shopping Center",
-                "address": "1180 Thorpe Ln",
-                "city": "San Marcos,",
+                "url": "https://offers.greatclips.com/s05PVKL",
+                "coupon_code": "s05PVKL",
+                "valid_text": "Valid at Great Clips Thousand Oaks Centre at 2953 Thousand Oaks Dr in San Antonio, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/09/2026",
+                "location_name": "Thousand Oaks Centre",
+                "address": "2953 Thousand Oaks Dr",
+                "city": "San Antonio,",
                 "state": "TX",
-                "expiration": "01/07/2026",
-                "price": "$10.99"
+                "expiration": "01/09/2026",
+                "price": "$11.99"
         },
         {
-                "url": "https://offers.greatclips.com/6gks8gP",
-                "coupon_code": "6gks8gP",
-                "valid_text": "Valid at Great Clips Verdae Village at 101 Verdae Blvd in Greenville, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
-                "location_name": "Verdae Village",
-                "address": "101 Verdae Blvd",
-                "city": "Greenville,",
-                "state": "SC",
-                "expiration": "01/06/2026",
-                "price": "$10.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/i8bpvf7",
-                "coupon_code": "i8bpvf7",
-                "valid_text": "Valid at Great Clips Furman Publix at 5052 Old Buncombe Rd in Greenville, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
-                "location_name": "Furman Publix",
-                "address": "5052 Old Buncombe Rd",
-                "city": "Greenville,",
-                "state": "SC",
-                "expiration": "01/06/2026",
-                "price": "$10.99"
+                "url": "https://offers.greatclips.com/2w7NRXc",
+                "coupon_code": "2w7NRXc",
+                "valid_text": "Valid at Great Clips Liberty Square at 2200 Sean Dr in Fremont, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/17/2026",
+                "location_name": "Liberty Square",
+                "address": "2200 Sean Dr",
+                "city": "Fremont,",
+                "state": "OH",
+                "expiration": "01/17/2026",
+                "price": "$11.99"
         },
         {
                 "url": "https://offers.greatclips.com/3O09V4x",
@@ -1325,25 +1374,25 @@
                 "price": "$11.99"
         },
         {
-                "url": "https://offers.greatclips.com/T8nM0gF",
-                "coupon_code": "T8nM0gF",
-                "valid_text": "Valid at Great Clips Miracle Mile at 4925 Jackman Rd in Toledo, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/17/2026",
-                "location_name": "Miracle Mile",
-                "address": "4925 Jackman Rd",
-                "city": "Toledo,",
-                "state": "OH",
-                "expiration": "01/17/2026",
+                "url": "https://offers.greatclips.com/jbrXuMQ",
+                "coupon_code": "jbrXuMQ",
+                "valid_text": "Valid at Great Clips 38 and Bricher at 2000 W State St in Geneva, IL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/16/2026",
+                "location_name": "38 and Bricher",
+                "address": "2000 W State St",
+                "city": "Geneva,",
+                "state": "IL",
+                "expiration": "01/16/2026",
                 "price": "$11.99"
         },
         {
-                "url": "https://offers.greatclips.com/y0u3ndQ",
-                "coupon_code": "y0u3ndQ",
-                "valid_text": "Valid at Great Clips Seguin Best Center at 751 Best Dr in Seguin, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/09/2026",
-                "location_name": "Seguin Best Center",
-                "address": "751 Best Dr",
-                "city": "Seguin,",
-                "state": "TX",
-                "expiration": "01/09/2026",
+                "url": "https://offers.greatclips.com/YXbh8om",
+                "coupon_code": "YXbh8om",
+                "valid_text": "Valid at Great Clips Villages at Waterville Landing at 1085 Pray Blvd in Waterville, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/17/2026",
+                "location_name": "Villages",
+                "address": "Waterville Landing at 1085 Pray Blvd",
+                "city": "Waterville,",
+                "state": "OH",
+                "expiration": "01/17/2026",
                 "price": "$11.99"
         },
         {
@@ -1358,14 +1407,47 @@
                 "price": "$11.99"
         },
         {
-                "url": "https://offers.greatclips.com/s05PVKL",
-                "coupon_code": "s05PVKL",
-                "valid_text": "Valid at Great Clips Thousand Oaks Centre at 2953 Thousand Oaks Dr in San Antonio, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/09/2026",
-                "location_name": "Thousand Oaks Centre",
-                "address": "2953 Thousand Oaks Dr",
-                "city": "San Antonio,",
+                "url": "https://offers.greatclips.com/1jkxgr4",
+                "coupon_code": "1jkxgr4",
+                "valid_text": "Valid at Great Clips Heritage Plaza at 782 W Army Trail Rd in Carol Stream, IL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/17/2026",
+                "location_name": "Heritage Plaza",
+                "address": "782 W Army Trail Rd",
+                "city": "Carol Stream,",
+                "state": "IL",
+                "expiration": "01/17/2026",
+                "price": "$11.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/T8nM0gF",
+                "coupon_code": "T8nM0gF",
+                "valid_text": "Valid at Great Clips Miracle Mile at 4925 Jackman Rd in Toledo, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/17/2026",
+                "location_name": "Miracle Mile",
+                "address": "4925 Jackman Rd",
+                "city": "Toledo,",
+                "state": "OH",
+                "expiration": "01/17/2026",
+                "price": "$11.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/MxqsOvQ",
+                "coupon_code": "MxqsOvQ",
+                "valid_text": "Valid at Great Clips Seguin Corners at 574 S Highway 123 Byp in Seguin, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/09/2026",
+                "location_name": "Seguin Corners",
+                "address": "574 S Highway 123 Byp",
+                "city": "Seguin,",
                 "state": "TX",
                 "expiration": "01/09/2026",
+                "price": "$11.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/A8Hm6MI",
+                "coupon_code": "A8Hm6MI",
+                "valid_text": "Valid at Great Clips Alexis & Lewis at 821 W Alexis Rd in Toledo, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/17/2026",
+                "location_name": "Alexis & Lewis",
+                "address": "821 W Alexis Rd",
+                "city": "Toledo,",
+                "state": "OH",
+                "expiration": "01/17/2026",
                 "price": "$11.99"
         },
         {
@@ -1391,36 +1473,14 @@
                 "price": "$11.99"
         },
         {
-                "url": "https://offers.greatclips.com/MxqsOvQ",
-                "coupon_code": "MxqsOvQ",
-                "valid_text": "Valid at Great Clips Seguin Corners at 574 S Highway 123 Byp in Seguin, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/09/2026",
-                "location_name": "Seguin Corners",
-                "address": "574 S Highway 123 Byp",
+                "url": "https://offers.greatclips.com/y0u3ndQ",
+                "coupon_code": "y0u3ndQ",
+                "valid_text": "Valid at Great Clips Seguin Best Center at 751 Best Dr in Seguin, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/09/2026",
+                "location_name": "Seguin Best Center",
+                "address": "751 Best Dr",
                 "city": "Seguin,",
                 "state": "TX",
                 "expiration": "01/09/2026",
-                "price": "$11.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/YXbh8om",
-                "coupon_code": "YXbh8om",
-                "valid_text": "Valid at Great Clips Villages at Waterville Landing at 1085 Pray Blvd in Waterville, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/17/2026",
-                "location_name": "Villages",
-                "address": "Waterville Landing at 1085 Pray Blvd",
-                "city": "Waterville,",
-                "state": "OH",
-                "expiration": "01/17/2026",
-                "price": "$11.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/A8Hm6MI",
-                "coupon_code": "A8Hm6MI",
-                "valid_text": "Valid at Great Clips Alexis & Lewis at 821 W Alexis Rd in Toledo, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/17/2026",
-                "location_name": "Alexis & Lewis",
-                "address": "821 W Alexis Rd",
-                "city": "Toledo,",
-                "state": "OH",
-                "expiration": "01/17/2026",
                 "price": "$11.99"
         },
         {
@@ -1435,39 +1495,6 @@
                 "price": "$11.99"
         },
         {
-                "url": "https://offers.greatclips.com/jbrXuMQ",
-                "coupon_code": "jbrXuMQ",
-                "valid_text": "Valid at Great Clips 38 and Bricher at 2000 W State St in Geneva, IL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/16/2026",
-                "location_name": "38 and Bricher",
-                "address": "2000 W State St",
-                "city": "Geneva,",
-                "state": "IL",
-                "expiration": "01/16/2026",
-                "price": "$11.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/1jkxgr4",
-                "coupon_code": "1jkxgr4",
-                "valid_text": "Valid at Great Clips Heritage Plaza at 782 W Army Trail Rd in Carol Stream, IL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/17/2026",
-                "location_name": "Heritage Plaza",
-                "address": "782 W Army Trail Rd",
-                "city": "Carol Stream,",
-                "state": "IL",
-                "expiration": "01/17/2026",
-                "price": "$11.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/2w7NRXc",
-                "coupon_code": "2w7NRXc",
-                "valid_text": "Valid at Great Clips Liberty Square at 2200 Sean Dr in Fremont, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/17/2026",
-                "location_name": "Liberty Square",
-                "address": "2200 Sean Dr",
-                "city": "Fremont,",
-                "state": "OH",
-                "expiration": "01/17/2026",
-                "price": "$11.99"
-        },
-        {
                 "url": "https://offers.greatclips.com/qwsXAvI",
                 "coupon_code": "qwsXAvI",
                 "valid_text": "Valid at Great Clips Waynesville Ingles Plaza at 279 Barber Blvd in Waynesville, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
@@ -1476,6 +1503,17 @@
                 "city": "Waynesville,",
                 "state": "NC",
                 "expiration": "01/06/2026",
+                "price": "$12.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/anywuwe",
+                "coupon_code": "anywuwe",
+                "valid_text": "Valid at Great Clips Caldwell Crossing at 7286 Caldwell Rd in Harrisburg, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
+                "location_name": "Caldwell Crossing",
+                "address": "7286 Caldwell Rd",
+                "city": "Harrisburg,",
+                "state": "NC",
+                "expiration": "01/12/2026",
                 "price": "$12.99"
         },
         {
@@ -1501,17 +1539,6 @@
                 "price": "$12.99"
         },
         {
-                "url": "https://offers.greatclips.com/anywuwe",
-                "coupon_code": "anywuwe",
-                "valid_text": "Valid at Great Clips Caldwell Crossing at 7286 Caldwell Rd in Harrisburg, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-                "location_name": "Caldwell Crossing",
-                "address": "7286 Caldwell Rd",
-                "city": "Harrisburg,",
-                "state": "NC",
-                "expiration": "01/12/2026",
-                "price": "$12.99"
-        },
-        {
                 "url": "https://offers.greatclips.com/vids7mr",
                 "coupon_code": "vids7mr",
                 "valid_text": "Valid at Great Clips Enka-Candler Ingles at 1572 Sand Hill Rd in Candler, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/06/2026",
@@ -1534,17 +1561,6 @@
                 "price": "$12.99"
         },
         {
-                "url": "https://offers.greatclips.com/rQFI3Vo",
-                "coupon_code": "rQFI3Vo",
-                "valid_text": "Valid at Great Clips Quail Springs at 14220 N Pennsylvania Ave in Oklahoma City, OK. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/08/2026",
-                "location_name": "Quail Springs",
-                "address": "14220 N Pennsylvania Ave",
-                "city": "Oklahoma City,",
-                "state": "OK",
-                "expiration": "01/08/2026",
-                "price": "$13.99"
-        },
-        {
                 "url": "https://offers.greatclips.com/8JRiIP0",
                 "coupon_code": "8JRiIP0",
                 "valid_text": "Valid at Great Clips SA Crossing at 11654 Bandera Rd in San Antonio, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/16/2026",
@@ -1553,6 +1569,17 @@
                 "city": "San Antonio,",
                 "state": "TX",
                 "expiration": "01/16/2026",
+                "price": "$13.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/rQFI3Vo",
+                "coupon_code": "rQFI3Vo",
+                "valid_text": "Valid at Great Clips Quail Springs at 14220 N Pennsylvania Ave in Oklahoma City, OK. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/08/2026",
+                "location_name": "Quail Springs",
+                "address": "14220 N Pennsylvania Ave",
+                "city": "Oklahoma City,",
+                "state": "OK",
+                "expiration": "01/08/2026",
                 "price": "$13.99"
         },
         {
@@ -1567,6 +1594,28 @@
                 "price": "$13.99"
         },
         {
+                "url": "https://offers.greatclips.com/3aepHst",
+                "coupon_code": "3aepHst",
+                "valid_text": "Valid at Great Clips Shoppes at Hammock Cove at 4362 Thomasson Dr in Naples, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/11/2026",
+                "location_name": "Shoppes",
+                "address": "Hammock Cove at 4362 Thomasson Dr",
+                "city": "Naples,",
+                "state": "FL",
+                "expiration": "01/11/2026",
+                "price": "$14.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/qMpirEY",
+                "coupon_code": "qMpirEY",
+                "valid_text": "Valid at Great Clips Northtowne SC at 6900 San Pedro Ave in San Antonio, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Northtowne SC",
+                "address": "6900 San Pedro Ave",
+                "city": "San Antonio,",
+                "state": "TX",
+                "expiration": "01/07/2026",
+                "price": "$14.99"
+        },
+        {
                 "url": "https://offers.greatclips.com/C9RVATU",
                 "coupon_code": "C9RVATU",
                 "valid_text": "Valid at Great Clips Pleasanton Gateway at 6766 Bernal Ave in Pleasanton, CA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
@@ -1574,17 +1623,6 @@
                 "address": "6766 Bernal Ave",
                 "city": "Pleasanton,",
                 "state": "CA",
-                "expiration": "01/07/2026",
-                "price": "$14.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/PyCr4iS",
-                "coupon_code": "PyCr4iS",
-                "valid_text": "Valid at Great Clips Churchill Estates Crossing at 15502 Huebner Rd in San Antonio, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Churchill Estates Crossing",
-                "address": "15502 Huebner Rd",
-                "city": "San Antonio,",
-                "state": "TX",
                 "expiration": "01/07/2026",
                 "price": "$14.99"
         },
@@ -1600,14 +1638,14 @@
                 "price": "$14.99"
         },
         {
-                "url": "https://offers.greatclips.com/3aepHst",
-                "coupon_code": "3aepHst",
-                "valid_text": "Valid at Great Clips Shoppes at Hammock Cove at 4362 Thomasson Dr in Naples, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/11/2026",
-                "location_name": "Shoppes",
-                "address": "Hammock Cove at 4362 Thomasson Dr",
-                "city": "Naples,",
-                "state": "FL",
-                "expiration": "01/11/2026",
+                "url": "https://offers.greatclips.com/PyCr4iS",
+                "coupon_code": "PyCr4iS",
+                "valid_text": "Valid at Great Clips Churchill Estates Crossing at 15502 Huebner Rd in San Antonio, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Churchill Estates Crossing",
+                "address": "15502 Huebner Rd",
+                "city": "San Antonio,",
+                "state": "TX",
+                "expiration": "01/07/2026",
                 "price": "$14.99"
         },
         {
@@ -1622,15 +1660,15 @@
                 "price": "$14.99"
         },
         {
-                "url": "https://offers.greatclips.com/qMpirEY",
-                "coupon_code": "qMpirEY",
-                "valid_text": "Valid at Great Clips Northtowne SC at 6900 San Pedro Ave in San Antonio, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Northtowne SC",
-                "address": "6900 San Pedro Ave",
-                "city": "San Antonio,",
-                "state": "TX",
+                "url": "https://offers.greatclips.com/ABdJRFT",
+                "coupon_code": "ABdJRFT",
+                "valid_text": "Valid at Great Clips Littleton Square at 40 W Littleton Blvd in Littleton, CO. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Littleton Square",
+                "address": "40 W Littleton Blvd",
+                "city": "Littleton,",
+                "state": "CO",
                 "expiration": "01/07/2026",
-                "price": "$14.99"
+                "price": "$15.99"
         },
         {
                 "url": "https://offers.greatclips.com/XAO24tW",
@@ -1655,25 +1693,14 @@
                 "price": "$15.99"
         },
         {
-                "url": "https://offers.greatclips.com/ABdJRFT",
-                "coupon_code": "ABdJRFT",
-                "valid_text": "Valid at Great Clips Littleton Square at 40 W Littleton Blvd in Littleton, CO. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Littleton Square",
-                "address": "40 W Littleton Blvd",
-                "city": "Littleton,",
-                "state": "CO",
-                "expiration": "01/07/2026",
-                "price": "$15.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/qvJ1dd4",
-                "coupon_code": "qvJ1dd4",
-                "valid_text": "Valid at Great Clips Sharon Heights Shopping Center at 325 Sharon Park Dr in Menlo Park, CA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/11/2026",
-                "location_name": "Sharon Heights Shopping Center",
-                "address": "325 Sharon Park Dr",
-                "city": "Menlo Park,",
-                "state": "CA",
-                "expiration": "01/11/2026",
+                "url": "https://offers.greatclips.com/RbFTcNl",
+                "coupon_code": "RbFTcNl",
+                "valid_text": "Valid at Great Clips Riverchase Plaza at 11208 Tamiami Trl N in Naples, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/15/2026",
+                "location_name": "Riverchase Plaza",
+                "address": "11208 Tamiami Trl N",
+                "city": "Naples,",
+                "state": "FL",
+                "expiration": "01/15/2026",
                 "price": "$16.99"
         },
         {
@@ -1685,17 +1712,6 @@
                 "city": "San Jose,",
                 "state": "CA",
                 "expiration": "01/11/2026",
-                "price": "$16.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/RbFTcNl",
-                "coupon_code": "RbFTcNl",
-                "valid_text": "Valid at Great Clips Riverchase Plaza at 11208 Tamiami Trl N in Naples, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/15/2026",
-                "location_name": "Riverchase Plaza",
-                "address": "11208 Tamiami Trl N",
-                "city": "Naples,",
-                "state": "FL",
-                "expiration": "01/15/2026",
                 "price": "$16.99"
         },
         {
@@ -1721,91 +1737,36 @@
                 "price": "$16.99"
         },
         {
-                "url": "https://offers.greatclips.com/SOiRUMn",
-                "coupon_code": "SOiRUMn",
-                "valid_text": "Valid at Great Clips Aldergrove Village at 26310 Fraser Hwy in Aldergrove, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
-                "location_name": "Aldergrove Village",
-                "address": "26310 Fraser Hwy",
-                "city": "Aldergrove,",
-                "state": "BC",
-                "expiration": "01/24/2026",
-                "price": "$17.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/7sAzw1N",
-                "coupon_code": "7sAzw1N",
-                "valid_text": "Valid at Great Clips Walnut Grove at 506-8840 210 St in Langley, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
-                "location_name": "Walnut Grove",
-                "address": "506-8840 210 St",
-                "city": "Langley,",
-                "state": "BC",
-                "expiration": "01/24/2026",
-                "price": "$17.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/Y18itRi",
-                "coupon_code": "Y18itRi",
-                "valid_text": "Valid at Great Clips RioCan Windfields at 2630 Simcoe St North in Oshawa, ON. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "RioCan Windfields",
-                "address": "2630 Simcoe St North",
-                "city": "Oshawa,",
-                "state": "ON",
-                "expiration": "01/07/2026",
-                "price": "$17.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/BPaxh5H",
-                "coupon_code": "BPaxh5H",
-                "valid_text": "Valid at Great Clips Cloverdale Crossing at 17725 64th Ave in Surrey, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
-                "location_name": "Cloverdale Crossing",
-                "address": "17725 64th Ave",
-                "city": "Surrey,",
-                "state": "BC",
-                "expiration": "01/24/2026",
-                "price": "$17.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/fVrSnII",
-                "coupon_code": "fVrSnII",
-                "valid_text": "Valid at Great Clips Eagle Landing at 8249 Eagle Landing Pkwy in Chilliwack, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
-                "location_name": "Eagle Landing",
-                "address": "8249 Eagle Landing Pkwy",
-                "city": "Chilliwack,",
-                "state": "BC",
-                "expiration": "01/24/2026",
-                "price": "$17.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/WsoNxd0",
-                "coupon_code": "WsoNxd0",
-                "valid_text": "Valid at Great Clips Regency Park at 601 Elmira Rd in Vacaville, CA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
-                "location_name": "Regency Park",
-                "address": "601 Elmira Rd",
-                "city": "Vacaville,",
+                "url": "https://offers.greatclips.com/qvJ1dd4",
+                "coupon_code": "qvJ1dd4",
+                "valid_text": "Valid at Great Clips Sharon Heights Shopping Center at 325 Sharon Park Dr in Menlo Park, CA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/11/2026",
+                "location_name": "Sharon Heights Shopping Center",
+                "address": "325 Sharon Park Dr",
+                "city": "Menlo Park,",
                 "state": "CA",
-                "expiration": "01/07/2026",
+                "expiration": "01/11/2026",
+                "price": "$16.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/LPVPkWN",
+                "coupon_code": "LPVPkWN",
+                "valid_text": "Valid at Great Clips Forum Centre at 3398 Forum Blvd in Fort Myers, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/15/2026",
+                "location_name": "Forum Centre",
+                "address": "3398 Forum Blvd",
+                "city": "Fort Myers,",
+                "state": "FL",
+                "expiration": "01/15/2026",
                 "price": "$17.99"
         },
         {
-                "url": "https://offers.greatclips.com/WLzfB7J",
-                "coupon_code": "WLzfB7J",
-                "valid_text": "Valid at Great Clips Sumas Mountain Village at 155-2362 Whatcom Rd in Abbotsford, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
-                "location_name": "Sumas Mountain Village",
-                "address": "155-2362 Whatcom Rd",
-                "city": "Abbotsford,",
+                "url": "https://offers.greatclips.com/c6ejajE",
+                "coupon_code": "c6ejajE",
+                "valid_text": "Valid at Great Clips Pitt Meadows at 12518 Harris Rd in Pitt Meadows, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
+                "location_name": "Pitt Meadows",
+                "address": "12518 Harris Rd",
+                "city": "Pitt Meadows,",
                 "state": "BC",
                 "expiration": "01/24/2026",
-                "price": "$17.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/xL866T7",
-                "coupon_code": "xL866T7",
-                "valid_text": "Valid at Great Clips Brooklin Towne Centre at 5969 Baldwin St S in Whitby, ON. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/30/2026",
-                "location_name": "Brooklin Towne Centre",
-                "address": "5969 Baldwin St S",
-                "city": "Whitby,",
-                "state": "ON",
-                "expiration": "01/30/2026",
                 "price": "$17.99"
         },
         {
@@ -1820,12 +1781,23 @@
                 "price": "$17.99"
         },
         {
-                "url": "https://offers.greatclips.com/wW3Ns78",
-                "coupon_code": "wW3Ns78",
-                "valid_text": "Valid at Great Clips Dewdney Trunk at 201-23981 Dewdney Trunk Rd in Maple Ridge, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
-                "location_name": "Dewdney Trunk",
-                "address": "201-23981 Dewdney Trunk Rd",
-                "city": "Maple Ridge,",
+                "url": "https://offers.greatclips.com/7sAzw1N",
+                "coupon_code": "7sAzw1N",
+                "valid_text": "Valid at Great Clips Walnut Grove at 506-8840 210 St in Langley, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
+                "location_name": "Walnut Grove",
+                "address": "506-8840 210 St",
+                "city": "Langley,",
+                "state": "BC",
+                "expiration": "01/24/2026",
+                "price": "$17.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/SOiRUMn",
+                "coupon_code": "SOiRUMn",
+                "valid_text": "Valid at Great Clips Aldergrove Village at 26310 Fraser Hwy in Aldergrove, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
+                "location_name": "Aldergrove Village",
+                "address": "26310 Fraser Hwy",
+                "city": "Aldergrove,",
                 "state": "BC",
                 "expiration": "01/24/2026",
                 "price": "$17.99"
@@ -1842,12 +1814,56 @@
                 "price": "$17.99"
         },
         {
-                "url": "https://offers.greatclips.com/6Mcs18Q",
-                "coupon_code": "6Mcs18Q",
-                "valid_text": "Valid at Great Clips Fraser Crossing at 20821 Fraser Hwy in Langley, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
-                "location_name": "Fraser Crossing",
-                "address": "20821 Fraser Hwy",
-                "city": "Langley,",
+                "url": "https://offers.greatclips.com/0FUNBvC",
+                "coupon_code": "0FUNBvC",
+                "valid_text": "Valid at Great Clips Roxborough Marketplace at 8351 Rampart Range Rd in Littleton, CO. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/08/2026",
+                "location_name": "Roxborough Marketplace",
+                "address": "8351 Rampart Range Rd",
+                "city": "Littleton,",
+                "state": "CO",
+                "expiration": "01/08/2026",
+                "price": "$17.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/Mmx8JvN",
+                "coupon_code": "Mmx8JvN",
+                "valid_text": "Valid at Great Clips Royal Square Westminster at 800 Macbride Blvd in New Westminster, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
+                "location_name": "Royal Square Westminster",
+                "address": "800 Macbride Blvd",
+                "city": "New Westminster,",
+                "state": "BC",
+                "expiration": "01/24/2026",
+                "price": "$17.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/fVrSnII",
+                "coupon_code": "fVrSnII",
+                "valid_text": "Valid at Great Clips Eagle Landing at 8249 Eagle Landing Pkwy in Chilliwack, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
+                "location_name": "Eagle Landing",
+                "address": "8249 Eagle Landing Pkwy",
+                "city": "Chilliwack,",
+                "state": "BC",
+                "expiration": "01/24/2026",
+                "price": "$17.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/WLzfB7J",
+                "coupon_code": "WLzfB7J",
+                "valid_text": "Valid at Great Clips Sumas Mountain Village at 155-2362 Whatcom Rd in Abbotsford, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
+                "location_name": "Sumas Mountain Village",
+                "address": "155-2362 Whatcom Rd",
+                "city": "Abbotsford,",
+                "state": "BC",
+                "expiration": "01/24/2026",
+                "price": "$17.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/wW3Ns78",
+                "coupon_code": "wW3Ns78",
+                "valid_text": "Valid at Great Clips Dewdney Trunk at 201-23981 Dewdney Trunk Rd in Maple Ridge, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
+                "location_name": "Dewdney Trunk",
+                "address": "201-23981 Dewdney Trunk Rd",
+                "city": "Maple Ridge,",
                 "state": "BC",
                 "expiration": "01/24/2026",
                 "price": "$17.99"
@@ -1864,12 +1880,34 @@
                 "price": "$17.99"
         },
         {
-                "url": "https://offers.greatclips.com/c6ejajE",
-                "coupon_code": "c6ejajE",
-                "valid_text": "Valid at Great Clips Pitt Meadows at 12518 Harris Rd in Pitt Meadows, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
-                "location_name": "Pitt Meadows",
-                "address": "12518 Harris Rd",
-                "city": "Pitt Meadows,",
+                "url": "https://offers.greatclips.com/3XGFMqO",
+                "coupon_code": "3XGFMqO",
+                "valid_text": "Valid at Great Clips Davie Street at 120 - 1160 Davie Street in Vancouver, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
+                "location_name": "Davie Street",
+                "address": "120 - 1160 Davie Street",
+                "city": "Vancouver,",
+                "state": "BC",
+                "expiration": "01/24/2026",
+                "price": "$17.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/6Mcs18Q",
+                "coupon_code": "6Mcs18Q",
+                "valid_text": "Valid at Great Clips Fraser Crossing at 20821 Fraser Hwy in Langley, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
+                "location_name": "Fraser Crossing",
+                "address": "20821 Fraser Hwy",
+                "city": "Langley,",
+                "state": "BC",
+                "expiration": "01/24/2026",
+                "price": "$17.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/BPaxh5H",
+                "coupon_code": "BPaxh5H",
+                "valid_text": "Valid at Great Clips Cloverdale Crossing at 17725 64th Ave in Surrey, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
+                "location_name": "Cloverdale Crossing",
+                "address": "17725 64th Ave",
+                "city": "Surrey,",
                 "state": "BC",
                 "expiration": "01/24/2026",
                 "price": "$17.99"
@@ -1886,91 +1924,25 @@
                 "price": "$17.99"
         },
         {
-                "url": "https://offers.greatclips.com/LPVPkWN",
-                "coupon_code": "LPVPkWN",
-                "valid_text": "Valid at Great Clips Forum Centre at 3398 Forum Blvd in Fort Myers, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/15/2026",
-                "location_name": "Forum Centre",
-                "address": "3398 Forum Blvd",
-                "city": "Fort Myers,",
-                "state": "FL",
-                "expiration": "01/15/2026",
+                "url": "https://offers.greatclips.com/WsoNxd0",
+                "coupon_code": "WsoNxd0",
+                "valid_text": "Valid at Great Clips Regency Park at 601 Elmira Rd in Vacaville, CA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "Regency Park",
+                "address": "601 Elmira Rd",
+                "city": "Vacaville,",
+                "state": "CA",
+                "expiration": "01/07/2026",
                 "price": "$17.99"
         },
         {
-                "url": "https://offers.greatclips.com/As5UKVn",
-                "coupon_code": "As5UKVn",
-                "valid_text": "Valid at Great Clips Boundary Park Plaza at 6350 120th St in Surrey, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
-                "location_name": "Boundary Park Plaza",
-                "address": "6350 120th St",
-                "city": "Surrey,",
-                "state": "BC",
-                "expiration": "01/24/2026",
-                "price": "$17.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/8lMnlyi",
-                "coupon_code": "8lMnlyi",
-                "valid_text": "Valid at Great Clips Gladwin Center at 102-2955 Gladwin Rd in Abbotsford, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
-                "location_name": "Gladwin Center",
-                "address": "102-2955 Gladwin Rd",
-                "city": "Abbotsford,",
-                "state": "BC",
-                "expiration": "01/24/2026",
-                "price": "$17.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/Mmx8JvN",
-                "coupon_code": "Mmx8JvN",
-                "valid_text": "Valid at Great Clips Royal Square Westminster at 800 Macbride Blvd in New Westminster, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
-                "location_name": "Royal Square Westminster",
-                "address": "800 Macbride Blvd",
-                "city": "New Westminster,",
-                "state": "BC",
-                "expiration": "01/24/2026",
-                "price": "$17.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/0FUNBvC",
-                "coupon_code": "0FUNBvC",
-                "valid_text": "Valid at Great Clips Roxborough Marketplace at 8351 Rampart Range Rd in Littleton, CO. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/08/2026",
-                "location_name": "Roxborough Marketplace",
-                "address": "8351 Rampart Range Rd",
-                "city": "Littleton,",
-                "state": "CO",
-                "expiration": "01/08/2026",
-                "price": "$17.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/rIIYZVw",
-                "coupon_code": "rIIYZVw",
-                "valid_text": "Valid at Great Clips Willoughby Town Centre at 150-20728 Willoughby Town Centre Dr in Langley, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
-                "location_name": "Willoughby Town Centre",
-                "address": "150-20728 Willoughby Town Centre Dr",
-                "city": "Langley,",
-                "state": "BC",
-                "expiration": "01/24/2026",
-                "price": "$17.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/cXY19oM",
-                "coupon_code": "cXY19oM",
-                "valid_text": "Valid at Great Clips Parker and Lincoln at 9811 S Parker Rd in Parker, CO. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/08/2026",
-                "location_name": "Parker and Lincoln",
-                "address": "9811 S Parker Rd",
-                "city": "Parker,",
-                "state": "CO",
-                "expiration": "01/08/2026",
-                "price": "$17.99"
-        },
-        {
-                "url": "https://offers.greatclips.com/3XGFMqO",
-                "coupon_code": "3XGFMqO",
-                "valid_text": "Valid at Great Clips Davie Street at 120 - 1160 Davie Street in Vancouver, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
-                "location_name": "Davie Street",
-                "address": "120 - 1160 Davie Street",
-                "city": "Vancouver,",
-                "state": "BC",
-                "expiration": "01/24/2026",
+                "url": "https://offers.greatclips.com/Y18itRi",
+                "coupon_code": "Y18itRi",
+                "valid_text": "Valid at Great Clips RioCan Windfields at 2630 Simcoe St North in Oshawa, ON. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/07/2026",
+                "location_name": "RioCan Windfields",
+                "address": "2630 Simcoe St North",
+                "city": "Oshawa,",
+                "state": "ON",
+                "expiration": "01/07/2026",
                 "price": "$17.99"
         },
         {
@@ -1996,6 +1968,28 @@
                 "price": "$17.99"
         },
         {
+                "url": "https://offers.greatclips.com/rIIYZVw",
+                "coupon_code": "rIIYZVw",
+                "valid_text": "Valid at Great Clips Willoughby Town Centre at 150-20728 Willoughby Town Centre Dr in Langley, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
+                "location_name": "Willoughby Town Centre",
+                "address": "150-20728 Willoughby Town Centre Dr",
+                "city": "Langley,",
+                "state": "BC",
+                "expiration": "01/24/2026",
+                "price": "$17.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/8lMnlyi",
+                "coupon_code": "8lMnlyi",
+                "valid_text": "Valid at Great Clips Gladwin Center at 102-2955 Gladwin Rd in Abbotsford, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
+                "location_name": "Gladwin Center",
+                "address": "102-2955 Gladwin Rd",
+                "city": "Abbotsford,",
+                "state": "BC",
+                "expiration": "01/24/2026",
+                "price": "$17.99"
+        },
+        {
                 "url": "https://offers.greatclips.com/ooF3vef",
                 "coupon_code": "ooF3vef",
                 "valid_text": "Valid at Great Clips Westgate Centre at 670-20395 Lougheed Hwy in Maple Ridge, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
@@ -2005,9 +1999,67 @@
                 "state": "BC",
                 "expiration": "01/24/2026",
                 "price": "$17.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/As5UKVn",
+                "coupon_code": "As5UKVn",
+                "valid_text": "Valid at Great Clips Boundary Park Plaza at 6350 120th St in Surrey, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/24/2026",
+                "location_name": "Boundary Park Plaza",
+                "address": "6350 120th St",
+                "city": "Surrey,",
+                "state": "BC",
+                "expiration": "01/24/2026",
+                "price": "$17.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/xL866T7",
+                "coupon_code": "xL866T7",
+                "valid_text": "Valid at Great Clips Brooklin Towne Centre at 5969 Baldwin St S in Whitby, ON. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/30/2026",
+                "location_name": "Brooklin Towne Centre",
+                "address": "5969 Baldwin St S",
+                "city": "Whitby,",
+                "state": "ON",
+                "expiration": "01/30/2026",
+                "price": "$17.99"
+        },
+        {
+                "url": "https://offers.greatclips.com/cXY19oM",
+                "coupon_code": "cXY19oM",
+                "valid_text": "Valid at Great Clips Parker and Lincoln at 9811 S Parker Rd in Parker, CO. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/08/2026",
+                "location_name": "Parker and Lincoln",
+                "address": "9811 S Parker Rd",
+                "city": "Parker,",
+                "state": "CO",
+                "expiration": "01/08/2026",
+                "price": "$17.99"
         }
 ];
-        const LAST_UPDATED = "2025-12-30";
+        const LAST_UPDATED = "2025-12-30T21:39:05.678845";
+
+        // Format date like "December 31st, 2025"
+        function formatDate(dateStr) {
+            if (!dateStr || dateStr === 'Unknown') return 'Unknown';
+            try {
+                const date = new Date(dateStr);
+                const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                               'July', 'August', 'September', 'October', 'November', 'December'];
+                const day = date.getDate();
+                const month = months[date.getMonth()];
+                const year = date.getFullYear();
+                
+                // Add ordinal suffix (1st, 2nd, 3rd, 4th, etc.)
+                let suffix = 'th';
+                if (day === 1 || day === 21 || day === 31) suffix = 'st';
+                else if (day === 2 || day === 22) suffix = 'nd';
+                else if (day === 3 || day === 23) suffix = 'rd';
+                
+                return `${month} ${day}${suffix}, ${year}`;
+            } catch {
+                return dateStr;
+            }
+        }
+        
+        const FORMATTED_DATE = formatDate(LAST_UPDATED);
 
         // Check if coupon is universal (works at any US location)
         function isUniversal(coupon) {
@@ -2082,15 +2134,15 @@
                     <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"30\" height=\"30\" viewBox=\"0 0 30 30\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cpath d=\"M15 0C6.716 0 0 6.716 0 15c0 8.284 6.716 15 15 15 8.284 0 15-6.716 15-15C30 6.716 23.284 0 15 0zm0 27C8.373 27 3 21.627 3 15S8.373 3 15 3s12 5.373 12 12-5.373 12-12 12z\" fill=\"%23fff\" fill-opacity=\".05\"/%3E%3C/svg%3E')] opacity-30"></div>
                     <div class="relative max-w-7xl mx-auto px-4 py-12 md:py-16">
                         <div class="text-center">
-                            <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1.5 mb-4">
-                                <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-                                <span class="text-white/90 text-sm font-medium">Updated ${LAST_UPDATED}</span>
+                            <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1.5 mb-4 updated-badge-glow">
+                                <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse shadow-lg shadow-emerald-400/50"></span>
+                                <span class="text-white text-sm font-medium">Updated ${FORMATTED_DATE}</span>
                             </div>
                             <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-3 tracking-tight">
-                                ✂️ Great Clips Coupons
+                                <span class="inline-block scissors-animation">✂️</span> Great Clips Coupons
                             </h1>
                             <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto">
-                                Find the best haircut deals near you
+                                Find your Great Clips coupon below, <span class="relative inline-block font-bold text-white underline decoration-yellow-400 decoration-4 underline-offset-4 not-junk-glow">Not Junk<span class="absolute -top-1 -right-6 text-xs bg-yellow-400 text-yellow-900 px-1.5 py-0.5 rounded-full font-bold transform rotate-12">✓</span></span>
                             </p>
                         </div>
                     </div>
@@ -2111,32 +2163,40 @@
                                             <svg class="w-4 h-4 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
                                                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                                             </svg>
-                                            <span class="text-white text-sm font-semibold">FEATURED DEALS</span>
+                                            <span class="text-white text-sm font-semibold">BEST VALUE</span>
                                         </div>
-                                        <h2 class="text-2xl md:text-3xl font-bold text-white">Works at ANY US Location</h2>
-                                        <p class="text-white/70 mt-1">Use these coupons at any participating Great Clips salon</p>
+                                        <h2 class="text-2xl md:text-3xl font-bold text-white">Overall Best Coupon For Now</h2>
+                                        <p class="text-white/70 mt-1">If you cannot find your individual location - Valid 14 days after redeeming</p>
                                     </div>
                                 </div>
                                 
                                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${Math.min(universalCoupons.length, 4)} gap-4">
                                     ${universalCoupons.map(c => {
                                         const price = getPrice(c);
+                                        const hasImage = c.image_url && c.image_url.length > 0;
                                         return `
-                                        <div class="bg-white/15 backdrop-blur-sm rounded-xl p-5 hover:bg-white/25 transition-all duration-300 border border-white/20">
-                                            <div class="flex items-start justify-between mb-4">
-                                                <div class="bg-white rounded-lg px-4 py-2 shadow-lg">
-                                                    <span class="text-3xl font-extrabold gradient-text">${c.price || 'N/A'}</span>
-                                                </div>
-                                                <span class="text-white/60 text-sm bg-white/10 px-2 py-1 rounded">
-                                                    Exp: ${c.expiration || 'N/A'}
-                                                </span>
+                                        <div class="bg-white/15 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-white/25 transition-all duration-300 border border-white/20">
+                                            ${hasImage ? `
+                                            <div class="w-full h-40 overflow-hidden">
+                                                <img src="${c.image_url}" alt="Great Clips Coupon ${c.price || ''}" class="w-full h-full object-cover">
                                             </div>
-                                            <h3 class="text-white font-semibold text-lg mb-1">Any Great Clips</h3>
-                                            <p class="text-white/60 text-sm mb-4">Valid at all participating US salons</p>
-                                            <a href="${c.url}" target="_blank" 
-                                                class="block w-full bg-white text-purple-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-purple-50 transition-colors">
-                                                Get This Deal →
-                                            </a>
+                                            ` : ''}
+                                            <div class="p-5">
+                                                <div class="flex items-start justify-between mb-4">
+                                                    <div class="bg-white rounded-lg px-4 py-2 shadow-lg">
+                                                        <span class="text-3xl font-extrabold gradient-text">${c.price || 'N/A'}</span>
+                                                    </div>
+                                                    <span class="text-white/60 text-sm bg-white/10 px-2 py-1 rounded">
+                                                        Exp: ${c.expiration || 'N/A'}
+                                                    </span>
+                                                </div>
+                                                <h3 class="text-white font-semibold text-lg mb-1">Any Great Clips</h3>
+                                                <p class="text-white/60 text-sm mb-4">Valid at all participating US salons</p>
+                                                <a href="${c.url}" target="_blank" 
+                                                    class="block w-full bg-white text-purple-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-purple-50 transition-colors">
+                                                    Get your coupon now →
+                                                </a>
+                                            </div>
                                         </div>
                                         `;
                                     }).join('')}
