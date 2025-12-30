@@ -19,12 +19,20 @@
         const COUPON_DATA = [];
         const LAST_UPDATED = "{{LAST_UPDATED}}";
 
-        // Check if coupon is universal (works at any US location)
-        function isUniversal(coupon) {
-            const loc = (coupon.location_name || '').toUpperCase();
-            const state = (coupon.state || '').toUpperCase();
-            return state === 'US' || loc.includes('ALL') || loc.includes('US');
-        }
+// Check if coupon is universal (works at any US location)
+// Only true if: no specific location AND state is US, OR location explicitly says "All"
+function isUniversal(coupon) {
+    const loc = (coupon.location_name || '').trim();
+    const state = (coupon.state || '').toUpperCase();
+    
+    // If there's a specific location name (not empty, not just "Great Clips"), it's NOT universal
+    if (loc && loc.toUpperCase() !== 'GREAT CLIPS' && loc.toUpperCase() !== 'ALL US LOCATIONS' && !loc.toUpperCase().includes('ALL LOCATIONS')) {
+        return false;
+    }
+    
+    // It's universal if: state is US, or location says "All"
+    return state === 'US' || loc.toUpperCase().includes('ALL');
+}
 
         // Get price as number
         function getPrice(coupon) {
