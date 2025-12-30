@@ -225,14 +225,34 @@
             return 'bg-orange-500 text-white';
         }
 
-        // Render the app
-        function render() {
-            const app = document.getElementById('app');
+        // Debounce function - wait for user to stop typing
+        let searchTimeout;
+        function debounceSearch() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                renderResults();
+            }, 300);
+        }
+        
+        // Store filter values globally so we don't lose them on re-render
+        let currentFilters = {
+            search: '',
+            state: '',
+            maxPrice: '',
+            sortBy: 'price'
+        };
+
+        // Render just the results, not the whole page
+        function renderResults() {
+            currentFilters.search = document.getElementById('search')?.value || '';
+            currentFilters.state = document.getElementById('stateFilter')?.value || '';
+            currentFilters.maxPrice = document.getElementById('maxPrice')?.value || '';
+            currentFilters.sortBy = document.getElementById('sortBy')?.value || 'price';
             
-            const search = (document.getElementById('search')?.value || '').toLowerCase();
-            const stateFilter = document.getElementById('stateFilter')?.value || '';
-            const maxPrice = document.getElementById('maxPrice')?.value || '';
-            const sortBy = document.getElementById('sortBy')?.value || 'price';
+            const search = currentFilters.search.toLowerCase();
+            const stateFilter = currentFilters.state;
+            const maxPrice = currentFilters.maxPrice;
+            const sortBy = currentFilters.sortBy;
 
             // Separate universal and regular coupons
             const universalCoupons = COUPON_DATA.filter(c => isUniversal(c));
@@ -257,8 +277,83 @@
                 return 0;
             });
 
+            // Update results count
+            const resultsCount = document.getElementById('resultsCount');
+            if (resultsCount) {
+                resultsCount.innerHTML = `<span class="font-semibold text-slate-900">${filtered.length}</span> location-specific coupons${stateFilter ? ` in <span class="font-semibold text-purple-600">${stateFilter}</span>` : ''}`;
+            }
+
+            // Update grid
+            const resultsGrid = document.getElementById('resultsGrid');
+            if (resultsGrid) {
+                if (filtered.length > 0) {
+                    resultsGrid.innerHTML = filtered.map(c => {
+                        const price = getPrice(c);
+                        return `
+                        <div class="bg-white rounded-2xl shadow-md shadow-slate-200/50 overflow-hidden card-hover border border-slate-100">
+                            <div class="p-5">
+                                <div class="flex items-start justify-between mb-4">
+                                    <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-xl font-bold ${getPriceBadge(price)} shadow-sm">
+                                        ${c.price || 'N/A'}
+                                    </span>
+                                    <span class="text-slate-400 text-sm">
+                                        ${c.expiration || 'N/A'}
+                                    </span>
+                                </div>
+                                <h3 class="font-semibold text-slate-900 text-lg mb-1 line-clamp-2">${c.location_name || 'Great Clips'}</h3>
+                                <div class="text-slate-500 text-sm mb-4">
+                                    <p class="truncate">${c.address || ''}</p>
+                                    <p class="font-medium text-slate-600">${c.city || ''}${c.city && c.state ? ', ' : ''}${c.state || ''}</p>
+                                </div>
+                                <div class="flex gap-2">
+                                    <a href="${c.url}" target="_blank" 
+                                        class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200">
+                                        Get Coupon
+                                    </a>
+                                    <button onclick="navigator.clipboard.writeText('${c.url}'); this.textContent='✓'; setTimeout(() => this.textContent='📋', 2000)"
+                                        class="bg-slate-100 hover:bg-slate-200 text-slate-600 p-2.5 rounded-xl transition-colors"
+                                        title="Copy link">📋</button>
+                                </div>
+                            </div>
+                        </div>
+                        `;
+                    }).join('');
+                } else {
+                    resultsGrid.innerHTML = `
+                    <div class="col-span-full text-center py-16 bg-white rounded-2xl shadow-sm">
+                        <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <p class="text-xl text-slate-600 font-medium mb-2">No coupons found</p>
+                        <p class="text-slate-400 mb-4">Try adjusting your filters</p>
+                        <button onclick="document.getElementById('search').value=''; document.getElementById('stateFilter').value=''; document.getElementById('maxPrice').value=''; renderResults()"
+                            class="text-purple-600 hover:text-purple-700 font-semibold">
+                            Clear all filters →
+                        </button>
+                    </div>
+                    `;
+                }
+            }
+        }
+
+        // Render the app
+        function render() {
+            const app = document.getElementById('app');
+
+            // Separate universal and regular coupons
+            const universalCoupons = COUPON_DATA.filter(c => isUniversal(c));
+            const regularCoupons = COUPON_DATA.filter(c => !isUniversal(c));
+            
+            // Initial sort by price
+            regularCoupons.sort((a, b) => getPrice(a) - getPrice(b));
+
             // Get unique states
             const states = [...new Set(regularCoupons.map(c => c.state).filter(Boolean))].sort();
+            
+            // Initial filtered list
+            const filtered = regularCoupons;
 
             app.innerHTML = `
                 <!-- Header -->
@@ -355,28 +450,27 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                                 </svg>
                                 <input type="text" id="search" placeholder="Search city or location..."
-                                    value="${search}"
-                                    onkeyup="render()"
+                                    oninput="debounceSearch()"
                                     class="w-full pl-10 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all outline-none">
                             </div>
-                            <select id="stateFilter" onchange="render()"
+                            <select id="stateFilter" onchange="renderResults()"
                                 class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all outline-none appearance-none cursor-pointer">
                                 <option value="">All States</option>
-                                ${states.map(s => `<option value="${s}" ${stateFilter === s ? 'selected' : ''}>${s}</option>`).join('')}
+                                ${states.map(s => `<option value="${s}">${s}</option>`).join('')}
                             </select>
-                            <select id="maxPrice" onchange="render()"
+                            <select id="maxPrice" onchange="renderResults()"
                                 class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all outline-none appearance-none cursor-pointer">
                                 <option value="">Any Price</option>
-                                <option value="5" ${maxPrice === '5' ? 'selected' : ''}>Under $5</option>
-                                <option value="8" ${maxPrice === '8' ? 'selected' : ''}>Under $8</option>
-                                <option value="10" ${maxPrice === '10' ? 'selected' : ''}>Under $10</option>
-                                <option value="12" ${maxPrice === '12' ? 'selected' : ''}>Under $12</option>
+                                <option value="5">Under $5</option>
+                                <option value="8">Under $8</option>
+                                <option value="10">Under $10</option>
+                                <option value="12">Under $12</option>
                             </select>
-                            <select id="sortBy" onchange="render()"
+                            <select id="sortBy" onchange="renderResults()"
                                 class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all outline-none appearance-none cursor-pointer">
-                                <option value="price" ${sortBy === 'price' ? 'selected' : ''}>Price: Low to High</option>
-                                <option value="expiration" ${sortBy === 'expiration' ? 'selected' : ''}>Expiration Date</option>
-                                <option value="location" ${sortBy === 'location' ? 'selected' : ''}>Location Name</option>
+                                <option value="price">Price: Low to High</option>
+                                <option value="expiration">Expiration Date</option>
+                                <option value="location">Location Name</option>
                             </select>
                         </div>
                     </div>
@@ -385,14 +479,12 @@
                 <!-- Results -->
                 <section class="max-w-7xl mx-auto px-4 pb-12">
                     <div class="flex items-center justify-between mb-6">
-                        <p class="text-slate-600">
+                        <p id="resultsCount" class="text-slate-600">
                             <span class="font-semibold text-slate-900">${filtered.length}</span> location-specific coupons
-                            ${stateFilter ? ` in <span class="font-semibold text-purple-600">${stateFilter}</span>` : ''}
                         </p>
                     </div>
 
-                    ${filtered.length > 0 ? `
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                    <div id="resultsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                         ${filtered.map(c => {
                             const price = getPrice(c);
                             return `
@@ -416,34 +508,15 @@
                                             class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200">
                                             Get Coupon
                                         </a>
-                                        <button onclick="navigator.clipboard.writeText('${c.url}'); this.innerHTML='✓'; setTimeout(() => this.innerHTML='<svg class=\\'w-5 h-5\\' fill=\\'none\\' stroke=\\'currentColor\\' viewBox=\\'0 0 24 24\\'><path stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\' stroke-width=\\'2\\' d=\\'M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3\\'/></svg>', 2000)"
+                                        <button onclick="navigator.clipboard.writeText('${c.url}'); this.textContent='✓'; setTimeout(() => this.textContent='📋', 2000)"
                                             class="bg-slate-100 hover:bg-slate-200 text-slate-600 p-2.5 rounded-xl transition-colors"
-                                            title="Copy link">
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
-                                            </svg>
-                                        </button>
+                                            title="Copy link">📋</button>
                                     </div>
                                 </div>
                             </div>
                             `;
                         }).join('')}
                     </div>
-                    ` : `
-                    <div class="text-center py-16 bg-white rounded-2xl shadow-sm">
-                        <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                        </div>
-                        <p class="text-xl text-slate-600 font-medium mb-2">No coupons found</p>
-                        <p class="text-slate-400 mb-4">Try adjusting your filters</p>
-                        <button onclick="document.getElementById('search').value=''; document.getElementById('stateFilter').value=''; document.getElementById('maxPrice').value=''; render()"
-                            class="text-purple-600 hover:text-purple-700 font-semibold">
-                            Clear all filters →
-                        </button>
-                    </div>
-                    `}
                 </section>
 
                 <!-- Footer -->
