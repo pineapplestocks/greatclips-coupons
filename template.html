@@ -19,20 +19,28 @@
         const COUPON_DATA = [];
         const LAST_UPDATED = "{{LAST_UPDATED}}";
 
-// Check if coupon is universal (works at any US location)
-// Only true if: no specific location AND state is US, OR location explicitly says "All"
-function isUniversal(coupon) {
-    const loc = (coupon.location_name || '').trim();
-    const state = (coupon.state || '').toUpperCase();
-    
-    // If there's a specific location name (not empty, not just "Great Clips"), it's NOT universal
-    if (loc && loc.toUpperCase() !== 'GREAT CLIPS' && loc.toUpperCase() !== 'ALL US LOCATIONS' && !loc.toUpperCase().includes('ALL LOCATIONS')) {
-        return false;
-    }
-    
-    // It's universal if: state is US, or location says "All"
-    return state === 'US' || loc.toUpperCase().includes('ALL');
-}
+        // Check if coupon is universal (works at any US location)
+        // Universal if: state is US, OR no specific location/address/city (just "Great Clips" with no details)
+        function isUniversal(coupon) {
+            const loc = (coupon.location_name || '').trim();
+            const state = (coupon.state || '').toUpperCase();
+            const address = (coupon.address || '').trim();
+            const city = (coupon.city || '').trim();
+            
+            // Explicitly marked as US
+            if (state === 'US') return true;
+            
+            // Location says "All"
+            if (loc.toUpperCase().includes('ALL US') || loc.toUpperCase().includes('ALL LOCATIONS')) return true;
+            
+            // No location details at all = US-wide coupon
+            // (empty location name OR just "Great Clips") AND no address AND no city
+            if ((!loc || loc.toUpperCase() === 'GREAT CLIPS') && !address && !city) {
+                return true;
+            }
+            
+            return false;
+        }
 
         // Get price as number
         function getPrice(coupon) {
@@ -107,7 +115,7 @@ function isUniversal(coupon) {
                 ${universalCount > 0 ? `
                 <div class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-3">
                     <div class="max-w-7xl mx-auto px-4 text-center">
-                        <p class="font-medium">🇺🇸 <span class="font-bold">Universal coupons</span> work at ANY Great Clips in the US - shown first!</p>
+                        <p class="font-medium"><span class="font-bold">Universal coupons</span> work at ANY Great Clips in the US - shown first!</p>
                     </div>
                 </div>
                 ` : ''}
@@ -158,7 +166,7 @@ function isUniversal(coupon) {
                     <div class="mb-4 text-gray-600">
                         Showing <span class="font-semibold">${filtered.length}</span> coupons
                         ${stateFilter ? ` in <span class="font-semibold">${stateFilter}</span>` : ''}
-                        ${universalCount > 0 ? `<span class="text-blue-600 ml-2">(${universalCount} universal 🇺🇸)</span>` : ''}
+                        ${universalCount > 0 ? `<span class="text-blue-600 ml-2">(${universalCount} universal)</span>` : ''}
                     </div>
 
                     <!-- Coupon grid -->
@@ -167,9 +175,11 @@ function isUniversal(coupon) {
                         ${filtered.map(c => {
                             const u = isUniversal(c);
                             const price = getPrice(c);
+                            // For universal coupons, always show "Any US Great Clips" as title
+                            const title = u ? 'Any US Great Clips' : (c.location_name || 'Great Clips');
                             return `
                             <div class="rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden ${u ? 'bg-gradient-to-br from-blue-50 to-indigo-100 border-2 border-blue-400 ring-2 ring-blue-200' : 'bg-white border border-gray-100'}">
-                                ${u ? '<div class="bg-blue-600 text-white text-center py-2 font-semibold text-sm">🇺🇸 WORKS AT ANY US LOCATION 🇺🇸</div>' : ''}
+                                ${u ? '<div class="bg-blue-600 text-white text-center py-2 font-semibold text-sm">WORKS AT ANY US LOCATION</div>' : ''}
                                 <div class="p-6">
                                     <div class="flex justify-between items-start mb-4">
                                         <span class="inline-flex items-center px-3 py-1 rounded-full text-lg font-bold ${getPriceColor(price)}">
@@ -177,10 +187,10 @@ function isUniversal(coupon) {
                                         </span>
                                         <span class="text-sm text-gray-500">Exp: ${c.expiration || 'N/A'}</span>
                                     </div>
-                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">${c.location_name || 'Great Clips'}</h3>
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">${title}</h3>
                                     ${u ? `
                                         <div class="text-blue-700 mb-4">
-                                            <p class="text-sm font-medium">✓ Valid at all Great Clips locations in the US</p>
+                                            <p class="text-sm font-medium">✓ Valid at participating US Great Clips salons</p>
                                         </div>
                                     ` : `
                                         <div class="text-gray-600 mb-4">
