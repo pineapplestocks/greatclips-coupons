@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary SEO Meta Tags -->
-    <title>Great Clips Coupons 2025 - $5 Off Haircut Deals & Discounts</title>
+    <title>Great Clips Coupons 2025 - $3 Off Haircut Deals & Discounts</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -100,6 +100,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        html { scroll-behavior: smooth; }
         .glass {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
@@ -345,41 +346,67 @@
                 resultsCount.innerHTML = `<span class="font-semibold text-slate-900">${filtered.length}</span> location-specific coupons${stateFilter ? ` in <span class="font-semibold text-purple-600">${stateFilter}</span>` : ''}`;
             }
 
-            // Update grid
+            // Update grid - organized by state
             const resultsGrid = document.getElementById('resultsGrid');
             if (resultsGrid) {
                 if (filtered.length > 0) {
-                    resultsGrid.innerHTML = filtered.map(c => {
-                        const price = getPrice(c);
-                        return `
-                        <div class="bg-white rounded-2xl shadow-md shadow-slate-200/50 overflow-hidden card-hover border border-slate-100">
-                            <div class="p-5">
-                                <div class="flex items-start justify-between mb-4">
-                                    <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-xl font-bold ${getPriceBadge(price)} shadow-sm">
-                                        ${c.price || 'N/A'}
-                                    </span>
-                                    <span class="text-slate-400 text-sm">
-                                        ${getExpiration(c)}
-                                    </span>
-                                </div>
-                                <h3 class="font-semibold text-slate-900 text-lg mb-1 line-clamp-2">${c.location_name || 'Great Clips'}</h3>
-                                <div class="text-slate-500 text-sm mb-4">
-                                    <p class="truncate">${c.address || ''}</p>
-                                    <p class="font-medium text-slate-600">${c.city || ''}${c.city && c.state ? ', ' : ''}${c.state || ''}</p>
-                                </div>
-                                <div class="flex gap-2">
-                                    <a href="${c.url}" target="_blank" 
-                                        class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200">
-                                        Get Coupon
-                                    </a>
-                                    <button onclick="navigator.clipboard.writeText('${c.url}'); this.textContent='✓'; setTimeout(() => this.textContent='📋', 2000)"
-                                        class="bg-slate-100 hover:bg-slate-200 text-slate-600 p-2.5 rounded-xl transition-colors"
-                                        title="Copy link">📋</button>
-                                </div>
+                    // Group coupons by state
+                    const byState = {};
+                    filtered.forEach(c => {
+                        const state = c.state || 'Other';
+                        if (!byState[state]) byState[state] = [];
+                        byState[state].push(c);
+                    });
+                    
+                    // Sort states alphabetically
+                    const sortedStates = Object.keys(byState).sort((a, b) => {
+                        if (a === 'Other') return 1;
+                        if (b === 'Other') return -1;
+                        return a.localeCompare(b);
+                    });
+                    
+                    // Generate HTML for each state section
+                    resultsGrid.innerHTML = sortedStates.map(state => `
+                        <div class="mb-10" id="state-${state}">
+                            <div class="flex items-center gap-3 mb-4">
+                                <h2 class="text-2xl font-bold text-slate-900">${state}</h2>
+                                <span class="bg-purple-100 text-purple-700 text-sm font-medium px-3 py-1 rounded-full">${byState[state].length} coupon${byState[state].length > 1 ? 's' : ''}</span>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                                ${byState[state].map(c => {
+                                    const price = getPrice(c);
+                                    return `
+                                    <div class="bg-white rounded-2xl shadow-md shadow-slate-200/50 overflow-hidden card-hover border border-slate-100">
+                                        <div class="p-5">
+                                            <div class="flex items-start justify-between mb-4">
+                                                <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-xl font-bold ${getPriceBadge(price)} shadow-sm">
+                                                    ${c.price || 'N/A'}
+                                                </span>
+                                                <span class="text-slate-400 text-sm">
+                                                    ${getExpiration(c)}
+                                                </span>
+                                            </div>
+                                            <h3 class="font-semibold text-slate-900 text-lg mb-1 line-clamp-2">${c.location_name || 'Great Clips'}</h3>
+                                            <div class="text-slate-500 text-sm mb-4">
+                                                <p class="truncate">${c.address || ''}</p>
+                                                <p class="font-medium text-slate-600">${c.city || ''}${c.city && c.state ? ', ' : ''}${c.state || ''}</p>
+                                            </div>
+                                            <div class="flex gap-2">
+                                                <a href="${c.url}" target="_blank" 
+                                                    class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200">
+                                                    Get Coupon
+                                                </a>
+                                                <button onclick="navigator.clipboard.writeText('${c.url}'); this.textContent='✓'; setTimeout(() => this.textContent='📋', 2000)"
+                                                    class="bg-slate-100 hover:bg-slate-200 text-slate-600 p-2.5 rounded-xl transition-colors"
+                                                    title="Copy link">📋</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    `;
+                                }).join('')}
                             </div>
                         </div>
-                        `;
-                    }).join('');
+                    `).join('');
                 } else {
                     resultsGrid.innerHTML = `
                     <div class="col-span-full text-center py-16 bg-white rounded-2xl shadow-sm">
@@ -547,6 +574,23 @@
                     </div>
                 </section>
 
+                <!-- Quick State Navigation -->
+                <section class="max-w-7xl mx-auto px-4 mb-6">
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-100 p-4">
+                        <p class="text-sm text-slate-500 mb-3 font-medium">Jump to state:</p>
+                        <div class="flex flex-wrap gap-2" id="stateNav">
+                            ${(() => {
+                                const statesInData = [...new Set(regularCoupons.map(c => c.state).filter(Boolean))].sort();
+                                return statesInData.map(state => `
+                                    <a href="#state-${state}" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
+                                        ${state}
+                                    </a>
+                                `).join('');
+                            })()}
+                        </div>
+                    </div>
+                </section>
+
                 <!-- Results -->
                 <section class="max-w-7xl mx-auto px-4 pb-12">
                     <div class="flex items-center justify-between mb-6">
@@ -555,38 +599,67 @@
                         </p>
                     </div>
 
-                    <div id="resultsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-                        ${filtered.map(c => {
-                            const price = getPrice(c);
-                            return `
-                            <div class="bg-white rounded-2xl shadow-md shadow-slate-200/50 overflow-hidden card-hover border border-slate-100">
-                                <div class="p-5">
-                                    <div class="flex items-start justify-between mb-4">
-                                        <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-xl font-bold ${getPriceBadge(price)} shadow-sm">
-                                            ${c.price || 'N/A'}
-                                        </span>
-                                        <span class="text-slate-400 text-sm">
-                                            ${getExpiration(c)}
-                                        </span>
+                    <!-- Coupons organized by state -->
+                    <div id="resultsGrid">
+                        ${(() => {
+                            // Group coupons by state
+                            const byState = {};
+                            filtered.forEach(c => {
+                                const state = c.state || 'Other';
+                                if (!byState[state]) byState[state] = [];
+                                byState[state].push(c);
+                            });
+                            
+                            // Sort states alphabetically
+                            const sortedStates = Object.keys(byState).sort((a, b) => {
+                                if (a === 'Other') return 1;
+                                if (b === 'Other') return -1;
+                                return a.localeCompare(b);
+                            });
+                            
+                            // Generate HTML for each state section
+                            return sortedStates.map(state => `
+                                <div class="mb-10" id="state-${state}">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <h2 class="text-2xl font-bold text-slate-900">${state}</h2>
+                                        <span class="bg-purple-100 text-purple-700 text-sm font-medium px-3 py-1 rounded-full">${byState[state].length} coupon${byState[state].length > 1 ? 's' : ''}</span>
                                     </div>
-                                    <h3 class="font-semibold text-slate-900 text-lg mb-1 line-clamp-2">${c.location_name || 'Great Clips'}</h3>
-                                    <div class="text-slate-500 text-sm mb-4">
-                                        <p class="truncate">${c.address || ''}</p>
-                                        <p class="font-medium text-slate-600">${c.city || ''}${c.city && c.state ? ', ' : ''}${c.state || ''}</p>
-                                    </div>
-                                    <div class="flex gap-2">
-                                        <a href="${c.url}" target="_blank" 
-                                            class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200">
-                                            Get Coupon
-                                        </a>
-                                        <button onclick="navigator.clipboard.writeText('${c.url}'); this.textContent='✓'; setTimeout(() => this.textContent='📋', 2000)"
-                                            class="bg-slate-100 hover:bg-slate-200 text-slate-600 p-2.5 rounded-xl transition-colors"
-                                            title="Copy link">📋</button>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                                        ${byState[state].map(c => {
+                                            const price = getPrice(c);
+                                            return `
+                                            <div class="bg-white rounded-2xl shadow-md shadow-slate-200/50 overflow-hidden card-hover border border-slate-100">
+                                                <div class="p-5">
+                                                    <div class="flex items-start justify-between mb-4">
+                                                        <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-xl font-bold ${getPriceBadge(price)} shadow-sm">
+                                                            ${c.price || 'N/A'}
+                                                        </span>
+                                                        <span class="text-slate-400 text-sm">
+                                                            ${getExpiration(c)}
+                                                        </span>
+                                                    </div>
+                                                    <h3 class="font-semibold text-slate-900 text-lg mb-1 line-clamp-2">${c.location_name || 'Great Clips'}</h3>
+                                                    <div class="text-slate-500 text-sm mb-4">
+                                                        <p class="truncate">${c.address || ''}</p>
+                                                        <p class="font-medium text-slate-600">${c.city || ''}${c.city && c.state ? ', ' : ''}${c.state || ''}</p>
+                                                    </div>
+                                                    <div class="flex gap-2">
+                                                        <a href="${c.url}" target="_blank" 
+                                                            class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200">
+                                                            Get Coupon
+                                                        </a>
+                                                        <button onclick="navigator.clipboard.writeText('${c.url}'); this.textContent='✓'; setTimeout(() => this.textContent='📋', 2000)"
+                                                            class="bg-slate-100 hover:bg-slate-200 text-slate-600 p-2.5 rounded-xl transition-colors"
+                                                            title="Copy link">📋</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            `;
+                                        }).join('')}
                                     </div>
                                 </div>
-                            </div>
-                            `;
-                        }).join('')}
+                            `).join('');
+                        })()}
                     </div>
                 </section>
 
