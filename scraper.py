@@ -9,7 +9,7 @@ import re
 import json
 import time
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 
@@ -22,6 +22,117 @@ JSON_FILE = os.path.join(DATA_DIR, "coupons.json")
 # Settings
 MAX_SCROLLS = 30  # Number of scrolls on Facebook Ad Library
 IS_CI = os.environ.get('CI') == 'true'  # Running in GitHub Actions?
+
+
+def load_existing_coupons():
+    """Load existing coupons from JSON file"""
+    if os.path.exists(JSON_FILE):
+        try:
+            with open(JSON_FILE, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                return data.get('coupons', [])
+        except Exception as e:
+            print(f"   ⚠️ Could not load existing coupons: {e}")
+            return []
+    return []
+
+
+def is_expired(coupon):
+    """Check if a coupon has expired"""
+    exp_str = coupon.get('expiration', '')
+    if not exp_str or exp_str == 'N/A':
+        # If no expiration, check if it was added more than 30 days ago
+        added_date = coupon.get('added_date', '')
+        if added_date:
+            try:
+                added = datetime.strptime(added_date, '%Y-%m-%d')
+                if datetime.now() - added > timedelta(days=30):
+                    return True
+            except:
+                pass
+        return False
+    
+    try:
+        # Parse expiration date (format: MM/DD/YYYY)
+        exp_date = datetime.strptime(exp_str, '%m/%d/%Y')
+        return datetime.now() > exp_date
+    except:
+        return False
+
+
+def get_coupon_key(coupon):
+    """Generate a unique key for a coupon based on location + price"""
+    # Use URL as primary key since it's unique per offer
+    url = coupon.get('url', '')
+    if url:
+        # Extract the offer ID from URL (e.g., https://offers.greatclips.com/9hKYiQx -> 9hKYiQx)
+        match = re.search(r'offers\.greatclips\.com/([^/?]+)', url)
+        if match:
+            return f"offer_{match.group(1)}"
+    
+    # Fallback: use location + address + price as key
+    location = (coupon.get('location_name', '') or '').strip().lower()
+    address = (coupon.get('address', '') or '').strip().lower()
+    city = (coupon.get('city', '') or '').strip().lower()
+    state = (coupon.get('state', '') or '').strip().upper()
+    price = (coupon.get('price', '') or '').strip()
+    
+    if location and address:
+        return f"loc_{location}_{address}_{price}"
+    elif location and city:
+        return f"loc_{location}_{city}_{state}_{price}"
+    elif location:
+        return f"loc_{location}_{state}_{price}"
+    
+    # Last resort: use URL hash
+    return f"url_{hash(url)}"
+
+
+def merge_coupons(existing_coupons, new_coupons):
+    """Merge new coupons with existing ones, avoiding duplicates and removing expired"""
+    # Create a dict of existing coupons by key
+    coupon_dict = {}
+    today = datetime.now().strftime('%Y-%m-%d')
+    
+    expired_count = 0
+    kept_count = 0
+    
+    # Add existing coupons (that aren't expired)
+    for coupon in existing_coupons:
+        if is_expired(coupon):
+            expired_count += 1
+            continue
+        key = get_coupon_key(coupon)
+        coupon_dict[key] = coupon
+        kept_count += 1
+    
+    print(f"   📦 Loaded {kept_count} existing coupons ({expired_count} expired and removed)")
+    
+    # Add/update with new coupons
+    new_count = 0
+    updated_count = 0
+    
+    for coupon in new_coupons:
+        key = get_coupon_key(coupon)
+        if key not in coupon_dict:
+            # New coupon - add it with today's date
+            coupon['added_date'] = today
+            coupon['last_seen'] = today
+            coupon_dict[key] = coupon
+            new_count += 1
+            print(f"   ➕ New: {coupon.get('location_name', 'Unknown')[:30]} - {coupon.get('price', 'N/A')}")
+        else:
+            # Existing coupon - update expiration if we have one, update last_seen
+            existing = coupon_dict[key]
+            if coupon.get('expiration') and coupon.get('expiration') != 'N/A':
+                existing['expiration'] = coupon.get('expiration')
+            existing['last_seen'] = today
+            updated_count += 1
+    
+    print(f"   ➕ Added {new_count} new coupons")
+    print(f"   🔄 Updated {updated_count} existing coupons")
+    
+    return list(coupon_dict.values())
 
 
 def scrape_facebook_ad_library():
@@ -249,12 +360,18 @@ def fetch_offer_details(offer_urls):
     return coupons
 
 
-def save_results(coupons):
-    """Save results to JSON"""
+def save_results(new_coupons):
+    """Merge new coupons with existing ones and save to JSON"""
     print()
     print("💾 Saving results...")
     
     os.makedirs(DATA_DIR, exist_ok=True)
+    
+    # Load existing coupons
+    existing_coupons = load_existing_coupons()
+    
+    # Merge new coupons with existing (removes expired, avoids duplicates)
+    coupons = merge_coupons(existing_coupons, new_coupons)
     
     # Sort by price
     def get_price(c):
@@ -282,7 +399,7 @@ def save_results(coupons):
     prices = [get_price(c) for c in coupons if get_price(c) < 999]
     
     print()
-    print("📊 Stats:")
+    print("📊 Final Stats:")
     print(f"   Total coupons: {len(coupons)}")
     print(f"   With location: {with_location}")
     print(f"   US-wide: {us_wide}")
@@ -298,14 +415,16 @@ def main():
     offer_urls = extract_offer_urls(html_content)
     
     if not offer_urls:
-        print("❌ No offer URLs found!")
-        return
-    
-    # Step 3: Fetch details from each offer page
-    coupons = fetch_offer_details(offer_urls)
-    
-    # Step 4: Save results
-    save_results(coupons)
+        print("⚠️ No new offer URLs found in Facebook Ad Library")
+        print("   Will keep existing coupons that haven't expired...")
+        # Still run save_results with empty list to clean up expired coupons
+        save_results([])
+    else:
+        # Step 3: Fetch details from each offer page
+        coupons = fetch_offer_details(offer_urls)
+        
+        # Step 4: Save results (merges with existing)
+        save_results(coupons)
     
     print()
     print("✅ Done!")
