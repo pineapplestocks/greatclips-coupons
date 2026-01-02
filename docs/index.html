@@ -1746,7 +1746,7 @@
                 "manual_add": true
         }
 ];
-        const LAST_UPDATED = "2026-01-02T21:35:50.069887";
+        const LAST_UPDATED = "2026-01-02T22:32:13.560023";
 
         // Format date like "December 31st, 2026"
         function formatDate(dateStr) {
@@ -1785,6 +1785,20 @@
             const day = futureDate.getDate().toString().padStart(2, '0');
             const year = futureDate.getFullYear();
             return `${month}/${day}/${year}`;
+        }
+        
+        // Format city, state - removes trailing commas from city
+        function formatCityState(coupon) {
+            const city = (coupon.city || '').replace(/,+$/, '').trim();
+            const state = (coupon.state || '').trim();
+            if (city && state) {
+                return `${city}, ${state}`;
+            } else if (city) {
+                return city;
+            } else if (state) {
+                return state;
+            }
+            return '';
         }
         
         // Share coupon function - shares link to this website
@@ -1960,7 +1974,7 @@
                                             <h3 class="font-semibold text-slate-900 text-lg mb-1 line-clamp-2">${c.location_name || 'Great Clips'}</h3>
                                             <div class="text-slate-500 text-sm mb-4">
                                                 <p class="truncate">${c.address || ''}</p>
-                                                <p class="font-medium text-slate-600">${c.city || ''}${c.city && c.state ? ', ' : ''}${c.state || ''}</p>
+                                                <p class="font-medium text-slate-600">${formatCityState(c)}</p>
                                             </div>
                                             <div class="flex gap-2">
                                                 <a href="${c.url}" target="_blank" 
@@ -2212,7 +2226,7 @@
                                                     <h3 class="font-semibold text-slate-900 text-lg mb-1 line-clamp-2">${c.location_name || 'Great Clips'}</h3>
                                                     <div class="text-slate-500 text-sm mb-4">
                                                         <p class="truncate">${c.address || ''}</p>
-                                                        <p class="font-medium text-slate-600">${c.city || ''}${c.city && c.state ? ', ' : ''}${c.state || ''}</p>
+                                                        <p class="font-medium text-slate-600">${formatCityState(c)}</p>
                                                     </div>
                                                     <div class="flex gap-2">
                                                         <a href="${c.url}" target="_blank" 
