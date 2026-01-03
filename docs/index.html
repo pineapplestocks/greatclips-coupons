@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-90ZQ7M4EFR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-90ZQ7M4EFR');
+    </script>
+    
     <!-- Primary SEO Meta Tags -->
     <title>Great Clips Coupons 2026 - $5 Off Haircut Deals & Discounts</title>
     
@@ -13,6 +22,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <meta name="theme-color" content="#667eea">
+    
+    <!-- PWA / App Support -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="GC Coupons">
+    <link rel="apple-touch-startup-image" href="/icon-512.png">
     
     <meta name="description" content="Find working Great Clips coupons for January 2026. Save $3-$10 on haircuts with our daily updated coupon codes. Valid at 4,400+ US salon locations.">
     <meta name="keywords" content="Great Clips coupons, Great Clips coupon, haircut coupons, Great Clips discount, Great Clips promo code, cheap haircuts, $5 haircut, Great Clips deals, Great Clips coupon code 2026">
@@ -1760,7 +1777,7 @@
                 "manual_add": true
         }
 ];
-        const LAST_UPDATED = "2026-01-03T08:41:09.657511";
+        const LAST_UPDATED = "2026-01-03T15:39:01.245827";
 
         // Format date like "December 31st, 2026"
         function formatDate(dateStr) {
@@ -2318,6 +2335,13 @@
 
         // Initial render
         render();
+        
+        // Register Service Worker for PWA
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(reg => console.log('Service Worker registered'))
+                .catch(err => console.log('Service Worker not registered', err));
+        }
     </script>
 </body>
 </html>
