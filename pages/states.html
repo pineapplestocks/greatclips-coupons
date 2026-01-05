@@ -151,14 +151,28 @@
             'Virginia': 'VA', 'Washington': 'WA', 'West Virginia': 'WV', 'Wisconsin': 'WI', 'Wyoming': 'WY'
         };
         
+        // States with dedicated pages
+        const statesWithPages = {
+            'Texas': '/texas', 'California': '/california', 'Florida': '/florida',
+            'Ohio': '/ohio', 'Michigan': '/michigan', 'Pennsylvania': '/pennsylvania',
+            'Illinois': '/illinois', 'Georgia': '/georgia', 'North Carolina': '/north-carolina',
+            'Arizona': '/arizona', 'Minnesota': '/minnesota', 'Indiana': '/indiana',
+            'Wisconsin': '/wisconsin', 'Colorado': '/colorado', 'Tennessee': '/tennessee',
+            'Virginia': '/virginia', 'Washington': '/washington', 'New York': '/new-york'
+        };
+        
         const container = document.getElementById('statesList');
         states.forEach(state => {
             const abbr = stateAbbreviations[state];
+            const hasPage = statesWithPages[state];
+            const href = hasPage || `/?state=${abbr}`;
+            const highlight = hasPage ? 'bg-purple-50 border-purple-200' : 'bg-slate-50 border-slate-200';
             container.innerHTML += `
-                <a href="/?state=${abbr}" 
-                   class="block bg-slate-50 hover:bg-purple-50 border border-slate-200 hover:border-purple-300 rounded-xl p-3 text-center transition-all">
+                <a href="${href}" 
+                   class="block ${highlight} hover:bg-purple-100 border hover:border-purple-300 rounded-xl p-3 text-center transition-all">
                     <span class="font-semibold text-slate-900">${abbr}</span>
                     <span class="block text-sm text-slate-500">${state}</span>
+                    ${hasPage ? '<span class="block text-xs text-purple-600 mt-1">View Page</span>' : ''}
                 </a>
             `;
         });
