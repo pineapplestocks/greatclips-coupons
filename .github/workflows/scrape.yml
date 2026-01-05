@@ -1,18 +1,10 @@
 name: Scrape Great Clips Coupons
 
 on:
-  # Run automatically every night at 1 AM Phoenix/Arizona time (8 AM UTC)
   schedule:
-    - cron: '0 8 * * *'
-  
-  # Also allow manual trigger
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
   workflow_dispatch:
-
-# Set permissions to allow pushing to repo and deploying to Pages
-permissions:
-  contents: write
-  pages: write
-  id-token: write
 
 jobs:
   scrape:
@@ -21,82 +13,46 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      
+
       - name: Install dependencies
         run: |
-          pip install playwright beautifulsoup4
+          pip install playwright requests --break-system-packages
           playwright install chromium
-          playwright install-deps chromium
-      
+          playwright install-deps
+
       - name: Run scraper
         run: python scraper.py
-        env:
-          CI: true
-      
+
       - name: Generate website
-        run: |
-          python generate_website.py
-          # Copy all pages to docs folder with clean URLs
-          mkdir -p docs/5-99-coupon docs/6-99-coupon docs/coupon-codes docs/printable-coupons
-          mkdir -p docs/january-2026 docs/prices docs/how-to-use docs/states docs/blog/coupon-hacks
-          mkdir -p docs/senior-discount docs/texas docs/california docs/florida
-          
-          # Core pages
-          cp pages/states.html docs/states/index.html 2>/dev/null || true
-          cp pages/prices.html docs/prices/index.html 2>/dev/null || true
-          cp pages/how-to-use.html docs/how-to-use/index.html 2>/dev/null || true
-          cp pages/senior-discount.html docs/senior-discount/index.html 2>/dev/null || true
-          
-          # High-value keyword pages
-          cp pages/5-99-coupon.html docs/5-99-coupon/index.html 2>/dev/null || true
-          cp pages/6-99-coupon.html docs/6-99-coupon/index.html 2>/dev/null || true
-          cp pages/coupon-codes.html docs/coupon-codes/index.html 2>/dev/null || true
-          cp pages/printable-coupons.html docs/printable-coupons/index.html 2>/dev/null || true
-          cp pages/january-2026.html docs/january-2026/index.html 2>/dev/null || true
-          
-          # State pages
-          cp pages/texas.html docs/texas/index.html 2>/dev/null || true
-          cp pages/california.html docs/california/index.html 2>/dev/null || true
-          cp pages/florida.html docs/florida/index.html 2>/dev/null || true
-          
-          # Blog
-          cp pages/blog/index.html docs/blog/index.html 2>/dev/null || true
-          cp pages/blog/coupon-hacks.html docs/blog/coupon-hacks/index.html 2>/dev/null || true
-      
-      - name: Commit updated data
+        run: python generate_website.py
+
+      - name: Commit and push if changed
+        id: commit
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git stash --include-untracked || true
-          git pull --rebase origin main || true
-          git stash pop || true
           git add -A
-          git diff --staged --quiet || git commit -m "Update coupons $(date +'%Y-%m-%d %H:%M')"
-          git push origin main || git push origin main --force-with-lease
+          if git diff --staged --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes to commit"
+          else
+            git commit -m "🔄 Update coupons $(date +'%Y-%m-%d %H:%M')"
+            git push
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
 
-  deploy:
-    needs: scrape
-    runs-on: ubuntu-latest
-    
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          ref: main  # Get the latest commit with updated data
-      
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './docs'
-      
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      # Ping Google Indexing API when content changes
+      - name: Notify Google of update
+        if: steps.commit.outputs.changed == 'true' && env.GOOGLE_INDEXING_CREDENTIALS != ''
+        env:
+          GOOGLE_INDEXING_CREDENTIALS: ${{ secrets.GOOGLE_INDEXING_CREDENTIALS }}
+        run: |
+          pip install google-auth google-api-python-client --break-system-packages
+          python google_indexing.py --homepage
