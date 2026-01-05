@@ -2178,7 +2178,7 @@
                 "manual_add": true
         }
 ];
-        const LAST_UPDATED = "2026-01-05T21:10:29.420635";
+        const LAST_UPDATED = "2026-01-05T22:03:24.547692";
 
         // Format date like "December 31st, 2026"
         function formatDate(dateStr) {
@@ -2272,6 +2272,14 @@
                 toast.style.transition = 'opacity 0.3s';
                 setTimeout(() => toast.remove(), 300);
             }, 2500);
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            if (menu) {
+                menu.classList.toggle('hidden');
+            }
         }
 
         // Check if coupon is universal (works at any US location)
@@ -2462,6 +2470,42 @@
             const filtered = regularCoupons;
 
             app.innerHTML = `
+                <!-- Navigation -->
+                <nav class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50 border-b border-slate-100">
+                    <div class="max-w-7xl mx-auto px-4">
+                        <div class="flex justify-between items-center h-14">
+                            <a href="/" class="flex items-center gap-2">
+                                <span class="text-2xl">✂️</span>
+                                <span class="font-bold text-lg text-purple-600 hidden sm:inline">GreatClipsDeal</span>
+                            </a>
+                            <div class="hidden md:flex items-center gap-6 text-sm">
+                                <a href="/states" class="text-slate-600 hover:text-purple-600 font-medium transition-colors">Browse by State</a>
+                                <a href="/calculator" class="text-slate-600 hover:text-purple-600 font-medium transition-colors">Savings Calculator</a>
+                                <a href="/how-to-use" class="text-slate-600 hover:text-purple-600 font-medium transition-colors">How to Use</a>
+                                <a href="/blog" class="text-slate-600 hover:text-purple-600 font-medium transition-colors">Blog</a>
+                                <a href="/faq" class="text-slate-600 hover:text-purple-600 font-medium transition-colors">FAQ</a>
+                            </div>
+                            <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden text-slate-600 p-2">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-slate-100 pt-3">
+                            <div class="flex flex-col gap-3">
+                                <a href="/states" class="text-slate-600 hover:text-purple-600 font-medium py-1">Browse by State</a>
+                                <a href="/calculator" class="text-slate-600 hover:text-purple-600 font-medium py-1">Savings Calculator</a>
+                                <a href="/how-to-use" class="text-slate-600 hover:text-purple-600 font-medium py-1">How to Use</a>
+                                <a href="/blog" class="text-slate-600 hover:text-purple-600 font-medium py-1">Blog</a>
+                                <a href="/faq" class="text-slate-600 hover:text-purple-600 font-medium py-1">FAQ</a>
+                                <a href="/about" class="text-slate-600 hover:text-purple-600 font-medium py-1">About</a>
+                                <a href="/contact" class="text-slate-600 hover:text-purple-600 font-medium py-1">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
                 <!-- Header -->
                 <header class="relative overflow-hidden">
                     <div class="absolute inset-0 gradient-bg opacity-95"></div>
@@ -2681,17 +2725,51 @@
                 </section>
 
                 <!-- Footer -->
-                <footer class="bg-slate-900 text-slate-400 py-10">
+                <footer class="bg-slate-900 text-slate-400 py-12">
                     <div class="max-w-7xl mx-auto px-4">
-                        <!-- Navigation Links -->
-                        <div class="flex flex-wrap justify-center gap-6 mb-8">
-                            <a href="/states" class="text-purple-400 hover:text-purple-300 font-medium transition-colors">Coupons by State</a>
-                            <a href="/prices" class="text-purple-400 hover:text-purple-300 font-medium transition-colors">Great Clips Prices</a>
-                            <a href="/how-to-use" class="text-purple-400 hover:text-purple-300 font-medium transition-colors">How to Use Coupons</a>
+                        <!-- Footer Navigation Grid -->
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+                            <div>
+                                <h3 class="text-white font-bold mb-4">Popular Coupons</h3>
+                                <ul class="space-y-2 text-sm">
+                                    <li><a href="/5-99-coupon" class="hover:text-purple-400 transition-colors">$5.99 Coupons</a></li>
+                                    <li><a href="/6-99-coupon" class="hover:text-purple-400 transition-colors">$6.99 Coupons</a></li>
+                                    <li><a href="/printable-coupons" class="hover:text-purple-400 transition-colors">Printable Coupons</a></li>
+                                    <li><a href="/senior-discount" class="hover:text-purple-400 transition-colors">Senior Discounts</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold mb-4">Browse by State</h3>
+                                <ul class="space-y-2 text-sm">
+                                    <li><a href="/california" class="hover:text-purple-400 transition-colors">California</a></li>
+                                    <li><a href="/texas" class="hover:text-purple-400 transition-colors">Texas</a></li>
+                                    <li><a href="/florida" class="hover:text-purple-400 transition-colors">Florida</a></li>
+                                    <li><a href="/states" class="text-purple-400 hover:text-purple-300 font-medium transition-colors">All 50 States →</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold mb-4">Resources</h3>
+                                <ul class="space-y-2 text-sm">
+                                    <li><a href="/how-to-use" class="hover:text-purple-400 transition-colors">How to Use Coupons</a></li>
+                                    <li><a href="/prices" class="hover:text-purple-400 transition-colors">Great Clips Prices</a></li>
+                                    <li><a href="/calculator" class="hover:text-purple-400 transition-colors">Savings Calculator</a></li>
+                                    <li><a href="/faq" class="hover:text-purple-400 transition-colors">FAQ</a></li>
+                                    <li><a href="/blog" class="hover:text-purple-400 transition-colors">Blog</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-bold mb-4">Company</h3>
+                                <ul class="space-y-2 text-sm">
+                                    <li><a href="/about" class="hover:text-purple-400 transition-colors">About Us</a></li>
+                                    <li><a href="/contact" class="hover:text-purple-400 transition-colors">Contact</a></li>
+                                    <li><a href="/privacy" class="hover:text-purple-400 transition-colors">Privacy Policy</a></li>
+                                    <li><a href="/terms" class="hover:text-purple-400 transition-colors">Terms of Service</a></li>
+                                </ul>
+                            </div>
                         </div>
                         
                         <!-- SEO Content Section -->
-                        <div class="mb-10 text-left max-w-4xl mx-auto">
+                        <div class="mb-10 text-left max-w-4xl mx-auto border-t border-slate-800 pt-10">
                             <h2 class="text-xl font-bold text-white mb-4">About Great Clips Coupons</h2>
                             <p class="mb-4 text-slate-300">
                                 Looking for <strong class="text-white">Great Clips coupons</strong>? You're in the right place! We update this page daily with the latest 
@@ -2708,7 +2786,7 @@
                             <div class="space-y-4 text-sm">
                                 <div>
                                     <h4 class="font-medium text-white">How do I use a Great Clips coupon?</h4>
-                                    <p class="text-slate-400">Click "Get Coupon" to open the offer page. Show it to the stylist before your haircut, either on your phone or printed.</p>
+                                    <p class="text-slate-400">Click "Get Coupon" to open the offer page. Show it to the stylist before your haircut, either on your phone or printed. <a href="/how-to-use" class="text-purple-400 hover:underline">See full guide</a>.</p>
                                 </div>
                                 <div>
                                     <h4 class="font-medium text-white">Are these Great Clips coupons legitimate?</h4>
@@ -2723,11 +2801,12 @@
                                     <p class="text-slate-400">No, Great Clips coupons are limited to one per customer per visit. Choose the best deal for your location.</p>
                                 </div>
                             </div>
+                            <p class="mt-4"><a href="/faq" class="text-purple-400 hover:text-purple-300 font-medium">View all FAQs →</a></p>
                         </div>
                         
                         <div class="border-t border-slate-800 pt-6 text-center">
                             <p class="mb-2">Coupons sourced from public Facebook ads • Updated daily</p>
-                            <p class="text-sm text-slate-500">Not affiliated with Great Clips. Verify coupons at salon.</p>
+                            <p class="text-sm text-slate-500">© 2024-2026 GreatClipsDeal.com. Not affiliated with Great Clips Inc.</p>
                         </div>
                     </div>
                 </footer>
@@ -2781,7 +2860,7 @@
             
             // Send to Formspree (free email collection service)
             // REPLACE with your Formspree endpoint!
-            fetch('https://formspree.io/f/YOUR_FORM_ID', {
+            fetch('https://formspree.io/f/xrebvqjy', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
