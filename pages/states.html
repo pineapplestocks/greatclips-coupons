@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-90ZQ7M4EFR"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -13,168 +12,467 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Great Clips Coupons by State - Find Deals in Your Area | 2026</title>
-    <meta name="description" content="Find Great Clips coupons in your state. Browse haircut deals and discounts by location across all 50 US states. Updated daily with the latest offers.">
-    <meta name="keywords" content="Great Clips coupons by state, Great Clips near me, Great Clips locations, haircut coupons by state">
+    <title>Great Clips Coupons by State - All 50 States (January 2026)</title>
+    <meta name="description" content="Find Great Clips coupons in your state. Browse haircut coupons for all 50 US states. Get $5.99, $6.99, $7.99 deals at Great Clips near you.">
+    <meta name="keywords" content="Great Clips coupons by state, Great Clips near me, Great Clips locations, state haircut coupons">
     <link rel="canonical" href="https://greatclipsdeal.com/states">
     
-    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-    <meta name="theme-color" content="#667eea">
-    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <style>
-        * { font-family: 'Plus Jakarta Sans', sans-serif; }
         .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .state-card { transition: transform 0.2s, box-shadow 0.2s; }
+        .state-card:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
     </style>
-
-    <!-- Schema: ItemList -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Great Clips Coupons by State",
-        "description": "Find Great Clips coupons organized by US state. Select your state to see local deals.",
-        "numberOfItems": 50,
-        "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Texas", "url": "https://greatclipsdeal.com/texas"},
-            {"@type": "ListItem", "position": 2, "name": "California", "url": "https://greatclipsdeal.com/california"},
-            {"@type": "ListItem", "position": 3, "name": "Florida", "url": "https://greatclipsdeal.com/florida"},
-            {"@type": "ListItem", "position": 4, "name": "New York", "url": "https://greatclipsdeal.com/new-york"},
-            {"@type": "ListItem", "position": 5, "name": "Ohio", "url": "https://greatclipsdeal.com/ohio"}
-        ]
-    }
-    </script>
-    
-    <!-- Schema: BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://greatclipsdeal.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "States",
-                "item": "https://greatclipsdeal.com/states"
-            }
-        ]
-    }
-    </script>
-
 </head>
 <body class="bg-slate-50 min-h-screen">
-    <!-- Header -->
     <header class="gradient-bg text-white py-12">
-        <div class="max-w-6xl mx-auto px-4">
-            <nav class="mb-8">
-                <a href="/" class="text-white/80 hover:text-white transition-colors">← Back to All Coupons</a>
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <nav class="mb-6">
+                <a href="/" class="text-white/80 hover:text-white">← Back to Coupons</a>
             </nav>
             <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Great Clips Coupons by State</h1>
-            <p class="text-xl text-white/80">Find haircut deals and discounts in your area</p>
+            <p class="text-xl text-white/80">Find haircut deals in all 50 states</p>
         </div>
     </header>
 
-    <!-- Content -->
-    <main class="max-w-6xl mx-auto px-4 py-12">
-        <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
-            <h2 class="text-2xl font-bold text-slate-900 mb-6">Browse Coupons by State</h2>
-            <p class="text-slate-600 mb-8">Great Clips has over 4,400 salon locations across the United States. Select your state below to find coupons valid at Great Clips salons near you.</p>
-            
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3" id="statesList">
-                <!-- States will be populated by JS -->
-            </div>
+    <main class="max-w-5xl mx-auto px-4 py-12">
+        
+        <!-- Search -->
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8">
+            <input type="text" id="stateSearch" placeholder="Search for your state..." 
+                class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-lg">
         </div>
 
-        <!-- SEO Content -->
-        <div class="bg-white rounded-2xl shadow-lg p-8">
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">About Great Clips Locations</h2>
-            <div class="prose prose-slate max-w-none">
-                <p>Great Clips is the world's largest salon brand with over 4,400 franchised salons across the United States and Canada. Each location offers quality haircuts at affordable prices, and many locations have exclusive coupons and promotions.</p>
-                
-                <h3 class="text-xl font-semibold mt-6 mb-3">How to Find Great Clips Coupons in Your State</h3>
-                <p>Our website automatically collects and updates Great Clips coupons daily. Many coupons are location-specific, meaning they're only valid at certain Great Clips salons. By browsing coupons by state, you can find deals that work at salons near you.</p>
-                
-                <h3 class="text-xl font-semibold mt-6 mb-3">Universal vs. Location-Specific Coupons</h3>
-                <p>Some Great Clips coupons work at any US location - we feature these prominently on our homepage. Other coupons are only valid at specific salons or regions. Check the coupon details to make sure it's valid at your preferred location.</p>
-                
-                <h3 class="text-xl font-semibold mt-6 mb-3">States with the Most Great Clips Locations</h3>
-                <p>The states with the highest concentration of Great Clips salons include Texas, California, Florida, Ohio, and Illinois. These states often have the most coupon availability due to the number of franchisees running promotions.</p>
-            </div>
+        <!-- All States Grid -->
+        <div id="statesGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            
+            <a href="/alabama" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🏈</span>
+                <div>
+                    <div class="font-bold text-slate-900">Alabama</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/alaska" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🏔️</span>
+                <div>
+                    <div class="font-bold text-slate-900">Alaska</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/arizona" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🌵</span>
+                <div>
+                    <div class="font-bold text-slate-900">Arizona</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/arkansas" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">💎</span>
+                <div>
+                    <div class="font-bold text-slate-900">Arkansas</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/california" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🌴</span>
+                <div>
+                    <div class="font-bold text-slate-900">California</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/colorado" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">⛷️</span>
+                <div>
+                    <div class="font-bold text-slate-900">Colorado</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/connecticut" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🍂</span>
+                <div>
+                    <div class="font-bold text-slate-900">Connecticut</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/delaware" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🏛️</span>
+                <div>
+                    <div class="font-bold text-slate-900">Delaware</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/florida" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🌴</span>
+                <div>
+                    <div class="font-bold text-slate-900">Florida</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/georgia" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🍑</span>
+                <div>
+                    <div class="font-bold text-slate-900">Georgia</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/hawaii" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🌺</span>
+                <div>
+                    <div class="font-bold text-slate-900">Hawaii</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/idaho" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🥔</span>
+                <div>
+                    <div class="font-bold text-slate-900">Idaho</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/illinois" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🌆</span>
+                <div>
+                    <div class="font-bold text-slate-900">Illinois</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/indiana" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🏎️</span>
+                <div>
+                    <div class="font-bold text-slate-900">Indiana</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/iowa" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🌽</span>
+                <div>
+                    <div class="font-bold text-slate-900">Iowa</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/kansas" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🌻</span>
+                <div>
+                    <div class="font-bold text-slate-900">Kansas</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/kentucky" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🐎</span>
+                <div>
+                    <div class="font-bold text-slate-900">Kentucky</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/louisiana" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">⚜️</span>
+                <div>
+                    <div class="font-bold text-slate-900">Louisiana</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/maine" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🦞</span>
+                <div>
+                    <div class="font-bold text-slate-900">Maine</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/maryland" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🦀</span>
+                <div>
+                    <div class="font-bold text-slate-900">Maryland</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/massachusetts" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🏛️</span>
+                <div>
+                    <div class="font-bold text-slate-900">Massachusetts</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/michigan" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🚗</span>
+                <div>
+                    <div class="font-bold text-slate-900">Michigan</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/minnesota" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">❄️</span>
+                <div>
+                    <div class="font-bold text-slate-900">Minnesota</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/mississippi" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🎸</span>
+                <div>
+                    <div class="font-bold text-slate-900">Mississippi</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/missouri" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🏛️</span>
+                <div>
+                    <div class="font-bold text-slate-900">Missouri</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/montana" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🦌</span>
+                <div>
+                    <div class="font-bold text-slate-900">Montana</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/nebraska" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🌾</span>
+                <div>
+                    <div class="font-bold text-slate-900">Nebraska</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/nevada" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🎰</span>
+                <div>
+                    <div class="font-bold text-slate-900">Nevada</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/new-hampshire" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🍁</span>
+                <div>
+                    <div class="font-bold text-slate-900">New Hampshire</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/new-jersey" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🏖️</span>
+                <div>
+                    <div class="font-bold text-slate-900">New Jersey</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/new-mexico" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🌶️</span>
+                <div>
+                    <div class="font-bold text-slate-900">New Mexico</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/new-york" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🗽</span>
+                <div>
+                    <div class="font-bold text-slate-900">New York</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/north-carolina" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🏀</span>
+                <div>
+                    <div class="font-bold text-slate-900">North Carolina</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/north-dakota" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🦬</span>
+                <div>
+                    <div class="font-bold text-slate-900">North Dakota</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/ohio" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🏈</span>
+                <div>
+                    <div class="font-bold text-slate-900">Ohio</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/oklahoma" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🤠</span>
+                <div>
+                    <div class="font-bold text-slate-900">Oklahoma</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/oregon" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🌲</span>
+                <div>
+                    <div class="font-bold text-slate-900">Oregon</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/pennsylvania" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🔔</span>
+                <div>
+                    <div class="font-bold text-slate-900">Pennsylvania</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/rhode-island" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">⛵</span>
+                <div>
+                    <div class="font-bold text-slate-900">Rhode Island</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/south-carolina" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🌙</span>
+                <div>
+                    <div class="font-bold text-slate-900">South Carolina</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/south-dakota" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🗻</span>
+                <div>
+                    <div class="font-bold text-slate-900">South Dakota</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/tennessee" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🎸</span>
+                <div>
+                    <div class="font-bold text-slate-900">Tennessee</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/texas" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🤠</span>
+                <div>
+                    <div class="font-bold text-slate-900">Texas</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/utah" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🏜️</span>
+                <div>
+                    <div class="font-bold text-slate-900">Utah</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/vermont" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🍁</span>
+                <div>
+                    <div class="font-bold text-slate-900">Vermont</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/virginia" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🏛️</span>
+                <div>
+                    <div class="font-bold text-slate-900">Virginia</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/washington" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">☕</span>
+                <div>
+                    <div class="font-bold text-slate-900">Washington</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/west-virginia" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">⛰️</span>
+                <div>
+                    <div class="font-bold text-slate-900">West Virginia</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/wisconsin" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🧀</span>
+                <div>
+                    <div class="font-bold text-slate-900">Wisconsin</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
+            <a href="/wyoming" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
+                <span class="text-2xl">🦬</span>
+                <div>
+                    <div class="font-bold text-slate-900">Wyoming</div>
+                    <div class="text-xs text-green-600">Coupons Available</div>
+                </div>
+            </a>
+            
         </div>
+
+        <!-- CTA -->
+        <div class="mt-12 bg-gradient-to-r from-purple-600 to-violet-600 rounded-2xl p-8 text-white text-center">
+            <h2 class="text-2xl font-bold mb-4">Can't Find Your State?</h2>
+            <p class="text-white/90 mb-6">Many coupons work nationwide! Check our main page for all available deals.</p>
+            <a href="/" class="inline-block bg-white text-purple-600 font-bold py-3 px-8 rounded-xl hover:bg-purple-50 transition-all">
+                Browse All Coupons →
+            </a>
+        </div>
+
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-10 mt-12">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <p class="mb-2">Coupons sourced from public Facebook ads • Updated daily</p>
-            <p class="text-sm text-slate-500">Not affiliated with Great Clips. Verify coupons at salon.</p>
-            <div class="mt-4">
-                <a href="/" class="text-purple-400 hover:text-purple-300 mx-2">Home</a>
-                <a href="/states" class="text-purple-400 hover:text-purple-300 mx-2">By State</a>
-                <a href="/how-to-use" class="text-purple-400 hover:text-purple-300 mx-2">How to Use</a>
-            </div>
+    <footer class="bg-slate-900 text-white py-8 mt-12">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <p class="text-slate-400">© 2024-2026 GreatClipsDeal.com. Not affiliated with Great Clips Inc.</p>
         </div>
     </footer>
 
     <script>
-        const states = [
-            'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 
-            'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 
-            'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 
-            'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 
-            'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 
-            'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 
-            'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 
-            'Wisconsin', 'Wyoming'
-        ];
-        
-        const stateAbbreviations = {
-            'Alabama': 'AL', 'Alaska': 'AK', 'Arizona': 'AZ', 'Arkansas': 'AR', 'California': 'CA',
-            'Colorado': 'CO', 'Connecticut': 'CT', 'Delaware': 'DE', 'Florida': 'FL', 'Georgia': 'GA',
-            'Hawaii': 'HI', 'Idaho': 'ID', 'Illinois': 'IL', 'Indiana': 'IN', 'Iowa': 'IA',
-            'Kansas': 'KS', 'Kentucky': 'KY', 'Louisiana': 'LA', 'Maine': 'ME', 'Maryland': 'MD',
-            'Massachusetts': 'MA', 'Michigan': 'MI', 'Minnesota': 'MN', 'Mississippi': 'MS', 'Missouri': 'MO',
-            'Montana': 'MT', 'Nebraska': 'NE', 'Nevada': 'NV', 'New Hampshire': 'NH', 'New Jersey': 'NJ',
-            'New Mexico': 'NM', 'New York': 'NY', 'North Carolina': 'NC', 'North Dakota': 'ND', 'Ohio': 'OH',
-            'Oklahoma': 'OK', 'Oregon': 'OR', 'Pennsylvania': 'PA', 'Rhode Island': 'RI', 'South Carolina': 'SC',
-            'South Dakota': 'SD', 'Tennessee': 'TN', 'Texas': 'TX', 'Utah': 'UT', 'Vermont': 'VT',
-            'Virginia': 'VA', 'Washington': 'WA', 'West Virginia': 'WV', 'Wisconsin': 'WI', 'Wyoming': 'WY'
-        };
-        
-        // States with dedicated pages
-        const statesWithPages = {
-            'Texas': '/texas', 'California': '/california', 'Florida': '/florida',
-            'Ohio': '/ohio', 'Michigan': '/michigan', 'Pennsylvania': '/pennsylvania',
-            'Illinois': '/illinois', 'Georgia': '/georgia', 'North Carolina': '/north-carolina',
-            'Arizona': '/arizona', 'Minnesota': '/minnesota', 'Indiana': '/indiana',
-            'Wisconsin': '/wisconsin', 'Colorado': '/colorado', 'Tennessee': '/tennessee',
-            'Virginia': '/virginia', 'Washington': '/washington', 'New York': '/new-york'
-        };
-        
-        const container = document.getElementById('statesList');
-        states.forEach(state => {
-            const abbr = stateAbbreviations[state];
-            const hasPage = statesWithPages[state];
-            const href = hasPage || `/?state=${abbr}`;
-            const highlight = hasPage ? 'bg-purple-50 border-purple-200' : 'bg-slate-50 border-slate-200';
-            container.innerHTML += `
-                <a href="${href}" 
-                   class="block ${highlight} hover:bg-purple-100 border hover:border-purple-300 rounded-xl p-3 text-center transition-all">
-                    <span class="font-semibold text-slate-900">${abbr}</span>
-                    <span class="block text-sm text-slate-500">${state}</span>
-                    ${hasPage ? '<span class="block text-xs text-purple-600 mt-1">View Page</span>' : ''}
-                </a>
-            `;
+        // State search filter
+        document.getElementById('stateSearch').addEventListener('input', function(e) {
+            const search = e.target.value.toLowerCase();
+            document.querySelectorAll('#statesGrid a').forEach(card => {
+                const stateName = card.querySelector('.font-bold').textContent.toLowerCase();
+                card.style.display = stateName.includes(search) ? '' : 'none';
+            });
         });
     </script>
 </body>
