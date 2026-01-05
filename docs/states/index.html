@@ -30,6 +30,47 @@
         * { font-family: 'Plus Jakarta Sans', sans-serif; }
         .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
     </style>
+
+    <!-- Schema: ItemList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Great Clips Coupons by State",
+        "description": "Find Great Clips coupons organized by US state. Select your state to see local deals.",
+        "numberOfItems": 50,
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Texas", "url": "https://greatclipsdeal.com/texas"},
+            {"@type": "ListItem", "position": 2, "name": "California", "url": "https://greatclipsdeal.com/california"},
+            {"@type": "ListItem", "position": 3, "name": "Florida", "url": "https://greatclipsdeal.com/florida"},
+            {"@type": "ListItem", "position": 4, "name": "New York", "url": "https://greatclipsdeal.com/new-york"},
+            {"@type": "ListItem", "position": 5, "name": "Ohio", "url": "https://greatclipsdeal.com/ohio"}
+        ]
+    }
+    </script>
+    
+    <!-- Schema: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://greatclipsdeal.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "States",
+                "item": "https://greatclipsdeal.com/states"
+            }
+        ]
+    }
+    </script>
+
 </head>
 <body class="bg-slate-50 min-h-screen">
     <!-- Header -->

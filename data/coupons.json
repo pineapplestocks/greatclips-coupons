@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-01-05T08:47:39.096269",
-  "total_coupons": 131,
+  "scraped_at": "2026-01-05T20:53:26.319627",
+  "total_coupons": 134,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/3p9joXf",
@@ -170,6 +170,20 @@
       "expiration": "02/08/2026",
       "price": "$5.00",
       "added_date": "2026-01-03",
+      "last_seen": "2026-01-05"
+    },
+    {
+      "url": "https://offers.greatclips.com/irLHe9s",
+      "coupon_code": "irLHe9s",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips Clear Creek Crossing at 12925 Albemarle Rd in Charlotte, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/07/2026",
+      "location_name": "Clear Creek Crossing",
+      "address": "12925 Albemarle Rd",
+      "city": "Charlotte,",
+      "state": "NC",
+      "expiration": "02/07/2026",
+      "price": "$5.00",
+      "added_date": "2026-01-05",
       "last_seen": "2026-01-05"
     },
     {
@@ -1179,6 +1193,20 @@
       "last_seen": "2026-01-05"
     },
     {
+      "url": "https://offers.greatclips.com/DrV3vVs",
+      "coupon_code": "DrV3vVs",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8438/50707-002-1200x600-US-Sparkfly-10off.jpg",
+      "valid_text": "Valid at Great Clips Russell Ridge at 1475 Georgia Hwy 20 in Lawrenceville, GA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/29/2026",
+      "location_name": "Russell Ridge",
+      "address": "1475 Georgia Hwy 20",
+      "city": "Lawrenceville,",
+      "state": "GA",
+      "expiration": "01/29/2026",
+      "price": "$10.00",
+      "added_date": "2026-01-05",
+      "last_seen": "2026-01-05"
+    },
+    {
       "url": "https://offers.greatclips.com/FW9KWXq",
       "coupon_code": "FW9KWXq",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8462/50707-002-1200x600-10.99.jpg",
@@ -1282,6 +1310,20 @@
       "expiration": "01/09/2026",
       "price": "$11.99",
       "last_seen": "2026-01-02"
+    },
+    {
+      "url": "https://offers.greatclips.com/dUrlfDn",
+      "coupon_code": "dUrlfDn",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8464/50707-002-1200x600-11.99.jpg",
+      "valid_text": "Valid at Great Clips The Shoppes at Point at 5423 US Hwy 10 E in Stevens Point, WI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/16/2026",
+      "location_name": "The Shoppes",
+      "address": "Point at 5423 US Hwy 10 E",
+      "city": "Stevens Point,",
+      "state": "WI",
+      "expiration": "01/16/2026",
+      "price": "$11.99",
+      "added_date": "2026-01-05",
+      "last_seen": "2026-01-05"
     },
     {
       "url": "https://offers.greatclips.com/anywuwe",

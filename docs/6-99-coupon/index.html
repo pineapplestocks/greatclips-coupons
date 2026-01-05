@@ -31,17 +31,83 @@
         .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
     </style>
 
+    
+    <!-- Schema: Offer -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Offer",
         "name": "Great Clips $6.99 Haircut Coupon",
-        "description": "Get a haircut at Great Clips for only $6.99",
+        "description": "Get a haircut at Great Clips for only $6.99. Valid at participating US locations. Updated January 2026.",
         "price": "6.99",
         "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-01-05",
+        "priceValidUntil": "2026-12-31",
+        "url": "https://greatclipsdeal.com/6-99-coupon",
+        "seller": {
+            "@type": "Organization",
+            "name": "Great Clips"
+        }
     }
     </script>
+    
+    <!-- Schema: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://greatclipsdeal.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "$6.99 Coupon",
+                "item": "https://greatclipsdeal.com/6-99-coupon"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Schema: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is the Great Clips $6.99 coupon real?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! The $6.99 Great Clips coupon is real and comes from official Great Clips Facebook advertising. These coupons are updated daily on greatclipsdeal.com."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Where can I use the $6.99 Great Clips coupon?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The $6.99 coupon works at most Great Clips locations across the US. Some coupons are location-specific, so check the coupon details before visiting."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long is the $6.99 coupon valid?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Great Clips coupons typically expire 14 days after clicking the link. Get a fresh $6.99 coupon right before your haircut appointment."
+                }
+            }
+        ]
+    }
+    </script>
+
 </head>
 <body class="bg-slate-50 min-h-screen">
     <header class="gradient-bg text-white py-8">

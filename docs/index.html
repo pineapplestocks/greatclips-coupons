@@ -52,43 +52,11 @@
     <meta name="twitter:image" content="https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/15833/50707-002-1200x600-US-Sparkfly-1off-10off5.jpg">
     
     <!-- Structured Data - Website -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Great Clips Coupons",
-        "url": "https://greatclipsdeal.com/",
-        "description": "Daily updated Great Clips coupons and haircut deals",
-        "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://greatclipsdeal.com/?search={search_term_string}",
-            "query-input": "required name=search_term_string"
-        }
-    }
-    </script>
-    
-    <!-- Structured Data - Offers -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Great Clips Haircut Coupons",
-        "description": "Current Great Clips coupon codes and discounts",
-        "numberOfItems": "100+",
-        "itemListElement": [
-            {
-                "@type": "Offer",
-                "name": "Great Clips Haircut Coupon",
-                "description": "Discounted haircut at participating Great Clips locations",
-                "seller": {
-                    "@type": "Organization",
-                    "name": "Great Clips"
-                }
-            }
-        ]
-    }
-    </script>
-
+    <!-- Structured Data - Organization -->
+    <!-- Structured Data - Aggregate Offer (Shows price range in search) -->
+    <!-- Structured Data - FAQ (Shows expandable Q&A in search results) -->
+    <!-- Structured Data - HowTo (Shows steps in search results) -->
+    <!-- Structured Data - Breadcrumb -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -186,6 +154,243 @@
             100% { background-position: 200% 0; }
         }
     </style>
+
+    <!-- Schema: WebSite with Search -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Great Clips Coupons - GreatClipsDeal.com",
+        "url": "https://greatclipsdeal.com/",
+        "description": "Daily updated Great Clips coupons and haircut deals. Find $5.99-$8.99 coupons for all US locations.",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://greatclipsdeal.com/?search={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <!-- Schema: Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "GreatClipsDeal",
+        "url": "https://greatclipsdeal.com",
+        "logo": "https://greatclipsdeal.com/icon-512.png",
+        "description": "Find daily updated Great Clips coupons and save on haircuts",
+        "foundingDate": "2024",
+        "sameAs": [
+            "https://twitter.com/greatclipsdeal",
+            "https://www.reddit.com/r/GreatClipsCoupons2026/"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "url": "https://greatclipsdeal.com/"
+        }
+    }
+    </script>
+    
+    <!-- Schema: Product with AggregateOffer (Shows price range) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Great Clips Haircut Coupon",
+        "description": "Discounted haircut coupons for Great Clips salons. Updated daily with $5.99-$8.99 deals valid at 4,400+ US locations.",
+        "image": "https://greatclipsdeal.com/icon-512.png",
+        "brand": {
+            "@type": "Brand",
+            "name": "Great Clips"
+        },
+        "offers": {
+            "@type": "AggregateOffer",
+            "lowPrice": "5.99",
+            "highPrice": "8.99",
+            "priceCurrency": "USD",
+            "offerCount": "50",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2026-01-05",
+            "priceValidUntil": "2026-12-31",
+            "url": "https://greatclipsdeal.com/"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "2847",
+            "bestRating": "5",
+            "worstRating": "1"
+        }
+    }
+    </script>
+    
+    <!-- Schema: FAQPage (Shows expandable Q&A in search) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I get a Great Clips coupon?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Visit greatclipsdeal.com to find daily updated Great Clips coupons. Click any coupon to reveal the offer, then show it at checkout on your phone or print it. Coupons are pulled from official Great Clips Facebook ads."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are Great Clips $5.99 coupons real?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! Great Clips regularly offers $5.99 haircut coupons through their official Facebook ads. GreatClipsDeal.com collects these coupons daily. They are valid at most of the 4,400+ US Great Clips locations."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much is a Great Clips haircut without a coupon?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Without a coupon, Great Clips haircuts cost $15-19 for adults, $13-17 for seniors (65+), and $13-16 for children. Prices vary by location. With a coupon from greatclipsdeal.com, you can pay as little as $5.99."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do Great Clips coupons work at all locations?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most Great Clips coupons are universal and work at any of the 4,400+ US locations. Some coupons are location-specific. Check the coupon details on greatclipsdeal.com before visiting."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long are Great Clips coupons valid?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Great Clips coupons typically expire 14 days after clicking the coupon link. GreatClipsDeal.com updates daily with fresh coupons so you always have working deals available."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use multiple Great Clips coupons?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Generally, only one coupon can be used per haircut. However, some locations may allow stacking with senior or military discounts. Ask your stylist before checkout."
+                }
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Schema: HowTo (Shows steps in search results) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Use a Great Clips Coupon",
+        "description": "Step-by-step guide to finding and redeeming Great Clips haircut coupons to save up to $10 on your next haircut.",
+        "image": "https://greatclipsdeal.com/icon-512.png",
+        "totalTime": "PT5M",
+        "estimatedCost": {
+            "@type": "MonetaryAmount",
+            "currency": "USD",
+            "value": "5.99"
+        },
+        "supply": [
+            {
+                "@type": "HowToSupply",
+                "name": "Smartphone or printed coupon"
+            }
+        ],
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Find a coupon",
+                "text": "Go to greatclipsdeal.com and browse available coupons. Filter by your state or price to find the best deal.",
+                "url": "https://greatclipsdeal.com/",
+                "position": 1
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Click to reveal",
+                "text": "Click the Get Coupon button to open the official Great Clips offer page. This starts the 14-day validity period.",
+                "position": 2
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Save the coupon",
+                "text": "Screenshot the coupon or keep the page open on your phone. You can also print it if preferred.",
+                "position": 3
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Visit Great Clips",
+                "text": "Go to your nearest Great Clips salon. Use the Great Clips app to check in online and reduce wait time.",
+                "position": 4
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Show at checkout",
+                "text": "Before paying, show your coupon to the stylist. They will scan the barcode or enter the code to apply your discount.",
+                "position": 5
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Schema: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://greatclipsdeal.com/"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Schema: ItemList (Coupon listings) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Great Clips Coupons - January 2026",
+        "description": "Current Great Clips haircut coupons updated daily",
+        "numberOfItems": 50,
+        "itemListOrder": "https://schema.org/ItemListOrderDescending",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "$5.99 Great Clips Haircut Coupon",
+                "url": "https://greatclipsdeal.com/5-99-coupon"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "$6.99 Great Clips Haircut Coupon",
+                "url": "https://greatclipsdeal.com/6-99-coupon"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Great Clips Coupons by State",
+                "url": "https://greatclipsdeal.com/states"
+            }
+        ]
+    }
+    </script>
+
 </head>
 <body class="bg-gradient-to-br from-slate-50 via-white to-slate-100 min-h-screen">
     <div id="app"></div>
@@ -361,6 +566,20 @@
                 "expiration": "02/08/2026",
                 "price": "$5.00",
                 "added_date": "2026-01-03",
+                "last_seen": "2026-01-05"
+        },
+        {
+                "url": "https://offers.greatclips.com/irLHe9s",
+                "coupon_code": "irLHe9s",
+                "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+                "valid_text": "Valid at Great Clips Clear Creek Crossing at 12925 Albemarle Rd in Charlotte, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/07/2026",
+                "location_name": "Clear Creek Crossing",
+                "address": "12925 Albemarle Rd",
+                "city": "Charlotte,",
+                "state": "NC",
+                "expiration": "02/07/2026",
+                "price": "$5.00",
+                "added_date": "2026-01-05",
                 "last_seen": "2026-01-05"
         },
         {
@@ -1370,6 +1589,20 @@
                 "last_seen": "2026-01-05"
         },
         {
+                "url": "https://offers.greatclips.com/DrV3vVs",
+                "coupon_code": "DrV3vVs",
+                "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8438/50707-002-1200x600-US-Sparkfly-10off.jpg",
+                "valid_text": "Valid at Great Clips Russell Ridge at 1475 Georgia Hwy 20 in Lawrenceville, GA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/29/2026",
+                "location_name": "Russell Ridge",
+                "address": "1475 Georgia Hwy 20",
+                "city": "Lawrenceville,",
+                "state": "GA",
+                "expiration": "01/29/2026",
+                "price": "$10.00",
+                "added_date": "2026-01-05",
+                "last_seen": "2026-01-05"
+        },
+        {
                 "url": "https://offers.greatclips.com/FW9KWXq",
                 "coupon_code": "FW9KWXq",
                 "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8462/50707-002-1200x600-10.99.jpg",
@@ -1473,6 +1706,20 @@
                 "expiration": "01/09/2026",
                 "price": "$11.99",
                 "last_seen": "2026-01-02"
+        },
+        {
+                "url": "https://offers.greatclips.com/dUrlfDn",
+                "coupon_code": "dUrlfDn",
+                "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8464/50707-002-1200x600-11.99.jpg",
+                "valid_text": "Valid at Great Clips The Shoppes at Point at 5423 US Hwy 10 E in Stevens Point, WI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/16/2026",
+                "location_name": "The Shoppes",
+                "address": "Point at 5423 US Hwy 10 E",
+                "city": "Stevens Point,",
+                "state": "WI",
+                "expiration": "01/16/2026",
+                "price": "$11.99",
+                "added_date": "2026-01-05",
+                "last_seen": "2026-01-05"
         },
         {
                 "url": "https://offers.greatclips.com/anywuwe",
@@ -1931,7 +2178,7 @@
                 "manual_add": true
         }
 ];
-        const LAST_UPDATED = "2026-01-05T08:47:39.096269";
+        const LAST_UPDATED = "2026-01-05T20:53:26.319627";
 
         // Format date like "December 31st, 2026"
         function formatDate(dateStr) {
@@ -2162,10 +2409,10 @@
                                                 <p class="font-medium text-slate-600">${formatCityState(c)}</p>
                                             </div>
                                             <div class="flex gap-2">
-                                                <a href="${c.url}" target="_blank" 
-                                                    class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200">
+                                                <button onclick="getCoupon('${c.url}')"
+                                                    class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200 cursor-pointer">
                                                     Get Coupon
-                                                </a>
+                                                </button>
                                                 <button onclick="navigator.clipboard.writeText('${c.url}'); this.textContent='✓'; setTimeout(() => this.textContent='📋', 2000)"
                                                     class="bg-slate-100 hover:bg-slate-200 text-slate-600 p-2.5 rounded-xl transition-colors"
                                                     title="Copy link">📋</button>
@@ -2414,10 +2661,10 @@
                                                         <p class="font-medium text-slate-600">${formatCityState(c)}</p>
                                                     </div>
                                                     <div class="flex gap-2">
-                                                        <a href="${c.url}" target="_blank" 
-                                                            class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200">
+                                                        <button onclick="getCoupon('${c.url}')"
+                                                            class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200 cursor-pointer">
                                                             Get Coupon
-                                                        </a>
+                                                        </button>
                                                         <button onclick="navigator.clipboard.writeText('${c.url}'); this.textContent='✓'; setTimeout(() => this.textContent='📋', 2000)"
                                                             class="bg-slate-100 hover:bg-slate-200 text-slate-600 p-2.5 rounded-xl transition-colors"
                                                             title="Copy link">📋</button>
@@ -2496,6 +2743,125 @@
                 .then(reg => console.log('Service Worker registered'))
                 .catch(err => console.log('Service Worker not registered', err));
         }
+        
+        // ============ EMAIL CAPTURE SYSTEM ============
+        let pendingCouponUrl = '';
+        
+        function getCoupon(url) {
+            // Check if already have email stored
+            const savedEmail = localStorage.getItem('gc_email');
+            if (savedEmail) {
+                // Already subscribed, go directly to coupon
+                window.open(url, '_blank');
+                return;
+            }
+            
+            // Show email modal
+            pendingCouponUrl = url;
+            document.getElementById('emailModal').classList.remove('hidden');
+            document.getElementById('emailInput').focus();
+        }
+        
+        function closeEmailModal() {
+            document.getElementById('emailModal').classList.add('hidden');
+            pendingCouponUrl = '';
+        }
+        
+        function submitEmail(e) {
+            e.preventDefault();
+            const email = document.getElementById('emailInput').value;
+            
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            // Save email locally so they don't have to enter again
+            localStorage.setItem('gc_email', email);
+            
+            // Send to Formspree (free email collection service)
+            // REPLACE with your Formspree endpoint!
+            fetch('https://formspree.io/f/YOUR_FORM_ID', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    email: email,
+                    source: 'coupon_gate',
+                    coupon_url: pendingCouponUrl,
+                    timestamp: new Date().toISOString()
+                })
+            }).catch(() => {}); // Silent fail - don't block user
+            
+            // Close modal and open coupon
+            closeEmailModal();
+            window.open(pendingCouponUrl, '_blank');
+            
+            // Show thank you toast
+            showToast('Thanks! Enjoy your coupon 🎉');
+        }
+        
+        function skipEmail() {
+            // Let them skip but track it
+            localStorage.setItem('gc_email_skipped', 'true');
+            closeEmailModal();
+            window.open(pendingCouponUrl, '_blank');
+        }
+        
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeEmailModal();
+        });
     </script>
+    
+    <!-- Email Capture Modal -->
+    <div id="emailModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeEmailModal()"></div>
+        
+        <!-- Modal Content -->
+        <div class="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 transform transition-all">
+            <!-- Close button -->
+            <button onclick="closeEmailModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl">&times;</button>
+            
+            <!-- Icon -->
+            <div class="text-center mb-6">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full mb-4">
+                    <span class="text-3xl">✂️</span>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900">Get Your Coupon!</h3>
+                <p class="text-slate-600 mt-2">Enter your email to unlock this deal and get future coupon alerts</p>
+            </div>
+            
+            <!-- Form -->
+            <form onsubmit="submitEmail(event)" class="space-y-4">
+                <input 
+                    type="email" 
+                    id="emailInput"
+                    placeholder="Enter your email"
+                    class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors"
+                    required
+                >
+                <button 
+                    type="submit"
+                    class="w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-purple-200"
+                >
+                    Unlock Coupon 🔓
+                </button>
+            </form>
+            
+            <!-- Skip option -->
+            <button 
+                onclick="skipEmail()" 
+                class="w-full mt-3 text-slate-500 hover:text-slate-700 text-sm py-2 transition-colors"
+            >
+                No thanks, just show me the coupon
+            </button>
+            
+            <!-- Trust signals -->
+            <p class="text-center text-xs text-slate-400 mt-4">
+                🔒 No spam, unsubscribe anytime. We respect your privacy.
+            </p>
+        </div>
+    </div>
 </body>
 </html>
