@@ -2,12 +2,8 @@ name: Scrape Great Clips Coupons
 
 on:
   schedule:
-    # Run every 6 hours
-    - cron: '0 */6 * * *'
-  workflow_dispatch:
-
-permissions:
-  contents: write
+    - cron: '0 */6 * * *'  # Run every 6 hours
+  workflow_dispatch:  # Allow manual trigger
 
 jobs:
   scrape:
@@ -16,32 +12,44 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+        with:
+          fetch-depth: 0
+          
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
+          
       - name: Install dependencies
         run: |
-          pip install playwright requests beautifulsoup4
+          python -m pip install --upgrade pip
+          pip install playwright beautifulsoup4 requests
           playwright install chromium
-          playwright install-deps
-
+          
       - name: Run scraper
-        run: python scraper.py
-
+        run: python scrape_coupons.py
+        
       - name: Generate website
         run: python generate_website.py
-
-      - name: Commit and push if changed
+        
+      - name: Commit and push changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add -A
+          
+          # Check if there are changes to commit
           if git diff --staged --quiet; then
             echo "No changes to commit"
-          else
-            git commit -m "🔄 Update coupons $(date +'%Y-%m-%d %H:%M')"
-            git push
+            exit 0
           fi
+          
+          git commit -m "🔄 Update coupons $(date -u +%Y-%m-%d\ %H:%M)"
+          
+          # Pull latest changes and rebase, then push
+          # Retry up to 3 times in case of conflicts
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && break
+            echo "Push attempt $i failed, retrying..."
+            sleep 5
+          done
