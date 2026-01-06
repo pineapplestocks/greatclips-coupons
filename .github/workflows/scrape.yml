@@ -36,7 +36,7 @@ jobs:
           playwright install chromium
 
       - name: Run scraper
-        run: python scrape_coupons.py
+        run: python scrape.py
 
       - name: Generate website
         run: python generate_website.py
