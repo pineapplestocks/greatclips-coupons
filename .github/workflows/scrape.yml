@@ -2,72 +2,84 @@ name: Scrape Great Clips Coupons
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Run every 6 hours
-  workflow_dispatch:  # Allow manual trigger
+    - cron: "0 */6 * * *" # every 6 hours
+  workflow_dispatch:
+
+# Required so the workflow can push commits back to the repo
+permissions:
+  contents: write
+
+# Prevent overlapping runs from racing to push to main
+concurrency:
+  group: greatclips-coupons-main
+  cancel-in-progress: false
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
-          
+          python-version: "3.11"
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install playwright beautifulsoup4 requests
           playwright install chromium
-          
+
       - name: Run scraper
         run: python scrape_coupons.py
-        
+
       - name: Generate website
         run: python generate_website.py
-        
-      - name: Commit and push changes
+
+      - name: Commit and push changes (race-safe)
+        shell: bash
         run: |
-          set -e
+          set -euo pipefail
 
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
+          # Stage generated changes
           git add -A
 
-          # If nothing changed, stop.
+          # Exit if no changes
           if git diff --staged --quiet; then
             echo "No changes to commit"
             exit 0
           fi
 
+          # Commit changes
           git commit -m "🔄 Update coupons $(date -u +'%Y-%m-%d %H:%M')"
 
-          # Rebase onto latest remote and push.
-          # Retry because another run may push between fetch and push.
+          # Fetch + rebase onto latest origin/main, then push.
+          # Retry because another run may have pushed very recently.
           for i in 1 2 3 4 5; do
-            echo "Attempt $i: syncing with origin/main..."
+            echo "Attempt $i: fetching origin/main..."
             git fetch origin main
 
-            # Rebase our commit(s) onto latest origin/main
-            # -X theirs helps when generated files conflict (keeps remote in conflicts)
-            if git rebase origin/main -X theirs --autostash; then
-              echo "Rebase successful, pushing..."
+            echo "Attempt $i: rebasing onto origin/main..."
+            if git rebase origin/main --autostash -X theirs; then
+              echo "Attempt $i: pushing to origin/main..."
               if git push origin HEAD:main; then
                 echo "Push successful."
                 exit 0
               fi
             else
-              echo "Rebase conflict; aborting rebase and retrying..."
+              echo "Rebase failed; aborting rebase."
               git rebase --abort || true
             fi
 
+            echo "Attempt $i failed, retrying in 5s..."
             sleep 5
           done
 
