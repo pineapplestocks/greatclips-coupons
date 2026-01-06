@@ -3,7 +3,7 @@ import json
 import os
 import random
 
-def get_best_coupons(coupons_file='coupons.json', count=3):
+def get_best_coupons(coupons_file='data/coupons.json', count=3):
     """Get the best coupons to tweet about"""
     with open(coupons_file, 'r') as f:
         coupons = json.load(f)
