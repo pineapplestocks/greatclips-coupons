@@ -8,6 +8,10 @@ on:
   # Allow manual trigger
   workflow_dispatch:
 
+# Need write permissions to push commits
+permissions:
+  contents: write
+
 jobs:
   generate-monthly-pages:
     runs-on: ubuntu-latest
@@ -15,8 +19,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -31,5 +33,9 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add docs/*.html
-          git diff --staged --quiet || git commit -m "🗓️ Auto-generate monthly pages for $(date +'%B %Y')"
-          git push
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🗓️ Auto-generate monthly pages for $(date +'%B %Y')"
+            git push
+          fi
