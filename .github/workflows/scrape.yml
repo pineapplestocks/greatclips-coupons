@@ -27,7 +27,7 @@ jobs:
           playwright install-deps chromium
 
       - name: Run scraper
-        run: python scrape_fb_ads.py
+        run: python scrape.py
 
       - name: Generate website
         run: python generate_website.py
