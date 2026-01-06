@@ -3,6 +3,9 @@ name: Fix Logo in All Pages
 on:
   workflow_dispatch:  # Manual trigger only - run once
 
+permissions:
+  contents: write  # Allow pushing to repo
+
 jobs:
   fix-logo:
     runs-on: ubuntu-latest
