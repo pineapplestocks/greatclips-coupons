@@ -30,10 +30,13 @@ def load_existing_coupons():
         try:
             with open(JSON_FILE, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-                return data.get('coupons', [])
+                coupons = data.get('coupons', [])
+                print(f"   📂 Loaded {len(coupons)} existing coupons from file")
+                return coupons
         except Exception as e:
             print(f"   ⚠️ Could not load existing coupons: {e}")
             return []
+    print(f"   📂 No existing coupons file found")
     return []
 
 
@@ -42,6 +45,9 @@ def is_expired(coupon):
     exp_str = coupon.get('expiration', '')
     if not exp_str or exp_str == 'N/A':
         # If no expiration, check if it was added more than 30 days ago
+        # BUT never expire manually added coupons without expiration
+        if coupon.get('manual_add'):
+            return False
         added_date = coupon.get('added_date', '')
         if added_date:
             try:
@@ -61,7 +67,7 @@ def is_expired(coupon):
 
 
 def get_coupon_key(coupon):
-    """Generate a unique key for a coupon based on location + price"""
+    """Generate a unique key for a coupon based on URL or location + price"""
     # Use URL as primary key since it's unique per offer
     url = coupon.get('url', '')
     if url:
@@ -96,24 +102,35 @@ def merge_coupons(existing_coupons, new_coupons):
     
     expired_count = 0
     kept_count = 0
+    manual_count = 0
     
-    # Add existing coupons (that aren't expired)
+    # FIRST: Add existing coupons (that aren't expired)
     for coupon in existing_coupons:
+        is_manual = coupon.get('manual_add', False)
+        
         if is_expired(coupon):
+            if is_manual:
+                print(f"   ⚠️ Manual coupon expired: {coupon.get('location_name', 'Unknown')} - {coupon.get('price', 'N/A')}")
             expired_count += 1
             continue
+        
         key = get_coupon_key(coupon)
         coupon_dict[key] = coupon
         kept_count += 1
+        
+        if is_manual:
+            manual_count += 1
+            print(f"   🔒 Preserved manual coupon: {coupon.get('location_name', 'Unknown')} - {coupon.get('price', 'N/A')}")
     
-    print(f"   📦 Loaded {kept_count} existing coupons ({expired_count} expired and removed)")
+    print(f"   📦 Kept {kept_count} existing coupons ({manual_count} manual, {expired_count} expired and removed)")
     
-    # Add/update with new coupons
+    # SECOND: Add/update with new coupons
     new_count = 0
     updated_count = 0
     
     for coupon in new_coupons:
         key = get_coupon_key(coupon)
+        
         if key not in coupon_dict:
             # New coupon - add it with today's date
             coupon['added_date'] = today
@@ -122,10 +139,15 @@ def merge_coupons(existing_coupons, new_coupons):
             new_count += 1
             print(f"   ➕ New: {coupon.get('location_name', 'Unknown')[:30]} - {coupon.get('price', 'N/A')}")
         else:
-            # Existing coupon - update expiration if we have one, update last_seen
+            # Existing coupon - update last_seen, optionally update expiration
             existing = coupon_dict[key]
+            
+            # Only update expiration if new one is valid and existing isn't manual
             if coupon.get('expiration') and coupon.get('expiration') != 'N/A':
-                existing['expiration'] = coupon.get('expiration')
+                # Don't overwrite manual coupon's expiration unless it's empty
+                if not existing.get('manual_add') or not existing.get('expiration'):
+                    existing['expiration'] = coupon.get('expiration')
+            
             existing['last_seen'] = today
             updated_count += 1
     
@@ -373,14 +395,17 @@ def save_results(new_coupons):
     # Merge new coupons with existing (removes expired, avoids duplicates)
     coupons = merge_coupons(existing_coupons, new_coupons)
     
-    # Sort by price
-    def get_price(c):
+    # Sort by price (but keep manual/US-wide coupons at the end for visibility)
+    def get_sort_key(c):
         try:
-            return float(c.get('price', '$999').replace('$', ''))
+            price = float(c.get('price', '$999').replace('$', '').replace(' OFF', ''))
         except:
-            return 999
+            price = 999
+        # Manual coupons and US-wide sort to the end
+        is_special = 1 if (c.get('manual_add') or c.get('state') == 'US') else 0
+        return (is_special, price)
     
-    coupons.sort(key=get_price)
+    coupons.sort(key=get_sort_key)
     
     data = {
         "scraped_at": datetime.now().isoformat(),
@@ -396,13 +421,22 @@ def save_results(new_coupons):
     # Stats
     with_location = sum(1 for c in coupons if c.get("location_name"))
     us_wide = sum(1 for c in coupons if c.get("state") == "US")
-    prices = [get_price(c) for c in coupons if get_price(c) < 999]
+    manual = sum(1 for c in coupons if c.get("manual_add"))
+    prices = []
+    for c in coupons:
+        try:
+            p = float(c.get('price', '$999').replace('$', '').replace(' OFF', ''))
+            if p < 999:
+                prices.append(p)
+        except:
+            pass
     
     print()
     print("📊 Final Stats:")
     print(f"   Total coupons: {len(coupons)}")
     print(f"   With location: {with_location}")
     print(f"   US-wide: {us_wide}")
+    print(f"   Manual/protected: {manual}")
     if prices:
         print(f"   Price range: ${min(prices):.2f} - ${max(prices):.2f}")
 
