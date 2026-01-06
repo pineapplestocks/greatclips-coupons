@@ -6,7 +6,10 @@ import random
 def get_best_coupons(coupons_file='data/coupons.json', count=3):
     """Get the best coupons to tweet about"""
     with open(coupons_file, 'r') as f:
-        coupons = json.load(f)
+        data = json.load(f)
+    
+    # Coupons are nested under 'coupons' key
+    coupons = data.get('coupons', [])
     
     # Separate universal and location-specific
     universal = [c for c in coupons if c.get('state') == 'US' or 'All' in c.get('location_name', '')]
