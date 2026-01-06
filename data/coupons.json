@@ -1,5 +1,9 @@
 {
+<<<<<<< Updated upstream
   "scraped_at": "2026-01-06T15:25:42.475521",
+=======
+  "scraped_at": "2026-01-06T16:03:11.454390",
+>>>>>>> Stashed changes
   "total_coupons": 137,
   "coupons": [
     {
@@ -1378,6 +1382,7 @@
       "last_seen": "2026-01-06"
     },
     {
+<<<<<<< Updated upstream
       "url": "https://offers.greatclips.com/BmjxPaV",
       "coupon_code": "BmjxPaV",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8468/50707-002-1200x600-13.99.jpg",
@@ -1392,6 +1397,8 @@
       "last_seen": "2026-01-06"
     },
     {
+=======
+>>>>>>> Stashed changes
       "url": "https://offers.greatclips.com/YNE3opz",
       "coupon_code": "YNE3opz",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8468/50707-002-1200x600-13.99.jpg",
@@ -1404,6 +1411,23 @@
       "price": "$13.99",
       "added_date": "2026-01-06",
       "last_seen": "2026-01-06"
+<<<<<<< Updated upstream
+=======
+    },
+    {
+      "url": "https://offers.greatclips.com/BmjxPaV",
+      "coupon_code": "BmjxPaV",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8468/50707-002-1200x600-13.99.jpg",
+      "valid_text": "Valid at Great Clips Wilderness Oak at 23522 Wilderness Oak in San Antonio, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/06/2026",
+      "location_name": "Wilderness Oak",
+      "address": "23522 Wilderness Oak",
+      "city": "San Antonio,",
+      "state": "TX",
+      "expiration": "02/06/2026",
+      "price": "$13.99",
+      "added_date": "2026-01-06",
+      "last_seen": "2026-01-06"
+>>>>>>> Stashed changes
     },
     {
       "url": "https://offers.greatclips.com/2up4giV",
