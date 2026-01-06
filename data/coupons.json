@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-01-06T03:19:55.764827",
-  "total_coupons": 135,
+  "scraped_at": "2026-01-06T03:33:18.700282",
+  "total_coupons": 136,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/3p9joXf",
@@ -1387,6 +1387,20 @@
       "city": "San Antonio,",
       "state": "TX",
       "expiration": "02/06/2026",
+      "price": "$13.99",
+      "added_date": "2026-01-06",
+      "last_seen": "2026-01-06"
+    },
+    {
+      "url": "https://offers.greatclips.com/YNE3opz",
+      "coupon_code": "YNE3opz",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8468/50707-002-1200x600-13.99.jpg",
+      "valid_text": "Valid at Great Clips Quail Springs at 14220 N Pennsylvania Ave in Oklahoma City, OK. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/16/2026",
+      "location_name": "Quail Springs",
+      "address": "14220 N Pennsylvania Ave",
+      "city": "Oklahoma City,",
+      "state": "OK",
+      "expiration": "01/16/2026",
       "price": "$13.99",
       "added_date": "2026-01-06",
       "last_seen": "2026-01-06"
