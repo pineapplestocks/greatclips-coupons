@@ -14,17 +14,17 @@ OLD_LOGO = '''<span class="text-2xl">✂️</span>
                     <span class="font-bold text-lg text-purple-600">GreatClipsDeal</span>'''
 
 # New code with image logo
-NEW_LOGO = '''<img src="/logo.png" alt="GreatClipsDeal" class="h-8 w-8 rounded-full object-cover">
+NEW_LOGO = '''<img src="https://raw.githubusercontent.com/pineapplestocks/greatclips-coupons/main/docs/logo.png" alt="GreatClipsDeal" class="h-8 w-8 rounded-full object-cover">
                     <span class="font-bold text-lg text-purple-600">GreatClipsDeal</span>'''
 
 # Alternative patterns (different spacing/formatting)
 OLD_PATTERNS = [
     # Pattern 1: Standard
-    ('<span class="text-2xl">✂️</span>', '<img src="/logo.png" alt="GreatClipsDeal" class="h-8 w-8 rounded-full object-cover">'),
+    ('<span class="text-2xl">✂️</span>', '<img src="https://raw.githubusercontent.com/pineapplestocks/greatclips-coupons/main/docs/logo.png" alt="GreatClipsDeal" class="h-8 w-8 rounded-full object-cover">'),
     # Pattern 2: With newlines
-    ('<span class="text-2xl">✂️</span>\n', '<img src="/logo.png" alt="GreatClipsDeal" class="h-8 w-8 rounded-full object-cover">\n'),
+    ('<span class="text-2xl">✂️</span>\n', '<img src="https://raw.githubusercontent.com/pineapplestocks/greatclips-coupons/main/docs/logo.png" alt="GreatClipsDeal" class="h-8 w-8 rounded-full object-cover">\n'),
     # Pattern 3: Just the emoji in a span
-    ('class="text-2xl">✂️<', 'src="/logo.png" alt="GreatClipsDeal" class="h-8 w-8 rounded-full object-cover"><'),
+    ('class="text-2xl">✂️<', 'src="https://raw.githubusercontent.com/pineapplestocks/greatclips-coupons/main/docs/logo.png" alt="GreatClipsDeal" class="h-8 w-8 rounded-full object-cover"><'),
 ]
 
 def update_file(filepath):
