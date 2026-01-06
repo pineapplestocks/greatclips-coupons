@@ -1,0 +1,53 @@
+name: Fix Logo URL
+
+on:
+  workflow_dispatch:  # Manual trigger - run once
+
+permissions:
+  contents: write
+
+jobs:
+  fix-logo-url:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Replace /logo.png with raw GitHub URL
+        run: |
+          # Define the replacement
+          OLD_URL='"/logo.png"'
+          NEW_URL='"https://raw.githubusercontent.com/pineapplestocks/greatclips-coupons/main/docs/logo.png"'
+          
+          # Also handle single quotes and no quotes
+          OLD_URL_SINGLE="'/logo.png'"
+          NEW_URL_SINGLE="'https://raw.githubusercontent.com/pineapplestocks/greatclips-coupons/main/docs/logo.png'"
+          
+          # Find and replace in all HTML, JS, and Python files
+          echo "🔍 Searching for files with /logo.png..."
+          
+          # Replace in all relevant file types
+          find . -type f \( -name "*.html" -o -name "*.js" -o -name "*.py" -o -name "*.json" \) | while read file; do
+            if grep -q "/logo.png" "$file"; then
+              echo "📝 Updating: $file"
+              sed -i 's|"/logo.png"|"https://raw.githubusercontent.com/pineapplestocks/greatclips-coupons/main/docs/logo.png"|g' "$file"
+              sed -i "s|'/logo.png'|'https://raw.githubusercontent.com/pineapplestocks/greatclips-coupons/main/docs/logo.png'|g" "$file"
+              sed -i 's|src=/logo.png|src=https://raw.githubusercontent.com/pineapplestocks/greatclips-coupons/main/docs/logo.png|g' "$file"
+            fi
+          done
+          
+          echo "✅ Logo URL replacement complete!"
+
+      - name: Show changed files
+        run: |
+          echo "📋 Files modified:"
+          git diff --name-only
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -A
+          git diff --staged --quiet || git commit -m "🎨 Fix logo URL to use raw.githubusercontent.com"
+          git push
