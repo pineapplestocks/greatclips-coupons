@@ -58,6 +58,7 @@ def create_tweet_text(coupons):
         if state == 'US' or 'All' in location:
             tweet += f"🇺🇸 {price} - ALL US Locations!\n"
         else:
+            # Clean up city - remove trailing comma and whitespace
             city = coupon.get('city', '').replace(',', '').strip()
             tweet += f"📍 {price} - {city}, {state}\n"
     
