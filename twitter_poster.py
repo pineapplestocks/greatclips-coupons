@@ -30,7 +30,7 @@ PREVIEW_IMAGE_URL = "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e
 LOCAL_IMAGE_PATH = os.path.join(DATA_DIR, "twitter_image.jpg")
 
 # How many coupons to post per run (to spread throughout day)
-MAX_POSTS_PER_RUN = 3
+MAX_POSTS_PER_RUN = 9
 
 
 def load_coupons():
