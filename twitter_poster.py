@@ -62,7 +62,8 @@ def create_tweet_text(coupon):
     """Generate tweet text for a coupon"""
     price = coupon.get('price', 'discount')
     location = coupon.get('location_name', '')
-    city = coupon.get('city', '')
+    # Clean up city - remove trailing comma and whitespace
+    city = coupon.get('city', '').replace(',', '').strip()
     state = coupon.get('state', '')
     expiration = coupon.get('expiration', '')
     
