@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-01-07T18:40:05.963409",
-  "total_coupons": 137,
+  "scraped_at": "2026-01-08T01:57:36.819407",
+  "total_coupons": 165,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/3p9joXf",
@@ -117,7 +117,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$5.00",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/mB1QVT2",
@@ -130,7 +130,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$5.00",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/QaM3F9p",
@@ -156,7 +156,7 @@
       "state": "IL",
       "expiration": "01/16/2026",
       "price": "$5.00",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/NHxDvWI",
@@ -170,7 +170,7 @@
       "expiration": "02/08/2026",
       "price": "$5.00",
       "added_date": "2026-01-03",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/irLHe9s",
@@ -184,7 +184,231 @@
       "expiration": "02/07/2026",
       "price": "$5.00",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/yd0wPMy",
+      "coupon_code": "yd0wPMy",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips Wilson and Muir Plaza at 100 W John Rowan Blvd in Bardstown, KY. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/07/2026",
+      "location_name": "Wilson and Muir Plaza",
+      "address": "100 W John Rowan Blvd",
+      "city": "Bardstown,",
+      "state": "KY",
+      "expiration": "02/07/2026",
+      "price": "$5.00",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/qD6AGVf",
+      "coupon_code": "qD6AGVf",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips La Grange Kroger Center at 2028 S Highway 53 in La Grange, KY. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/07/2026",
+      "location_name": "La Grange Kroger Center",
+      "address": "2028 S Highway 53",
+      "city": "La Grange,",
+      "state": "KY",
+      "expiration": "02/07/2026",
+      "price": "$5.00",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/0j32OaD",
+      "coupon_code": "0j32OaD",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips Glenview Pointe at 2400 Lime Kiln Lane in Louisville, KY. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/07/2026",
+      "location_name": "Glenview Pointe",
+      "address": "2400 Lime Kiln Lane",
+      "city": "Louisville,",
+      "state": "KY",
+      "expiration": "02/07/2026",
+      "price": "$5.00",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/aPW5T8X",
+      "coupon_code": "aPW5T8X",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips River Pointe Mall at 451 East Clifty Dr in Madison, IN. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/07/2026",
+      "location_name": "River Pointe Mall",
+      "address": "451 East Clifty Dr",
+      "city": "Madison,",
+      "state": "IN",
+      "expiration": "02/07/2026",
+      "price": "$5.00",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/VtlklLX",
+      "coupon_code": "VtlklLX",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips Sherwin Williams Center at 4420 Outer Loop Rd in Louisville, KY. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/07/2026",
+      "location_name": "Sherwin Williams Center",
+      "address": "4420 Outer Loop Rd",
+      "city": "Louisville,",
+      "state": "KY",
+      "expiration": "02/07/2026",
+      "price": "$5.00",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/PiUV2AO",
+      "coupon_code": "PiUV2AO",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips Warner Robins Place at 2724 Watson Blvd in Warner Robins, GA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/07/2026",
+      "location_name": "Warner Robins Place",
+      "address": "2724 Watson Blvd",
+      "city": "Warner Robins,",
+      "state": "GA",
+      "expiration": "02/07/2026",
+      "price": "$5.00",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/8Ti2aVG",
+      "coupon_code": "8Ti2aVG",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips Middletown Station at 12949 Shelbyville Rd in Louisville, KY. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/07/2026",
+      "location_name": "Middletown Station",
+      "address": "12949 Shelbyville Rd",
+      "city": "Louisville,",
+      "state": "KY",
+      "expiration": "02/07/2026",
+      "price": "$5.00",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/lgNo1Rl",
+      "coupon_code": "lgNo1Rl",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips Shoppes at Houston Lake at 778 GA Hwy 96 in Bonaire, GA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/07/2026",
+      "location_name": "Shoppes",
+      "address": "Houston Lake at 778 GA Hwy 96",
+      "city": "Bonaire,",
+      "state": "GA",
+      "expiration": "02/07/2026",
+      "price": "$5.00",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/lAdePNG",
+      "coupon_code": "lAdePNG",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips Oakbrooke Centre at 185 Oakbrooke Dr in Mount Washington, KY. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/07/2026",
+      "location_name": "Oakbrooke Centre",
+      "address": "185 Oakbrooke Dr",
+      "city": "Mount Washington,",
+      "state": "KY",
+      "expiration": "02/07/2026",
+      "price": "$5.00",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/tIESEyJ",
+      "coupon_code": "tIESEyJ",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips Merganser Commons at 510 Hwy 247 in Bonaire, GA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/07/2026",
+      "location_name": "Merganser Commons",
+      "address": "510 Hwy 247",
+      "city": "Bonaire,",
+      "state": "GA",
+      "expiration": "02/07/2026",
+      "price": "$5.00",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/2IzGTRB",
+      "coupon_code": "2IzGTRB",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips Houston Square at 211 Russell Pkwy in Warner Robins, GA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/07/2026",
+      "location_name": "Houston Square",
+      "address": "211 Russell Pkwy",
+      "city": "Warner Robins,",
+      "state": "GA",
+      "expiration": "02/07/2026",
+      "price": "$5.00",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/ENSRaLu",
+      "coupon_code": "ENSRaLu",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips High Point Station at 213 Boone Station Rd in Shelbyville, KY. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/07/2026",
+      "location_name": "High Point Station",
+      "address": "213 Boone Station Rd",
+      "city": "Shelbyville,",
+      "state": "KY",
+      "expiration": "02/07/2026",
+      "price": "$5.00",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/wGjjdyK",
+      "coupon_code": "wGjjdyK",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips Hunters Station at 214 Hunter Station Rd in Sellersburg, IN. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/07/2026",
+      "location_name": "Hunters Station",
+      "address": "214 Hunter Station Rd",
+      "city": "Sellersburg,",
+      "state": "IN",
+      "expiration": "02/07/2026",
+      "price": "$5.00",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/IIO89QZ",
+      "coupon_code": "IIO89QZ",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips Old Capital Plaza at 413 Old Capital Plaza NW in Corydon, IN. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/07/2026",
+      "location_name": "Old Capital Plaza",
+      "address": "413 Old Capital Plaza NW",
+      "city": "Corydon,",
+      "state": "IN",
+      "expiration": "02/07/2026",
+      "price": "$5.00",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/xQnCtp8",
+      "coupon_code": "xQnCtp8",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips Perry Market Place at 1365 Sam Nunn Blvd in Perry, GA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/07/2026",
+      "location_name": "Perry Market Place",
+      "address": "1365 Sam Nunn Blvd",
+      "city": "Perry,",
+      "state": "GA",
+      "expiration": "02/07/2026",
+      "price": "$5.00",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/PUlEQje",
+      "coupon_code": "PUlEQje",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips Baxter Center at 980 Baxter Ave in Louisville, KY. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/07/2026",
+      "location_name": "Baxter Center",
+      "address": "980 Baxter Ave",
+      "city": "Louisville,",
+      "state": "KY",
+      "expiration": "02/07/2026",
+      "price": "$5.00",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/7zUyCOc",
@@ -197,7 +421,7 @@
       "state": "OK",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/n7XAL9e",
@@ -210,7 +434,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/eauQb0O",
@@ -236,7 +460,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/9L9e08W",
@@ -262,7 +486,7 @@
       "state": "OK",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/miieZuZ",
@@ -275,7 +499,7 @@
       "state": "OK",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/ZrO6Ihq",
@@ -301,7 +525,7 @@
       "state": "MO",
       "expiration": "01/30/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/KEpDQCZ",
@@ -314,7 +538,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/p0k2yZ0",
@@ -327,7 +551,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/bUbgU6H",
@@ -379,7 +603,7 @@
       "state": "WA",
       "expiration": "01/16/2026",
       "price": "$6.00",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/EwwXxM2",
@@ -392,7 +616,7 @@
       "state": "WA",
       "expiration": "01/16/2026",
       "price": "$6.00",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/lfLfJEy",
@@ -405,7 +629,7 @@
       "state": "WA",
       "expiration": "01/15/2026",
       "price": "$6.00",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/gvq5SRe",
@@ -418,7 +642,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$6.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/rvEgYq8",
@@ -431,7 +655,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$6.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/jmhQhjK",
@@ -444,7 +668,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$6.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/OjwSTrB",
@@ -457,7 +681,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$6.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/pUgGajo",
@@ -470,7 +694,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$6.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/fRRxtCe",
@@ -484,7 +708,7 @@
       "expiration": "01/23/2026",
       "price": "$6.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/pDIjYvq",
@@ -575,7 +799,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$8.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/Iq7XsJZ",
@@ -588,7 +812,7 @@
       "state": "NC",
       "expiration": "02/07/2026",
       "price": "$8.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/1BOgnEy",
@@ -601,7 +825,7 @@
       "state": "IA",
       "expiration": "01/23/2026",
       "price": "$8.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/ENr0AhU",
@@ -614,7 +838,7 @@
       "state": "AL",
       "expiration": "01/16/2026",
       "price": "$8.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/IWHRKXc",
@@ -628,7 +852,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/7tc5dvS",
@@ -642,7 +866,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/Fq9cDX4",
@@ -656,7 +880,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/2FIfyBx",
@@ -670,7 +894,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/sNTLSsz",
@@ -684,7 +908,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/1HzZyNS",
@@ -698,7 +922,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/XZjx56j",
@@ -712,7 +936,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/m5n5qRb",
@@ -726,7 +950,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/Ajnd7Xb",
@@ -740,7 +964,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/7210YY9",
@@ -754,7 +978,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/8MDBdQq",
@@ -1180,6 +1404,146 @@
       "last_seen": "2026-01-03"
     },
     {
+      "url": "https://offers.greatclips.com/J51Y26p",
+      "coupon_code": "J51Y26p",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Sternberg Crossing at 5350 Harvey St in Muskegon, MI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/01/2026",
+      "location_name": "Sternberg Crossing",
+      "address": "5350 Harvey St",
+      "city": "Muskegon,",
+      "state": "MI",
+      "expiration": "02/01/2026",
+      "price": "$9.99",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/pc8BPU6",
+      "coupon_code": "pc8BPU6",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Zeeland at 9479 Riley St in Zeeland, MI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/01/2026",
+      "location_name": "Zeeland",
+      "address": "9479 Riley St",
+      "city": "Zeeland,",
+      "state": "MI",
+      "expiration": "02/01/2026",
+      "price": "$9.99",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/Aa9kwvI",
+      "coupon_code": "Aa9kwvI",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Georgetown Plaza at 6498 Balsam Dr. in Hudsonville, MI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/01/2026",
+      "location_name": "Georgetown Plaza",
+      "address": "6498 Balsam Dr.",
+      "city": "Hudsonville,",
+      "state": "MI",
+      "expiration": "02/01/2026",
+      "price": "$9.99",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/RHLFDRk",
+      "coupon_code": "RHLFDRk",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Grand Haven at 440 N Beacon Blvd in Grand Haven, MI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/01/2026",
+      "location_name": "Grand Haven",
+      "address": "440 N Beacon Blvd",
+      "city": "Grand Haven,",
+      "state": "MI",
+      "expiration": "02/01/2026",
+      "price": "$9.99",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/Twtsmjt",
+      "coupon_code": "Twtsmjt",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Holland - North at 520 Butternut Dr in Holland, MI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/01/2026",
+      "location_name": "Holland - North",
+      "address": "520 Butternut Dr",
+      "city": "Holland,",
+      "state": "MI",
+      "expiration": "02/01/2026",
+      "price": "$9.99",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/ZuxSKnY",
+      "coupon_code": "ZuxSKnY",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Holland - South at 1153 S Washington Ave in Holland, MI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/01/2026",
+      "location_name": "Holland - South",
+      "address": "1153 S Washington Ave",
+      "city": "Holland,",
+      "state": "MI",
+      "expiration": "02/01/2026",
+      "price": "$9.99",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/BReupGI",
+      "coupon_code": "BReupGI",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Jenison at 7589 Cottonwood Dr in Jenison, MI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/01/2026",
+      "location_name": "Jenison",
+      "address": "7589 Cottonwood Dr",
+      "city": "Jenison,",
+      "state": "MI",
+      "expiration": "02/01/2026",
+      "price": "$9.99",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/afLFnor",
+      "coupon_code": "afLFnor",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Holland West Shore at 3435 West Shore Drive in Holland, MI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/01/2026",
+      "location_name": "Holland West Shore",
+      "address": "3435 West Shore Drive",
+      "city": "Holland,",
+      "state": "MI",
+      "expiration": "02/01/2026",
+      "price": "$9.99",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/LSz8N8W",
+      "coupon_code": "LSz8N8W",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips North Muskegon Inline at 1888 Holton Road in Muskegon, MI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/01/2026",
+      "location_name": "North Muskegon Inline",
+      "address": "1888 Holton Road",
+      "city": "Muskegon,",
+      "state": "MI",
+      "expiration": "02/01/2026",
+      "price": "$9.99",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/ejNwyLa",
+      "coupon_code": "ejNwyLa",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Roosevelt Park Town Centre at 3355 Henry St in Muskegon, MI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/01/2026",
+      "location_name": "Roosevelt Park Town Centre",
+      "address": "3355 Henry St",
+      "city": "Muskegon,",
+      "state": "MI",
+      "expiration": "02/01/2026",
+      "price": "$9.99",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
+    },
+    {
       "url": "https://offers.greatclips.com/GuR1ntU",
       "coupon_code": "GuR1ntU",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8438/50707-002-1200x600-US-Sparkfly-10off.jpg",
@@ -1190,7 +1554,7 @@
       "state": "TX",
       "expiration": "01/17/2026",
       "price": "$10.00",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/DrV3vVs",
@@ -1204,7 +1568,7 @@
       "expiration": "01/29/2026",
       "price": "$10.00",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/FW9KWXq",
@@ -1231,7 +1595,21 @@
       "expiration": "02/07/2026",
       "price": "$10.99",
       "added_date": "2026-01-02",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/rsI2KCz",
+      "coupon_code": "rsI2KCz",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8462/50707-002-1200x600-10.99.jpg",
+      "valid_text": "Valid at Great Clips Publix at County Line Road at 5170 County Line Rd in Lakeland, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/28/2026",
+      "location_name": "Publix",
+      "address": "County Line Road at 5170 County Line Rd",
+      "city": "Lakeland,",
+      "state": "FL",
+      "expiration": "01/28/2026",
+      "price": "$10.99",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/y0u3ndQ",
@@ -1283,7 +1661,7 @@
       "state": "IL",
       "expiration": "01/16/2026",
       "price": "$11.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/MxqsOvQ",
@@ -1323,7 +1701,7 @@
       "expiration": "01/16/2026",
       "price": "$11.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/anywuwe",
@@ -1349,7 +1727,21 @@
       "state": "IL",
       "expiration": "01/23/2026",
       "price": "$12.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/pPIDAXW",
+      "coupon_code": "pPIDAXW",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8466/50707-002-1200x600-12.99.jpg",
+      "valid_text": "Valid at Great Clips Caldwell Crossing at 7286 Caldwell Rd in Harrisburg, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/06/2026",
+      "location_name": "Caldwell Crossing",
+      "address": "7286 Caldwell Rd",
+      "city": "Harrisburg,",
+      "state": "NC",
+      "expiration": "02/06/2026",
+      "price": "$12.99",
+      "added_date": "2026-01-08",
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/uXWfTEy",
@@ -1362,7 +1754,7 @@
       "state": "TX",
       "expiration": "01/16/2026",
       "price": "$13.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/8JRiIP0",
@@ -1375,7 +1767,7 @@
       "state": "TX",
       "expiration": "01/16/2026",
       "price": "$13.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/BmjxPaV",
@@ -1389,7 +1781,7 @@
       "expiration": "02/06/2026",
       "price": "$13.99",
       "added_date": "2026-01-06",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/YNE3opz",
@@ -1403,7 +1795,7 @@
       "expiration": "01/16/2026",
       "price": "$13.99",
       "added_date": "2026-01-06",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/2up4giV",
@@ -1416,7 +1808,7 @@
       "state": "FL",
       "expiration": "01/15/2026",
       "price": "$14.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/3aepHst",
@@ -1443,7 +1835,7 @@
       "expiration": "02/07/2026",
       "price": "$14.99",
       "added_date": "2026-01-02",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/IShJfKM",
@@ -1457,7 +1849,7 @@
       "expiration": "02/12/2026",
       "price": "$14.99",
       "added_date": "2026-01-06",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/DWl3t2h",
@@ -1509,7 +1901,7 @@
       "state": "FL",
       "expiration": "01/15/2026",
       "price": "$16.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/M2MGG9b",
@@ -1535,7 +1927,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/6Mcs18Q",
@@ -1548,7 +1940,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/8lMnlyi",
@@ -1561,7 +1953,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/ooF3vef",
@@ -1574,7 +1966,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/Mmx8JvN",
@@ -1587,7 +1979,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/CwyNCCX",
@@ -1600,7 +1992,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/As5UKVn",
@@ -1613,7 +2005,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/DX7y8fU",
@@ -1626,7 +2018,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/Oq4RvNi",
@@ -1652,7 +2044,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/BPaxh5H",
@@ -1665,7 +2057,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/fVrSnII",
@@ -1678,7 +2070,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/rIIYZVw",
@@ -1691,7 +2083,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/LPVPkWN",
@@ -1704,7 +2096,7 @@
       "state": "FL",
       "expiration": "01/15/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/PliujA8",
@@ -1717,7 +2109,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/SOiRUMn",
@@ -1730,7 +2122,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/7sAzw1N",
@@ -1743,7 +2135,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/c6ejajE",
@@ -1756,7 +2148,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/WLzfB7J",
@@ -1769,7 +2161,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/keHr0b0",
@@ -1782,7 +2174,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/3XGFMqO",
@@ -1795,7 +2187,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/xL866T7",
@@ -1808,7 +2200,7 @@
       "state": "ON",
       "expiration": "01/30/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-07"
+      "last_seen": "2026-01-08"
     },
     {
       "url": "https://offers.greatclips.com/9hKYiQx",
