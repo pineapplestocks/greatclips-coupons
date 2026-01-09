@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-01-09T12:58:26.088698",
+  "scraped_at": "2026-01-09T15:26:05.340781",
   "total_coupons": 173,
   "coupons": [
     {
@@ -2312,7 +2312,8 @@
       "coupon_code": "X4xcptz",
       "error": "Page.goto: Timeout 15000ms exceeded.\nCall log:\n  - navigating to \"https://offers.greatclips.com/X4xcptz\", waiting until \"networkidle\"\n",
       "added_date": "2026-01-09",
-      "last_seen": "2026-01-09"
+      "last_seen": "2026-01-09",
+      "expiration": "01/19/2026"
     },
     {
       "url": "https://offers.greatclips.com/9hKYiQx",
