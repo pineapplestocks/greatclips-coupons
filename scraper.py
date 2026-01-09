@@ -283,7 +283,19 @@ def fetch_offer_details(offer_urls):
             coupon = {"url": url, "coupon_code": code}
             
             try:
-                page.goto(url, wait_until="networkidle", timeout=15000)
+                # FIXED: Use domcontentloaded instead of networkidle to avoid timeout
+                # networkidle waits for zero network activity which often never happens
+                try:
+                    page.goto(url, wait_until="domcontentloaded", timeout=20000)
+                except Exception as nav_error:
+                    # Fallback: just try basic navigation with longer timeout
+                    print(f"  ⚠️ [{i}/{len(offer_urls)}] {code} - Retrying with basic load...")
+                    try:
+                        page.goto(url, timeout=30000)
+                    except:
+                        raise nav_error  # Re-raise original error if fallback fails
+                
+                # Small wait for any JS to render content
                 time.sleep(1.5)
                 
                 page_text = page.inner_text("body")
