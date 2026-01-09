@@ -369,7 +369,7 @@ def fetch_offer_details(offer_urls):
                 
             except Exception as e:
                 print(f"  ❌ [{i}/{len(offer_urls)}] {code} - Error: {str(e)[:40]}")
-                coupon["error"] = str(e)
+                coupon["error"] = str(e).replace('\n', ' ').replace('\r', ' ')[:100]
             
             coupons.append(coupon)
         
