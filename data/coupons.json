@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-01-10T13:35:55.307829",
+  "scraped_at": "2026-01-10T13:50:30.708141",
   "total_coupons": 175,
   "coupons": [
     {
@@ -175,6 +175,20 @@
       "expiration": "01/19/2026",
       "price": "$4.99",
       "added_date": "2026-01-09",
+      "last_seen": "2026-01-10"
+    },
+    {
+      "url": "https://offers.greatclips.com/X4xcptz",
+      "coupon_code": "X4xcptz",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8449/50707-002-1200x600-4.99.jpg",
+      "valid_text": "Valid at Great Clips Eastchase Market at 1550 Eastchase Pkwy in Fort Worth, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/19/2026",
+      "location_name": "Eastchase Market",
+      "address": "1550 Eastchase Pkwy",
+      "city": "Fort Worth,",
+      "state": "TX",
+      "expiration": "01/19/2026",
+      "price": "$4.99",
+      "added_date": "2026-01-10",
       "last_seen": "2026-01-10"
     },
     {
