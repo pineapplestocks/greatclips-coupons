@@ -2336,14 +2336,6 @@
       "last_seen": "2026-01-10"
     },
     {
-      "url": "https://offers.greatclips.com/X4xcptz",
-      "coupon_code": "X4xcptz",
-      "error": "Page.goto: Timeout 15000ms exceeded.\nCall log:\n  - navigating to \"https://offers.greatclips.com/X4xcptz\", waiting until \"networkidle\"\n",
-      "added_date": "2026-01-09",
-      "last_seen": "2026-01-10",
-      "expiration": "01/19/2026"
-    },
-    {
       "url": "https://offers.greatclips.com/9hKYiQx",
       "coupon_code": "9hKYiQx",
       "price": "$5.00 OFF",
