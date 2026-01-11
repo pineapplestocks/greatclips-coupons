@@ -369,9 +369,12 @@ def fetch_offer_details(offer_urls):
                 
             except Exception as e:
                 print(f"  ❌ [{i}/{len(offer_urls)}] {code} - Error: {str(e)[:40]}")
-                coupon["error"] = str(e).replace('\n', ' ').replace('\r', ' ')[:100]
+                # Skip coupons with errors - they have no useful data
+                continue
             
-            coupons.append(coupon)
+            # Only save coupons that have useful data (price or location)
+            if coupon.get("price") or coupon.get("location_name") or coupon.get("state"):
+                coupons.append(coupon)
         
         browser.close()
     
