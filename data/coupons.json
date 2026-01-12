@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-01-12T02:04:49.259997",
+  "scraped_at": "2026-01-12T06:46:18.445167",
   "total_coupons": 123,
   "coupons": [
     {
@@ -28,7 +28,7 @@
       "expiration": "01/19/2026",
       "price": "$4.99",
       "added_date": "2026-01-09",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/ynjKVMW",
@@ -111,7 +111,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$5.00",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/mB1QVT2",
@@ -858,7 +858,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/XZjx56j",
@@ -872,7 +872,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/m5n5qRb",
@@ -1497,7 +1497,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/rIIYZVw",
