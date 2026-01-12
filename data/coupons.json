@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-01-12T13:00:29.658126",
-  "total_coupons": 123,
+  "scraped_at": "2026-01-12T18:43:06.886567",
+  "total_coupons": 124,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/ZeJo0UI",
@@ -709,6 +709,20 @@
       "expiration": "02/03/2026",
       "price": "$6.99",
       "added_date": "2026-01-09",
+      "last_seen": "2026-01-12"
+    },
+    {
+      "url": "https://offers.greatclips.com/fcGOdt9",
+      "coupon_code": "fcGOdt9",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8457/50707-002-1200x600-7.99.jpg",
+      "valid_text": "Valid at Great Clips Shoppes of Albertville at 7360 US-431 in Albertville, AL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/01/2026",
+      "location_name": "Shoppes of Albertville",
+      "address": "7360 US-431",
+      "city": "Albertville,",
+      "state": "AL",
+      "expiration": "02/01/2026",
+      "price": "$7.99",
+      "added_date": "2026-01-12",
       "last_seen": "2026-01-12"
     },
     {
