@@ -1,20 +1,7 @@
 {
-  "scraped_at": "2026-01-11T18:38:14.637884",
-  "total_coupons": 142,
+  "scraped_at": "2026-01-12T02:04:49.259997",
+  "total_coupons": 123,
   "coupons": [
-    {
-      "url": "https://offers.greatclips.com/3p9joXf",
-      "coupon_code": "3p9joXf",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8447/50707-002-1200x600-3.99.jpg",
-      "valid_text": "Valid at Great Clips Cross Creek Durant at 3601 W Main St in Durant, OK. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-      "location_name": "Cross Creek Durant",
-      "address": "3601 W Main St",
-      "city": "Durant,",
-      "state": "OK",
-      "expiration": "01/12/2026",
-      "price": "$3.99",
-      "last_seen": "2026-01-06"
-    },
     {
       "url": "https://offers.greatclips.com/ZeJo0UI",
       "coupon_code": "ZeJo0UI",
@@ -27,85 +14,7 @@
       "expiration": "01/19/2026",
       "price": "$3.99",
       "added_date": "2026-01-09",
-      "last_seen": "2026-01-11"
-    },
-    {
-      "url": "https://offers.greatclips.com/NmOwLzG",
-      "coupon_code": "NmOwLzG",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8449/50707-002-1200x600-4.99.jpg",
-      "valid_text": "Valid at Great Clips Left Bank Market at 628 Harrold St in Fort Worth, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-      "location_name": "Left Bank Market",
-      "address": "628 Harrold St",
-      "city": "Fort Worth,",
-      "state": "TX",
-      "expiration": "01/12/2026",
-      "price": "$4.99",
-      "last_seen": "2026-01-06"
-    },
-    {
-      "url": "https://offers.greatclips.com/iclXt4r",
-      "coupon_code": "iclXt4r",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8449/50707-002-1200x600-4.99.jpg",
-      "valid_text": "Valid at Great Clips Ada at 1400 Lonnie Abbott Blvd in Ada, OK. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-      "location_name": "Ada",
-      "address": "1400 Lonnie Abbott Blvd",
-      "city": "Ada,",
-      "state": "OK",
-      "expiration": "01/12/2026",
-      "price": "$4.99",
-      "last_seen": "2026-01-06"
-    },
-    {
-      "url": "https://offers.greatclips.com/Stn33G8",
-      "coupon_code": "Stn33G8",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8449/50707-002-1200x600-4.99.jpg",
-      "valid_text": "Valid at Great Clips Park Row Place at 2504 W Park Row Dr in Pantego, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-      "location_name": "Park Row Place",
-      "address": "2504 W Park Row Dr",
-      "city": "Pantego,",
-      "state": "TX",
-      "expiration": "01/12/2026",
-      "price": "$4.99",
-      "last_seen": "2026-01-06"
-    },
-    {
-      "url": "https://offers.greatclips.com/39Hd7Bc",
-      "coupon_code": "39Hd7Bc",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8449/50707-002-1200x600-4.99.jpg",
-      "valid_text": "Valid at Great Clips Eastchase Market at 1550 Eastchase Pkwy in Fort Worth, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-      "location_name": "Eastchase Market",
-      "address": "1550 Eastchase Pkwy",
-      "city": "Fort Worth,",
-      "state": "TX",
-      "expiration": "01/12/2026",
-      "price": "$4.99",
-      "last_seen": "2026-01-06"
-    },
-    {
-      "url": "https://offers.greatclips.com/SBDWdls",
-      "coupon_code": "SBDWdls",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8449/50707-002-1200x600-4.99.jpg",
-      "valid_text": "Valid at Great Clips Paris at 3915 Lamar Ave in Paris, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-      "location_name": "Paris",
-      "address": "3915 Lamar Ave",
-      "city": "Paris,",
-      "state": "TX",
-      "expiration": "01/12/2026",
-      "price": "$4.99",
-      "last_seen": "2026-01-06"
-    },
-    {
-      "url": "https://offers.greatclips.com/G8hx9U3",
-      "coupon_code": "G8hx9U3",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8449/50707-002-1200x600-4.99.jpg",
-      "valid_text": "Valid at Great Clips Market Street at Ardmore at 1525 12th Ave NW in Ardmore, OK. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-      "location_name": "Market Street",
-      "address": "Ardmore at 1525 12th Ave NW",
-      "city": "Ardmore,",
-      "state": "OK",
-      "expiration": "01/12/2026",
-      "price": "$4.99",
-      "last_seen": "2026-01-06"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/QsXKzEq",
@@ -133,7 +42,7 @@
       "expiration": "01/19/2026",
       "price": "$4.99",
       "added_date": "2026-01-09",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/fryiFDb",
@@ -147,7 +56,7 @@
       "expiration": "01/19/2026",
       "price": "$4.99",
       "added_date": "2026-01-09",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/HEk0DSq",
@@ -161,7 +70,7 @@
       "expiration": "01/19/2026",
       "price": "$4.99",
       "added_date": "2026-01-09",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/APwfMuQ",
@@ -175,7 +84,7 @@
       "expiration": "01/19/2026",
       "price": "$4.99",
       "added_date": "2026-01-09",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/X4xcptz",
@@ -189,7 +98,7 @@
       "expiration": "01/19/2026",
       "price": "$4.99",
       "added_date": "2026-01-10",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/61GGnyP",
@@ -215,7 +124,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$5.00",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/tgPprd1",
@@ -228,7 +137,7 @@
       "state": "IL",
       "expiration": "01/16/2026",
       "price": "$5.00",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/NHxDvWI",
@@ -242,7 +151,7 @@
       "expiration": "02/08/2026",
       "price": "$5.00",
       "added_date": "2026-01-03",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/irLHe9s",
@@ -256,7 +165,7 @@
       "expiration": "02/07/2026",
       "price": "$5.00",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/yd0wPMy",
@@ -270,7 +179,7 @@
       "expiration": "02/07/2026",
       "price": "$5.00",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/qD6AGVf",
@@ -284,7 +193,7 @@
       "expiration": "02/07/2026",
       "price": "$5.00",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/0j32OaD",
@@ -298,7 +207,7 @@
       "expiration": "02/07/2026",
       "price": "$5.00",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/aPW5T8X",
@@ -312,7 +221,7 @@
       "expiration": "02/07/2026",
       "price": "$5.00",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/VtlklLX",
@@ -326,7 +235,7 @@
       "expiration": "02/07/2026",
       "price": "$5.00",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/PiUV2AO",
@@ -340,7 +249,7 @@
       "expiration": "02/07/2026",
       "price": "$5.00",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/8Ti2aVG",
@@ -354,7 +263,7 @@
       "expiration": "02/07/2026",
       "price": "$5.00",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/lgNo1Rl",
@@ -368,7 +277,7 @@
       "expiration": "02/07/2026",
       "price": "$5.00",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/lAdePNG",
@@ -382,7 +291,7 @@
       "expiration": "02/07/2026",
       "price": "$5.00",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/tIESEyJ",
@@ -396,7 +305,7 @@
       "expiration": "02/07/2026",
       "price": "$5.00",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/2IzGTRB",
@@ -410,7 +319,7 @@
       "expiration": "02/07/2026",
       "price": "$5.00",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/ENSRaLu",
@@ -424,7 +333,7 @@
       "expiration": "02/07/2026",
       "price": "$5.00",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/wGjjdyK",
@@ -438,7 +347,7 @@
       "expiration": "02/07/2026",
       "price": "$5.00",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/IIO89QZ",
@@ -452,7 +361,7 @@
       "expiration": "02/07/2026",
       "price": "$5.00",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/xQnCtp8",
@@ -466,7 +375,7 @@
       "expiration": "02/07/2026",
       "price": "$5.00",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/PUlEQje",
@@ -480,7 +389,7 @@
       "expiration": "02/07/2026",
       "price": "$5.00",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/7zUyCOc",
@@ -493,7 +402,7 @@
       "state": "OK",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/n7XAL9e",
@@ -506,20 +415,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-11"
-    },
-    {
-      "url": "https://offers.greatclips.com/eauQb0O",
-      "coupon_code": "eauQb0O",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8451/50707-002-1200x600-5.99.jpg",
-      "valid_text": "Valid at Great Clips Weatherford Commons at 1968 S Main St in Weatherford, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-      "location_name": "Weatherford Commons",
-      "address": "1968 S Main St",
-      "city": "Weatherford,",
-      "state": "TX",
-      "expiration": "01/12/2026",
-      "price": "$5.99",
-      "last_seen": "2026-01-06"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/bn8Ac4S",
@@ -532,20 +428,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-11"
-    },
-    {
-      "url": "https://offers.greatclips.com/9L9e08W",
-      "coupon_code": "9L9e08W",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8451/50707-002-1200x600-5.99.jpg",
-      "valid_text": "Valid at Great Clips Valley View Central at 13260 Josey Lane in Farmers Branch, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-      "location_name": "Valley View Central",
-      "address": "13260 Josey Lane",
-      "city": "Farmers Branch,",
-      "state": "TX",
-      "expiration": "01/12/2026",
-      "price": "$5.99",
-      "last_seen": "2026-01-06"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/qqmNY7x",
@@ -558,7 +441,7 @@
       "state": "OK",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/miieZuZ",
@@ -571,20 +454,7 @@
       "state": "OK",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-11"
-    },
-    {
-      "url": "https://offers.greatclips.com/ZrO6Ihq",
-      "coupon_code": "ZrO6Ihq",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8451/50707-002-1200x600-5.99.jpg",
-      "valid_text": "Valid at Great Clips Sherman Town Center at 4114 Hwy 75 N in Sherman, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-      "location_name": "Sherman Town Center",
-      "address": "4114 Hwy 75 N",
-      "city": "Sherman,",
-      "state": "TX",
-      "expiration": "01/12/2026",
-      "price": "$5.99",
-      "last_seen": "2026-01-06"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/eg843Hj",
@@ -597,7 +467,7 @@
       "state": "MO",
       "expiration": "01/30/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/KEpDQCZ",
@@ -610,7 +480,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/p0k2yZ0",
@@ -623,33 +493,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-11"
-    },
-    {
-      "url": "https://offers.greatclips.com/bUbgU6H",
-      "coupon_code": "bUbgU6H",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8451/50707-002-1200x600-5.99.jpg",
-      "valid_text": "Valid at Great Clips Park Forest Northeast at 3767 Forest Ln in Dallas, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-      "location_name": "Park Forest Northeast",
-      "address": "3767 Forest Ln",
-      "city": "Dallas,",
-      "state": "TX",
-      "expiration": "01/12/2026",
-      "price": "$5.99",
-      "last_seen": "2026-01-06"
-    },
-    {
-      "url": "https://offers.greatclips.com/K9lkFmu",
-      "coupon_code": "K9lkFmu",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8451/50707-002-1200x600-5.99.jpg",
-      "valid_text": "Valid at Great Clips Market at Preston Forest at 6063 Forest Ln in Dallas, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-      "location_name": "Market",
-      "address": "Preston Forest at 6063 Forest Ln",
-      "city": "Dallas,",
-      "state": "TX",
-      "expiration": "01/12/2026",
-      "price": "$5.99",
-      "last_seen": "2026-01-06"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/57326fx",
@@ -663,7 +507,7 @@
       "expiration": "01/19/2026",
       "price": "$5.99",
       "added_date": "2026-01-09",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/kYjDnuV",
@@ -677,7 +521,7 @@
       "expiration": "01/19/2026",
       "price": "$5.99",
       "added_date": "2026-01-09",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/9IL5bdY",
@@ -691,7 +535,7 @@
       "expiration": "01/19/2026",
       "price": "$5.99",
       "added_date": "2026-01-09",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/YA7JcRa",
@@ -705,7 +549,7 @@
       "expiration": "01/19/2026",
       "price": "$5.99",
       "added_date": "2026-01-09",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/vAMcWkW",
@@ -719,20 +563,7 @@
       "expiration": "01/19/2026",
       "price": "$5.99",
       "added_date": "2026-01-09",
-      "last_seen": "2026-01-11"
-    },
-    {
-      "url": "https://offers.greatclips.com/DzmIVAr",
-      "coupon_code": "DzmIVAr",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8434/50707-002-1200x600-US-Sparkfly-6off.jpg",
-      "valid_text": "Valid at Great Clips Coit Main Plaza at 8949 Coit Rd in Frisco, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-      "location_name": "Coit Main Plaza",
-      "address": "8949 Coit Rd",
-      "city": "Frisco,",
-      "state": "TX",
-      "expiration": "01/12/2026",
-      "price": "$6.00",
-      "last_seen": "2026-01-06"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/n0UfOlb",
@@ -785,7 +616,7 @@
       "expiration": "01/19/2026",
       "price": "$6.00",
       "added_date": "2026-01-09",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/gvq5SRe",
@@ -798,7 +629,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$6.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/rvEgYq8",
@@ -811,7 +642,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$6.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/jmhQhjK",
@@ -824,7 +655,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$6.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/OjwSTrB",
@@ -837,7 +668,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$6.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/pUgGajo",
@@ -850,7 +681,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$6.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/fRRxtCe",
@@ -864,7 +695,7 @@
       "expiration": "01/23/2026",
       "price": "$6.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/HYgoKN0",
@@ -878,72 +709,7 @@
       "expiration": "02/03/2026",
       "price": "$6.99",
       "added_date": "2026-01-09",
-      "last_seen": "2026-01-11"
-    },
-    {
-      "url": "https://offers.greatclips.com/pDIjYvq",
-      "coupon_code": "pDIjYvq",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
-      "valid_text": "Valid at Great Clips Chandler Village Center at 3415 W Frye Rd in Chandler, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-      "location_name": "Chandler Village Center",
-      "address": "3415 W Frye Rd",
-      "city": "Chandler,",
-      "state": "AZ",
-      "expiration": "01/12/2026",
-      "price": "$7.99",
-      "last_seen": "2026-01-05"
-    },
-    {
-      "url": "https://offers.greatclips.com/0XXED0C",
-      "coupon_code": "0XXED0C",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
-      "valid_text": "Valid at Great Clips Arrowhead Marketplace at 7942 W Bell Rd in Glendale, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-      "location_name": "Arrowhead Marketplace",
-      "address": "7942 W Bell Rd",
-      "city": "Glendale,",
-      "state": "AZ",
-      "expiration": "01/12/2026",
-      "price": "$7.99",
-      "last_seen": "2026-01-05"
-    },
-    {
-      "url": "https://offers.greatclips.com/eZF5UCV",
-      "coupon_code": "eZF5UCV",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
-      "valid_text": "Valid at Great Clips Fry's Anderson Springs at 1960 W Ray Rd in Chandler, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-      "location_name": "Fry's Anderson Springs",
-      "address": "1960 W Ray Rd",
-      "city": "Chandler,",
-      "state": "AZ",
-      "expiration": "01/12/2026",
-      "price": "$7.99",
-      "last_seen": "2026-01-05"
-    },
-    {
-      "url": "https://offers.greatclips.com/S0dyuhM",
-      "coupon_code": "S0dyuhM",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
-      "valid_text": "Valid at Great Clips Gateway Pavillions at 10030 W McDowell Rd in Avondale, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-      "location_name": "Gateway Pavillions",
-      "address": "10030 W McDowell Rd",
-      "city": "Avondale,",
-      "state": "AZ",
-      "expiration": "01/12/2026",
-      "price": "$7.99",
-      "last_seen": "2026-01-05"
-    },
-    {
-      "url": "https://offers.greatclips.com/YgW6qHI",
-      "coupon_code": "YgW6qHI",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
-      "valid_text": "Valid at Great Clips The Park at 1245 W Chandler Blvd in Chandler, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-      "location_name": "The Park",
-      "address": "1245 W Chandler Blvd",
-      "city": "Chandler,",
-      "state": "AZ",
-      "expiration": "01/12/2026",
-      "price": "$7.99",
-      "last_seen": "2026-01-05"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/iRj0I2y",
@@ -969,7 +735,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$8.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/Iq7XsJZ",
@@ -982,7 +748,7 @@
       "state": "NC",
       "expiration": "02/07/2026",
       "price": "$8.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/1BOgnEy",
@@ -995,7 +761,7 @@
       "state": "IA",
       "expiration": "01/23/2026",
       "price": "$8.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/ENr0AhU",
@@ -1022,7 +788,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/7tc5dvS",
@@ -1036,7 +802,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/Fq9cDX4",
@@ -1050,7 +816,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/2FIfyBx",
@@ -1064,7 +830,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/sNTLSsz",
@@ -1078,7 +844,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/1HzZyNS",
@@ -1120,7 +886,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/Ajnd7Xb",
@@ -1134,7 +900,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/7210YY9",
@@ -1148,7 +914,7 @@
       "expiration": "01/23/2026",
       "price": "$8.99",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/SqSDYNX",
@@ -1162,7 +928,7 @@
       "expiration": "01/25/2026",
       "price": "$8.99",
       "added_date": "2026-01-10",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/J51Y26p",
@@ -1176,7 +942,7 @@
       "expiration": "02/01/2026",
       "price": "$9.99",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/pc8BPU6",
@@ -1190,7 +956,7 @@
       "expiration": "02/01/2026",
       "price": "$9.99",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/Aa9kwvI",
@@ -1204,7 +970,7 @@
       "expiration": "02/01/2026",
       "price": "$9.99",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/RHLFDRk",
@@ -1218,7 +984,7 @@
       "expiration": "02/01/2026",
       "price": "$9.99",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/Twtsmjt",
@@ -1232,7 +998,7 @@
       "expiration": "02/01/2026",
       "price": "$9.99",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/ZuxSKnY",
@@ -1246,7 +1012,7 @@
       "expiration": "02/01/2026",
       "price": "$9.99",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/BReupGI",
@@ -1260,7 +1026,7 @@
       "expiration": "02/01/2026",
       "price": "$9.99",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/afLFnor",
@@ -1274,7 +1040,7 @@
       "expiration": "02/01/2026",
       "price": "$9.99",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/LSz8N8W",
@@ -1288,7 +1054,7 @@
       "expiration": "02/01/2026",
       "price": "$9.99",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/ejNwyLa",
@@ -1302,7 +1068,7 @@
       "expiration": "02/01/2026",
       "price": "$9.99",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/aPuTe9E",
@@ -1343,7 +1109,7 @@
       "expiration": "01/29/2026",
       "price": "$10.00",
       "added_date": "2026-01-05",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/FW9KWXq",
@@ -1370,7 +1136,7 @@
       "expiration": "02/07/2026",
       "price": "$10.99",
       "added_date": "2026-01-02",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/rsI2KCz",
@@ -1384,7 +1150,7 @@
       "expiration": "01/28/2026",
       "price": "$10.99",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/jbrXuMQ",
@@ -1414,19 +1180,6 @@
       "last_seen": "2026-01-09"
     },
     {
-      "url": "https://offers.greatclips.com/anywuwe",
-      "coupon_code": "anywuwe",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8466/50707-002-1200x600-12.99.jpg",
-      "valid_text": "Valid at Great Clips Caldwell Crossing at 7286 Caldwell Rd in Harrisburg, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/12/2026",
-      "location_name": "Caldwell Crossing",
-      "address": "7286 Caldwell Rd",
-      "city": "Harrisburg,",
-      "state": "NC",
-      "expiration": "01/12/2026",
-      "price": "$12.99",
-      "last_seen": "2026-01-05"
-    },
-    {
       "url": "https://offers.greatclips.com/Ejc4nEQ",
       "coupon_code": "Ejc4nEQ",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8466/50707-002-1200x600-12.99.jpg",
@@ -1437,7 +1190,7 @@
       "state": "IL",
       "expiration": "01/23/2026",
       "price": "$12.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/pPIDAXW",
@@ -1451,7 +1204,7 @@
       "expiration": "02/06/2026",
       "price": "$12.99",
       "added_date": "2026-01-08",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/uXWfTEy",
@@ -1491,7 +1244,7 @@
       "expiration": "02/06/2026",
       "price": "$13.99",
       "added_date": "2026-01-06",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/YNE3opz",
@@ -1519,7 +1272,7 @@
       "expiration": "01/19/2026",
       "price": "$13.99",
       "added_date": "2026-01-10",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/2up4giV",
@@ -1546,7 +1299,7 @@
       "expiration": "02/07/2026",
       "price": "$14.99",
       "added_date": "2026-01-02",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/IShJfKM",
@@ -1560,7 +1313,7 @@
       "expiration": "02/12/2026",
       "price": "$14.99",
       "added_date": "2026-01-06",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/172xNIJ",
@@ -1574,7 +1327,7 @@
       "expiration": "02/07/2026",
       "price": "$14.99",
       "added_date": "2026-01-11",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/wojaM0Y",
@@ -1588,7 +1341,7 @@
       "expiration": "02/07/2026",
       "price": "$14.99",
       "added_date": "2026-01-11",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/RbFTcNl",
@@ -1614,7 +1367,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/6Mcs18Q",
@@ -1627,7 +1380,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/8lMnlyi",
@@ -1640,7 +1393,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/ooF3vef",
@@ -1653,7 +1406,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/Mmx8JvN",
@@ -1666,7 +1419,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/CwyNCCX",
@@ -1679,7 +1432,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/As5UKVn",
@@ -1692,7 +1445,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/DX7y8fU",
@@ -1705,7 +1458,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/5nrlBq5",
@@ -1718,7 +1471,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/BPaxh5H",
@@ -1731,7 +1484,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/fVrSnII",
@@ -1757,7 +1510,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/LPVPkWN",
@@ -1783,7 +1536,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/SOiRUMn",
@@ -1796,7 +1549,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/7sAzw1N",
@@ -1809,7 +1562,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/c6ejajE",
@@ -1822,7 +1575,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/WLzfB7J",
@@ -1835,7 +1588,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/keHr0b0",
@@ -1848,7 +1601,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/3XGFMqO",
@@ -1861,7 +1614,7 @@
       "state": "BC",
       "expiration": "01/24/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/xL866T7",
@@ -1874,7 +1627,7 @@
       "state": "ON",
       "expiration": "01/30/2026",
       "price": "$17.99",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/Vulk6Cr",
@@ -1888,7 +1641,7 @@
       "expiration": "02/07/2026",
       "price": "$17.99",
       "added_date": "2026-01-11",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/aMDShKX",
@@ -1902,7 +1655,7 @@
       "expiration": "02/01/2026",
       "price": "$18.99",
       "added_date": "2026-01-11",
-      "last_seen": "2026-01-11"
+      "last_seen": "2026-01-12"
     },
     {
       "url": "https://offers.greatclips.com/9hKYiQx",
