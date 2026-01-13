@@ -1,5 +1,9 @@
 name: Scrape Great Clips Coupons
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+  
 on:
   schedule:
     # Run every 6 hours
