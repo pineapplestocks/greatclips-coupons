@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-01-16T12:51:57.458883",
-  "total_coupons": 164,
+  "scraped_at": "2026-01-16T18:38:04.879823",
+  "total_coupons": 165,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/ZeJo0UI",
@@ -2243,6 +2243,20 @@
       "price": "$17.99",
       "added_date": "2026-01-11",
       "last_seen": "2026-01-14"
+    },
+    {
+      "url": "https://offers.greatclips.com/GOVay45",
+      "coupon_code": "GOVay45",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8477/50707-002-1200x600-17.99.jpg",
+      "valid_text": "Valid at Great Clips Champlain Square at 7038 Kerr St in Vancouver, BC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/01/2026",
+      "location_name": "Champlain Square",
+      "address": "7038 Kerr St",
+      "city": "Vancouver,",
+      "state": "BC",
+      "expiration": "02/01/2026",
+      "price": "$17.99",
+      "added_date": "2026-01-16",
+      "last_seen": "2026-01-16"
     },
     {
       "url": "https://offers.greatclips.com/aMDShKX",
