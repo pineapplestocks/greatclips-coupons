@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-01-19T12:55:44.096568",
-  "total_coupons": 179,
+  "scraped_at": "2026-01-19T18:36:50.979520",
+  "total_coupons": 182,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/GS5cTCk",
@@ -769,6 +769,20 @@
       "price": "$5.00",
       "added_date": "2026-01-15",
       "last_seen": "2026-01-15"
+    },
+    {
+      "url": "https://offers.greatclips.com/16exXQ7",
+      "coupon_code": "16exXQ7",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips Creekside Crossing at 1510 Dundas St E in Mississauga, ON. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/08/2026",
+      "location_name": "Creekside Crossing",
+      "address": "1510 Dundas St E",
+      "city": "Mississauga,",
+      "state": "ON",
+      "expiration": "02/08/2026",
+      "price": "$5.00",
+      "added_date": "2026-01-19",
+      "last_seen": "2026-01-19"
     },
     {
       "url": "https://offers.greatclips.com/7zUyCOc",
@@ -2026,6 +2040,34 @@
       "price": "$12.99",
       "added_date": "2026-01-16",
       "last_seen": "2026-01-17"
+    },
+    {
+      "url": "https://offers.greatclips.com/3spM630",
+      "coupon_code": "3spM630",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8466/50707-002-1200x600-12.99.jpg",
+      "valid_text": "Valid at Great Clips East Hills Mall Pad at 3700 Frederick Ave in Saint Joseph, MO. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/05/2026",
+      "location_name": "East Hills Mall Pad",
+      "address": "3700 Frederick Ave",
+      "city": "Saint Joseph,",
+      "state": "MO",
+      "expiration": "03/05/2026",
+      "price": "$12.99",
+      "added_date": "2026-01-19",
+      "last_seen": "2026-01-19"
+    },
+    {
+      "url": "https://offers.greatclips.com/qvJcjRY",
+      "coupon_code": "qvJcjRY",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8466/50707-002-1200x600-12.99.jpg",
+      "valid_text": "Valid at Great Clips Shoppes at North Village at 5107 N Belt Hwy in Saint Joseph, MO. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/05/2026",
+      "location_name": "Shoppes",
+      "address": "North Village at 5107 N Belt Hwy",
+      "city": "Saint Joseph,",
+      "state": "MO",
+      "expiration": "03/05/2026",
+      "price": "$12.99",
+      "added_date": "2026-01-19",
+      "last_seen": "2026-01-19"
     },
     {
       "url": "https://offers.greatclips.com/BmjxPaV",
