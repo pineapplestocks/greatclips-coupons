@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-01-23T12:53:53.587360",
-  "total_coupons": 173,
+  "scraped_at": "2026-01-23T18:39:37.893891",
+  "total_coupons": 171,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/GS5cTCk",
@@ -1052,34 +1052,6 @@
       "last_seen": "2026-01-23"
     },
     {
-      "url": "https://offers.greatclips.com/fRRxtCe",
-      "coupon_code": "fRRxtCe",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8455/50707-002-1200x600-6.99.jpg",
-      "valid_text": "Valid at Great Clips Lakeside Plaza at 17330 W Center Rd in Omaha, NE. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/23/2026",
-      "location_name": "Lakeside Plaza",
-      "address": "17330 W Center Rd",
-      "city": "Omaha,",
-      "state": "NE",
-      "expiration": "01/23/2026",
-      "price": "$6.99",
-      "added_date": "2026-01-23",
-      "last_seen": "2026-01-23"
-    },
-    {
-      "url": "https://offers.greatclips.com/08m6ABG",
-      "coupon_code": "08m6ABG",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8455/50707-002-1200x600-6.99.jpg",
-      "valid_text": "Valid at Great Clips Shops at Roxboro at 719 N Madison Blvd in Roxboro, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/23/2026",
-      "location_name": "Shops",
-      "address": "Roxboro at 719 N Madison Blvd",
-      "city": "Roxboro,",
-      "state": "NC",
-      "expiration": "01/23/2026",
-      "price": "$6.99",
-      "added_date": "2026-01-23",
-      "last_seen": "2026-01-23"
-    },
-    {
       "url": "https://offers.greatclips.com/fcGOdt9",
       "coupon_code": "fcGOdt9",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8457/50707-002-1200x600-7.99.jpg",
@@ -1229,7 +1201,7 @@
       "state": "NC",
       "expiration": "02/07/2026",
       "price": "$8.99",
-      "last_seen": "2026-01-21"
+      "last_seen": "2026-01-23"
     },
     {
       "url": "https://offers.greatclips.com/SqSDYNX",
@@ -2301,7 +2273,7 @@
       "expiration": "02/01/2026",
       "price": "$17.99",
       "added_date": "2026-01-16",
-      "last_seen": "2026-01-18"
+      "last_seen": "2026-01-23"
     },
     {
       "url": "https://offers.greatclips.com/sXMhoEw",
