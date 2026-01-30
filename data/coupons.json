@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-01-29T18:53:18.314295",
-  "total_coupons": 134,
+  "scraped_at": "2026-01-30T02:11:39.561493",
+  "total_coupons": 126,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/61GGnyP",
@@ -26,7 +26,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$5.00",
-      "last_seen": "2026-01-29"
+      "last_seen": "2026-01-30"
     },
     {
       "url": "https://offers.greatclips.com/NHxDvWI",
@@ -697,7 +697,7 @@
       "state": "OK",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-29"
+      "last_seen": "2026-01-30"
     },
     {
       "url": "https://offers.greatclips.com/n7XAL9e",
@@ -736,7 +736,7 @@
       "state": "OK",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-29"
+      "last_seen": "2026-01-30"
     },
     {
       "url": "https://offers.greatclips.com/miieZuZ",
@@ -749,20 +749,7 @@
       "state": "OK",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-29"
-    },
-    {
-      "url": "https://offers.greatclips.com/eg843Hj",
-      "coupon_code": "eg843Hj",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8452/50707-002-1200x600-5.99.jpg",
-      "valid_text": "Valid at Great Clips Springfield Plaza at 3844 West Sunshine Street in Springfield, MO. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/30/2026",
-      "location_name": "Springfield Plaza",
-      "address": "3844 West Sunshine Street",
-      "city": "Springfield,",
-      "state": "MO",
-      "expiration": "01/30/2026",
-      "price": "$5.99",
-      "last_seen": "2026-01-12"
+      "last_seen": "2026-01-30"
     },
     {
       "url": "https://offers.greatclips.com/KEpDQCZ",
@@ -788,7 +775,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-29"
+      "last_seen": "2026-01-30"
     },
     {
       "url": "https://offers.greatclips.com/gvq5SRe",
@@ -853,7 +840,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$6.99",
-      "last_seen": "2026-01-29"
+      "last_seen": "2026-01-30"
     },
     {
       "url": "https://offers.greatclips.com/HYgoKN0",
@@ -1006,7 +993,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$8.99",
-      "last_seen": "2026-01-29"
+      "last_seen": "2026-01-30"
     },
     {
       "url": "https://offers.greatclips.com/Iq7XsJZ",
@@ -1190,76 +1177,6 @@
       "last_seen": "2026-01-14"
     },
     {
-      "url": "https://offers.greatclips.com/B0eOic7",
-      "coupon_code": "B0eOic7",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
-      "valid_text": "Valid at Great Clips Safeway Plaza at 6330 E Golf Links Rd in Tucson, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/30/2026",
-      "location_name": "Safeway Plaza",
-      "address": "6330 E Golf Links Rd",
-      "city": "Tucson,",
-      "state": "AZ",
-      "expiration": "01/30/2026",
-      "price": "$9.99",
-      "added_date": "2026-01-15",
-      "last_seen": "2026-01-17"
-    },
-    {
-      "url": "https://offers.greatclips.com/5aByDLM",
-      "coupon_code": "5aByDLM",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
-      "valid_text": "Valid at Great Clips Twin Peaks at 9110 N Silverbell Rd in Tucson, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/30/2026",
-      "location_name": "Twin Peaks",
-      "address": "9110 N Silverbell Rd",
-      "city": "Tucson,",
-      "state": "AZ",
-      "expiration": "01/30/2026",
-      "price": "$9.99",
-      "added_date": "2026-01-15",
-      "last_seen": "2026-01-17"
-    },
-    {
-      "url": "https://offers.greatclips.com/f6q4nxL",
-      "coupon_code": "f6q4nxL",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
-      "valid_text": "Valid at Great Clips Rita Ranch at 9080 E Valencia Rd in Tucson, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/30/2026",
-      "location_name": "Rita Ranch",
-      "address": "9080 E Valencia Rd",
-      "city": "Tucson,",
-      "state": "AZ",
-      "expiration": "01/30/2026",
-      "price": "$9.99",
-      "added_date": "2026-01-15",
-      "last_seen": "2026-01-17"
-    },
-    {
-      "url": "https://offers.greatclips.com/8yOY45H",
-      "coupon_code": "8yOY45H",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
-      "valid_text": "Valid at Great Clips Madera Village at 9121 E Tanque Verde Road in Tucson, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/30/2026",
-      "location_name": "Madera Village",
-      "address": "9121 E Tanque Verde Road",
-      "city": "Tucson,",
-      "state": "AZ",
-      "expiration": "01/30/2026",
-      "price": "$9.99",
-      "added_date": "2026-01-15",
-      "last_seen": "2026-01-16"
-    },
-    {
-      "url": "https://offers.greatclips.com/uid4XIZ",
-      "coupon_code": "uid4XIZ",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
-      "valid_text": "Valid at Great Clips Safford Walmart at 775 S 20th Ave in Safford, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/30/2026",
-      "location_name": "Safford Walmart",
-      "address": "775 S 20th Ave",
-      "city": "Safford,",
-      "state": "AZ",
-      "expiration": "01/30/2026",
-      "price": "$9.99",
-      "added_date": "2026-01-15",
-      "last_seen": "2026-01-17"
-    },
-    {
       "url": "https://offers.greatclips.com/t9lYQhH",
       "coupon_code": "t9lYQhH",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
@@ -1271,7 +1188,7 @@
       "expiration": "02/06/2026",
       "price": "$9.99",
       "added_date": "2026-01-17",
-      "last_seen": "2026-01-29"
+      "last_seen": "2026-01-30"
     },
     {
       "url": "https://offers.greatclips.com/aq5iyyz",
@@ -1621,21 +1538,7 @@
       "expiration": "02/06/2026",
       "price": "$13.99",
       "added_date": "2026-01-06",
-      "last_seen": "2026-01-29"
-    },
-    {
-      "url": "https://offers.greatclips.com/zmlW78U",
-      "coupon_code": "zmlW78U",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8468/50707-002-1200x600-13.99.jpg",
-      "valid_text": "Valid at Great Clips Quail Springs at 14220 N Pennsylvania Ave in Oklahoma City, OK. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/30/2026",
-      "location_name": "Quail Springs",
-      "address": "14220 N Pennsylvania Ave",
-      "city": "Oklahoma City,",
-      "state": "OK",
-      "expiration": "01/30/2026",
-      "price": "$13.99",
-      "added_date": "2026-01-21",
-      "last_seen": "2026-01-21"
+      "last_seen": "2026-01-30"
     },
     {
       "url": "https://offers.greatclips.com/ZOMuK1l",
@@ -1708,19 +1611,6 @@
       "last_seen": "2026-01-20"
     },
     {
-      "url": "https://offers.greatclips.com/xL866T7",
-      "coupon_code": "xL866T7",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8477/50707-002-1200x600-17.99.jpg",
-      "valid_text": "Valid at Great Clips Brooklin Towne Centre at 5969 Baldwin St S in Whitby, ON. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/30/2026",
-      "location_name": "Brooklin Towne Centre",
-      "address": "5969 Baldwin St S",
-      "city": "Whitby,",
-      "state": "ON",
-      "expiration": "01/30/2026",
-      "price": "$17.99",
-      "last_seen": "2026-01-14"
-    },
-    {
       "url": "https://offers.greatclips.com/Vulk6Cr",
       "coupon_code": "Vulk6Cr",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8477/50707-002-1200x600-17.99.jpg",
@@ -1784,7 +1674,7 @@
       "state": "US",
       "price": "$7.99",
       "added_date": "2026-01-29",
-      "last_seen": "2026-01-29"
+      "last_seen": "2026-01-30"
     },
     {
       "url": "https://offers.greatclips.com/uadPCj8",
@@ -1794,7 +1684,7 @@
       "state": "US",
       "price": "$8.99",
       "added_date": "2026-01-29",
-      "last_seen": "2026-01-29"
+      "last_seen": "2026-01-30"
     },
     {
       "url": "https://offers.greatclips.com/JIiOv3l",
@@ -1804,7 +1694,7 @@
       "state": "US",
       "price": "$9.99",
       "added_date": "2026-01-20",
-      "last_seen": "2026-01-29"
+      "last_seen": "2026-01-30"
     },
     {
       "url": "https://offers.greatclips.com/Luz2UyB",
@@ -1814,7 +1704,7 @@
       "state": "US",
       "price": "$12.99",
       "added_date": "2026-01-20",
-      "last_seen": "2026-01-29"
+      "last_seen": "2026-01-30"
     },
     {
       "url": "https://offers.greatclips.com/5GnlX4D",
@@ -1824,7 +1714,7 @@
       "state": "US",
       "price": "$17.99",
       "added_date": "2026-01-19",
-      "last_seen": "2026-01-29"
+      "last_seen": "2026-01-30"
     },
     {
       "url": "https://offers.greatclips.com/Lg8M6iE",
@@ -1834,7 +1724,7 @@
       "state": "US",
       "price": "$17.99",
       "added_date": "2026-01-19",
-      "last_seen": "2026-01-29"
+      "last_seen": "2026-01-30"
     }
   ]
 }
