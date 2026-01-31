@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-01-30T18:47:39.904549",
+  "scraped_at": "2026-01-31T02:07:13.282737",
   "total_coupons": 126,
   "coupons": [
     {
@@ -26,7 +26,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$5.00",
-      "last_seen": "2026-01-30"
+      "last_seen": "2026-01-31"
     },
     {
       "url": "https://offers.greatclips.com/NHxDvWI",
@@ -697,7 +697,7 @@
       "state": "OK",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-30"
+      "last_seen": "2026-01-31"
     },
     {
       "url": "https://offers.greatclips.com/n7XAL9e",
@@ -736,7 +736,7 @@
       "state": "OK",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-30"
+      "last_seen": "2026-01-31"
     },
     {
       "url": "https://offers.greatclips.com/miieZuZ",
@@ -749,7 +749,7 @@
       "state": "OK",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-30"
+      "last_seen": "2026-01-31"
     },
     {
       "url": "https://offers.greatclips.com/KEpDQCZ",
@@ -775,7 +775,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$5.99",
-      "last_seen": "2026-01-30"
+      "last_seen": "2026-01-31"
     },
     {
       "url": "https://offers.greatclips.com/gvq5SRe",
@@ -840,7 +840,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$6.99",
-      "last_seen": "2026-01-30"
+      "last_seen": "2026-01-31"
     },
     {
       "url": "https://offers.greatclips.com/HYgoKN0",
@@ -993,7 +993,7 @@
       "state": "TX",
       "expiration": "02/07/2026",
       "price": "$8.99",
-      "last_seen": "2026-01-30"
+      "last_seen": "2026-01-31"
     },
     {
       "url": "https://offers.greatclips.com/Iq7XsJZ",
@@ -1161,20 +1161,6 @@
       "price": "$9.99",
       "added_date": "2026-01-13",
       "last_seen": "2026-01-26"
-    },
-    {
-      "url": "https://offers.greatclips.com/7MVTNjx",
-      "coupon_code": "7MVTNjx",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
-      "valid_text": "Valid at Great Clips Katy Mills at 25116 Market Place Dr in Katy, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 01/31/2026",
-      "location_name": "Katy Mills",
-      "address": "25116 Market Place Dr",
-      "city": "Katy,",
-      "state": "TX",
-      "expiration": "01/31/2026",
-      "price": "$9.99",
-      "added_date": "2026-01-13",
-      "last_seen": "2026-01-14"
     },
     {
       "url": "https://offers.greatclips.com/t9lYQhH",
@@ -1674,7 +1660,7 @@
       "state": "US",
       "price": "$7.99",
       "added_date": "2026-01-29",
-      "last_seen": "2026-01-30"
+      "last_seen": "2026-01-31"
     },
     {
       "url": "https://offers.greatclips.com/uadPCj8",
@@ -1684,7 +1670,7 @@
       "state": "US",
       "price": "$8.99",
       "added_date": "2026-01-29",
-      "last_seen": "2026-01-30"
+      "last_seen": "2026-01-31"
     },
     {
       "url": "https://offers.greatclips.com/JIiOv3l",
@@ -1694,7 +1680,7 @@
       "state": "US",
       "price": "$9.99",
       "added_date": "2026-01-20",
-      "last_seen": "2026-01-30"
+      "last_seen": "2026-01-31"
     },
     {
       "url": "https://offers.greatclips.com/Luz2UyB",
@@ -1704,7 +1690,17 @@
       "state": "US",
       "price": "$12.99",
       "added_date": "2026-01-20",
-      "last_seen": "2026-01-30"
+      "last_seen": "2026-01-31"
+    },
+    {
+      "url": "https://offers.greatclips.com/bWp2H5l",
+      "coupon_code": "bWp2H5l",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/16805/50707-002-1200x600-13.99.jpg",
+      "location_name": "",
+      "state": "US",
+      "price": "$13.99",
+      "added_date": "2026-01-31",
+      "last_seen": "2026-01-31"
     },
     {
       "url": "https://offers.greatclips.com/5GnlX4D",
@@ -1714,7 +1710,7 @@
       "state": "US",
       "price": "$17.99",
       "added_date": "2026-01-19",
-      "last_seen": "2026-01-30"
+      "last_seen": "2026-01-31"
     },
     {
       "url": "https://offers.greatclips.com/Lg8M6iE",
@@ -1724,7 +1720,7 @@
       "state": "US",
       "price": "$17.99",
       "added_date": "2026-01-19",
-      "last_seen": "2026-01-30"
+      "last_seen": "2026-01-31"
     }
   ]
 }
