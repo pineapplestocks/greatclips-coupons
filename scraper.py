@@ -344,19 +344,55 @@ def fetch_offer_details(offer_urls):
                         page_text
                     )
                     
-                    if us_wide_match and not has_specific_location:
+                    # Check for area-based coupons (e.g., "participating Columbia area Great Clips")
+                    area_match = re.search(
+                        r'(?:participating|only at)\s+([A-Za-z\s]+?)\s+area\s+Great\s+Clips',
+                        page_text,
+                        re.IGNORECASE
+                    )
+
+                    if us_wide_match and not has_specific_location and not area_match:
                         coupon["location_name"] = ""
                         coupon["state"] = "US"
                         print(f"  ✅ [{i}/{len(offer_urls)}] {code} - US-Wide Coupon")
+                    elif area_match:
+                        # Area-based coupon - valid at multiple locations in a region
+                        area_name = area_match.group(1).strip()
+                        coupon["location_name"] = f"{area_name} Area"
+                        coupon["state"] = "AREA"
+                        coupon["area_name"] = area_name
+                        # Try to get expiration
+                        exp_match = re.search(r'Expires?\s*:?\s*(\d{1,2}/\d{1,2}/\d{4})', page_text, re.IGNORECASE)
+                        if exp_match:
+                            coupon["expiration"] = exp_match.group(1)
+                        print(f"  ✅ [{i}/{len(offer_urls)}] {code} - {area_name} Area Coupon")
                     else:
                         # Try to get expiration at least
                         exp_match = re.search(r'Expires?\s*:?\s*(\d{1,2}/\d{1,2}/\d{4})', page_text, re.IGNORECASE)
                         if exp_match:
                             coupon["expiration"] = exp_match.group(1)
-                        
+
+                        # Check for area pattern one more time with different format
+                        area_fallback = re.search(
+                            r'([A-Za-z\s]+?)\s+area\s+(?:Great\s+Clips\s+)?salons?',
+                            page_text,
+                            re.IGNORECASE
+                        )
+
+                        if area_fallback and not coupon.get("location_name"):
+                            area_name = area_fallback.group(1).strip()
+                            # Filter out common false positives
+                            if area_name.lower() not in ['the', 'your', 'local', 'nearby', 'this']:
+                                coupon["location_name"] = f"{area_name} Area"
+                                coupon["state"] = "AREA"
+                                coupon["area_name"] = area_name
+                                print(f"  ✅ [{i}/{len(offer_urls)}] {code} - {area_name} Area Coupon")
+                            else:
+                                coupon["state"] = "US"
+                                print(f"  ✅ [{i}/{len(offer_urls)}] {code} - US-Wide (no location)")
                         # If we found a price but no location, it's likely a US-wide coupon
                         # Mark as US since there's no specific location
-                        if not coupon.get("location_name") and not coupon.get("address") and not coupon.get("city"):
+                        elif not coupon.get("location_name") and not coupon.get("address") and not coupon.get("city"):
                             coupon["state"] = "US"
                             print(f"  ✅ [{i}/{len(offer_urls)}] {code} - US-Wide (no location)")
                         else:
