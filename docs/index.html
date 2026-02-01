@@ -2632,41 +2632,46 @@
         function submitEmail(e) {
             e.preventDefault();
             const email = document.getElementById('emailInput').value;
-            
+
             if (!email || !email.includes('@')) {
                 alert('Please enter a valid email address');
                 return;
             }
-            
+
+            // Save the coupon URL before closing modal (closeEmailModal clears it)
+            const couponUrl = pendingCouponUrl;
+
             // Save email locally so they don't have to enter again
             localStorage.setItem('gc_email', email);
-            
+
             // Send to Formspree (free email collection service)
             // REPLACE with your Formspree endpoint!
             fetch('https://formspree.io/f/xrebvqjy', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ 
+                body: JSON.stringify({
                     email: email,
                     source: 'coupon_gate',
-                    coupon_url: pendingCouponUrl,
+                    coupon_url: couponUrl,
                     timestamp: new Date().toISOString()
                 })
             }).catch(() => {}); // Silent fail - don't block user
-            
+
             // Close modal and open coupon
             closeEmailModal();
-            window.open(pendingCouponUrl, '_blank');
-            
+            window.open(couponUrl, '_blank');
+
             // Show thank you toast
             showToast('Thanks! Enjoy your coupon 🎉');
         }
         
         function skipEmail() {
+            // Save the coupon URL before closing modal (closeEmailModal clears it)
+            const couponUrl = pendingCouponUrl;
             // Let them skip but track it
             localStorage.setItem('gc_email_skipped', 'true');
             closeEmailModal();
-            window.open(pendingCouponUrl, '_blank');
+            window.open(couponUrl, '_blank');
         }
         
         // Close modal on escape key
