@@ -502,18 +502,28 @@
             }
         }
 
-        // Check if coupon is universal (works at any US location)
+        // Check if coupon is truly universal (works at any US location nationwide)
         function isUniversal(coupon) {
             const loc = (coupon.location_name || '').trim();
             const state = (coupon.state || '').toUpperCase();
             const address = (coupon.address || '').trim();
             const city = (coupon.city || '').trim();
-            
+
+            // Area-based coupons are NOT universal
+            if (state === 'AREA' || coupon.area_name) return false;
+
             if (state === 'US') return true;
             if (loc.toUpperCase().includes('ALL US') || loc.toUpperCase().includes('ALL LOCATIONS')) return true;
-            if ((!loc || loc.toUpperCase() === 'GREAT CLIPS') && !address && !city) return true;
-            
+            if ((!loc || loc.toUpperCase() === 'GREAT CLIPS') && !address && !city && state !== 'AREA') return true;
+
             return false;
+        }
+
+        // Check if coupon is area-based (works at multiple locations in a specific region)
+        function isAreaBased(coupon) {
+            const state = (coupon.state || '').toUpperCase();
+            const loc = (coupon.location_name || '').toLowerCase();
+            return state === 'AREA' || coupon.area_name || loc.includes(' area');
         }
 
         // Get price as number
@@ -562,9 +572,10 @@
             const maxPrice = currentFilters.maxPrice;
             const sortBy = currentFilters.sortBy;
 
-            // Separate universal and regular coupons
+            // Separate universal, area-based, and regular coupons
             const universalCoupons = COUPON_DATA.filter(c => isUniversal(c));
-            const regularCoupons = COUPON_DATA.filter(c => !isUniversal(c));
+            const areaCoupons = COUPON_DATA.filter(c => isAreaBased(c));
+            const regularCoupons = COUPON_DATA.filter(c => !isUniversal(c) && !isAreaBased(c));
 
             // Filter regular coupons
             let filtered = regularCoupons.filter(c => {
@@ -676,9 +687,10 @@
         function render() {
             const app = document.getElementById('app');
 
-            // Separate universal and regular coupons
+            // Separate universal, area-based, and regular coupons
             const universalCoupons = COUPON_DATA.filter(c => isUniversal(c));
-            const regularCoupons = COUPON_DATA.filter(c => !isUniversal(c));
+            const areaCoupons = COUPON_DATA.filter(c => isAreaBased(c));
+            const regularCoupons = COUPON_DATA.filter(c => !isUniversal(c) && !isAreaBased(c));
             
             // Initial sort by price
             regularCoupons.sort((a, b) => getPrice(a) - getPrice(b));
@@ -793,6 +805,75 @@
                                                 <div class="space-y-2">
                                                     <a href="${c.url}" target="_blank" 
                                                         class="block w-full bg-white text-purple-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-purple-50 transition-colors">
+                                                        Get your coupon now →
+                                                    </a>
+                                                    <button onclick="shareCoupon('${c.url}', '${c.price || ''}')"
+                                                        class="w-full bg-white/20 hover:bg-white/30 text-white font-medium py-2.5 px-4 rounded-lg text-center transition-colors flex items-center justify-center gap-2">
+                                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                                                        </svg>
+                                                        Share this coupon
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        `;
+                                    }).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                ` : ''}
+
+                <!-- Area-Based Coupons Section -->
+                ${areaCoupons.length > 0 ? `
+                <section class="max-w-7xl mx-auto px-4 mb-8 relative z-10">
+                    <div class="bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 rounded-2xl p-1">
+                        <div class="bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 rounded-xl p-6 md:p-8 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+                            <div class="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+
+                            <div class="relative">
+                                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+                                    <div>
+                                        <div class="inline-flex items-center gap-2 bg-white/20 rounded-full px-3 py-1 mb-2">
+                                            <svg class="w-4 h-4 text-yellow-200" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-white text-sm font-semibold">REGIONAL DEALS</span>
+                                        </div>
+                                        <h2 class="text-2xl md:text-3xl font-bold text-white">Area-Based Coupons</h2>
+                                        <p class="text-white/70 mt-1">Valid at participating Great Clips in specific regions</p>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${Math.min(areaCoupons.length, 4)} gap-4">
+                                    ${areaCoupons.map(c => {
+                                        const price = getPrice(c);
+                                        const hasImage = c.image_url && c.image_url.length > 0;
+                                        const areaName = c.area_name || c.location_name || 'Regional';
+                                        return `
+                                        <div class="bg-white/15 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-white/25 transition-all duration-300 border border-white/20">
+                                            ${hasImage ? `
+                                            <div class="w-full h-40 overflow-hidden">
+                                                <img src="${c.image_url}" alt="Great Clips Coupon ${c.price || ''}" class="w-full h-full object-cover">
+                                            </div>
+                                            ` : ''}
+                                            <div class="p-5">
+                                                <div class="flex items-start justify-between mb-4">
+                                                    <div class="bg-white rounded-lg px-4 py-2 shadow-lg">
+                                                        <span class="text-3xl font-extrabold text-orange-600">${c.price || 'N/A'}</span>
+                                                    </div>
+                                                    <span class="text-white/60 text-sm bg-white/10 px-2 py-1 rounded">
+                                                        Exp: ${getExpiration(c)}
+                                                    </span>
+                                                </div>
+                                                <h3 class="text-white font-semibold text-lg mb-1">${areaName}</h3>
+                                                <p class="text-white/60 text-sm mb-4">Valid at participating salons in this area</p>
+                                                <div class="space-y-2">
+                                                    <a href="${c.url}" target="_blank"
+                                                        class="block w-full bg-white text-orange-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-orange-50 transition-colors">
                                                         Get your coupon now →
                                                     </a>
                                                     <button onclick="shareCoupon('${c.url}', '${c.price || ''}')"
