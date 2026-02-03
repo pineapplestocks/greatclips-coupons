@@ -95,16 +95,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-<<<<<<< Updated upstream
-=======
-  <url>
-    <loc>https://greatclipsdeal.com/january-2026</loc>
-    <lastmod>2026-02-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
->>>>>>> Stashed changes
-  
+
   <!-- Blog -->
   <url>
     <loc>https://greatclipsdeal.com/blog</loc>
@@ -133,11 +124,10 @@
   <url>
     <loc>https://greatclipsdeal.com/blog/coupon-hacks</loc>
     <lastmod>2026-02-03</lastmod>
-<<<<<<< Updated upstream
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
+
   <!-- Monthly Landing Pages 2026 -->
   <url>
     <loc>https://greatclipsdeal.com/january-2026</loc>
@@ -211,7 +201,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
   <!-- Monthly Landing Pages 2027 -->
   <url>
     <loc>https://greatclipsdeal.com/january-2027</loc>
@@ -282,12 +272,10 @@
   <url>
     <loc>https://greatclipsdeal.com/december-2027</loc>
     <lastmod>2026-02-03</lastmod>
-=======
->>>>>>> Stashed changes
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
+
   <!-- All 50 State Pages -->
   <url>
     <loc>https://greatclipsdeal.com/alabama</loc>
@@ -648,7 +636,6 @@
   <url>
     <loc>https://greatclipsdeal.com/cities/detroit</loc>
     <lastmod>2026-02-03</lastmod>
-<<<<<<< Updated upstream
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
@@ -949,8 +936,6 @@
   <url>
     <loc>https://greatclipsdeal.com/cities/santa-ana</loc>
     <lastmod>2026-02-03</lastmod>
-=======
->>>>>>> Stashed changes
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
