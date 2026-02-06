@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-02-05T18:54:19.465829",
-  "total_coupons": 114,
+  "scraped_at": "2026-02-06T02:12:55.901374",
+  "total_coupons": 111,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/61GGnyP",
@@ -981,20 +981,6 @@
       "last_seen": "2026-01-26"
     },
     {
-      "url": "https://offers.greatclips.com/t9lYQhH",
-      "coupon_code": "t9lYQhH",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
-      "valid_text": "Valid at Great Clips Truman Center at 2367 Vintage Dr in Excelsior Springs, MO. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/06/2026",
-      "location_name": "Truman Center",
-      "address": "2367 Vintage Dr",
-      "city": "Excelsior Springs,",
-      "state": "MO",
-      "expiration": "02/06/2026",
-      "price": "$9.99",
-      "added_date": "2026-01-17",
-      "last_seen": "2026-01-30"
-    },
-    {
       "url": "https://offers.greatclips.com/aq5iyyz",
       "coupon_code": "aq5iyyz",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8463/50707-002-1200x600-10.99.jpg",
@@ -1331,20 +1317,6 @@
       "last_seen": "2026-02-02"
     },
     {
-      "url": "https://offers.greatclips.com/pPIDAXW",
-      "coupon_code": "pPIDAXW",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8466/50707-002-1200x600-12.99.jpg",
-      "valid_text": "Valid at Great Clips Caldwell Crossing at 7286 Caldwell Rd in Harrisburg, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/06/2026",
-      "location_name": "Caldwell Crossing",
-      "address": "7286 Caldwell Rd",
-      "city": "Harrisburg,",
-      "state": "NC",
-      "expiration": "02/06/2026",
-      "price": "$12.99",
-      "added_date": "2026-01-08",
-      "last_seen": "2026-01-14"
-    },
-    {
       "url": "https://offers.greatclips.com/3spM630",
       "coupon_code": "3spM630",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8466/50707-002-1200x600-12.99.jpg",
@@ -1371,20 +1343,6 @@
       "price": "$12.99",
       "added_date": "2026-01-19",
       "last_seen": "2026-01-21"
-    },
-    {
-      "url": "https://offers.greatclips.com/BmjxPaV",
-      "coupon_code": "BmjxPaV",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8468/50707-002-1200x600-13.99.jpg",
-      "valid_text": "Valid at Great Clips Wilderness Oak at 23522 Wilderness Oak in San Antonio, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/06/2026",
-      "location_name": "Wilderness Oak",
-      "address": "23522 Wilderness Oak",
-      "city": "San Antonio,",
-      "state": "TX",
-      "expiration": "02/06/2026",
-      "price": "$13.99",
-      "added_date": "2026-01-06",
-      "last_seen": "2026-01-30"
     },
     {
       "url": "https://offers.greatclips.com/ZOMuK1l",
