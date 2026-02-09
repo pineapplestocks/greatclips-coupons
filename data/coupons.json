@@ -1,35 +1,7 @@
 {
-  "scraped_at": "2026-02-08T18:40:10.271902",
-  "total_coupons": 43,
+  "scraped_at": "2026-02-09T02:28:36.565896",
+  "total_coupons": 40,
   "coupons": [
-    {
-      "url": "https://offers.greatclips.com/dzc88M2",
-      "coupon_code": "dzc88M2",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8455/50707-002-1200x600-6.99.jpg",
-      "valid_text": "Valid at Great Clips Village Green Nolensville at 7344 Nolensville Rd in Nolensville, TN. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/08/2026",
-      "location_name": "Village Green Nolensville",
-      "address": "7344 Nolensville Rd",
-      "city": "Nolensville,",
-      "state": "TN",
-      "expiration": "02/08/2026",
-      "price": "$6.99",
-      "added_date": "2026-02-08",
-      "last_seen": "2026-02-08"
-    },
-    {
-      "url": "https://offers.greatclips.com/kwDlonG",
-      "coupon_code": "kwDlonG",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
-      "valid_text": "Valid at Great Clips Lakepointe Towne Crossing at 729 Hebron Pkwy in Lewisville, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/09/2026",
-      "location_name": "Lakepointe Towne Crossing",
-      "address": "729 Hebron Pkwy",
-      "city": "Lewisville,",
-      "state": "TX",
-      "expiration": "02/09/2026",
-      "price": "$7.99",
-      "added_date": "2026-01-15",
-      "last_seen": "2026-01-16"
-    },
     {
       "url": "https://offers.greatclips.com/2KAdGYv",
       "coupon_code": "2KAdGYv",
@@ -423,20 +395,6 @@
       "last_seen": "2026-02-02"
     },
     {
-      "url": "https://offers.greatclips.com/HpxK6qe",
-      "coupon_code": "HpxK6qe",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8464/50707-002-1200x600-11.99.jpg",
-      "valid_text": "Valid at Great Clips Bay Hill at 1450 W Grand Pkwy S in Katy, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/09/2026",
-      "location_name": "Bay Hill",
-      "address": "1450 W Grand Pkwy S",
-      "city": "Katy,",
-      "state": "TX",
-      "expiration": "02/09/2026",
-      "price": "$11.99",
-      "added_date": "2026-02-02",
-      "last_seen": "2026-02-02"
-    },
-    {
       "url": "https://offers.greatclips.com/3spM630",
       "coupon_code": "3spM630",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8466/50707-002-1200x600-12.99.jpg",
@@ -500,7 +458,7 @@
       "state": "US",
       "price": "$7.99",
       "added_date": "2026-01-29",
-      "last_seen": "2026-02-08",
+      "last_seen": "2026-02-09",
       "expiration": "02/20/2026"
     },
     {
@@ -511,7 +469,7 @@
       "state": "US",
       "price": "$8.99",
       "added_date": "2026-01-29",
-      "last_seen": "2026-02-08"
+      "last_seen": "2026-02-09"
     },
     {
       "url": "https://offers.greatclips.com/JIiOv3l",
@@ -531,7 +489,7 @@
       "state": "US",
       "price": "$11.99",
       "added_date": "2026-02-01",
-      "last_seen": "2026-02-08"
+      "last_seen": "2026-02-09"
     },
     {
       "url": "https://offers.greatclips.com/Luz2UyB",
@@ -541,7 +499,7 @@
       "state": "US",
       "price": "$12.99",
       "added_date": "2026-01-20",
-      "last_seen": "2026-02-08",
+      "last_seen": "2026-02-09",
       "expiration": "02/20/2026"
     },
     {
@@ -552,7 +510,7 @@
       "state": "US",
       "price": "$13.99",
       "added_date": "2026-01-31",
-      "last_seen": "2026-02-08"
+      "last_seen": "2026-02-09"
     },
     {
       "url": "https://offers.greatclips.com/5GnlX4D",
@@ -562,7 +520,7 @@
       "state": "US",
       "price": "$17.99",
       "added_date": "2026-01-19",
-      "last_seen": "2026-02-08"
+      "last_seen": "2026-02-09"
     },
     {
       "url": "https://offers.greatclips.com/Lg8M6iE",
@@ -572,7 +530,7 @@
       "state": "US",
       "price": "$17.99",
       "added_date": "2026-01-19",
-      "last_seen": "2026-02-08"
+      "last_seen": "2026-02-09"
     }
   ]
 }
