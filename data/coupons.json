@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-02-14T02:10:51.271647",
-  "total_coupons": 41,
+  "scraped_at": "2026-02-14T06:50:50.469290",
+  "total_coupons": 45,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/2KAdGYv",
@@ -98,7 +98,7 @@
       "expiration": "03/13/2026",
       "price": "$7.99",
       "added_date": "2026-01-18",
-      "last_seen": "2026-02-12"
+      "last_seen": "2026-02-14"
     },
     {
       "url": "https://offers.greatclips.com/FNfcvQo",
@@ -124,6 +124,30 @@
       "expiration": "02/27/2026",
       "price": "$9.99",
       "added_date": "2026-02-11",
+      "last_seen": "2026-02-14"
+    },
+    {
+      "url": "https://offers.greatclips.com/aWkLplt",
+      "coupon_code": "aWkLplt",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/16806/50707-002-1200x600-9.99.jpg",
+      "location_name": "participating Panama City Area",
+      "state": "AREA",
+      "area_name": "participating Panama City",
+      "expiration": "02/27/2026",
+      "price": "$9.99",
+      "added_date": "2026-02-14",
+      "last_seen": "2026-02-14"
+    },
+    {
+      "url": "https://offers.greatclips.com/3VHPb44",
+      "coupon_code": "3VHPb44",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/17032/50707-002-1200x600-9.99.jpg",
+      "location_name": "participating Richmond Area",
+      "state": "AREA",
+      "area_name": "participating Richmond",
+      "expiration": "02/27/2026",
+      "price": "$9.99",
+      "added_date": "2026-02-14",
       "last_seen": "2026-02-14"
     },
     {
@@ -320,7 +344,7 @@
       "expiration": "03/13/2026",
       "price": "$10.99",
       "added_date": "2026-01-18",
-      "last_seen": "2026-02-10"
+      "last_seen": "2026-02-14"
     },
     {
       "url": "https://offers.greatclips.com/VRDfsr4",
@@ -348,7 +372,7 @@
       "expiration": "03/13/2026",
       "price": "$10.99",
       "added_date": "2026-01-18",
-      "last_seen": "2026-02-10"
+      "last_seen": "2026-02-14"
     },
     {
       "url": "https://offers.greatclips.com/vmmOwot",
@@ -376,7 +400,7 @@
       "expiration": "03/13/2026",
       "price": "$10.99",
       "added_date": "2026-01-18",
-      "last_seen": "2026-01-20"
+      "last_seen": "2026-02-14"
     },
     {
       "url": "https://offers.greatclips.com/rYMtUgT",
@@ -418,6 +442,20 @@
       "expiration": "03/01/2026",
       "price": "$10.99",
       "added_date": "2026-02-01",
+      "last_seen": "2026-02-14"
+    },
+    {
+      "url": "https://offers.greatclips.com/eftOLOl",
+      "coupon_code": "eftOLOl",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8464/50707-002-1200x600-11.99.jpg",
+      "valid_text": "Valid at Great Clips Clocktower Commons at 15190 Bluebird St NW in Andover, MN. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/27/2026",
+      "location_name": "Clocktower Commons",
+      "address": "15190 Bluebird St NW",
+      "city": "Andover,",
+      "state": "MN",
+      "expiration": "02/27/2026",
+      "price": "$11.99",
+      "added_date": "2026-02-14",
       "last_seen": "2026-02-14"
     },
     {
@@ -501,6 +539,16 @@
       "state": "US",
       "price": "$11.99",
       "added_date": "2026-02-01",
+      "last_seen": "2026-02-14"
+    },
+    {
+      "url": "https://offers.greatclips.com/4TlEsJP",
+      "coupon_code": "4TlEsJP",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/16650/50707-002-1200x600-11.99.jpg",
+      "location_name": "",
+      "state": "US",
+      "price": "$11.99",
+      "added_date": "2026-02-14",
       "last_seen": "2026-02-14"
     },
     {
