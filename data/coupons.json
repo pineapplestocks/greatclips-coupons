@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-02-15T12:56:39.098490",
-  "total_coupons": 46,
+  "scraped_at": "2026-02-15T18:40:29.440396",
+  "total_coupons": 47,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/2KAdGYv",
@@ -520,6 +520,16 @@
       "price": "$8.99",
       "added_date": "2026-01-29",
       "last_seen": "2026-02-14"
+    },
+    {
+      "url": "https://offers.greatclips.com/xqTb01a",
+      "coupon_code": "xqTb01a",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/17030/50707-002-1200x600-8.99.jpg",
+      "location_name": "",
+      "state": "US",
+      "price": "$8.99",
+      "added_date": "2026-02-15",
+      "last_seen": "2026-02-15"
     },
     {
       "url": "https://offers.greatclips.com/JIiOv3l",
