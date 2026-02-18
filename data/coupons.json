@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-02-17T19:01:03.896668",
-  "total_coupons": 48,
+  "scraped_at": "2026-02-18T02:27:07.723528",
+  "total_coupons": 47,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/Z0LoKH1",
@@ -112,7 +112,7 @@
       "expiration": "03/13/2026",
       "price": "$7.99",
       "added_date": "2026-01-18",
-      "last_seen": "2026-02-17"
+      "last_seen": "2026-02-18"
     },
     {
       "url": "https://offers.greatclips.com/FNfcvQo",
@@ -138,7 +138,7 @@
       "expiration": "02/27/2026",
       "price": "$9.99",
       "added_date": "2026-02-11",
-      "last_seen": "2026-02-17"
+      "last_seen": "2026-02-18"
     },
     {
       "url": "https://offers.greatclips.com/aWkLplt",
@@ -150,7 +150,7 @@
       "expiration": "02/27/2026",
       "price": "$9.99",
       "added_date": "2026-02-14",
-      "last_seen": "2026-02-17"
+      "last_seen": "2026-02-18"
     },
     {
       "url": "https://offers.greatclips.com/3VHPb44",
@@ -162,7 +162,7 @@
       "expiration": "02/27/2026",
       "price": "$9.99",
       "added_date": "2026-02-14",
-      "last_seen": "2026-02-17"
+      "last_seen": "2026-02-18"
     },
     {
       "url": "https://offers.greatclips.com/dkIygSf",
@@ -358,7 +358,7 @@
       "expiration": "03/13/2026",
       "price": "$10.99",
       "added_date": "2026-01-18",
-      "last_seen": "2026-02-17"
+      "last_seen": "2026-02-18"
     },
     {
       "url": "https://offers.greatclips.com/VRDfsr4",
@@ -386,7 +386,7 @@
       "expiration": "03/13/2026",
       "price": "$10.99",
       "added_date": "2026-01-18",
-      "last_seen": "2026-02-17"
+      "last_seen": "2026-02-18"
     },
     {
       "url": "https://offers.greatclips.com/vmmOwot",
@@ -428,7 +428,7 @@
       "expiration": "03/13/2026",
       "price": "$10.99",
       "added_date": "2026-01-18",
-      "last_seen": "2026-02-17"
+      "last_seen": "2026-02-18"
     },
     {
       "url": "https://offers.greatclips.com/aeCUWS6",
@@ -456,7 +456,7 @@
       "expiration": "03/01/2026",
       "price": "$10.99",
       "added_date": "2026-02-01",
-      "last_seen": "2026-02-17"
+      "last_seen": "2026-02-18"
     },
     {
       "url": "https://offers.greatclips.com/eftOLOl",
@@ -470,7 +470,7 @@
       "expiration": "02/27/2026",
       "price": "$11.99",
       "added_date": "2026-02-14",
-      "last_seen": "2026-02-17"
+      "last_seen": "2026-02-18"
     },
     {
       "url": "https://offers.greatclips.com/3spM630",
@@ -543,7 +543,7 @@
       "state": "US",
       "price": "$8.99",
       "added_date": "2026-02-15",
-      "last_seen": "2026-02-17"
+      "last_seen": "2026-02-18"
     },
     {
       "url": "https://offers.greatclips.com/JIiOv3l",
@@ -563,7 +563,17 @@
       "state": "US",
       "price": "$9.99",
       "added_date": "2026-02-14",
-      "last_seen": "2026-02-17"
+      "last_seen": "2026-02-18"
+    },
+    {
+      "url": "https://offers.greatclips.com/djuGGDk",
+      "coupon_code": "djuGGDk",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/17257/50707-002-1200x600-10.99.jpg",
+      "location_name": "",
+      "state": "US",
+      "price": "$10.99",
+      "added_date": "2026-02-18",
+      "last_seen": "2026-02-18"
     },
     {
       "url": "https://offers.greatclips.com/F2zEagt",
@@ -583,7 +593,7 @@
       "state": "US",
       "price": "$11.99",
       "added_date": "2026-02-14",
-      "last_seen": "2026-02-17"
+      "last_seen": "2026-02-18"
     },
     {
       "url": "https://offers.greatclips.com/Luz2UyB",
@@ -593,7 +603,7 @@
       "state": "US",
       "price": "$12.99",
       "added_date": "2026-01-20",
-      "last_seen": "2026-02-17",
+      "last_seen": "2026-02-18",
       "expiration": "02/20/2026"
     },
     {
@@ -604,27 +614,7 @@
       "state": "US",
       "price": "$13.99",
       "added_date": "2026-01-31",
-      "last_seen": "2026-02-17"
-    },
-    {
-      "url": "https://offers.greatclips.com/5GnlX4D",
-      "coupon_code": "5GnlX4D",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/16985/50707-002-1200x600-17.99.jpg",
-      "location_name": "",
-      "state": "US",
-      "price": "$17.99",
-      "added_date": "2026-01-19",
-      "last_seen": "2026-02-09"
-    },
-    {
-      "url": "https://offers.greatclips.com/Lg8M6iE",
-      "coupon_code": "Lg8M6iE",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/16986/50707-002-1200x600-17.99.jpg",
-      "location_name": "",
-      "state": "US",
-      "price": "$17.99",
-      "added_date": "2026-01-19",
-      "last_seen": "2026-02-09"
+      "last_seen": "2026-02-18"
     }
   ]
 }
