@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-02-18T07:04:52.236370",
-  "total_coupons": 47,
+  "scraped_at": "2026-02-18T13:10:01.389236",
+  "total_coupons": 48,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/Z0LoKH1",
@@ -456,6 +456,18 @@
       "expiration": "03/01/2026",
       "price": "$10.99",
       "added_date": "2026-02-01",
+      "last_seen": "2026-02-18"
+    },
+    {
+      "url": "https://offers.greatclips.com/IJ4CKXc",
+      "coupon_code": "IJ4CKXc",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/17053/50707-002-1200x600-10.99.jpg",
+      "location_name": "participating Casper Area",
+      "state": "AREA",
+      "area_name": "participating Casper",
+      "expiration": "02/27/2026",
+      "price": "$10.99",
+      "added_date": "2026-02-18",
       "last_seen": "2026-02-18"
     },
     {
