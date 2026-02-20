@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-02-19T18:58:11.398817",
-  "total_coupons": 47,
+  "scraped_at": "2026-02-20T02:14:13.983757",
+  "total_coupons": 44,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/Z0LoKH1",
@@ -29,20 +29,6 @@
       "price": "$7.99",
       "added_date": "2026-01-17",
       "last_seen": "2026-01-20"
-    },
-    {
-      "url": "https://offers.greatclips.com/MefwWgj",
-      "coupon_code": "MefwWgj",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
-      "valid_text": "Valid at Great Clips Shoppes at Siloam at 2998 Hwy 412 E in Siloam Springs, AR. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/20/2026",
-      "location_name": "Shoppes",
-      "address": "Siloam at 2998 Hwy 412 E",
-      "city": "Siloam Springs,",
-      "state": "AR",
-      "expiration": "02/20/2026",
-      "price": "$7.99",
-      "added_date": "2026-01-17",
-      "last_seen": "2026-01-19"
     },
     {
       "url": "https://offers.greatclips.com/MSVhpN1",
@@ -115,20 +101,6 @@
       "last_seen": "2026-02-19"
     },
     {
-      "url": "https://offers.greatclips.com/FNfcvQo",
-      "coupon_code": "FNfcvQo",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8461/50707-002-1200x600-9.99.jpg",
-      "valid_text": "Valid at Great Clips Green Valley Marketplace at 2201 Francisco Drive in El Dorado Hills, CA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/20/2026",
-      "location_name": "Green Valley Marketplace",
-      "address": "2201 Francisco Drive",
-      "city": "El Dorado Hills,",
-      "state": "CA",
-      "expiration": "02/20/2026",
-      "price": "$9.99",
-      "added_date": "2026-02-09",
-      "last_seen": "2026-02-13"
-    },
-    {
       "url": "https://offers.greatclips.com/xz28zQU",
       "coupon_code": "xz28zQU",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/17052/50707-002-1200x600-9.99.jpg",
@@ -138,7 +110,7 @@
       "expiration": "02/27/2026",
       "price": "$9.99",
       "added_date": "2026-02-11",
-      "last_seen": "2026-02-19"
+      "last_seen": "2026-02-20"
     },
     {
       "url": "https://offers.greatclips.com/aWkLplt",
@@ -150,7 +122,7 @@
       "expiration": "02/27/2026",
       "price": "$9.99",
       "added_date": "2026-02-14",
-      "last_seen": "2026-02-19"
+      "last_seen": "2026-02-20"
     },
     {
       "url": "https://offers.greatclips.com/3VHPb44",
@@ -162,7 +134,7 @@
       "expiration": "02/27/2026",
       "price": "$9.99",
       "added_date": "2026-02-14",
-      "last_seen": "2026-02-19"
+      "last_seen": "2026-02-20"
     },
     {
       "url": "https://offers.greatclips.com/dkIygSf",
@@ -428,7 +400,7 @@
       "expiration": "03/13/2026",
       "price": "$10.99",
       "added_date": "2026-01-18",
-      "last_seen": "2026-02-19"
+      "last_seen": "2026-02-20"
     },
     {
       "url": "https://offers.greatclips.com/aeCUWS6",
@@ -456,7 +428,7 @@
       "expiration": "03/01/2026",
       "price": "$10.99",
       "added_date": "2026-02-01",
-      "last_seen": "2026-02-19"
+      "last_seen": "2026-02-20"
     },
     {
       "url": "https://offers.greatclips.com/IJ4CKXc",
@@ -468,7 +440,7 @@
       "expiration": "02/27/2026",
       "price": "$10.99",
       "added_date": "2026-02-18",
-      "last_seen": "2026-02-19"
+      "last_seen": "2026-02-20"
     },
     {
       "url": "https://offers.greatclips.com/eftOLOl",
@@ -482,7 +454,7 @@
       "expiration": "02/27/2026",
       "price": "$11.99",
       "added_date": "2026-02-14",
-      "last_seen": "2026-02-19"
+      "last_seen": "2026-02-20"
     },
     {
       "url": "https://offers.greatclips.com/3spM630",
@@ -513,6 +485,18 @@
       "last_seen": "2026-01-21"
     },
     {
+      "url": "https://offers.greatclips.com/Luz2UyB",
+      "coupon_code": "Luz2UyB",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/16804/50707-002-1200x600-12.99.jpg",
+      "location_name": "participating Fresno San Joaquin Valley Area",
+      "state": "AREA",
+      "area_name": "participating Fresno San Joaquin Valley",
+      "expiration": "02/20/2026",
+      "price": "$12.99",
+      "added_date": "2026-02-20",
+      "last_seen": "2026-02-20"
+    },
+    {
       "url": "https://offers.greatclips.com/IOS6rlo",
       "coupon_code": "IOS6rlo",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8470/50707-002-1200x600-14.99.jpg",
@@ -525,17 +509,6 @@
       "price": "$14.99",
       "added_date": "2026-01-19",
       "last_seen": "2026-01-20"
-    },
-    {
-      "url": "https://offers.greatclips.com/qib8D2x",
-      "coupon_code": "qib8D2x",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/16811/50707-002-1200x600-7.99.jpg",
-      "location_name": "",
-      "state": "US",
-      "price": "$7.99",
-      "added_date": "2026-01-29",
-      "last_seen": "2026-02-14",
-      "expiration": "02/20/2026"
     },
     {
       "url": "https://offers.greatclips.com/uadPCj8",
@@ -555,7 +528,7 @@
       "state": "US",
       "price": "$8.99",
       "added_date": "2026-02-15",
-      "last_seen": "2026-02-19"
+      "last_seen": "2026-02-20"
     },
     {
       "url": "https://offers.greatclips.com/o5aXidu",
@@ -565,7 +538,7 @@
       "state": "US",
       "price": "$9.99",
       "added_date": "2026-02-14",
-      "last_seen": "2026-02-19"
+      "last_seen": "2026-02-20"
     },
     {
       "url": "https://offers.greatclips.com/djuGGDk",
@@ -575,7 +548,7 @@
       "state": "US",
       "price": "$10.99",
       "added_date": "2026-02-18",
-      "last_seen": "2026-02-19"
+      "last_seen": "2026-02-20"
     },
     {
       "url": "https://offers.greatclips.com/F2zEagt",
@@ -595,18 +568,7 @@
       "state": "US",
       "price": "$11.99",
       "added_date": "2026-02-14",
-      "last_seen": "2026-02-19"
-    },
-    {
-      "url": "https://offers.greatclips.com/Luz2UyB",
-      "coupon_code": "Luz2UyB",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/16804/50707-002-1200x600-12.99.jpg",
-      "location_name": "",
-      "state": "US",
-      "price": "$12.99",
-      "added_date": "2026-01-20",
-      "last_seen": "2026-02-19",
-      "expiration": "02/20/2026"
+      "last_seen": "2026-02-20"
     },
     {
       "url": "https://offers.greatclips.com/bWp2H5l",
@@ -616,7 +578,7 @@
       "state": "US",
       "price": "$13.99",
       "added_date": "2026-01-31",
-      "last_seen": "2026-02-19"
+      "last_seen": "2026-02-20"
     }
   ]
 }
