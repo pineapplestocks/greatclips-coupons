@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-02-20T18:53:20.783978",
-  "total_coupons": 44,
+  "scraped_at": "2026-02-21T02:08:39.697236",
+  "total_coupons": 39,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/Z0LoKH1",
@@ -15,76 +15,6 @@
       "price": "$4.99",
       "added_date": "2026-02-17",
       "last_seen": "2026-02-17"
-    },
-    {
-      "url": "https://offers.greatclips.com/2KAdGYv",
-      "coupon_code": "2KAdGYv",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
-      "valid_text": "Valid at Great Clips Fry's Anderson Springs at 1960 W Ray Rd in Chandler, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/21/2026",
-      "location_name": "Fry's Anderson Springs",
-      "address": "1960 W Ray Rd",
-      "city": "Chandler,",
-      "state": "AZ",
-      "expiration": "02/21/2026",
-      "price": "$7.99",
-      "added_date": "2026-01-17",
-      "last_seen": "2026-01-20"
-    },
-    {
-      "url": "https://offers.greatclips.com/MSVhpN1",
-      "coupon_code": "MSVhpN1",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
-      "valid_text": "Valid at Great Clips Gateway Pavillions at 10030 W McDowell Rd in Avondale, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/21/2026",
-      "location_name": "Gateway Pavillions",
-      "address": "10030 W McDowell Rd",
-      "city": "Avondale,",
-      "state": "AZ",
-      "expiration": "02/21/2026",
-      "price": "$7.99",
-      "added_date": "2026-01-17",
-      "last_seen": "2026-01-19"
-    },
-    {
-      "url": "https://offers.greatclips.com/0GYOPx2",
-      "coupon_code": "0GYOPx2",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
-      "valid_text": "Valid at Great Clips Arrowhead Marketplace at 7942 W Bell Rd in Glendale, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/21/2026",
-      "location_name": "Arrowhead Marketplace",
-      "address": "7942 W Bell Rd",
-      "city": "Glendale,",
-      "state": "AZ",
-      "expiration": "02/21/2026",
-      "price": "$7.99",
-      "added_date": "2026-01-17",
-      "last_seen": "2026-01-19"
-    },
-    {
-      "url": "https://offers.greatclips.com/c0Vjn1o",
-      "coupon_code": "c0Vjn1o",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
-      "valid_text": "Valid at Great Clips The Park at 1245 W Chandler Blvd in Chandler, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/21/2026",
-      "location_name": "The Park",
-      "address": "1245 W Chandler Blvd",
-      "city": "Chandler,",
-      "state": "AZ",
-      "expiration": "02/21/2026",
-      "price": "$7.99",
-      "added_date": "2026-01-17",
-      "last_seen": "2026-01-19"
-    },
-    {
-      "url": "https://offers.greatclips.com/WA4FJ3X",
-      "coupon_code": "WA4FJ3X",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
-      "valid_text": "Valid at Great Clips Chandler Village Center at 3415 W Frye Rd in Chandler, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/21/2026",
-      "location_name": "Chandler Village Center",
-      "address": "3415 W Frye Rd",
-      "city": "Chandler,",
-      "state": "AZ",
-      "expiration": "02/21/2026",
-      "price": "$7.99",
-      "added_date": "2026-01-17",
-      "last_seen": "2026-01-19"
     },
     {
       "url": "https://offers.greatclips.com/3PTd2BK",
@@ -110,7 +40,7 @@
       "expiration": "02/27/2026",
       "price": "$9.99",
       "added_date": "2026-02-11",
-      "last_seen": "2026-02-20"
+      "last_seen": "2026-02-21"
     },
     {
       "url": "https://offers.greatclips.com/aWkLplt",
@@ -134,7 +64,7 @@
       "expiration": "02/27/2026",
       "price": "$9.99",
       "added_date": "2026-02-14",
-      "last_seen": "2026-02-20"
+      "last_seen": "2026-02-21"
     },
     {
       "url": "https://offers.greatclips.com/dkIygSf",
@@ -400,7 +330,7 @@
       "expiration": "03/13/2026",
       "price": "$10.99",
       "added_date": "2026-01-18",
-      "last_seen": "2026-02-20"
+      "last_seen": "2026-02-21"
     },
     {
       "url": "https://offers.greatclips.com/aeCUWS6",
@@ -428,7 +358,7 @@
       "expiration": "03/01/2026",
       "price": "$10.99",
       "added_date": "2026-02-01",
-      "last_seen": "2026-02-20"
+      "last_seen": "2026-02-21"
     },
     {
       "url": "https://offers.greatclips.com/IJ4CKXc",
@@ -440,7 +370,7 @@
       "expiration": "02/27/2026",
       "price": "$10.99",
       "added_date": "2026-02-18",
-      "last_seen": "2026-02-20"
+      "last_seen": "2026-02-21"
     },
     {
       "url": "https://offers.greatclips.com/eftOLOl",
@@ -493,8 +423,8 @@
       "area_name": "participating Fresno San Joaquin Valley",
       "expiration": "02/20/2026",
       "price": "$12.99",
-      "added_date": "2026-02-20",
-      "last_seen": "2026-02-20"
+      "added_date": "2026-02-21",
+      "last_seen": "2026-02-21"
     },
     {
       "url": "https://offers.greatclips.com/IOS6rlo",
@@ -528,7 +458,7 @@
       "state": "US",
       "price": "$8.99",
       "added_date": "2026-02-15",
-      "last_seen": "2026-02-20"
+      "last_seen": "2026-02-21"
     },
     {
       "url": "https://offers.greatclips.com/o5aXidu",
@@ -538,7 +468,7 @@
       "state": "US",
       "price": "$9.99",
       "added_date": "2026-02-14",
-      "last_seen": "2026-02-20"
+      "last_seen": "2026-02-21"
     },
     {
       "url": "https://offers.greatclips.com/djuGGDk",
@@ -548,7 +478,7 @@
       "state": "US",
       "price": "$10.99",
       "added_date": "2026-02-18",
-      "last_seen": "2026-02-20"
+      "last_seen": "2026-02-21"
     },
     {
       "url": "https://offers.greatclips.com/F2zEagt",
@@ -568,7 +498,7 @@
       "state": "US",
       "price": "$11.99",
       "added_date": "2026-02-14",
-      "last_seen": "2026-02-20"
+      "last_seen": "2026-02-21"
     },
     {
       "url": "https://offers.greatclips.com/bWp2H5l",
@@ -578,7 +508,7 @@
       "state": "US",
       "price": "$13.99",
       "added_date": "2026-01-31",
-      "last_seen": "2026-02-20"
+      "last_seen": "2026-02-21"
     }
   ]
 }
