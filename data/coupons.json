@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-02-27T18:48:30.719836",
-  "total_coupons": 42,
+  "scraped_at": "2026-02-28T02:02:22.830732",
+  "total_coupons": 39,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/Z0LoKH1",
@@ -14,7 +14,7 @@
       "expiration": "03/07/2026",
       "price": "$4.99",
       "added_date": "2026-02-17",
-      "last_seen": "2026-02-27"
+      "last_seen": "2026-02-28"
     },
     {
       "url": "https://offers.greatclips.com/3PTd2BK",
@@ -28,21 +28,7 @@
       "expiration": "03/13/2026",
       "price": "$7.99",
       "added_date": "2026-01-18",
-      "last_seen": "2026-02-27"
-    },
-    {
-      "url": "https://offers.greatclips.com/ctHkG1h",
-      "coupon_code": "ctHkG1h",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8458/50707-002-1200x600-8.99.jpg",
-      "valid_text": "Valid at Great Clips Muscatine Point at 3020 Highway 61 N in Muscatine, IA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/28/2026",
-      "location_name": "Muscatine Point",
-      "address": "3020 Highway 61 N",
-      "city": "Muscatine,",
-      "state": "IA",
-      "expiration": "02/28/2026",
-      "price": "$8.99",
-      "added_date": "2026-02-21",
-      "last_seen": "2026-02-21"
+      "last_seen": "2026-02-28"
     },
     {
       "url": "https://offers.greatclips.com/4H1lHXo",
@@ -54,21 +40,7 @@
       "expiration": "03/06/2026",
       "price": "$8.99",
       "added_date": "2026-02-21",
-      "last_seen": "2026-02-27"
-    },
-    {
-      "url": "https://offers.greatclips.com/2sRfhDV",
-      "coupon_code": "2sRfhDV",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8458/50707-002-1200x600-8.99.jpg",
-      "valid_text": "Valid at Great Clips Taylorville Crossing at 1522B W Springfield Rd in Taylorville, IL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 02/28/2026",
-      "location_name": "Taylorville Crossing",
-      "address": "1522B W Springfield Rd",
-      "city": "Taylorville,",
-      "state": "IL",
-      "expiration": "02/28/2026",
-      "price": "$8.99",
-      "added_date": "2026-02-21",
-      "last_seen": "2026-02-21"
+      "last_seen": "2026-02-28"
     },
     {
       "url": "https://offers.greatclips.com/HmaYB7H",
@@ -80,7 +52,7 @@
       "expiration": "03/06/2026",
       "price": "$9.99",
       "added_date": "2026-02-21",
-      "last_seen": "2026-02-27"
+      "last_seen": "2026-02-28"
     },
     {
       "url": "https://offers.greatclips.com/dkIygSf",
@@ -276,7 +248,7 @@
       "expiration": "03/13/2026",
       "price": "$10.99",
       "added_date": "2026-01-18",
-      "last_seen": "2026-02-27"
+      "last_seen": "2026-02-28"
     },
     {
       "url": "https://offers.greatclips.com/VRDfsr4",
@@ -304,7 +276,7 @@
       "expiration": "03/13/2026",
       "price": "$10.99",
       "added_date": "2026-01-18",
-      "last_seen": "2026-02-27"
+      "last_seen": "2026-02-28"
     },
     {
       "url": "https://offers.greatclips.com/vmmOwot",
@@ -346,7 +318,7 @@
       "expiration": "03/13/2026",
       "price": "$10.99",
       "added_date": "2026-01-18",
-      "last_seen": "2026-02-27"
+      "last_seen": "2026-02-28"
     },
     {
       "url": "https://offers.greatclips.com/aeCUWS6",
@@ -440,7 +412,7 @@
       "expiration": "03/06/2026",
       "price": "$14.99",
       "added_date": "2026-02-21",
-      "last_seen": "2026-02-27"
+      "last_seen": "2026-02-28"
     },
     {
       "url": "https://offers.greatclips.com/KW4CV4V",
@@ -451,16 +423,6 @@
       "price": "$7.99",
       "added_date": "2026-02-21",
       "last_seen": "2026-02-26"
-    },
-    {
-      "url": "https://offers.greatclips.com/uadPCj8",
-      "coupon_code": "uadPCj8",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/16649/50707-002-1200x600-8.99.jpg",
-      "location_name": "",
-      "state": "US",
-      "price": "$8.99",
-      "added_date": "2026-01-29",
-      "last_seen": "2026-02-14"
     },
     {
       "url": "https://offers.greatclips.com/xqTb01a",
@@ -500,7 +462,7 @@
       "state": "US",
       "price": "$10.99",
       "added_date": "2026-02-18",
-      "last_seen": "2026-02-27"
+      "last_seen": "2026-02-28"
     },
     {
       "url": "https://offers.greatclips.com/F2zEagt",
@@ -540,7 +502,7 @@
       "state": "US",
       "price": "$14.99",
       "added_date": "2026-02-21",
-      "last_seen": "2026-02-27"
+      "last_seen": "2026-02-28"
     }
   ]
 }
