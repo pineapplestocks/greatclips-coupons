@@ -1,0 +1,41 @@
+name: Generate Monthly Pages
+
+on:
+  # Run on the 1st of every month at 00:30 UTC
+  schedule:
+    - cron: '30 0 1 * *'
+  
+  # Allow manual trigger
+  workflow_dispatch:
+
+# Need write permissions to push commits
+permissions:
+  contents: write
+
+jobs:
+  generate-monthly-pages:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate monthly landing pages
+        run: python generate_monthly_pages.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add docs/*.html
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🗓️ Auto-generate monthly pages for $(date +'%B %Y')"
+            git push
+          fi

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git remote add origin https://github.com/pineapplestocks/greatclips-coupons.git)",
+      "Bash(git add .)"
+    ]
+  }
+}

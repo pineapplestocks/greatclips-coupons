@@ -1,0 +1,47 @@
+name: Post to Twitter
+
+on:
+  # Run 3 times per day to spread out tweets (9 AM, 3 PM, 8 PM Phoenix time)
+  schedule:
+    - cron: '0 16 * * *'  # 9 AM Phoenix (4 PM UTC)
+    - cron: '0 22 * * *'  # 3 PM Phoenix (10 PM UTC)
+    - cron: '0 3 * * *'   # 8 PM Phoenix (3 AM UTC next day)
+  
+  # Allow manual trigger
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  post-twitter:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: pip install tweepy requests
+      
+      - name: Post to Twitter
+        env:
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+        run: python twitter_poster.py
+      
+      - name: Commit posted tracking file
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git pull --rebase origin main || true
+          git add data/posted_tweets.json || true
+          git diff --staged --quiet || git commit -m "Update posted tweets $(date +'%Y-%m-%d %H:%M')"
+          git push origin main || true
