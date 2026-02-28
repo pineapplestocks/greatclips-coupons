@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
   <url>
     <loc>https://greatclipsdeal.com/</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Core Pages -->
   <url>
     <loc>https://greatclipsdeal.com/states</loc>
     <lastmod>2026-02-28</lastmod>
@@ -63,8 +60,6 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-  
-  <!-- Coupon Landing Pages -->
   <url>
     <loc>https://greatclipsdeal.com/5-99-coupon</loc>
     <lastmod>2026-02-28</lastmod>
@@ -95,8 +90,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Blog -->
   <url>
     <loc>https://greatclipsdeal.com/blog</loc>
     <lastmod>2026-02-28</lastmod>
@@ -106,29 +99,27 @@
   <url>
     <loc>https://greatclipsdeal.com/blog/great-clips-prices-2026</loc>
     <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://greatclipsdeal.com/blog/great-clips-senior-discount</loc>
     <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://greatclipsdeal.com/blog/great-clips-vs-supercuts</loc>
     <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://greatclipsdeal.com/blog/coupon-hacks</loc>
     <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  
-  <!-- Monthly Landing Pages 2026 -->
   <url>
     <loc>https://greatclipsdeal.com/january-2026</loc>
     <lastmod>2026-02-28</lastmod>
@@ -201,8 +192,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Monthly Landing Pages 2027 -->
   <url>
     <loc>https://greatclipsdeal.com/january-2027</loc>
     <lastmod>2026-02-28</lastmod>
@@ -275,8 +264,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
-  <!-- All 50 State Pages -->
   <url>
     <loc>https://greatclipsdeal.com/alabama</loc>
     <lastmod>2026-02-28</lastmod>
@@ -577,8 +564,6 @@
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- All 60 City Pages -->
   <url>
     <loc>https://greatclipsdeal.com/cities/phoenix</loc>
     <lastmod>2026-02-28</lastmod>
