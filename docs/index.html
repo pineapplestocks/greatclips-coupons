@@ -1113,7 +1113,7 @@
                 "area_name": "LaCrosse-Eau Claire"
         }
 ];
-        const LAST_UPDATED = "2026-02-28T20:17:04.553821";
+        const LAST_UPDATED = "2026-02-28T18:37:37.044892";
 
         // Format date like "December 31st, 2026"
         function formatDate(dateStr) {
@@ -1519,10 +1519,10 @@
                                                 <h3 class="text-white font-semibold text-lg mb-1">Any Great Clips</h3>
                                                 <p class="text-white/60 text-sm mb-4">Valid at all participating US salons</p>
                                                 <div class="space-y-2">
-                                                    <a href="${c.url}" target="_blank" 
-                                                        class="block w-full bg-white text-purple-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-purple-50 transition-colors">
+                                                    <button onclick="getCoupon('${c.url}')"
+                                                        class="block w-full bg-white text-purple-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-purple-50 transition-colors cursor-pointer">
                                                         Get your coupon now →
-                                                    </a>
+                                                    </button>
                                                     <button onclick="shareCoupon('${c.url}', '${c.price || ''}')"
                                                         class="w-full bg-white/20 hover:bg-white/30 text-white font-medium py-2.5 px-4 rounded-lg text-center transition-colors flex items-center justify-center gap-2">
                                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1568,7 +1568,7 @@
                                     ${areaCoupons.map(c => {
                                         const price = getPrice(c);
                                         const hasImage = c.image_url && c.image_url.length > 0;
-                                        const areaName = c.area_name || c.location_name || 'Regional';
+                                        const areaName = (c.area_name || c.location_name || 'Regional').replace(/^participating\s+/i, '');
                                         return `
                                         <div class="bg-white/15 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-white/25 transition-all duration-300 border border-white/20">
                                             ${hasImage ? `
@@ -1585,13 +1585,16 @@
                                                         Exp: ${getExpiration(c)}
                                                     </span>
                                                 </div>
-                                                <h3 class="text-white font-semibold text-lg mb-1">${areaName}</h3>
+                                                <h3 class="text-white font-semibold text-lg mb-1 flex items-center gap-1.5">
+                                                    <svg class="w-4 h-4 flex-shrink-0 text-yellow-200" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                                                    ${areaName}
+                                                </h3>
                                                 <p class="text-white/60 text-sm mb-4">Valid at participating salons in this area</p>
                                                 <div class="space-y-2">
-                                                    <a href="${c.url}" target="_blank"
-                                                        class="block w-full bg-white text-orange-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-orange-50 transition-colors">
+                                                    <button onclick="getCoupon('${c.url}')"
+                                                        class="block w-full bg-white text-orange-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-orange-50 transition-colors cursor-pointer">
                                                         Get your coupon now →
-                                                    </a>
+                                                    </button>
                                                     <button onclick="shareCoupon('${c.url}', '${c.price || ''}')"
                                                         class="w-full bg-white/20 hover:bg-white/30 text-white font-medium py-2.5 px-4 rounded-lg text-center transition-colors flex items-center justify-center gap-2">
                                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
