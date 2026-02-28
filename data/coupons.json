@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-02-28T02:02:22.830732",
-  "total_coupons": 39,
+  "scraped_at": "2026-02-28T06:43:04.825182",
+  "total_coupons": 57,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/Z0LoKH1",
@@ -14,6 +14,62 @@
       "expiration": "03/07/2026",
       "price": "$4.99",
       "added_date": "2026-02-17",
+      "last_seen": "2026-02-28"
+    },
+    {
+      "url": "https://offers.greatclips.com/p6iRSG0",
+      "coupon_code": "p6iRSG0",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8451/50707-002-1200x600-5.99.jpg",
+      "valid_text": "Valid at Great Clips Market Street at Ardmore at 1525 12th Ave NW in Ardmore, OK. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/07/2026",
+      "location_name": "Market Street",
+      "address": "Ardmore at 1525 12th Ave NW",
+      "city": "Ardmore,",
+      "state": "OK",
+      "expiration": "03/07/2026",
+      "price": "$5.99",
+      "added_date": "2026-02-28",
+      "last_seen": "2026-02-28"
+    },
+    {
+      "url": "https://offers.greatclips.com/oO6iQmh",
+      "coupon_code": "oO6iQmh",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8451/50707-002-1200x600-5.99.jpg",
+      "valid_text": "Valid at Great Clips Paris at 3915 Lamar Ave in Paris, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/07/2026",
+      "location_name": "Paris",
+      "address": "3915 Lamar Ave",
+      "city": "Paris,",
+      "state": "TX",
+      "expiration": "03/07/2026",
+      "price": "$5.99",
+      "added_date": "2026-02-28",
+      "last_seen": "2026-02-28"
+    },
+    {
+      "url": "https://offers.greatclips.com/kzlIvVs",
+      "coupon_code": "kzlIvVs",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8451/50707-002-1200x600-5.99.jpg",
+      "valid_text": "Valid at Great Clips Cross Creek Durant at 3601 W Main St in Durant, OK. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/07/2026",
+      "location_name": "Cross Creek Durant",
+      "address": "3601 W Main St",
+      "city": "Durant,",
+      "state": "OK",
+      "expiration": "03/07/2026",
+      "price": "$5.99",
+      "added_date": "2026-02-28",
+      "last_seen": "2026-02-28"
+    },
+    {
+      "url": "https://offers.greatclips.com/KTwmP0m",
+      "coupon_code": "KTwmP0m",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8455/50707-002-1200x600-6.99.jpg",
+      "valid_text": "Valid at Great Clips Shops at Roxboro at 719 N Madison Blvd in Roxboro, NC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/06/2026",
+      "location_name": "Shops",
+      "address": "Roxboro at 719 N Madison Blvd",
+      "city": "Roxboro,",
+      "state": "NC",
+      "expiration": "03/06/2026",
+      "price": "$6.99",
+      "added_date": "2026-02-28",
       "last_seen": "2026-02-28"
     },
     {
@@ -31,6 +87,20 @@
       "last_seen": "2026-02-28"
     },
     {
+      "url": "https://offers.greatclips.com/oWtV1Z3",
+      "coupon_code": "oWtV1Z3",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
+      "valid_text": "Valid at Great Clips Shops at Hudson Oaks at 100 S Oakridge Dr in Hudson Oaks, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/07/2026",
+      "location_name": "Shops",
+      "address": "Hudson Oaks at 100 S Oakridge Dr",
+      "city": "Hudson Oaks,",
+      "state": "TX",
+      "expiration": "03/07/2026",
+      "price": "$7.99",
+      "added_date": "2026-02-28",
+      "last_seen": "2026-02-28"
+    },
+    {
       "url": "https://offers.greatclips.com/4H1lHXo",
       "coupon_code": "4H1lHXo",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/17261/50707-002-1200x600-8.99.jpg",
@@ -43,6 +113,20 @@
       "last_seen": "2026-02-28"
     },
     {
+      "url": "https://offers.greatclips.com/v0PQ1Gg",
+      "coupon_code": "v0PQ1Gg",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8459/50707-002-1200x600-8.99.jpg",
+      "valid_text": "Valid at Great Clips Lakeside Plaza at 17330 W Center Rd in Omaha, NE. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 04/03/2026",
+      "location_name": "Lakeside Plaza",
+      "address": "17330 W Center Rd",
+      "city": "Omaha,",
+      "state": "NE",
+      "expiration": "04/03/2026",
+      "price": "$8.99",
+      "added_date": "2026-02-28",
+      "last_seen": "2026-02-28"
+    },
+    {
       "url": "https://offers.greatclips.com/HmaYB7H",
       "coupon_code": "HmaYB7H",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/17269/50707-002-1200x600-9.99.jpg",
@@ -52,6 +136,160 @@
       "expiration": "03/06/2026",
       "price": "$9.99",
       "added_date": "2026-02-21",
+      "last_seen": "2026-02-28"
+    },
+    {
+      "url": "https://offers.greatclips.com/ODvbQm0",
+      "coupon_code": "ODvbQm0",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Sheffield Crossing Shopping Center at 4466 Abbe Rd in Sheffield, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/08/2026",
+      "location_name": "Sheffield Crossing Shopping Center",
+      "address": "4466 Abbe Rd",
+      "city": "Sheffield,",
+      "state": "OH",
+      "expiration": "03/08/2026",
+      "price": "$9.99",
+      "added_date": "2026-02-28",
+      "last_seen": "2026-02-28"
+    },
+    {
+      "url": "https://offers.greatclips.com/Ns4XAh8",
+      "coupon_code": "Ns4XAh8",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Massillon Marketplace II at 2757 Indian River Rd SW in Massillon, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/08/2026",
+      "location_name": "Massillon Marketplace II",
+      "address": "2757 Indian River Rd SW",
+      "city": "Massillon,",
+      "state": "OH",
+      "expiration": "03/08/2026",
+      "price": "$9.99",
+      "added_date": "2026-02-28",
+      "last_seen": "2026-02-28"
+    },
+    {
+      "url": "https://offers.greatclips.com/g8Jrtg7",
+      "coupon_code": "g8Jrtg7",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Wooster Crossing at 3786 Burbank Rd in Wooster, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/08/2026",
+      "location_name": "Wooster Crossing",
+      "address": "3786 Burbank Rd",
+      "city": "Wooster,",
+      "state": "OH",
+      "expiration": "03/08/2026",
+      "price": "$9.99",
+      "added_date": "2026-02-28",
+      "last_seen": "2026-02-28"
+    },
+    {
+      "url": "https://offers.greatclips.com/VJxUjt0",
+      "coupon_code": "VJxUjt0",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Deerfield Town Center at 7586 Oak Point Rd in Amherst, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/08/2026",
+      "location_name": "Deerfield Town Center",
+      "address": "7586 Oak Point Rd",
+      "city": "Amherst,",
+      "state": "OH",
+      "expiration": "03/08/2026",
+      "price": "$9.99",
+      "added_date": "2026-02-28",
+      "last_seen": "2026-02-28"
+    },
+    {
+      "url": "https://offers.greatclips.com/oh08y1P",
+      "coupon_code": "oh08y1P",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Lorain Meijer at 5350 N Leavitt Rd in Lorain, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/08/2026",
+      "location_name": "Lorain Meijer",
+      "address": "5350 N Leavitt Rd",
+      "city": "Lorain,",
+      "state": "OH",
+      "expiration": "03/08/2026",
+      "price": "$9.99",
+      "added_date": "2026-02-28",
+      "last_seen": "2026-02-28"
+    },
+    {
+      "url": "https://offers.greatclips.com/oDj2l6v",
+      "coupon_code": "oDj2l6v",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Brimfield Meijer at 247 Tallmadge Rd in Kent, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/08/2026",
+      "location_name": "Brimfield Meijer",
+      "address": "247 Tallmadge Rd",
+      "city": "Kent,",
+      "state": "OH",
+      "expiration": "03/08/2026",
+      "price": "$9.99",
+      "added_date": "2026-02-28",
+      "last_seen": "2026-02-28"
+    },
+    {
+      "url": "https://offers.greatclips.com/Ly8gfWB",
+      "coupon_code": "Ly8gfWB",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Washington Square at 2179 E Maple St in North Canton, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/08/2026",
+      "location_name": "Washington Square",
+      "address": "2179 E Maple St",
+      "city": "North Canton,",
+      "state": "OH",
+      "expiration": "03/08/2026",
+      "price": "$9.99",
+      "added_date": "2026-02-28",
+      "last_seen": "2026-02-28"
+    },
+    {
+      "url": "https://offers.greatclips.com/3UUSwGx",
+      "coupon_code": "3UUSwGx",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips 30th Street Plaza at 3030 Cromer Ave NW in Canton, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/08/2026",
+      "location_name": "30th Street Plaza",
+      "address": "3030 Cromer Ave NW",
+      "city": "Canton,",
+      "state": "OH",
+      "expiration": "03/08/2026",
+      "price": "$9.99",
+      "added_date": "2026-02-28",
+      "last_seen": "2026-02-28"
+    },
+    {
+      "url": "https://offers.greatclips.com/EmJ1K6Q",
+      "coupon_code": "EmJ1K6Q",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Barrington Town Square at 105 Barrington Town Square Dr in Aurora, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/08/2026",
+      "location_name": "Barrington Town Square",
+      "address": "105 Barrington Town Square Dr",
+      "city": "Aurora,",
+      "state": "OH",
+      "expiration": "03/08/2026",
+      "price": "$9.99",
+      "added_date": "2026-02-28",
+      "last_seen": "2026-02-28"
+    },
+    {
+      "url": "https://offers.greatclips.com/5dfbgUd",
+      "coupon_code": "5dfbgUd",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Crossings of Sandusky at 810 Crossings Rd in Sandusky, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/08/2026",
+      "location_name": "Crossings of Sandusky",
+      "address": "810 Crossings Rd",
+      "city": "Sandusky,",
+      "state": "OH",
+      "expiration": "03/08/2026",
+      "price": "$9.99",
+      "added_date": "2026-02-28",
+      "last_seen": "2026-02-28"
+    },
+    {
+      "url": "https://offers.greatclips.com/pPYJxnx",
+      "coupon_code": "pPYJxnx",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Walmart Center-Lewisburg at 1364 N Ellington Pkwy in Lewisburg, TN. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/08/2026",
+      "location_name": "Walmart Center-Lewisburg",
+      "address": "1364 N Ellington Pkwy",
+      "city": "Lewisburg,",
+      "state": "TN",
+      "expiration": "03/08/2026",
+      "price": "$9.99",
+      "added_date": "2026-02-28",
       "last_seen": "2026-02-28"
     },
     {
@@ -262,7 +500,7 @@
       "expiration": "03/13/2026",
       "price": "$10.99",
       "added_date": "2026-01-18",
-      "last_seen": "2026-01-20"
+      "last_seen": "2026-02-28"
     },
     {
       "url": "https://offers.greatclips.com/5ut1w9s",
@@ -290,7 +528,7 @@
       "expiration": "03/13/2026",
       "price": "$10.99",
       "added_date": "2026-01-18",
-      "last_seen": "2026-01-20"
+      "last_seen": "2026-02-28"
     },
     {
       "url": "https://offers.greatclips.com/lTiQcBs",
@@ -304,7 +542,7 @@
       "expiration": "03/13/2026",
       "price": "$10.99",
       "added_date": "2026-01-18",
-      "last_seen": "2026-02-26"
+      "last_seen": "2026-02-28"
     },
     {
       "url": "https://offers.greatclips.com/rYMtUgT",
@@ -347,6 +585,20 @@
       "price": "$10.99",
       "added_date": "2026-02-01",
       "last_seen": "2026-02-22"
+    },
+    {
+      "url": "https://offers.greatclips.com/OZEiKrl",
+      "coupon_code": "OZEiKrl",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8462/50707-002-1200x600-10.99.jpg",
+      "valid_text": "Valid at Great Clips Winchester Commons at 2190 Winchester Rd NE in Huntsville, AL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/15/2026",
+      "location_name": "Winchester Commons",
+      "address": "2190 Winchester Rd NE",
+      "city": "Huntsville,",
+      "state": "AL",
+      "expiration": "03/15/2026",
+      "price": "$10.99",
+      "added_date": "2026-02-28",
+      "last_seen": "2026-02-28"
     },
     {
       "url": "https://offers.greatclips.com/9dfsvKP",
