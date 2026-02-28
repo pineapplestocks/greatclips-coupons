@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git remote add origin https://github.com/pineapplestocks/greatclips-coupons.git)",
+      "Bash(git add .)",
+      "Bash(git commit -m \"Initial commit: Add all project files\")",
+      "Bash(git push -u origin master)",
+      "Bash(gh auth status)",
+      "Bash(winget install GitHub.cli)",
+      "Bash(git remote set-url origin https://github.com/pineapplestocks/greatclips-coupons.git)",
+      "Bash(git add .claude/settings.local.json)",
+      "Bash(git commit -m \"Update settings\")",
+      "Bash(git push)",
+      "Bash(git reset --soft HEAD~1)"
+    ]
+  }
+}

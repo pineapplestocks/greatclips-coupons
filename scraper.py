@@ -12,6 +12,10 @@ import os
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
+try:
+    import requests
+except ImportError:
+    requests = None
 
 # Configuration
 SEARCH_URL = "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=ALL&is_targeted_country=false&media_type=all&q=Great%20Clips%20coupon&search_type=keyword_unordered"
@@ -19,9 +23,20 @@ OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(OUTPUT_DIR, "data")
 JSON_FILE = os.path.join(DATA_DIR, "coupons.json")
 
+# Load .env file for local development (no extra dependencies needed)
+_env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env')
+if os.path.exists(_env_path):
+    with open(_env_path) as _f:
+        for _line in _f:
+            _line = _line.strip()
+            if _line and not _line.startswith('#') and '=' in _line:
+                _k, _v = _line.split('=', 1)
+                os.environ.setdefault(_k.strip(), _v.strip())
+
 # Settings
 MAX_SCROLLS = 30  # Number of scrolls on Facebook Ad Library
 IS_CI = os.environ.get('CI') == 'true'  # Running in GitHub Actions?
+GROQ_API_KEY = os.environ.get('GROQ_API_KEY')  # Free at console.groq.com
 
 
 def load_existing_coupons():
@@ -157,6 +172,222 @@ def merge_coupons(existing_coupons, new_coupons):
     return list(coupon_dict.values())
 
 
+def classify_coupon_with_llm(page_text):
+    """
+    Use Groq's free LLM API to classify a coupon's validity text.
+    Returns a dict with keys: type, area_name, location_name, city, state, expiration
+    type is one of: 'US', 'AREA', 'LOCATION', 'UNKNOWN'
+    Falls back to None on any error.
+    """
+    if not GROQ_API_KEY or not requests:
+        return None
+
+    # Only send the most relevant snippet to keep token usage minimal
+    # Look for the validity sentence
+    snippet_match = re.search(
+        r'(Valid[\s\S]{0,400}?(?:salons?|locations?|Expires[^\n]*|\d{1,2}/\d{1,2}/\d{4}))',
+        page_text, re.IGNORECASE
+    )
+    snippet = snippet_match.group(1).strip() if snippet_match else page_text[:500]
+
+    prompt = (
+        'Classify this Great Clips coupon validity text. '
+        'Return ONLY a JSON object with these exact fields:\n'
+        '- "type": "US" (valid anywhere in the US), "AREA" (valid only in a specific city/region), '
+        'or "LOCATION" (valid at one specific salon address)\n'
+        '- "area_name": the region description if AREA (e.g. "OKC area and N. Central & W OK area"), else null\n'
+        '- "location_name": the salon name if LOCATION, else null\n'
+        '- "city": the city if LOCATION, else null\n'
+        '- "state": 2-letter state code if LOCATION, else null\n'
+        '- "expiration": date as MM/DD/YYYY if found, else null\n\n'
+        f'Coupon text: "{snippet}"\n\n'
+        'JSON only, no explanation.'
+    )
+
+    try:
+        resp = requests.post(
+            'https://api.groq.com/openai/v1/chat/completions',
+            headers={
+                'Authorization': f'Bearer {GROQ_API_KEY}',
+                'Content-Type': 'application/json',
+            },
+            json={
+                'model': 'llama-3.1-8b-instant',
+                'messages': [{'role': 'user', 'content': prompt}],
+                'temperature': 0,
+                'max_tokens': 200,
+                'response_format': {'type': 'json_object'},
+            },
+            timeout=15,
+        )
+        resp.raise_for_status()
+        content = resp.json()['choices'][0]['message']['content']
+        return json.loads(content)
+    except Exception as e:
+        print(f'   ⚠️  Groq LLM error: {e}')
+        return None
+
+
+def _apply_llm_classification(coupon, llm, code, idx, total):
+    """Apply the result of classify_coupon_with_llm() to a coupon dict."""
+    if not llm:
+        coupon["state"] = "UNKNOWN"
+        print(f"  ⚠️  [{idx}/{total}] {code} - Unclassified (LLM unavailable)")
+        return
+
+    ctype = (llm.get("type") or "UNKNOWN").upper()
+
+    if ctype == "US":
+        coupon["location_name"] = ""
+        coupon["state"] = "US"
+        print(f"  ✅ [{idx}/{total}] {code} - US-Wide (LLM)")
+
+    elif ctype == "AREA":
+        area_name = llm.get("area_name") or "Unknown Area"
+        coupon["location_name"] = area_name if "area" in area_name.lower() else f"{area_name} Area"
+        coupon["state"] = "AREA"
+        coupon["area_name"] = area_name
+        if llm.get("expiration"):
+            coupon["expiration"] = llm["expiration"]
+        print(f"  ✅ [{idx}/{total}] {code} - {area_name} (LLM)")
+
+    elif ctype == "LOCATION":
+        if llm.get("location_name"):
+            coupon["location_name"] = llm["location_name"]
+        if llm.get("city"):
+            coupon["city"] = llm["city"]
+        if llm.get("state"):
+            coupon["state"] = llm["state"]
+        if llm.get("expiration"):
+            coupon["expiration"] = llm["expiration"]
+        print(f"  ✅ [{idx}/{total}] {code} - {llm.get('location_name', 'Location')} (LLM)")
+
+    else:
+        coupon["state"] = "UNKNOWN"
+        print(f"  ⚠️  [{idx}/{total}] {code} - Unclassified by LLM")
+
+
+# Phrases that indicate an offer page is no longer valid
+_ENDED_PHRASES = [
+    "this offer has ended",
+    "we're sorry! this offer has ended",
+    "offer has expired",
+    "this offer is no longer available",
+]
+
+
+def purge_ended_offers(coupons):
+    """
+    Visit every coupon URL and:
+    - Remove any whose page shows an 'offer ended' message
+    - Re-classify any state='US' coupons missing valid_text (old fallback mis-tags)
+    Manual coupons (manual_add=True) are skipped.
+    Returns the cleaned list.
+    """
+    to_purge_check = [c for c in coupons if c.get('url') and not c.get('manual_add')]
+    to_reclassify  = [c for c in to_purge_check if c.get('state') == 'US' and not c.get('valid_text')]
+
+    if not to_purge_check:
+        return coupons
+
+    print()
+    print(f"🔍 Verifying {len(to_purge_check)} offer URLs ({len(to_reclassify)} US coupons to re-classify)...")
+
+    ended_urls = set()
+    reclassify_updates = {}  # url -> updated fields
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        ctx = browser.new_context(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+        )
+        page = ctx.new_page()
+
+        for i, coupon in enumerate(to_purge_check, 1):
+            url = coupon['url']
+            code = coupon.get('coupon_code', url.split('/')[-1])
+            needs_reclassify = url in {c['url'] for c in to_reclassify}
+
+            try:
+                page.goto(url, wait_until="networkidle", timeout=15000)
+                time.sleep(0.5)
+                page_text = page.inner_text("body")
+
+                # Check for ended offers
+                if any(phrase in page_text.lower() for phrase in _ENDED_PHRASES):
+                    ended_urls.add(url)
+                    print(f"  🗑️  [{i}/{len(to_purge_check)}] {code} - Offer ended, removing")
+                    continue
+
+                # Re-classify US coupons that were tagged by the old fallback
+                if needs_reclassify:
+                    llm = classify_coupon_with_llm(page_text)
+                    if llm:
+                        ctype = (llm.get('type') or 'UNKNOWN').upper()
+                        update = {}
+                        # Capture valid_text if found
+                        vm = re.search(
+                            r'(Valid[\s\S]{0,400}?(?:Expires\s+\d{1,2}/\d{1,2}/\d{4}|salons?\.))',
+                            page_text, re.IGNORECASE
+                        )
+                        if vm:
+                            update['valid_text'] = re.sub(r'\s+', ' ', vm.group(1).strip())
+
+                        if ctype == 'US':
+                            update['location_name'] = ''
+                            update['state'] = 'US'
+                            print(f"  ✅ [{i}/{len(to_purge_check)}] {code} - Confirmed US-wide (LLM)")
+                        elif ctype == 'AREA':
+                            area_name = llm.get('area_name') or 'Unknown Area'
+                            update['location_name'] = area_name if 'area' in area_name.lower() else f"{area_name} Area"
+                            update['state'] = 'AREA'
+                            update['area_name'] = area_name
+                            if llm.get('expiration'):
+                                update['expiration'] = llm['expiration']
+                            print(f"  🗺️  [{i}/{len(to_purge_check)}] {code} - Re-classified → AREA: {area_name}")
+                        elif ctype == 'LOCATION':
+                            if llm.get('location_name'):
+                                update['location_name'] = llm['location_name']
+                            if llm.get('city'):
+                                update['city'] = llm['city']
+                            if llm.get('state'):
+                                update['state'] = llm['state']
+                            if llm.get('expiration'):
+                                update['expiration'] = llm['expiration']
+                            print(f"  📍 [{i}/{len(to_purge_check)}] {code} - Re-classified → LOCATION: {llm.get('location_name')}")
+                        else:
+                            update['state'] = 'UNKNOWN'
+                            print(f"  ⚠️  [{i}/{len(to_purge_check)}] {code} - Unclassified by LLM")
+
+                        reclassify_updates[url] = update
+                    else:
+                        print(f"  ⚠️  [{i}/{len(to_purge_check)}] {code} - LLM unavailable, leaving as-is")
+
+            except Exception as e:
+                print(f"  ⚠️  [{i}/{len(to_purge_check)}] {code} - Unreachable: {str(e)[:40]}")
+
+        browser.close()
+
+    # Apply all changes
+    cleaned = []
+    for c in coupons:
+        url = c.get('url', '')
+        if url in ended_urls:
+            continue
+        if url in reclassify_updates:
+            c.update(reclassify_updates[url])
+        cleaned.append(c)
+
+    removed = len(coupons) - len(cleaned)
+    if removed:
+        print(f"   🗑️  Removed {removed} ended offer(s)")
+    if reclassify_updates:
+        print(f"   🔄 Re-classified {len(reclassify_updates)} previously mis-tagged coupon(s)")
+    if not removed and not reclassify_updates:
+        print(f"   ✅ All offers verified")
+    return cleaned
+
+
 def scrape_facebook_ad_library():
     """Open Facebook Ad Library, scroll to load ads, extract offer URLs"""
     print("=" * 60)
@@ -285,10 +516,15 @@ def fetch_offer_details(offer_urls):
             try:
                 page.goto(url, wait_until="networkidle", timeout=15000)
                 time.sleep(1.5)
-                
+
                 page_text = page.inner_text("body")
                 page_html = page.content()
-                
+
+                # Skip offers that have already ended
+                if "this offer has ended" in page_text.lower():
+                    print(f"  🗑️  [{i}/{len(offer_urls)}] {code} - Offer ended, skipping")
+                    continue
+
                 # Try to extract coupon image
                 # Look for og:image meta tag first (most reliable)
                 og_image = re.search(r'<meta[^>]*property=["\']og:image["\'][^>]*content=["\']([^"\']+)["\']', page_html, re.IGNORECASE)
@@ -332,71 +568,75 @@ def fetch_offer_details(offer_urls):
                     
                     print(f"  ✅ [{i}/{len(offer_urls)}] {code} - {coupon.get('location_name', 'Found')}")
                 else:
-                    # Check for US-wide coupon - must say "participating US" or "all US" or "any Great Clips"
-                    # AND must NOT have a specific location in "Valid at Great Clips [Location]" format
+                    # ── Fast-path regex checks ──────────────────────────────────
+                    # 1. Explicit US-wide language ("participating US salons", etc.)
                     us_wide_match = re.search(
-                        r'(?:participating\s+US|all\s+US|any\s+(?:US\s+)?Great\s+Clips|all\s+Great\s+Clips\s+(?:locations?|salons?))',
-                        page_text, 
-                        re.IGNORECASE
-                    )
-                    has_specific_location = re.search(
-                        r'Valid at Great Clips\s+[A-Z][a-zA-Z\s]+\s+at\s+\d',
-                        page_text
-                    )
-                    
-                    # Check for area-based coupons (e.g., "participating Columbia area Great Clips")
-                    area_match = re.search(
-                        r'(?:participating|only at)\s+([A-Za-z\s]+?)\s+area\s+Great\s+Clips',
+                        r'(?:participating\s+US|all\s+US|any\s+(?:US\s+)?Great\s+Clips|'
+                        r'all\s+Great\s+Clips\s+(?:locations?|salons?)|'
+                        r'all\s+participating\s+(?:US\s+)?Great\s+Clips)',
                         page_text,
                         re.IGNORECASE
                     )
+                    # 2. Any "area" language → definitely NOT US-wide
+                    any_area_hint = re.search(
+                        r'\b(?:area|region|metro)\b.{0,60}(?:Great\s+Clips|salons?|locations?)',
+                        page_text, re.IGNORECASE
+                    )
+                    # 3. Narrow area regex (original, kept for speed)
+                    area_match = re.search(
+                        r'(?:participating|only at)\s+([A-Za-z\s]+?)\s+area\s+Great\s+Clips',
+                        page_text, re.IGNORECASE
+                    )
+                    # 4. Broader area fallback
+                    area_fallback = re.search(
+                        r'([A-Za-z][\w\s,\.&-]{2,60}?)\s+area\s+(?:Great\s+Clips\s+)?salons?',
+                        page_text, re.IGNORECASE
+                    )
 
-                    if us_wide_match and not has_specific_location and not area_match:
+                    # Always try to grab expiration
+                    exp_match = re.search(r'Expires?\s*:?\s*(\d{1,2}/\d{1,2}/\d{4})', page_text, re.IGNORECASE)
+                    if exp_match:
+                        coupon["expiration"] = exp_match.group(1)
+
+                    if us_wide_match and not any_area_hint:
+                        # Clear US-wide signal and no area hints → safe to mark US
                         coupon["location_name"] = ""
                         coupon["state"] = "US"
                         print(f"  ✅ [{i}/{len(offer_urls)}] {code} - US-Wide Coupon")
+
                     elif area_match:
-                        # Area-based coupon - valid at multiple locations in a region
                         area_name = area_match.group(1).strip()
                         coupon["location_name"] = f"{area_name} Area"
                         coupon["state"] = "AREA"
                         coupon["area_name"] = area_name
-                        # Try to get expiration
-                        exp_match = re.search(r'Expires?\s*:?\s*(\d{1,2}/\d{1,2}/\d{4})', page_text, re.IGNORECASE)
-                        if exp_match:
-                            coupon["expiration"] = exp_match.group(1)
                         print(f"  ✅ [{i}/{len(offer_urls)}] {code} - {area_name} Area Coupon")
-                    else:
-                        # Try to get expiration at least
-                        exp_match = re.search(r'Expires?\s*:?\s*(\d{1,2}/\d{1,2}/\d{4})', page_text, re.IGNORECASE)
-                        if exp_match:
-                            coupon["expiration"] = exp_match.group(1)
 
-                        # Check for area pattern one more time with different format
-                        area_fallback = re.search(
-                            r'([A-Za-z\s]+?)\s+area\s+(?:Great\s+Clips\s+)?salons?',
-                            page_text,
-                            re.IGNORECASE
-                        )
-
-                        if area_fallback and not coupon.get("location_name"):
-                            area_name = area_fallback.group(1).strip()
-                            # Filter out common false positives
-                            if area_name.lower() not in ['the', 'your', 'local', 'nearby', 'this']:
-                                coupon["location_name"] = f"{area_name} Area"
-                                coupon["state"] = "AREA"
-                                coupon["area_name"] = area_name
-                                print(f"  ✅ [{i}/{len(offer_urls)}] {code} - {area_name} Area Coupon")
-                            else:
-                                coupon["state"] = "US"
-                                print(f"  ✅ [{i}/{len(offer_urls)}] {code} - US-Wide (no location)")
-                        # If we found a price but no location, it's likely a US-wide coupon
-                        # Mark as US since there's no specific location
-                        elif not coupon.get("location_name") and not coupon.get("address") and not coupon.get("city"):
-                            coupon["state"] = "US"
-                            print(f"  ✅ [{i}/{len(offer_urls)}] {code} - US-Wide (no location)")
+                    elif area_fallback:
+                        area_name = area_fallback.group(1).strip()
+                        bad = {'the', 'your', 'local', 'nearby', 'this', 'a', 'an', 'any'}
+                        if area_name.lower() not in bad:
+                            coupon["location_name"] = f"{area_name} Area"
+                            coupon["state"] = "AREA"
+                            coupon["area_name"] = area_name
+                            print(f"  ✅ [{i}/{len(offer_urls)}] {code} - {area_name} Area Coupon")
                         else:
-                            print(f"  ⚠️ [{i}/{len(offer_urls)}] {code} - Limited info")
+                            # Ambiguous — ask the LLM
+                            llm = classify_coupon_with_llm(page_text)
+                            _apply_llm_classification(coupon, llm, code, i, len(offer_urls))
+
+                    else:
+                        # ── Ambiguous: no clear signal either way ──────────────
+                        # Try LLM first; fall back conservatively to AREA/unknown
+                        llm = classify_coupon_with_llm(page_text)
+                        if llm:
+                            _apply_llm_classification(coupon, llm, code, i, len(offer_urls))
+                        elif not coupon.get("location_name") and not coupon.get("address") and not coupon.get("city"):
+                            # No LLM key configured and nothing parsed — leave unclassified
+                            # rather than wrongly promoting to US-wide featured section
+                            coupon["state"] = "UNKNOWN"
+                            print(f"  ⚠️  [{i}/{len(offer_urls)}] {code} - Unclassified (no LLM key)")
+                        else:
+                            print(f"  ⚠️  [{i}/{len(offer_urls)}] {code} - Limited info")
                 
                 # Get price
                 price_match = re.search(r'\$(\d+\.?\d{0,2})', page_text)
@@ -433,7 +673,10 @@ def save_results(new_coupons):
     
     # Merge new coupons with existing (removes expired, avoids duplicates)
     coupons = merge_coupons(existing_coupons, new_coupons)
-    
+
+    # Remove any coupons whose offer page now shows "This offer has ended"
+    coupons = purge_ended_offers(coupons)
+
     # Sort by price (but keep manual/US-wide coupons at the end for visibility)
     def get_sort_key(c):
         try:

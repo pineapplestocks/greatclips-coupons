@@ -509,12 +509,13 @@
             const address = (coupon.address || '').trim();
             const city = (coupon.city || '').trim();
 
-            // Area-based coupons are NOT universal
-            if (state === 'AREA' || coupon.area_name) return false;
+            // Explicitly non-universal states
+            if (state === 'AREA' || state === 'UNKNOWN' || coupon.area_name) return false;
 
             if (state === 'US') return true;
             if (loc.toUpperCase().includes('ALL US') || loc.toUpperCase().includes('ALL LOCATIONS')) return true;
-            if ((!loc || loc.toUpperCase() === 'GREAT CLIPS') && !address && !city && state !== 'AREA') return true;
+            // Only treat as universal if there is truly no location info at all
+            if ((!loc || loc.toUpperCase() === 'GREAT CLIPS') && !address && !city && state === 'US') return true;
 
             return false;
         }
