@@ -1113,7 +1113,7 @@
                 "area_name": "LaCrosse-Eau Claire"
         }
 ];
-        const LAST_UPDATED = "2026-02-28T18:37:37.044892";
+        const LAST_UPDATED = "2026-02-28T20:29:19.201708";
 
         // Format date like "December 31st, 2026"
         function formatDate(dateStr) {
@@ -1364,7 +1364,7 @@
                                                 <p class="font-medium text-slate-600">${formatCityState(c)}</p>
                                             </div>
                                             <div class="flex gap-2">
-                                                <button onclick="getCoupon('${c.url}')"
+                                                <button onclick="getCoupon('${c.url}', '${c.price || ''}')"
                                                     class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200 cursor-pointer">
                                                     Get Coupon
                                                 </button>
@@ -1519,7 +1519,7 @@
                                                 <h3 class="text-white font-semibold text-lg mb-1">Any Great Clips</h3>
                                                 <p class="text-white/60 text-sm mb-4">Valid at all participating US salons</p>
                                                 <div class="space-y-2">
-                                                    <button onclick="getCoupon('${c.url}')"
+                                                    <button onclick="getCoupon('${c.url}', '${c.price || ''}')"
                                                         class="block w-full bg-white text-purple-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-purple-50 transition-colors cursor-pointer">
                                                         Get your coupon now →
                                                     </button>
@@ -1591,7 +1591,7 @@
                                                 </h3>
                                                 <p class="text-white/60 text-sm mb-4">Valid at participating salons in this area</p>
                                                 <div class="space-y-2">
-                                                    <button onclick="getCoupon('${c.url}')"
+                                                    <button onclick="getCoupon('${c.url}', '${c.price || ''}')"
                                                         class="block w-full bg-white text-orange-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-orange-50 transition-colors cursor-pointer">
                                                         Get your coupon now →
                                                     </button>
@@ -1725,7 +1725,7 @@
                                                         <p class="font-medium text-slate-600">${formatCityState(c)}</p>
                                                     </div>
                                                     <div class="flex gap-2">
-                                                        <button onclick="getCoupon('${c.url}')"
+                                                        <button onclick="getCoupon('${c.url}', '${c.price || ''}')"
                                                             class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200 cursor-pointer">
                                                             Get Coupon
                                                         </button>
@@ -1845,19 +1845,16 @@
         
         // ============ EMAIL CAPTURE SYSTEM ============
         let pendingCouponUrl = '';
+        let pendingCouponPrice = '';
+        // ⚠️ Replace with your deployed Cloudflare Worker URL after setup
+        const WORKER_URL = 'REPLACE_WITH_YOUR_WORKER_URL';
         
-        function getCoupon(url) {
-            // Check if already have email stored
-            const savedEmail = localStorage.getItem('gc_email');
-            if (savedEmail) {
-                // Already subscribed, go directly to coupon
-                window.open(url, '_blank');
-                return;
-            }
-            
-            // Show email modal
+        function getCoupon(url, price) {
+            // Always show email modal — coupon is delivered by email
             pendingCouponUrl = url;
+            pendingCouponPrice = price || '';
             document.getElementById('emailModal').classList.remove('hidden');
+            document.getElementById('emailInput').value = '';
             document.getElementById('emailInput').focus();
         }
         
@@ -1866,40 +1863,43 @@
             pendingCouponUrl = '';
         }
         
-        function submitEmail(e) {
+        async function submitEmail(e) {
             e.preventDefault();
-            const email = document.getElementById('emailInput').value;
+            const email = document.getElementById('emailInput').value.trim();
 
             if (!email || !email.includes('@')) {
                 alert('Please enter a valid email address');
                 return;
             }
 
-            // Save the coupon URL before closing modal (closeEmailModal clears it)
             const couponUrl = pendingCouponUrl;
+            const price = pendingCouponPrice;
 
-            // Save email locally so they don't have to enter again
-            localStorage.setItem('gc_email', email);
+            // Show loading state
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Sending...';
+            btn.disabled = true;
 
-            // Send to Formspree (free email collection service)
-            // REPLACE with your Formspree endpoint!
-            fetch('https://formspree.io/f/xrebvqjy', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    email: email,
-                    source: 'coupon_gate',
-                    coupon_url: couponUrl,
-                    timestamp: new Date().toISOString()
-                })
-            }).catch(() => {}); // Silent fail - don't block user
+            // Send coupon via Cloudflare Worker → Brevo
+            try {
+                await fetch(WORKER_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, coupon_url: couponUrl, price })
+                });
+            } catch (_) {
+                // Silent fail — still open the coupon below
+            }
+
+            btn.innerHTML = originalText;
+            btn.disabled = false;
 
             // Close modal and open coupon
             closeEmailModal();
             window.open(couponUrl, '_blank');
 
-            // Show thank you toast
-            showToast('Thanks! Enjoy your coupon 🎉');
+            showToast('📧 Coupon sent to your email! Opening now...');
         }
         
         function skipEmail() {
@@ -1933,7 +1933,7 @@
                     <span class="text-3xl">✂️</span>
                 </div>
                 <h3 class="text-2xl font-bold text-slate-900">Get Your Coupon!</h3>
-                <p class="text-slate-600 mt-2">Enter your email to unlock this deal and get future coupon alerts</p>
+                <p class="text-slate-600 mt-2">Enter your email and we'll send you the coupon link instantly</p>
             </div>
             
             <!-- Form -->
