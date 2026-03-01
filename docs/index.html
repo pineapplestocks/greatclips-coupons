@@ -1155,7 +1155,7 @@
                 "area_name": "LaCrosse-Eau Claire"
         }
 ];
-        const LAST_UPDATED = "2026-02-28T20:29:19.201708";
+        const LAST_UPDATED = "2026-03-01T12:56:22.703339";
 
         // Format date like "December 31st, 2026"
         function formatDate(dateStr) {
@@ -1888,8 +1888,7 @@
         // ============ EMAIL CAPTURE SYSTEM ============
         let pendingCouponUrl = '';
         let pendingCouponPrice = '';
-        // ⚠️ Replace with your deployed Cloudflare Worker URL after setup
-        const WORKER_URL = 'REPLACE_WITH_YOUR_WORKER_URL';
+        const WORKER_URL = 'https://greatclips-coupons.mehulchaudhari.workers.dev';
         
         function getCoupon(url, price) {
             // Always show email modal — coupon is delivered by email
