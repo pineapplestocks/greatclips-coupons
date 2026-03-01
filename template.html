@@ -1144,6 +1144,9 @@
         
         function closeEmailModal() {
             document.getElementById('emailModal').classList.add('hidden');
+            // Reset back to form view for next open
+            document.getElementById('emailFormView').classList.remove('hidden');
+            document.getElementById('emailSuccessView').classList.add('hidden');
             pendingCouponUrl = '';
         }
         
@@ -1161,36 +1164,29 @@
 
             // Show loading state
             const btn = e.target.querySelector('button[type="submit"]');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = 'Sending...';
+            btn.innerHTML = 'Sending... ⏳';
             btn.disabled = true;
 
             // Send coupon via Cloudflare Worker → Brevo
+            let success = false;
             try {
-                await fetch(WORKER_URL, {
+                const res = await fetch(WORKER_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email, coupon_url: couponUrl, price })
                 });
-            } catch (_) {
-                // Silent fail — still open the coupon below
-            }
+                success = res.ok;
+            } catch (_) {}
 
-            btn.innerHTML = originalText;
-            btn.disabled = false;
-
-            // Close modal and open coupon
-            closeEmailModal();
-            window.open(couponUrl, '_blank');
-
-            showToast('📧 Coupon sent to your email! Opening now...');
+            // Flip modal to success screen
+            document.getElementById('emailFormView').classList.add('hidden');
+            const successView = document.getElementById('emailSuccessView');
+            document.getElementById('successEmail').textContent = email;
+            successView.classList.remove('hidden');
         }
-        
+
         function skipEmail() {
-            // Save the coupon URL before closing modal (closeEmailModal clears it)
             const couponUrl = pendingCouponUrl;
-            // Let them skip but track it
-            localStorage.setItem('gc_email_skipped', 'true');
             closeEmailModal();
             window.open(couponUrl, '_blank');
         }
@@ -1211,44 +1207,62 @@
             <!-- Close button -->
             <button onclick="closeEmailModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl">&times;</button>
             
-            <!-- Icon -->
-            <div class="text-center mb-6">
-                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full mb-4">
-                    <span class="text-3xl">✂️</span>
+            <!-- FORM VIEW -->
+            <div id="emailFormView">
+                <!-- Icon -->
+                <div class="text-center mb-6">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full mb-4">
+                        <span class="text-3xl">✂️</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900">Get Your Coupon!</h3>
+                    <p class="text-slate-600 mt-2">Enter your email and we'll send you the coupon link instantly</p>
                 </div>
-                <h3 class="text-2xl font-bold text-slate-900">Get Your Coupon!</h3>
-                <p class="text-slate-600 mt-2">Enter your email and we'll send you the coupon link instantly</p>
-            </div>
-            
-            <!-- Form -->
-            <form onsubmit="submitEmail(event)" class="space-y-4">
-                <input 
-                    type="email" 
-                    id="emailInput"
-                    placeholder="Enter your email"
-                    class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors"
-                    required
-                >
+                
+                <!-- Form -->
+                <form onsubmit="submitEmail(event)" class="space-y-4">
+                    <input 
+                        type="email" 
+                        id="emailInput"
+                        placeholder="Enter your email"
+                        class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors"
+                        required
+                    >
+                    <button 
+                        type="submit"
+                        class="w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-purple-200"
+                    >
+                        Send Me the Coupon 📧
+                    </button>
+                </form>
+                
+                <!-- Skip option -->
                 <button 
-                    type="submit"
-                    class="w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-purple-200"
+                    onclick="skipEmail()" 
+                    class="w-full mt-3 text-slate-500 hover:text-slate-700 text-sm py-2 transition-colors"
                 >
-                    Unlock Coupon 🔓
+                    No thanks, just show me the coupon
                 </button>
-            </form>
-            
-            <!-- Skip option -->
-            <button 
-                onclick="skipEmail()" 
-                class="w-full mt-3 text-slate-500 hover:text-slate-700 text-sm py-2 transition-colors"
-            >
-                No thanks, just show me the coupon
-            </button>
-            
-            <!-- Trust signals -->
-            <p class="text-center text-xs text-slate-400 mt-4">
-                🔒 No spam, unsubscribe anytime. We respect your privacy.
-            </p>
+                
+                <!-- Trust signals -->
+                <p class="text-center text-xs text-slate-400 mt-4">
+                    🔒 No spam, unsubscribe anytime. We respect your privacy.
+                </p>
+            </div>
+
+            <!-- SUCCESS VIEW (hidden until email submitted) -->
+            <div id="emailSuccessView" class="hidden text-center">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-5">
+                    <span class="text-4xl">📧</span>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">Check your inbox!</h3>
+                <p class="text-slate-600 mb-1">We sent your coupon link to:</p>
+                <p class="font-semibold text-purple-600 mb-5" id="successEmail"></p>
+                <p class="text-slate-500 text-sm mb-6">Didn't get it? Check your spam folder.<br>It usually arrives within 30 seconds.</p>
+                <button onclick="closeEmailModal()"
+                    class="w-full bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-purple-200">
+                    Done
+                </button>
+            </div>
         </div>
     </div>
 </body>
