@@ -23,6 +23,13 @@ export default {
       return jsonResponse({ error: 'Method not allowed' }, 405);
     }
 
+    if (!env.BREVO_API_KEY) {
+      return jsonResponse({ error: 'BREVO_API_KEY secret not set in Cloudflare Worker environment' }, 500);
+    }
+    if (!env.SENDER_EMAIL) {
+      return jsonResponse({ error: 'SENDER_EMAIL secret not set in Cloudflare Worker environment' }, 500);
+    }
+
     let body;
     try {
       body = await request.json();
@@ -136,7 +143,7 @@ export default {
     if (!brevoRes.ok) {
       const errText = await brevoRes.text();
       console.error('Brevo API error:', brevoRes.status, errText);
-      return jsonResponse({ error: 'Failed to send email' }, 500);
+      return jsonResponse({ error: 'Failed to send email', detail: errText, status: brevoRes.status }, 500);
     }
 
     return jsonResponse({ ok: true });
