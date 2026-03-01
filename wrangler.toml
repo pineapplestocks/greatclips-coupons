@@ -1,0 +1,6 @@
+name = "greatclips-email"
+main = "cloudflare-worker/worker.js"
+compatibility_date = "2024-01-01"
+
+# Secrets (BREVO_API_KEY and SENDER_EMAIL) must be set via the
+# Cloudflare dashboard: Workers & Pages > greatclips-email > Settings > Variables
