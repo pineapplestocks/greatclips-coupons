@@ -1904,6 +1904,9 @@
             // Reset back to form view for next open
             document.getElementById('emailFormView').classList.remove('hidden');
             document.getElementById('emailSuccessView').classList.add('hidden');
+            // Reset submit button state
+            const btn = document.querySelector('#emailFormView button[type="submit"]');
+            if (btn) { btn.innerHTML = 'Send Me the Coupon 📧'; btn.disabled = false; }
             pendingCouponUrl = '';
         }
         
