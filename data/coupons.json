@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-03-01T18:40:09.467556",
-  "total_coupons": 55,
+  "scraped_at": "2026-03-01T20:59:14.112889",
+  "total_coupons": 65,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/Z0LoKH1",
@@ -15,6 +15,34 @@
       "price": "$4.99",
       "added_date": "2026-02-17",
       "last_seen": "2026-02-28"
+    },
+    {
+      "url": "https://offers.greatclips.com/v2c4toN",
+      "coupon_code": "v2c4toN",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips Kensington Square at 4451 FM 2181 in Corinth, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/09/2026",
+      "location_name": "Kensington Square",
+      "address": "4451 FM 2181",
+      "city": "Corinth,",
+      "state": "TX",
+      "expiration": "03/09/2026",
+      "price": "$5.00",
+      "added_date": "2026-03-01",
+      "last_seen": "2026-03-01"
+    },
+    {
+      "url": "https://offers.greatclips.com/rOXY5XJ",
+      "coupon_code": "rOXY5XJ",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips Market East Center at 1515 N Town East Blvd in Mesquite, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/09/2026",
+      "location_name": "Market East Center",
+      "address": "1515 N Town East Blvd",
+      "city": "Mesquite,",
+      "state": "TX",
+      "expiration": "03/09/2026",
+      "price": "$5.00",
+      "added_date": "2026-03-01",
+      "last_seen": "2026-03-01"
     },
     {
       "url": "https://offers.greatclips.com/p6iRSG0",
@@ -101,6 +129,20 @@
       "last_seen": "2026-02-28"
     },
     {
+      "url": "https://offers.greatclips.com/inyk73R",
+      "coupon_code": "inyk73R",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
+      "valid_text": "Valid at Great Clips Market at Valley Parkway at 1079 W FM 3040 in Lewisville, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/09/2026",
+      "location_name": "Market",
+      "address": "Valley Parkway at 1079 W FM 3040",
+      "city": "Lewisville,",
+      "state": "TX",
+      "expiration": "03/09/2026",
+      "price": "$7.99",
+      "added_date": "2026-03-01",
+      "last_seen": "2026-03-01"
+    },
+    {
       "url": "https://offers.greatclips.com/4H1lHXo",
       "coupon_code": "4H1lHXo",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/17261/50707-002-1200x600-8.99.jpg",
@@ -124,6 +166,34 @@
       "expiration": "04/03/2026",
       "price": "$8.99",
       "added_date": "2026-02-28",
+      "last_seen": "2026-03-01"
+    },
+    {
+      "url": "https://offers.greatclips.com/muwWYwb",
+      "coupon_code": "muwWYwb",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8458/50707-002-1200x600-8.99.jpg",
+      "valid_text": "Valid at Great Clips Precinct Line Center at 1320 Precinct Line Rd in Hurst, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/11/2026",
+      "location_name": "Precinct Line Center",
+      "address": "1320 Precinct Line Rd",
+      "city": "Hurst,",
+      "state": "TX",
+      "expiration": "03/11/2026",
+      "price": "$8.99",
+      "added_date": "2026-03-01",
+      "last_seen": "2026-03-01"
+    },
+    {
+      "url": "https://offers.greatclips.com/sGiCX3K",
+      "coupon_code": "sGiCX3K",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8458/50707-002-1200x600-8.99.jpg",
+      "valid_text": "Valid at Great Clips Fridley Market at 278 57th Ave NE in Fridley, MN. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/13/2026",
+      "location_name": "Fridley Market",
+      "address": "278 57th Ave NE",
+      "city": "Fridley,",
+      "state": "MN",
+      "expiration": "03/13/2026",
+      "price": "$8.99",
+      "added_date": "2026-03-01",
       "last_seen": "2026-03-01"
     },
     {
@@ -370,6 +440,34 @@
       "city": "Edgewater,",
       "state": "FL",
       "expiration": "03/08/2026",
+      "price": "$9.99",
+      "added_date": "2026-03-01",
+      "last_seen": "2026-03-01"
+    },
+    {
+      "url": "https://offers.greatclips.com/c8Kj7S7",
+      "coupon_code": "c8Kj7S7",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Lumberton at 104 S LHS Dr. in Lumberton, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/12/2026",
+      "location_name": "Lumberton",
+      "address": "104 S LHS Dr.",
+      "city": "Lumberton,",
+      "state": "TX",
+      "expiration": "03/12/2026",
+      "price": "$9.99",
+      "added_date": "2026-03-01",
+      "last_seen": "2026-03-01"
+    },
+    {
+      "url": "https://offers.greatclips.com/vdRmGvo",
+      "coupon_code": "vdRmGvo",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8461/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Marketplace at Carnes Crossroads at 2820 North Main Street in Summerville, SC. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/19/2026",
+      "location_name": "Marketplace",
+      "address": "Carnes Crossroads at 2820 North Main Street",
+      "city": "Summerville,",
+      "state": "SC",
+      "expiration": "03/19/2026",
       "price": "$9.99",
       "added_date": "2026-03-01",
       "last_seen": "2026-03-01"
@@ -652,7 +750,7 @@
       "expiration": "03/13/2026",
       "price": "$10.99",
       "added_date": "2026-01-18",
-      "last_seen": "2026-01-20"
+      "last_seen": "2026-03-01"
     },
     {
       "url": "https://offers.greatclips.com/OZEiKrl",
@@ -679,6 +777,20 @@
       "last_seen": "2026-02-28",
       "valid_text": "Valid only at participating Phoenix & Northern/Western AZ area Great Clips salons . Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Offer expires 03/06/2026",
       "area_name": "Phoenix & Northern/Western AZ"
+    },
+    {
+      "url": "https://offers.greatclips.com/6wi5b8W",
+      "coupon_code": "6wi5b8W",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8462/50707-002-1200x600-10.99.jpg",
+      "valid_text": "Valid at Great Clips Starkey Ranch Town Square at 13549 State Rd 54 in Odessa, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/11/2026",
+      "location_name": "Starkey Ranch Town Square",
+      "address": "13549 State Rd 54",
+      "city": "Odessa,",
+      "state": "FL",
+      "expiration": "03/11/2026",
+      "price": "$10.99",
+      "added_date": "2026-03-01",
+      "last_seen": "2026-03-01"
     },
     {
       "url": "https://offers.greatclips.com/9dfsvKP",
@@ -721,6 +833,20 @@
       "last_seen": "2026-01-21"
     },
     {
+      "url": "https://offers.greatclips.com/OhOpMzF",
+      "coupon_code": "OhOpMzF",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8466/50707-002-1200x600-12.99.jpg",
+      "valid_text": "Valid at Great Clips Sunset Shopping Center at 5076 Philomath Blvd in Corvallis, OR. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/20/2026",
+      "location_name": "Sunset Shopping Center",
+      "address": "5076 Philomath Blvd",
+      "city": "Corvallis,",
+      "state": "OR",
+      "expiration": "03/20/2026",
+      "price": "$12.99",
+      "added_date": "2026-03-01",
+      "last_seen": "2026-03-01"
+    },
+    {
       "url": "https://offers.greatclips.com/IOS6rlo",
       "coupon_code": "IOS6rlo",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8470/50707-002-1200x600-14.99.jpg",
@@ -757,6 +883,20 @@
       "last_seen": "2026-02-28",
       "valid_text": "Valid only at participating LaCrosse-Eau Claire area Great Clips salons.",
       "area_name": "LaCrosse-Eau Claire"
+    },
+    {
+      "url": "https://offers.greatclips.com/or4F33k",
+      "coupon_code": "or4F33k",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8470/50707-002-1200x600-14.99.jpg",
+      "valid_text": "Valid at Great Clips Sunnyvale Safeway at 138 E El Camino Real in Sunnyvale, CA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/20/2026",
+      "location_name": "Sunnyvale Safeway",
+      "address": "138 E El Camino Real",
+      "city": "Sunnyvale,",
+      "state": "CA",
+      "expiration": "03/20/2026",
+      "price": "$14.99",
+      "added_date": "2026-03-01",
+      "last_seen": "2026-03-01"
     }
   ]
 }
