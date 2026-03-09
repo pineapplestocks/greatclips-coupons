@@ -1169,7 +1169,7 @@
                 "last_seen": "2026-03-09"
         }
 ];
-        const LAST_UPDATED = "2026-03-09T02:26:51.179835";
+        const LAST_UPDATED = "2026-03-09T07:08:00.324921";
 
         // Format date like "December 31st, 2026"
         function formatDate(dateStr) {
@@ -1420,7 +1420,7 @@
                                                 <p class="font-medium text-slate-600">${formatCityState(c)}</p>
                                             </div>
                                             <div class="flex gap-2">
-                                                <button onclick="getCoupon('${c.url}', '${c.price || ''}')"
+                                                <button onclick="getCoupon('${c.url}', '${c.price || ''}', '${(c.location_name || '').replace(/'/g, "\\'")}', '${(c.city || '').replace(/'/g, "\\'")}', '${c.state || ''}')"
                                                     class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200 cursor-pointer">
                                                     Get Coupon
                                                 </button>
@@ -1575,7 +1575,7 @@
                                                 <h3 class="text-white font-semibold text-lg mb-1">Any Great Clips</h3>
                                                 <p class="text-white/60 text-sm mb-4">Valid at all participating US salons</p>
                                                 <div class="space-y-2">
-                                                    <button onclick="getCoupon('${c.url}', '${c.price || ''}')"
+                                                    <button onclick="getCoupon('${c.url}', '${c.price || ''}', 'US-wide', '', '')"
                                                         class="block w-full bg-white text-purple-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-purple-50 transition-colors cursor-pointer">
                                                         Get your coupon now →
                                                     </button>
@@ -1647,7 +1647,7 @@
                                                 </h3>
                                                 <p class="text-white/60 text-sm mb-4">Valid at participating salons in this area</p>
                                                 <div class="space-y-2">
-                                                    <button onclick="getCoupon('${c.url}', '${c.price || ''}')"
+                                                    <button onclick="getCoupon('${c.url}', '${c.price || ''}', '${areaName.replace(/'/g, "\\'")}', '', '${c.state || ''}')"
                                                         class="block w-full bg-white text-orange-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-orange-50 transition-colors cursor-pointer">
                                                         Get your coupon now →
                                                     </button>
@@ -1781,7 +1781,7 @@
                                                         <p class="font-medium text-slate-600">${formatCityState(c)}</p>
                                                     </div>
                                                     <div class="flex gap-2">
-                                                        <button onclick="getCoupon('${c.url}', '${c.price || ''}')"
+                                                        <button onclick="getCoupon('${c.url}', '${c.price || ''}', '${(c.location_name || '').replace(/'/g, "\\'")}', '${(c.city || '').replace(/'/g, "\\'")}', '${c.state || ''}')"
                                                             class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200 cursor-pointer">
                                                             Get Coupon
                                                         </button>
@@ -1902,17 +1902,19 @@
         // ============ EMAIL CAPTURE SYSTEM ============
         let pendingCouponUrl = '';
         let pendingCouponPrice = '';
+        let pendingLocation = { location_name: '', city: '', state: '' };
         const WORKER_URL = 'https://greatclips-coupons.mehulchaudhari.workers.dev';
-        
-        function getCoupon(url, price) {
+
+        function getCoupon(url, price, location_name, city, state) {
             // Always show email modal — coupon is delivered by email
             pendingCouponUrl = url;
             pendingCouponPrice = price || '';
+            pendingLocation = { location_name: location_name || '', city: city || '', state: state || '' };
             document.getElementById('emailModal').classList.remove('hidden');
             document.getElementById('emailInput').value = '';
             document.getElementById('emailInput').focus();
         }
-        
+
         function closeEmailModal() {
             document.getElementById('emailModal').classList.add('hidden');
             // Reset back to form view for next open
@@ -1922,8 +1924,9 @@
             const btn = document.querySelector('#emailFormView button[type="submit"]');
             if (btn) { btn.innerHTML = 'Send Me the Coupon 📧'; btn.disabled = false; }
             pendingCouponUrl = '';
+            pendingLocation = { location_name: '', city: '', state: '' };
         }
-        
+
         async function submitEmail(e) {
             e.preventDefault();
             const email = document.getElementById('emailInput').value.trim();
@@ -1935,6 +1938,7 @@
 
             const couponUrl = pendingCouponUrl;
             const price = pendingCouponPrice;
+            const location = pendingLocation;
 
             // Show loading state
             const btn = e.target.querySelector('button[type="submit"]');
@@ -1947,7 +1951,7 @@
                 const res = await fetch(WORKER_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, coupon_url: couponUrl, price })
+                    body: JSON.stringify({ email, coupon_url: couponUrl, price, ...location })
                 });
                 success = res.ok;
             } catch (_) {}
