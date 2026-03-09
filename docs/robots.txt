@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pineapplestocks.github.io/greatclips-coupons/sitemap.xml
+Sitemap: https://greatclipsdeal.com/sitemap.xml
