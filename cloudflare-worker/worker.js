@@ -37,7 +37,7 @@ export default {
       return jsonResponse({ error: 'Invalid JSON body' }, 400);
     }
 
-    const { email, coupon_url, price } = body;
+    const { email, coupon_url, price, location_name, city, state } = body;
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return jsonResponse({ error: 'Invalid email address' }, 400);
@@ -144,6 +144,25 @@ export default {
       const errText = await brevoRes.text();
       console.error('Brevo API error:', brevoRes.status, errText);
       return jsonResponse({ error: 'Failed to send email', detail: errText, status: brevoRes.status }, 500);
+    }
+
+    // Store subscriber + location in D1
+    if (env.DB) {
+      try {
+        await env.DB.prepare(
+          `INSERT INTO subscribers (email, location_name, city, state, coupon_url, subscribed_at)
+           VALUES (?, ?, ?, ?, ?, ?)`
+        ).bind(
+          email,
+          location_name || '',
+          city || '',
+          state || '',
+          coupon_url,
+          new Date().toISOString()
+        ).run();
+      } catch (err) {
+        console.error('D1 insert error:', err);
+      }
     }
 
     return jsonResponse({ ok: true });

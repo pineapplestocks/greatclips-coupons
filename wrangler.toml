@@ -4,3 +4,8 @@ compatibility_date = "2024-01-01"
 
 # Secrets (BREVO_API_KEY and SENDER_EMAIL) must be set via the
 # Cloudflare dashboard: Workers & Pages > greatclips-email > Settings > Variables
+
+[[d1_databases]]
+binding = "DB"
+database_name = "greatclips-subscribers"
+database_id = "9a987057-ea0b-41b8-b834-6c01bcc0b047"
