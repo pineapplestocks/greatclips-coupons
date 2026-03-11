@@ -99,3 +99,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Ping Google to re-crawl sitemap
+        if: always()
+        run: curl -s "https://www.google.com/ping?sitemap=https://greatclipsdeal.com/sitemap.xml"

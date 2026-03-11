@@ -90,6 +90,11 @@ def generate_sitemap():
         "blog/great-clips-senior-discount",
         "blog/great-clips-vs-supercuts",
         "blog/coupon-hacks",
+        "blog/great-clips-kids-haircut",
+        "blog/great-clips-hours",
+        "blog/great-clips-online-checkin",
+        "blog/great-clips-vs-sport-clips",
+        "blog/great-clips-student-discount",
     ]
     
     for page in blog_pages:
