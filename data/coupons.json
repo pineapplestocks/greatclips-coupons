@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-03-11T13:08:01.652010",
-  "total_coupons": 55,
+  "scraped_at": "2026-03-11T18:59:15.035651",
+  "total_coupons": 56,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/tC2lSTJ",
@@ -99,6 +99,20 @@
       "price": "$7.99",
       "added_date": "2026-03-08",
       "last_seen": "2026-03-08"
+    },
+    {
+      "url": "https://offers.greatclips.com/wusP9WW",
+      "coupon_code": "wusP9WW",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
+      "valid_text": "Valid at Great Clips Cortaro Ranch at 5730 W Cortaro Farms Rd in Tucson, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/18/2026",
+      "location_name": "Cortaro Ranch",
+      "address": "5730 W Cortaro Farms Rd",
+      "city": "Tucson,",
+      "state": "AZ",
+      "expiration": "03/18/2026",
+      "price": "$7.99",
+      "added_date": "2026-03-11",
+      "last_seen": "2026-03-11"
     },
     {
       "url": "https://offers.greatclips.com/v0PQ1Gg",
