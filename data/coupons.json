@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-03-12T07:01:55.640435",
-  "total_coupons": 58,
+  "scraped_at": "2026-03-12T13:07:44.915578",
+  "total_coupons": 59,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/tC2lSTJ",
@@ -28,6 +28,20 @@
       "expiration": "03/20/2026",
       "price": "$5.99",
       "added_date": "2026-03-06",
+      "last_seen": "2026-03-12"
+    },
+    {
+      "url": "https://offers.greatclips.com/DNFjs79",
+      "coupon_code": "DNFjs79",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8452/50707-002-1200x600-5.99.jpg",
+      "valid_text": "Valid at Great Clips Elyson at 22225 Elyson Falls Dr in Katy, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/24/2026",
+      "location_name": "Elyson",
+      "address": "22225 Elyson Falls Dr",
+      "city": "Katy,",
+      "state": "TX",
+      "expiration": "03/24/2026",
+      "price": "$5.99",
+      "added_date": "2026-03-12",
       "last_seen": "2026-03-12"
     },
     {
