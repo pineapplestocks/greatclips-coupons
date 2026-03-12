@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-03-11T18:59:15.035651",
+  "scraped_at": "2026-03-12T02:25:00.980173",
   "total_coupons": 56,
   "coupons": [
     {
@@ -14,7 +14,7 @@
       "expiration": "03/20/2026",
       "price": "$4.99",
       "added_date": "2026-03-10",
-      "last_seen": "2026-03-11"
+      "last_seen": "2026-03-12"
     },
     {
       "url": "https://offers.greatclips.com/0PSytU7",
@@ -28,7 +28,7 @@
       "expiration": "03/20/2026",
       "price": "$5.99",
       "added_date": "2026-03-06",
-      "last_seen": "2026-03-11"
+      "last_seen": "2026-03-12"
     },
     {
       "url": "https://offers.greatclips.com/DDb6g4a",
@@ -112,7 +112,7 @@
       "expiration": "03/18/2026",
       "price": "$7.99",
       "added_date": "2026-03-11",
-      "last_seen": "2026-03-11"
+      "last_seen": "2026-03-12"
     },
     {
       "url": "https://offers.greatclips.com/v0PQ1Gg",
@@ -126,7 +126,7 @@
       "expiration": "04/03/2026",
       "price": "$8.99",
       "added_date": "2026-02-28",
-      "last_seen": "2026-03-11"
+      "last_seen": "2026-03-12"
     },
     {
       "url": "https://offers.greatclips.com/sGiCX3K",
@@ -154,7 +154,7 @@
       "expiration": "03/21/2026",
       "price": "$8.99",
       "added_date": "2026-03-06",
-      "last_seen": "2026-03-11"
+      "last_seen": "2026-03-12"
     },
     {
       "url": "https://offers.greatclips.com/RzTH7du",
@@ -168,35 +168,21 @@
       "expiration": "04/03/2026",
       "price": "$8.99",
       "added_date": "2026-03-10",
-      "last_seen": "2026-03-11"
+      "last_seen": "2026-03-12"
     },
     {
-      "url": "https://offers.greatclips.com/CFhEUjD",
-      "coupon_code": "CFhEUjD",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
-      "valid_text": "Valid at Great Clips Port Arthur at 8425 Memorial Blvd in Port Arthur, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/12/2026",
-      "location_name": "Port Arthur",
-      "address": "8425 Memorial Blvd",
-      "city": "Port Arthur,",
+      "url": "https://offers.greatclips.com/cgfOrDF",
+      "coupon_code": "cgfOrDF",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8458/50707-002-1200x600-8.99.jpg",
+      "valid_text": "Valid at Great Clips Ridgmar at 2400 Lands End Blvd in Fort Worth, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/22/2026",
+      "location_name": "Ridgmar",
+      "address": "2400 Lands End Blvd",
+      "city": "Fort Worth,",
       "state": "TX",
-      "expiration": "03/12/2026",
-      "price": "$9.99",
-      "added_date": "2026-02-28",
-      "last_seen": "2026-03-05"
-    },
-    {
-      "url": "https://offers.greatclips.com/c8Kj7S7",
-      "coupon_code": "c8Kj7S7",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
-      "valid_text": "Valid at Great Clips Lumberton at 104 S LHS Dr. in Lumberton, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/12/2026",
-      "location_name": "Lumberton",
-      "address": "104 S LHS Dr.",
-      "city": "Lumberton,",
-      "state": "TX",
-      "expiration": "03/12/2026",
-      "price": "$9.99",
-      "added_date": "2026-03-01",
-      "last_seen": "2026-03-05"
+      "expiration": "03/22/2026",
+      "price": "$8.99",
+      "added_date": "2026-03-12",
+      "last_seen": "2026-03-12"
     },
     {
       "url": "https://offers.greatclips.com/vdRmGvo",
@@ -210,7 +196,7 @@
       "expiration": "03/19/2026",
       "price": "$9.99",
       "added_date": "2026-03-01",
-      "last_seen": "2026-03-11"
+      "last_seen": "2026-03-12"
     },
     {
       "url": "https://offers.greatclips.com/EeIF4ZE",
@@ -252,7 +238,7 @@
       "expiration": "04/07/2026",
       "price": "$10.99",
       "added_date": "2026-01-16",
-      "last_seen": "2026-03-11"
+      "last_seen": "2026-03-12"
     },
     {
       "url": "https://offers.greatclips.com/4ECj50d",
@@ -532,7 +518,7 @@
       "expiration": "03/20/2026",
       "price": "$10.99",
       "added_date": "2026-03-04",
-      "last_seen": "2026-03-11"
+      "last_seen": "2026-03-12"
     },
     {
       "url": "https://offers.greatclips.com/OhOpMzF",
@@ -546,7 +532,7 @@
       "expiration": "03/20/2026",
       "price": "$12.99",
       "added_date": "2026-03-01",
-      "last_seen": "2026-03-11"
+      "last_seen": "2026-03-12"
     },
     {
       "url": "https://offers.greatclips.com/L72vETv",
@@ -602,7 +588,21 @@
       "expiration": "03/25/2026",
       "price": "$12.99",
       "added_date": "2026-03-06",
-      "last_seen": "2026-03-11"
+      "last_seen": "2026-03-12"
+    },
+    {
+      "url": "https://offers.greatclips.com/IzB48xH",
+      "coupon_code": "IzB48xH",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8467/50707-002-1200x600-12.99.jpg",
+      "valid_text": "Valid at Great Clips Green Valley Marketplace at 2201 Francisco Drive in El Dorado Hills, CA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/18/2026",
+      "location_name": "Green Valley Marketplace",
+      "address": "2201 Francisco Drive",
+      "city": "El Dorado Hills,",
+      "state": "CA",
+      "expiration": "03/18/2026",
+      "price": "$12.99",
+      "added_date": "2026-03-12",
+      "last_seen": "2026-03-12"
     },
     {
       "url": "https://offers.greatclips.com/IOS6rlo",
@@ -630,7 +630,7 @@
       "expiration": "03/20/2026",
       "price": "$14.99",
       "added_date": "2026-03-01",
-      "last_seen": "2026-03-11"
+      "last_seen": "2026-03-12"
     },
     {
       "url": "https://offers.greatclips.com/G5WHwzk",
@@ -644,7 +644,7 @@
       "expiration": "03/22/2026",
       "price": "$14.99",
       "added_date": "2026-03-06",
-      "last_seen": "2026-03-11"
+      "last_seen": "2026-03-12"
     },
     {
       "url": "https://offers.greatclips.com/P3QMopG",
@@ -714,7 +714,7 @@
       "expiration": "03/21/2026",
       "price": "$16.99",
       "added_date": "2026-03-06",
-      "last_seen": "2026-03-11"
+      "last_seen": "2026-03-12"
     },
     {
       "url": "https://offers.greatclips.com/bsBxEik",
@@ -728,7 +728,7 @@
       "expiration": "03/21/2026",
       "price": "$16.99",
       "added_date": "2026-03-06",
-      "last_seen": "2026-03-11"
+      "last_seen": "2026-03-12"
     },
     {
       "url": "https://offers.greatclips.com/vaWgtGt",
@@ -742,7 +742,7 @@
       "expiration": "03/21/2026",
       "price": "$16.99",
       "added_date": "2026-03-07",
-      "last_seen": "2026-03-10"
+      "last_seen": "2026-03-12"
     },
     {
       "url": "https://offers.greatclips.com/GzcDmhQ",
@@ -770,7 +770,7 @@
       "expiration": "03/29/2026",
       "price": "$19.99",
       "added_date": "2026-03-08",
-      "last_seen": "2026-03-11"
+      "last_seen": "2026-03-12"
     },
     {
       "url": "https://offers.greatclips.com/uDlGjy9",
@@ -784,7 +784,7 @@
       "expiration": "03/29/2026",
       "price": "$19.99",
       "added_date": "2026-03-10",
-      "last_seen": "2026-03-11"
+      "last_seen": "2026-03-12"
     }
   ]
 }
