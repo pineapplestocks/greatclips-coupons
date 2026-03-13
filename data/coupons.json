@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-03-13T13:06:32.241630",
-  "total_coupons": 47,
+  "scraped_at": "2026-03-13T18:48:35.791473",
+  "total_coupons": 49,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/tC2lSTJ",
@@ -129,6 +129,20 @@
       "last_seen": "2026-03-13"
     },
     {
+      "url": "https://offers.greatclips.com/1U5O3b1",
+      "coupon_code": "1U5O3b1",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
+      "valid_text": "Valid at Great Clips Winchester Commons at 2190 Winchester Rd NE in Huntsville, AL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/24/2026",
+      "location_name": "Winchester Commons",
+      "address": "2190 Winchester Rd NE",
+      "city": "Huntsville,",
+      "state": "AL",
+      "expiration": "03/24/2026",
+      "price": "$7.99",
+      "added_date": "2026-03-13",
+      "last_seen": "2026-03-13"
+    },
+    {
       "url": "https://offers.greatclips.com/v0PQ1Gg",
       "coupon_code": "v0PQ1Gg",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8459/50707-002-1200x600-8.99.jpg",
@@ -196,6 +210,20 @@
       "expiration": "03/22/2026",
       "price": "$8.99",
       "added_date": "2026-03-12",
+      "last_seen": "2026-03-13"
+    },
+    {
+      "url": "https://offers.greatclips.com/s9LaNtb",
+      "coupon_code": "s9LaNtb",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8458/50707-002-1200x600-8.99.jpg",
+      "valid_text": "Valid at Great Clips Baytown at 6503 Garth Rd in Baytown, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/22/2026",
+      "location_name": "Baytown",
+      "address": "6503 Garth Rd",
+      "city": "Baytown,",
+      "state": "TX",
+      "expiration": "03/22/2026",
+      "price": "$8.99",
+      "added_date": "2026-03-13",
       "last_seen": "2026-03-13"
     },
     {
