@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-03-13T18:48:35.791473",
-  "total_coupons": 49,
+  "scraped_at": "2026-03-14T02:13:06.712510",
+  "total_coupons": 53,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/tC2lSTJ",
@@ -14,7 +14,7 @@
       "expiration": "03/20/2026",
       "price": "$4.99",
       "added_date": "2026-03-10",
-      "last_seen": "2026-03-13"
+      "last_seen": "2026-03-14"
     },
     {
       "url": "https://offers.greatclips.com/0PSytU7",
@@ -42,7 +42,7 @@
       "expiration": "03/24/2026",
       "price": "$5.99",
       "added_date": "2026-03-12",
-      "last_seen": "2026-03-13"
+      "last_seen": "2026-03-14"
     },
     {
       "url": "https://offers.greatclips.com/DDb6g4a",
@@ -126,7 +126,7 @@
       "expiration": "03/22/2026",
       "price": "$7.99",
       "added_date": "2026-03-12",
-      "last_seen": "2026-03-13"
+      "last_seen": "2026-03-14"
     },
     {
       "url": "https://offers.greatclips.com/1U5O3b1",
@@ -140,7 +140,21 @@
       "expiration": "03/24/2026",
       "price": "$7.99",
       "added_date": "2026-03-13",
-      "last_seen": "2026-03-13"
+      "last_seen": "2026-03-14"
+    },
+    {
+      "url": "https://offers.greatclips.com/Aw3Mgkb",
+      "coupon_code": "Aw3Mgkb",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8457/50707-002-1200x600-7.99.jpg",
+      "valid_text": "Valid at Great Clips Sycamore Rose Plaza at 230 West Peace Road in Sycamore, IL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/29/2026",
+      "location_name": "Sycamore Rose Plaza",
+      "address": "230 West Peace Road",
+      "city": "Sycamore,",
+      "state": "IL",
+      "expiration": "03/29/2026",
+      "price": "$7.99",
+      "added_date": "2026-03-14",
+      "last_seen": "2026-03-14"
     },
     {
       "url": "https://offers.greatclips.com/v0PQ1Gg",
@@ -154,7 +168,7 @@
       "expiration": "04/03/2026",
       "price": "$8.99",
       "added_date": "2026-02-28",
-      "last_seen": "2026-03-13"
+      "last_seen": "2026-03-14"
     },
     {
       "url": "https://offers.greatclips.com/3Oxibo2",
@@ -168,7 +182,7 @@
       "expiration": "03/21/2026",
       "price": "$8.99",
       "added_date": "2026-03-06",
-      "last_seen": "2026-03-13"
+      "last_seen": "2026-03-14"
     },
     {
       "url": "https://offers.greatclips.com/RzTH7du",
@@ -182,7 +196,7 @@
       "expiration": "04/03/2026",
       "price": "$8.99",
       "added_date": "2026-03-10",
-      "last_seen": "2026-03-13"
+      "last_seen": "2026-03-14"
     },
     {
       "url": "https://offers.greatclips.com/cgfOrDF",
@@ -196,7 +210,7 @@
       "expiration": "03/22/2026",
       "price": "$8.99",
       "added_date": "2026-03-12",
-      "last_seen": "2026-03-13"
+      "last_seen": "2026-03-14"
     },
     {
       "url": "https://offers.greatclips.com/4vBM4bW",
@@ -210,7 +224,7 @@
       "expiration": "03/22/2026",
       "price": "$8.99",
       "added_date": "2026-03-12",
-      "last_seen": "2026-03-13"
+      "last_seen": "2026-03-14"
     },
     {
       "url": "https://offers.greatclips.com/s9LaNtb",
@@ -224,7 +238,21 @@
       "expiration": "03/22/2026",
       "price": "$8.99",
       "added_date": "2026-03-13",
-      "last_seen": "2026-03-13"
+      "last_seen": "2026-03-14"
+    },
+    {
+      "url": "https://offers.greatclips.com/XsRkKZb",
+      "coupon_code": "XsRkKZb",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8458/50707-002-1200x600-8.99.jpg",
+      "valid_text": "Valid at Great Clips Belmont Development at 14339 US HWY 301 South in Wimauma, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/29/2026",
+      "location_name": "Belmont Development",
+      "address": "14339 US HWY 301 South",
+      "city": "Wimauma,",
+      "state": "FL",
+      "expiration": "03/29/2026",
+      "price": "$8.99",
+      "added_date": "2026-03-14",
+      "last_seen": "2026-03-14"
     },
     {
       "url": "https://offers.greatclips.com/vdRmGvo",
@@ -239,6 +267,20 @@
       "price": "$9.99",
       "added_date": "2026-03-01",
       "last_seen": "2026-03-12"
+    },
+    {
+      "url": "https://offers.greatclips.com/u3Kmbp3",
+      "coupon_code": "u3Kmbp3",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Riverside Landing at 1789 E Broadway St in Oviedo, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/25/2026",
+      "location_name": "Riverside Landing",
+      "address": "1789 E Broadway St",
+      "city": "Oviedo,",
+      "state": "FL",
+      "expiration": "03/25/2026",
+      "price": "$9.99",
+      "added_date": "2026-03-14",
+      "last_seen": "2026-03-14"
     },
     {
       "url": "https://offers.greatclips.com/dkIygSf",
@@ -266,7 +308,7 @@
       "expiration": "04/07/2026",
       "price": "$10.99",
       "added_date": "2026-01-16",
-      "last_seen": "2026-03-13"
+      "last_seen": "2026-03-14"
     },
     {
       "url": "https://offers.greatclips.com/4ECj50d",
@@ -546,7 +588,21 @@
       "expiration": "03/22/2026",
       "price": "$14.99",
       "added_date": "2026-03-06",
-      "last_seen": "2026-03-13"
+      "last_seen": "2026-03-14"
+    },
+    {
+      "url": "https://offers.greatclips.com/TTCXJEz",
+      "coupon_code": "TTCXJEz",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8470/50707-002-1200x600-14.99.jpg",
+      "valid_text": "Valid at Great Clips Plymouth Square at 44523 Ann Arbor Rd W in Plymouth, MI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 03/29/2026",
+      "location_name": "Plymouth Square",
+      "address": "44523 Ann Arbor Rd W",
+      "city": "Plymouth,",
+      "state": "MI",
+      "expiration": "03/29/2026",
+      "price": "$14.99",
+      "added_date": "2026-03-14",
+      "last_seen": "2026-03-14"
     },
     {
       "url": "https://offers.greatclips.com/P3QMopG",
@@ -616,7 +672,7 @@
       "expiration": "03/21/2026",
       "price": "$16.99",
       "added_date": "2026-03-06",
-      "last_seen": "2026-03-13"
+      "last_seen": "2026-03-14"
     },
     {
       "url": "https://offers.greatclips.com/bsBxEik",
@@ -630,7 +686,7 @@
       "expiration": "03/21/2026",
       "price": "$16.99",
       "added_date": "2026-03-06",
-      "last_seen": "2026-03-13"
+      "last_seen": "2026-03-14"
     },
     {
       "url": "https://offers.greatclips.com/vaWgtGt",
@@ -644,7 +700,7 @@
       "expiration": "03/21/2026",
       "price": "$16.99",
       "added_date": "2026-03-07",
-      "last_seen": "2026-03-13"
+      "last_seen": "2026-03-14"
     },
     {
       "url": "https://offers.greatclips.com/GzcDmhQ",
@@ -672,7 +728,7 @@
       "expiration": "03/29/2026",
       "price": "$19.99",
       "added_date": "2026-03-08",
-      "last_seen": "2026-03-13"
+      "last_seen": "2026-03-14"
     },
     {
       "url": "https://offers.greatclips.com/uDlGjy9",
@@ -686,7 +742,7 @@
       "expiration": "03/29/2026",
       "price": "$19.99",
       "added_date": "2026-03-10",
-      "last_seen": "2026-03-13"
+      "last_seen": "2026-03-14"
     }
   ]
 }
