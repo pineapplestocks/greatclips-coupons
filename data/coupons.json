@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-04-01T13:28:26.145398",
-  "total_coupons": 35,
+  "scraped_at": "2026-04-01T19:07:34.316250",
+  "total_coupons": 38,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/IoUHzzC",
@@ -167,6 +167,20 @@
       "state": "AZ",
       "expiration": "04/20/2026",
       "price": "$8.99",
+      "added_date": "2026-04-01",
+      "last_seen": "2026-04-01"
+    },
+    {
+      "url": "https://offers.greatclips.com/3VxVmrV",
+      "coupon_code": "3VxVmrV",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "valid_text": "Valid at Great Clips Five Points Shopping Center at 4101 IH-69 Access Rd in Corpus Christi, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 04/17/2026",
+      "location_name": "Five Points Shopping Center",
+      "address": "4101 IH-69 Access Rd",
+      "city": "Corpus Christi,",
+      "state": "TX",
+      "expiration": "04/17/2026",
+      "price": "$9.99",
       "added_date": "2026-04-01",
       "last_seen": "2026-04-01"
     },
@@ -401,6 +415,34 @@
       "valid_text": "Valid at Great Clips Sunset Square at 1530 Austin Hwy in San Antonio, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 04/10/2026",
       "location_name": "Sunset Square",
       "address": "1530 Austin Hwy",
+      "city": "San Antonio,",
+      "state": "TX",
+      "expiration": "04/10/2026",
+      "price": "$12.99",
+      "added_date": "2026-04-01",
+      "last_seen": "2026-04-01"
+    },
+    {
+      "url": "https://offers.greatclips.com/P0GZPDZ",
+      "coupon_code": "P0GZPDZ",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8466/50707-002-1200x600-12.99.jpg",
+      "valid_text": "Valid at Great Clips The RIM Shopping Center at 18427 RIM Dr in San Antonio, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 04/10/2026",
+      "location_name": "The RIM Shopping Center",
+      "address": "18427 RIM Dr",
+      "city": "San Antonio,",
+      "state": "TX",
+      "expiration": "04/10/2026",
+      "price": "$12.99",
+      "added_date": "2026-04-01",
+      "last_seen": "2026-04-01"
+    },
+    {
+      "url": "https://offers.greatclips.com/d0IOTsk",
+      "coupon_code": "d0IOTsk",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8466/50707-002-1200x600-12.99.jpg",
+      "valid_text": "Valid at Great Clips Market at Boerne Stage at 24175 I-10 West in San Antonio, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 04/10/2026",
+      "location_name": "Market",
+      "address": "Boerne Stage at 24175 I-10 West",
       "city": "San Antonio,",
       "state": "TX",
       "expiration": "04/10/2026",
