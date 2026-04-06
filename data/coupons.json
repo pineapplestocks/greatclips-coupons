@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-04-06T02:42:46.954173",
-  "total_coupons": 37,
+  "scraped_at": "2026-04-06T07:49:13.666373",
+  "total_coupons": 40,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/IoUHzzC",
@@ -17,6 +17,20 @@
       "last_seen": "2026-03-31"
     },
     {
+      "url": "https://offers.greatclips.com/n2BPigO",
+      "coupon_code": "n2BPigO",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8449/50707-002-1200x600-4.99.jpg",
+      "valid_text": "Valid at Great Clips Rice Hope at 7934 GA Hwy 21 in Port Wentworth, GA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 05/07/2026",
+      "location_name": "Rice Hope",
+      "address": "7934 GA Hwy 21",
+      "city": "Port Wentworth,",
+      "state": "GA",
+      "expiration": "05/07/2026",
+      "price": "$4.99",
+      "added_date": "2026-04-06",
+      "last_seen": "2026-04-06"
+    },
+    {
       "url": "https://offers.greatclips.com/LLWcya6",
       "coupon_code": "LLWcya6",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8434/50707-002-1200x600-US-Sparkfly-6off.jpg",
@@ -29,6 +43,20 @@
       "price": "$6.00",
       "added_date": "2026-03-28",
       "last_seen": "2026-03-28"
+    },
+    {
+      "url": "https://offers.greatclips.com/F84hm4d",
+      "coupon_code": "F84hm4d",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8455/50707-002-1200x600-6.99.jpg",
+      "valid_text": "Valid at Great Clips Rosemont Commons at 3750 W MARKET ST in Fairlawn, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 04/13/2026",
+      "location_name": "Rosemont Commons",
+      "address": "3750 W MARKET ST",
+      "city": "Fairlawn,",
+      "state": "OH",
+      "expiration": "04/13/2026",
+      "price": "$6.99",
+      "added_date": "2026-04-06",
+      "last_seen": "2026-04-06"
     },
     {
       "url": "https://offers.greatclips.com/NyKjvcR",
@@ -70,7 +98,7 @@
       "expiration": "04/20/2026",
       "price": "$8.99",
       "added_date": "2026-04-01",
-      "last_seen": "2026-04-03"
+      "last_seen": "2026-04-06"
     },
     {
       "url": "https://offers.greatclips.com/8MOwHh9",
@@ -84,7 +112,7 @@
       "expiration": "04/20/2026",
       "price": "$8.99",
       "added_date": "2026-04-01",
-      "last_seen": "2026-04-03"
+      "last_seen": "2026-04-06"
     },
     {
       "url": "https://offers.greatclips.com/LHOJ3zI",
@@ -98,7 +126,7 @@
       "expiration": "04/20/2026",
       "price": "$8.99",
       "added_date": "2026-04-01",
-      "last_seen": "2026-04-03"
+      "last_seen": "2026-04-06"
     },
     {
       "url": "https://offers.greatclips.com/LXEpPGK",
@@ -112,7 +140,7 @@
       "expiration": "04/20/2026",
       "price": "$8.99",
       "added_date": "2026-04-01",
-      "last_seen": "2026-04-03"
+      "last_seen": "2026-04-06"
     },
     {
       "url": "https://offers.greatclips.com/dZTiy7T",
@@ -126,7 +154,7 @@
       "expiration": "04/20/2026",
       "price": "$8.99",
       "added_date": "2026-04-01",
-      "last_seen": "2026-04-03"
+      "last_seen": "2026-04-06"
     },
     {
       "url": "https://offers.greatclips.com/rqEXpHG",
@@ -140,7 +168,7 @@
       "expiration": "04/20/2026",
       "price": "$8.99",
       "added_date": "2026-04-01",
-      "last_seen": "2026-04-03"
+      "last_seen": "2026-04-06"
     },
     {
       "url": "https://offers.greatclips.com/bDB82TI",
@@ -154,7 +182,7 @@
       "expiration": "04/24/2026",
       "price": "$8.99",
       "added_date": "2026-04-02",
-      "last_seen": "2026-04-03"
+      "last_seen": "2026-04-06"
     },
     {
       "url": "https://offers.greatclips.com/3VxVmrV",
@@ -168,7 +196,7 @@
       "expiration": "04/17/2026",
       "price": "$9.99",
       "added_date": "2026-04-01",
-      "last_seen": "2026-04-03"
+      "last_seen": "2026-04-06"
     },
     {
       "url": "https://offers.greatclips.com/dkIygSf",
@@ -448,7 +476,7 @@
       "expiration": "06/07/2026",
       "price": "$14.99",
       "added_date": "2026-01-19",
-      "last_seen": "2026-04-03"
+      "last_seen": "2026-04-06"
     },
     {
       "url": "https://offers.greatclips.com/vRGLzCp",
@@ -463,6 +491,20 @@
       "price": "$14.99",
       "added_date": "2026-04-01",
       "last_seen": "2026-04-01"
+    },
+    {
+      "url": "https://offers.greatclips.com/eeHiadN",
+      "coupon_code": "eeHiadN",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8470/50707-002-1200x600-14.99.jpg",
+      "valid_text": "Valid at Great Clips Shops at West Falls Church at 7395 G Route 29 in Falls Church, VA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 04/19/2026",
+      "location_name": "Shops",
+      "address": "West Falls Church at 7395 G Route 29",
+      "city": "Falls Church,",
+      "state": "VA",
+      "expiration": "04/19/2026",
+      "price": "$14.99",
+      "added_date": "2026-04-06",
+      "last_seen": "2026-04-06"
     },
     {
       "url": "https://offers.greatclips.com/TOhcHIO",
