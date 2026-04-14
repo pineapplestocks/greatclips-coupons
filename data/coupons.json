@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-04-13T19:18:48.024238",
-  "total_coupons": 28,
+  "scraped_at": "2026-04-14T02:45:51.835842",
+  "total_coupons": 31,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/n2BPigO",
@@ -14,7 +14,7 @@
       "expiration": "05/07/2026",
       "price": "$4.99",
       "added_date": "2026-04-06",
-      "last_seen": "2026-04-13"
+      "last_seen": "2026-04-14"
     },
     {
       "url": "https://offers.greatclips.com/QNswcsA",
@@ -28,7 +28,7 @@
       "expiration": "05/07/2026",
       "price": "$5.00",
       "added_date": "2026-04-07",
-      "last_seen": "2026-04-13"
+      "last_seen": "2026-04-14"
     },
     {
       "url": "https://offers.greatclips.com/7xw6OGJ",
@@ -42,7 +42,7 @@
       "expiration": "05/07/2026",
       "price": "$5.00",
       "added_date": "2026-04-07",
-      "last_seen": "2026-04-13"
+      "last_seen": "2026-04-14"
     },
     {
       "url": "https://offers.greatclips.com/g2Lj4Ny",
@@ -56,7 +56,7 @@
       "expiration": "05/07/2026",
       "price": "$5.00",
       "added_date": "2026-04-10",
-      "last_seen": "2026-04-13"
+      "last_seen": "2026-04-14"
     },
     {
       "url": "https://offers.greatclips.com/3i6mfzh",
@@ -70,7 +70,21 @@
       "expiration": "05/07/2026",
       "price": "$5.00",
       "added_date": "2026-04-13",
-      "last_seen": "2026-04-13"
+      "last_seen": "2026-04-14"
+    },
+    {
+      "url": "https://offers.greatclips.com/eQ9O7lg",
+      "coupon_code": "eQ9O7lg",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
+      "valid_text": "Valid at Great Clips Weatherford Commons at 1968 S Main St in Weatherford, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 05/07/2026",
+      "location_name": "Weatherford Commons",
+      "address": "1968 S Main St",
+      "city": "Weatherford,",
+      "state": "TX",
+      "expiration": "05/07/2026",
+      "price": "$5.00",
+      "added_date": "2026-04-14",
+      "last_seen": "2026-04-14"
     },
     {
       "url": "https://offers.greatclips.com/tBsxipG",
@@ -98,7 +112,7 @@
       "expiration": "04/17/2026",
       "price": "$6.99",
       "added_date": "2026-04-07",
-      "last_seen": "2026-04-13"
+      "last_seen": "2026-04-14"
     },
     {
       "url": "https://offers.greatclips.com/mVfud8t",
@@ -126,7 +140,7 @@
       "expiration": "04/21/2026",
       "price": "$7.00",
       "added_date": "2026-04-07",
-      "last_seen": "2026-04-13"
+      "last_seen": "2026-04-14"
     },
     {
       "url": "https://offers.greatclips.com/NiZBPez",
@@ -140,7 +154,7 @@
       "expiration": "04/21/2026",
       "price": "$7.00",
       "added_date": "2026-04-07",
-      "last_seen": "2026-04-13"
+      "last_seen": "2026-04-14"
     },
     {
       "url": "https://offers.greatclips.com/ZoH4Eis",
@@ -154,7 +168,21 @@
       "expiration": "05/07/2026",
       "price": "$7.99",
       "added_date": "2026-04-13",
-      "last_seen": "2026-04-13"
+      "last_seen": "2026-04-14"
+    },
+    {
+      "url": "https://offers.greatclips.com/gnAmnhT",
+      "coupon_code": "gnAmnhT",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8457/50707-002-1200x600-7.99.jpg",
+      "valid_text": "Valid at Great Clips Ave B & 24th Str at 2383 W 24th St in Yuma, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 04/24/2026",
+      "location_name": "Ave B & 24th Str",
+      "address": "2383 W 24th St",
+      "city": "Yuma,",
+      "state": "AZ",
+      "expiration": "04/24/2026",
+      "price": "$7.99",
+      "added_date": "2026-04-14",
+      "last_seen": "2026-04-14"
     },
     {
       "url": "https://offers.greatclips.com/NyKjvcR",
@@ -280,7 +308,7 @@
       "expiration": "04/24/2026",
       "price": "$8.99",
       "added_date": "2026-04-02",
-      "last_seen": "2026-04-13"
+      "last_seen": "2026-04-14"
     },
     {
       "url": "https://offers.greatclips.com/3VxVmrV",
@@ -325,6 +353,20 @@
       "last_seen": "2026-04-10"
     },
     {
+      "url": "https://offers.greatclips.com/pJu58hG",
+      "coupon_code": "pJu58hG",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8465/50707-002-1200x600-11.99.jpg",
+      "valid_text": "Valid at Great Clips Sycamore Rose Plaza at 230 West Peace Road in Sycamore, IL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 05/01/2026",
+      "location_name": "Sycamore Rose Plaza",
+      "address": "230 West Peace Road",
+      "city": "Sycamore,",
+      "state": "IL",
+      "expiration": "05/01/2026",
+      "price": "$11.99",
+      "added_date": "2026-04-14",
+      "last_seen": "2026-04-14"
+    },
+    {
       "url": "https://offers.greatclips.com/ZYZXCUO",
       "coupon_code": "ZYZXCUO",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8466/50707-002-1200x600-12.99.jpg",
@@ -336,7 +378,7 @@
       "expiration": "04/26/2026",
       "price": "$12.99",
       "added_date": "2026-04-09",
-      "last_seen": "2026-04-13"
+      "last_seen": "2026-04-14"
     },
     {
       "url": "https://offers.greatclips.com/KhGtk4B",
@@ -350,7 +392,7 @@
       "expiration": "04/26/2026",
       "price": "$12.99",
       "added_date": "2026-04-11",
-      "last_seen": "2026-04-13"
+      "last_seen": "2026-04-14"
     },
     {
       "url": "https://offers.greatclips.com/UsYJ5rN",
@@ -364,7 +406,7 @@
       "expiration": "04/26/2026",
       "price": "$12.99",
       "added_date": "2026-04-11",
-      "last_seen": "2026-04-13"
+      "last_seen": "2026-04-14"
     },
     {
       "url": "https://offers.greatclips.com/IOS6rlo",
@@ -378,7 +420,7 @@
       "expiration": "06/07/2026",
       "price": "$14.99",
       "added_date": "2026-01-19",
-      "last_seen": "2026-04-13"
+      "last_seen": "2026-04-14"
     },
     {
       "url": "https://offers.greatclips.com/eeHiadN",
