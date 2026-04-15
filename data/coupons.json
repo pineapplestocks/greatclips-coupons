@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-04-15T07:52:20.770316",
-  "total_coupons": 33,
+  "scraped_at": "2026-04-15T13:30:29.552565",
+  "total_coupons": 36,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/n2BPigO",
@@ -365,6 +365,42 @@
       "price": "$9.99",
       "added_date": "2026-04-09",
       "last_seen": "2026-04-10"
+    },
+    {
+      "url": "https://offers.greatclips.com/DNe1und",
+      "coupon_code": "DNe1und",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/17344/50707-002-1200x600-US-Sparkfly-199-19999.jpg",
+      "expiration": "04/17/2026",
+      "location_name": "Knoxville, Middle Tennessee, Chattanooga, Tri-Cities-TN/VA area",
+      "state": "AREA",
+      "area_name": "Knoxville, Middle Tennessee, Chattanooga, Tri-Cities-TN/VA area",
+      "price": "$9.99",
+      "added_date": "2026-04-15",
+      "last_seen": "2026-04-15"
+    },
+    {
+      "url": "https://offers.greatclips.com/voFde3r",
+      "coupon_code": "voFde3r",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/18135/50707-002-1200x600-9.99.jpg",
+      "expiration": "05/15/2026",
+      "location_name": "participating Houston Area",
+      "state": "AREA",
+      "area_name": "participating Houston",
+      "price": "$9.99",
+      "added_date": "2026-04-15",
+      "last_seen": "2026-04-15"
+    },
+    {
+      "url": "https://offers.greatclips.com/4Mh62KG",
+      "coupon_code": "4Mh62KG",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/17530/50707-002-1200x600-9.99.jpg",
+      "expiration": "05/08/2026",
+      "location_name": "only at participating West & SW Michigan Area",
+      "state": "AREA",
+      "area_name": "only at participating West & SW Michigan",
+      "price": "$9.99",
+      "added_date": "2026-04-15",
+      "last_seen": "2026-04-15"
     },
     {
       "url": "https://offers.greatclips.com/FLnxcYS",
