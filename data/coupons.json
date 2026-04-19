@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-04-18T18:56:03.710348",
-  "total_coupons": 30,
+  "scraped_at": "2026-04-19T02:52:55.365671",
+  "total_coupons": 28,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/n2BPigO",
@@ -14,7 +14,7 @@
       "expiration": "05/07/2026",
       "price": "$4.99",
       "added_date": "2026-04-06",
-      "last_seen": "2026-04-18"
+      "last_seen": "2026-04-19"
     },
     {
       "url": "https://offers.greatclips.com/QNswcsA",
@@ -42,7 +42,7 @@
       "expiration": "05/07/2026",
       "price": "$5.00",
       "added_date": "2026-04-07",
-      "last_seen": "2026-04-18"
+      "last_seen": "2026-04-19"
     },
     {
       "url": "https://offers.greatclips.com/g2Lj4Ny",
@@ -109,7 +109,7 @@
       "area_name": "participating US",
       "price": "$5.00",
       "added_date": "2026-04-17",
-      "last_seen": "2026-04-18"
+      "last_seen": "2026-04-19"
     },
     {
       "url": "https://offers.greatclips.com/tBsxipG",
@@ -124,20 +124,6 @@
       "price": "$5.99",
       "added_date": "2026-04-07",
       "last_seen": "2026-04-09"
-    },
-    {
-      "url": "https://offers.greatclips.com/mVfud8t",
-      "coupon_code": "mVfud8t",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8454/50707-002-1200x600-6.99.jpg",
-      "valid_text": "Valid at Great Clips Bettendorf Glen Roads at 3380 Middle Rd in Bettendorf, IA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 04/19/2026",
-      "location_name": "Bettendorf Glen Roads",
-      "address": "3380 Middle Rd",
-      "city": "Bettendorf,",
-      "state": "IA",
-      "expiration": "04/19/2026",
-      "price": "$6.99",
-      "added_date": "2026-04-11",
-      "last_seen": "2026-04-12"
     },
     {
       "url": "https://offers.greatclips.com/AyIaHZJ",
@@ -329,7 +315,7 @@
       "area_name": "only at participating West & SW Michigan",
       "price": "$9.99",
       "added_date": "2026-04-15",
-      "last_seen": "2026-04-18"
+      "last_seen": "2026-04-19"
     },
     {
       "url": "https://offers.greatclips.com/pJu58hG",
@@ -357,7 +343,7 @@
       "expiration": "04/26/2026",
       "price": "$12.99",
       "added_date": "2026-04-09",
-      "last_seen": "2026-04-18"
+      "last_seen": "2026-04-19"
     },
     {
       "url": "https://offers.greatclips.com/KhGtk4B",
@@ -399,21 +385,7 @@
       "expiration": "06/07/2026",
       "price": "$14.99",
       "added_date": "2026-01-19",
-      "last_seen": "2026-04-18"
-    },
-    {
-      "url": "https://offers.greatclips.com/eeHiadN",
-      "coupon_code": "eeHiadN",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8470/50707-002-1200x600-14.99.jpg",
-      "valid_text": "Valid at Great Clips Shops at West Falls Church at 7395 G Route 29 in Falls Church, VA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 04/19/2026",
-      "location_name": "Shops",
-      "address": "West Falls Church at 7395 G Route 29",
-      "city": "Falls Church,",
-      "state": "VA",
-      "expiration": "04/19/2026",
-      "price": "$14.99",
-      "added_date": "2026-04-06",
-      "last_seen": "2026-04-12"
+      "last_seen": "2026-04-19"
     }
   ]
 }
