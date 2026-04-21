@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-04-21T13:46:33.050390",
-  "total_coupons": 21,
+  "scraped_at": "2026-04-21T19:16:54.958754",
+  "total_coupons": 22,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/n2BPigO",
@@ -287,6 +287,18 @@
       "expiration": "06/07/2026",
       "price": "$14.99",
       "added_date": "2026-01-19",
+      "last_seen": "2026-04-21"
+    },
+    {
+      "url": "https://offers.greatclips.com/rAbLOCJ",
+      "coupon_code": "rAbLOCJ",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/17978/50707-002-1200x600-14.99.jpg",
+      "expiration": "05/01/2026",
+      "location_name": "participating Denver Area",
+      "state": "AREA",
+      "area_name": "participating Denver",
+      "price": "$14.99",
+      "added_date": "2026-04-21",
       "last_seen": "2026-04-21"
     }
   ]
