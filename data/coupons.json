@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-04-22T19:17:57.062276",
+  "scraped_at": "2026-04-23T02:48:13.413054",
   "total_coupons": 22,
   "coupons": [
     {
@@ -14,7 +14,7 @@
       "expiration": "05/07/2026",
       "price": "$4.99",
       "added_date": "2026-04-06",
-      "last_seen": "2026-04-22"
+      "last_seen": "2026-04-23"
     },
     {
       "url": "https://offers.greatclips.com/QNswcsA",
@@ -191,7 +191,7 @@
       "area_name": "participating Houston",
       "price": "$9.99",
       "added_date": "2026-04-15",
-      "last_seen": "2026-04-22"
+      "last_seen": "2026-04-23"
     },
     {
       "url": "https://offers.greatclips.com/4Mh62KG",
@@ -203,7 +203,7 @@
       "area_name": "only at participating West & SW Michigan",
       "price": "$9.99",
       "added_date": "2026-04-15",
-      "last_seen": "2026-04-22"
+      "last_seen": "2026-04-23"
     },
     {
       "url": "https://offers.greatclips.com/pJu58hG",
@@ -299,7 +299,7 @@
       "area_name": "participating Denver",
       "price": "$14.99",
       "added_date": "2026-04-21",
-      "last_seen": "2026-04-22"
+      "last_seen": "2026-04-23"
     }
   ]
 }
