@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-04-23T19:14:08.482760",
-  "total_coupons": 22,
+  "scraped_at": "2026-04-24T02:49:37.975619",
+  "total_coupons": 26,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/n2BPigO",
@@ -140,20 +140,6 @@
       "last_seen": "2026-04-17"
     },
     {
-      "url": "https://offers.greatclips.com/gnAmnhT",
-      "coupon_code": "gnAmnhT",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8457/50707-002-1200x600-7.99.jpg",
-      "valid_text": "Valid at Great Clips Ave B & 24th Str at 2383 W 24th St in Yuma, AZ. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 04/24/2026",
-      "location_name": "Ave B & 24th Str",
-      "address": "2383 W 24th St",
-      "city": "Yuma,",
-      "state": "AZ",
-      "expiration": "04/24/2026",
-      "price": "$7.99",
-      "added_date": "2026-04-14",
-      "last_seen": "2026-04-14"
-    },
-    {
       "url": "https://offers.greatclips.com/Sq6eQmL",
       "coupon_code": "Sq6eQmL",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
@@ -168,18 +154,16 @@
       "last_seen": "2026-04-16"
     },
     {
-      "url": "https://offers.greatclips.com/bDB82TI",
-      "coupon_code": "bDB82TI",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8459/50707-002-1200x600-8.99.jpg",
-      "valid_text": "Valid at Great Clips Middletown Commons at 219 Middletown Loop in White Hall, WV. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 04/24/2026",
-      "location_name": "Middletown Commons",
-      "address": "219 Middletown Loop",
-      "city": "White Hall,",
-      "state": "WV",
-      "expiration": "04/24/2026",
+      "url": "https://offers.greatclips.com/8OHa0vR",
+      "coupon_code": "8OHa0vR",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/18138/50707-002-1200x600-8.99.jpg",
+      "expiration": "05/15/2026",
+      "location_name": "participating Charlotte Area",
+      "state": "AREA",
+      "area_name": "participating Charlotte",
       "price": "$8.99",
-      "added_date": "2026-04-02",
-      "last_seen": "2026-04-17"
+      "added_date": "2026-04-24",
+      "last_seen": "2026-04-24"
     },
     {
       "url": "https://offers.greatclips.com/voFde3r",
@@ -191,7 +175,7 @@
       "area_name": "participating Houston",
       "price": "$9.99",
       "added_date": "2026-04-15",
-      "last_seen": "2026-04-23"
+      "last_seen": "2026-04-24"
     },
     {
       "url": "https://offers.greatclips.com/4Mh62KG",
@@ -203,7 +187,43 @@
       "area_name": "only at participating West & SW Michigan",
       "price": "$9.99",
       "added_date": "2026-04-15",
-      "last_seen": "2026-04-23"
+      "last_seen": "2026-04-24"
+    },
+    {
+      "url": "https://offers.greatclips.com/IVAsExt",
+      "coupon_code": "IVAsExt",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/18028/50707-002-1200x600-9.99.jpg",
+      "expiration": "05/08/2026",
+      "location_name": "participating Austin Area",
+      "state": "AREA",
+      "area_name": "participating Austin",
+      "price": "$9.99",
+      "added_date": "2026-04-24",
+      "last_seen": "2026-04-24"
+    },
+    {
+      "url": "https://offers.greatclips.com/B4vJUjk",
+      "coupon_code": "B4vJUjk",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/17976/50707-002-1200x600-9.99.jpg",
+      "expiration": "05/15/2026",
+      "location_name": "participating Louisville Area",
+      "state": "AREA",
+      "area_name": "participating Louisville",
+      "price": "$9.99",
+      "added_date": "2026-04-24",
+      "last_seen": "2026-04-24"
+    },
+    {
+      "url": "https://offers.greatclips.com/GKEmoh4",
+      "coupon_code": "GKEmoh4",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/18137/50707-002-1200x600-10.99.jpg",
+      "expiration": "05/15/2026",
+      "location_name": "Western AZ Area",
+      "state": "AREA",
+      "area_name": "Western AZ",
+      "price": "$10.99",
+      "added_date": "2026-04-24",
+      "last_seen": "2026-04-24"
     },
     {
       "url": "https://offers.greatclips.com/pJu58hG",
@@ -232,6 +252,18 @@
       "price": "$11.99",
       "added_date": "2026-04-20",
       "last_seen": "2026-04-20"
+    },
+    {
+      "url": "https://offers.greatclips.com/9KpcNRC",
+      "coupon_code": "9KpcNRC",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/18139/50707-002-1200x600-11.99.jpg",
+      "expiration": "05/15/2026",
+      "location_name": "participating Salt Lake City Area",
+      "state": "AREA",
+      "area_name": "participating Salt Lake City",
+      "price": "$11.99",
+      "added_date": "2026-04-24",
+      "last_seen": "2026-04-24"
     },
     {
       "url": "https://offers.greatclips.com/ZYZXCUO",
@@ -276,6 +308,18 @@
       "last_seen": "2026-04-17"
     },
     {
+      "url": "https://offers.greatclips.com/M6sluhI",
+      "coupon_code": "M6sluhI",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/18027/50707-002-1200x600-12.99.jpg",
+      "expiration": "05/22/2026",
+      "location_name": "participating Detroit Area",
+      "state": "AREA",
+      "area_name": "participating Detroit",
+      "price": "$12.99",
+      "added_date": "2026-04-24",
+      "last_seen": "2026-04-24"
+    },
+    {
       "url": "https://offers.greatclips.com/IOS6rlo",
       "coupon_code": "IOS6rlo",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8470/50707-002-1200x600-14.99.jpg",
@@ -299,7 +343,7 @@
       "area_name": "participating Denver",
       "price": "$14.99",
       "added_date": "2026-04-21",
-      "last_seen": "2026-04-23"
+      "last_seen": "2026-04-24"
     }
   ]
 }
