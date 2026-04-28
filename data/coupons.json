@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-04-27T19:27:05.592382",
-  "total_coupons": 23,
+  "scraped_at": "2026-04-28T03:26:51.436980",
+  "total_coupons": 24,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/n2BPigO",
@@ -163,7 +163,7 @@
       "area_name": "participating Charlotte",
       "price": "$8.99",
       "added_date": "2026-04-24",
-      "last_seen": "2026-04-27"
+      "last_seen": "2026-04-28"
     },
     {
       "url": "https://offers.greatclips.com/voFde3r",
@@ -187,7 +187,7 @@
       "area_name": "only at participating West & SW Michigan",
       "price": "$9.99",
       "added_date": "2026-04-15",
-      "last_seen": "2026-04-27"
+      "last_seen": "2026-04-28"
     },
     {
       "url": "https://offers.greatclips.com/IVAsExt",
@@ -199,7 +199,7 @@
       "area_name": "participating Austin",
       "price": "$9.99",
       "added_date": "2026-04-24",
-      "last_seen": "2026-04-27"
+      "last_seen": "2026-04-28"
     },
     {
       "url": "https://offers.greatclips.com/B4vJUjk",
@@ -211,7 +211,7 @@
       "area_name": "participating Louisville",
       "price": "$9.99",
       "added_date": "2026-04-24",
-      "last_seen": "2026-04-27"
+      "last_seen": "2026-04-28"
     },
     {
       "url": "https://offers.greatclips.com/L1xpiwD",
@@ -223,7 +223,7 @@
       "area_name": "participating Kansas City",
       "price": "$9.99",
       "added_date": "2026-04-25",
-      "last_seen": "2026-04-27"
+      "last_seen": "2026-04-28"
     },
     {
       "url": "https://offers.greatclips.com/GKEmoh4",
@@ -235,7 +235,19 @@
       "area_name": "Western AZ",
       "price": "$10.99",
       "added_date": "2026-04-24",
-      "last_seen": "2026-04-27"
+      "last_seen": "2026-04-28"
+    },
+    {
+      "url": "https://offers.greatclips.com/ynKek2T",
+      "coupon_code": "ynKek2T",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/18154/50707-002-1200x600-10.99.jpg",
+      "expiration": "05/15/2026",
+      "location_name": "only at participating Harrisburg, Lancaster & York Area",
+      "state": "AREA",
+      "area_name": "only at participating Harrisburg, Lancaster & York",
+      "price": "$10.99",
+      "added_date": "2026-04-28",
+      "last_seen": "2026-04-28"
     },
     {
       "url": "https://offers.greatclips.com/pJu58hG",
@@ -261,7 +273,7 @@
       "area_name": "participating Salt Lake City",
       "price": "$11.99",
       "added_date": "2026-04-24",
-      "last_seen": "2026-04-27"
+      "last_seen": "2026-04-28"
     },
     {
       "url": "https://offers.greatclips.com/M6sluhI",
@@ -273,7 +285,7 @@
       "area_name": "participating Detroit",
       "price": "$12.99",
       "added_date": "2026-04-24",
-      "last_seen": "2026-04-27"
+      "last_seen": "2026-04-28"
     },
     {
       "url": "https://offers.greatclips.com/IOS6rlo",
