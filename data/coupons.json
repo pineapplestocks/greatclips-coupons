@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-04-30T19:26:45.887134",
-  "total_coupons": 24,
+  "scraped_at": "2026-05-01T03:36:05.216190",
+  "total_coupons": 21,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/n2BPigO",
@@ -112,20 +112,6 @@
       "last_seen": "2026-04-20"
     },
     {
-      "url": "https://offers.greatclips.com/tBsxipG",
-      "coupon_code": "tBsxipG",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8451/50707-002-1200x600-5.99.jpg",
-      "valid_text": "Valid at Great Clips Maple Heights at 3328 N 108th St in Omaha, NE. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 05/01/2026",
-      "location_name": "Maple Heights",
-      "address": "3328 N 108th St",
-      "city": "Omaha,",
-      "state": "NE",
-      "expiration": "05/01/2026",
-      "price": "$5.99",
-      "added_date": "2026-04-07",
-      "last_seen": "2026-04-09"
-    },
-    {
       "url": "https://offers.greatclips.com/ZoH4Eis",
       "coupon_code": "ZoH4Eis",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
@@ -163,7 +149,7 @@
       "area_name": "participating Charlotte",
       "price": "$8.99",
       "added_date": "2026-04-24",
-      "last_seen": "2026-04-30"
+      "last_seen": "2026-05-01"
     },
     {
       "url": "https://offers.greatclips.com/voFde3r",
@@ -187,7 +173,7 @@
       "area_name": "only at participating West & SW Michigan",
       "price": "$9.99",
       "added_date": "2026-04-15",
-      "last_seen": "2026-04-30"
+      "last_seen": "2026-05-01"
     },
     {
       "url": "https://offers.greatclips.com/IVAsExt",
@@ -199,7 +185,7 @@
       "area_name": "participating Austin",
       "price": "$9.99",
       "added_date": "2026-04-24",
-      "last_seen": "2026-04-30"
+      "last_seen": "2026-05-01"
     },
     {
       "url": "https://offers.greatclips.com/B4vJUjk",
@@ -211,7 +197,7 @@
       "area_name": "participating Louisville",
       "price": "$9.99",
       "added_date": "2026-04-24",
-      "last_seen": "2026-04-30"
+      "last_seen": "2026-05-01"
     },
     {
       "url": "https://offers.greatclips.com/L1xpiwD",
@@ -223,7 +209,7 @@
       "area_name": "participating Kansas City",
       "price": "$9.99",
       "added_date": "2026-04-25",
-      "last_seen": "2026-04-30"
+      "last_seen": "2026-05-01"
     },
     {
       "url": "https://offers.greatclips.com/GKEmoh4",
@@ -235,7 +221,7 @@
       "area_name": "Western AZ",
       "price": "$10.99",
       "added_date": "2026-04-24",
-      "last_seen": "2026-04-30"
+      "last_seen": "2026-05-01"
     },
     {
       "url": "https://offers.greatclips.com/ynKek2T",
@@ -247,21 +233,7 @@
       "area_name": "only at participating Harrisburg, Lancaster & York",
       "price": "$10.99",
       "added_date": "2026-04-28",
-      "last_seen": "2026-04-30"
-    },
-    {
-      "url": "https://offers.greatclips.com/pJu58hG",
-      "coupon_code": "pJu58hG",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8465/50707-002-1200x600-11.99.jpg",
-      "valid_text": "Valid at Great Clips Sycamore Rose Plaza at 230 West Peace Road in Sycamore, IL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 05/01/2026",
-      "location_name": "Sycamore Rose Plaza",
-      "address": "230 West Peace Road",
-      "city": "Sycamore,",
-      "state": "IL",
-      "expiration": "05/01/2026",
-      "price": "$11.99",
-      "added_date": "2026-04-14",
-      "last_seen": "2026-04-16"
+      "last_seen": "2026-05-01"
     },
     {
       "url": "https://offers.greatclips.com/9KpcNRC",
@@ -273,7 +245,7 @@
       "area_name": "participating Salt Lake City",
       "price": "$11.99",
       "added_date": "2026-04-24",
-      "last_seen": "2026-04-30"
+      "last_seen": "2026-05-01"
     },
     {
       "url": "https://offers.greatclips.com/M6sluhI",
@@ -285,7 +257,7 @@
       "area_name": "participating Detroit",
       "price": "$12.99",
       "added_date": "2026-04-24",
-      "last_seen": "2026-04-30"
+      "last_seen": "2026-05-01"
     },
     {
       "url": "https://offers.greatclips.com/IOS6rlo",
@@ -300,18 +272,6 @@
       "price": "$14.99",
       "added_date": "2026-01-19",
       "last_seen": "2026-04-21"
-    },
-    {
-      "url": "https://offers.greatclips.com/rAbLOCJ",
-      "coupon_code": "rAbLOCJ",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/17978/50707-002-1200x600-14.99.jpg",
-      "expiration": "05/01/2026",
-      "location_name": "participating Denver Area",
-      "state": "AREA",
-      "area_name": "participating Denver",
-      "price": "$14.99",
-      "added_date": "2026-04-21",
-      "last_seen": "2026-04-25"
     }
   ]
 }
