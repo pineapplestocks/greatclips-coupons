@@ -1,105 +1,7 @@
 {
-  "scraped_at": "2026-05-06T19:50:03.931421",
-  "total_coupons": 23,
+  "scraped_at": "2026-05-07T03:24:16.266029",
+  "total_coupons": 14,
   "coupons": [
-    {
-      "url": "https://offers.greatclips.com/n2BPigO",
-      "coupon_code": "n2BPigO",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8449/50707-002-1200x600-4.99.jpg",
-      "valid_text": "Valid at Great Clips Rice Hope at 7934 GA Hwy 21 in Port Wentworth, GA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 05/07/2026",
-      "location_name": "Rice Hope",
-      "address": "7934 GA Hwy 21",
-      "city": "Port Wentworth,",
-      "state": "GA",
-      "expiration": "05/07/2026",
-      "price": "$4.99",
-      "added_date": "2026-04-06",
-      "last_seen": "2026-04-23"
-    },
-    {
-      "url": "https://offers.greatclips.com/QNswcsA",
-      "coupon_code": "QNswcsA",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
-      "valid_text": "Valid at Great Clips Market Street at Ardmore at 1525 12th Ave NW in Ardmore, OK. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 05/07/2026",
-      "location_name": "Market Street",
-      "address": "Ardmore at 1525 12th Ave NW",
-      "city": "Ardmore,",
-      "state": "OK",
-      "expiration": "05/07/2026",
-      "price": "$5.00",
-      "added_date": "2026-04-07",
-      "last_seen": "2026-04-17"
-    },
-    {
-      "url": "https://offers.greatclips.com/7xw6OGJ",
-      "coupon_code": "7xw6OGJ",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
-      "valid_text": "Valid at Great Clips Cross Creek Durant at 3601 W Main St in Durant, OK. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 05/07/2026",
-      "location_name": "Cross Creek Durant",
-      "address": "3601 W Main St",
-      "city": "Durant,",
-      "state": "OK",
-      "expiration": "05/07/2026",
-      "price": "$5.00",
-      "added_date": "2026-04-07",
-      "last_seen": "2026-04-21"
-    },
-    {
-      "url": "https://offers.greatclips.com/g2Lj4Ny",
-      "coupon_code": "g2Lj4Ny",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
-      "valid_text": "Valid at Great Clips Paris at 3915 Lamar Ave in Paris, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 05/07/2026",
-      "location_name": "Paris",
-      "address": "3915 Lamar Ave",
-      "city": "Paris,",
-      "state": "TX",
-      "expiration": "05/07/2026",
-      "price": "$5.00",
-      "added_date": "2026-04-10",
-      "last_seen": "2026-04-17"
-    },
-    {
-      "url": "https://offers.greatclips.com/3i6mfzh",
-      "coupon_code": "3i6mfzh",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
-      "valid_text": "Valid at Great Clips Ada at 1400 Lonnie Abbott Blvd in Ada, OK. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 05/07/2026",
-      "location_name": "Ada",
-      "address": "1400 Lonnie Abbott Blvd",
-      "city": "Ada,",
-      "state": "OK",
-      "expiration": "05/07/2026",
-      "price": "$5.00",
-      "added_date": "2026-04-13",
-      "last_seen": "2026-04-16"
-    },
-    {
-      "url": "https://offers.greatclips.com/eQ9O7lg",
-      "coupon_code": "eQ9O7lg",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
-      "valid_text": "Valid at Great Clips Weatherford Commons at 1968 S Main St in Weatherford, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 05/07/2026",
-      "location_name": "Weatherford Commons",
-      "address": "1968 S Main St",
-      "city": "Weatherford,",
-      "state": "TX",
-      "expiration": "05/07/2026",
-      "price": "$5.00",
-      "added_date": "2026-04-14",
-      "last_seen": "2026-04-17"
-    },
-    {
-      "url": "https://offers.greatclips.com/SP5VEtO",
-      "coupon_code": "SP5VEtO",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
-      "valid_text": "Valid at Great Clips Park Row Place at 2504 W Park Row Dr in Pantego, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 05/07/2026",
-      "location_name": "Park Row Place",
-      "address": "2504 W Park Row Dr",
-      "city": "Pantego,",
-      "state": "TX",
-      "expiration": "05/07/2026",
-      "price": "$5.00",
-      "added_date": "2026-04-15",
-      "last_seen": "2026-04-15"
-    },
     {
       "url": "https://offers.greatclips.com/Y1ERxxW",
       "coupon_code": "Y1ERxxW",
@@ -112,34 +14,6 @@
       "last_seen": "2026-04-20"
     },
     {
-      "url": "https://offers.greatclips.com/ZoH4Eis",
-      "coupon_code": "ZoH4Eis",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
-      "valid_text": "Valid at Great Clips Winchester Commons at 2190 Winchester Rd NE in Huntsville, AL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 05/07/2026",
-      "location_name": "Winchester Commons",
-      "address": "2190 Winchester Rd NE",
-      "city": "Huntsville,",
-      "state": "AL",
-      "expiration": "05/07/2026",
-      "price": "$7.99",
-      "added_date": "2026-04-13",
-      "last_seen": "2026-04-17"
-    },
-    {
-      "url": "https://offers.greatclips.com/Sq6eQmL",
-      "coupon_code": "Sq6eQmL",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8456/50707-002-1200x600-7.99.jpg",
-      "valid_text": "Valid at Great Clips Walmart Center-Lewisburg at 1364 N Ellington Pkwy in Lewisburg, TN. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 05/07/2026",
-      "location_name": "Walmart Center-Lewisburg",
-      "address": "1364 N Ellington Pkwy",
-      "city": "Lewisburg,",
-      "state": "TN",
-      "expiration": "05/07/2026",
-      "price": "$7.99",
-      "added_date": "2026-04-15",
-      "last_seen": "2026-04-16"
-    },
-    {
       "url": "https://offers.greatclips.com/8OHa0vR",
       "coupon_code": "8OHa0vR",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/18138/50707-002-1200x600-8.99.jpg",
@@ -149,7 +23,7 @@
       "area_name": "participating Charlotte",
       "price": "$8.99",
       "added_date": "2026-04-24",
-      "last_seen": "2026-05-06"
+      "last_seen": "2026-05-07"
     },
     {
       "url": "https://offers.greatclips.com/voFde3r",
@@ -161,7 +35,7 @@
       "area_name": "participating Houston",
       "price": "$9.99",
       "added_date": "2026-04-15",
-      "last_seen": "2026-05-06"
+      "last_seen": "2026-05-07"
     },
     {
       "url": "https://offers.greatclips.com/4Mh62KG",
@@ -197,7 +71,7 @@
       "area_name": "participating Louisville",
       "price": "$9.99",
       "added_date": "2026-04-24",
-      "last_seen": "2026-05-06"
+      "last_seen": "2026-05-07"
     },
     {
       "url": "https://offers.greatclips.com/L1xpiwD",
@@ -209,7 +83,7 @@
       "area_name": "participating Kansas City",
       "price": "$9.99",
       "added_date": "2026-04-25",
-      "last_seen": "2026-05-06"
+      "last_seen": "2026-05-07"
     },
     {
       "url": "https://offers.greatclips.com/rnLmstp",
@@ -221,7 +95,7 @@
       "area_name": "participating Chicagoland",
       "price": "$9.99",
       "added_date": "2026-05-04",
-      "last_seen": "2026-05-06"
+      "last_seen": "2026-05-07"
     },
     {
       "url": "https://offers.greatclips.com/GKEmoh4",
@@ -233,7 +107,7 @@
       "area_name": "Western AZ",
       "price": "$10.99",
       "added_date": "2026-04-24",
-      "last_seen": "2026-05-06"
+      "last_seen": "2026-05-07"
     },
     {
       "url": "https://offers.greatclips.com/ynKek2T",
@@ -245,7 +119,7 @@
       "area_name": "only at participating Harrisburg, Lancaster & York",
       "price": "$10.99",
       "added_date": "2026-04-28",
-      "last_seen": "2026-05-06"
+      "last_seen": "2026-05-07"
     },
     {
       "url": "https://offers.greatclips.com/9KpcNRC",
@@ -257,7 +131,7 @@
       "area_name": "participating Salt Lake City",
       "price": "$11.99",
       "added_date": "2026-04-24",
-      "last_seen": "2026-05-06"
+      "last_seen": "2026-05-07"
     },
     {
       "url": "https://offers.greatclips.com/M6sluhI",
@@ -269,7 +143,7 @@
       "area_name": "participating Detroit",
       "price": "$12.99",
       "added_date": "2026-04-24",
-      "last_seen": "2026-05-06"
+      "last_seen": "2026-05-07"
     },
     {
       "url": "https://offers.greatclips.com/IOS6rlo",
