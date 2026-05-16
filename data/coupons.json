@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-05-15T19:41:39.393485",
+  "scraped_at": "2026-05-16T03:23:31.945416",
   "total_coupons": 9,
   "coupons": [
     {
@@ -12,7 +12,7 @@
       "area_name": "participating Chicagoland",
       "price": "$9.99",
       "added_date": "2026-05-04",
-      "last_seen": "2026-05-15"
+      "last_seen": "2026-05-16"
     },
     {
       "url": "https://offers.greatclips.com/0lhpI6A",
@@ -24,7 +24,7 @@
       "area_name": "participating Greater Triangle",
       "price": "$9.99",
       "added_date": "2026-05-15",
-      "last_seen": "2026-05-15"
+      "last_seen": "2026-05-16"
     },
     {
       "url": "https://offers.greatclips.com/YKujOZ5",
@@ -36,7 +36,7 @@
       "area_name": "participating Baltimore",
       "price": "$10.99",
       "added_date": "2026-05-09",
-      "last_seen": "2026-05-15"
+      "last_seen": "2026-05-16"
     },
     {
       "url": "https://offers.greatclips.com/9BKVZ5J",
@@ -60,7 +60,7 @@
       "area_name": "participating SE Wisconsin",
       "price": "$11.99",
       "added_date": "2026-05-09",
-      "last_seen": "2026-05-15"
+      "last_seen": "2026-05-16"
     },
     {
       "url": "https://offers.greatclips.com/M6sluhI",
@@ -72,7 +72,7 @@
       "area_name": "participating Detroit",
       "price": "$12.99",
       "added_date": "2026-04-24",
-      "last_seen": "2026-05-15"
+      "last_seen": "2026-05-16"
     },
     {
       "url": "https://offers.greatclips.com/IZey8BN",
@@ -110,7 +110,7 @@
       "area_name": "participating Greater Los Angeles",
       "price": "$17.99",
       "added_date": "2026-05-09",
-      "last_seen": "2026-05-15"
+      "last_seen": "2026-05-16"
     }
   ]
 }
