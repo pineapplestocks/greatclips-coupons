@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-06-04T20:08:36.609891",
-  "total_coupons": 14,
+  "scraped_at": "2026-06-05T03:57:50.160503",
+  "total_coupons": 11,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/6bWu89Y",
@@ -11,7 +11,7 @@
       "area_name": "participating US",
       "price": "$5.00",
       "added_date": "2026-05-16",
-      "last_seen": "2026-06-04"
+      "last_seen": "2026-06-05"
     },
     {
       "url": "https://offers.greatclips.com/vaY8EKO",
@@ -37,7 +37,7 @@
       "area_name": "only at participating Birmingham & Central Alabama",
       "price": "$7.99",
       "added_date": "2026-05-23",
-      "last_seen": "2026-06-04"
+      "last_seen": "2026-06-05"
     },
     {
       "url": "https://offers.greatclips.com/od6aoHV",
@@ -49,7 +49,7 @@
       "area_name": "participating Knoxville",
       "price": "$8.99",
       "added_date": "2026-05-23",
-      "last_seen": "2026-06-04"
+      "last_seen": "2026-06-05"
     },
     {
       "url": "https://offers.greatclips.com/6vv8Sv9",
@@ -61,19 +61,7 @@
       "area_name": "icipating Greenville, Spartanburg, Hendersonville & Asheville",
       "price": "$8.99",
       "added_date": "2026-05-23",
-      "last_seen": "2026-06-04"
-    },
-    {
-      "url": "https://offers.greatclips.com/xIJQTrE",
-      "coupon_code": "xIJQTrE",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/18769/50707-002-1200x600-9.99.jpg",
-      "expiration": "06/05/2026",
-      "location_name": "only at participating Hampton Roads & Peninsula Area",
-      "state": "AREA",
-      "area_name": "only at participating Hampton Roads & Peninsula",
-      "price": "$9.99",
-      "added_date": "2026-05-21",
-      "last_seen": "2026-05-30"
+      "last_seen": "2026-06-05"
     },
     {
       "url": "https://offers.greatclips.com/9jX7K3p",
@@ -85,7 +73,7 @@
       "area_name": "participating Wilmington",
       "price": "$9.99",
       "added_date": "2026-05-30",
-      "last_seen": "2026-06-04"
+      "last_seen": "2026-06-05"
     },
     {
       "url": "https://offers.greatclips.com/JEOd8sQ",
@@ -97,7 +85,7 @@
       "area_name": "only at participating Savannah, Hilton Head & Low Country",
       "price": "$10.99",
       "added_date": "2026-05-23",
-      "last_seen": "2026-06-04"
+      "last_seen": "2026-06-05"
     },
     {
       "url": "https://offers.greatclips.com/moAVFlo",
@@ -109,7 +97,7 @@
       "area_name": "only at participating NJ, PA & DE",
       "price": "$11.99",
       "added_date": "2026-05-22",
-      "last_seen": "2026-06-04"
+      "last_seen": "2026-06-05"
     },
     {
       "url": "https://offers.greatclips.com/R87oZur",
@@ -121,19 +109,7 @@
       "area_name": "only at participating Sacramento & Central Valley",
       "price": "$11.99",
       "added_date": "2026-05-30",
-      "last_seen": "2026-06-04"
-    },
-    {
-      "url": "https://offers.greatclips.com/lowrl94",
-      "coupon_code": "lowrl94",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/18862/50707-002-1200x600-12.99.jpg",
-      "expiration": "06/05/2026",
-      "location_name": "participating Portland Area",
-      "state": "AREA",
-      "area_name": "participating Portland",
-      "price": "$12.99",
-      "added_date": "2026-05-23",
-      "last_seen": "2026-05-30"
+      "last_seen": "2026-06-05"
     },
     {
       "url": "https://offers.greatclips.com/IOS6rlo",
@@ -160,18 +136,6 @@
       "price": "$15.99",
       "added_date": "2026-05-16",
       "last_seen": "2026-05-31"
-    },
-    {
-      "url": "https://offers.greatclips.com/V2u6o2R",
-      "coupon_code": "V2u6o2R",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/18833/50707-002-1200x600-15.99.jpg",
-      "expiration": "06/05/2026",
-      "location_name": "participating Bay Area",
-      "state": "AREA",
-      "area_name": "participating Bay",
-      "price": "$15.99",
-      "added_date": "2026-05-22",
-      "last_seen": "2026-05-30"
     }
   ]
 }
