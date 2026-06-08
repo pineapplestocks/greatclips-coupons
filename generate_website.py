@@ -6,6 +6,7 @@ Embeds coupon data directly into the HTML file.
 import json
 import os
 import re
+import sys
 
 # Paths
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -13,6 +14,20 @@ DATA_FILE = os.path.join(SCRIPT_DIR, "data", "coupons.json")
 TEMPLATE_FILE = os.path.join(SCRIPT_DIR, "template.html")
 OUTPUT_DIR = os.path.join(SCRIPT_DIR, "docs")  # GitHub Pages uses /docs
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "index.html")
+
+
+def _ensure_utf8_stdout():
+    """Keep emoji logs working on Windows terminals that default to cp1252."""
+    for stream_name in ("stdout", "stderr"):
+        stream = getattr(sys, stream_name, None)
+        if hasattr(stream, "reconfigure"):
+            try:
+                stream.reconfigure(encoding="utf-8")
+            except Exception:
+                pass
+
+
+_ensure_utf8_stdout()
 
 
 def generate_website():
