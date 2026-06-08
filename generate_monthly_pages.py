@@ -78,7 +78,7 @@ def generate_monthly_page(month, year):
     </script>
     
     <title>Great Clips Coupons {month_name} {year} - $5.99 Haircut Deals</title>
-    <meta name="description" content="Find working Great Clips coupons for {month_name} {year}. Save $5-$10 on haircuts with daily updated {month_name} coupon codes. Valid at 4,400+ US locations.">
+    <meta name="description" content="Find working Great Clips coupons for {month_name} {year}. Save $5-$10 on haircuts with daily updated {month_name} coupon codes. Valid at participating salons / confirm locally.">
     <meta name="keywords" content="Great Clips coupons {month_name} {year}, Great Clips {month_name} {year}, haircut coupons {month_name}, Great Clips deals {month_name} {year}">
     <link rel="canonical" href="{SITE_URL}/{slug}">
     
@@ -185,7 +185,7 @@ def generate_monthly_page(month, year):
             </div>
             <div class="bg-white rounded-xl p-6 text-center shadow-sm">
                 <div class="text-4xl font-bold text-purple-600 mb-2">4,400+</div>
-                <div class="text-slate-600">US Locations</div>
+                <div class="text-slate-600">Participating Salons</div>
             </div>
         </section>
 

@@ -158,14 +158,25 @@
         }
     </style>
 
+
+
+
+
+
     <!-- Schema: WebSite with Search -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Great Clips Coupons - GreatClipsDeal.com",
+        "@id": "https://greatclipsdeal.com/#website",
+        "name": "Great Clips Coupons",
+        "alternateName": "GreatClipsDeal",
         "url": "https://greatclipsdeal.com/",
         "description": "Daily updated Great Clips coupons and haircut deals. Find $5.99-$8.99 coupons for all US locations.",
+        "inLanguage": "en-US",
+        "publisher": {
+            "@id": "https://greatclipsdeal.com/#organization"
+        },
         "potentialAction": {
             "@type": "SearchAction",
             "target": {
@@ -182,9 +193,16 @@
     {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": "https://greatclipsdeal.com/#organization",
         "name": "GreatClipsDeal",
-        "url": "https://greatclipsdeal.com",
-        "logo": "https://raw.githubusercontent.com/pineapplestocks/greatclips-coupons/main/docs/logo.png",
+        "alternateName": "Great Clips Coupons",
+        "url": "https://greatclipsdeal.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://greatclipsdeal.com/icon-512.png",
+            "width": 512,
+            "height": 512
+        },
         "description": "Find daily updated Great Clips coupons and save on haircuts",
         "foundingDate": "2024",
         "sameAs": [
@@ -193,8 +211,12 @@
         ],
         "contactPoint": {
             "@type": "ContactPoint",
-            "contactType": "customer service",
-            "url": "https://greatclipsdeal.com/"
+            "contactType": "customer support",
+            "url": "https://greatclipsdeal.com/",
+            "areaServed": "US",
+            "availableLanguage": [
+                "en"
+            ]
         }
     }
     </script>
@@ -206,7 +228,7 @@
         "@type": "Product",
         "name": "Great Clips Haircut Coupon",
         "description": "Discounted haircut coupons for Great Clips salons. Updated daily with $5.99-$8.99 deals valid at 4,400+ US locations.",
-        "image": "https://raw.githubusercontent.com/pineapplestocks/greatclips-coupons/main/docs/logo.png",
+        "image": "https://greatclipsdeal.com/icon-512.png",
         "brand": {
             "@type": "Brand",
             "name": "Great Clips"
@@ -218,7 +240,7 @@
             "priceCurrency": "USD",
             "offerCount": "50",
             "availability": "https://schema.org/InStock",
-            "validFrom": "2026-01-05",
+            "validFrom": "2026-06-08",
             "priceValidUntil": "2026-12-31",
             "url": "https://greatclipsdeal.com/"
         },
@@ -237,6 +259,17 @@
     {
         "@context": "https://schema.org",
         "@type": "FAQPage",
+        "@id": "https://greatclipsdeal.com/#faq",
+        "name": "Great Clips Coupons FAQ",
+        "description": "Answers to common questions about finding, using, and saving with Great Clips coupons.",
+        "url": "https://greatclipsdeal.com/",
+        "dateModified": "2026-06-08",
+        "isPartOf": {
+            "@id": "https://greatclipsdeal.com/#website"
+        },
+        "about": {
+            "@id": "https://greatclipsdeal.com/#organization"
+        },
         "mainEntity": [
             {
                 "@type": "Question",
@@ -346,28 +379,12 @@
     }
     </script>
     
-    <!-- Schema: BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://greatclipsdeal.com/"
-            }
-        ]
-    }
-    </script>
-    
     <!-- Schema: ItemList (Coupon listings) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "name": "Great Clips Coupons - January 2026",
+        "name": "Great Clips Coupons - June 2026",
         "description": "Current Great Clips haircut coupons updated daily",
         "numberOfItems": 50,
         "itemListOrder": "https://schema.org/ItemListOrderDescending",
@@ -396,7 +413,7 @@
 
 </head>
 <body class="bg-gradient-to-br from-slate-50 via-white to-slate-100 min-h-screen">
-    <div id="app"></div>
+    <div id="app">{{STATIC_APP_HTML}}</div>
 
     <script>
         // Coupon data will be injected here by generate_website.py
@@ -690,6 +707,9 @@
         // Render the app
         function render() {
             const app = document.getElementById('app');
+            if (document.getElementById('resultsGrid')) {
+                return;
+            }
 
             // Separate universal, area-based, and regular coupons
             const universalCoupons = COUPON_DATA.filter(c => isUniversal(c));
@@ -1059,6 +1079,7 @@
                                 <h3 class="text-white font-bold mb-4">Resources</h3>
                                 <ul class="space-y-2 text-sm">
                                     <li><a href="/how-to-use" class="hover:text-purple-400 transition-colors">How to Use Coupons</a></li>
+                                    <li><a href="/how-we-verify-coupons" class="hover:text-purple-400 transition-colors">How We Verify Coupons</a></li>
                                     <li><a href="/prices" class="hover:text-purple-400 transition-colors">Great Clips Prices</a></li>
                                     <li><a href="/calculator" class="hover:text-purple-400 transition-colors">Savings Calculator</a></li>
                                     <li><a href="/faq" class="hover:text-purple-400 transition-colors">FAQ</a></li>
@@ -1098,7 +1119,7 @@
                                 </div>
                                 <div>
                                     <h4 class="font-medium text-white">Are these Great Clips coupons legitimate?</h4>
-                                    <p class="text-slate-400">Yes! All coupons are sourced from official Great Clips Facebook advertisements and link directly to offers.greatclips.com.</p>
+                                    <p class="text-slate-400">Yes! All coupons are sourced from official Great Clips Facebook advertisements and link directly to offers.greatclips.com. <a href="/how-we-verify-coupons" class="text-purple-400 hover:underline">See how we verify them</a>.</p>
                                 </div>
                                 <div>
                                     <h4 class="font-medium text-white">How often are coupons updated?</h4>

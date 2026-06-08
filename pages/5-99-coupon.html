@@ -32,24 +32,33 @@
         .pulse { animation: pulse 2s infinite; }
         @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
     </style>
-    
-    
+
+
+
     <!-- Schema: Offer -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Offer",
+        "@id": "https://greatclipsdeal.com/5-99-coupon#offer",
         "name": "Great Clips $5.99 Haircut Coupon",
-        "description": "Get a haircut at Great Clips for only $5.99. Valid at participating US locations. Updated January 2026.",
+        "description": "Get a haircut at Great Clips for only $5.99. Valid at participating US locations. Updated June 2026.",
         "price": "5.99",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "validFrom": "2026-01-05",
+        "validFrom": "2026-06-08",
         "priceValidUntil": "2026-12-31",
         "url": "https://greatclipsdeal.com/5-99-coupon",
+        "itemOffered": {
+            "@type": "Service",
+            "name": "Great Clips Haircut",
+            "serviceType": "Haircut discount"
+        },
+        "eligibleRegion": "US",
         "seller": {
             "@type": "Organization",
-            "name": "Great Clips"
+            "name": "Great Clips",
+            "url": "https://www.greatclips.com/"
         }
     }
     </script>
@@ -59,6 +68,7 @@
     {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": "https://greatclipsdeal.com/5-99-coupon#breadcrumb",
         "itemListElement": [
             {
                 "@type": "ListItem",
@@ -81,6 +91,17 @@
     {
         "@context": "https://schema.org",
         "@type": "FAQPage",
+        "@id": "https://greatclipsdeal.com/5-99-coupon#faq",
+        "name": "Great Clips $5.99 Coupon FAQ",
+        "description": "Answers about the Great Clips $5.99 coupon, where it can be used, and how long it stays valid.",
+        "url": "https://greatclipsdeal.com/5-99-coupon",
+        "dateModified": "2026-06-08",
+        "isPartOf": {
+            "@id": "https://greatclipsdeal.com/#website"
+        },
+        "about": {
+            "@id": "https://greatclipsdeal.com/5-99-coupon#offer"
+        },
         "mainEntity": [
             {
                 "@type": "Question",

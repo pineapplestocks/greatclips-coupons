@@ -1,9 +1,9 @@
-name: Generate Monthly Pages
+name: Generate State Pages
 
 on:
   schedule:
-    # Run on the 1st of every month at 2 AM Phoenix / 9 AM UTC
-    - cron: '0 9 1 * *'
+    # Run daily at 1:15 AM Phoenix / 8:15 AM UTC
+    - cron: '15 8 * * *'
   workflow_dispatch:
 
 permissions:
@@ -19,7 +19,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  generate-monthly-pages:
+  generate-state-pages:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -39,20 +39,22 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Generate monthly landing pages
+      - name: Generate state and city pages
         run: |
-          python generate_monthly_pages.py
+          python generate_pages.py
+          mkdir -p docs
+          cp -a pages/. docs/
           python update_sitemap.py
 
       - name: Commit and push changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add -A docs
+          git add -A pages docs
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "🗓️ Auto-generate monthly pages for $(date +'%B %Y')"
+            git commit -m "📍 Auto-generate state pages for $(date +'%Y-%m-%d')"
             git push origin HEAD:main
           fi
 

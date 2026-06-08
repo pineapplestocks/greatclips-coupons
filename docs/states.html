@@ -20,8 +20,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .state-card { transition: transform 0.2s, box-shadow 0.2s; }
-        .state-card:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body class="bg-slate-50 min-h-screen">
@@ -35,417 +33,113 @@
         </div>
     </header>
 
-    <main class="max-w-5xl mx-auto px-4 py-12">
-        
-        <!-- Search -->
-        <div class="bg-white rounded-xl shadow-md p-6 mb-8">
-            <input type="text" id="stateSearch" placeholder="Search for your state..." 
-                class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent text-lg">
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <section class="rounded-3xl bg-white p-6 shadow-md ring-1 ring-slate-200 md:p-8">
+            <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+                <div>
+                    <p class="text-sm font-semibold uppercase tracking-wide text-slate-500">State directory</p>
+                    <h2 class="mt-2 text-2xl font-bold text-slate-900 md:text-3xl">Compare states at a glance</h2>
+                    <p class="mt-3 max-w-3xl text-slate-600">50 linked state pages are grouped by US region so you can compare coverage quickly and jump straight to the local coupon page.</p>
+                </div>
+                <p id="stateCount" class="text-sm font-medium text-slate-500" aria-live="polite">Showing all 50 state pages</p>
+            </div>
+
+            <div class="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                <div class="rounded-2xl border border-sky-200 bg-sky-50 p-4">
+                    <div class="text-sm font-semibold text-sky-700">Northeast</div>
+                    <div class="mt-2 text-3xl font-extrabold text-slate-900">9</div>
+                    <div class="text-sm text-slate-600">state pages</div>
+                </div>
+                <div class="rounded-2xl border border-emerald-200 bg-emerald-50 p-4">
+                    <div class="text-sm font-semibold text-emerald-700">Midwest</div>
+                    <div class="mt-2 text-3xl font-extrabold text-slate-900">12</div>
+                    <div class="text-sm text-slate-600">state pages</div>
+                </div>
+                <div class="rounded-2xl border border-amber-200 bg-amber-50 p-4">
+                    <div class="text-sm font-semibold text-amber-700">South</div>
+                    <div class="mt-2 text-3xl font-extrabold text-slate-900">16</div>
+                    <div class="text-sm text-slate-600">state pages</div>
+                </div>
+                <div class="rounded-2xl border border-rose-200 bg-rose-50 p-4">
+                    <div class="text-sm font-semibold text-rose-700">West</div>
+                    <div class="mt-2 text-3xl font-extrabold text-slate-900">13</div>
+                    <div class="text-sm text-slate-600">state pages</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="mt-8 rounded-2xl border border-slate-200 bg-white p-4 shadow-md">
+            <label for="stateSearch" class="mb-2 block text-sm font-semibold text-slate-700">Search states or regions</label>
+            <input type="text" id="stateSearch" placeholder="Try Texas, West, or New York"
+                class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-lg focus:border-transparent focus:outline-none focus:ring-2 focus:ring-slate-400">
         </div>
 
-        <!-- All States Grid -->
-        <div id="statesGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            
-            <a href="/alabama" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🏈</span>
-                <div>
-                    <div class="font-bold text-slate-900">Alabama</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/alaska" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🏔️</span>
-                <div>
-                    <div class="font-bold text-slate-900">Alaska</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/arizona" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🌵</span>
-                <div>
-                    <div class="font-bold text-slate-900">Arizona</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/arkansas" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">💎</span>
-                <div>
-                    <div class="font-bold text-slate-900">Arkansas</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/california" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🌴</span>
-                <div>
-                    <div class="font-bold text-slate-900">California</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/colorado" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">⛷️</span>
-                <div>
-                    <div class="font-bold text-slate-900">Colorado</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/connecticut" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🍂</span>
-                <div>
-                    <div class="font-bold text-slate-900">Connecticut</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/delaware" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🏛️</span>
-                <div>
-                    <div class="font-bold text-slate-900">Delaware</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/florida" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🌴</span>
-                <div>
-                    <div class="font-bold text-slate-900">Florida</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/georgia" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🍑</span>
-                <div>
-                    <div class="font-bold text-slate-900">Georgia</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/hawaii" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🌺</span>
-                <div>
-                    <div class="font-bold text-slate-900">Hawaii</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/idaho" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🥔</span>
-                <div>
-                    <div class="font-bold text-slate-900">Idaho</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/illinois" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🌆</span>
-                <div>
-                    <div class="font-bold text-slate-900">Illinois</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/indiana" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🏎️</span>
-                <div>
-                    <div class="font-bold text-slate-900">Indiana</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/iowa" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🌽</span>
-                <div>
-                    <div class="font-bold text-slate-900">Iowa</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/kansas" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🌻</span>
-                <div>
-                    <div class="font-bold text-slate-900">Kansas</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/kentucky" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🐎</span>
-                <div>
-                    <div class="font-bold text-slate-900">Kentucky</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/louisiana" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">⚜️</span>
-                <div>
-                    <div class="font-bold text-slate-900">Louisiana</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/maine" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🦞</span>
-                <div>
-                    <div class="font-bold text-slate-900">Maine</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/maryland" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🦀</span>
-                <div>
-                    <div class="font-bold text-slate-900">Maryland</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/massachusetts" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🏛️</span>
-                <div>
-                    <div class="font-bold text-slate-900">Massachusetts</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/michigan" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🚗</span>
-                <div>
-                    <div class="font-bold text-slate-900">Michigan</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/minnesota" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">❄️</span>
-                <div>
-                    <div class="font-bold text-slate-900">Minnesota</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/mississippi" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🎸</span>
-                <div>
-                    <div class="font-bold text-slate-900">Mississippi</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/missouri" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🏛️</span>
-                <div>
-                    <div class="font-bold text-slate-900">Missouri</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/montana" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🦌</span>
-                <div>
-                    <div class="font-bold text-slate-900">Montana</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/nebraska" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🌾</span>
-                <div>
-                    <div class="font-bold text-slate-900">Nebraska</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/nevada" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🎰</span>
-                <div>
-                    <div class="font-bold text-slate-900">Nevada</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/new-hampshire" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🍁</span>
-                <div>
-                    <div class="font-bold text-slate-900">New Hampshire</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/new-jersey" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🏖️</span>
-                <div>
-                    <div class="font-bold text-slate-900">New Jersey</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/new-mexico" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🌶️</span>
-                <div>
-                    <div class="font-bold text-slate-900">New Mexico</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/new-york" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🗽</span>
-                <div>
-                    <div class="font-bold text-slate-900">New York</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/north-carolina" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🏀</span>
-                <div>
-                    <div class="font-bold text-slate-900">North Carolina</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/north-dakota" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🦬</span>
-                <div>
-                    <div class="font-bold text-slate-900">North Dakota</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/ohio" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🏈</span>
-                <div>
-                    <div class="font-bold text-slate-900">Ohio</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/oklahoma" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🤠</span>
-                <div>
-                    <div class="font-bold text-slate-900">Oklahoma</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/oregon" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🌲</span>
-                <div>
-                    <div class="font-bold text-slate-900">Oregon</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/pennsylvania" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🔔</span>
-                <div>
-                    <div class="font-bold text-slate-900">Pennsylvania</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/rhode-island" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">⛵</span>
-                <div>
-                    <div class="font-bold text-slate-900">Rhode Island</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/south-carolina" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🌙</span>
-                <div>
-                    <div class="font-bold text-slate-900">South Carolina</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/south-dakota" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🗻</span>
-                <div>
-                    <div class="font-bold text-slate-900">South Dakota</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/tennessee" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🎸</span>
-                <div>
-                    <div class="font-bold text-slate-900">Tennessee</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/texas" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🤠</span>
-                <div>
-                    <div class="font-bold text-slate-900">Texas</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/utah" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🏜️</span>
-                <div>
-                    <div class="font-bold text-slate-900">Utah</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/vermont" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🍁</span>
-                <div>
-                    <div class="font-bold text-slate-900">Vermont</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/virginia" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🏛️</span>
-                <div>
-                    <div class="font-bold text-slate-900">Virginia</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/washington" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">☕</span>
-                <div>
-                    <div class="font-bold text-slate-900">Washington</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/west-virginia" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">⛰️</span>
-                <div>
-                    <div class="font-bold text-slate-900">West Virginia</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/wisconsin" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🧀</span>
-                <div>
-                    <div class="font-bold text-slate-900">Wisconsin</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
-            <a href="/wyoming" class="state-card bg-white rounded-xl p-4 shadow-md hover:shadow-lg flex items-center gap-3">
-                <span class="text-2xl">🦬</span>
-                <div>
-                    <div class="font-bold text-slate-900">Wyoming</div>
-                    <div class="text-xs text-green-600">Coupons Available</div>
-                </div>
-            </a>
-            
+        <div class="mt-8 overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-md">
+            <table id="statesTable" class="min-w-full divide-y divide-slate-200">
+                <caption class="sr-only">Alphabetical Great Clips state pages with region labels and direct internal links.</caption>
+                <thead class="bg-slate-50">
+                    <tr>
+                        <th scope="col" class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">State</th>
+                        <th scope="col" class="px-6 py-4 text-left text-xs font-semibold uppercase tracking-wide text-slate-500">Region</th>
+                        <th scope="col" class="px-6 py-4 text-right text-xs font-semibold uppercase tracking-wide text-slate-500">State page</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 bg-white">
+                    <tr data-state="alabama" data-region="south" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Alabama</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">South</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/alabama" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Alabama page</a></td></tr>
+                    <tr data-state="alaska" data-region="west" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Alaska</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">West</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/alaska" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Alaska page</a></td></tr>
+                    <tr data-state="arizona" data-region="west" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Arizona</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">West</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/arizona" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Arizona page</a></td></tr>
+                    <tr data-state="arkansas" data-region="south" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Arkansas</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">South</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/arkansas" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Arkansas page</a></td></tr>
+                    <tr data-state="california" data-region="west" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">California</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">West</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/california" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open California page</a></td></tr>
+                    <tr data-state="colorado" data-region="west" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Colorado</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">West</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/colorado" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Colorado page</a></td></tr>
+                    <tr data-state="connecticut" data-region="northeast" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Connecticut</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Northeast</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/connecticut" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Connecticut page</a></td></tr>
+                    <tr data-state="delaware" data-region="south" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Delaware</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">South</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/delaware" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Delaware page</a></td></tr>
+                    <tr data-state="florida" data-region="south" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Florida</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">South</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/florida" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Florida page</a></td></tr>
+                    <tr data-state="georgia" data-region="south" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Georgia</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">South</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/georgia" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Georgia page</a></td></tr>
+                    <tr data-state="hawaii" data-region="west" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Hawaii</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">West</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/hawaii" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Hawaii page</a></td></tr>
+                    <tr data-state="idaho" data-region="west" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Idaho</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">West</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/idaho" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Idaho page</a></td></tr>
+                    <tr data-state="illinois" data-region="midwest" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Illinois</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Midwest</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/illinois" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Illinois page</a></td></tr>
+                    <tr data-state="indiana" data-region="midwest" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Indiana</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Midwest</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/indiana" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Indiana page</a></td></tr>
+                    <tr data-state="iowa" data-region="midwest" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Iowa</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Midwest</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/iowa" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Iowa page</a></td></tr>
+                    <tr data-state="kansas" data-region="midwest" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Kansas</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Midwest</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/kansas" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Kansas page</a></td></tr>
+                    <tr data-state="kentucky" data-region="south" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Kentucky</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">South</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/kentucky" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Kentucky page</a></td></tr>
+                    <tr data-state="louisiana" data-region="south" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Louisiana</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">South</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/louisiana" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Louisiana page</a></td></tr>
+                    <tr data-state="maine" data-region="northeast" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Maine</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Northeast</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/maine" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Maine page</a></td></tr>
+                    <tr data-state="maryland" data-region="south" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Maryland</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">South</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/maryland" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Maryland page</a></td></tr>
+                    <tr data-state="massachusetts" data-region="northeast" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Massachusetts</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Northeast</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/massachusetts" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Massachusetts page</a></td></tr>
+                    <tr data-state="michigan" data-region="midwest" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Michigan</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Midwest</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/michigan" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Michigan page</a></td></tr>
+                    <tr data-state="minnesota" data-region="midwest" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Minnesota</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Midwest</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/minnesota" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Minnesota page</a></td></tr>
+                    <tr data-state="mississippi" data-region="south" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Mississippi</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">South</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/mississippi" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Mississippi page</a></td></tr>
+                    <tr data-state="missouri" data-region="midwest" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Missouri</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Midwest</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/missouri" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Missouri page</a></td></tr>
+                    <tr data-state="montana" data-region="west" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Montana</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">West</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/montana" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Montana page</a></td></tr>
+                    <tr data-state="nebraska" data-region="midwest" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Nebraska</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Midwest</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/nebraska" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Nebraska page</a></td></tr>
+                    <tr data-state="nevada" data-region="west" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Nevada</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">West</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/nevada" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Nevada page</a></td></tr>
+                    <tr data-state="new-hampshire" data-region="northeast" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">New Hampshire</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Northeast</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/new-hampshire" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open New Hampshire page</a></td></tr>
+                    <tr data-state="new-jersey" data-region="northeast" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">New Jersey</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Northeast</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/new-jersey" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open New Jersey page</a></td></tr>
+                    <tr data-state="new-mexico" data-region="west" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">New Mexico</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">West</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/new-mexico" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open New Mexico page</a></td></tr>
+                    <tr data-state="new-york" data-region="northeast" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">New York</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Northeast</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/new-york" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open New York page</a></td></tr>
+                    <tr data-state="north-carolina" data-region="south" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">North Carolina</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">South</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/north-carolina" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open North Carolina page</a></td></tr>
+                    <tr data-state="north-dakota" data-region="midwest" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">North Dakota</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Midwest</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/north-dakota" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open North Dakota page</a></td></tr>
+                    <tr data-state="ohio" data-region="midwest" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Ohio</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Midwest</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/ohio" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Ohio page</a></td></tr>
+                    <tr data-state="oklahoma" data-region="south" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Oklahoma</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">South</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/oklahoma" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Oklahoma page</a></td></tr>
+                    <tr data-state="oregon" data-region="west" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Oregon</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">West</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/oregon" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Oregon page</a></td></tr>
+                    <tr data-state="pennsylvania" data-region="northeast" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Pennsylvania</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Northeast</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/pennsylvania" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Pennsylvania page</a></td></tr>
+                    <tr data-state="rhode-island" data-region="northeast" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Rhode Island</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Northeast</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/rhode-island" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Rhode Island page</a></td></tr>
+                    <tr data-state="south-carolina" data-region="south" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">South Carolina</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">South</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/south-carolina" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open South Carolina page</a></td></tr>
+                    <tr data-state="south-dakota" data-region="midwest" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">South Dakota</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Midwest</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/south-dakota" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open South Dakota page</a></td></tr>
+                    <tr data-state="tennessee" data-region="south" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Tennessee</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">South</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/tennessee" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Tennessee page</a></td></tr>
+                    <tr data-state="texas" data-region="south" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Texas</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">South</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/texas" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Texas page</a></td></tr>
+                    <tr data-state="utah" data-region="west" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Utah</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">West</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/utah" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Utah page</a></td></tr>
+                    <tr data-state="vermont" data-region="northeast" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Vermont</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Northeast</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/vermont" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Vermont page</a></td></tr>
+                    <tr data-state="virginia" data-region="south" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Virginia</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">South</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/virginia" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Virginia page</a></td></tr>
+                    <tr data-state="washington" data-region="west" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Washington</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">West</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/washington" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Washington page</a></td></tr>
+                    <tr data-state="west-virginia" data-region="south" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">West Virginia</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">South</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/west-virginia" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open West Virginia page</a></td></tr>
+                    <tr data-state="wisconsin" data-region="midwest" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Wisconsin</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">Midwest</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/wisconsin" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Wisconsin page</a></td></tr>
+                    <tr data-state="wyoming" data-region="west" class="hover:bg-slate-50 transition-colors"><th scope="row" class="whitespace-nowrap px-6 py-4 text-left text-sm font-medium text-slate-900">Wyoming</th><td class="px-6 py-4 text-sm text-slate-600"><span class="inline-flex rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">West</span></td><td class="px-6 py-4 text-right whitespace-nowrap"><a href="/wyoming" class="inline-flex items-center rounded-full bg-slate-900 px-3 py-1.5 text-sm font-semibold text-white transition hover:bg-slate-800">Open Wyoming page</a></td></tr>
+                    <tr id="noResultsRow" hidden>
+                        <td colspan="3" class="px-6 py-10 text-center text-slate-500">No states match your search. Try a different state or region.</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- CTA -->
@@ -466,14 +160,32 @@
     </footer>
 
     <script>
-        // State search filter
-        document.getElementById('stateSearch').addEventListener('input', function(e) {
-            const search = e.target.value.toLowerCase();
-            document.querySelectorAll('#statesGrid a').forEach(card => {
-                const stateName = card.querySelector('.font-bold').textContent.toLowerCase();
-                card.style.display = stateName.includes(search) ? '' : 'none';
+        const stateSearch = document.getElementById('stateSearch');
+        const stateRows = Array.from(document.querySelectorAll('#statesTable tbody tr[data-state]'));
+        const stateCount = document.getElementById('stateCount');
+        const noResultsRow = document.getElementById('noResultsRow');
+        const totalStates = stateRows.length;
+
+        function updateStateTable() {
+            const query = stateSearch.value.trim().toLowerCase();
+            let visibleStates = 0;
+
+            stateRows.forEach(row => {
+                const matches = !query || row.textContent.toLowerCase().includes(query);
+                row.hidden = !matches;
+                if (matches) {
+                    visibleStates += 1;
+                }
             });
-        });
+
+            noResultsRow.hidden = visibleStates !== 0;
+            stateCount.textContent = query
+                ? `Showing ${visibleStates} of ${totalStates} state pages`
+                : `Showing all ${totalStates} state pages`;
+        }
+
+        stateSearch.addEventListener('input', updateStateTable);
+        updateStateTable();
     </script>
 </body>
 </html>

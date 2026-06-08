@@ -38,6 +38,7 @@ if os.path.exists(_env_path):
 MAX_SCROLLS = 120  # Upper bound; the loop exits early once the feed stops growing
 IS_CI = os.environ.get('CI') == 'true'  # Running in GitHub Actions?
 GROQ_API_KEY = os.environ.get('GROQ_API_KEY')  # Free at console.groq.com
+DEFAULT_COUPON_SOURCE = "facebook_ad_library"
 REQUEST_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
 }
@@ -56,6 +57,81 @@ def _ensure_utf8_stdout():
 
 
 _ensure_utf8_stdout()
+
+
+def _clean_text(value):
+    if value is None:
+        return ""
+    return re.sub(r"\s+", " ", str(value)).strip()
+
+
+def _normalize_market_label(value):
+    """Trim noisy prefixes/suffixes from area-style market labels."""
+    value = _clean_text(value)
+    if not value:
+        return ""
+
+    value = re.sub(r"(?i)^(?:off\s+)?(?:only at\s+)?participating\s+", "", value)
+    value = re.sub(r"(?i)^(?:off\s+)?only at\s+", "", value)
+    value = re.sub(r"(?i)\s+(?:salons?|locations?)$", "", value)
+    return value.strip(" ,")
+
+
+def _derive_market(coupon):
+    state = _clean_text(coupon.get("state")).upper()
+    if state == "US":
+        return "US"
+    if state == "AREA":
+        return _normalize_market_label(coupon.get("area_name") or coupon.get("location_name")) or "AREA"
+    if len(state) == 2:
+        return state
+
+    city = _clean_text(coupon.get("city")).rstrip(",")
+    if city:
+        if state and state != "UNKNOWN":
+            return f"{city}, {state}"
+        return city
+
+    return _normalize_market_label(coupon.get("area_name") or coupon.get("location_name")) or state
+
+
+def _derive_participating_location_note(coupon):
+    valid_text = _clean_text(coupon.get("valid_text"))
+    if valid_text:
+        match = re.search(r'([^.!?]*participating[^.!?]*)(?:[.!?]|$)', valid_text, re.IGNORECASE)
+        if match:
+            return _clean_text(match.group(1))
+
+    state = _clean_text(coupon.get("state")).upper()
+    if state == "US":
+        return "Valid at participating US locations"
+    if state == "AREA":
+        market = _derive_market(coupon)
+        if market:
+            if market.upper() == "US":
+                return "Valid at participating US locations"
+            return f"Valid at participating locations in {market}"
+
+    return None
+
+
+def normalize_coupon_record(coupon, verified_at=None):
+    """Backfill and keep the extended coupon schema consistent."""
+    coupon["market"] = _derive_market(coupon)
+
+    if not coupon.get("expiration"):
+        coupon["expiration"] = None
+
+    if verified_at:
+        coupon["last_verified"] = verified_at
+    elif not coupon.get("last_verified"):
+        coupon["last_verified"] = coupon.get("last_seen") or coupon.get("added_date") or None
+
+    if not coupon.get("source"):
+        coupon["source"] = "manual" if coupon.get("manual_add") else DEFAULT_COUPON_SOURCE
+
+    coupon["participating_location_note"] = _derive_participating_location_note(coupon)
+    return coupon
 
 
 def fetch_html(url, timeout=20):
@@ -109,6 +185,8 @@ def load_existing_coupons():
             with open(JSON_FILE, 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 coupons = data.get('coupons', [])
+                for coupon in coupons:
+                    normalize_coupon_record(coupon)
                 print(f"   📂 Loaded {len(coupons)} existing coupons from file")
                 return coupons
         except Exception as e:
@@ -213,6 +291,7 @@ def merge_coupons(existing_coupons, new_coupons):
             # New coupon - add it with today's date
             coupon['added_date'] = today
             coupon['last_seen'] = today
+            normalize_coupon_record(coupon, verified_at=today)
             coupon_dict[key] = coupon
             new_count += 1
             print(f"   ➕ New: {coupon.get('location_name', 'Unknown')[:30]} - {coupon.get('price', 'N/A')}")
@@ -225,8 +304,9 @@ def merge_coupons(existing_coupons, new_coupons):
                 # Don't overwrite manual coupon's expiration unless it's empty
                 if not existing.get('manual_add') or not existing.get('expiration'):
                     existing['expiration'] = coupon.get('expiration')
-            
+
             existing['last_seen'] = today
+            normalize_coupon_record(existing, verified_at=today)
             updated_count += 1
     
     print(f"   ➕ Added {new_count} new coupons")
@@ -357,7 +437,9 @@ def purge_ended_offers(coupons):
     print()
     print(f"🔍 Verifying {len(to_purge_check)} offer URLs ({len(to_reclassify)} US coupons to re-classify)...")
 
+    today = datetime.now().strftime('%Y-%m-%d')
     ended_urls = set()
+    verified_urls = set()
     reclassify_updates = {}  # url -> updated fields
 
     for i, coupon in enumerate(to_purge_check, 1):
@@ -371,6 +453,7 @@ def purge_ended_offers(coupons):
                 raise RuntimeError("empty HTML response")
 
             _, page_text = extract_offer_text(page_html)
+            verified_urls.add(url)
 
             # Check for ended offers
             if any(phrase in page_text.lower() for phrase in _ENDED_PHRASES):
@@ -383,7 +466,7 @@ def purge_ended_offers(coupons):
                 llm = classify_coupon_with_llm(page_text)
                 if llm:
                     ctype = (llm.get('type') or 'UNKNOWN').upper()
-                    update = {}
+                    update = {'last_verified': today}
                     # Capture valid_text if found
                     vm = re.search(
                         r'(Valid[\s\S]{0,400}?(?:Expires\s+\d{1,2}/\d{1,2}/\d{4}|salons?\.))',
@@ -433,6 +516,8 @@ def purge_ended_offers(coupons):
             continue
         if url in reclassify_updates:
             c.update(reclassify_updates[url])
+        if url in verified_urls:
+            normalize_coupon_record(c, verified_at=today)
         cleaned.append(c)
 
     removed = len(coupons) - len(cleaned)
@@ -558,6 +643,7 @@ def fetch_offer_details(offer_urls):
     print()
     
     coupons = []
+    today = datetime.now().strftime('%Y-%m-%d')
     
     for i, url in enumerate(offer_urls, 1):
         code = url.split("/")[-1]
@@ -700,6 +786,7 @@ def fetch_offer_details(offer_urls):
 
         # Only save coupons that have useful data (price or location)
         if coupon.get("price") or coupon.get("location_name") or coupon.get("state"):
+            normalize_coupon_record(coupon, verified_at=today)
             coupons.append(coupon)
     
     found_count = sum(1 for c in coupons if c.get("location_name") or c.get("valid_text"))

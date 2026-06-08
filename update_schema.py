@@ -12,6 +12,9 @@ from datetime import datetime
 CURRENT_DATE = datetime.now().strftime("%Y-%m-%d")
 CURRENT_YEAR = datetime.now().strftime("%Y")
 CURRENT_MONTH = datetime.now().strftime("%B")
+SITE_URL = "https://greatclipsdeal.com"
+SITE_ROOT = f"{SITE_URL}/"
+GREAT_CLIPS_URL = "https://www.greatclips.com/"
 
 # ============================================================================
 # SCHEMA TEMPLATES
@@ -23,9 +26,15 @@ HOMEPAGE_SCHEMA = '''
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Great Clips Coupons - GreatClipsDeal.com",
+        "@id": "https://greatclipsdeal.com/#website",
+        "name": "Great Clips Coupons",
+        "alternateName": "GreatClipsDeal",
         "url": "https://greatclipsdeal.com/",
         "description": "Daily updated Great Clips coupons and haircut deals. Find $5.99-$8.99 coupons for all US locations.",
+        "inLanguage": "en-US",
+        "publisher": {
+            "@id": "https://greatclipsdeal.com/#organization"
+        },
         "potentialAction": {
             "@type": "SearchAction",
             "target": {
@@ -42,9 +51,16 @@ HOMEPAGE_SCHEMA = '''
     {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": "https://greatclipsdeal.com/#organization",
         "name": "GreatClipsDeal",
-        "url": "https://greatclipsdeal.com",
-        "logo": "https://greatclipsdeal.com/icon-512.png",
+        "alternateName": "Great Clips Coupons",
+        "url": "https://greatclipsdeal.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://greatclipsdeal.com/icon-512.png",
+            "width": 512,
+            "height": 512
+        },
         "description": "Find daily updated Great Clips coupons and save on haircuts",
         "foundingDate": "2024",
         "sameAs": [
@@ -53,8 +69,12 @@ HOMEPAGE_SCHEMA = '''
         ],
         "contactPoint": {
             "@type": "ContactPoint",
-            "contactType": "customer service",
-            "url": "https://greatclipsdeal.com/"
+            "contactType": "customer support",
+            "url": "https://greatclipsdeal.com/",
+            "areaServed": "US",
+            "availableLanguage": [
+                "en"
+            ]
         }
     }
     </script>
@@ -97,6 +117,17 @@ HOMEPAGE_SCHEMA = '''
     {
         "@context": "https://schema.org",
         "@type": "FAQPage",
+        "@id": "https://greatclipsdeal.com/#faq",
+        "name": "Great Clips Coupons FAQ",
+        "description": "Answers to common questions about finding, using, and saving with Great Clips coupons.",
+        "url": "https://greatclipsdeal.com/",
+        "dateModified": "''' + CURRENT_DATE + '''",
+        "isPartOf": {
+            "@id": "https://greatclipsdeal.com/#website"
+        },
+        "about": {
+            "@id": "https://greatclipsdeal.com/#organization"
+        },
         "mainEntity": [
             {
                 "@type": "Question",
@@ -206,22 +237,6 @@ HOMEPAGE_SCHEMA = '''
     }
     </script>
     
-    <!-- Schema: BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://greatclipsdeal.com/"
-            }
-        ]
-    }
-    </script>
-    
     <!-- Schema: ItemList (Coupon listings) -->
     <script type="application/ld+json">
     {
@@ -263,6 +278,7 @@ def get_price_page_schema(price, url_slug):
     {{
         "@context": "https://schema.org",
         "@type": "Offer",
+        "@id": "{SITE_ROOT}{url_slug}#offer",
         "name": "Great Clips ${price} Haircut Coupon",
         "description": "Get a haircut at Great Clips for only ${price}. Valid at participating US locations. Updated {CURRENT_MONTH} {CURRENT_YEAR}.",
         "price": "{price}",
@@ -271,9 +287,16 @@ def get_price_page_schema(price, url_slug):
         "validFrom": "{CURRENT_DATE}",
         "priceValidUntil": "2026-12-31",
         "url": "https://greatclipsdeal.com/{url_slug}",
+        "itemOffered": {{
+            "@type": "Service",
+            "name": "Great Clips Haircut",
+            "serviceType": "Haircut discount"
+        }},
+        "eligibleRegion": "US",
         "seller": {{
             "@type": "Organization",
-            "name": "Great Clips"
+            "name": "Great Clips",
+            "url": "{GREAT_CLIPS_URL}"
         }}
     }}
     </script>
@@ -283,6 +306,7 @@ def get_price_page_schema(price, url_slug):
     {{
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": "https://greatclipsdeal.com/{url_slug}#breadcrumb",
         "itemListElement": [
             {{
                 "@type": "ListItem",
@@ -305,6 +329,17 @@ def get_price_page_schema(price, url_slug):
     {{
         "@context": "https://schema.org",
         "@type": "FAQPage",
+        "@id": "https://greatclipsdeal.com/{url_slug}#faq",
+        "name": "Great Clips ${price} Coupon FAQ",
+        "description": "Answers about the Great Clips ${price} coupon, where it can be used, and how long it stays valid.",
+        "url": "https://greatclipsdeal.com/{url_slug}",
+        "dateModified": "{CURRENT_DATE}",
+        "isPartOf": {{
+            "@id": "https://greatclipsdeal.com/#website"
+        }},
+        "about": {{
+            "@id": "https://greatclipsdeal.com/{url_slug}#offer"
+        }},
         "mainEntity": [
             {{
                 "@type": "Question",
@@ -365,6 +400,7 @@ def get_state_page_schema(state_name, state_code):
     {{
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": "https://greatclipsdeal.com/{state_code.lower()}#breadcrumb",
         "itemListElement": [
             {{
                 "@type": "ListItem",
@@ -393,6 +429,23 @@ def get_state_page_schema(state_name, state_code):
     {{
         "@context": "https://schema.org",
         "@type": "FAQPage",
+        "@id": "https://greatclipsdeal.com/{state_code.lower()}#faq",
+        "name": "Great Clips Coupons in {state_name} FAQ",
+        "description": "Answers about Great Clips coupons, prices, and savings in {state_name}.",
+        "url": "https://greatclipsdeal.com/{state_code.lower()}",
+        "dateModified": "{CURRENT_DATE}",
+        "isPartOf": {{
+            "@id": "https://greatclipsdeal.com/#website"
+        }},
+        "about": {{
+            "@type": "Place",
+            "name": "{state_name}",
+            "address": {{
+                "@type": "PostalAddress",
+                "addressRegion": "{state_code}",
+                "addressCountry": "US"
+            }}
+        }},
         "mainEntity": [
             {{
                 "@type": "Question",
@@ -480,6 +533,7 @@ def get_how_to_page_schema():
     {{
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": "https://greatclipsdeal.com/how-to-use#breadcrumb",
         "itemListElement": [
             {{
                 "@type": "ListItem",
@@ -518,6 +572,19 @@ def get_prices_page_schema():
     {{
         "@context": "https://schema.org",
         "@type": "FAQPage",
+        "@id": "https://greatclipsdeal.com/prices#faq",
+        "name": "Great Clips Prices FAQ",
+        "description": "Answers about Great Clips haircut prices, senior discounts, and coupon savings.",
+        "url": "https://greatclipsdeal.com/prices",
+        "dateModified": "{CURRENT_DATE}",
+        "isPartOf": {{
+            "@id": "https://greatclipsdeal.com/#website"
+        }},
+        "about": {{
+            "@type": "WebPage",
+            "name": "Great Clips Prices {CURRENT_YEAR}",
+            "url": "https://greatclipsdeal.com/prices"
+        }},
         "mainEntity": [
             {{
                 "@type": "Question",
@@ -552,6 +619,7 @@ def get_prices_page_schema():
     {{
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": "https://greatclipsdeal.com/prices#breadcrumb",
         "itemListElement": [
             {{
                 "@type": "ListItem",
@@ -608,6 +676,7 @@ def get_blog_article_schema(title, description, url_path):
     {{
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": "https://greatclipsdeal.com/{url_path}#breadcrumb",
         "itemListElement": [
             {{
                 "@type": "ListItem",
@@ -658,6 +727,7 @@ def get_states_index_schema():
     {{
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
+        "@id": "https://greatclipsdeal.com/states#breadcrumb",
         "itemListElement": [
             {{
                 "@type": "ListItem",
@@ -682,9 +752,14 @@ def get_states_index_schema():
 
 def remove_old_schema(html_content):
     """Remove existing schema scripts"""
-    # Remove all existing ld+json scripts
-    pattern = r'<script type="application/ld\+json">[\s\S]*?</script>\s*'
-    return re.sub(pattern, '', html_content)
+    # Remove schema comments and their JSON-LD blocks together so reruns stay clean.
+    html_content = re.sub(
+        r'\s*<!-- Schema:[\s\S]*?-->\s*<script type="application/ld\+json">[\s\S]*?</script>\s*',
+        '\n',
+        html_content,
+    )
+    html_content = re.sub(r'\s*<!-- Schema:[\s\S]*?-->\s*', '\n', html_content)
+    return html_content
 
 def insert_schema(html_content, schema):
     """Insert schema before </head>"""
@@ -760,7 +835,7 @@ def main():
             update_file(filepath, get_blog_article_schema(title, desc, url))
     
     print("\n" + "=" * 60)
-    print("✅ All files updated with rich snippet schema!")
+    print("All files updated with rich snippet schema!")
     print("=" * 60)
     print("\nNext steps:")
     print("1. Upload updated files to GitHub")
