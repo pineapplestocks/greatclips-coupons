@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-06-11T09:07:40.687101",
-  "total_coupons": 373,
+  "scraped_at": "2026-06-11T13:26:40.732156",
+  "total_coupons": 374,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/HOzCcK9",
@@ -5546,6 +5546,22 @@
       "last_verified": "2026-06-11",
       "source": "facebook_ad_library",
       "participating_location_note": null
+    },
+    {
+      "url": "https://offers.greatclips.com/jnnkC3X",
+      "coupon_code": "jnnkC3X",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/19223/50707-002-1200x600-12.99.jpg",
+      "expiration": "06/26/2026",
+      "location_name": "participating Portland Area",
+      "state": "AREA",
+      "area_name": "participating Portland",
+      "price": "$12.99",
+      "market": "Portland",
+      "last_verified": "2026-06-11",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Portland",
+      "added_date": "2026-06-11",
+      "last_seen": "2026-06-11"
     },
     {
       "url": "https://offers.greatclips.com/ya28CvX",
