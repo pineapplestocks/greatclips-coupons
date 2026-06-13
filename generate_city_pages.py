@@ -105,6 +105,9 @@ def generate_city_page(city):
       gtag('js', new Date());
       gtag('config', 'G-90ZQ7M4EFR');
     </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3200720519944493" crossorigin="anonymous"></script>
     
     <title>Great Clips Coupons {name} {state_abbr} - $5.99 Haircut Deals (2026)</title>
     <meta name="description" content="Find Great Clips coupons in {name}, {state}. Save $5-$10 on haircuts at {locations} {name} area locations. Daily updated {name} coupon codes.">

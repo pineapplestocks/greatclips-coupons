@@ -63,7 +63,10 @@ def generate_state_page(slug, data):
       gtag('js', new Date());
       gtag('config', 'G-90ZQ7M4EFR');
     </script>
-    
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3200720519944493" crossorigin="anonymous"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     

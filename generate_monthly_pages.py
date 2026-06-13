@@ -76,6 +76,9 @@ def generate_monthly_page(month, year):
       gtag('js', new Date());
       gtag('config', 'G-90ZQ7M4EFR');
     </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3200720519944493" crossorigin="anonymous"></script>
     
     <title>Great Clips Coupons {month_name} {year} - $5.99 Haircut Deals</title>
     <meta name="description" content="Find working Great Clips coupons for {month_name} {year}. Save $5-$10 on haircuts with daily updated {month_name} coupon codes. Valid at participating salons / confirm locally.">
