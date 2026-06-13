@@ -48,7 +48,7 @@ export default {
     }
 
     const priceStr = price ? price : 'Great Clips';
-    const subject = `Your ${priceStr} Great Clips Coupon ✂️`;
+    const subject = `Your ${priceStr} Great Clips coupon is ready`;
 
     const htmlContent = `<!DOCTYPE html>
 <html lang="en">
@@ -57,60 +57,80 @@ export default {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Your Great Clips Coupon</title>
 </head>
-<body style="margin:0;padding:0;background:#f3f4f6;font-family:Arial,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f3f4f6;padding:32px 16px;">
+<body style="margin:0;padding:0;background:#f6f3ee;font-family:Arial,Helvetica,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f6f3ee;padding:28px 14px;">
     <tr><td align="center">
-      <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
+      <table width="620" cellpadding="0" cellspacing="0" style="max-width:620px;width:100%;">
 
         <!-- Header -->
         <tr>
-          <td style="background:linear-gradient(135deg,#7c3aed,#db2777);border-radius:16px 16px 0 0;padding:32px;text-align:center;">
-            <p style="margin:0;font-size:32px;">✂️</p>
-            <h1 style="color:white;margin:8px 0 4px;font-size:26px;">Great Clips Deal</h1>
-            <p style="color:rgba(255,255,255,0.8);margin:0;font-size:15px;">Your coupon is ready to use!</p>
+          <td style="background:#17211f;border-radius:24px 24px 0 0;padding:30px 28px 26px;text-align:left;">
+            <p style="display:inline-block;margin:0 0 16px;background:#d8f36a;color:#17211f;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;">Coupon ready</p>
+            <h1 style="color:#ffffff;margin:0 0 8px;font-size:31px;line-height:1.12;font-weight:900;">Your Great Clips deal is ready.</h1>
+            <p style="color:#c9d6d1;margin:0;font-size:15px;line-height:1.55;">Open your coupon, show it before your cut, and save at participating salons.</p>
           </td>
         </tr>
 
         <!-- Body -->
         <tr>
-          <td style="background:white;padding:32px;border-radius:0 0 16px 16px;box-shadow:0 4px 12px rgba(0,0,0,0.08);">
+          <td style="background:#ffffff;padding:30px 28px;border-radius:0 0 24px 24px;box-shadow:0 18px 45px rgba(23,33,31,0.12);">
 
             <!-- Price badge -->
-            <div style="text-align:center;margin-bottom:28px;">
-              <div style="display:inline-block;background:#fffbeb;border:2px dashed #f59e0b;border-radius:14px;padding:18px 40px;">
-                <span style="font-size:52px;font-weight:900;color:#d97706;line-height:1;">${priceStr}</span>
-                <p style="margin:6px 0 0;color:#92400e;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">Great Clips Haircut</p>
+            <div style="text-align:center;margin-bottom:26px;">
+              <div style="display:inline-block;background:#fff8e7;border:1px solid #f1d28a;border-radius:22px;padding:22px 42px;box-shadow:inset 0 0 0 2px #fff2c7;">
+                <p style="margin:0 0 6px;color:#85620a;font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;">Great Clips haircut</p>
+                <span style="font-size:58px;font-weight:900;color:#bf6200;line-height:0.98;">${priceStr}</span>
               </div>
             </div>
 
-            <p style="color:#374151;text-align:center;font-size:15px;line-height:1.6;margin:0 0 24px;">
-              Click the button below to open your coupon on the Great Clips website.<br>
-              <strong>Valid for 14 days after you first redeem it.</strong>
+            <p style="color:#263330;text-align:center;font-size:16px;line-height:1.65;margin:0 0 24px;">
+              Click below to open the coupon on the official Great Clips offer page.<br>
+              <strong style="color:#17211f;">Valid for 14 days after you first redeem it.</strong>
             </p>
 
             <!-- CTA Button -->
-            <div style="text-align:center;margin-bottom:28px;">
+            <div style="text-align:center;margin-bottom:26px;">
               <a href="${coupon_url}"
-                 style="display:inline-block;background:linear-gradient(135deg,#7c3aed,#db2777);color:white;font-weight:700;font-size:18px;padding:16px 48px;border-radius:12px;text-decoration:none;letter-spacing:0.02em;">
-                Claim My Coupon &rarr;
+                 style="display:inline-block;background:#17211f;color:#ffffff;font-weight:800;font-size:17px;padding:16px 34px;border-radius:999px;text-decoration:none;letter-spacing:0.01em;box-shadow:0 10px 24px rgba(23,33,31,0.22);">
+                Open My Coupon &rarr;
               </a>
             </div>
 
             <!-- Tips -->
-            <div style="background:#f9fafb;border-radius:10px;padding:16px 20px;margin-bottom:24px;">
-              <p style="margin:0 0 8px;font-weight:700;color:#374151;font-size:13px;text-transform:uppercase;letter-spacing:0.05em;">💡 How to use</p>
-              <ul style="margin:0;padding-left:18px;color:#6b7280;font-size:13px;line-height:1.8;">
-                <li>Open the coupon link above on your phone</li>
-                <li>Show it to your stylist <strong>before</strong> your haircut</li>
-                <li>Or print it and bring it in</li>
-              </ul>
+            <div style="background:#f7f8f4;border:1px solid #e5eadc;border-radius:18px;padding:18px 20px;margin-bottom:18px;">
+              <p style="margin:0 0 12px;font-weight:900;color:#17211f;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;">How to use it</p>
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="28" valign="top" style="color:#7a8f1f;font-weight:900;font-size:15px;line-height:1.8;">1</td>
+                  <td style="color:#465653;font-size:14px;line-height:1.8;">Open the coupon link on your phone.</td>
+                </tr>
+                <tr>
+                  <td width="28" valign="top" style="color:#7a8f1f;font-weight:900;font-size:15px;line-height:1.8;">2</td>
+                  <td style="color:#465653;font-size:14px;line-height:1.8;">Show it to your stylist before your haircut.</td>
+                </tr>
+                <tr>
+                  <td width="28" valign="top" style="color:#7a8f1f;font-weight:900;font-size:15px;line-height:1.8;">3</td>
+                  <td style="color:#465653;font-size:14px;line-height:1.8;">Print it instead if that is easier.</td>
+                </tr>
+              </table>
             </div>
 
-            <hr style="border:none;border-top:1px solid #e5e7eb;margin:0 0 20px;">
+            <!-- Donation -->
+            <div style="background:#17211f;border-radius:18px;padding:20px;margin-bottom:22px;text-align:center;">
+              <p style="margin:0 0 6px;color:#d8f36a;font-size:13px;font-weight:900;letter-spacing:0.08em;text-transform:uppercase;">Did the coupon work?</p>
+              <p style="margin:0 0 15px;color:#ffffff;font-size:15px;line-height:1.6;">A $0.50 Venmo donation helps keep GreatClipsDeal live and updated.</p>
+              <a href="https://venmo.com/GoldBond123?txn=pay&amp;amount=0.50&amp;note=GreatClipsDeal%20coupon%20worked"
+                 style="display:inline-block;background:#3d95ce;color:#ffffff;font-weight:800;font-size:15px;padding:12px 22px;border-radius:999px;text-decoration:none;">
+                Send $0.50 on Venmo
+              </a>
+              <p style="margin:10px 0 0;color:#adc0ba;font-size:12px;">@GoldBond123</p>
+            </div>
 
-            <p style="color:#9ca3af;font-size:11px;text-align:center;margin:0;line-height:1.6;">
+            <hr style="border:none;border-top:1px solid #e4e8e2;margin:0 0 18px;">
+
+            <p style="color:#89938f;font-size:11px;text-align:center;margin:0;line-height:1.7;">
               You received this because you requested a coupon at
-              <a href="https://greatclipsdeal.com" style="color:#7c3aed;text-decoration:none;">greatclipsdeal.com</a><br>
+              <a href="https://greatclipsdeal.com" style="color:#17211f;font-weight:700;text-decoration:none;">greatclipsdeal.com</a><br>
               &copy; 2026 GreatClipsDeal.com &mdash; Not affiliated with Great Clips, Inc.
             </p>
 
