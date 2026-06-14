@@ -69,6 +69,7 @@ def generate_state_page(slug, data):
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-3200720519944493">
     
     <title>Great Clips Coupons {name} ({CURRENT_MONTH} {CURRENT_YEAR}) - ${code} Haircut Deals</title>
     <meta name="description" content="Find Great Clips coupons for {name}. Save $5-$10 on haircuts at participating salons / confirm locally. Updated daily with $5.99-$8.99 deals.">
@@ -294,6 +295,7 @@ def generate_city_page(slug, data):
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-3200720519944493">
     
     <title>Great Clips Coupons {name}, {state_code} ({CURRENT_MONTH} {CURRENT_YEAR}) - Local Deals</title>
     <meta name="description" content="Find Great Clips coupons for {name}, {state}. Save $5-$10 on haircuts at participating salons / confirm locally. Updated daily with $5.99-$8.99 deals.">
