@@ -12,6 +12,9 @@ const CORS_HEADERS = {
   'Access-Control-Allow-Headers': 'Content-Type',
 };
 
+const DEFAULT_ADMIN_EMAIL = 'mehulchaudhari@gmail.com';
+const DAY_MS = 24 * 60 * 60 * 1000;
+
 function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>"']/g, (char) => ({
     '&': '&amp;',
@@ -34,11 +37,347 @@ function getSafeOfferUrl(value) {
   }
 }
 
+function formatNumber(value) {
+  return new Intl.NumberFormat('en-US').format(Number(value || 0));
+}
+
+function formatSigned(value) {
+  const number = Number(value || 0);
+  const sign = number > 0 ? '+' : '';
+  return `${sign}${formatNumber(number)}`;
+}
+
+function formatPercent(value) {
+  if (!Number.isFinite(value)) {
+    return 'N/A';
+  }
+  const sign = value > 0 ? '+' : '';
+  return `${sign}${value.toFixed(1)}%`;
+}
+
+function iso(date) {
+  return date.toISOString();
+}
+
+function startOfUtcDay(date) {
+  return new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
+}
+
+function startOfUtcMonth(date) {
+  return new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), 1));
+}
+
+function addDays(date, days) {
+  return new Date(date.getTime() + days * DAY_MS);
+}
+
+function addMonths(date, months) {
+  return new Date(Date.UTC(
+    date.getUTCFullYear(),
+    date.getUTCMonth() + months,
+    date.getUTCDate(),
+    date.getUTCHours(),
+    date.getUTCMinutes(),
+    date.getUTCSeconds(),
+    date.getUTCMilliseconds(),
+  ));
+}
+
+function formatDate(date) {
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Phoenix',
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  }).format(date);
+}
+
+function formatDateTime(date) {
+  return new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/Phoenix',
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    timeZoneName: 'short',
+  }).format(date);
+}
+
+async function queryFirst(env, sql, ...bindings) {
+  return env.DB.prepare(sql).bind(...bindings).first();
+}
+
+async function queryAll(env, sql, ...bindings) {
+  const result = await env.DB.prepare(sql).bind(...bindings).all();
+  return result.results || [];
+}
+
+async function sendBrevoEmail(env, { toEmail, toName, subject, htmlContent }) {
+  return fetch('https://api.brevo.com/v3/smtp/email', {
+    method: 'POST',
+    headers: {
+      'api-key': env.BREVO_API_KEY,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      sender: {
+        name: 'Great Clips Deal',
+        email: env.SENDER_EMAIL || 'coupons@greatclipsdeal.com',
+      },
+      to: [{ email: toEmail, name: toName }],
+      subject,
+      htmlContent,
+    }),
+  });
+}
+
+function statCard(label, value, subtext) {
+  return `
+    <td valign="top" style="width:50%;padding:8px;">
+      <div style="background:#f8faf6;border:1px solid #dfe8dc;border-radius:14px;padding:16px;">
+        <p style="margin:0 0 7px;color:#5c6a66;font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;">${escapeHtml(label)}</p>
+        <p style="margin:0;color:#052d22;font-size:30px;font-weight:900;line-height:1;">${escapeHtml(value)}</p>
+        <p style="margin:8px 0 0;color:#6c7774;font-size:13px;line-height:1.4;">${escapeHtml(subtext)}</p>
+      </div>
+    </td>`;
+}
+
+function tableRows(rows, columns) {
+  if (!rows.length) {
+    return `<tr><td colspan="${columns.length}" style="padding:14px;color:#6c7774;text-align:center;">No data yet.</td></tr>`;
+  }
+
+  return rows.map((row) => `
+    <tr>
+      ${columns.map((column) => `
+        <td style="padding:10px 8px;border-top:1px solid #e6ece5;color:#1c2e29;font-size:13px;line-height:1.35;${column.align === 'right' ? 'text-align:right;' : ''}">
+          ${escapeHtml(column.render ? column.render(row) : row[column.key])}
+        </td>`).join('')}
+    </tr>`).join('');
+}
+
+async function buildSubscriberSummary(env, now = new Date()) {
+  if (!env.DB) {
+    throw new Error('DB binding is not configured');
+  }
+
+  const todayStart = startOfUtcDay(now);
+  const tomorrowStart = addDays(todayStart, 1);
+  const yesterdayStart = addDays(todayStart, -1);
+  const sevenDaysStart = addDays(now, -7);
+  const thirtyDaysStart = addDays(now, -30);
+  const currentMonthStart = startOfUtcMonth(now);
+  const previousMonthStart = addMonths(currentMonthStart, -1);
+  const previousMonthEnd = currentMonthStart;
+  const previousMonthSamePoint = addMonths(now, -1);
+
+  const [
+    total,
+    unique,
+    today,
+    yesterday,
+    last7,
+    last30,
+    currentMonth,
+    previousMonthToDate,
+    previousFullMonth,
+    latest,
+    topStates,
+    topLocations,
+    topCoupons,
+  ] = await Promise.all([
+    queryFirst(env, 'SELECT COUNT(*) AS count FROM subscribers'),
+    queryFirst(env, 'SELECT COUNT(DISTINCT lower(email)) AS count FROM subscribers'),
+    queryFirst(env, 'SELECT COUNT(*) AS count FROM subscribers WHERE subscribed_at >= ? AND subscribed_at < ?', iso(todayStart), iso(tomorrowStart)),
+    queryFirst(env, 'SELECT COUNT(*) AS count FROM subscribers WHERE subscribed_at >= ? AND subscribed_at < ?', iso(yesterdayStart), iso(todayStart)),
+    queryFirst(env, 'SELECT COUNT(*) AS count FROM subscribers WHERE subscribed_at >= ?', iso(sevenDaysStart)),
+    queryFirst(env, 'SELECT COUNT(*) AS count FROM subscribers WHERE subscribed_at >= ?', iso(thirtyDaysStart)),
+    queryFirst(env, 'SELECT COUNT(*) AS count FROM subscribers WHERE subscribed_at >= ?', iso(currentMonthStart)),
+    queryFirst(env, 'SELECT COUNT(*) AS count FROM subscribers WHERE subscribed_at >= ? AND subscribed_at < ?', iso(previousMonthStart), iso(previousMonthSamePoint)),
+    queryFirst(env, 'SELECT COUNT(*) AS count FROM subscribers WHERE subscribed_at >= ? AND subscribed_at < ?', iso(previousMonthStart), iso(previousMonthEnd)),
+    queryAll(env, `SELECT email, coupon_url, location_name, city, state, subscribed_at
+      FROM subscribers ORDER BY subscribed_at DESC LIMIT 8`),
+    queryAll(env, `SELECT COALESCE(NULLIF(state, ''), 'Unknown') AS state, COUNT(*) AS count
+      FROM subscribers GROUP BY COALESCE(NULLIF(state, ''), 'Unknown')
+      ORDER BY count DESC LIMIT 8`),
+    queryAll(env, `SELECT COALESCE(NULLIF(location_name, ''), 'Unknown') AS location_name,
+        COALESCE(NULLIF(state, ''), 'Unknown') AS state, COUNT(*) AS count
+      FROM subscribers
+      GROUP BY COALESCE(NULLIF(location_name, ''), 'Unknown'), COALESCE(NULLIF(state, ''), 'Unknown')
+      ORDER BY count DESC LIMIT 8`),
+    queryAll(env, `SELECT coupon_url, COUNT(*) AS count
+      FROM subscribers GROUP BY coupon_url ORDER BY count DESC LIMIT 8`),
+  ]);
+
+  const currentMonthCount = Number(currentMonth?.count || 0);
+  const previousMonthToDateCount = Number(previousMonthToDate?.count || 0);
+  const monthDelta = currentMonthCount - previousMonthToDateCount;
+  const monthDeltaPercent = previousMonthToDateCount
+    ? (monthDelta / previousMonthToDateCount) * 100
+    : (currentMonthCount ? Infinity : 0);
+
+  return {
+    generatedAt: now,
+    ranges: {
+      currentMonth: `${formatDate(currentMonthStart)} - ${formatDate(now)}`,
+      previousMonthToDate: `${formatDate(previousMonthStart)} - ${formatDate(previousMonthSamePoint)}`,
+      previousFullMonth: `${formatDate(previousMonthStart)} - ${formatDate(addDays(previousMonthEnd, -1))}`,
+    },
+    counts: {
+      total: Number(total?.count || 0),
+      unique: Number(unique?.count || 0),
+      today: Number(today?.count || 0),
+      yesterday: Number(yesterday?.count || 0),
+      last7: Number(last7?.count || 0),
+      last30: Number(last30?.count || 0),
+      currentMonth: currentMonthCount,
+      previousMonthToDate: previousMonthToDateCount,
+      previousFullMonth: Number(previousFullMonth?.count || 0),
+      monthDelta,
+      monthDeltaPercent,
+    },
+    latest,
+    topStates,
+    topLocations,
+    topCoupons,
+  };
+}
+
+function buildSummaryEmail(summary) {
+  const counts = summary.counts;
+  const generatedAt = formatDateTime(summary.generatedAt);
+
+  return `<!doctype html>
+<html>
+<body style="margin:0;background:#eef2ec;font-family:Arial,Helvetica,sans-serif;color:#12211c;">
+  <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="background:#eef2ec;padding:26px 14px;">
+    <tr><td align="center">
+      <table width="720" cellpadding="0" cellspacing="0" role="presentation" style="max-width:720px;width:100%;background:#ffffff;border-radius:22px;overflow:hidden;box-shadow:0 18px 45px rgba(7,30,24,0.12);">
+        <tr>
+          <td style="background:#052d22;background-image:linear-gradient(135deg,#052d22 0%,#083f2f 100%);padding:30px 34px;">
+            <p style="display:inline-block;margin:0 0 14px;background:#d7f36f;color:#071e18;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;">Daily subscribers</p>
+            <h1 style="color:#ffffff;margin:0;font-size:32px;line-height:1.12;">GreatClipsDeal subscriber summary</h1>
+            <p style="color:#cfe0da;margin:10px 0 0;font-size:14px;">Generated ${escapeHtml(generatedAt)}</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:26px;">
+            <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+              <tr>
+                ${statCard('Total signups', formatNumber(counts.total), `${formatNumber(counts.unique)} unique email addresses`)}
+                ${statCard('This month', formatNumber(counts.currentMonth), summary.ranges.currentMonth)}
+              </tr>
+              <tr>
+                ${statCard('Prior month to date', formatNumber(counts.previousMonthToDate), summary.ranges.previousMonthToDate)}
+                ${statCard('Change vs prior month', `${formatSigned(counts.monthDelta)} (${formatPercent(counts.monthDeltaPercent)})`, 'Month-to-date comparison')}
+              </tr>
+              <tr>
+                ${statCard('Today', formatNumber(counts.today), 'Since midnight UTC')}
+                ${statCard('Yesterday', formatNumber(counts.yesterday), 'Previous UTC day')}
+              </tr>
+              <tr>
+                ${statCard('Last 7 days', formatNumber(counts.last7), 'Rolling 7-day window')}
+                ${statCard('Last 30 days', formatNumber(counts.last30), 'Rolling 30-day window')}
+              </tr>
+              <tr>
+                ${statCard('Previous full month', formatNumber(counts.previousFullMonth), summary.ranges.previousFullMonth)}
+                ${statCard('Current run status', 'OK', 'D1 query and Brevo email completed')}
+              </tr>
+            </table>
+
+            <h2 style="font-size:18px;margin:26px 0 10px;color:#052d22;">Top states</h2>
+            <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+              ${tableRows(summary.topStates, [
+                { key: 'state' },
+                { key: 'count', align: 'right', render: (row) => formatNumber(row.count) },
+              ])}
+            </table>
+
+            <h2 style="font-size:18px;margin:26px 0 10px;color:#052d22;">Top locations</h2>
+            <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+              ${tableRows(summary.topLocations, [
+                { render: (row) => `${row.location_name} (${row.state})` },
+                { key: 'count', align: 'right', render: (row) => formatNumber(row.count) },
+              ])}
+            </table>
+
+            <h2 style="font-size:18px;margin:26px 0 10px;color:#052d22;">Top coupon links</h2>
+            <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+              ${tableRows(summary.topCoupons, [
+                { key: 'coupon_url' },
+                { key: 'count', align: 'right', render: (row) => formatNumber(row.count) },
+              ])}
+            </table>
+
+            <h2 style="font-size:18px;margin:26px 0 10px;color:#052d22;">Latest signups</h2>
+            <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+              ${tableRows(summary.latest, [
+                { key: 'email' },
+                { render: (row) => `${row.location_name || 'Unknown'} ${row.state ? `(${row.state})` : ''}` },
+                { render: (row) => formatDateTime(new Date(row.subscribed_at)) },
+              ])}
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`;
+}
+
+async function sendSubscriberSummary(env, source = 'manual') {
+  if (!env.BREVO_API_KEY || !env.SENDER_EMAIL) {
+    throw new Error('BREVO_API_KEY and SENDER_EMAIL must be configured');
+  }
+
+  const summary = await buildSubscriberSummary(env);
+  const subject = `GreatClipsDeal subscribers: ${formatNumber(summary.counts.total)} total, ${formatSigned(summary.counts.monthDelta)} MTD`;
+  const brevoRes = await sendBrevoEmail(env, {
+    toEmail: env.ADMIN_EMAIL || DEFAULT_ADMIN_EMAIL,
+    toName: 'Mehul',
+    subject,
+    htmlContent: buildSummaryEmail(summary),
+  });
+
+  if (!brevoRes.ok) {
+    const errText = await brevoRes.text();
+    throw new Error(`Brevo summary email failed (${brevoRes.status}): ${errText}`);
+  }
+
+  return { ok: true, source, sent_to: env.ADMIN_EMAIL || DEFAULT_ADMIN_EMAIL, summary };
+}
+
 export default {
   async fetch(request, env) {
     // Handle CORS preflight
     if (request.method === 'OPTIONS') {
       return new Response(null, { headers: CORS_HEADERS });
+    }
+
+    const url = new URL(request.url);
+    if (url.pathname === '/admin/send-summary') {
+      if (request.method !== 'POST') {
+        return jsonResponse({ error: 'Method not allowed' }, 405);
+      }
+      if (!env.ADMIN_TOKEN || request.headers.get('Authorization') !== `Bearer ${env.ADMIN_TOKEN}`) {
+        return jsonResponse({ error: 'Unauthorized' }, 401);
+      }
+      try {
+        const result = await sendSubscriberSummary(env, 'manual');
+        return jsonResponse({
+          ok: true,
+          sent_to: result.sent_to,
+          total: result.summary.counts.total,
+          current_month: result.summary.counts.currentMonth,
+          previous_month_to_date: result.summary.counts.previousMonthToDate,
+          month_delta: result.summary.counts.monthDelta,
+        });
+      } catch (err) {
+        console.error('Summary email error:', err);
+        return jsonResponse({ error: 'Failed to send summary email', detail: String(err.message || err) }, 500);
+      }
     }
 
     if (request.method !== 'POST') {
@@ -231,21 +570,10 @@ export default {
 </body>
 </html>`;
 
-    const brevoRes = await fetch('https://api.brevo.com/v3/smtp/email', {
-      method: 'POST',
-      headers: {
-        'api-key': env.BREVO_API_KEY,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        sender: {
-          name: 'Great Clips Deal',
-          email: env.SENDER_EMAIL || 'coupons@greatclipsdeal.com',
-        },
-        to: [{ email }],
-        subject,
-        htmlContent,
-      }),
+    const brevoRes = await sendBrevoEmail(env, {
+      toEmail: email,
+      subject,
+      htmlContent,
     });
 
     if (!brevoRes.ok) {
@@ -274,6 +602,10 @@ export default {
     }
 
     return jsonResponse({ ok: true });
+  },
+
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(sendSubscriberSummary(env, 'scheduled'));
   },
 };
 
