@@ -9,8 +9,7 @@ from pathlib import Path
 SITE_URL = "https://greatclipsdeal.com"
 OUTPUT_DIR = "docs/cities"
 
-# 50 additional cities (beyond the 10 you already have)
-# Sorted by population/search volume potential
+# Additional high-value metros beyond the core city pages in generate_pages.py.
 CITIES = [
     # Already have: Phoenix, Dallas, Houston, Chicago, Atlanta, Columbus, Indianapolis, Minneapolis, Denver, Detroit
     
@@ -21,6 +20,8 @@ CITIES = [
     {"name": "San Diego", "state": "California", "state_abbr": "CA", "locations": "70+"},
     {"name": "San Jose", "state": "California", "state_abbr": "CA", "locations": "50+"},
     {"name": "Austin", "state": "Texas", "state_abbr": "TX", "locations": "60+"},
+    {"name": "Philadelphia", "state": "Pennsylvania", "state_abbr": "PA", "locations": "55+"},
+    {"name": "Boston", "state": "Massachusetts", "state_abbr": "MA", "locations": "35+"},
     {"name": "Jacksonville", "state": "Florida", "state_abbr": "FL", "locations": "45+"},
     {"name": "Fort Worth", "state": "Texas", "state_abbr": "TX", "locations": "50+"},
     {"name": "Charlotte", "state": "North Carolina", "state_abbr": "NC", "locations": "55+"},
@@ -30,6 +31,7 @@ CITIES = [
     {"name": "Oklahoma City", "state": "Oklahoma", "state_abbr": "OK", "locations": "40+"},
     {"name": "Las Vegas", "state": "Nevada", "state_abbr": "NV", "locations": "55+"},
     {"name": "Portland", "state": "Oregon", "state_abbr": "OR", "locations": "45+"},
+    {"name": "El Paso", "state": "Texas", "state_abbr": "TX", "locations": "20+"},
     {"name": "Milwaukee", "state": "Wisconsin", "state_abbr": "WI", "locations": "40+"},
     {"name": "Albuquerque", "state": "New Mexico", "state_abbr": "NM", "locations": "25+"},
     {"name": "Tucson", "state": "Arizona", "state_abbr": "AZ", "locations": "30+"},
@@ -51,6 +53,8 @@ CITIES = [
     {"name": "Salt Lake City", "state": "Utah", "state_abbr": "UT", "locations": "40+"},
     {"name": "Richmond", "state": "Virginia", "state_abbr": "VA", "locations": "30+"},
     {"name": "Louisville", "state": "Kentucky", "state_abbr": "KY", "locations": "35+"},
+    {"name": "Newark", "state": "New Jersey", "state_abbr": "NJ", "locations": "20+"},
+    {"name": "Jersey City", "state": "New Jersey", "state_abbr": "NJ", "locations": "18+"},
     {"name": "Memphis", "state": "Tennessee", "state_abbr": "TN", "locations": "30+"},
     {"name": "Birmingham", "state": "Alabama", "state_abbr": "AL", "locations": "30+"},
     {"name": "Boise", "state": "Idaho", "state_abbr": "ID", "locations": "25+"},
@@ -67,18 +71,86 @@ CITIES = [
     {"name": "Santa Ana", "state": "California", "state_abbr": "CA", "locations": "20+"},
 ]
 
+STATE_REGIONS = {
+    "Alabama": "South",
+    "Alaska": "West",
+    "Arizona": "West",
+    "Arkansas": "South",
+    "California": "West",
+    "Colorado": "West",
+    "Connecticut": "Northeast",
+    "Delaware": "South",
+    "Florida": "South",
+    "Georgia": "South",
+    "Hawaii": "West",
+    "Idaho": "West",
+    "Illinois": "Midwest",
+    "Indiana": "Midwest",
+    "Iowa": "Midwest",
+    "Kansas": "Midwest",
+    "Kentucky": "South",
+    "Louisiana": "South",
+    "Maine": "Northeast",
+    "Maryland": "South",
+    "Massachusetts": "Northeast",
+    "Michigan": "Midwest",
+    "Minnesota": "Midwest",
+    "Mississippi": "South",
+    "Missouri": "Midwest",
+    "Montana": "West",
+    "Nebraska": "Midwest",
+    "Nevada": "West",
+    "New Hampshire": "Northeast",
+    "New Jersey": "Northeast",
+    "New Mexico": "West",
+    "New York": "Northeast",
+    "North Carolina": "South",
+    "North Dakota": "Midwest",
+    "Ohio": "Midwest",
+    "Oklahoma": "South",
+    "Oregon": "West",
+    "Pennsylvania": "Northeast",
+    "Rhode Island": "Northeast",
+    "South Carolina": "South",
+    "South Dakota": "Midwest",
+    "Tennessee": "South",
+    "Texas": "South",
+    "Utah": "West",
+    "Vermont": "Northeast",
+    "Virginia": "South",
+    "Washington": "West",
+    "West Virginia": "South",
+    "Wisconsin": "Midwest",
+    "Wyoming": "West",
+}
+
 def get_slug(city_name):
     """Convert city name to URL slug"""
     return city_name.lower().replace(" ", "-").replace(".", "")
 
 def get_nearby_cities(current_city, all_cities):
-    """Get 4 nearby cities (same state or neighboring)"""
+    """Get 4 related cities, prioritizing same-state and same-region links."""
     same_state = [c for c in all_cities if c["state"] == current_city["state"] and c["name"] != current_city["name"]]
     if len(same_state) >= 4:
         return same_state[:4]
-    # Fill with other cities
-    others = [c for c in all_cities if c["state"] != current_city["state"]][:4-len(same_state)]
-    return same_state + others
+
+    current_region = STATE_REGIONS.get(current_city["state"])
+    same_region = [
+        c for c in all_cities
+        if c["state"] != current_city["state"]
+        and STATE_REGIONS.get(c["state"]) == current_region
+    ]
+
+    related = same_state + same_region
+    if len(related) >= 4:
+        return related[:4]
+
+    others = [
+        c for c in all_cities
+        if c["state"] != current_city["state"]
+        and c not in same_region
+    ][:4 - len(related)]
+    return related + others
 
 def generate_city_page(city):
     """Generate HTML for a city landing page"""
@@ -385,16 +457,16 @@ def main():
     for city in CITIES:
         html, slug = generate_city_page(city)
         filepath = output_path / f"{slug}.html"
-        with open(filepath, 'w') as f:
+        with open(filepath, 'w', encoding='utf-8') as f:
             f.write(html)
         pages_generated.append(f"{SITE_URL}/cities/{slug}")
-        print(f"✓ Generated {slug}.html")
+        print(f"Generated {slug}.html")
     
     # Save list of generated URLs
-    with open('generated_city_urls.txt', 'w') as f:
+    with open('generated_city_urls.txt', 'w', encoding='utf-8') as f:
         f.write('\n'.join(pages_generated))
     
-    print(f"\n✅ Generated {len(pages_generated)} city pages!")
+    print(f"\nGenerated {len(pages_generated)} city pages.")
     return pages_generated
 
 if __name__ == "__main__":

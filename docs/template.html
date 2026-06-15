@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <meta name="google-adsense-account" content="ca-pub-3200720519944493">
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-90ZQ7M4EFR"></script>
     <script>
@@ -13,9 +13,12 @@
       gtag('js', new Date());
       gtag('config', 'G-90ZQ7M4EFR');
     </script>
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3200720519944493" crossorigin="anonymous"></script>
     
     <!-- Primary SEO Meta Tags -->
-    <title>Great Clips Coupons 2026 - $5 Off Haircut Deals & Discounts</title>
+    <title>Great Clips Coupons {{HOMEPAGE_YEAR}} - $5 Off Haircut Deals & Discounts</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -32,8 +35,8 @@
     <meta name="apple-mobile-web-app-title" content="GC Coupons">
     <link rel="apple-touch-startup-image" href="/icon-512.png">
     
-    <meta name="description" content="Find working Great Clips coupons for January 2026. Save $3-$10 on haircuts with our daily updated coupon codes. Valid at 4,400+ US salon locations.">
-    <meta name="keywords" content="Great Clips coupons, Great Clips coupon, haircut coupons, Great Clips discount, Great Clips promo code, cheap haircuts, $5 haircut, Great Clips deals, Great Clips coupon code 2026">
+    <meta name="description" content="Find working Great Clips coupons for {{HOMEPAGE_PERIOD}}. Save $3-$10 on haircuts with our daily updated coupon codes. Valid at 4,400+ US salon locations.">
+    <meta name="keywords" content="Great Clips coupons, Great Clips coupon, haircut coupons, Great Clips discount, Great Clips promo code, cheap haircuts, $5 haircut, Great Clips deals, Great Clips coupon code {{HOMEPAGE_YEAR}}">
     <meta name="author" content="Great Clips Coupon Finder">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://greatclipsdeal.com/">
@@ -41,14 +44,14 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://greatclipsdeal.com/">
-    <meta property="og:title" content="Great Clips Coupons 2026 - $5 Off Haircut Deals">
+    <meta property="og:title" content="Great Clips Coupons {{HOMEPAGE_YEAR}} - $5 Off Haircut Deals">
     <meta property="og:description" content="Find working Great Clips coupons. Save $3-$10 on haircuts with daily updated coupon codes. Valid at all US locations.">
     <meta property="og:image" content="https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/15833/50707-002-1200x600-US-Sparkfly-1off-10off5.jpg">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://greatclipsdeal.com/">
-    <meta name="twitter:title" content="Great Clips Coupons 2026 - $5 Off Haircut Deals">
+    <meta name="twitter:title" content="Great Clips Coupons {{HOMEPAGE_YEAR}} - $5 Off Haircut Deals">
     <meta name="twitter:description" content="Find working Great Clips coupons. Save $3-$10 on haircuts with daily updated coupon codes.">
     <meta name="twitter:image" content="https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/15833/50707-002-1200x600-US-Sparkfly-1off-10off5.jpg">
     
@@ -156,14 +159,25 @@
         }
     </style>
 
+
+
+
+
+
     <!-- Schema: WebSite with Search -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Great Clips Coupons - GreatClipsDeal.com",
+        "@id": "https://greatclipsdeal.com/#website",
+        "name": "Great Clips Coupons",
+        "alternateName": "GreatClipsDeal",
         "url": "https://greatclipsdeal.com/",
         "description": "Daily updated Great Clips coupons and haircut deals. Find $5.99-$8.99 coupons for all US locations.",
+        "inLanguage": "en-US",
+        "publisher": {
+            "@id": "https://greatclipsdeal.com/#organization"
+        },
         "potentialAction": {
             "@type": "SearchAction",
             "target": {
@@ -180,9 +194,16 @@
     {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": "https://greatclipsdeal.com/#organization",
         "name": "GreatClipsDeal",
-        "url": "https://greatclipsdeal.com",
-        "logo": "https://greatclipsdeal.com/icon-512.png",
+        "alternateName": "Great Clips Coupons",
+        "url": "https://greatclipsdeal.com/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://greatclipsdeal.com/icon-512.png",
+            "width": 512,
+            "height": 512
+        },
         "description": "Find daily updated Great Clips coupons and save on haircuts",
         "foundingDate": "2024",
         "sameAs": [
@@ -191,8 +212,12 @@
         ],
         "contactPoint": {
             "@type": "ContactPoint",
-            "contactType": "customer service",
-            "url": "https://greatclipsdeal.com/"
+            "contactType": "customer support",
+            "url": "https://greatclipsdeal.com/",
+            "areaServed": "US",
+            "availableLanguage": [
+                "en"
+            ]
         }
     }
     </script>
@@ -214,18 +239,11 @@
             "lowPrice": "5.99",
             "highPrice": "8.99",
             "priceCurrency": "USD",
-            "offerCount": "50",
+            "offerCount": "{{SCHEMA_OFFER_COUNT}}",
             "availability": "https://schema.org/InStock",
-            "validFrom": "2026-01-05",
+            "validFrom": "{{SCHEMA_VALID_FROM}}",
             "priceValidUntil": "2026-12-31",
             "url": "https://greatclipsdeal.com/"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "2847",
-            "bestRating": "5",
-            "worstRating": "1"
         }
     }
     </script>
@@ -235,6 +253,17 @@
     {
         "@context": "https://schema.org",
         "@type": "FAQPage",
+        "@id": "https://greatclipsdeal.com/#faq",
+        "name": "Great Clips Coupons FAQ",
+        "description": "Answers to common questions about finding, using, and saving with Great Clips coupons.",
+        "url": "https://greatclipsdeal.com/",
+        "dateModified": "{{SCHEMA_DATE_MODIFIED}}",
+        "isPartOf": {
+            "@id": "https://greatclipsdeal.com/#website"
+        },
+        "about": {
+            "@id": "https://greatclipsdeal.com/#organization"
+        },
         "mainEntity": [
             {
                 "@type": "Question",
@@ -344,28 +373,12 @@
     }
     </script>
     
-    <!-- Schema: BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://greatclipsdeal.com/"
-            }
-        ]
-    }
-    </script>
-    
     <!-- Schema: ItemList (Coupon listings) -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "name": "Great Clips Coupons - January 2026",
+        "name": "Great Clips Coupons - June 2026",
         "description": "Current Great Clips haircut coupons updated daily",
         "numberOfItems": 50,
         "itemListOrder": "https://schema.org/ItemListOrderDescending",
@@ -394,7 +407,7 @@
 
 </head>
 <body class="bg-gradient-to-br from-slate-50 via-white to-slate-100 min-h-screen">
-    <div id="app"></div>
+    <div id="app">{{STATIC_APP_HTML}}</div>
 
     <script>
         // Coupon data will be injected here by generate_website.py
@@ -503,18 +516,29 @@
             }
         }
 
-        // Check if coupon is universal (works at any US location)
+        // Check if coupon is truly universal (works at any US location nationwide)
         function isUniversal(coupon) {
             const loc = (coupon.location_name || '').trim();
             const state = (coupon.state || '').toUpperCase();
             const address = (coupon.address || '').trim();
             const city = (coupon.city || '').trim();
-            
+
+            // Explicitly non-universal states
+            if (state === 'AREA' || state === 'UNKNOWN' || coupon.area_name) return false;
+
             if (state === 'US') return true;
             if (loc.toUpperCase().includes('ALL US') || loc.toUpperCase().includes('ALL LOCATIONS')) return true;
-            if ((!loc || loc.toUpperCase() === 'GREAT CLIPS') && !address && !city) return true;
-            
+            // Only treat as universal if there is truly no location info at all
+            if ((!loc || loc.toUpperCase() === 'GREAT CLIPS') && !address && !city && state === 'US') return true;
+
             return false;
+        }
+
+        // Check if coupon is area-based (works at multiple locations in a specific region)
+        function isAreaBased(coupon) {
+            const state = (coupon.state || '').toUpperCase();
+            const loc = (coupon.location_name || '').toLowerCase();
+            return state === 'AREA' || coupon.area_name || loc.includes(' area');
         }
 
         // Get price as number
@@ -563,9 +587,10 @@
             const maxPrice = currentFilters.maxPrice;
             const sortBy = currentFilters.sortBy;
 
-            // Separate universal and regular coupons
+            // Separate universal, area-based, and regular coupons
             const universalCoupons = COUPON_DATA.filter(c => isUniversal(c));
-            const regularCoupons = COUPON_DATA.filter(c => !isUniversal(c));
+            const areaCoupons = COUPON_DATA.filter(c => isAreaBased(c));
+            const regularCoupons = COUPON_DATA.filter(c => !isUniversal(c) && !isAreaBased(c));
 
             // Filter regular coupons
             let filtered = regularCoupons.filter(c => {
@@ -638,7 +663,7 @@
                                                 <p class="font-medium text-slate-600">${formatCityState(c)}</p>
                                             </div>
                                             <div class="flex gap-2">
-                                                <button onclick="getCoupon('${c.url}')"
+                                                <button onclick="getCoupon('${c.url}', '${c.price || ''}', '${(c.location_name || '').replace(/'/g, "\\'")}', '${(c.city || '').replace(/'/g, "\\'")}', '${c.state || ''}')"
                                                     class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200 cursor-pointer">
                                                     Get Coupon
                                                 </button>
@@ -676,10 +701,14 @@
         // Render the app
         function render() {
             const app = document.getElementById('app');
+            if (document.getElementById('resultsGrid')) {
+                return;
+            }
 
-            // Separate universal and regular coupons
+            // Separate universal, area-based, and regular coupons
             const universalCoupons = COUPON_DATA.filter(c => isUniversal(c));
-            const regularCoupons = COUPON_DATA.filter(c => !isUniversal(c));
+            const areaCoupons = COUPON_DATA.filter(c => isAreaBased(c));
+            const regularCoupons = COUPON_DATA.filter(c => !isUniversal(c) && !isAreaBased(c));
             
             // Initial sort by price
             regularCoupons.sort((a, b) => getPrice(a) - getPrice(b));
@@ -792,10 +821,82 @@
                                                 <h3 class="text-white font-semibold text-lg mb-1">Any Great Clips</h3>
                                                 <p class="text-white/60 text-sm mb-4">Valid at all participating US salons</p>
                                                 <div class="space-y-2">
-                                                    <a href="${c.url}" target="_blank" 
-                                                        class="block w-full bg-white text-purple-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-purple-50 transition-colors">
+                                                    <button onclick="getCoupon('${c.url}', '${c.price || ''}', 'US-wide', '', '')"
+                                                        class="block w-full bg-white text-purple-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-purple-50 transition-colors cursor-pointer">
                                                         Get your coupon now →
-                                                    </a>
+                                                    </button>
+                                                    <button onclick="shareCoupon('${c.url}', '${c.price || ''}')"
+                                                        class="w-full bg-white/20 hover:bg-white/30 text-white font-medium py-2.5 px-4 rounded-lg text-center transition-colors flex items-center justify-center gap-2">
+                                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                                                        </svg>
+                                                        Share this coupon
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        `;
+                                    }).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                ` : ''}
+
+                <!-- Area-Based Coupons Section -->
+                ${areaCoupons.length > 0 ? `
+                <section class="max-w-7xl mx-auto px-4 mb-8 relative z-10">
+                    <div class="bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 rounded-2xl p-1">
+                        <div class="bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 rounded-xl p-6 md:p-8 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+                            <div class="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+
+                            <div class="relative">
+                                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+                                    <div>
+                                        <div class="inline-flex items-center gap-2 bg-white/20 rounded-full px-3 py-1 mb-2">
+                                            <svg class="w-4 h-4 text-yellow-200" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span class="text-white text-sm font-semibold">REGIONAL DEALS</span>
+                                        </div>
+                                        <h2 class="text-2xl md:text-3xl font-bold text-white">Area-Based Coupons</h2>
+                                        <p class="text-white/70 mt-1">Valid at participating Great Clips in specific regions</p>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-${Math.min(areaCoupons.length, 4)} gap-4">
+                                    ${areaCoupons.map(c => {
+                                        const price = getPrice(c);
+                                        const hasImage = c.image_url && c.image_url.length > 0;
+                                        const areaName = (c.area_name || c.location_name || 'Regional').replace(/^participating\s+/i, '');
+                                        return `
+                                        <div class="bg-white/15 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-white/25 transition-all duration-300 border border-white/20">
+                                            ${hasImage ? `
+                                            <div class="w-full h-40 overflow-hidden">
+                                                <img src="${c.image_url}" alt="Great Clips Coupon ${c.price || ''}" class="w-full h-full object-cover">
+                                            </div>
+                                            ` : ''}
+                                            <div class="p-5">
+                                                <div class="flex items-start justify-between mb-4">
+                                                    <div class="bg-white rounded-lg px-4 py-2 shadow-lg">
+                                                        <span class="text-3xl font-extrabold text-orange-600">${c.price || 'N/A'}</span>
+                                                    </div>
+                                                    <span class="text-white/60 text-sm bg-white/10 px-2 py-1 rounded">
+                                                        Exp: ${getExpiration(c)}
+                                                    </span>
+                                                </div>
+                                                <h3 class="text-white font-semibold text-lg mb-1 flex items-center gap-1.5">
+                                                    <svg class="w-4 h-4 flex-shrink-0 text-yellow-200" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                                                    ${areaName}
+                                                </h3>
+                                                <p class="text-white/60 text-sm mb-4">Valid at participating salons in this area</p>
+                                                <div class="space-y-2">
+                                                    <button onclick="getCoupon('${c.url}', '${c.price || ''}', '${areaName.replace(/'/g, "\\'")}', '', '${c.state || ''}')"
+                                                        class="block w-full bg-white text-orange-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-orange-50 transition-colors cursor-pointer">
+                                                        Get your coupon now →
+                                                    </button>
                                                     <button onclick="shareCoupon('${c.url}', '${c.price || ''}')"
                                                         class="w-full bg-white/20 hover:bg-white/30 text-white font-medium py-2.5 px-4 rounded-lg text-center transition-colors flex items-center justify-center gap-2">
                                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -926,7 +1027,7 @@
                                                         <p class="font-medium text-slate-600">${formatCityState(c)}</p>
                                                     </div>
                                                     <div class="flex gap-2">
-                                                        <button onclick="getCoupon('${c.url}')"
+                                                        <button onclick="getCoupon('${c.url}', '${c.price || ''}', '${(c.location_name || '').replace(/'/g, "\\'")}', '${(c.city || '').replace(/'/g, "\\'")}', '${c.state || ''}')"
                                                             class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200 cursor-pointer">
                                                             Get Coupon
                                                         </button>
@@ -1047,65 +1148,72 @@
         
         // ============ EMAIL CAPTURE SYSTEM ============
         let pendingCouponUrl = '';
-        
-        function getCoupon(url) {
-            // Check if already have email stored
-            const savedEmail = localStorage.getItem('gc_email');
-            if (savedEmail) {
-                // Already subscribed, go directly to coupon
-                window.open(url, '_blank');
-                return;
-            }
-            
-            // Show email modal
+        let pendingCouponPrice = '';
+        let pendingLocation = { location_name: '', city: '', state: '' };
+        const WORKER_URL = 'https://greatclips-email.mehulchaudhari.workers.dev';
+
+        function getCoupon(url, price, location_name, city, state) {
+            // Always show email modal — coupon is delivered by email
             pendingCouponUrl = url;
+            pendingCouponPrice = price || '';
+            pendingLocation = { location_name: location_name || '', city: city || '', state: state || '' };
             document.getElementById('emailModal').classList.remove('hidden');
+            document.getElementById('emailInput').value = '';
             document.getElementById('emailInput').focus();
         }
-        
+
         function closeEmailModal() {
             document.getElementById('emailModal').classList.add('hidden');
+            // Reset back to form view for next open
+            document.getElementById('emailFormView').classList.remove('hidden');
+            document.getElementById('emailSuccessView').classList.add('hidden');
+            // Reset submit button state
+            const btn = document.querySelector('#emailFormView button[type="submit"]');
+            if (btn) { btn.innerHTML = 'Send Me the Coupon 📧'; btn.disabled = false; }
             pendingCouponUrl = '';
+            pendingLocation = { location_name: '', city: '', state: '' };
         }
-        
-        function submitEmail(e) {
+
+        async function submitEmail(e) {
             e.preventDefault();
-            const email = document.getElementById('emailInput').value;
-            
+            const email = document.getElementById('emailInput').value.trim();
+
             if (!email || !email.includes('@')) {
                 alert('Please enter a valid email address');
                 return;
             }
-            
-            // Save email locally so they don't have to enter again
-            localStorage.setItem('gc_email', email);
-            
-            // Send to Formspree (free email collection service)
-            // REPLACE with your Formspree endpoint!
-            fetch('https://formspree.io/f/xrebvqjy', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ 
-                    email: email,
-                    source: 'coupon_gate',
-                    coupon_url: pendingCouponUrl,
-                    timestamp: new Date().toISOString()
-                })
-            }).catch(() => {}); // Silent fail - don't block user
-            
-            // Close modal and open coupon
-            closeEmailModal();
-            window.open(pendingCouponUrl, '_blank');
-            
-            // Show thank you toast
-            showToast('Thanks! Enjoy your coupon 🎉');
+
+            const couponUrl = pendingCouponUrl;
+            const price = pendingCouponPrice;
+            const location = pendingLocation;
+
+            // Show loading state
+            const btn = e.target.querySelector('button[type="submit"]');
+            btn.innerHTML = 'Sending... ⏳';
+            btn.disabled = true;
+
+            // Send coupon via Cloudflare Worker → Brevo
+            let success = false;
+            try {
+                const res = await fetch(WORKER_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, coupon_url: couponUrl, price, ...location })
+                });
+                success = res.ok;
+            } catch (_) {}
+
+            // Flip modal to success screen
+            document.getElementById('emailFormView').classList.add('hidden');
+            const successView = document.getElementById('emailSuccessView');
+            document.getElementById('successEmail').textContent = email;
+            successView.classList.remove('hidden');
         }
-        
+
         function skipEmail() {
-            // Let them skip but track it
-            localStorage.setItem('gc_email_skipped', 'true');
+            const couponUrl = pendingCouponUrl;
             closeEmailModal();
-            window.open(pendingCouponUrl, '_blank');
+            window.open(couponUrl, '_blank');
         }
         
         // Close modal on escape key
@@ -1124,44 +1232,62 @@
             <!-- Close button -->
             <button onclick="closeEmailModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl">&times;</button>
             
-            <!-- Icon -->
-            <div class="text-center mb-6">
-                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full mb-4">
-                    <span class="text-3xl">✂️</span>
+            <!-- FORM VIEW -->
+            <div id="emailFormView">
+                <!-- Icon -->
+                <div class="text-center mb-6">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full mb-4">
+                        <span class="text-3xl">✂️</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900">Get Your Coupon!</h3>
+                    <p class="text-slate-600 mt-2">Enter your email and we'll send you the coupon link instantly</p>
                 </div>
-                <h3 class="text-2xl font-bold text-slate-900">Get Your Coupon!</h3>
-                <p class="text-slate-600 mt-2">Enter your email to unlock this deal and get future coupon alerts</p>
-            </div>
-            
-            <!-- Form -->
-            <form onsubmit="submitEmail(event)" class="space-y-4">
-                <input 
-                    type="email" 
-                    id="emailInput"
-                    placeholder="Enter your email"
-                    class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors"
-                    required
-                >
+                
+                <!-- Form -->
+                <form onsubmit="submitEmail(event)" class="space-y-4">
+                    <input 
+                        type="email" 
+                        id="emailInput"
+                        placeholder="Enter your email"
+                        class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors"
+                        required
+                    >
+                    <button 
+                        type="submit"
+                        class="w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-purple-200"
+                    >
+                        Send Me the Coupon 📧
+                    </button>
+                </form>
+                
+                <!-- Skip option -->
                 <button 
-                    type="submit"
-                    class="w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-purple-200"
+                    onclick="skipEmail()" 
+                    class="w-full mt-3 text-slate-500 hover:text-slate-700 text-sm py-2 transition-colors"
                 >
-                    Unlock Coupon 🔓
+                    No thanks, just show me the coupon
                 </button>
-            </form>
-            
-            <!-- Skip option -->
-            <button 
-                onclick="skipEmail()" 
-                class="w-full mt-3 text-slate-500 hover:text-slate-700 text-sm py-2 transition-colors"
-            >
-                No thanks, just show me the coupon
-            </button>
-            
-            <!-- Trust signals -->
-            <p class="text-center text-xs text-slate-400 mt-4">
-                🔒 No spam, unsubscribe anytime. We respect your privacy.
-            </p>
+                
+                <!-- Trust signals -->
+                <p class="text-center text-xs text-slate-400 mt-4">
+                    🔒 No spam, unsubscribe anytime. We respect your privacy.
+                </p>
+            </div>
+
+            <!-- SUCCESS VIEW (hidden until email submitted) -->
+            <div id="emailSuccessView" class="hidden text-center">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-5">
+                    <span class="text-4xl">📧</span>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">Check your inbox!</h3>
+                <p class="text-slate-600 mb-1">We sent your coupon link to:</p>
+                <p class="font-semibold text-purple-600 mb-5" id="successEmail"></p>
+                <p class="text-slate-500 text-sm mb-6">Didn't get it? Check your spam folder.<br>It usually arrives within 30 seconds.</p>
+                <button onclick="closeEmailModal()"
+                    class="w-full bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-purple-200">
+                    Done
+                </button>
+            </div>
         </div>
     </div>
 </body>

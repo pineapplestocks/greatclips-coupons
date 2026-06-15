@@ -89,6 +89,16 @@ def format_date(date_str):
     return f"{months[parsed.month - 1]} {day}{suffix}, {parsed.year}"
 
 
+def parse_scraped_datetime(date_str):
+    if not date_str or date_str == "Unknown":
+        return datetime.now()
+
+    try:
+        return datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+    except ValueError:
+        return datetime.now()
+
+
 def get_expiration(coupon):
     expiration = coupon.get("expiration")
     if expiration and expiration != "N/A":
@@ -640,6 +650,13 @@ def generate_website():
     with open(TEMPLATE_FILE, 'r', encoding='utf-8') as f:
         html = f.read()
 
+    scraped_at = data.get('scraped_at', 'Unknown')
+    scraped_dt = parse_scraped_datetime(scraped_at)
+    homepage_year = str(scraped_dt.year)
+    homepage_period = scraped_dt.strftime("%B %Y")
+    schema_date = scraped_dt.strftime("%Y-%m-%d")
+    offer_count = str(len(coupons))
+
     # Replace placeholder with actual data
     coupons_json = json.dumps(coupons, indent=8)
     html = re.sub(
@@ -650,9 +667,14 @@ def generate_website():
 
     static_app_html = build_static_app_html(coupons, data.get('scraped_at', 'Unknown'))
     html = html.replace('{{STATIC_APP_HTML}}', static_app_html)
+    html = html.replace('{{HOMEPAGE_YEAR}}', homepage_year)
+    html = html.replace('{{HOMEPAGE_PERIOD}}', homepage_period)
+    html = html.replace('{{SCHEMA_OFFER_COUNT}}', offer_count)
+    html = html.replace('{{SCHEMA_VALID_FROM}}', schema_date)
+    html = html.replace('{{SCHEMA_DATE_MODIFIED}}', schema_date)
 
     # Add last updated timestamp (pass full ISO date for JS formatting)
-    updated_at = data.get('scraped_at', 'Unknown')
+    updated_at = scraped_at
     html = html.replace('{{LAST_UPDATED}}', updated_at if updated_at else 'Unknown')
     
     # Create output directory

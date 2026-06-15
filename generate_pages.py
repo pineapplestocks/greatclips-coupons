@@ -16,6 +16,8 @@ STATES = {
     'ohio': {'name': 'Ohio', 'code': 'OH', 'cities': ['Columbus', 'Cleveland', 'Cincinnati', 'Toledo', 'Akron'], 'locations': 280},
     'michigan': {'name': 'Michigan', 'code': 'MI', 'cities': ['Detroit', 'Grand Rapids', 'Warren', 'Lansing', 'Ann Arbor'], 'locations': 220},
     'pennsylvania': {'name': 'Pennsylvania', 'code': 'PA', 'cities': ['Philadelphia', 'Pittsburgh', 'Allentown', 'Erie', 'Reading'], 'locations': 180},
+    'massachusetts': {'name': 'Massachusetts', 'code': 'MA', 'cities': ['Boston', 'Worcester', 'Springfield', 'Cambridge', 'Lowell'], 'locations': 120},
+    'new-jersey': {'name': 'New Jersey', 'code': 'NJ', 'cities': ['Newark', 'Jersey City', 'Paterson', 'Elizabeth', 'Edison'], 'locations': 110},
     'illinois': {'name': 'Illinois', 'code': 'IL', 'cities': ['Chicago', 'Aurora', 'Naperville', 'Joliet', 'Rockford'], 'locations': 200},
     'georgia': {'name': 'Georgia', 'code': 'GA', 'cities': ['Atlanta', 'Augusta', 'Savannah', 'Columbus', 'Macon'], 'locations': 150},
     'north-carolina': {'name': 'North Carolina', 'code': 'NC', 'cities': ['Charlotte', 'Raleigh', 'Greensboro', 'Durham', 'Winston-Salem'], 'locations': 160},
@@ -36,12 +38,17 @@ CITIES = {
     'dallas': {'name': 'Dallas', 'state': 'Texas', 'state_code': 'TX', 'locations': 38},
     'chicago': {'name': 'Chicago', 'state': 'Illinois', 'state_code': 'IL', 'locations': 42},
     'phoenix': {'name': 'Phoenix', 'state': 'Arizona', 'state_code': 'AZ', 'locations': 35},
+    'philadelphia': {'name': 'Philadelphia', 'state': 'Pennsylvania', 'state_code': 'PA', 'locations': 55},
+    'boston': {'name': 'Boston', 'state': 'Massachusetts', 'state_code': 'MA', 'locations': 35},
     'columbus': {'name': 'Columbus', 'state': 'Ohio', 'state_code': 'OH', 'locations': 28},
     'atlanta': {'name': 'Atlanta', 'state': 'Georgia', 'state_code': 'GA', 'locations': 32},
     'denver': {'name': 'Denver', 'state': 'Colorado', 'state_code': 'CO', 'locations': 25},
     'minneapolis': {'name': 'Minneapolis', 'state': 'Minnesota', 'state_code': 'MN', 'locations': 30},
     'detroit': {'name': 'Detroit', 'state': 'Michigan', 'state_code': 'MI', 'locations': 28},
     'indianapolis': {'name': 'Indianapolis', 'state': 'Indiana', 'state_code': 'IN', 'locations': 22},
+    'el-paso': {'name': 'El Paso', 'state': 'Texas', 'state_code': 'TX', 'locations': 20},
+    'newark': {'name': 'Newark', 'state': 'New Jersey', 'state_code': 'NJ', 'locations': 20},
+    'jersey-city': {'name': 'Jersey City', 'state': 'New Jersey', 'state_code': 'NJ', 'locations': 18},
 }
 
 def generate_state_page(slug, data):
@@ -71,7 +78,7 @@ def generate_state_page(slug, data):
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-3200720519944493">
     
-    <title>Great Clips Coupons {name} ({CURRENT_MONTH} {CURRENT_YEAR}) - ${code} Haircut Deals</title>
+    <title>Great Clips Coupons {name} ({CURRENT_MONTH} {CURRENT_YEAR}) - Local Haircut Deals</title>
     <meta name="description" content="Find Great Clips coupons for {name}. Save $5-$10 on haircuts at participating salons / confirm locally. Updated daily with $5.99-$8.99 deals.">
     <meta name="keywords" content="Great Clips coupons {name}, Great Clips {code}, Great Clips coupon {cities[0]}, {name} haircut coupons, cheap haircuts {name}">
     <link rel="canonical" href="https://greatclipsdeal.com/{slug}">
@@ -474,18 +481,18 @@ def main():
     print("Generating State Pages...")
     for slug, data in STATES.items():
         filepath = f'pages/{slug}.html'
-        with open(filepath, 'w') as f:
+        with open(filepath, 'w', encoding='utf-8') as f:
             f.write(generate_state_page(slug, data))
         print(f"  Created: {filepath}")
     
     print("\nGenerating City Pages...")
     for slug, data in CITIES.items():
         filepath = f'pages/cities/{slug}.html'
-        with open(filepath, 'w') as f:
+        with open(filepath, 'w', encoding='utf-8') as f:
             f.write(generate_city_page(slug, data))
         print(f"  Created: {filepath}")
     
-    print(f"\n✅ Created {len(STATES)} state pages and {len(CITIES)} city pages!")
+    print(f"\nCreated {len(STATES)} state pages and {len(CITIES)} city pages.")
 
 if __name__ == "__main__":
     main()
