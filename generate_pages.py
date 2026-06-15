@@ -18,6 +18,8 @@ STATES = {
     'pennsylvania': {'name': 'Pennsylvania', 'code': 'PA', 'cities': ['Philadelphia', 'Pittsburgh', 'Allentown', 'Erie', 'Reading'], 'locations': 180},
     'massachusetts': {'name': 'Massachusetts', 'code': 'MA', 'cities': ['Boston', 'Worcester', 'Springfield', 'Cambridge', 'Lowell'], 'locations': 120},
     'new-jersey': {'name': 'New Jersey', 'code': 'NJ', 'cities': ['Newark', 'Jersey City', 'Paterson', 'Elizabeth', 'Edison'], 'locations': 110},
+    'florida': {'name': 'Florida', 'code': 'FL', 'cities': ['Miami', 'Orlando', 'Tampa', 'Jacksonville', 'St. Petersburg'], 'locations': 260},
+    'california': {'name': 'California', 'code': 'CA', 'cities': ['Los Angeles', 'San Diego', 'San Jose', 'San Francisco', 'Sacramento'], 'locations': 230},
     'illinois': {'name': 'Illinois', 'code': 'IL', 'cities': ['Chicago', 'Aurora', 'Naperville', 'Joliet', 'Rockford'], 'locations': 200},
     'georgia': {'name': 'Georgia', 'code': 'GA', 'cities': ['Atlanta', 'Augusta', 'Savannah', 'Columbus', 'Macon'], 'locations': 150},
     'north-carolina': {'name': 'North Carolina', 'code': 'NC', 'cities': ['Charlotte', 'Raleigh', 'Greensboro', 'Durham', 'Winston-Salem'], 'locations': 160},
@@ -49,6 +51,9 @@ CITIES = {
     'el-paso': {'name': 'El Paso', 'state': 'Texas', 'state_code': 'TX', 'locations': 20},
     'newark': {'name': 'Newark', 'state': 'New Jersey', 'state_code': 'NJ', 'locations': 20},
     'jersey-city': {'name': 'Jersey City', 'state': 'New Jersey', 'state_code': 'NJ', 'locations': 18},
+    'toledo': {'name': 'Toledo', 'state': 'Ohio', 'state_code': 'OH', 'locations': 18},
+    'akron': {'name': 'Akron', 'state': 'Ohio', 'state_code': 'OH', 'locations': 16},
+    'dayton': {'name': 'Dayton', 'state': 'Ohio', 'state_code': 'OH', 'locations': 18},
 }
 
 def generate_state_page(slug, data):
@@ -81,11 +86,11 @@ def generate_state_page(slug, data):
     <title>Great Clips Coupons {name} ({CURRENT_MONTH} {CURRENT_YEAR}) - Local Haircut Deals</title>
     <meta name="description" content="Find Great Clips coupons for {name}. Save $5-$10 on haircuts at participating salons / confirm locally. Updated daily with $5.99-$8.99 deals.">
     <meta name="keywords" content="Great Clips coupons {name}, Great Clips {code}, Great Clips coupon {cities[0]}, {name} haircut coupons, cheap haircuts {name}">
-    <link rel="canonical" href="https://greatclipsdeal.com/{slug}">
+    <link rel="canonical" href="https://greatclipsdeal.com/cities/{slug}">
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://greatclipsdeal.com/{slug}">
+    <meta property="og:url" content="https://greatclipsdeal.com/cities/{slug}">
     <meta property="og:title" content="Great Clips Coupons {name} - $5.99+ Haircut Deals">
     <meta property="og:description" content="Find Great Clips coupons for {name}. Daily updated deals at participating salons / confirm locally.">
     <meta property="og:image" content="https://greatclipsdeal.com/icon-512.png">
@@ -97,7 +102,7 @@ def generate_state_page(slug, data):
         "@type": "WebPage",
         "name": "Great Clips Coupons in {name} - {CURRENT_MONTH} {CURRENT_YEAR}",
         "description": "Find Great Clips haircut coupons for {name}. Daily updated deals from $5.99-$8.99 at participating salons / confirm locally.",
-        "url": "https://greatclipsdeal.com/{slug}",
+        "url": "https://greatclipsdeal.com/cities/{slug}",
         "dateModified": "{CURRENT_DATE}",
         "about": {{
             "@type": "Place",
@@ -119,7 +124,7 @@ def generate_state_page(slug, data):
         "itemListElement": [
             {{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://greatclipsdeal.com/"}},
             {{"@type": "ListItem", "position": 2, "name": "States", "item": "https://greatclipsdeal.com/states"}},
-            {{"@type": "ListItem", "position": 3, "name": "{name}", "item": "https://greatclipsdeal.com/{slug}"}}
+            {{"@type": "ListItem", "position": 3, "name": "{name}", "item": "https://greatclipsdeal.com/cities/{slug}"}}
         ]
     }}
     </script>
@@ -307,11 +312,11 @@ def generate_city_page(slug, data):
     <title>Great Clips Coupons {name}, {state_code} ({CURRENT_MONTH} {CURRENT_YEAR}) - Local Deals</title>
     <meta name="description" content="Find Great Clips coupons for {name}, {state}. Save $5-$10 on haircuts at participating salons / confirm locally. Updated daily with $5.99-$8.99 deals.">
     <meta name="keywords" content="Great Clips coupons {name}, Great Clips {name} {state_code}, {name} haircut coupons, cheap haircuts {name}">
-    <link rel="canonical" href="https://greatclipsdeal.com/{slug}">
+    <link rel="canonical" href="https://greatclipsdeal.com/cities/{slug}">
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://greatclipsdeal.com/{slug}">
+    <meta property="og:url" content="https://greatclipsdeal.com/cities/{slug}">
     <meta property="og:title" content="Great Clips Coupons {name} - $5.99+ Haircut Deals">
     <meta property="og:description" content="Find Great Clips coupons for {name}, {state}. Daily updated deals at participating salons / confirm locally.">
     <meta property="og:image" content="https://greatclipsdeal.com/icon-512.png">
@@ -323,7 +328,7 @@ def generate_city_page(slug, data):
         "@type": "WebPage",
         "name": "Great Clips Coupons in {name}, {state_code}",
         "description": "Find Great Clips haircut coupons for {name}, {state}. Daily updated deals from $5.99-$8.99 at participating salons / confirm locally.",
-        "url": "https://greatclipsdeal.com/{slug}",
+        "url": "https://greatclipsdeal.com/cities/{slug}",
         "dateModified": "{CURRENT_DATE}",
         "about": {{
             "@type": "Place",
@@ -346,7 +351,7 @@ def generate_city_page(slug, data):
         "itemListElement": [
             {{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://greatclipsdeal.com/"}},
             {{"@type": "ListItem", "position": 2, "name": "{state}", "item": "https://greatclipsdeal.com/{state.lower().replace(' ', '-')}"}},
-            {{"@type": "ListItem", "position": 3, "name": "{name}", "item": "https://greatclipsdeal.com/{slug}"}}
+            {{"@type": "ListItem", "position": 3, "name": "{name}", "item": "https://greatclipsdeal.com/cities/{slug}"}}
         ]
     }}
     </script>
