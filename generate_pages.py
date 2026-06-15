@@ -86,11 +86,11 @@ def generate_state_page(slug, data):
     <title>Great Clips Coupons {name} ({CURRENT_MONTH} {CURRENT_YEAR}) - Local Haircut Deals</title>
     <meta name="description" content="Find Great Clips coupons for {name}. Save $5-$10 on haircuts at participating salons / confirm locally. Updated daily with $5.99-$8.99 deals.">
     <meta name="keywords" content="Great Clips coupons {name}, Great Clips {code}, Great Clips coupon {cities[0]}, {name} haircut coupons, cheap haircuts {name}">
-    <link rel="canonical" href="https://greatclipsdeal.com/cities/{slug}">
+    <link rel="canonical" href="https://greatclipsdeal.com/{slug}">
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://greatclipsdeal.com/cities/{slug}">
+    <meta property="og:url" content="https://greatclipsdeal.com/{slug}">
     <meta property="og:title" content="Great Clips Coupons {name} - $5.99+ Haircut Deals">
     <meta property="og:description" content="Find Great Clips coupons for {name}. Daily updated deals at participating salons / confirm locally.">
     <meta property="og:image" content="https://greatclipsdeal.com/icon-512.png">
@@ -102,7 +102,7 @@ def generate_state_page(slug, data):
         "@type": "WebPage",
         "name": "Great Clips Coupons in {name} - {CURRENT_MONTH} {CURRENT_YEAR}",
         "description": "Find Great Clips haircut coupons for {name}. Daily updated deals from $5.99-$8.99 at participating salons / confirm locally.",
-        "url": "https://greatclipsdeal.com/cities/{slug}",
+        "url": "https://greatclipsdeal.com/{slug}",
         "dateModified": "{CURRENT_DATE}",
         "about": {{
             "@type": "Place",
@@ -124,7 +124,7 @@ def generate_state_page(slug, data):
         "itemListElement": [
             {{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://greatclipsdeal.com/"}},
             {{"@type": "ListItem", "position": 2, "name": "States", "item": "https://greatclipsdeal.com/states"}},
-            {{"@type": "ListItem", "position": 3, "name": "{name}", "item": "https://greatclipsdeal.com/cities/{slug}"}}
+            {{"@type": "ListItem", "position": 3, "name": "{name}", "item": "https://greatclipsdeal.com/{slug}"}}
         ]
     }}
     </script>
