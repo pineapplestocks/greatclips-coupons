@@ -222,28 +222,26 @@
     }
     </script>
     
-    <!-- Schema: Product with AggregateOffer (Shows price range) -->
+    <!-- Schema: CollectionPage -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "Great Clips Haircut Coupon",
-        "description": "Discounted haircut coupons for Great Clips salons. Updated daily with $5.99-$8.99 deals valid at 4,400+ US locations.",
-        "image": "https://greatclipsdeal.com/icon-512.png",
-        "brand": {
-            "@type": "Brand",
-            "name": "Great Clips"
+        "@type": "CollectionPage",
+        "@id": "https://greatclipsdeal.com/#collection-page",
+        "name": "Great Clips Coupons Directory",
+        "description": "Daily updated directory of Great Clips coupons, haircut deals, state pages, and city coupon pages.",
+        "url": "https://greatclipsdeal.com/",
+        "dateModified": "2026-06-16",
+        "isPartOf": {
+            "@id": "https://greatclipsdeal.com/#website"
         },
-        "offers": {
-            "@type": "AggregateOffer",
-            "lowPrice": "5.99",
-            "highPrice": "8.99",
-            "priceCurrency": "USD",
-            "offerCount": "360",
-            "availability": "https://schema.org/InStock",
-            "validFrom": "2026-06-16",
-            "priceValidUntil": "2026-12-31",
-            "url": "https://greatclipsdeal.com/"
+        "about": {
+            "@id": "https://greatclipsdeal.com/#organization"
+        },
+        "mainEntity": {
+            "@type": "ItemList",
+            "name": "Current Great Clips coupon offers",
+            "numberOfItems": "360"
         }
     }
     </script>

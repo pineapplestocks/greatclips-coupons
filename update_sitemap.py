@@ -48,6 +48,7 @@ def generate_sitemap():
         ("states", "weekly", "0.9"),
         ("faq", "monthly", "0.8"),
         ("how-to-use", "monthly", "0.8"),
+        ("how-we-verify-coupons", "weekly", "0.8"),
         ("prices", "monthly", "0.8"),
         ("calculator", "monthly", "0.7"),
         ("about", "monthly", "0.5"),

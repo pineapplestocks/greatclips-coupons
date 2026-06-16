@@ -11,6 +11,10 @@ CURRENT_YEAR = NOW.strftime("%Y")
 CURRENT_MONTH = NOW.strftime("%B")
 CURRENT_DATE = NOW.strftime("%Y-%m-%d")
 
+
+def slugify(value):
+    return value.lower().replace(' ', '-').replace('.', '')
+
 # State data with major cities
 STATES = {
     'ohio': {'name': 'Ohio', 'code': 'OH', 'cities': ['Columbus', 'Cleveland', 'Cincinnati', 'Toledo', 'Akron'], 'locations': 280},
@@ -56,6 +60,51 @@ CITIES = {
     'dayton': {'name': 'Dayton', 'state': 'Ohio', 'state_code': 'OH', 'locations': 18},
 }
 
+STATE_GUIDANCE = {
+    'california': {
+        'market': 'California has a wide mix of salon pricing, so coupons can matter more in higher-cost metros like Los Angeles, San Diego, and the Bay Area. This page is best used to compare the statewide offer first, then jump into a nearby city page before you head out.',
+        'verification': 'California coupons often appear in metro-specific ad runs. We keep the statewide page updated daily, then point you to local city pages when the wording or participating-salon language looks more regional.',
+        'tip': 'If you are comparing multiple California offers, open the newest one first and confirm the participating-salon details before redeeming. That helps you lock in the strongest live discount without guessing.',
+    },
+    'florida': {
+        'market': 'Florida deals tend to cluster around large metro areas like Miami, Orlando, Tampa, and Jacksonville, especially when seasonal travel spikes. This page gives you the statewide view first so you can quickly see whether the best offer is broad or more location-specific.',
+        'verification': 'We review Florida coupons against the official offer pages and label them conservatively. If the offer language looks area-based instead of fully statewide, we push visitors toward city-level pages and recommend confirming locally.',
+        'tip': 'Florida coupons can change fast around busy tourist weeks, so the safest workflow is to open the newest coupon, check the expiration, and show it before the haircut starts.',
+    },
+    'ohio': {
+        'market': 'Ohio usually has strong statewide coupon coverage, but the best value can still vary between Columbus, Cleveland, Cincinnati, Toledo, and Akron. This page is designed to help you compare the statewide baseline and then narrow down to city pages where we have them.',
+        'verification': 'Ohio offers are checked against official Great Clips offer pages and refreshed daily. When multiple Ohio coupons are live at once, we prioritize the clearest, lowest-price options and keep the supporting pages tightly linked.',
+        'tip': 'For Ohio, it is often worth checking both the statewide page and the closest city page before you redeem. That gives you a better shot at finding the lowest valid price for your area.',
+    },
+}
+
+RELATED_STATE_LINKS = {
+    'california': ['arizona', 'nevada', 'oregon', 'washington'],
+    'florida': ['georgia', 'alabama', 'south-carolina', 'tennessee'],
+    'ohio': ['michigan', 'indiana', 'pennsylvania', 'kentucky'],
+}
+
+
+def get_state_copy(slug, name):
+    default = {
+        'market': f'{name} shoppers usually see a mix of statewide and metro-specific Great Clips offers. This page helps you start with the broadest coupon view, then narrow down to city pages when local coverage is stronger.',
+        'verification': f'We update the {name} page daily using public Great Clips offers and keep the copy focused on participating salons, realistic price ranges, and clear redemption guidance.',
+        'tip': f'When you have more than one {name} coupon to choose from, compare the newest offer first and confirm the participating-salon details before your visit.',
+    }
+    default.update(STATE_GUIDANCE.get(slug, {}))
+    return default
+
+
+def get_featured_city_links(state_name, cities):
+    links = []
+    docs_cities_dir = os.path.join('docs', 'cities')
+    for city in cities:
+        city_slug = slugify(city)
+        page_path = os.path.join(docs_cities_dir, f'{city_slug}.html')
+        if os.path.exists(page_path):
+            links.append((city, city_slug))
+    return links
+
 def generate_state_page(slug, data):
     """Generate a state page"""
     name = data['name']
@@ -63,6 +112,9 @@ def generate_state_page(slug, data):
     cities = data['cities']
     locations = data['locations']
     cities_list = ', '.join(cities[:4])
+    copy = get_state_copy(slug, name)
+    featured_city_links = get_featured_city_links(name, cities)
+    related_states = RELATED_STATE_LINKS.get(slug, ['texas', 'california', 'florida', 'ohio'])
     
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -218,6 +270,24 @@ def generate_state_page(slug, data):
             <p class="mt-6 text-slate-600">Coupons are typically accepted at participating salons in {name}. Filter by city on our main page and confirm locally.</p>
         </div>
 
+        <!-- Local Market Notes -->
+        <div class="bg-white rounded-xl p-8 shadow-md mb-12">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6">{name} Coupon Notes for Google Searchers</h2>
+            <div class="space-y-4 text-slate-600 leading-7">
+                <p>{copy['market']}</p>
+                <p>{copy['verification']}</p>
+                <p><strong>Best practice:</strong> {copy['tip']}</p>
+            </div>
+        </div>
+
+        <!-- Featured City Pages -->
+        <div class="bg-white rounded-xl p-8 shadow-md mb-12">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6">Featured {name} City Pages</h2>
+            <div class="grid gap-4 md:grid-cols-2">
+                {"".join(f'<a href="/cities/{city_slug}" class="block rounded-xl border border-slate-200 p-5 transition hover:border-purple-300 hover:bg-purple-50"><span class="block text-lg font-semibold text-slate-900">Great Clips Coupons {city}</span><span class="mt-2 block text-sm text-slate-600">Open the local {city} page for city-specific coupon context and nearby salon guidance.</span></a>' for city, city_slug in featured_city_links) if featured_city_links else f'<div class="rounded-xl border border-slate-200 p-5 text-slate-600 md:col-span-2">We are continuing to expand dedicated city coverage for {name}. In the meantime, use the statewide page above and filter coupons by {code} on the homepage.</div>'}
+            </div>
+        </div>
+
         <!-- How to Use -->
         <div class="bg-white rounded-xl p-8 shadow-md mb-12">
             <h2 class="text-2xl font-bold text-slate-900 mb-6">How to Use Coupons in {name}</h2>
@@ -260,14 +330,30 @@ def generate_state_page(slug, data):
             </div>
         </div>
 
-        <!-- Other States -->
+        <!-- Helpful Resources -->
+        <div class="bg-white rounded-xl p-8 shadow-md mb-12">
+            <h2 class="text-2xl font-bold text-slate-900 mb-6">Helpful Resources Before You Redeem</h2>
+            <div class="grid gap-4 md:grid-cols-3">
+                <a href="/how-we-verify-coupons" class="block rounded-xl border border-slate-200 p-5 transition hover:border-purple-300 hover:bg-purple-50">
+                    <span class="block text-lg font-semibold text-slate-900">How We Verify Coupons</span>
+                    <span class="mt-2 block text-sm text-slate-600">See how we review public Great Clips offers before listing them.</span>
+                </a>
+                <a href="/prices" class="block rounded-xl border border-slate-200 p-5 transition hover:border-purple-300 hover:bg-purple-50">
+                    <span class="block text-lg font-semibold text-slate-900">Great Clips Prices</span>
+                    <span class="mt-2 block text-sm text-slate-600">Compare normal haircut prices versus coupon prices in one place.</span>
+                </a>
+                <a href="/how-to-use" class="block rounded-xl border border-slate-200 p-5 transition hover:border-purple-300 hover:bg-purple-50">
+                    <span class="block text-lg font-semibold text-slate-900">How to Use a Coupon</span>
+                    <span class="mt-2 block text-sm text-slate-600">Review the exact redemption steps before you visit a salon.</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Nearby States -->
         <div class="bg-slate-100 rounded-xl p-8">
-            <h2 class="text-xl font-bold text-slate-900 mb-4">Coupons for Other States</h2>
+            <h2 class="text-xl font-bold text-slate-900 mb-4">Nearby State Coupon Pages</h2>
             <div class="flex flex-wrap gap-2">
-                <a href="/texas" class="bg-white px-4 py-2 rounded-lg hover:bg-purple-50 transition-colors">Texas</a>
-                <a href="/california" class="bg-white px-4 py-2 rounded-lg hover:bg-purple-50 transition-colors">California</a>
-                <a href="/florida" class="bg-white px-4 py-2 rounded-lg hover:bg-purple-50 transition-colors">Florida</a>
-                <a href="/ohio" class="bg-white px-4 py-2 rounded-lg hover:bg-purple-50 transition-colors">Ohio</a>
+                {"".join(f'<a href="/{related_slug}" class="bg-white px-4 py-2 rounded-lg hover:bg-purple-50 transition-colors">{STATES[related_slug]["name"] if related_slug in STATES else related_slug.replace("-", " ").title()}</a>' for related_slug in related_states)}
                 <a href="/states" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">All States →</a>
             </div>
         </div>
