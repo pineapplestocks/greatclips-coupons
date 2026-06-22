@@ -1173,6 +1173,9 @@
         let adFallbackTimer = null;
         let adStarted = false;
         let adFinished = false;
+        let adStartedAt = 0;
+        let requiredWatchSeconds = 8;
+        let couponReadyTimer = null;
 
         function getCoupon(url, price, location_name, city, state) {
             // Always show email modal — coupon is delivered by email
@@ -1244,6 +1247,8 @@
         function resetAdPlayer() {
             clearTimeout(adFallbackTimer);
             adFallbackTimer = null;
+            clearTimeout(couponReadyTimer);
+            couponReadyTimer = null;
 
             if (adsManager) {
                 try { adsManager.destroy(); } catch (_) {}
@@ -1254,6 +1259,8 @@
             adDisplayContainer = null;
             adStarted = false;
             adFinished = false;
+            adStartedAt = 0;
+            requiredWatchSeconds = 8;
 
             const adContainer = document.getElementById('adContainer');
             if (adContainer) adContainer.innerHTML = '';
@@ -1334,19 +1341,27 @@
             adsManager.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR, onAdError);
             adsManager.addEventListener(google.ima.AdEvent.Type.COMPLETE, () => {
                 adFinished = true;
-                showCouponReady('Video complete. Your coupon is ready.');
+                revealAfterWatchTime('Video complete. Your coupon is ready.', requiredWatchSeconds);
             });
             adsManager.addEventListener(google.ima.AdEvent.Type.SKIPPED, () => {
                 adFinished = true;
-                showCouponReady('Your coupon is ready.');
+                revealAfterWatchTime('Your coupon is ready.', 4);
             });
             adsManager.addEventListener(google.ima.AdEvent.Type.ALL_ADS_COMPLETED, () => {
                 if (adStarted && adFinished) {
-                    showCouponReady('Your coupon is ready.');
+                    revealAfterWatchTime('Your coupon is ready.', requiredWatchSeconds);
                 }
             });
-            adsManager.addEventListener(google.ima.AdEvent.Type.STARTED, () => {
+            adsManager.addEventListener(google.ima.AdEvent.Type.STARTED, (event) => {
                 adStarted = true;
+                adStartedAt = Date.now();
+                try {
+                    const ad = event.getAd && event.getAd();
+                    const duration = ad && ad.getDuration && ad.getDuration();
+                    if (Number.isFinite(duration) && duration > 0) {
+                        requiredWatchSeconds = Math.min(Math.max(duration - 0.5, 5), 45);
+                    }
+                } catch (_) {}
                 clearTimeout(adFallbackTimer);
                 adFallbackTimer = null;
                 status.textContent = 'Video playing. The coupon will appear when it finishes.';
@@ -1364,13 +1379,45 @@
 
         function onAdError() {
             const status = document.getElementById('videoGateStatus');
-            if (status) status.textContent = 'Video is unavailable right now. Your coupon is ready.';
-            showCouponReady('Your coupon is ready.');
+            if (!adStarted) {
+                if (status) status.textContent = 'Video is unavailable right now. Your coupon is ready.';
+                showCouponReady('Your coupon is ready.');
+                return;
+            }
+
+            if (status) status.textContent = 'Video stopped early. Finishing your coupon unlock...';
+            revealAfterWatchTime('Your coupon is ready.', 8);
+        }
+
+        function revealAfterWatchTime(message, minimumSeconds) {
+            const status = document.getElementById('videoGateStatus');
+            const startedAt = adStartedAt || Date.now();
+            const elapsedSeconds = (Date.now() - startedAt) / 1000;
+            const remainingMs = Math.max(0, Math.ceil((minimumSeconds - elapsedSeconds) * 1000));
+
+            clearTimeout(couponReadyTimer);
+            couponReadyTimer = null;
+
+            if (remainingMs <= 0) {
+                showCouponReady(message);
+                return;
+            }
+
+            if (status) {
+                const remainingSeconds = Math.ceil(remainingMs / 1000);
+                status.textContent = `Finishing sponsor video... coupon unlocks in ${remainingSeconds}s.`;
+            }
+
+            couponReadyTimer = setTimeout(() => {
+                showCouponReady(message);
+            }, remainingMs);
         }
 
         function showCouponReady(message) {
             clearTimeout(adFallbackTimer);
             adFallbackTimer = null;
+            clearTimeout(couponReadyTimer);
+            couponReadyTimer = null;
 
             const successView = document.getElementById('emailSuccessView');
             const videoGateView = document.getElementById('videoGateView');
