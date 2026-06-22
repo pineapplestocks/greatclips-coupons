@@ -1171,6 +1171,8 @@
         let adsManager = null;
         let adDisplayContainer = null;
         let adFallbackTimer = null;
+        let adStarted = false;
+        let adFinished = false;
 
         function getCoupon(url, price, location_name, city, state) {
             // Always show email modal — coupon is delivered by email
@@ -1250,6 +1252,8 @@
             adsLoader = null;
             adsManager = null;
             adDisplayContainer = null;
+            adStarted = false;
+            adFinished = false;
 
             const adContainer = document.getElementById('adContainer');
             if (adContainer) adContainer.innerHTML = '';
@@ -1308,8 +1312,10 @@
             adsRequest.nonLinearAdSlotHeight = 120;
 
             adFallbackTimer = setTimeout(() => {
-                status.textContent = 'Thanks for waiting. Your coupon is ready.';
-                showCouponReady('Thanks for waiting. Your coupon is ready.');
+                if (!adStarted) {
+                    status.textContent = 'Video is unavailable right now. Your coupon is ready.';
+                    showCouponReady('Your coupon is ready.');
+                }
             }, 20000);
 
             try {
@@ -1326,10 +1332,23 @@
 
             adsManager = adsManagerLoadedEvent.getAdsManager(video);
             adsManager.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR, onAdError);
-            adsManager.addEventListener(google.ima.AdEvent.Type.COMPLETE, () => showCouponReady('Video complete. Your coupon is ready.'));
-            adsManager.addEventListener(google.ima.AdEvent.Type.SKIPPED, () => showCouponReady('Your coupon is ready.'));
-            adsManager.addEventListener(google.ima.AdEvent.Type.ALL_ADS_COMPLETED, () => showCouponReady('Your coupon is ready.'));
+            adsManager.addEventListener(google.ima.AdEvent.Type.COMPLETE, () => {
+                adFinished = true;
+                showCouponReady('Video complete. Your coupon is ready.');
+            });
+            adsManager.addEventListener(google.ima.AdEvent.Type.SKIPPED, () => {
+                adFinished = true;
+                showCouponReady('Your coupon is ready.');
+            });
+            adsManager.addEventListener(google.ima.AdEvent.Type.ALL_ADS_COMPLETED, () => {
+                if (adStarted && adFinished) {
+                    showCouponReady('Your coupon is ready.');
+                }
+            });
             adsManager.addEventListener(google.ima.AdEvent.Type.STARTED, () => {
+                adStarted = true;
+                clearTimeout(adFallbackTimer);
+                adFallbackTimer = null;
                 status.textContent = 'Video playing. The coupon will appear when it finishes.';
                 const watchBtn = document.getElementById('watchAdButton');
                 if (watchBtn) watchBtn.innerHTML = 'Video playing...';
