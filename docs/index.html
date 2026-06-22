@@ -18,6 +18,7 @@
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3200720519944493" crossorigin="anonymous"></script>
+    <script async src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
 
     <!-- HilltopAds Zone 7161481 -->
     <script>
@@ -16243,6 +16244,11 @@
         let pendingCouponPrice = '';
         let pendingLocation = { location_name: '', city: '', state: '' };
         const WORKER_URL = 'https://greatclips-email.mehulchaudhari.workers.dev';
+        const VAST_AD_TAG_URL = 'https://loyal-product.com/dnmqFnzbd.GYNFvzZiG/Ug/QeOms9DuwZhUfl/kFPdTPczxtN/jKEn1ZMjj_ERtANHzgEi2XMdT/UxyxNAQA';
+        let adsLoader = null;
+        let adsManager = null;
+        let adDisplayContainer = null;
+        let adFallbackTimer = null;
 
         function getCoupon(url, price, location_name, city, state) {
             // Always show email modal — coupon is delivered by email
@@ -16256,12 +16262,16 @@
 
         function closeEmailModal() {
             document.getElementById('emailModal').classList.add('hidden');
+            resetAdPlayer();
             // Reset back to form view for next open
             document.getElementById('emailFormView').classList.remove('hidden');
+            document.getElementById('videoGateView').classList.add('hidden');
             document.getElementById('emailSuccessView').classList.add('hidden');
             // Reset submit button state
             const btn = document.querySelector('#emailFormView button[type="submit"]');
             if (btn) { btn.innerHTML = 'Send Me the Coupon 📧'; btn.disabled = false; }
+            const watchBtn = document.getElementById('watchAdButton');
+            if (watchBtn) { watchBtn.innerHTML = 'Watch Video to Reveal Coupon'; watchBtn.disabled = false; }
             pendingCouponUrl = '';
             pendingLocation = { location_name: '', city: '', state: '' };
         }
@@ -16295,14 +16305,150 @@
                 success = res.ok;
             } catch (_) {}
 
-            // Flip modal to success screen
+            // Flip modal to video gate screen
             document.getElementById('emailFormView').classList.add('hidden');
-            const successView = document.getElementById('emailSuccessView');
-            document.getElementById('successEmail').textContent = email;
-            successView.classList.remove('hidden');
+            document.getElementById('videoGateEmail').textContent = email;
+            document.getElementById('videoGateView').classList.remove('hidden');
         }
 
         function skipEmail() {
+            const couponUrl = pendingCouponUrl;
+            closeEmailModal();
+            window.open(couponUrl, '_blank');
+        }
+
+        function resetAdPlayer() {
+            clearTimeout(adFallbackTimer);
+            adFallbackTimer = null;
+
+            if (adsManager) {
+                try { adsManager.destroy(); } catch (_) {}
+            }
+
+            adsLoader = null;
+            adsManager = null;
+            adDisplayContainer = null;
+
+            const adContainer = document.getElementById('adContainer');
+            if (adContainer) adContainer.innerHTML = '';
+
+            const video = document.getElementById('couponAdVideo');
+            if (video) {
+                video.pause();
+                video.removeAttribute('src');
+                video.load();
+            }
+        }
+
+        function startCouponAd() {
+            const watchBtn = document.getElementById('watchAdButton');
+            const status = document.getElementById('videoGateStatus');
+
+            if (!pendingCouponUrl) {
+                showCouponReady('Your coupon is ready.');
+                return;
+            }
+
+            if (!window.google || !google.ima) {
+                status.textContent = 'Video is unavailable right now. Your coupon is ready.';
+                showCouponReady('Your coupon is ready.');
+                return;
+            }
+
+            resetAdPlayer();
+            watchBtn.disabled = true;
+            watchBtn.innerHTML = 'Loading video...';
+            status.textContent = 'Loading your video. Please keep this window open.';
+
+            const video = document.getElementById('couponAdVideo');
+            const adContainer = document.getElementById('adContainer');
+
+            adDisplayContainer = new google.ima.AdDisplayContainer(adContainer, video);
+            adDisplayContainer.initialize();
+
+            adsLoader = new google.ima.AdsLoader(adDisplayContainer);
+            adsLoader.addEventListener(
+                google.ima.AdsManagerLoadedEvent.Type.ADS_MANAGER_LOADED,
+                onAdsManagerLoaded,
+                false
+            );
+            adsLoader.addEventListener(
+                google.ima.AdErrorEvent.Type.AD_ERROR,
+                onAdError,
+                false
+            );
+
+            const adsRequest = new google.ima.AdsRequest();
+            adsRequest.adTagUrl = VAST_AD_TAG_URL;
+            adsRequest.linearAdSlotWidth = adContainer.clientWidth || 360;
+            adsRequest.linearAdSlotHeight = adContainer.clientHeight || 203;
+            adsRequest.nonLinearAdSlotWidth = adContainer.clientWidth || 360;
+            adsRequest.nonLinearAdSlotHeight = 120;
+
+            adFallbackTimer = setTimeout(() => {
+                status.textContent = 'Thanks for waiting. Your coupon is ready.';
+                showCouponReady('Thanks for waiting. Your coupon is ready.');
+            }, 20000);
+
+            try {
+                adsLoader.requestAds(adsRequest);
+            } catch (_) {
+                onAdError();
+            }
+        }
+
+        function onAdsManagerLoaded(adsManagerLoadedEvent) {
+            const video = document.getElementById('couponAdVideo');
+            const adContainer = document.getElementById('adContainer');
+            const status = document.getElementById('videoGateStatus');
+
+            adsManager = adsManagerLoadedEvent.getAdsManager(video);
+            adsManager.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR, onAdError);
+            adsManager.addEventListener(google.ima.AdEvent.Type.COMPLETE, () => showCouponReady('Video complete. Your coupon is ready.'));
+            adsManager.addEventListener(google.ima.AdEvent.Type.SKIPPED, () => showCouponReady('Your coupon is ready.'));
+            adsManager.addEventListener(google.ima.AdEvent.Type.ALL_ADS_COMPLETED, () => showCouponReady('Your coupon is ready.'));
+            adsManager.addEventListener(google.ima.AdEvent.Type.STARTED, () => {
+                status.textContent = 'Video playing. The coupon will appear when it finishes.';
+                const watchBtn = document.getElementById('watchAdButton');
+                if (watchBtn) watchBtn.innerHTML = 'Video playing...';
+            });
+
+            try {
+                adsManager.init(adContainer.clientWidth || 360, adContainer.clientHeight || 203, google.ima.ViewMode.NORMAL);
+                adsManager.start();
+            } catch (_) {
+                onAdError();
+            }
+        }
+
+        function onAdError() {
+            const status = document.getElementById('videoGateStatus');
+            if (status) status.textContent = 'Video is unavailable right now. Your coupon is ready.';
+            showCouponReady('Your coupon is ready.');
+        }
+
+        function showCouponReady(message) {
+            clearTimeout(adFallbackTimer);
+            adFallbackTimer = null;
+
+            const successView = document.getElementById('emailSuccessView');
+            const videoGateView = document.getElementById('videoGateView');
+            const successEmail = document.getElementById('successEmail');
+            const videoGateEmail = document.getElementById('videoGateEmail');
+            const successMessage = document.getElementById('successMessage');
+
+            if (adsManager) {
+                try { adsManager.destroy(); } catch (_) {}
+                adsManager = null;
+            }
+
+            if (successEmail && videoGateEmail) successEmail.textContent = videoGateEmail.textContent;
+            if (successMessage) successMessage.textContent = message || 'Your coupon is ready.';
+            if (videoGateView) videoGateView.classList.add('hidden');
+            if (successView) successView.classList.remove('hidden');
+        }
+
+        function openReadyCoupon() {
             const couponUrl = pendingCouponUrl;
             closeEmailModal();
             window.open(couponUrl, '_blank');
@@ -16366,19 +16512,39 @@
                 </p>
             </div>
 
+            <!-- VIDEO GATE VIEW (shown after email submit) -->
+            <div id="videoGateView" class="hidden text-center">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-5">
+                    <span class="text-3xl">▶</span>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">One quick video</h3>
+                <p class="text-slate-600 mb-1">We sent the coupon link to:</p>
+                <p class="font-semibold text-purple-600 mb-4" id="videoGateEmail"></p>
+                <div class="relative w-full aspect-video bg-slate-950 rounded-xl overflow-hidden mb-4">
+                    <video id="couponAdVideo" class="absolute inset-0 w-full h-full" playsinline muted></video>
+                    <div id="adContainer" class="absolute inset-0"></div>
+                </div>
+                <p id="videoGateStatus" class="text-slate-500 text-sm mb-4">Watch a short sponsor video to reveal the coupon here.</p>
+                <button id="watchAdButton" onclick="startCouponAd()"
+                    class="w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-purple-200">
+                    Watch Video to Reveal Coupon
+                </button>
+            </div>
+
             <!-- SUCCESS VIEW (hidden until email submitted) -->
             <div id="emailSuccessView" class="hidden text-center">
                 <div class="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-5">
-                    <span class="text-4xl">📧</span>
+                    <span class="text-4xl">✓</span>
                 </div>
-                <h3 class="text-2xl font-bold text-slate-900 mb-2">Check your inbox!</h3>
-                <p class="text-slate-600 mb-1">We sent your coupon link to:</p>
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">Coupon ready!</h3>
+                <p id="successMessage" class="text-slate-600 mb-3">Your coupon is ready.</p>
+                <p class="text-slate-600 mb-1">A copy was also sent to:</p>
                 <p class="font-semibold text-purple-600 mb-5" id="successEmail"></p>
-                <p class="text-slate-500 text-sm mb-6">Didn't get it? Check your spam folder.<br>It usually arrives within 30 seconds.</p>
-                <button onclick="closeEmailModal()"
+                <button onclick="openReadyCoupon()"
                     class="w-full bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-purple-200">
-                    Done
+                    Open Coupon
                 </button>
+                <p class="text-slate-500 text-sm mt-4">Didn't get the email? Check your spam folder. It usually arrives within 30 seconds.</p>
             </div>
         </div>
     </div>
