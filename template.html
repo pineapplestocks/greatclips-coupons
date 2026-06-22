@@ -1176,6 +1176,8 @@
         let adStartedAt = 0;
         let requiredWatchSeconds = 8;
         let couponReadyTimer = null;
+        let couponUnlockAt = 0;
+        const MINIMUM_UNLOCK_MS = 15000;
 
         function getCoupon(url, price, location_name, city, state) {
             // Always show email modal — coupon is delivered by email
@@ -1249,6 +1251,7 @@
             adFallbackTimer = null;
             clearTimeout(couponReadyTimer);
             couponReadyTimer = null;
+            couponUnlockAt = 0;
 
             if (adsManager) {
                 try { adsManager.destroy(); } catch (_) {}
@@ -1282,16 +1285,17 @@
                 return;
             }
 
-            if (!window.google || !google.ima) {
-                status.textContent = 'Video is unavailable right now. Your coupon is ready.';
-                showCouponReady('Your coupon is ready.');
-                return;
-            }
-
             resetAdPlayer();
+            couponUnlockAt = Date.now() + MINIMUM_UNLOCK_MS;
             watchBtn.disabled = true;
             watchBtn.innerHTML = 'Loading video...';
             status.textContent = 'Loading your video. Please keep this window open.';
+
+            if (!window.google || !google.ima) {
+                status.textContent = 'Video is unavailable right now. Finishing your coupon unlock...';
+                showCouponReady('Your coupon is ready.');
+                return;
+            }
 
             const video = document.getElementById('couponAdVideo');
             const adContainer = document.getElementById('adContainer');
@@ -1320,7 +1324,7 @@
 
             adFallbackTimer = setTimeout(() => {
                 if (!adStarted) {
-                    status.textContent = 'Video is unavailable right now. Your coupon is ready.';
+                    status.textContent = 'Video is unavailable right now. Finishing your coupon unlock...';
                     showCouponReady('Your coupon is ready.');
                 }
             }, 20000);
@@ -1380,7 +1384,7 @@
         function onAdError() {
             const status = document.getElementById('videoGateStatus');
             if (!adStarted) {
-                if (status) status.textContent = 'Video is unavailable right now. Your coupon is ready.';
+                if (status) status.textContent = 'Video is unavailable right now. Finishing your coupon unlock...';
                 showCouponReady('Your coupon is ready.');
                 return;
             }
@@ -1414,10 +1418,25 @@
         }
 
         function showCouponReady(message) {
+            const gateIsActive = couponUnlockAt > 0 && !document.getElementById('videoGateView').classList.contains('hidden');
+            const waitMs = gateIsActive ? Math.max(0, couponUnlockAt - Date.now()) : 0;
+
+            if (waitMs > 0) {
+                clearTimeout(couponReadyTimer);
+                const status = document.getElementById('videoGateStatus');
+                if (status) {
+                    const seconds = Math.ceil(waitMs / 1000);
+                    status.textContent = `Finishing sponsor video... coupon unlocks in ${seconds}s.`;
+                }
+                couponReadyTimer = setTimeout(() => showCouponReady(message), waitMs);
+                return;
+            }
+
             clearTimeout(adFallbackTimer);
             adFallbackTimer = null;
             clearTimeout(couponReadyTimer);
             couponReadyTimer = null;
+            couponUnlockAt = 0;
 
             const successView = document.getElementById('emailSuccessView');
             const videoGateView = document.getElementById('videoGateView');
