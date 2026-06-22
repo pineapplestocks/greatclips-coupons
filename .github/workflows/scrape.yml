@@ -44,7 +44,9 @@ jobs:
         run: python scraper.py
 
       - name: Generate website
-        run: python generate_website.py
+        run: |
+          python generate_website.py
+          python scripts/ensure_static_root_files.py
 
       - name: Commit and push changes (race-safe)
         run: |
@@ -61,6 +63,7 @@ jobs:
             # Regenerate sitemap after pull to avoid conflict markers in XML
             python update_sitemap.py
             python generate_website.py
+            python scripts/ensure_static_root_files.py
             git add -A
             git commit -m "🔄 Update coupons $(date +'%Y-%m-%d %H:%M')"
             git push

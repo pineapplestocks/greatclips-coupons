@@ -44,6 +44,7 @@ jobs:
           python generate_pages.py
           mkdir -p docs
           cp -a pages/. docs/
+          python scripts/ensure_static_root_files.py
           python update_sitemap.py
 
       - name: Commit and push changes

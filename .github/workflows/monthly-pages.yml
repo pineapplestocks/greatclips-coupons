@@ -42,6 +42,7 @@ jobs:
       - name: Generate monthly landing pages
         run: |
           python generate_monthly_pages.py
+          python scripts/ensure_static_root_files.py
           python update_sitemap.py
 
       - name: Commit and push changes
