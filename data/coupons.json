@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-06-23T02:43:53.760756",
+  "scraped_at": "2026-06-23T07:53:12.350495",
   "total_coupons": 321,
   "coupons": [
     {
@@ -269,6 +269,22 @@
       "last_verified": "2026-06-23",
       "source": "facebook_ad_library",
       "participating_location_note": null
+    },
+    {
+      "url": "https://offers.greatclips.com/6bWu89Y",
+      "coupon_code": "6bWu89Y",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/16207/50707-002-1200x600-US-Sparkfly-1off-10off5.jpg",
+      "location_name": "participating US Area",
+      "state": "AREA",
+      "area_name": "participating US",
+      "price": "$5.00",
+      "market": "US",
+      "expiration": null,
+      "last_verified": "2026-06-23",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating US locations",
+      "added_date": "2026-06-23",
+      "last_seen": "2026-06-23"
     },
     {
       "url": "https://offers.greatclips.com/87bFOW8",
@@ -5433,7 +5449,7 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
       "added_date": "2026-06-19",
-      "last_seen": "2026-06-22"
+      "last_seen": "2026-06-23"
     },
     {
       "url": "https://offers.greatclips.com/XY3Z8J4",
