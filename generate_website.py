@@ -16,6 +16,8 @@ DATA_FILE = os.path.join(SCRIPT_DIR, "data", "coupons.json")
 TEMPLATE_FILE = os.path.join(SCRIPT_DIR, "template.html")
 OUTPUT_DIR = os.path.join(SCRIPT_DIR, "docs")  # GitHub Pages uses /docs
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "index.html")
+BLOCKED_COUPON_CODES = {"6bWu89Y"}
+BLOCKED_COUPON_URLS = {"https://offers.greatclips.com/6bWu89Y"}
 
 
 def _ensure_utf8_stdout():
@@ -52,6 +54,13 @@ def copy_link_handler(url):
         "setTimeout(() => this.textContent='📋', 2000)"
     )
     return html_escape(call, quote=True)
+
+
+def is_blocked_coupon(coupon):
+    return (
+        (coupon.get("coupon_code") or "") in BLOCKED_COUPON_CODES
+        or (coupon.get("url") or "") in BLOCKED_COUPON_URLS
+    )
 
 
 def format_date(date_str):
@@ -640,7 +649,11 @@ def generate_website():
         data = json.load(f)
     
     coupons = data.get('coupons', [])
-    print(f"   Loaded {len(coupons)} coupons")
+    original_count = len(coupons)
+    coupons = [coupon for coupon in coupons if not is_blocked_coupon(coupon)]
+    print(f"   Loaded {original_count} coupons")
+    if len(coupons) != original_count:
+        print(f"   Removed {original_count - len(coupons)} blocked coupon(s)")
     
     # Load template
     if not os.path.exists(TEMPLATE_FILE):
