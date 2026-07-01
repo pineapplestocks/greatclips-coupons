@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-06-30T13:01:29.439733",
-  "total_coupons": 213,
+  "scraped_at": "2026-06-30T21:03:48.825308",
+  "total_coupons": 214,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/F0gMToQ",
@@ -280,7 +280,7 @@
       "expiration": "07/17/2026",
       "price": "$6.99",
       "added_date": "2026-06-08",
-      "last_seen": "2026-06-08",
+      "last_seen": "2026-06-30",
       "market": "FL",
       "last_verified": "2026-06-30",
       "source": "facebook_ad_library",
@@ -3267,6 +3267,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Salt Lake City",
       "added_date": "2026-06-25",
+      "last_seen": "2026-06-30"
+    },
+    {
+      "url": "https://offers.greatclips.com/CESQzzX",
+      "coupon_code": "CESQzzX",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/19513/50707-002-1200x600-12.99.jpg",
+      "expiration": "07/24/2026",
+      "location_name": "only at participating Reno, Carson City & West NV Area",
+      "state": "AREA",
+      "area_name": "only at participating Reno, Carson City & West NV",
+      "price": "$12.99",
+      "market": "Reno, Carson City & West NV",
+      "last_verified": "2026-06-30",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Reno, Carson City & West NV",
+      "added_date": "2026-06-30",
       "last_seen": "2026-06-30"
     },
     {
