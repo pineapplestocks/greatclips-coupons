@@ -229,7 +229,7 @@
         "mainEntity": {
             "@type": "ItemList",
             "name": "Current Great Clips coupon offers",
-            "numberOfItems": "213"
+            "numberOfItems": "214"
         }
     }
     </script>
@@ -967,7 +967,7 @@
                 <section class="max-w-7xl mx-auto px-4 pb-12">
                     <div class="flex items-center justify-between mb-6">
                         <p id="resultsCount" class="text-slate-600">
-                            <span class="font-semibold text-slate-900">204</span> location-specific coupons
+                            <span class="font-semibold text-slate-900">205</span> location-specific coupons
                         </p>
                     </div>
 
@@ -5936,10 +5936,37 @@
                                 <div class="mb-10" id="state-TX">
                                     <div class="flex items-center gap-3 mb-4">
                                         <h2 class="text-2xl font-bold text-slate-900">TX</h2>
-                                        <span class="bg-purple-100 text-purple-700 text-sm font-medium px-3 py-1 rounded-full">23 coupons</span>
+                                        <span class="bg-purple-100 text-purple-700 text-sm font-medium px-3 py-1 rounded-full">24 coupons</span>
                                     </div>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
 
+                                            <div class="bg-white rounded-2xl shadow-md shadow-slate-200/50 overflow-hidden card-hover border border-slate-100">
+                                                <div class="p-5">
+                                                    <div class="flex items-start justify-between mb-4">
+                                                        <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-xl font-bold bg-teal-500 text-white shadow-sm">
+                                                            $5.99
+                                                        </span>
+                                                        <span class="text-slate-400 text-sm">
+                                                            07/10/2026
+                                                        </span>
+                                                    </div>
+                                                    <h3 class="font-semibold text-slate-900 text-lg mb-1 line-clamp-2">Fredericksburg Town Center</h3>
+                                                    <div class="text-slate-500 text-sm mb-4">
+                                                        <p class="truncate">1455 E Main St</p>
+                                                        <p class="font-medium text-slate-600">Fredericksburg, TX</p>
+                                                    </div>
+                                                    <div class="flex gap-2">
+                                                        <button onclick='getCoupon(&quot;https://offers.greatclips.com/DCuPqeC&quot;, &quot;$5.99&quot;, &quot;Fredericksburg Town Center&quot;, &quot;Fredericksburg,&quot;, &quot;TX&quot;)'
+                                                            class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200 cursor-pointer">
+                                                            Get Coupon
+                                                        </button>
+                                                        <button onclick='navigator.clipboard.writeText(&quot;https://offers.greatclips.com/DCuPqeC&quot;); this.textContent=&#x27;✓&#x27;; setTimeout(() =&gt; this.textContent=&#x27;📋&#x27;, 2000)'
+                                                            class="bg-slate-100 hover:bg-slate-200 text-slate-600 p-2.5 rounded-xl transition-colors"
+                                                            title="Copy link">📋</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
                                             <div class="bg-white rounded-2xl shadow-md shadow-slate-200/50 overflow-hidden card-hover border border-slate-100">
                                                 <div class="p-5">
                                                     <div class="flex items-start justify-between mb-4">
@@ -7076,6 +7103,24 @@
                 "last_verified": "2026-07-01",
                 "source": "facebook_ad_library",
                 "participating_location_note": null
+        },
+        {
+                "url": "https://offers.greatclips.com/DCuPqeC",
+                "coupon_code": "DCuPqeC",
+                "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8451/50707-002-1200x600-5.99.jpg",
+                "valid_text": "Valid at Great Clips Fredericksburg Town Center at 1455 E Main St in Fredericksburg, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 07/10/2026",
+                "location_name": "Fredericksburg Town Center",
+                "address": "1455 E Main St",
+                "city": "Fredericksburg,",
+                "state": "TX",
+                "expiration": "07/10/2026",
+                "price": "$5.99",
+                "market": "TX",
+                "last_verified": "2026-07-01",
+                "source": "facebook_ad_library",
+                "participating_location_note": null,
+                "added_date": "2026-07-01",
+                "last_seen": "2026-07-01"
         },
         {
                 "url": "https://offers.greatclips.com/7mvadpZ",
@@ -10565,7 +10610,7 @@
                 "participating_location_note": null
         }
 ];
-        const LAST_UPDATED = "2026-07-01T02:51:21.945743";
+        const LAST_UPDATED = "2026-07-01T07:40:28.002912";
 
         // Format date like "December 31st, 2026"
         function formatDate(dateStr) {
