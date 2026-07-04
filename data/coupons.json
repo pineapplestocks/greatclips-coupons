@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-07-04T01:39:53.802149",
-  "total_coupons": 166,
+  "scraped_at": "2026-07-04T06:36:46.459366",
+  "total_coupons": 168,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/F0gMToQ",
@@ -627,6 +627,22 @@
       "last_verified": "2026-07-04",
       "source": "facebook_ad_library",
       "participating_location_note": null
+    },
+    {
+      "url": "https://offers.greatclips.com/OFVP2Xm",
+      "coupon_code": "OFVP2Xm",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/19373/50707-002-1200x600-8.99.jpg",
+      "expiration": "07/17/2026",
+      "location_name": "participating Upper Rio Grande Valley Area",
+      "state": "AREA",
+      "area_name": "participating Upper Rio Grande Valley",
+      "price": "$8.99",
+      "market": "Upper Rio Grande Valley",
+      "last_verified": "2026-07-04",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Upper Rio Grande Valley",
+      "added_date": "2026-07-04",
+      "last_seen": "2026-07-04"
     },
     {
       "url": "https://offers.greatclips.com/WllhKGx",
@@ -2564,6 +2580,24 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Reno, Carson City & West NV",
       "added_date": "2026-06-30",
+      "last_seen": "2026-07-04"
+    },
+    {
+      "url": "https://offers.greatclips.com/YYDjN7K",
+      "coupon_code": "YYDjN7K",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8466/50707-002-1200x600-12.99.jpg",
+      "valid_text": "Valid at Great Clips Shops at West Falls Church at 7395 G Route 29 in Falls Church, VA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 07/16/2026",
+      "location_name": "Shops",
+      "address": "West Falls Church at 7395 G Route 29",
+      "city": "Falls Church,",
+      "state": "VA",
+      "expiration": "07/16/2026",
+      "price": "$12.99",
+      "market": "VA",
+      "last_verified": "2026-07-04",
+      "source": "facebook_ad_library",
+      "participating_location_note": null,
+      "added_date": "2026-07-04",
       "last_seen": "2026-07-04"
     },
     {
