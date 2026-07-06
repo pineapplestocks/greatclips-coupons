@@ -1,0 +1,225 @@
+{
+  "period": "2025-12-30 to 2026-07-06",
+  "states": {
+    "TX": {
+      "unique_coupons": 221,
+      "median_price": 8.99,
+      "lowest_price": 3.0
+    },
+    "NM": {
+      "unique_coupons": 6,
+      "median_price": 7.99,
+      "lowest_price": 4.99
+    },
+    "ON": {
+      "unique_coupons": 19,
+      "median_price": 15.99,
+      "lowest_price": 5.0
+    },
+    "OK": {
+      "unique_coupons": 30,
+      "median_price": 5.99,
+      "lowest_price": 3.99
+    },
+    "MO": {
+      "unique_coupons": 11,
+      "median_price": 10.99,
+      "lowest_price": 5.99
+    },
+    "WA": {
+      "unique_coupons": 7,
+      "median_price": 13.99,
+      "lowest_price": 6.0
+    },
+    "NC": {
+      "unique_coupons": 12,
+      "median_price": 10.49,
+      "lowest_price": 5.0
+    },
+    "AZ": {
+      "unique_coupons": 62,
+      "median_price": 9.99,
+      "lowest_price": 7.99
+    },
+    "GA": {
+      "unique_coupons": 95,
+      "median_price": 10.99,
+      "lowest_price": 4.99
+    },
+    "AL": {
+      "unique_coupons": 13,
+      "median_price": 7.99,
+      "lowest_price": 5.0
+    },
+    "SC": {
+      "unique_coupons": 11,
+      "median_price": 9.99,
+      "lowest_price": 5.0
+    },
+    "OR": {
+      "unique_coupons": 8,
+      "median_price": 14.49,
+      "lowest_price": 9.99
+    },
+    "CO": {
+      "unique_coupons": 8,
+      "median_price": 15.99,
+      "lowest_price": 9.99
+    },
+    "CA": {
+      "unique_coupons": 44,
+      "median_price": 15.99,
+      "lowest_price": 5.0
+    },
+    "HI": {
+      "unique_coupons": 8,
+      "median_price": 10.0,
+      "lowest_price": 10.0
+    },
+    "FL": {
+      "unique_coupons": 51,
+      "median_price": 10.99,
+      "lowest_price": 4.99
+    },
+    "VA": {
+      "unique_coupons": 9,
+      "median_price": 12.99,
+      "lowest_price": 9.99
+    },
+    "UT": {
+      "unique_coupons": 4,
+      "median_price": 10.49,
+      "lowest_price": 9.99
+    },
+    "IL": {
+      "unique_coupons": 11,
+      "median_price": 11.99,
+      "lowest_price": 4.99
+    },
+    "WI": {
+      "unique_coupons": 2,
+      "median_price": 12.49,
+      "lowest_price": 11.99
+    },
+    "ME": {
+      "unique_coupons": 2,
+      "median_price": 12.99,
+      "lowest_price": 9.99
+    },
+    "BC": {
+      "unique_coupons": 22,
+      "median_price": 17.99,
+      "lowest_price": 15.99
+    },
+    "IA": {
+      "unique_coupons": 22,
+      "median_price": 10.0,
+      "lowest_price": 6.99
+    },
+    "IN": {
+      "unique_coupons": 40,
+      "median_price": 9.99,
+      "lowest_price": 4.99
+    },
+    "OH": {
+      "unique_coupons": 27,
+      "median_price": 9.99,
+      "lowest_price": 3.99
+    },
+    "NE": {
+      "unique_coupons": 23,
+      "median_price": 8.99,
+      "lowest_price": 5.99
+    },
+    "KS": {
+      "unique_coupons": 10,
+      "median_price": 8.99,
+      "lowest_price": 8.99
+    },
+    "KY": {
+      "unique_coupons": 17,
+      "median_price": 5.0,
+      "lowest_price": 4.99
+    },
+    "MI": {
+      "unique_coupons": 13,
+      "median_price": 9.99,
+      "lowest_price": 9.99
+    },
+    "SD": {
+      "unique_coupons": 1,
+      "median_price": 9.99,
+      "lowest_price": 9.99
+    },
+    "AR": {
+      "unique_coupons": 6,
+      "median_price": 9.99,
+      "lowest_price": 7.99
+    },
+    "CT": {
+      "unique_coupons": 1,
+      "median_price": 10.99,
+      "lowest_price": 10.99
+    },
+    "TN": {
+      "unique_coupons": 11,
+      "median_price": 8.99,
+      "lowest_price": 6.99
+    },
+    "MN": {
+      "unique_coupons": 11,
+      "median_price": 8.99,
+      "lowest_price": 8.99
+    },
+    "NJ": {
+      "unique_coupons": 4,
+      "median_price": 9.99,
+      "lowest_price": 5.0
+    },
+    "NY": {
+      "unique_coupons": 2,
+      "median_price": 16.99,
+      "lowest_price": 16.99
+    },
+    "AB": {
+      "unique_coupons": 1,
+      "median_price": 18.99,
+      "lowest_price": 18.99
+    },
+    "NV": {
+      "unique_coupons": 18,
+      "median_price": 10.99,
+      "lowest_price": 7.99
+    },
+    "WV": {
+      "unique_coupons": 3,
+      "median_price": 8.99,
+      "lowest_price": 8.99
+    },
+    "ID": {
+      "unique_coupons": 1,
+      "median_price": 6.99,
+      "lowest_price": 6.99
+    },
+    "MA": {
+      "unique_coupons": 1,
+      "median_price": 5.99,
+      "lowest_price": 5.99
+    },
+    "PA": {
+      "unique_coupons": 6,
+      "median_price": 9.99,
+      "lowest_price": 8.99
+    },
+    "MT": {
+      "unique_coupons": 1,
+      "median_price": 9.99,
+      "lowest_price": 9.99
+    },
+    "MD": {
+      "unique_coupons": 4,
+      "median_price": 15.49,
+      "lowest_price": 10.99
+    }
+  }
+}

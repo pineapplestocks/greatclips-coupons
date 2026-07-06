@@ -96,6 +96,9 @@ def generate_sitemap():
         "blog/great-clips-online-checkin",
         "blog/great-clips-vs-sport-clips",
         "blog/great-clips-student-discount",
+        "blog/great-clips-coupon-prices-data-study",
+        "blog/how-long-do-great-clips-coupons-last",
+        "blog/which-states-get-the-most-great-clips-coupons",
     ]
     
     for page in blog_pages:

@@ -3,6 +3,7 @@
 Generate SEO-optimized state and city pages for GreatClipsDeal.com
 """
 
+import json
 import os
 from datetime import datetime
 
@@ -10,6 +11,18 @@ NOW = datetime.now()
 CURRENT_YEAR = NOW.strftime("%Y")
 CURRENT_MONTH = NOW.strftime("%B")
 CURRENT_DATE = NOW.strftime("%Y-%m-%d")
+
+# Historical per-state stats computed from our coupon-tracking dataset
+# (see data/state_history_stats.json; regenerate when refreshing the studies).
+STATS_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "state_history_stats.json")
+try:
+    with open(STATS_FILE, encoding="utf-8") as _f:
+        _stats_data = json.load(_f)
+    STATE_STATS = _stats_data.get("states", {})
+    STATS_PERIOD = _stats_data.get("period", "")
+except (OSError, json.JSONDecodeError):
+    STATE_STATS = {}
+    STATS_PERIOD = ""
 
 
 def slugify(value):
@@ -105,6 +118,39 @@ def get_featured_city_links(state_name, cities):
             links.append((city, city_slug))
     return links
 
+def build_state_stats_section(name, code):
+    """A per-state 'by the numbers' block computed from our tracking dataset."""
+    stats = STATE_STATS.get(code)
+    if not stats:
+        return ""
+    lowest = f"${stats['lowest_price']:.2f}"
+    med = f"${stats['median_price']:.2f}"
+    return f'''
+        <!-- Tracked Data -->
+        <div class="bg-white rounded-xl p-8 shadow-md mb-12">
+            <h2 class="text-2xl font-bold text-slate-900 mb-2">{name} Coupons by the Numbers</h2>
+            <p class="text-sm text-slate-500 mb-6">From our own tracking of Great Clips' official Facebook advertising, {STATS_PERIOD}.</p>
+            <div class="grid md:grid-cols-3 gap-6 mb-6">
+                <div class="rounded-xl border border-slate-200 p-5 text-center">
+                    <div class="text-3xl font-bold text-purple-600">{stats['unique_coupons']}</div>
+                    <p class="text-slate-600">unique {code} coupons tracked</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 p-5 text-center">
+                    <div class="text-3xl font-bold text-purple-600">{med}</div>
+                    <p class="text-slate-600">median coupon price in {code}</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 p-5 text-center">
+                    <div class="text-3xl font-bold text-purple-600">{lowest}</div>
+                    <p class="text-slate-600">lowest {code} price we've seen</p>
+                </div>
+            </div>
+            <p class="text-slate-600">These figures come from our historical dataset, not estimates — see the full
+            <a href="/blog/which-states-get-the-most-great-clips-coupons" class="text-purple-600 hover:underline">state-by-state coupon study</a>
+            and <a href="/blog/great-clips-coupon-prices-data-study" class="text-purple-600 hover:underline">coupon price analysis</a> for how {name} compares nationally.</p>
+        </div>
+'''
+
+
 def generate_state_page(slug, data):
     """Generate a state page"""
     name = data['name']
@@ -115,6 +161,10 @@ def generate_state_page(slug, data):
     copy = get_state_copy(slug, name)
     featured_city_links = get_featured_city_links(name, cities)
     related_states = RELATED_STATE_LINKS.get(slug, ['texas', 'california', 'florida', 'ohio'])
+    stats = STATE_STATS.get(code)
+    lowest_tile_value = f"${stats['lowest_price']:.2f}" if stats else "$5.99+"
+    lowest_tile_label = f"Lowest {code} price we've tracked" if stats else "Coupon prices from"
+    stats_section = build_state_stats_section(name, code)
     
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -239,8 +289,8 @@ def generate_state_page(slug, data):
         <!-- Quick Stats -->
         <div class="grid md:grid-cols-3 gap-6 mb-12">
             <div class="bg-white rounded-xl p-6 shadow-md text-center">
-                <div class="text-3xl font-bold text-green-600">$5.99</div>
-                <p class="text-slate-600">Lowest Price</p>
+                <div class="text-3xl font-bold text-green-600">{lowest_tile_value}</div>
+                <p class="text-slate-600">{lowest_tile_label}</p>
             </div>
             <div class="bg-white rounded-xl p-6 shadow-md text-center">
                 <div class="text-3xl font-bold text-purple-600">{locations}+</div>
@@ -272,13 +322,15 @@ def generate_state_page(slug, data):
 
         <!-- Local Market Notes -->
         <div class="bg-white rounded-xl p-8 shadow-md mb-12">
-            <h2 class="text-2xl font-bold text-slate-900 mb-6">{name} Coupon Notes for Google Searchers</h2>
+            <h2 class="text-2xl font-bold text-slate-900 mb-6">{name} Coupon Notes</h2>
             <div class="space-y-4 text-slate-600 leading-7">
                 <p>{copy['market']}</p>
                 <p>{copy['verification']}</p>
                 <p><strong>Best practice:</strong> {copy['tip']}</p>
             </div>
         </div>
+
+{stats_section}
 
         <!-- Featured City Pages -->
         <div class="bg-white rounded-xl p-8 shadow-md mb-12">
@@ -375,6 +427,9 @@ def generate_city_page(slug, data):
     state = data['state']
     state_code = data['state_code']
     locations = data['locations']
+    city_stats = STATE_STATS.get(state_code)
+    city_lowest_value = f"${city_stats['lowest_price']:.2f}" if city_stats else "$5.99+"
+    city_lowest_label = f"Lowest {state_code} price we've tracked" if city_stats else "Coupon prices from"
     
     return f'''<!DOCTYPE html>
 <html lang="en">
@@ -492,8 +547,8 @@ def generate_city_page(slug, data):
         <!-- Quick Stats -->
         <div class="grid md:grid-cols-3 gap-6 mb-12">
             <div class="bg-white rounded-xl p-6 shadow-md text-center">
-                <div class="text-3xl font-bold text-green-600">$5.99</div>
-                <p class="text-slate-600">Lowest Price</p>
+                <div class="text-3xl font-bold text-green-600">{city_lowest_value}</div>
+                <p class="text-slate-600">{city_lowest_label}</p>
             </div>
             <div class="bg-white rounded-xl p-6 shadow-md text-center">
                 <div class="text-3xl font-bold text-purple-600">{locations}+</div>
