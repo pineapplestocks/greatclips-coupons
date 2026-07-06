@@ -111,6 +111,21 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Ping Google to re-crawl sitemap
+      # Google retired its sitemap-ping endpoint in 2023; Google now discovers updates
+      # via the sitemap registered in Search Console. IndexNow covers Bing/Yandex/etc.
+      - name: Ping IndexNow (Bing, Yandex, Seznam, Naver)
         if: always()
-        run: curl -s "https://www.google.com/ping?sitemap=https://greatclipsdeal.com/sitemap.xml"
+        run: |
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d '{
+              "host": "greatclipsdeal.com",
+              "key": "6b4474afbc6183c57a91",
+              "keyLocation": "https://greatclipsdeal.com/6b4474afbc6183c57a91.txt",
+              "urlList": [
+                "https://greatclipsdeal.com/",
+                "https://greatclipsdeal.com/sitemap.xml",
+                "https://greatclipsdeal.com/blog",
+                "https://greatclipsdeal.com/states"
+              ]
+            }'
