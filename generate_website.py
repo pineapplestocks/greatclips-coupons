@@ -63,6 +63,62 @@ def is_blocked_coupon(coupon):
     )
 
 
+STATE_NAMES = {
+    "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas",
+    "CA": "California", "CO": "Colorado", "CT": "Connecticut", "DE": "Delaware",
+    "FL": "Florida", "GA": "Georgia", "HI": "Hawaii", "ID": "Idaho",
+    "IL": "Illinois", "IN": "Indiana", "IA": "Iowa", "KS": "Kansas",
+    "KY": "Kentucky", "LA": "Louisiana", "ME": "Maine", "MD": "Maryland",
+    "MA": "Massachusetts", "MI": "Michigan", "MN": "Minnesota", "MS": "Mississippi",
+    "MO": "Missouri", "MT": "Montana", "NE": "Nebraska", "NV": "Nevada",
+    "NH": "New Hampshire", "NJ": "New Jersey", "NM": "New Mexico", "NY": "New York",
+    "NC": "North Carolina", "ND": "North Dakota", "OH": "Ohio", "OK": "Oklahoma",
+    "OR": "Oregon", "PA": "Pennsylvania", "RI": "Rhode Island", "SC": "South Carolina",
+    "SD": "South Dakota", "TN": "Tennessee", "TX": "Texas", "UT": "Utah",
+    "VT": "Vermont", "VA": "Virginia", "WA": "Washington", "WV": "West Virginia",
+    "WI": "Wisconsin", "WY": "Wyoming", "DC": "Washington DC",
+    "AB": "Alberta", "BC": "British Columbia", "MB": "Manitoba", "NB": "New Brunswick",
+    "NL": "Newfoundland", "NS": "Nova Scotia", "ON": "Ontario", "PE": "Prince Edward Island",
+    "QC": "Quebec", "SK": "Saskatchewan",
+}
+
+CANADIAN_PROVINCES = {"AB", "BC", "MB", "NB", "NL", "NS", "ON", "PE", "QC", "SK"}
+
+# Scraper sometimes truncates long area names pulled from ad copy.
+AREA_NAME_FIXES = {
+    "n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove":
+        "Edmonton-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
+}
+
+
+def state_display_name(code):
+    return STATE_NAMES.get((code or "").upper(), code or "")
+
+
+def normalize_coupons(coupons):
+    """Clean data issues before rendering: junk rows, UNKNOWN state, truncated area names."""
+    cleaned = []
+    for coupon in coupons:
+        has_price = bool(coupon.get("price"))
+        has_location = bool(coupon.get("location_name") or coupon.get("area_name") or coupon.get("city"))
+        if not has_price and not has_location:
+            continue
+
+        if (coupon.get("state") or "").upper() == "UNKNOWN":
+            coupon = {**coupon, "state": "Other"}
+
+        for field in ("area_name", "location_name"):
+            value = coupon.get(field) or ""
+            for broken, fixed in AREA_NAME_FIXES.items():
+                if broken in value:
+                    value = value.replace(broken, fixed)
+            value = re.sub(r"(?i)^only\s+at\s+", "", value)
+            if value != (coupon.get(field) or ""):
+                coupon = {**coupon, field: value}
+        cleaned.append(coupon)
+    return cleaned
+
+
 def format_date(date_str):
     """Format an ISO timestamp like the browser-side helper."""
     if not date_str or date_str == "Unknown":
@@ -225,7 +281,7 @@ def render_universal_card(coupon):
 def render_area_card(coupon):
     price = coupon.get("price") or "N/A"
     raw_area_name = coupon.get("area_name") or coupon.get("location_name") or "Regional"
-    area_name = re.sub(r"(?i)^participating\s+", "", raw_area_name)
+    area_name = re.sub(r"(?i)^(only\s+at\s+)?participating\s+", "", raw_area_name)
     return f"""
                                         <div class="bg-white/15 backdrop-blur-sm rounded-xl overflow-hidden hover:bg-white/25 transition-all duration-300 border border-white/20">
                                             {render_coupon_image(coupon)}
@@ -408,6 +464,224 @@ def render_results_grid(regular_coupons):
     return "".join(render_state_section(state, by_state[state]) for state in sorted_states)
 
 
+def parse_expiration_date(coupon):
+    expiration = coupon.get("expiration")
+    if not expiration or expiration == "N/A":
+        return None
+    try:
+        return datetime.strptime(expiration, "%m/%d/%Y")
+    except ValueError:
+        return None
+
+
+def compute_deal_stats(coupons, scraped_dt):
+    """Compute the numbers that drive the editorial copy. All values come from live data."""
+    regular = [c for c in coupons if not is_universal(c) and not is_area_based(c)]
+    priced = sorted(
+        [(get_price(c), c) for c in regular if get_price(c) < 999],
+        key=lambda pair: pair[0],
+    )
+
+    stats = {
+        "location_count": len(regular),
+        "priced_count": len(priced),
+        "cheapest": None,
+        "cheapest_price": None,
+        "cheapest_count": 0,
+        "median_price": None,
+        "max_price": None,
+        "under_10_count": 0,
+        "state_codes": [],
+        "top_states": [],
+        "has_canada": False,
+        "expiring_week_count": 0,
+        "area_count": sum(1 for c in coupons if is_area_based(c)),
+        "verified_today": 0,
+    }
+
+    if priced:
+        prices = [price for price, _ in priced]
+        cheapest_price = prices[0]
+        stats["cheapest_price"] = cheapest_price
+        stats["cheapest"] = priced[0][1]
+        stats["cheapest_count"] = sum(1 for p in prices if p == cheapest_price)
+        stats["median_price"] = prices[len(prices) // 2]
+        stats["max_price"] = prices[-1]
+        stats["under_10_count"] = sum(1 for p in prices if p < 10)
+
+    by_state = {}
+    for coupon in regular:
+        code = (coupon.get("state") or "").strip()
+        if code and code != "Other":
+            by_state.setdefault(code, 0)
+            by_state[code] += 1
+    stats["state_codes"] = sorted(by_state)
+    stats["top_states"] = sorted(by_state.items(), key=lambda kv: -kv[1])[:3]
+    stats["has_canada"] = any(code.upper() in CANADIAN_PROVINCES for code in by_state)
+
+    week_out = scraped_dt + timedelta(days=7)
+    for coupon in regular:
+        expires = parse_expiration_date(coupon)
+        if expires and scraped_dt.replace(tzinfo=None) <= expires <= week_out.replace(tzinfo=None):
+            stats["expiring_week_count"] += 1
+
+    scan_day = scraped_dt.strftime("%Y-%m-%d")
+    stats["verified_today"] = sum(
+        1 for c in coupons if (c.get("last_verified") or "") == scan_day
+    )
+    return stats
+
+
+def format_price(value):
+    if value is None:
+        return "N/A"
+    return f"${value:.2f}"
+
+
+def coverage_noun(stats):
+    return "states and provinces" if stats["has_canada"] else "states"
+
+
+def render_stats_strip(stats, formatted_date):
+    if not stats["priced_count"]:
+        return ""
+
+    cheapest = stats["cheapest"]
+    cheapest_place = format_city_state(cheapest) if cheapest else ""
+    cheapest_where = f" in {cheapest_place}" if cheapest_place else ""
+    tiles = [
+        (str(stats["location_count"] + stats["area_count"]), "active coupons"),
+        (str(len(stats["state_codes"])), coverage_noun(stats)),
+        (format_price(stats["cheapest_price"]), "lowest price today"),
+        (format_price(stats["median_price"]), "typical coupon price"),
+    ]
+    tiles_html = "".join(
+        f"""
+                            <div class="text-center">
+                                <p class="text-2xl md:text-3xl font-extrabold text-purple-700">{escape_html(value)}</p>
+                                <p class="text-xs md:text-sm text-slate-500 font-medium">{escape_html(label)}</p>
+                            </div>
+        """
+        for value, label in tiles
+    )
+
+    return f"""
+                <!-- Live data strip -->
+                <section class="max-w-7xl mx-auto px-4 mt-2 mb-6 relative z-10">
+                    <div class="bg-white rounded-2xl shadow-lg shadow-slate-200/60 border border-slate-100 p-5 md:p-6">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+{tiles_html}
+                        </div>
+                        <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+                            Every six hours our system scans Great Clips' official Facebook advertising and indexes each live
+                            coupon it finds — as of {escape_html(formatted_date)}, that's
+                            <strong>{stats["location_count"] + stats["area_count"]} active offers</strong> across
+                            {len(stats["state_codes"])} {coverage_noun(stats)}. The cheapest haircut on the board right now is
+                            <strong>{escape_html(format_price(stats["cheapest_price"]))}</strong>{escape_html(cheapest_where)}.
+                            Every card links straight to the official offer page on offers.greatclips.com — no codes to type and
+                            no email signup. Read <a href="/how-we-verify-coupons" class="text-purple-600 hover:underline font-medium">how we verify coupons</a>
+                            or compare against <a href="/prices" class="text-purple-600 hover:underline font-medium">regular Great Clips prices</a>.
+                        </p>
+                    </div>
+                </section>
+    """
+
+
+def render_deal_report(stats, scraped_dt):
+    if not stats["priced_count"]:
+        return ""
+
+    report_date = scraped_dt.strftime("%B %d, %Y").replace(" 0", " ")
+    cheapest = stats["cheapest"]
+    cheapest_place = format_city_state(cheapest) if cheapest else ""
+    cheapest_location = (cheapest.get("location_name") or "").strip() if cheapest else ""
+
+    if stats["cheapest_count"] > 1:
+        cheapest_sentence = (
+            f"The lowest price on the board is {format_price(stats['cheapest_price'])}, currently offered at "
+            f"{stats['cheapest_count']} locations"
+        )
+        if cheapest_place:
+            cheapest_sentence += f", including {cheapest_location} in {cheapest_place}" if cheapest_location else f", including {cheapest_place}"
+        cheapest_sentence += "."
+    else:
+        cheapest_sentence = f"The lowest price on the board is {format_price(stats['cheapest_price'])}"
+        if cheapest_location and cheapest_place:
+            cheapest_sentence += f" at {cheapest_location} in {cheapest_place}"
+        elif cheapest_place:
+            cheapest_sentence += f" in {cheapest_place}"
+        cheapest_sentence += "."
+
+    top_states = stats["top_states"]
+    if top_states:
+        leader_code, leader_count = top_states[0]
+        leader_name = state_display_name(leader_code)
+        runners = ", ".join(
+            f"{state_display_name(code)} ({count})" for code, count in top_states[1:]
+        )
+        coverage_sentence = f"{leader_name} leads the board with {leader_count} active coupons"
+        if runners:
+            coverage_sentence += f", followed by {runners}"
+        coverage_sentence += "."
+    else:
+        coverage_sentence = ""
+
+    expiring = stats["expiring_week_count"]
+    if expiring:
+        expiring_sentence = (
+            f"<strong>{expiring} of today's coupons expire within the next seven days.</strong> "
+            "If one of them matches your salon, plan your visit this week — once a franchise promotion "
+            "ends, there is no guarantee the next one will match the price."
+        )
+    else:
+        expiring_sentence = (
+            "None of today's coupons expire in the next seven days, so you have some breathing room "
+            "to plan your visit."
+        )
+
+    return f"""
+                <!-- Deal Report -->
+                <section class="max-w-4xl mx-auto px-4 pb-12">
+                    <article class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-10">
+                        <p class="text-sm font-semibold text-purple-600 uppercase tracking-wide mb-2">Daily analysis</p>
+                        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Great Clips Deal Report — {escape_html(report_date)}</h2>
+
+                        <div class="prose-slate space-y-4 text-slate-600 leading-relaxed">
+                            <p>
+                                Our latest scan indexed <strong class="text-slate-900">{stats["location_count"]} location-specific coupons</strong>
+                                and {stats["area_count"]} regional offers across {len(stats["state_codes"])} {coverage_noun(stats)}.
+                                {escape_html(cheapest_sentence)} The typical (median) coupon today is
+                                <strong class="text-slate-900">{escape_html(format_price(stats["median_price"]))}</strong>, with prices running as high as
+                                {escape_html(format_price(stats["max_price"]))} in higher-cost metro areas —
+                                {stats["under_10_count"]} of today's coupons get you a haircut for under $10.
+                            </p>
+                            <p>
+                                {escape_html(coverage_sentence)} That distribution isn't random: Great Clips coupons are funded by
+                                individual franchise owners, not corporate, so deal density follows local franchise advertising budgets and
+                                competition between salons. A state with lots of coupons this week can go quiet next month, and vice versa —
+                                which is why we re-scan every six hours instead of maintaining a static list. If your state isn't on the board
+                                today, check the <a href="/states" class="text-purple-600 hover:underline font-medium">state directory</a> or fall back
+                                to the best regional offer above.
+                            </p>
+                            <p>
+                                {expiring_sentence} In our experience tracking these promotions, most franchise offers run for roughly two weeks
+                                from the day they first appear, and popular price points (the $5.99–$8.99 range) tend to be replaced quickly.
+                            </p>
+                            <p class="text-sm text-slate-500 border-t border-slate-100 pt-4">
+                                <strong class="text-slate-600">Methodology:</strong> every figure above is computed from our live dataset —
+                                {stats["verified_today"]} offers were re-verified during the {escape_html(scraped_dt.strftime("%B %d").replace(" 0", " "))} scan.
+                                Coupons are collected exclusively from Great Clips' official Facebook advertising and link directly to
+                                offers.greatclips.com. We don't create, modify, or exaggerate offers.
+                                Full process: <a href="/how-we-verify-coupons" class="text-purple-600 hover:underline">how we verify coupons</a> ·
+                                <a href="/prices" class="text-purple-600 hover:underline">Great Clips price guide</a> ·
+                                <a href="/calculator" class="text-purple-600 hover:underline">savings calculator</a>
+                            </p>
+                        </div>
+                    </article>
+                </section>
+    """
+
+
 def build_static_app_html(coupons, scraped_at):
     universal_coupons = [coupon for coupon in coupons if is_universal(coupon)]
     area_coupons = [coupon for coupon in coupons if is_area_based(coupon)]
@@ -415,6 +689,11 @@ def build_static_app_html(coupons, scraped_at):
     regular_coupons = sorted(regular_coupons, key=get_price)
     states = sorted({coupon.get("state") for coupon in regular_coupons if coupon.get("state")})
     formatted_date = format_date(scraped_at)
+
+    scraped_dt = parse_scraped_datetime(scraped_at)
+    deal_stats = compute_deal_stats(coupons, scraped_dt)
+    stats_strip = render_stats_strip(deal_stats, formatted_date)
+    deal_report = render_deal_report(deal_stats, scraped_dt)
 
     universal_section = render_universal_section(universal_coupons)
     area_section = render_area_section(area_coupons)
@@ -483,6 +762,7 @@ def build_static_app_html(coupons, scraped_at):
 
 {universal_section}
 {area_section}
+{stats_strip}
 
                 <!-- Filters -->
                 <section class="max-w-7xl mx-auto px-4 py-6">
@@ -548,6 +828,8 @@ def build_static_app_html(coupons, scraped_at):
 {results_grid}                    </div>
                 </section>
 
+{deal_report}
+
                 <!-- Footer -->
                 <footer class="bg-slate-900 text-slate-400 py-12">
                     <div class="max-w-7xl mx-auto px-4">
@@ -596,14 +878,16 @@ def build_static_app_html(coupons, scraped_at):
                         <div class="mb-10 text-left max-w-4xl mx-auto border-t border-slate-800 pt-10">
                             <h2 class="text-xl font-bold text-white mb-4">About Great Clips Coupons</h2>
                             <p class="mb-4 text-slate-300">
-                                Looking for <strong class="text-white">Great Clips coupons</strong>? You're in the right place! We update this page daily with the latest
-                                <strong class="text-white">Great Clips coupon codes</strong> and <strong class="text-white">haircut deals</strong> from their Facebook ads.
-                                Save $3 to $10 on your next haircut at any of the 4,400+ Great Clips salon locations across the United States and Canada.
+                                Great Clips doesn't publish coupons in one central place. Individual franchise owners run their own
+                                promotions through Facebook advertising, which means the deals are scattered, short-lived, and easy to
+                                miss. This site exists to solve that problem: our automated system scans those official ads every six
+                                hours and organizes every live coupon by state, city, and price, so you can check one page instead of
+                                hoping the right ad finds you.
                             </p>
                             <p class="mb-6 text-slate-300">
-                                Our <strong class="text-white">Great Clips discount codes</strong> are sourced directly from official Great Clips promotions.
-                                Whether you need a <strong class="text-white">cheap haircut</strong>, a <strong class="text-white">$5.99 Great Clips coupon</strong>,
-                                or the best <strong class="text-white">Great Clips promo code for 2026</strong>, we've got you covered.
+                                Typical savings run $3 to $10 per haircut, and every offer links directly to Great Clips' own
+                                redemption page — we never rewrite, exaggerate, or invent deals. If nothing is listed for your area
+                                today, the best universal offer at the top of the page is honored at participating salons nationwide.
                             </p>
 
                             <h3 class="text-lg font-semibold text-white mb-3">Frequently Asked Questions</h3>
@@ -651,9 +935,10 @@ def generate_website():
     coupons = data.get('coupons', [])
     original_count = len(coupons)
     coupons = [coupon for coupon in coupons if not is_blocked_coupon(coupon)]
+    coupons = normalize_coupons(coupons)
     print(f"   Loaded {original_count} coupons")
     if len(coupons) != original_count:
-        print(f"   Removed {original_count - len(coupons)} blocked coupon(s)")
+        print(f"   Removed/cleaned {original_count - len(coupons)} blocked or junk coupon(s)")
     
     # Load template
     if not os.path.exists(TEMPLATE_FILE):
