@@ -99,6 +99,7 @@ def generate_sitemap():
         "blog/great-clips-coupon-prices-data-study",
         "blog/how-long-do-great-clips-coupons-last",
         "blog/which-states-get-the-most-great-clips-coupons",
+        "author/kumar-chaudhari",
     ]
     
     for page in blog_pages:
