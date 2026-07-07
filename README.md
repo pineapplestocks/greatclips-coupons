@@ -9,6 +9,7 @@ Automatically scrapes Great Clips coupons from Facebook Ad Library and deploys a
 - **No server needed** - Everything runs in GitHub's cloud
 - **Searchable website** - Filter by state, price, location
 - **Universal coupons highlighted** - US-wide coupons shown first
+- **Buffer auto-posting** - Queues current, unposted coupons for X/Twitter on a safe schedule
 
 ## 📁 Project Structure
 
@@ -23,6 +24,7 @@ Automatically scrapes Great Clips coupons from Facebook Ad Library and deploys a
 ├── scraper.py              # Main scraper script
 ├── generate_website.py     # Website generator
 ├── template.html           # Website template
+├── twitter_poster.py       # Buffer/X coupon auto-poster
 └── README.md
 ```
 
@@ -97,6 +99,41 @@ Edit `scraper.py`:
 ```python
 MAX_SCROLLS = 30  # Increase for more ads (slower)
 ```
+
+### Buffer Auto-Poster for X/Twitter
+
+This repo includes a Great Clips-specific poster inspired by the auto-poster
+bot pattern, but it uses your real coupon data instead of asking AI to invent
+tweet content. The GitHub Actions workflow queues posts through Buffer, which
+can then publish them to your connected X/Twitter channel.
+
+Add this repository secret in GitHub:
+
+```text
+Buffer
+```
+
+If your Buffer account has more than one X/Twitter channel, also add:
+
+```text
+BUFFER_CHANNEL_ID
+```
+
+Without `BUFFER_CHANNEL_ID`, the script automatically finds the first connected
+Buffer channel whose service is X/Twitter.
+
+The `.github/workflows/twitter.yml` workflow runs three times per day and queues
+one valid, unposted coupon per run in Buffer. It records posted coupons in
+`data/posted_tweets.json`, so the same coupon is not repeatedly shared.
+
+To preview locally without posting:
+
+```bash
+python twitter_poster.py --dry-run --max-posts 3
+```
+
+To preview from GitHub, open **Actions** > **Post to Buffer** > **Run workflow**
+and enable `dry_run`.
 
 ## 🔧 Troubleshooting
 
