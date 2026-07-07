@@ -1,0 +1,43 @@
+name: Weekly Reddit Digest
+
+on:
+  schedule:
+    # Mondays 8:00 AM Phoenix (15:00 UTC)
+    - cron: '0 15 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+env:
+  TZ: America/Phoenix
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build digest
+        run: python scripts/reddit_digest.py
+        env:
+          DIGEST_OUT: digest.md
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+
+      - name: Open digest issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "Reddit digest — $(date +'%b %d, %Y')" \
+            --label "reddit-digest" \
+            --body-file digest.md
