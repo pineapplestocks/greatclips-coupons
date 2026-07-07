@@ -28,16 +28,16 @@ OUT_FILE = os.environ.get("DIGEST_OUT", "digest.md")
 USER_AGENT = "greatclipsdeal-weekly-digest/1.0 (research digest; contact: greatclipsdeal@gmail.com)"
 
 SEARCH_QUERIES = [
-    "great clips coupon",
-    "great clips price",
-    "great clips cost haircut",
-    "cheap haircut coupon",
-    "greatclipsdeal",  # brand-mention monitoring
+    '"great clips" coupon',
+    '"great clips" price',
+    '"great clips"',       # broad catch-all; the mention itself is specific enough
+    "greatclipsdeal",       # brand-mention monitoring
 ]
 
-# Words that suggest the thread is a question/discussion we can help with
+# Words that mark a thread as high-priority (question we can answer with data)
 RELEVANT_HINTS = (
-    "coupon", "price", "cost", "deal", "discount", "cheap", "how much", "haircut",
+    "coupon", "price", "cost", "deal", "discount", "cheap", "how much",
+    "haircut", "hair cut", "salon", "barber",
 )
 
 
@@ -71,19 +71,74 @@ def get_oauth_token():
     return _TOKEN_CACHE["token"]
 
 
+def fetch_with_backoff(url, headers=None, attempts=3):
+    """GET with retry on 429/5xx — Reddit's RSS rate-limits bursts."""
+    from urllib.error import HTTPError
+    for attempt in range(attempts):
+        try:
+            req = Request(url, headers={"User-Agent": USER_AGENT, **(headers or {})})
+            with urlopen(req, timeout=30) as resp:
+                return resp.read()
+        except HTTPError as exc:
+            if exc.code in (429, 500, 502, 503) and attempt < attempts - 1:
+                time.sleep(35 * (attempt + 1))
+                continue
+            raise
+    return None
+
+
+def strip_html(text):
+    import re as _re
+    return _re.sub(r"<[^>]+>", " ", text or "")
+
+
+def search_reddit_rss(query):
+    """Search via Reddit's public RSS feed — no credentials required.
+    Yields dicts shaped like the JSON API's post objects (subset of fields)."""
+    import xml.etree.ElementTree as ET
+    url = "https://www.reddit.com/search.rss?q=" + quote(query) + "&sort=new&t=week&limit=25"
+    raw = fetch_with_backoff(url)
+    ns = {"a": "http://www.w3.org/2005/Atom"}
+    root = ET.fromstring(raw)
+    for entry in root.findall("a:entry", ns):
+        link_el = entry.find("a:link", ns)
+        href = link_el.get("href") if link_el is not None else ""
+        if "/comments/" not in (href or ""):
+            continue  # skip subreddit/user matches; keep actual posts
+        title_el = entry.find("a:title", ns)
+        content_el = entry.find("a:content", ns)
+        updated_el = entry.find("a:updated", ns)
+        cat_el = entry.find("a:category", ns)
+        created = 0.0
+        if updated_el is not None and updated_el.text:
+            try:
+                created = datetime.fromisoformat(
+                    updated_el.text.replace("Z", "+00:00")).timestamp()
+            except ValueError:
+                pass
+        yield {
+            "title": title_el.text if title_el is not None else "",
+            "selftext": strip_html(content_el.text if content_el is not None else ""),
+            "permalink": href.replace("https://www.reddit.com", ""),
+            "subreddit_name_prefixed": (cat_el.get("label") if cat_el is not None else "") or "",
+            "score": 0,
+            "num_comments": 0,
+            "created_utc": created,
+        }
+
+
 def search_reddit(query):
-    """Search via OAuth when credentials exist (reliable); otherwise try the
-    public endpoint, which Reddit often blocks from datacenter IPs."""
-    params = "q=" + quote(query) + "&sort=new&t=week&limit=25&type=link"
+    """Prefer OAuth (richer data: score/comments) when credentials exist;
+    otherwise use the public RSS feed, which needs no credentials."""
     token = get_oauth_token()
     if token:
-        url = "https://oauth.reddit.com/search?" + params
-        data = fetch_json(url, headers={"Authorization": f"Bearer {token}"})
+        params = "q=" + quote(query) + "&sort=new&t=week&limit=25&type=link"
+        data = fetch_json("https://oauth.reddit.com/search?" + params,
+                          headers={"Authorization": f"Bearer {token}"})
+        for child in data.get("data", {}).get("children", []):
+            yield child.get("data", {})
     else:
-        url = "https://www.reddit.com/search.json?" + params
-        data = fetch_json(url)
-    for child in data.get("data", {}).get("children", []):
-        yield child.get("data", {})
+        yield from search_reddit_rss(query)
 
 
 def load_live_stats():
@@ -160,11 +215,11 @@ def main():
                     continue
                 seen.add(permalink)
                 title = post.get("title") or ""
-                text = (title + " " + (post.get("selftext") or "")[:500]).lower()
+                text = (title + " " + (post.get("selftext") or "")[:2000]).lower()
+                # A "great clips" mention is the gate; hints only boost priority
                 if "great clips" not in text and "greatclipsdeal" not in text:
                     continue
-                if not any(h in text for h in RELEVANT_HINTS):
-                    continue
+                priority = any(h in text for h in RELEVANT_HINTS)
                 created = datetime.fromtimestamp(post.get("created_utc", 0), tz=timezone.utc)
                 threads.append({
                     "title": title.strip(),
@@ -174,12 +229,13 @@ def main():
                     "comments": post.get("num_comments", 0),
                     "age_days": (now - created).days,
                     "query": q,
+                    "priority": priority,
                 })
-            time.sleep(2)  # be polite to reddit
+            time.sleep(12)  # be polite to reddit's RSS rate limits
         except Exception as exc:  # noqa: BLE001 - report and continue with other queries
             errors.append(f"`{q}`: {exc}")
 
-    threads.sort(key=lambda t: (-t["score"], t["age_days"]))
+    threads.sort(key=lambda t: (not t["priority"], -t["score"], t["age_days"]))
 
     try:
         stats = load_live_stats()
@@ -195,8 +251,9 @@ def main():
         lines.append("")
         for i, t in enumerate(threads[:10], 1):
             lines.append(f"### {i}. [{t['title']}]({t['url']})")
-            lines.append(f"{t['subreddit']} · {t['score']} points · {t['comments']} comments · "
-                         f"{t['age_days']}d old · matched `{t['query']}`")
+            engagement = (f"{t['score']} points · {t['comments']} comments · "
+                          if (t['score'] or t['comments']) else "")
+            lines.append(f"{t['subreddit']} · {engagement}{t['age_days']}d old · matched `{t['query']}`")
             lines.append("")
             lines.append(f"**Suggested reply (template {(i - 1) % len(replies) + 1}):**")
             lines.append("")
