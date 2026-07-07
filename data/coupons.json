@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-07-07T02:44:01.494042",
-  "total_coupons": 52,
+  "scraped_at": "2026-07-07T07:38:02.990351",
+  "total_coupons": 53,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/VGLk34N",
@@ -33,6 +33,22 @@
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-06-23",
       "last_seen": "2026-06-30"
+    },
+    {
+      "url": "https://offers.greatclips.com/K5gVU2t",
+      "coupon_code": "K5gVU2t",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/16207/50707-002-1200x600-US-Sparkfly-1off-10off5.jpg",
+      "location_name": "participating US Area",
+      "state": "AREA",
+      "area_name": "participating US",
+      "price": "$5.00",
+      "market": "US",
+      "expiration": null,
+      "last_verified": "2026-07-07",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating US locations",
+      "added_date": "2026-07-07",
+      "last_seen": "2026-07-07"
     },
     {
       "url": "https://offers.greatclips.com/DCuPqeC",
