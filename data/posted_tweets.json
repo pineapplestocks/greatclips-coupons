@@ -281,9 +281,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Fresh haircut savings: $5.00 at participating US locations. Limited time offer.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#K5gVU2t\n\n#GreatClips #HaircutDeals"
+    },
+    {
+      "coupon_code": "VGLk34N",
+      "coupon_url": "https://offers.greatclips.com/VGLk34N",
+      "post_id": "6a4d8662f4362e9785089fd9",
+      "posted_at": "2026-07-07T23:06:10Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $5.00 at participating US locations. Limited time offer.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#VGLk34N\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-07-07T17:55:19Z",
+  "last_post": "2026-07-07T23:06:10Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -332,6 +341,7 @@
     "https://offers.greatclips.com/PUlEQje",
     "https://offers.greatclips.com/PiUV2AO",
     "https://offers.greatclips.com/R12OToz",
+    "https://offers.greatclips.com/VGLk34N",
     "https://offers.greatclips.com/VRDfsr4",
     "https://offers.greatclips.com/VfFt8ot",
     "https://offers.greatclips.com/VtlklLX",
