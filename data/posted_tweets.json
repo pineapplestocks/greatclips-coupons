@@ -326,9 +326,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $12.99 in the only at participating Reno, Carson City & West NV area. Expires Jul 24, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#CESQzzX\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "3bnhBOt",
+      "coupon_url": "https://offers.greatclips.com/3bnhBOt",
+      "post_id": "6a4fdfa13169a29bc32ec782",
+      "posted_at": "2026-07-09T17:51:29Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $13.99 in the Denver area. Expires Jul 17, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#3bnhBOt\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-07-09T06:54:50Z",
+  "last_post": "2026-07-09T17:51:29Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -341,6 +350,7 @@
     "https://offers.greatclips.com/2sRfhDV",
     "https://offers.greatclips.com/3PTd2BK",
     "https://offers.greatclips.com/3VHPb44",
+    "https://offers.greatclips.com/3bnhBOt",
     "https://offers.greatclips.com/3spM630",
     "https://offers.greatclips.com/4ECj50d",
     "https://offers.greatclips.com/4H1lHXo",
