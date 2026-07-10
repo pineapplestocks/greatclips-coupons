@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-07-09T20:28:44.821101",
-  "total_coupons": 53,
+  "scraped_at": "2026-07-10T02:37:37.709517",
+  "total_coupons": 43,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/6bWu89Y",
@@ -12,7 +12,7 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-06-23",
@@ -28,29 +28,11 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-07-07",
-      "last_seen": "2026-07-09"
-    },
-    {
-      "url": "https://offers.greatclips.com/DCuPqeC",
-      "coupon_code": "DCuPqeC",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8451/50707-002-1200x600-5.99.jpg",
-      "valid_text": "Valid at Great Clips Fredericksburg Town Center at 1455 E Main St in Fredericksburg, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 07/10/2026",
-      "location_name": "Fredericksburg Town Center",
-      "address": "1455 E Main St",
-      "city": "Fredericksburg,",
-      "state": "TX",
-      "expiration": "07/10/2026",
-      "price": "$5.99",
-      "market": "TX",
-      "last_verified": "2026-07-09",
-      "source": "facebook_ad_library",
-      "participating_location_note": null,
-      "added_date": "2026-07-01",
-      "last_seen": "2026-07-03"
+      "last_seen": "2026-07-10"
     },
     {
       "url": "https://offers.greatclips.com/7mvadpZ",
@@ -66,7 +48,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-07-05",
       "market": "FL",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -84,7 +66,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "NE",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -102,7 +84,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "NE",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -116,7 +98,7 @@
       "area_name": "participating Upper Rio Grande Valley",
       "price": "$8.99",
       "market": "Upper Rio Grande Valley",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Upper Rio Grande Valley",
       "added_date": "2026-07-04",
@@ -136,7 +118,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -154,7 +136,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -170,11 +152,11 @@
       "expiration": "07/31/2026",
       "price": "$9.99",
       "market": "UT",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-07-04",
-      "last_seen": "2026-07-09"
+      "last_seen": "2026-07-10"
     },
     {
       "url": "https://offers.greatclips.com/3n6Hy6K",
@@ -188,29 +170,11 @@
       "expiration": "07/31/2026",
       "price": "$9.99",
       "market": "UT",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-07-04",
-      "last_seen": "2026-07-09"
-    },
-    {
-      "url": "https://offers.greatclips.com/81MJV6b",
-      "coupon_code": "81MJV6b",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8462/50707-002-1200x600-10.99.jpg",
-      "valid_text": "Valid at Great Clips Maple Tree at 349 Clarkson Rd in Ellisville, MO. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 07/10/2026",
-      "location_name": "Maple Tree",
-      "address": "349 Clarkson Rd",
-      "city": "Ellisville,",
-      "state": "MO",
-      "expiration": "07/10/2026",
-      "price": "$10.99",
-      "added_date": "2026-06-08",
-      "last_seen": "2026-06-08",
-      "market": "MO",
-      "last_verified": "2026-07-09",
-      "source": "facebook_ad_library",
-      "participating_location_note": null
+      "last_seen": "2026-07-10"
     },
     {
       "url": "https://offers.greatclips.com/8RKvAIm",
@@ -226,7 +190,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -244,7 +208,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -262,7 +226,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -280,7 +244,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -298,7 +262,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -316,7 +280,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -334,7 +298,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -352,7 +316,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -370,7 +334,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -388,7 +352,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -406,7 +370,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -424,25 +388,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-09",
-      "source": "facebook_ad_library",
-      "participating_location_note": null
-    },
-    {
-      "url": "https://offers.greatclips.com/XYRF8Sb",
-      "coupon_code": "XYRF8Sb",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8462/50707-002-1200x600-10.99.jpg",
-      "valid_text": "Valid at Great Clips Hilltown Village at 119 Hilltown Village Ctr in Chesterfield, MO. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 07/10/2026",
-      "location_name": "Hilltown Village",
-      "address": "119 Hilltown Village Ctr",
-      "city": "Chesterfield,",
-      "state": "MO",
-      "expiration": "07/10/2026",
-      "price": "$10.99",
-      "added_date": "2026-06-08",
-      "last_seen": "2026-06-08",
-      "market": "MO",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -456,47 +402,11 @@
       "area_name": "participating Las Vegas",
       "price": "$10.99",
       "market": "Las Vegas",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Las Vegas",
       "added_date": "2026-06-27",
-      "last_seen": "2026-07-09"
-    },
-    {
-      "url": "https://offers.greatclips.com/NKIBvBc",
-      "coupon_code": "NKIBvBc",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8464/50707-002-1200x600-11.99.jpg",
-      "valid_text": "Valid at Great Clips Harvester Square at 36 B-1 Harvester Sq in Harvester, MO. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 07/10/2026",
-      "location_name": "Harvester Square",
-      "address": "36 B-1 Harvester Sq",
-      "city": "Harvester,",
-      "state": "MO",
-      "expiration": "07/10/2026",
-      "price": "$11.99",
-      "added_date": "2026-06-08",
-      "last_seen": "2026-06-08",
-      "market": "MO",
-      "last_verified": "2026-07-09",
-      "source": "facebook_ad_library",
-      "participating_location_note": null
-    },
-    {
-      "url": "https://offers.greatclips.com/49SRQ19",
-      "coupon_code": "49SRQ19",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8464/50707-002-1200x600-11.99.jpg",
-      "valid_text": "Valid at Great Clips Oakridge Plaza at 9590 SW Highway 200 in Ocala, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 07/10/2026",
-      "location_name": "Oakridge Plaza",
-      "address": "9590 SW Highway 200",
-      "city": "Ocala,",
-      "state": "FL",
-      "expiration": "07/10/2026",
-      "price": "$11.99",
-      "added_date": "2026-06-08",
-      "last_seen": "2026-06-08",
-      "market": "FL",
-      "last_verified": "2026-07-09",
-      "source": "facebook_ad_library",
-      "participating_location_note": null
+      "last_seen": "2026-07-10"
     },
     {
       "url": "https://offers.greatclips.com/daEZm2M",
@@ -512,25 +422,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "IL",
-      "last_verified": "2026-07-09",
-      "source": "facebook_ad_library",
-      "participating_location_note": null
-    },
-    {
-      "url": "https://offers.greatclips.com/GwvZo4c",
-      "coupon_code": "GwvZo4c",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8466/50707-002-1200x600-12.99.jpg",
-      "valid_text": "Valid at Great Clips Saxon Sterling Shops at 1573 Saxon Blvd in Deltona, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 07/10/2026",
-      "location_name": "Saxon Sterling Shops",
-      "address": "1573 Saxon Blvd",
-      "city": "Deltona,",
-      "state": "FL",
-      "expiration": "07/10/2026",
-      "price": "$12.99",
-      "added_date": "2026-06-08",
-      "last_seen": "2026-06-08",
-      "market": "FL",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -548,25 +440,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "IL",
-      "last_verified": "2026-07-09",
-      "source": "facebook_ad_library",
-      "participating_location_note": null
-    },
-    {
-      "url": "https://offers.greatclips.com/KR5tpiC",
-      "coupon_code": "KR5tpiC",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8466/50707-002-1200x600-12.99.jpg",
-      "valid_text": "Valid at Great Clips Westyn Bay at 2222 Ocoee Apopka Rd in Ocoee, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 07/10/2026",
-      "location_name": "Westyn Bay",
-      "address": "2222 Ocoee Apopka Rd",
-      "city": "Ocoee,",
-      "state": "FL",
-      "expiration": "07/10/2026",
-      "price": "$12.99",
-      "added_date": "2026-06-08",
-      "last_seen": "2026-06-08",
-      "market": "FL",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -584,25 +458,9 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "IN",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
-    },
-    {
-      "url": "https://offers.greatclips.com/EsXCp7M",
-      "coupon_code": "EsXCp7M",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/19512/50707-002-1200x600-12.99.jpg",
-      "expiration": "07/10/2026",
-      "location_name": "participating Salt Lake City Area",
-      "state": "AREA",
-      "area_name": "participating Salt Lake City",
-      "price": "$12.99",
-      "market": "Salt Lake City",
-      "last_verified": "2026-07-09",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Salt Lake City",
-      "added_date": "2026-06-25",
-      "last_seen": "2026-07-03"
     },
     {
       "url": "https://offers.greatclips.com/CESQzzX",
@@ -614,11 +472,11 @@
       "area_name": "only at participating Reno, Carson City & West NV",
       "price": "$12.99",
       "market": "Reno, Carson City & West NV",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Reno, Carson City & West NV",
       "added_date": "2026-06-30",
-      "last_seen": "2026-07-09"
+      "last_seen": "2026-07-10"
     },
     {
       "url": "https://offers.greatclips.com/YYDjN7K",
@@ -632,7 +490,7 @@
       "expiration": "07/16/2026",
       "price": "$12.99",
       "market": "VA",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-07-04",
@@ -648,47 +506,11 @@
       "area_name": "participating Denver",
       "price": "$13.99",
       "market": "Denver",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Denver",
       "added_date": "2026-06-19",
-      "last_seen": "2026-07-09"
-    },
-    {
-      "url": "https://offers.greatclips.com/fccqubB",
-      "coupon_code": "fccqubB",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8470/50707-002-1200x600-14.99.jpg",
-      "valid_text": "Valid at Great Clips Shops at Vicksburg at 9839 State Hwy 6 in Missouri City, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 07/10/2026",
-      "location_name": "Shops",
-      "address": "Vicksburg at 9839 State Hwy 6",
-      "city": "Missouri City,",
-      "state": "TX",
-      "expiration": "07/10/2026",
-      "price": "$14.99",
-      "added_date": "2026-06-08",
-      "last_seen": "2026-06-08",
-      "market": "TX",
-      "last_verified": "2026-07-09",
-      "source": "facebook_ad_library",
-      "participating_location_note": null
-    },
-    {
-      "url": "https://offers.greatclips.com/4mVEDVv",
-      "coupon_code": "4mVEDVv",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8470/50707-002-1200x600-14.99.jpg",
-      "valid_text": "Valid at Great Clips Telfair HEB Sugarland at 510 Highway 6 in Sugar Land, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 07/10/2026",
-      "location_name": "Telfair HEB Sugarland",
-      "address": "510 Highway 6",
-      "city": "Sugar Land,",
-      "state": "TX",
-      "expiration": "07/10/2026",
-      "price": "$14.99",
-      "added_date": "2026-06-08",
-      "last_seen": "2026-06-08",
-      "market": "TX",
-      "last_verified": "2026-07-09",
-      "source": "facebook_ad_library",
-      "participating_location_note": null
+      "last_seen": "2026-07-10"
     },
     {
       "url": "https://offers.greatclips.com/oPXeYLy",
@@ -704,7 +526,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "CA",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -722,7 +544,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "CA",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -740,7 +562,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "CA",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -758,7 +580,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "CA",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -776,7 +598,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "CA",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -794,7 +616,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "CA",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -812,7 +634,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "CA",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -830,7 +652,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "CA",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -848,7 +670,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "CA",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -866,7 +688,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "CA",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -884,7 +706,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "CA",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -898,11 +720,11 @@
       "area_name": "n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
       "price": "$15.99",
       "market": "n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
       "added_date": "2026-06-19",
-      "last_seen": "2026-07-09"
+      "last_seen": "2026-07-10"
     },
     {
       "url": "https://offers.greatclips.com/hwWLU3h",
@@ -914,11 +736,11 @@
       "area_name": "participating Greater Los Angeles",
       "price": "$17.99",
       "market": "Greater Los Angeles",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Greater Los Angeles",
       "added_date": "2026-07-09",
-      "last_seen": "2026-07-09"
+      "last_seen": "2026-07-10"
     },
     {
       "url": "https://offers.greatclips.com/FEY2BPH",
@@ -930,11 +752,11 @@
       "area_name": "at participating Calgary-Lethbridge-Airdrie-Okotoks-Cochrane",
       "price": "$18.99",
       "market": "at participating Calgary-Lethbridge-Airdrie-Okotoks-Cochrane",
-      "last_verified": "2026-07-09",
+      "last_verified": "2026-07-10",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in at participating Calgary-Lethbridge-Airdrie-Okotoks-Cochrane",
       "added_date": "2026-07-09",
-      "last_seen": "2026-07-09"
+      "last_seen": "2026-07-10"
     }
   ]
 }
