@@ -371,9 +371,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $6.99 in The Villages, FL. Expires Jul 17, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#7mvadpZ\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "yiuVvFj",
+      "coupon_url": "https://offers.greatclips.com/yiuVvFj",
+      "post_id": "6a51d84f5bfb30fba4ad386f",
+      "posted_at": "2026-07-11T05:44:48Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $6.99 in Omaha, NE. Expires Jul 17, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#yiuVvFj\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-07-10T23:01:57Z",
+  "last_post": "2026-07-11T05:44:48Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -474,6 +483,7 @@
     "https://offers.greatclips.com/wGjjdyK",
     "https://offers.greatclips.com/xQnCtp8",
     "https://offers.greatclips.com/xqTb01a",
-    "https://offers.greatclips.com/xz28zQU"
+    "https://offers.greatclips.com/xz28zQU",
+    "https://offers.greatclips.com/yiuVvFj"
   ]
 }
