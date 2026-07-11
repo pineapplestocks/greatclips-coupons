@@ -389,9 +389,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $9.99 in The Villages, FL. Expires Jul 20, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#CwOKgUW\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "RM5iPmQ",
+      "coupon_url": "https://offers.greatclips.com/RM5iPmQ",
+      "post_id": "6a52c9d15bfb30fba4b6d89f",
+      "posted_at": "2026-07-11T22:55:13Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips savings update: $9.99 coupon in Ocala, FL. Expires Jul 20, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#RM5iPmQ\n\n#GreatClips #SaveMoney"
     }
   ],
-  "last_post": "2026-07-11T16:52:44Z",
+  "last_post": "2026-07-11T22:55:13Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -448,6 +457,7 @@
     "https://offers.greatclips.com/PUlEQje",
     "https://offers.greatclips.com/PiUV2AO",
     "https://offers.greatclips.com/R12OToz",
+    "https://offers.greatclips.com/RM5iPmQ",
     "https://offers.greatclips.com/VGLk34N",
     "https://offers.greatclips.com/VRDfsr4",
     "https://offers.greatclips.com/VfFt8ot",
