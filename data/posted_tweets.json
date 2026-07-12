@@ -416,9 +416,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $9.99 in Cottonwood Heights, UT. Expires Jul 24, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#A8jOa9H\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "2lgckOb",
+      "coupon_url": "https://offers.greatclips.com/2lgckOb",
+      "post_id": "6a541b5a5f9decadd29a21fb",
+      "posted_at": "2026-07-12T22:55:22Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips savings update: $9.99 coupon in Austin, TX. Expires Jul 31, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#2lgckOb\n\n#GreatClips #SaveMoney"
     }
   ],
-  "last_post": "2026-07-12T16:55:02Z",
+  "last_post": "2026-07-12T22:55:22Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -428,6 +437,7 @@
     "https://offers.greatclips.com/2IzGTRB",
     "https://offers.greatclips.com/2KAdGYv",
     "https://offers.greatclips.com/2SXfKr1",
+    "https://offers.greatclips.com/2lgckOb",
     "https://offers.greatclips.com/2sRfhDV",
     "https://offers.greatclips.com/3PTd2BK",
     "https://offers.greatclips.com/3VHPb44",
