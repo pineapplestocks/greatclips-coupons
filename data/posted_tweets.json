@@ -407,9 +407,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips savings update: $9.99 coupon in Ocala, FL. Expires Jul 20, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#hN8vUzK\n\n#GreatClips #SaveMoney"
+    },
+    {
+      "coupon_code": "A8jOa9H",
+      "coupon_url": "https://offers.greatclips.com/A8jOa9H",
+      "post_id": "6a53c6e698dc012070383534",
+      "posted_at": "2026-07-12T16:55:02Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $9.99 in Cottonwood Heights, UT. Expires Jul 24, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#A8jOa9H\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-07-12T06:08:18Z",
+  "last_post": "2026-07-12T16:55:02Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -436,6 +445,7 @@
     "https://offers.greatclips.com/8Ti2aVG",
     "https://offers.greatclips.com/8nLBx6P",
     "https://offers.greatclips.com/9dfsvKP",
+    "https://offers.greatclips.com/A8jOa9H",
     "https://offers.greatclips.com/Ao59KZQ",
     "https://offers.greatclips.com/CESQzzX",
     "https://offers.greatclips.com/CwOKgUW",
