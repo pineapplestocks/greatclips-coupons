@@ -386,6 +386,38 @@ def render_state_section(state, coupons):
     """
 
 
+def render_featured_paywall_section(coupon):
+    if not coupon:
+        return ""
+    return f"""
+                <section class="max-w-7xl mx-auto px-4 -mt-8 relative z-10 mb-8">
+                    <div class="bg-gradient-to-r from-orange-500 via-red-500 to-orange-600 rounded-2xl p-1">
+                        <div class="bg-gradient-to-r from-orange-500 via-red-500 to-orange-600 rounded-xl p-6 md:p-10 relative overflow-hidden text-center">
+                            <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+                            <div class="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+
+                            <div class="relative">
+                                <div class="inline-flex items-center gap-2 bg-white/20 rounded-full px-3 py-1 mb-3">
+                                    <span class="text-white text-sm font-semibold">⭐ TOP PICK — NATIONWIDE</span>
+                                </div>
+                                <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-2">Save $5.00 On Your Next Haircut</h2>
+                                <p class="text-white/85 text-base md:text-lg max-w-xl mx-auto mb-6">
+                                    Unlock this exclusive nationwide coupon for just $0.75. Refundable anytime, no questions asked — you have nothing to lose.
+                                </p>
+                                <button onclick='{js_call_get_coupon(coupon)}'
+                                    class="inline-block bg-white text-orange-600 font-extrabold text-lg py-4 px-10 rounded-xl text-center hover:bg-orange-50 transition-colors cursor-pointer shadow-lg">
+                                    Unlock My $5 Coupon — $0.75 →
+                                </button>
+                                <p class="text-white/70 text-sm mt-4">
+                                    🔒 Secure checkout via Stripe · Apple Pay supported · Instant refund guarantee
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+    """
+
+
 def render_universal_section(coupons):
     if not coupons:
         return ""
@@ -706,6 +738,11 @@ def build_static_app_html(coupons, scraped_at):
     universal_coupons = [coupon for coupon in coupons if is_universal(coupon)]
     area_coupons = [coupon for coupon in coupons if is_area_based(coupon)]
     regular_coupons = [coupon for coupon in coupons if not is_universal(coupon) and not is_area_based(coupon)]
+
+    featured_coupon = next((c for c in area_coupons if is_paywalled_coupon(c)), None)
+    if featured_coupon:
+        area_coupons = [c for c in area_coupons if c is not featured_coupon]
+    featured_section = render_featured_paywall_section(featured_coupon)
     regular_coupons = sorted(regular_coupons, key=get_price)
     states = sorted({coupon.get("state") for coupon in regular_coupons if coupon.get("state")})
     formatted_date = format_date(scraped_at)
@@ -780,6 +817,7 @@ def build_static_app_html(coupons, scraped_at):
                     </div>
                 </header>
 
+{featured_section}
 {universal_section}
 {area_section}
 {stats_strip}
