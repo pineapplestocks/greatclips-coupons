@@ -462,13 +462,16 @@
                                 <div class="inline-flex items-center gap-2 bg-white/20 rounded-full px-3 py-1 mb-3">
                                     <span class="text-white text-sm font-semibold">⭐ TOP PICK — NATIONWIDE</span>
                                 </div>
+                                <div class="w-40 mx-auto mb-4 rounded-xl overflow-hidden shadow-lg">
+                                    <img src="https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/16207/50707-002-1200x600-US-Sparkfly-1off-10off5.jpg" alt="Great Clips $5 Off Coupon" class="w-full h-auto object-cover">
+                                </div>
                                 <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-2">Save $5.00 On Your Next Haircut</h2>
                                 <p class="text-white/85 text-base md:text-lg max-w-xl mx-auto mb-6">
-                                    Unlock this exclusive nationwide coupon for just $0.75. Refundable anytime, no questions asked — you have nothing to lose.
+                                    Unlock this exclusive nationwide coupon instantly. Refundable anytime, no questions asked — you have nothing to lose.
                                 </p>
                                 <button onclick='getCoupon(&quot;https://offers.greatclips.com/K5gVU2t&quot;, &quot;$5.00&quot;, &quot;participating US&quot;, &quot;&quot;, &quot;AREA&quot;, true)'
                                     class="inline-block bg-white text-orange-600 font-extrabold text-lg py-4 px-10 rounded-xl text-center hover:bg-orange-50 transition-colors cursor-pointer shadow-lg">
-                                    Unlock My $5 Coupon — $0.75 →
+                                    Unlock Coupon →
                                 </button>
                                 <p class="text-white/70 text-sm mt-4">
                                     🔒 Secure checkout via Stripe · Apple Pay supported · Instant refund guarantee
@@ -3064,21 +3067,29 @@
             document.getElementById('paywallPayView').classList.remove('hidden');
             document.getElementById('paywallUnlockedView').classList.add('hidden');
             document.getElementById('paywallErrorMsg').classList.add('hidden');
-            document.getElementById('paywallPayButton').disabled = true;
-            document.getElementById('paywallPayButton').textContent = 'Loading payment form…';
+            document.getElementById('paywallLoadingMsg').classList.remove('hidden');
 
             try {
                 const res = await fetch(`${PAYMENT_WORKER_URL}/create-payment-intent`, { method: 'POST' });
                 if (!res.ok) throw new Error('bad response');
                 const { client_secret } = await res.json();
                 paywallElements = stripe.elements({ clientSecret: client_secret });
-                const paymentElement = paywallElements.create('payment');
-                paymentElement.mount('#paywallPaymentElement');
-                document.getElementById('paywallPayButton').disabled = false;
-                document.getElementById('paywallPayButton').textContent = 'Pay $0.75 & Unlock';
+                const expressCheckoutElement = paywallElements.create('expressCheckout', {
+                    paymentMethods: {
+                        applePay: 'auto',
+                        googlePay: 'auto',
+                        link: 'never',
+                        paypal: 'never',
+                        amazonPay: 'never',
+                    },
+                });
+                expressCheckoutElement.mount('#paywallPaymentElement');
+                expressCheckoutElement.on('confirm', handlePaywallConfirm);
+                document.getElementById('paywallLoadingMsg').classList.add('hidden');
             } catch (err) {
                 document.getElementById('paywallErrorMsg').textContent = 'Payment form failed to load. Please try again in a moment.';
                 document.getElementById('paywallErrorMsg').classList.remove('hidden');
+                document.getElementById('paywallLoadingMsg').classList.add('hidden');
             }
         }
 
@@ -3088,11 +3099,7 @@
             paywallPendingCoupon = null;
         }
 
-        async function submitPaywallPayment() {
-            if (!stripe || !paywallElements) return;
-            const btn = document.getElementById('paywallPayButton');
-            btn.disabled = true;
-            btn.textContent = 'Processing…';
+        async function handlePaywallConfirm() {
             document.getElementById('paywallErrorMsg').classList.add('hidden');
 
             const { error, paymentIntent } = await stripe.confirmPayment({
@@ -3103,8 +3110,6 @@
             if (error) {
                 document.getElementById('paywallErrorMsg').textContent = error.message || 'Payment failed. Please try a different payment method.';
                 document.getElementById('paywallErrorMsg').classList.remove('hidden');
-                btn.disabled = false;
-                btn.textContent = 'Pay $0.75 & Unlock';
                 return;
             }
 
@@ -3241,16 +3246,9 @@
 
                 <div id="paywallPaymentElement" class="mb-4"></div>
 
-                <p id="paywallErrorMsg" class="hidden text-red-600 text-sm mb-3"></p>
+                <p id="paywallLoadingMsg" class="text-center text-slate-500 text-sm mb-3">Loading Apple Pay / Google Pay…</p>
 
-                <button
-                    id="paywallPayButton"
-                    onclick="submitPaywallPayment()"
-                    disabled
-                    class="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-orange-200 disabled:opacity-60"
-                >
-                    Loading payment form…
-                </button>
+                <p id="paywallErrorMsg" class="hidden text-red-600 text-sm mb-3"></p>
 
                 <p class="text-center text-xs text-slate-400 mt-4">
                     Payments processed securely by Stripe. Issues? Email <a href="mailto:greatclipsdeal@gmail.com" class="underline">greatclipsdeal@gmail.com</a>.

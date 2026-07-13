@@ -400,13 +400,16 @@ def render_featured_paywall_section(coupon):
                                 <div class="inline-flex items-center gap-2 bg-white/20 rounded-full px-3 py-1 mb-3">
                                     <span class="text-white text-sm font-semibold">⭐ TOP PICK — NATIONWIDE</span>
                                 </div>
+                                <div class="w-40 mx-auto mb-4 rounded-xl overflow-hidden shadow-lg">
+                                    <img src="{escape_html(coupon.get("image_url") or "")}" alt="Great Clips $5 Off Coupon" class="w-full h-auto object-cover">
+                                </div>
                                 <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-2">Save $5.00 On Your Next Haircut</h2>
                                 <p class="text-white/85 text-base md:text-lg max-w-xl mx-auto mb-6">
-                                    Unlock this exclusive nationwide coupon for just $0.75. Refundable anytime, no questions asked — you have nothing to lose.
+                                    Unlock this exclusive nationwide coupon instantly. Refundable anytime, no questions asked — you have nothing to lose.
                                 </p>
                                 <button onclick='{js_call_get_coupon(coupon)}'
                                     class="inline-block bg-white text-orange-600 font-extrabold text-lg py-4 px-10 rounded-xl text-center hover:bg-orange-50 transition-colors cursor-pointer shadow-lg">
-                                    Unlock My $5 Coupon — $0.75 →
+                                    Unlock Coupon →
                                 </button>
                                 <p class="text-white/70 text-sm mt-4">
                                     🔒 Secure checkout via Stripe · Apple Pay supported · Instant refund guarantee
