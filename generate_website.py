@@ -405,8 +405,11 @@ def render_featured_paywall_section(coupon):
                                     <img src="{escape_html(coupon.get("image_url") or "")}" alt="Great Clips $5 Off Coupon" class="w-full h-auto object-cover">
                                 </div>
                                 <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-2">Save $5.00 On Your Next Haircut</h2>
+                                <p class="text-white/85 text-base md:text-lg max-w-xl mx-auto mb-2">
+                                    $0.75 to unlock — helps keep this site running. You still save $4.25+ on your haircut.
+                                </p>
                                 <p class="text-white/85 text-base md:text-lg max-w-xl mx-auto mb-6">
-                                    Unlock this exclusive nationwide coupon instantly. Refundable anytime, no questions asked — you have nothing to lose.
+                                    100% refund, no questions asked — you have nothing to lose.
                                 </p>
                                 <button onclick='{js_call_get_coupon(coupon)}'
                                     class="inline-block bg-white text-orange-600 font-extrabold text-lg py-4 px-10 rounded-xl text-center hover:bg-orange-50 transition-colors cursor-pointer shadow-lg">
