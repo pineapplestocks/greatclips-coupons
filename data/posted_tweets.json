@@ -443,9 +443,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips savings update: $9.99 coupon in Riverton, UT. Expires Jul 31, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#3zK8eV0\n\n#GreatClips #SaveMoney"
+    },
+    {
+      "coupon_code": "KIyxTax",
+      "coupon_url": "https://offers.greatclips.com/KIyxTax",
+      "post_id": "6a556dc382f1b8ce84c0d958",
+      "posted_at": "2026-07-13T22:59:16Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips savings update: $9.99 coupon in Austin, TX. Expires Jul 31, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#KIyxTax\n\n#GreatClips #SaveMoney"
     }
   ],
-  "last_post": "2026-07-13T17:51:34Z",
+  "last_post": "2026-07-13T22:59:16Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -496,6 +505,7 @@
     "https://offers.greatclips.com/JIiOv3l",
     "https://offers.greatclips.com/K5gVU2t",
     "https://offers.greatclips.com/KEpDQCZ",
+    "https://offers.greatclips.com/KIyxTax",
     "https://offers.greatclips.com/KW4CV4V",
     "https://offers.greatclips.com/LA9ZDU6",
     "https://offers.greatclips.com/Lg8M6iE",
