@@ -47,6 +47,26 @@ def js_call(function_name, *args):
     return html_escape(call, quote=True)
 
 
+def is_paywalled_coupon(coupon):
+    price = (coupon.get("price") or "").strip()
+    state = (coupon.get("state") or "").upper()
+    return price == "$5.00" and state == "AREA"
+
+
+def js_call_get_coupon(coupon):
+    args = [
+        coupon.get("url") or "",
+        coupon.get("price") or "",
+        (coupon.get("area_name") or coupon.get("location_name") or "").strip() or "Regional",
+        "",
+        coupon.get("state") or "",
+    ]
+    string_args = ", ".join(js_string(arg) for arg in args)
+    paid = "true" if is_paywalled_coupon(coupon) else "false"
+    call = f"getCoupon({string_args}, {paid})"
+    return html_escape(call, quote=True)
+
+
 def copy_link_handler(url):
     call = (
         f"navigator.clipboard.writeText({js_string(url)}); "
@@ -300,9 +320,9 @@ def render_area_card(coupon):
                                                 </h3>
                                                 <p class="text-white/60 text-sm mb-4">Valid at participating salons in this area</p>
                                                 <div class="space-y-2">
-                                                    <button onclick='{js_call("getCoupon", coupon.get("url") or "", coupon.get("price") or "", area_name, "", coupon.get("state") or "")}'
+                                                    <button onclick='{js_call_get_coupon(coupon)}'
                                                         class="block w-full bg-white text-orange-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-orange-50 transition-colors cursor-pointer">
-                                                        Get your coupon now →
+                                                        {"Unlock this coupon — $0.75 →" if is_paywalled_coupon(coupon) else "Get your coupon now →"}
                                                     </button>
                                                     <button onclick='{js_call("shareCoupon", coupon.get("url") or "", coupon.get("price") or "")}'
                                                         class="w-full bg-white/20 hover:bg-white/30 text-white font-medium py-2.5 px-4 rounded-lg text-center transition-colors flex items-center justify-center gap-2">

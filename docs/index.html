@@ -50,6 +50,7 @@
     <!-- Structured Data - HowTo (Shows steps in search results) -->
     <!-- Structured Data - Breadcrumb -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://js.stripe.com/v3/"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -495,9 +496,9 @@
                                                 </h3>
                                                 <p class="text-white/60 text-sm mb-4">Valid at participating salons in this area</p>
                                                 <div class="space-y-2">
-                                                    <button onclick='getCoupon(&quot;https://offers.greatclips.com/K5gVU2t&quot;, &quot;$5.00&quot;, &quot;US&quot;, &quot;&quot;, &quot;AREA&quot;)'
+                                                    <button onclick='getCoupon(&quot;https://offers.greatclips.com/K5gVU2t&quot;, &quot;$5.00&quot;, &quot;participating US&quot;, &quot;&quot;, &quot;AREA&quot;, true)'
                                                         class="block w-full bg-white text-orange-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-orange-50 transition-colors cursor-pointer">
-                                                        Get your coupon now →
+                                                        Unlock this coupon — $0.75 →
                                                     </button>
                                                     <button onclick='shareCoupon(&quot;https://offers.greatclips.com/K5gVU2t&quot;, &quot;$5.00&quot;)'
                                                         class="w-full bg-white/20 hover:bg-white/30 text-white font-medium py-2.5 px-4 rounded-lg text-center transition-colors flex items-center justify-center gap-2">
@@ -531,7 +532,7 @@
                                                 </h3>
                                                 <p class="text-white/60 text-sm mb-4">Valid at participating salons in this area</p>
                                                 <div class="space-y-2">
-                                                    <button onclick='getCoupon(&quot;https://offers.greatclips.com/OFVP2Xm&quot;, &quot;$8.99&quot;, &quot;Upper Rio Grande Valley&quot;, &quot;&quot;, &quot;AREA&quot;)'
+                                                    <button onclick='getCoupon(&quot;https://offers.greatclips.com/OFVP2Xm&quot;, &quot;$8.99&quot;, &quot;participating Upper Rio Grande Valley&quot;, &quot;&quot;, &quot;AREA&quot;, false)'
                                                         class="block w-full bg-white text-orange-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-orange-50 transition-colors cursor-pointer">
                                                         Get your coupon now →
                                                     </button>
@@ -567,7 +568,7 @@
                                                 </h3>
                                                 <p class="text-white/60 text-sm mb-4">Valid at participating salons in this area</p>
                                                 <div class="space-y-2">
-                                                    <button onclick='getCoupon(&quot;https://offers.greatclips.com/1pRqio1&quot;, &quot;$10.99&quot;, &quot;Las Vegas&quot;, &quot;&quot;, &quot;AREA&quot;)'
+                                                    <button onclick='getCoupon(&quot;https://offers.greatclips.com/1pRqio1&quot;, &quot;$10.99&quot;, &quot;participating Las Vegas&quot;, &quot;&quot;, &quot;AREA&quot;, false)'
                                                         class="block w-full bg-white text-orange-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-orange-50 transition-colors cursor-pointer">
                                                         Get your coupon now →
                                                     </button>
@@ -603,7 +604,7 @@
                                                 </h3>
                                                 <p class="text-white/60 text-sm mb-4">Valid at participating salons in this area</p>
                                                 <div class="space-y-2">
-                                                    <button onclick='getCoupon(&quot;https://offers.greatclips.com/CESQzzX&quot;, &quot;$12.99&quot;, &quot;Reno, Carson City &amp; West NV&quot;, &quot;&quot;, &quot;AREA&quot;)'
+                                                    <button onclick='getCoupon(&quot;https://offers.greatclips.com/CESQzzX&quot;, &quot;$12.99&quot;, &quot;participating Reno, Carson City &amp; West NV&quot;, &quot;&quot;, &quot;AREA&quot;, false)'
                                                         class="block w-full bg-white text-orange-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-orange-50 transition-colors cursor-pointer">
                                                         Get your coupon now →
                                                     </button>
@@ -639,7 +640,7 @@
                                                 </h3>
                                                 <p class="text-white/60 text-sm mb-4">Valid at participating salons in this area</p>
                                                 <div class="space-y-2">
-                                                    <button onclick='getCoupon(&quot;https://offers.greatclips.com/3bnhBOt&quot;, &quot;$13.99&quot;, &quot;Denver&quot;, &quot;&quot;, &quot;AREA&quot;)'
+                                                    <button onclick='getCoupon(&quot;https://offers.greatclips.com/3bnhBOt&quot;, &quot;$13.99&quot;, &quot;participating Denver&quot;, &quot;&quot;, &quot;AREA&quot;, false)'
                                                         class="block w-full bg-white text-orange-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-orange-50 transition-colors cursor-pointer">
                                                         Get your coupon now →
                                                     </button>
@@ -675,7 +676,7 @@
                                                 </h3>
                                                 <p class="text-white/60 text-sm mb-4">Valid at participating salons in this area</p>
                                                 <div class="space-y-2">
-                                                    <button onclick='getCoupon(&quot;https://offers.greatclips.com/rNYTlMi&quot;, &quot;$15.99&quot;, &quot;Edmonton-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove&quot;, &quot;&quot;, &quot;AREA&quot;)'
+                                                    <button onclick='getCoupon(&quot;https://offers.greatclips.com/rNYTlMi&quot;, &quot;$15.99&quot;, &quot;Edmonton-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove&quot;, &quot;&quot;, &quot;AREA&quot;, false)'
                                                         class="block w-full bg-white text-orange-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-orange-50 transition-colors cursor-pointer">
                                                         Get your coupon now →
                                                     </button>
@@ -711,7 +712,7 @@
                                                 </h3>
                                                 <p class="text-white/60 text-sm mb-4">Valid at participating salons in this area</p>
                                                 <div class="space-y-2">
-                                                    <button onclick='getCoupon(&quot;https://offers.greatclips.com/hwWLU3h&quot;, &quot;$17.99&quot;, &quot;Greater Los Angeles&quot;, &quot;&quot;, &quot;AREA&quot;)'
+                                                    <button onclick='getCoupon(&quot;https://offers.greatclips.com/hwWLU3h&quot;, &quot;$17.99&quot;, &quot;participating Greater Los Angeles&quot;, &quot;&quot;, &quot;AREA&quot;, false)'
                                                         class="block w-full bg-white text-orange-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-orange-50 transition-colors cursor-pointer">
                                                         Get your coupon now →
                                                     </button>
@@ -747,7 +748,7 @@
                                                 </h3>
                                                 <p class="text-white/60 text-sm mb-4">Valid at participating salons in this area</p>
                                                 <div class="space-y-2">
-                                                    <button onclick='getCoupon(&quot;https://offers.greatclips.com/FEY2BPH&quot;, &quot;$18.99&quot;, &quot;at participating Calgary-Lethbridge-Airdrie-Okotoks-Cochrane&quot;, &quot;&quot;, &quot;AREA&quot;)'
+                                                    <button onclick='getCoupon(&quot;https://offers.greatclips.com/FEY2BPH&quot;, &quot;$18.99&quot;, &quot;at participating Calgary-Lethbridge-Airdrie-Okotoks-Cochrane&quot;, &quot;&quot;, &quot;AREA&quot;, false)'
                                                         class="block w-full bg-white text-orange-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-orange-50 transition-colors cursor-pointer">
                                                         Get your coupon now →
                                                     </button>
@@ -2976,13 +2977,18 @@
         let pendingLocation = { location_name: '', city: '', state: '' };
         const WORKER_URL = 'https://greatclips-email.mehulchaudhari.workers.dev';
 
-        function getCoupon(url, price, location_name, city, state) {
+        function getCoupon(url, price, location_name, city, state, paid) {
+            if (paid) {
+                openPaywall(url, price, location_name, city, state);
+                return;
+            }
             // Always show email modal — coupon is delivered by email
             pendingCouponUrl = url;
             pendingCouponPrice = price || '';
             pendingLocation = { location_name: location_name || '', city: city || '', state: state || '' };
             document.getElementById('emailModal').classList.remove('hidden');
             document.getElementById('emailInput').value = '';
+            document.getElementById('zipInput').value = '';
             document.getElementById('emailInput').focus();
         }
 
@@ -2999,9 +3005,15 @@
         async function submitEmail(e) {
             e.preventDefault();
             const email = document.getElementById('emailInput').value.trim();
+            const zipCode = document.getElementById('zipInput').value.trim();
 
             if (!email || !email.includes('@')) {
                 alert('Please enter a valid email address');
+                return;
+            }
+
+            if (!/^\d{5}$/.test(zipCode)) {
+                alert('Please enter a valid 5-digit ZIP code');
                 return;
             }
 
@@ -3020,7 +3032,7 @@
                 const res = await fetch(WORKER_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, coupon_url: couponUrl, price, ...location })
+                    body: JSON.stringify({ email, zip_code: zipCode, coupon_url: couponUrl, price, ...location })
                 });
                 success = res.ok;
             } catch (_) {}
@@ -3042,11 +3054,97 @@
             closeEmailModal();
             window.open(couponUrl, '_blank');
         }
-        
+
         // Close modal on escape key
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeEmailModal();
+            if (e.key === 'Escape') { closeEmailModal(); closePaywall(); }
         });
+
+        // ============ PAID COUPON UNLOCK (Stripe) ============
+        const STRIPE_PUBLISHABLE_KEY = 'pk_live_QH5FcenSjhjfV16uSAtryute';
+        const PAYMENT_WORKER_URL = 'https://greatclips-payments.mehulchaudhari.workers.dev';
+        const stripe = window.Stripe ? window.Stripe(STRIPE_PUBLISHABLE_KEY) : null;
+        let paywallElements = null;
+        let paywallPendingCoupon = null;
+
+        async function openPaywall(url, price, location_name, city, state) {
+            paywallPendingCoupon = { url, price, location_name, city, state };
+            document.getElementById('paywallModal').classList.remove('hidden');
+            document.getElementById('paywallPayView').classList.remove('hidden');
+            document.getElementById('paywallUnlockedView').classList.add('hidden');
+            document.getElementById('paywallErrorMsg').classList.add('hidden');
+            document.getElementById('paywallPayButton').disabled = true;
+            document.getElementById('paywallPayButton').textContent = 'Loading payment form…';
+
+            try {
+                const res = await fetch(`${PAYMENT_WORKER_URL}/create-payment-intent`, { method: 'POST' });
+                if (!res.ok) throw new Error('bad response');
+                const { client_secret } = await res.json();
+                paywallElements = stripe.elements({ clientSecret: client_secret });
+                const paymentElement = paywallElements.create('payment');
+                paymentElement.mount('#paywallPaymentElement');
+                document.getElementById('paywallPayButton').disabled = false;
+                document.getElementById('paywallPayButton').textContent = 'Pay $0.75 & Unlock';
+            } catch (err) {
+                document.getElementById('paywallErrorMsg').textContent = 'Payment form failed to load. Please try again in a moment.';
+                document.getElementById('paywallErrorMsg').classList.remove('hidden');
+            }
+        }
+
+        function closePaywall() {
+            document.getElementById('paywallModal').classList.add('hidden');
+            paywallElements = null;
+            paywallPendingCoupon = null;
+        }
+
+        async function submitPaywallPayment() {
+            if (!stripe || !paywallElements) return;
+            const btn = document.getElementById('paywallPayButton');
+            btn.disabled = true;
+            btn.textContent = 'Processing…';
+            document.getElementById('paywallErrorMsg').classList.add('hidden');
+
+            const { error, paymentIntent } = await stripe.confirmPayment({
+                elements: paywallElements,
+                redirect: 'if_required',
+            });
+
+            if (error) {
+                document.getElementById('paywallErrorMsg').textContent = error.message || 'Payment failed. Please try a different payment method.';
+                document.getElementById('paywallErrorMsg').classList.remove('hidden');
+                btn.disabled = false;
+                btn.textContent = 'Pay $0.75 & Unlock';
+                return;
+            }
+
+            // Unlocked
+            const coupon = paywallPendingCoupon;
+            document.getElementById('paywallPayView').classList.add('hidden');
+            document.getElementById('paywallUnlockedView').classList.remove('hidden');
+            document.getElementById('paywallUnlockLink').href = coupon.url;
+            document.getElementById('paywallRefundButton').dataset.paymentIntentId = paymentIntent.id;
+            window.open(coupon.url, '_blank');
+        }
+
+        async function requestPaywallRefund() {
+            const btn = document.getElementById('paywallRefundButton');
+            const paymentIntentId = btn.dataset.paymentIntentId;
+            if (!paymentIntentId) return;
+            btn.disabled = true;
+            btn.textContent = 'Refunding…';
+            try {
+                const res = await fetch(`${PAYMENT_WORKER_URL}/refund`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ payment_intent_id: paymentIntentId }),
+                });
+                if (!res.ok) throw new Error('refund failed');
+                btn.textContent = 'Refunded ✓';
+            } catch (err) {
+                btn.disabled = false;
+                btn.textContent = 'Refund failed — email greatclipsdeal@gmail.com';
+            }
+        }
     </script>
     
     <!-- Email Capture Modal -->
@@ -3067,7 +3165,7 @@
                         <span class="text-3xl">✂️</span>
                     </div>
                     <h3 class="text-2xl font-bold text-slate-900">Get Your Coupon!</h3>
-                    <p class="text-slate-600 mt-2">Enter your email and we'll send you the coupon link instantly</p>
+                    <p class="text-slate-600 mt-2">Enter your email and ZIP code so we can send the coupon and better local deals.</p>
                 </div>
                 
                 <!-- Form -->
@@ -3076,6 +3174,17 @@
                         type="email" 
                         id="emailInput"
                         placeholder="Enter your email"
+                        class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors"
+                        required
+                    >
+                    <input
+                        type="text"
+                        id="zipInput"
+                        inputmode="numeric"
+                        autocomplete="postal-code"
+                        maxlength="5"
+                        pattern="[0-9]{5}"
+                        placeholder="ZIP code"
                         class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors"
                         required
                     >
@@ -3097,7 +3206,7 @@
                 
                 <!-- Trust signals -->
                 <p class="text-center text-xs text-slate-400 mt-4">
-                    🔒 No spam, unsubscribe anytime. We respect your privacy.
+                    No spam, unsubscribe anytime. ZIP code is used for local deal targeting.
                 </p>
             </div>
 
@@ -3115,6 +3224,63 @@
                     Open Coupon
                 </button>
                 <p class="text-slate-500 text-sm mt-4">Didn't get the email? Check your spam folder. It usually arrives within 30 seconds.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paid Coupon Unlock Modal -->
+    <div id="paywallModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closePaywall()"></div>
+
+        <!-- Modal Content -->
+        <div class="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 transform transition-all">
+            <!-- Close button -->
+            <button onclick="closePaywall()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl">&times;</button>
+
+            <!-- PAY VIEW -->
+            <div id="paywallPayView">
+                <div class="text-center mb-6">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mb-4">
+                        <span class="text-3xl">🔓</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900">Unlock this $5 coupon</h3>
+                    <p class="text-slate-600 mt-2">This coupon costs $0.75 to unlock. Refundable anytime, no questions asked.</p>
+                </div>
+
+                <div id="paywallPaymentElement" class="mb-4"></div>
+
+                <p id="paywallErrorMsg" class="hidden text-red-600 text-sm mb-3"></p>
+
+                <button
+                    id="paywallPayButton"
+                    onclick="submitPaywallPayment()"
+                    disabled
+                    class="w-full bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-orange-200 disabled:opacity-60"
+                >
+                    Loading payment form…
+                </button>
+
+                <p class="text-center text-xs text-slate-400 mt-4">
+                    Payments processed securely by Stripe. Issues? Email <a href="mailto:greatclipsdeal@gmail.com" class="underline">greatclipsdeal@gmail.com</a>.
+                </p>
+            </div>
+
+            <!-- UNLOCKED VIEW -->
+            <div id="paywallUnlockedView" class="hidden text-center">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-5">
+                    <span class="text-4xl">✓</span>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">Unlocked!</h3>
+                <p class="text-slate-600 mb-5">Your coupon opened in a new tab. A receipt was emailed to you by Stripe.</p>
+                <a id="paywallUnlockLink" href="#" target="_blank"
+                    class="block w-full bg-gradient-to-r from-violet-600 to-purple-600 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-purple-200 mb-3">
+                    Open Coupon Again
+                </a>
+                <button id="paywallRefundButton" onclick="requestPaywallRefund()"
+                    class="w-full text-slate-500 hover:text-slate-700 text-sm py-2 transition-colors underline">
+                    Didn't work? Get an instant refund
+                </button>
             </div>
         </div>
     </div>
