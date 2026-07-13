@@ -60,6 +60,7 @@ def js_call_get_coupon(coupon):
         (coupon.get("area_name") or coupon.get("location_name") or "").strip() or "Regional",
         "",
         coupon.get("state") or "",
+        coupon.get("image_url") or "",
     ]
     string_args = ", ".join(js_string(arg) for arg in args)
     paid = "true" if is_paywalled_coupon(coupon) else "false"
