@@ -47,27 +47,6 @@ def js_call(function_name, *args):
     return html_escape(call, quote=True)
 
 
-def is_paywalled_coupon(coupon):
-    price = (coupon.get("price") or "").strip()
-    state = (coupon.get("state") or "").upper()
-    return price == "$5.00" and state == "AREA"
-
-
-def js_call_get_coupon(coupon):
-    args = [
-        coupon.get("url") or "",
-        coupon.get("price") or "",
-        (coupon.get("area_name") or coupon.get("location_name") or "").strip() or "Regional",
-        "",
-        coupon.get("state") or "",
-        coupon.get("image_url") or "",
-    ]
-    string_args = ", ".join(js_string(arg) for arg in args)
-    paid = "true" if is_paywalled_coupon(coupon) else "false"
-    call = f"getCoupon({string_args}, {paid})"
-    return html_escape(call, quote=True)
-
-
 def copy_link_handler(url):
     call = (
         f"navigator.clipboard.writeText({js_string(url)}); "
@@ -321,9 +300,9 @@ def render_area_card(coupon):
                                                 </h3>
                                                 <p class="text-white/60 text-sm mb-4">Valid at participating salons in this area</p>
                                                 <div class="space-y-2">
-                                                    <button onclick='{js_call_get_coupon(coupon)}'
+                                                    <button onclick='{js_call("getCoupon", coupon.get("url") or "", coupon.get("price") or "", area_name, "", coupon.get("state") or "")}'
                                                         class="block w-full bg-white text-orange-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-orange-50 transition-colors cursor-pointer">
-                                                        {"Unlock this coupon — $0.75 →" if is_paywalled_coupon(coupon) else "Get your coupon now →"}
+                                                        Get your coupon now →
                                                     </button>
                                                     <button onclick='{js_call("shareCoupon", coupon.get("url") or "", coupon.get("price") or "")}'
                                                         class="w-full bg-white/20 hover:bg-white/30 text-white font-medium py-2.5 px-4 rounded-lg text-center transition-colors flex items-center justify-center gap-2">
@@ -384,44 +363,6 @@ def render_state_section(state, coupons):
                                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
 {cards_html}                                    </div>
                                 </div>
-    """
-
-
-def render_featured_paywall_section(coupon):
-    if not coupon:
-        return ""
-    return f"""
-                <section class="max-w-7xl mx-auto px-4 -mt-8 relative z-10 mb-8">
-                    <div class="bg-gradient-to-r from-orange-500 via-red-500 to-orange-600 rounded-2xl p-1">
-                        <div class="bg-gradient-to-r from-orange-500 via-red-500 to-orange-600 rounded-xl p-6 md:p-10 relative overflow-hidden text-center">
-                            <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-                            <div class="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
-
-                            <div class="relative">
-                                <div class="inline-flex items-center gap-2 bg-white/20 rounded-full px-3 py-1 mb-3">
-                                    <span class="text-white text-sm font-semibold">⭐ TOP PICK — NATIONWIDE</span>
-                                </div>
-                                <div class="w-40 mx-auto mb-4 rounded-xl overflow-hidden shadow-lg">
-                                    <img src="{escape_html(coupon.get("image_url") or "")}" alt="Great Clips $5 Off Coupon" class="w-full h-auto object-cover">
-                                </div>
-                                <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-2">Save $5.00 On Your Next Haircut</h2>
-                                <p class="text-white/85 text-base md:text-lg max-w-xl mx-auto mb-2">
-                                    $0.75 to unlock — helps keep this site running. You still save $4.25+ on your haircut.
-                                </p>
-                                <p class="text-white/85 text-base md:text-lg max-w-xl mx-auto mb-6">
-                                    100% refund, no questions asked — you have nothing to lose.
-                                </p>
-                                <button onclick='{js_call_get_coupon(coupon)}'
-                                    class="inline-block bg-white text-orange-600 font-extrabold text-lg py-4 px-10 rounded-xl text-center hover:bg-orange-50 transition-colors cursor-pointer shadow-lg">
-                                    Unlock Coupon →
-                                </button>
-                                <p class="text-white/70 text-sm mt-4">
-                                    🔒 Secure checkout via Stripe · Apple Pay supported · Instant refund guarantee
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
     """
 
 
@@ -745,11 +686,6 @@ def build_static_app_html(coupons, scraped_at):
     universal_coupons = [coupon for coupon in coupons if is_universal(coupon)]
     area_coupons = [coupon for coupon in coupons if is_area_based(coupon)]
     regular_coupons = [coupon for coupon in coupons if not is_universal(coupon) and not is_area_based(coupon)]
-
-    featured_coupon = next((c for c in area_coupons if is_paywalled_coupon(c)), None)
-    if featured_coupon:
-        area_coupons = [c for c in area_coupons if c is not featured_coupon]
-    featured_section = render_featured_paywall_section(featured_coupon)
     regular_coupons = sorted(regular_coupons, key=get_price)
     states = sorted({coupon.get("state") for coupon in regular_coupons if coupon.get("state")})
     formatted_date = format_date(scraped_at)
@@ -824,7 +760,6 @@ def build_static_app_html(coupons, scraped_at):
                     </div>
                 </header>
 
-{featured_section}
 {universal_section}
 {area_section}
 {stats_strip}

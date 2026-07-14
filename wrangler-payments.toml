@@ -1,7 +1,0 @@
-name = "greatclips-payments"
-main = "cloudflare-worker/payment-worker.js"
-compatibility_date = "2024-01-01"
-
-# Secret to set via Cloudflare dashboard (Workers & Pages > greatclips-payments > Settings > Variables)
-# or `wrangler secret put STRIPE_SECRET_KEY --config wrangler-payments.toml`:
-#   STRIPE_SECRET_KEY
