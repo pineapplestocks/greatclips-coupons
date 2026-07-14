@@ -461,9 +461,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Fresh haircut savings: $10.99 in College Station, TX. Expires Aug 7, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#5oISLcT\n\n#GreatClips #HaircutDeals"
+    },
+    {
+      "coupon_code": "8RKvAIm",
+      "coupon_url": "https://offers.greatclips.com/8RKvAIm",
+      "post_id": "6a566d7d877a6ab4315000a2",
+      "posted_at": "2026-07-14T17:10:21Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips savings update: $10.99 coupon in Waco, TX. Expires Aug 7, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#8RKvAIm\n\n#GreatClips #SaveMoney"
     }
   ],
-  "last_post": "2026-07-14T05:36:18Z",
+  "last_post": "2026-07-14T17:10:21Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -491,6 +500,7 @@
     "https://offers.greatclips.com/6bWu89Y",
     "https://offers.greatclips.com/7mvadpZ",
     "https://offers.greatclips.com/7zUyCOc",
+    "https://offers.greatclips.com/8RKvAIm",
     "https://offers.greatclips.com/8Ti2aVG",
     "https://offers.greatclips.com/8nLBx6P",
     "https://offers.greatclips.com/9dfsvKP",
