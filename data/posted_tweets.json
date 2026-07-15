@@ -497,9 +497,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips coupon alert: $10.99 haircut in Hewitt, TX. Expires Aug 7, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#ITuSpPq\n\n#GreatClips #HaircutCoupon #Deals"
+    },
+    {
+      "coupon_code": "M1oQbW8",
+      "coupon_url": "https://offers.greatclips.com/M1oQbW8",
+      "post_id": "6a5811284ebd80b204e645ad",
+      "posted_at": "2026-07-15T23:00:56Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $10.99 in Bryan, TX. Expires Aug 7, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#M1oQbW8\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-07-15T17:13:00Z",
+  "last_post": "2026-07-15T23:00:56Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -560,6 +569,7 @@
     "https://offers.greatclips.com/LA9ZDU6",
     "https://offers.greatclips.com/Lg8M6iE",
     "https://offers.greatclips.com/Luz2UyB",
+    "https://offers.greatclips.com/M1oQbW8",
     "https://offers.greatclips.com/MSVhpN1",
     "https://offers.greatclips.com/MefwWgj",
     "https://offers.greatclips.com/OFVP2Xm",
