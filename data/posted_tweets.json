@@ -479,9 +479,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $10.99 in San Marcos, TX. Expires Aug 7, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#CRfBEM7\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "Gd3zMNb",
+      "coupon_url": "https://offers.greatclips.com/Gd3zMNb",
+      "post_id": "6a571c86baffcd2ff24a5a50",
+      "posted_at": "2026-07-15T05:37:10Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $10.99 in Austin, TX. Expires Aug 7, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#Gd3zMNb\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-07-14T23:00:46Z",
+  "last_post": "2026-07-15T05:37:10Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -525,6 +534,7 @@
     "https://offers.greatclips.com/F2zEagt",
     "https://offers.greatclips.com/FEY2BPH",
     "https://offers.greatclips.com/FNfcvQo",
+    "https://offers.greatclips.com/Gd3zMNb",
     "https://offers.greatclips.com/HmaYB7H",
     "https://offers.greatclips.com/HpxK6qe",
     "https://offers.greatclips.com/IIO89QZ",
