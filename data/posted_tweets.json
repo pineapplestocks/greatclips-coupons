@@ -488,9 +488,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $10.99 in Austin, TX. Expires Aug 7, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#Gd3zMNb\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "ITuSpPq",
+      "coupon_url": "https://offers.greatclips.com/ITuSpPq",
+      "post_id": "6a57bf9c688f15618f2e52d3",
+      "posted_at": "2026-07-15T17:13:00Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips coupon alert: $10.99 haircut in Hewitt, TX. Expires Aug 7, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#ITuSpPq\n\n#GreatClips #HaircutCoupon #Deals"
     }
   ],
-  "last_post": "2026-07-15T05:37:10Z",
+  "last_post": "2026-07-15T17:13:00Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -541,6 +550,7 @@
     "https://offers.greatclips.com/IJ4CKXc",
     "https://offers.greatclips.com/IOS6rlo",
     "https://offers.greatclips.com/IShJfKM",
+    "https://offers.greatclips.com/ITuSpPq",
     "https://offers.greatclips.com/Iq7XsJZ",
     "https://offers.greatclips.com/JIiOv3l",
     "https://offers.greatclips.com/K5gVU2t",
