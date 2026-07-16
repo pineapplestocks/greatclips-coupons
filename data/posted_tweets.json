@@ -515,9 +515,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $10.99 in Bellmead, TX. Expires Aug 7, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#PJb0gN5\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "ebloYZE",
+      "coupon_url": "https://offers.greatclips.com/ebloYZE",
+      "post_id": "6a5910911e7f23e1afc7d5fa",
+      "posted_at": "2026-07-16T17:10:41Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips coupon alert: $10.99 haircut in College Station, TX. Expires Aug 7, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#ebloYZE\n\n#GreatClips #HaircutCoupon #Deals"
     }
   ],
-  "last_post": "2026-07-16T05:44:49Z",
+  "last_post": "2026-07-16T17:10:41Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -605,6 +614,7 @@
     "https://offers.greatclips.com/ctHkG1h",
     "https://offers.greatclips.com/djuGGDk",
     "https://offers.greatclips.com/dkIygSf",
+    "https://offers.greatclips.com/ebloYZE",
     "https://offers.greatclips.com/eftOLOl",
     "https://offers.greatclips.com/gGmwxRu",
     "https://offers.greatclips.com/gS1yuyY",
