@@ -551,9 +551,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Fresh haircut savings: $10.99 in Waco, TX. Expires Aug 7, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#xHe7OEx\n\n#GreatClips #HaircutDeals"
+    },
+    {
+      "coupon_code": "yYb1TJ8",
+      "coupon_url": "https://offers.greatclips.com/yYb1TJ8",
+      "post_id": "6a5ab26a658dbc323945fb4e",
+      "posted_at": "2026-07-17T22:53:30Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips coupon alert: $10.99 haircut in Bryan, TX. Expires Aug 7, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#yYb1TJ8\n\n#GreatClips #HaircutCoupon #Deals"
     }
   ],
-  "last_post": "2026-07-17T17:07:32Z",
+  "last_post": "2026-07-17T22:53:30Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -674,6 +683,7 @@
     "https://offers.greatclips.com/xQnCtp8",
     "https://offers.greatclips.com/xqTb01a",
     "https://offers.greatclips.com/xz28zQU",
+    "https://offers.greatclips.com/yYb1TJ8",
     "https://offers.greatclips.com/yiuVvFj"
   ]
 }
