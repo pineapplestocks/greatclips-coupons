@@ -542,9 +542,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips coupon alert: $10.99 haircut in Waco, TX. Expires Aug 7, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#tPJAO4N\n\n#GreatClips #HaircutCoupon #Deals"
+    },
+    {
+      "coupon_code": "xHe7OEx",
+      "coupon_url": "https://offers.greatclips.com/xHe7OEx",
+      "post_id": "6a5a6154658dbc323942cff8",
+      "posted_at": "2026-07-17T17:07:32Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $10.99 in Waco, TX. Expires Aug 7, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#xHe7OEx\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-07-17T05:45:56Z",
+  "last_post": "2026-07-17T17:07:32Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -661,6 +670,7 @@
     "https://offers.greatclips.com/vMaE8CK",
     "https://offers.greatclips.com/vmmOwot",
     "https://offers.greatclips.com/wGjjdyK",
+    "https://offers.greatclips.com/xHe7OEx",
     "https://offers.greatclips.com/xQnCtp8",
     "https://offers.greatclips.com/xqTb01a",
     "https://offers.greatclips.com/xz28zQU",
