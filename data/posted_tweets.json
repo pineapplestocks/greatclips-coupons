@@ -560,9 +560,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips coupon alert: $10.99 haircut in Bryan, TX. Expires Aug 7, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#yYb1TJ8\n\n#GreatClips #HaircutCoupon #Deals"
+    },
+    {
+      "coupon_code": "fA3QZ66",
+      "coupon_url": "https://offers.greatclips.com/fA3QZ66",
+      "post_id": "6a5baf68995132e73d373016",
+      "posted_at": "2026-07-18T16:52:56Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $12.99 in the only at participating NY, NJ, & Fairfield County, CT area. Expires Aug 14, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#fA3QZ66\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-07-17T22:53:30Z",
+  "last_post": "2026-07-18T16:52:56Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -652,6 +661,7 @@
     "https://offers.greatclips.com/dkIygSf",
     "https://offers.greatclips.com/ebloYZE",
     "https://offers.greatclips.com/eftOLOl",
+    "https://offers.greatclips.com/fA3QZ66",
     "https://offers.greatclips.com/gGmwxRu",
     "https://offers.greatclips.com/gS1yuyY",
     "https://offers.greatclips.com/hN8vUzK",
