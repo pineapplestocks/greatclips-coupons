@@ -229,7 +229,7 @@
         "mainEntity": {
             "@type": "ItemList",
             "name": "Current Great Clips coupon offers",
-            "numberOfItems": "27"
+            "numberOfItems": "28"
         }
     }
     </script>
@@ -666,12 +666,12 @@
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
 
                             <div class="text-center">
-                                <p class="text-2xl md:text-3xl font-extrabold text-purple-700">27</p>
+                                <p class="text-2xl md:text-3xl font-extrabold text-purple-700">28</p>
                                 <p class="text-xs md:text-sm text-slate-500 font-medium">active coupons</p>
                             </div>
         
                             <div class="text-center">
-                                <p class="text-2xl md:text-3xl font-extrabold text-purple-700">4</p>
+                                <p class="text-2xl md:text-3xl font-extrabold text-purple-700">5</p>
                                 <p class="text-xs md:text-sm text-slate-500 font-medium">states</p>
                             </div>
         
@@ -689,8 +689,8 @@
                         <p class="text-slate-600 text-sm md:text-base leading-relaxed">
                             Every six hours our system scans Great Clips' official Facebook advertising and indexes each live
                             coupon it finds — as of July 18th, 2026, that's
-                            <strong>27 active offers</strong> across
-                            4 states. The cheapest haircut on the board right now is
+                            <strong>28 active offers</strong> across
+                            5 states. The cheapest haircut on the board right now is
                             <strong>$7.99</strong> in Fredericksburg, TX.
                             Every card links straight to the official offer page on offers.greatclips.com — no codes to type and
                             no email signup. Read <a href="/how-we-verify-coupons" class="text-purple-600 hover:underline font-medium">how we verify coupons</a>
@@ -721,7 +721,7 @@
                             <select id="stateFilter" onchange="renderResults()"
                                 class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all outline-none appearance-none cursor-pointer">
                                 <option value="">All States</option>
-<option value="FL">FL</option><option value="OH">OH</option><option value="TX">TX</option><option value="UT">UT</option>
+<option value="FL">FL</option><option value="GA">GA</option><option value="OH">OH</option><option value="TX">TX</option><option value="UT">UT</option>
                             </select>
                             <select id="maxPrice" onchange="renderResults()"
                                 class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all outline-none appearance-none cursor-pointer">
@@ -751,6 +751,10 @@
                                         FL
                                     </a>
         
+                                    <a href="#state-GA" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
+                                        GA
+                                    </a>
+        
                                     <a href="#state-OH" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
                                         OH
                                     </a>
@@ -771,7 +775,7 @@
                 <section class="max-w-7xl mx-auto px-4 pb-12">
                     <div class="flex items-center justify-between mb-6">
                         <p id="resultsCount" class="text-slate-600">
-                            <span class="font-semibold text-slate-900">22</span> location-specific coupons
+                            <span class="font-semibold text-slate-900">23</span> location-specific coupons
                         </p>
                     </div>
 
@@ -860,6 +864,42 @@
                                                             Get Coupon
                                                         </button>
                                                         <button onclick='navigator.clipboard.writeText(&quot;https://offers.greatclips.com/RM5iPmQ&quot;); this.textContent=&#x27;✓&#x27;; setTimeout(() =&gt; this.textContent=&#x27;📋&#x27;, 2000)'
+                                                            class="bg-slate-100 hover:bg-slate-200 text-slate-600 p-2.5 rounded-xl transition-colors"
+                                                            title="Copy link">📋</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+    
+                                <div class="mb-10" id="state-GA">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <h2 class="text-2xl font-bold text-slate-900">GA</h2>
+                                        <span class="bg-purple-100 text-purple-700 text-sm font-medium px-3 py-1 rounded-full">1 coupon</span>
+                                    </div>
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+
+                                            <div class="bg-white rounded-2xl shadow-md shadow-slate-200/50 overflow-hidden card-hover border border-slate-100">
+                                                <div class="p-5">
+                                                    <div class="flex items-start justify-between mb-4">
+                                                        <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-xl font-bold bg-teal-500 text-white shadow-sm">
+                                                            $7.99
+                                                        </span>
+                                                        <span class="text-slate-400 text-sm">
+                                                            07/31/2026
+                                                        </span>
+                                                    </div>
+                                                    <h3 class="font-semibold text-slate-900 text-lg mb-1 line-clamp-2">Shops</h3>
+                                                    <div class="text-slate-500 text-sm mb-4">
+                                                        <p class="truncate">Indian Creek at 4508 Hwy 42 S</p>
+                                                        <p class="font-medium text-slate-600">Locust Grove, GA</p>
+                                                    </div>
+                                                    <div class="flex gap-2">
+                                                        <button onclick='getCoupon(&quot;https://offers.greatclips.com/MXqjG8F&quot;, &quot;$7.99&quot;, &quot;Shops&quot;, &quot;Locust Grove,&quot;, &quot;GA&quot;)'
+                                                            class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200 cursor-pointer">
+                                                            Get Coupon
+                                                        </button>
+                                                        <button onclick='navigator.clipboard.writeText(&quot;https://offers.greatclips.com/MXqjG8F&quot;); this.textContent=&#x27;✓&#x27;; setTimeout(() =&gt; this.textContent=&#x27;📋&#x27;, 2000)'
                                                             class="bg-slate-100 hover:bg-slate-200 text-slate-600 p-2.5 rounded-xl transition-colors"
                                                             title="Copy link">📋</button>
                                                     </div>
@@ -1419,12 +1459,12 @@
 
                         <div class="prose-slate space-y-4 text-slate-600 leading-relaxed">
                             <p>
-                                Our latest scan indexed <strong class="text-slate-900">22 location-specific coupons</strong>
-                                and 5 regional offers across 4 states.
-                                The lowest price on the board is $7.99 at Fredericksburg Town Center in Fredericksburg, TX. The typical (median) coupon today is
+                                Our latest scan indexed <strong class="text-slate-900">23 location-specific coupons</strong>
+                                and 5 regional offers across 5 states.
+                                The lowest price on the board is $7.99, currently offered at 2 locations, including Fredericksburg Town Center in Fredericksburg, TX. The typical (median) coupon today is
                                 <strong class="text-slate-900">$10.99</strong>, with prices running as high as
                                 $10.99 in higher-cost metro areas —
-                                10 of today's coupons get you a haircut for under $10.
+                                11 of today's coupons get you a haircut for under $10.
                             </p>
                             <p>
                                 Texas leads the board with 15 active coupons, followed by Utah (3), Florida (3). That distribution isn't random: Great Clips coupons are funded by
@@ -1440,7 +1480,7 @@
                             </p>
                             <p class="text-sm text-slate-500 border-t border-slate-100 pt-4">
                                 <strong class="text-slate-600">Methodology:</strong> every figure above is computed from our live dataset —
-                                27 offers were re-verified during the July 18 scan.
+                                28 offers were re-verified during the July 18 scan.
                                 Coupons are collected exclusively from Great Clips' official Facebook advertising and link directly to
                                 offers.greatclips.com. We don't create, modify, or exaggerate offers.
                                 Full process: <a href="/how-we-verify-coupons" class="text-purple-600 hover:underline">how we verify coupons</a> ·
@@ -1573,6 +1613,24 @@
                 "expiration": "07/28/2026",
                 "price": "$7.99",
                 "market": "TX",
+                "last_verified": "2026-07-18",
+                "source": "facebook_ad_library",
+                "participating_location_note": null,
+                "added_date": "2026-07-18",
+                "last_seen": "2026-07-18"
+        },
+        {
+                "url": "https://offers.greatclips.com/MXqjG8F",
+                "coupon_code": "MXqjG8F",
+                "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8457/50707-002-1200x600-7.99.jpg",
+                "valid_text": "Valid at Great Clips Shops at Indian Creek at 4508 Hwy 42 S in Locust Grove, GA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 07/31/2026",
+                "location_name": "Shops",
+                "address": "Indian Creek at 4508 Hwy 42 S",
+                "city": "Locust Grove,",
+                "state": "GA",
+                "expiration": "07/31/2026",
+                "price": "$7.99",
+                "market": "GA",
                 "last_verified": "2026-07-18",
                 "source": "facebook_ad_library",
                 "participating_location_note": null,
@@ -2022,7 +2080,7 @@
                 "last_seen": "2026-07-16"
         }
 ];
-        const LAST_UPDATED = "2026-07-18T00:52:50.922538";
+        const LAST_UPDATED = "2026-07-18T06:18:15.278659";
 
         // Format date like "December 31st, 2026"
         function formatDate(dateStr) {

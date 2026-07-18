@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-07-18T00:52:50.922538",
-  "total_coupons": 28,
+  "scraped_at": "2026-07-18T06:18:15.278659",
+  "total_coupons": 29,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/6bWu89Y",
@@ -46,6 +46,24 @@
       "expiration": "07/28/2026",
       "price": "$7.99",
       "market": "TX",
+      "last_verified": "2026-07-18",
+      "source": "facebook_ad_library",
+      "participating_location_note": null,
+      "added_date": "2026-07-18",
+      "last_seen": "2026-07-18"
+    },
+    {
+      "url": "https://offers.greatclips.com/MXqjG8F",
+      "coupon_code": "MXqjG8F",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8457/50707-002-1200x600-7.99.jpg",
+      "valid_text": "Valid at Great Clips Shops at Indian Creek at 4508 Hwy 42 S in Locust Grove, GA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 07/31/2026",
+      "location_name": "Shops",
+      "address": "Indian Creek at 4508 Hwy 42 S",
+      "city": "Locust Grove,",
+      "state": "GA",
+      "expiration": "07/31/2026",
+      "price": "$7.99",
+      "market": "GA",
       "last_verified": "2026-07-18",
       "source": "facebook_ad_library",
       "participating_location_note": null,
