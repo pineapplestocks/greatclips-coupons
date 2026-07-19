@@ -587,9 +587,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips savings update: $7.99 coupon in Locust Grove, GA. Expires Jul 31, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#MXqjG8F\n\n#GreatClips #SaveMoney"
+    },
+    {
+      "coupon_code": "P1E13cV",
+      "coupon_url": "https://offers.greatclips.com/P1E13cV",
+      "post_id": "6a5d0111ea3f366b61a18a2e",
+      "posted_at": "2026-07-19T16:53:37Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $9.99 in Boardman, OH. Expires Jul 31, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#P1E13cV\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-07-19T06:03:16Z",
+  "last_post": "2026-07-19T16:53:37Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -655,6 +664,7 @@
     "https://offers.greatclips.com/MXqjG8F",
     "https://offers.greatclips.com/MefwWgj",
     "https://offers.greatclips.com/OFVP2Xm",
+    "https://offers.greatclips.com/P1E13cV",
     "https://offers.greatclips.com/PJb0gN5",
     "https://offers.greatclips.com/PUlEQje",
     "https://offers.greatclips.com/PiUV2AO",
