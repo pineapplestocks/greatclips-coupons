@@ -578,9 +578,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $7.99 in Fredericksburg, TX. Expires Jul 28, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#bqyKTcw\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "MXqjG8F",
+      "coupon_url": "https://offers.greatclips.com/MXqjG8F",
+      "post_id": "6a5c68a35465343a826297ad",
+      "posted_at": "2026-07-19T06:03:16Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips savings update: $7.99 coupon in Locust Grove, GA. Expires Jul 31, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#MXqjG8F\n\n#GreatClips #SaveMoney"
     }
   ],
-  "last_post": "2026-07-18T22:55:22Z",
+  "last_post": "2026-07-19T06:03:16Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -643,6 +652,7 @@
     "https://offers.greatclips.com/Luz2UyB",
     "https://offers.greatclips.com/M1oQbW8",
     "https://offers.greatclips.com/MSVhpN1",
+    "https://offers.greatclips.com/MXqjG8F",
     "https://offers.greatclips.com/MefwWgj",
     "https://offers.greatclips.com/OFVP2Xm",
     "https://offers.greatclips.com/PJb0gN5",
