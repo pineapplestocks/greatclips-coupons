@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-07-19T12:08:45.699938",
-  "total_coupons": 29,
+  "scraped_at": "2026-07-19T20:19:12.968979",
+  "total_coupons": 30,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/6bWu89Y",
@@ -481,6 +481,22 @@
       "last_seen": "2026-07-19"
     },
     {
+      "url": "https://offers.greatclips.com/MZusUlO",
+      "coupon_code": "MZusUlO",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20074/50707-002-1200x600-14.99.jpg",
+      "expiration": "08/21/2026",
+      "location_name": "participating San Diego Area",
+      "state": "AREA",
+      "area_name": "participating San Diego",
+      "price": "$14.99",
+      "market": "San Diego",
+      "last_verified": "2026-07-19",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in San Diego",
+      "added_date": "2026-07-19",
+      "last_seen": "2026-07-19"
+    },
+    {
       "url": "https://offers.greatclips.com/hwWLU3h",
       "coupon_code": "hwWLU3h",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/19904/50707-002-1200x600-17.99.jpg",
@@ -510,7 +526,7 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in at participating Calgary-Lethbridge-Airdrie-Okotoks-Cochrane",
       "added_date": "2026-07-09",
-      "last_seen": "2026-07-16"
+      "last_seen": "2026-07-19"
     }
   ]
 }
