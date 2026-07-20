@@ -596,9 +596,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $9.99 in Boardman, OH. Expires Jul 31, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#P1E13cV\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "MZusUlO",
+      "coupon_url": "https://offers.greatclips.com/MZusUlO",
+      "post_id": "6a5dbe727b8edcc469cdf6aa",
+      "posted_at": "2026-07-20T06:21:38Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips coupon alert: $14.99 haircut in the San Diego area. Expires Aug 21, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#MZusUlO\n\n#GreatClips #HaircutCoupon #Deals"
     }
   ],
-  "last_post": "2026-07-19T16:53:37Z",
+  "last_post": "2026-07-20T06:21:38Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -662,6 +671,7 @@
     "https://offers.greatclips.com/M1oQbW8",
     "https://offers.greatclips.com/MSVhpN1",
     "https://offers.greatclips.com/MXqjG8F",
+    "https://offers.greatclips.com/MZusUlO",
     "https://offers.greatclips.com/MefwWgj",
     "https://offers.greatclips.com/OFVP2Xm",
     "https://offers.greatclips.com/P1E13cV",
