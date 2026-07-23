@@ -1,23 +1,7 @@
 {
-  "scraped_at": "2026-07-22T19:51:15.203305",
-  "total_coupons": 27,
+  "scraped_at": "2026-07-23T01:32:50.522135",
+  "total_coupons": 26,
   "coupons": [
-    {
-      "url": "https://offers.greatclips.com/6bWu89Y",
-      "coupon_code": "6bWu89Y",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/16207/50707-002-1200x600-US-Sparkfly-1off-10off5.jpg",
-      "location_name": "participating US Area",
-      "state": "AREA",
-      "area_name": "participating US",
-      "price": "$5.00",
-      "market": "US",
-      "expiration": null,
-      "last_verified": "2026-07-22",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating US locations",
-      "added_date": "2026-06-23",
-      "last_seen": "2026-06-30"
-    },
     {
       "url": "https://offers.greatclips.com/K5gVU2t",
       "coupon_code": "K5gVU2t",
@@ -28,11 +12,11 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-07-07",
-      "last_seen": "2026-07-22"
+      "last_seen": "2026-07-23"
     },
     {
       "url": "https://offers.greatclips.com/bqyKTcw",
@@ -46,7 +30,7 @@
       "expiration": "07/28/2026",
       "price": "$7.99",
       "market": "TX",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-07-18",
@@ -64,7 +48,7 @@
       "expiration": "07/31/2026",
       "price": "$7.99",
       "market": "GA",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-07-18",
@@ -84,7 +68,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -102,7 +86,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -118,11 +102,11 @@
       "expiration": "07/31/2026",
       "price": "$9.99",
       "market": "UT",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-07-04",
-      "last_seen": "2026-07-22"
+      "last_seen": "2026-07-23"
     },
     {
       "url": "https://offers.greatclips.com/3n6Hy6K",
@@ -136,11 +120,11 @@
       "expiration": "07/31/2026",
       "price": "$9.99",
       "market": "UT",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-07-04",
-      "last_seen": "2026-07-22"
+      "last_seen": "2026-07-23"
     },
     {
       "url": "https://offers.greatclips.com/A8jOa9H",
@@ -154,7 +138,7 @@
       "expiration": "07/24/2026",
       "price": "$9.99",
       "market": "UT",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-07-11",
@@ -172,7 +156,7 @@
       "expiration": "07/31/2026",
       "price": "$9.99",
       "market": "OH",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-07-18",
@@ -192,7 +176,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -210,7 +194,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -228,7 +212,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -246,7 +230,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -264,7 +248,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -282,7 +266,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -300,7 +284,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -318,7 +302,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -336,7 +320,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -354,7 +338,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -372,7 +356,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -390,7 +374,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -404,7 +388,7 @@
       "area_name": "only at participating Reno, Carson City & West NV",
       "price": "$12.99",
       "market": "Reno, Carson City & West NV",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Reno, Carson City & West NV",
       "added_date": "2026-06-30",
@@ -420,11 +404,11 @@
       "area_name": "only at participating NY, NJ, & Fairfield County, CT",
       "price": "$12.99",
       "market": "NY, NJ, & Fairfield County, CT",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in NY, NJ, & Fairfield County, CT",
       "added_date": "2026-07-18",
-      "last_seen": "2026-07-22"
+      "last_seen": "2026-07-23"
     },
     {
       "url": "https://offers.greatclips.com/MZusUlO",
@@ -436,11 +420,11 @@
       "area_name": "participating San Diego",
       "price": "$14.99",
       "market": "San Diego",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in San Diego",
       "added_date": "2026-07-19",
-      "last_seen": "2026-07-22"
+      "last_seen": "2026-07-23"
     },
     {
       "url": "https://offers.greatclips.com/hwWLU3h",
@@ -452,7 +436,7 @@
       "area_name": "participating Greater Los Angeles",
       "price": "$17.99",
       "market": "Greater Los Angeles",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Greater Los Angeles",
       "added_date": "2026-07-09",
@@ -468,11 +452,11 @@
       "area_name": "at participating Calgary-Lethbridge-Airdrie-Okotoks-Cochrane",
       "price": "$18.99",
       "market": "at participating Calgary-Lethbridge-Airdrie-Okotoks-Cochrane",
-      "last_verified": "2026-07-22",
+      "last_verified": "2026-07-23",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in at participating Calgary-Lethbridge-Airdrie-Okotoks-Cochrane",
       "added_date": "2026-07-09",
-      "last_seen": "2026-07-22"
+      "last_seen": "2026-07-23"
     }
   ]
 }
