@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-07-23T12:19:48.750703",
-  "total_coupons": 26,
+  "scraped_at": "2026-07-23T19:46:11.458725",
+  "total_coupons": 29,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/K5gVU2t",
@@ -161,6 +161,22 @@
       "participating_location_note": null,
       "added_date": "2026-07-18",
       "last_seen": "2026-07-21"
+    },
+    {
+      "url": "https://offers.greatclips.com/MwFEMRy",
+      "coupon_code": "MwFEMRy",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20006/50707-002-1200x600-9.99.jpg",
+      "expiration": "08/28/2026",
+      "location_name": "participating Indianapolis Area",
+      "state": "AREA",
+      "area_name": "participating Indianapolis",
+      "price": "$9.99",
+      "market": "Indianapolis",
+      "last_verified": "2026-07-23",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Indianapolis",
+      "added_date": "2026-07-23",
+      "last_seen": "2026-07-23"
     },
     {
       "url": "https://offers.greatclips.com/8RKvAIm",
@@ -379,6 +395,22 @@
       "participating_location_note": null
     },
     {
+      "url": "https://offers.greatclips.com/cx7AL0B",
+      "coupon_code": "cx7AL0B",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20381/50707-002-1200x600-10.99.jpg",
+      "expiration": "08/21/2026",
+      "location_name": "participating Houston Area",
+      "state": "AREA",
+      "area_name": "participating Houston",
+      "price": "$10.99",
+      "market": "Houston",
+      "last_verified": "2026-07-23",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Houston",
+      "added_date": "2026-07-23",
+      "last_seen": "2026-07-23"
+    },
+    {
       "url": "https://offers.greatclips.com/CESQzzX",
       "coupon_code": "CESQzzX",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/19513/50707-002-1200x600-12.99.jpg",
@@ -408,6 +440,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in NY, NJ, & Fairfield County, CT",
       "added_date": "2026-07-18",
+      "last_seen": "2026-07-23"
+    },
+    {
+      "url": "https://offers.greatclips.com/GHYlzqZ",
+      "coupon_code": "GHYlzqZ",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20063/50707-002-1200x600-12.99.jpg",
+      "expiration": "08/28/2026",
+      "location_name": "participating Detroit Area",
+      "state": "AREA",
+      "area_name": "participating Detroit",
+      "price": "$12.99",
+      "market": "Detroit",
+      "last_verified": "2026-07-23",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Detroit",
+      "added_date": "2026-07-23",
       "last_seen": "2026-07-23"
     },
     {
