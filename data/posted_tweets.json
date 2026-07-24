@@ -623,9 +623,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $10.99 in the Houston area. Expires Aug 21, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#cx7AL0B\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "GHYlzqZ",
+      "coupon_url": "https://offers.greatclips.com/GHYlzqZ",
+      "post_id": "6a63efb53db68e775eeaeeb1",
+      "posted_at": "2026-07-24T23:05:25Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $12.99 in the Detroit area. Expires Aug 28, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#GHYlzqZ\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-07-24T17:25:24Z",
+  "last_post": "2026-07-24T23:05:25Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -669,6 +678,7 @@
     "https://offers.greatclips.com/F2zEagt",
     "https://offers.greatclips.com/FEY2BPH",
     "https://offers.greatclips.com/FNfcvQo",
+    "https://offers.greatclips.com/GHYlzqZ",
     "https://offers.greatclips.com/Gd3zMNb",
     "https://offers.greatclips.com/HmaYB7H",
     "https://offers.greatclips.com/HpxK6qe",
