@@ -632,9 +632,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $12.99 in the Detroit area. Expires Aug 28, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#GHYlzqZ\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "llFADfo",
+      "coupon_url": "https://offers.greatclips.com/llFADfo",
+      "post_id": "6a6843a3fbdf65da5414f9a0",
+      "posted_at": "2026-07-28T05:52:35Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $9.99 in the only at participating Jacksonville, NE Florida & SE Georgia area. Expires Aug 21, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#llFADfo\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-07-24T23:05:25Z",
+  "last_post": "2026-07-28T05:52:35Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -740,6 +749,7 @@
     "https://offers.greatclips.com/lAdePNG",
     "https://offers.greatclips.com/lTiQcBs",
     "https://offers.greatclips.com/lgNo1Rl",
+    "https://offers.greatclips.com/llFADfo",
     "https://offers.greatclips.com/miieZuZ",
     "https://offers.greatclips.com/n7XAL9e",
     "https://offers.greatclips.com/nk46Jaj",
