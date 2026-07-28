@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-07-27T12:28:47.071339",
-  "total_coupons": 26,
+  "scraped_at": "2026-07-27T19:37:19.578414",
+  "total_coupons": 27,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/K5gVU2t",
@@ -158,6 +158,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Indianapolis",
       "added_date": "2026-07-23",
+      "last_seen": "2026-07-27"
+    },
+    {
+      "url": "https://offers.greatclips.com/llFADfo",
+      "coupon_code": "llFADfo",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20004/50707-002-1200x600-9.99.jpg",
+      "expiration": "08/21/2026",
+      "location_name": "only at participating Jacksonville, NE Florida & SE Georgia Area",
+      "state": "AREA",
+      "area_name": "only at participating Jacksonville, NE Florida & SE Georgia",
+      "price": "$9.99",
+      "market": "Jacksonville, NE Florida & SE Georgia",
+      "last_verified": "2026-07-27",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Jacksonville, NE Florida & SE Georgia",
+      "added_date": "2026-07-27",
       "last_seen": "2026-07-27"
     },
     {
