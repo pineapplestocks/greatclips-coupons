@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-07-30T19:54:57.311874",
-  "total_coupons": 27,
+  "scraped_at": "2026-07-31T01:51:22.673008",
+  "total_coupons": 21,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/K5gVU2t",
@@ -12,119 +12,11 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-07-07",
-      "last_seen": "2026-07-30"
-    },
-    {
-      "url": "https://offers.greatclips.com/MXqjG8F",
-      "coupon_code": "MXqjG8F",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8457/50707-002-1200x600-7.99.jpg",
-      "valid_text": "Valid at Great Clips Shops at Indian Creek at 4508 Hwy 42 S in Locust Grove, GA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 07/31/2026",
-      "location_name": "Shops",
-      "address": "Indian Creek at 4508 Hwy 42 S",
-      "city": "Locust Grove,",
-      "state": "GA",
-      "expiration": "07/31/2026",
-      "price": "$7.99",
-      "market": "GA",
-      "last_verified": "2026-07-30",
-      "source": "facebook_ad_library",
-      "participating_location_note": null,
-      "added_date": "2026-07-18",
-      "last_seen": "2026-07-19"
-    },
-    {
-      "url": "https://offers.greatclips.com/KIyxTax",
-      "coupon_code": "KIyxTax",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
-      "valid_text": "Valid at Great Clips Plaza Volente at 11521 N FM 620 in Austin, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 07/31/2026",
-      "location_name": "Plaza Volente",
-      "address": "11521 N FM 620",
-      "city": "Austin,",
-      "state": "TX",
-      "expiration": "07/31/2026",
-      "price": "$9.99",
-      "added_date": "2026-06-08",
-      "last_seen": "2026-06-08",
-      "market": "TX",
-      "last_verified": "2026-07-30",
-      "source": "facebook_ad_library",
-      "participating_location_note": null
-    },
-    {
-      "url": "https://offers.greatclips.com/2lgckOb",
-      "coupon_code": "2lgckOb",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
-      "valid_text": "Valid at Great Clips Tanglewood Village at 2110 W Slaughter Ln in Austin, TX. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 07/31/2026",
-      "location_name": "Tanglewood Village",
-      "address": "2110 W Slaughter Ln",
-      "city": "Austin,",
-      "state": "TX",
-      "expiration": "07/31/2026",
-      "price": "$9.99",
-      "added_date": "2026-06-08",
-      "last_seen": "2026-06-08",
-      "market": "TX",
-      "last_verified": "2026-07-30",
-      "source": "facebook_ad_library",
-      "participating_location_note": null
-    },
-    {
-      "url": "https://offers.greatclips.com/3zK8eV0",
-      "coupon_code": "3zK8eV0",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
-      "valid_text": "Valid at Great Clips Riverton Plaza at 1742 W 12600 S in Riverton, UT. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 07/31/2026",
-      "location_name": "Riverton Plaza",
-      "address": "1742 W 12600 S",
-      "city": "Riverton,",
-      "state": "UT",
-      "expiration": "07/31/2026",
-      "price": "$9.99",
-      "market": "UT",
-      "last_verified": "2026-07-30",
-      "source": "facebook_ad_library",
-      "participating_location_note": null,
-      "added_date": "2026-07-04",
-      "last_seen": "2026-07-24"
-    },
-    {
-      "url": "https://offers.greatclips.com/3n6Hy6K",
-      "coupon_code": "3n6Hy6K",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
-      "valid_text": "Valid at Great Clips Rose Creek Crossing at 3673 W 13400 S in Riverton, UT. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 07/31/2026",
-      "location_name": "Rose Creek Crossing",
-      "address": "3673 W 13400 S",
-      "city": "Riverton,",
-      "state": "UT",
-      "expiration": "07/31/2026",
-      "price": "$9.99",
-      "market": "UT",
-      "last_verified": "2026-07-30",
-      "source": "facebook_ad_library",
-      "participating_location_note": null,
-      "added_date": "2026-07-04",
-      "last_seen": "2026-07-24"
-    },
-    {
-      "url": "https://offers.greatclips.com/P1E13cV",
-      "coupon_code": "P1E13cV",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
-      "valid_text": "Valid at Great Clips Presidential Square at 813 Boardman Poland Rd in Boardman, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 07/31/2026",
-      "location_name": "Presidential Square",
-      "address": "813 Boardman Poland Rd",
-      "city": "Boardman,",
-      "state": "OH",
-      "expiration": "07/31/2026",
-      "price": "$9.99",
-      "market": "OH",
-      "last_verified": "2026-07-30",
-      "source": "facebook_ad_library",
-      "participating_location_note": null,
-      "added_date": "2026-07-18",
-      "last_seen": "2026-07-21"
+      "last_seen": "2026-07-31"
     },
     {
       "url": "https://offers.greatclips.com/MwFEMRy",
@@ -136,11 +28,11 @@
       "area_name": "participating Indianapolis",
       "price": "$9.99",
       "market": "Indianapolis",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Indianapolis",
       "added_date": "2026-07-23",
-      "last_seen": "2026-07-30"
+      "last_seen": "2026-07-31"
     },
     {
       "url": "https://offers.greatclips.com/llFADfo",
@@ -152,11 +44,11 @@
       "area_name": "only at participating Jacksonville, NE Florida & SE Georgia",
       "price": "$9.99",
       "market": "Jacksonville, NE Florida & SE Georgia",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Jacksonville, NE Florida & SE Georgia",
       "added_date": "2026-07-27",
-      "last_seen": "2026-07-30"
+      "last_seen": "2026-07-31"
     },
     {
       "url": "https://offers.greatclips.com/8RKvAIm",
@@ -172,7 +64,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -190,7 +82,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -208,7 +100,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -226,7 +118,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -244,7 +136,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -262,7 +154,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -280,7 +172,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -298,7 +190,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -316,7 +208,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -334,7 +226,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -352,7 +244,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -370,7 +262,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -384,11 +276,11 @@
       "area_name": "participating Houston",
       "price": "$10.99",
       "market": "Houston",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Houston",
       "added_date": "2026-07-23",
-      "last_seen": "2026-07-30"
+      "last_seen": "2026-07-31"
     },
     {
       "url": "https://offers.greatclips.com/qc4rVjY",
@@ -400,11 +292,11 @@
       "area_name": "participating Las Vegas",
       "price": "$10.99",
       "market": "Las Vegas",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Las Vegas",
       "added_date": "2026-07-30",
-      "last_seen": "2026-07-30"
+      "last_seen": "2026-07-31"
     },
     {
       "url": "https://offers.greatclips.com/fA3QZ66",
@@ -416,11 +308,11 @@
       "area_name": "only at participating NY, NJ, & Fairfield County, CT",
       "price": "$12.99",
       "market": "NY, NJ, & Fairfield County, CT",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in NY, NJ, & Fairfield County, CT",
       "added_date": "2026-07-18",
-      "last_seen": "2026-07-30"
+      "last_seen": "2026-07-31"
     },
     {
       "url": "https://offers.greatclips.com/GHYlzqZ",
@@ -432,11 +324,11 @@
       "area_name": "participating Detroit",
       "price": "$12.99",
       "market": "Detroit",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Detroit",
       "added_date": "2026-07-23",
-      "last_seen": "2026-07-30"
+      "last_seen": "2026-07-31"
     },
     {
       "url": "https://offers.greatclips.com/MZusUlO",
@@ -448,11 +340,11 @@
       "area_name": "participating San Diego",
       "price": "$14.99",
       "market": "San Diego",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in San Diego",
       "added_date": "2026-07-19",
-      "last_seen": "2026-07-30"
+      "last_seen": "2026-07-31"
     },
     {
       "url": "https://offers.greatclips.com/FEY2BPH",
@@ -464,7 +356,7 @@
       "area_name": "at participating Calgary-Lethbridge-Airdrie-Okotoks-Cochrane",
       "price": "$18.99",
       "market": "at participating Calgary-Lethbridge-Airdrie-Okotoks-Cochrane",
-      "last_verified": "2026-07-30",
+      "last_verified": "2026-07-31",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in at participating Calgary-Lethbridge-Airdrie-Okotoks-Cochrane",
       "added_date": "2026-07-09",
