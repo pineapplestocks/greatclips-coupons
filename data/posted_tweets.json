@@ -650,9 +650,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips savings update: $10.99 coupon in the Las Vegas area. Expires Aug 21, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#qc4rVjY\n\n#GreatClips #SaveMoney"
+    },
+    {
+      "coupon_code": "raBnnu6",
+      "coupon_url": "https://offers.greatclips.com/raBnnu6",
+      "post_id": "6a6d8c494c4e74ba2a332bde",
+      "posted_at": "2026-08-01T06:03:53Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips coupon alert: $7.99 haircut in the Toledo area. Expires Aug 28, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#raBnnu6\n\n#GreatClips #HaircutCoupon #Deals"
     }
   ],
-  "last_post": "2026-07-30T17:21:47Z",
+  "last_post": "2026-08-01T06:03:53Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -770,6 +779,7 @@
     "https://offers.greatclips.com/qvJcjRY",
     "https://offers.greatclips.com/rNYTlMi",
     "https://offers.greatclips.com/rYMtUgT",
+    "https://offers.greatclips.com/raBnnu6",
     "https://offers.greatclips.com/sO7Zl41",
     "https://offers.greatclips.com/siyo4N6",
     "https://offers.greatclips.com/tIESEyJ",
