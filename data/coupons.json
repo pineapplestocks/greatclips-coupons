@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-07-31T19:54:10.452784",
-  "total_coupons": 23,
+  "scraped_at": "2026-08-01T01:22:56.411679",
+  "total_coupons": 24,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/K5gVU2t",
@@ -12,7 +12,7 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-07-07",
@@ -28,11 +28,11 @@
       "area_name": "participating Toledo",
       "price": "$7.99",
       "market": "Toledo",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Toledo",
       "added_date": "2026-07-31",
-      "last_seen": "2026-07-31"
+      "last_seen": "2026-08-01"
     },
     {
       "url": "https://offers.greatclips.com/MwFEMRy",
@@ -44,11 +44,11 @@
       "area_name": "participating Indianapolis",
       "price": "$9.99",
       "market": "Indianapolis",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Indianapolis",
       "added_date": "2026-07-23",
-      "last_seen": "2026-07-31"
+      "last_seen": "2026-08-01"
     },
     {
       "url": "https://offers.greatclips.com/llFADfo",
@@ -60,11 +60,11 @@
       "area_name": "only at participating Jacksonville, NE Florida & SE Georgia",
       "price": "$9.99",
       "market": "Jacksonville, NE Florida & SE Georgia",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Jacksonville, NE Florida & SE Georgia",
       "added_date": "2026-07-27",
-      "last_seen": "2026-07-31"
+      "last_seen": "2026-08-01"
     },
     {
       "url": "https://offers.greatclips.com/QTwgFav",
@@ -76,11 +76,11 @@
       "area_name": "participating Cincinnati",
       "price": "$9.99",
       "market": "Cincinnati",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Cincinnati",
       "added_date": "2026-07-31",
-      "last_seen": "2026-07-31"
+      "last_seen": "2026-08-01"
     },
     {
       "url": "https://offers.greatclips.com/8RKvAIm",
@@ -96,7 +96,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -114,7 +114,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -132,7 +132,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -150,7 +150,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -168,7 +168,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -186,7 +186,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -204,7 +204,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -222,7 +222,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -240,7 +240,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -258,7 +258,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -276,7 +276,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -294,7 +294,7 @@
       "added_date": "2026-06-08",
       "last_seen": "2026-06-08",
       "market": "TX",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": null
     },
@@ -308,11 +308,11 @@
       "area_name": "participating Houston",
       "price": "$10.99",
       "market": "Houston",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Houston",
       "added_date": "2026-07-23",
-      "last_seen": "2026-07-31"
+      "last_seen": "2026-08-01"
     },
     {
       "url": "https://offers.greatclips.com/qc4rVjY",
@@ -324,11 +324,11 @@
       "area_name": "participating Las Vegas",
       "price": "$10.99",
       "market": "Las Vegas",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Las Vegas",
       "added_date": "2026-07-30",
-      "last_seen": "2026-07-31"
+      "last_seen": "2026-08-01"
     },
     {
       "url": "https://offers.greatclips.com/fA3QZ66",
@@ -340,11 +340,11 @@
       "area_name": "only at participating NY, NJ, & Fairfield County, CT",
       "price": "$12.99",
       "market": "NY, NJ, & Fairfield County, CT",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in NY, NJ, & Fairfield County, CT",
       "added_date": "2026-07-18",
-      "last_seen": "2026-07-31"
+      "last_seen": "2026-08-01"
     },
     {
       "url": "https://offers.greatclips.com/GHYlzqZ",
@@ -356,11 +356,27 @@
       "area_name": "participating Detroit",
       "price": "$12.99",
       "market": "Detroit",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Detroit",
       "added_date": "2026-07-23",
-      "last_seen": "2026-07-31"
+      "last_seen": "2026-08-01"
+    },
+    {
+      "url": "https://offers.greatclips.com/OK36Ser",
+      "coupon_code": "OK36Ser",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20408/50707-002-1200x600-13.99.jpg",
+      "expiration": "09/11/2026",
+      "location_name": "only at participating NJ, PA & DE Area",
+      "state": "AREA",
+      "area_name": "only at participating NJ, PA & DE",
+      "price": "$13.99",
+      "market": "NJ, PA & DE",
+      "last_verified": "2026-08-01",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in NJ, PA & DE",
+      "added_date": "2026-08-01",
+      "last_seen": "2026-08-01"
     },
     {
       "url": "https://offers.greatclips.com/MZusUlO",
@@ -372,11 +388,11 @@
       "area_name": "participating San Diego",
       "price": "$14.99",
       "market": "San Diego",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in San Diego",
       "added_date": "2026-07-19",
-      "last_seen": "2026-07-31"
+      "last_seen": "2026-08-01"
     },
     {
       "url": "https://offers.greatclips.com/FEY2BPH",
@@ -388,7 +404,7 @@
       "area_name": "at participating Calgary-Lethbridge-Airdrie-Okotoks-Cochrane",
       "price": "$18.99",
       "market": "at participating Calgary-Lethbridge-Airdrie-Okotoks-Cochrane",
-      "last_verified": "2026-07-31",
+      "last_verified": "2026-08-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in at participating Calgary-Lethbridge-Airdrie-Okotoks-Cochrane",
       "added_date": "2026-07-09",
