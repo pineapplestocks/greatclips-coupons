@@ -659,9 +659,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips coupon alert: $7.99 haircut in the Toledo area. Expires Aug 28, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#raBnnu6\n\n#GreatClips #HaircutCoupon #Deals"
+    },
+    {
+      "coupon_code": "QTwgFav",
+      "coupon_url": "https://offers.greatclips.com/QTwgFav",
+      "post_id": "6a6e24e51b4d436cc308f7d3",
+      "posted_at": "2026-08-01T16:55:01Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $9.99 in the Cincinnati area. Expires Aug 28, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#QTwgFav\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-08-01T06:03:53Z",
+  "last_post": "2026-08-01T16:55:01Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -734,6 +743,7 @@
     "https://offers.greatclips.com/PJb0gN5",
     "https://offers.greatclips.com/PUlEQje",
     "https://offers.greatclips.com/PiUV2AO",
+    "https://offers.greatclips.com/QTwgFav",
     "https://offers.greatclips.com/R12OToz",
     "https://offers.greatclips.com/RM5iPmQ",
     "https://offers.greatclips.com/VGLk34N",
