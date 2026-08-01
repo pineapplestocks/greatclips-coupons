@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-07-31T12:27:32.959033",
-  "total_coupons": 21,
+  "scraped_at": "2026-07-31T19:54:10.452784",
+  "total_coupons": 23,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/K5gVU2t",
@@ -16,6 +16,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-07-07",
+      "last_seen": "2026-07-31"
+    },
+    {
+      "url": "https://offers.greatclips.com/raBnnu6",
+      "coupon_code": "raBnnu6",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20615/50707-002-1200x600-7.99.jpg",
+      "expiration": "08/28/2026",
+      "location_name": "participating Toledo Area",
+      "state": "AREA",
+      "area_name": "participating Toledo",
+      "price": "$7.99",
+      "market": "Toledo",
+      "last_verified": "2026-07-31",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Toledo",
+      "added_date": "2026-07-31",
       "last_seen": "2026-07-31"
     },
     {
@@ -48,6 +64,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Jacksonville, NE Florida & SE Georgia",
       "added_date": "2026-07-27",
+      "last_seen": "2026-07-31"
+    },
+    {
+      "url": "https://offers.greatclips.com/QTwgFav",
+      "coupon_code": "QTwgFav",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20214/50707-002-1200x600-9.99.jpg",
+      "expiration": "08/28/2026",
+      "location_name": "participating Cincinnati Area",
+      "state": "AREA",
+      "area_name": "participating Cincinnati",
+      "price": "$9.99",
+      "market": "Cincinnati",
+      "last_verified": "2026-07-31",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Cincinnati",
+      "added_date": "2026-07-31",
       "last_seen": "2026-07-31"
     },
     {
