@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-08-02T12:11:46.405548",
-  "total_coupons": 24,
+  "scraped_at": "2026-08-02T19:54:20.666168",
+  "total_coupons": 25,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/K5gVU2t",
@@ -328,6 +328,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Las Vegas",
       "added_date": "2026-07-30",
+      "last_seen": "2026-08-02"
+    },
+    {
+      "url": "https://offers.greatclips.com/i3vMWCQ",
+      "coupon_code": "i3vMWCQ",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20277/50707-002-1200x600-10.99.jpg",
+      "expiration": "08/28/2026",
+      "location_name": "only at participating Columbus, OH Area",
+      "state": "AREA",
+      "area_name": "only at participating Columbus, OH",
+      "price": "$10.99",
+      "market": "Columbus, OH",
+      "last_verified": "2026-08-02",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Columbus, OH",
+      "added_date": "2026-08-02",
       "last_seen": "2026-08-02"
     },
     {
