@@ -686,9 +686,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips savings update: $10.99 coupon in the only at participating Columbus, OH area. Expires Aug 28, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#i3vMWCQ\n\n#GreatClips #SaveMoney"
+    },
+    {
+      "coupon_code": "yXQLlHU",
+      "coupon_url": "https://offers.greatclips.com/yXQLlHU",
+      "post_id": "6a760caa8aa5e1393fa5ce40",
+      "posted_at": "2026-08-07T16:49:46Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $15.99 in the Salt Lake City area. Expires Aug 21, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#yXQLlHU\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-08-03T06:28:39Z",
+  "last_post": "2026-08-07T16:49:46Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -823,6 +832,7 @@
     "https://offers.greatclips.com/xQnCtp8",
     "https://offers.greatclips.com/xqTb01a",
     "https://offers.greatclips.com/xz28zQU",
+    "https://offers.greatclips.com/yXQLlHU",
     "https://offers.greatclips.com/yYb1TJ8",
     "https://offers.greatclips.com/yiuVvFj"
   ]
