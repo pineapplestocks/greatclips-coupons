@@ -695,9 +695,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $15.99 in the Salt Lake City area. Expires Aug 21, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#yXQLlHU\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "EOu4Uj9",
+      "coupon_url": "https://offers.greatclips.com/EOu4Uj9",
+      "post_id": "6a78aab8d192ae76f3d0d91b",
+      "posted_at": "2026-08-09T16:28:40Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $9.99 in the Chicagoland area. Expires Aug 28, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#EOu4Uj9\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-08-07T16:49:46Z",
+  "last_post": "2026-08-09T16:28:40Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -737,6 +746,7 @@
     "https://offers.greatclips.com/DG4ITzd",
     "https://offers.greatclips.com/EDIVtMW",
     "https://offers.greatclips.com/ENSRaLu",
+    "https://offers.greatclips.com/EOu4Uj9",
     "https://offers.greatclips.com/EsXCp7M",
     "https://offers.greatclips.com/F2zEagt",
     "https://offers.greatclips.com/FEY2BPH",
