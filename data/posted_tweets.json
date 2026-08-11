@@ -713,9 +713,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $16.99 in the Greater Western Washington area. Expires Aug 21, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#hOlFSQ7\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "IDRinKn",
+      "coupon_url": "https://offers.greatclips.com/IDRinKn",
+      "post_id": "6a7b53984b3e594aab1637de",
+      "posted_at": "2026-08-11T16:53:45Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $9.99 in the only at participating Cleveland, Akron, Canton & Sandusky area. Expires Aug 28, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#IDRinKn\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-08-09T22:36:08Z",
+  "last_post": "2026-08-11T16:53:45Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -764,6 +773,7 @@
     "https://offers.greatclips.com/Gd3zMNb",
     "https://offers.greatclips.com/HmaYB7H",
     "https://offers.greatclips.com/HpxK6qe",
+    "https://offers.greatclips.com/IDRinKn",
     "https://offers.greatclips.com/IIO89QZ",
     "https://offers.greatclips.com/IJ4CKXc",
     "https://offers.greatclips.com/IOS6rlo",
