@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-08-11T00:09:26.693136",
-  "total_coupons": 14,
+  "scraped_at": "2026-08-11T06:07:26.904193",
+  "total_coupons": 15,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/raBnnu6",
@@ -80,6 +80,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Chicagoland",
       "added_date": "2026-08-09",
+      "last_seen": "2026-08-11"
+    },
+    {
+      "url": "https://offers.greatclips.com/IDRinKn",
+      "coupon_code": "IDRinKn",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20666/50707-002-1200x600-9.99.jpg",
+      "expiration": "08/28/2026",
+      "location_name": "only at participating Cleveland, Akron, Canton & Sandusky Area",
+      "state": "AREA",
+      "area_name": "only at participating Cleveland, Akron, Canton & Sandusky",
+      "price": "$9.99",
+      "market": "Cleveland, Akron, Canton & Sandusky",
+      "last_verified": "2026-08-11",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Cleveland, Akron, Canton & Sandusky",
+      "added_date": "2026-08-11",
       "last_seen": "2026-08-11"
     },
     {
