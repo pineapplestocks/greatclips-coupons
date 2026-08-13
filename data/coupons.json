@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-08-13T00:28:44.644349",
-  "total_coupons": 15,
+  "scraped_at": "2026-08-13T06:13:09.515900",
+  "total_coupons": 16,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/raBnnu6",
@@ -176,6 +176,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Detroit",
       "added_date": "2026-07-23",
+      "last_seen": "2026-08-13"
+    },
+    {
+      "url": "https://offers.greatclips.com/pENUMY2",
+      "coupon_code": "pENUMY2",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20297/50707-002-1200x600-12.99.jpg",
+      "expiration": "08/21/2026",
+      "location_name": "participating San Antonio Area",
+      "state": "AREA",
+      "area_name": "participating San Antonio",
+      "price": "$12.99",
+      "market": "San Antonio",
+      "last_verified": "2026-08-13",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in San Antonio",
+      "added_date": "2026-08-13",
       "last_seen": "2026-08-13"
     },
     {
