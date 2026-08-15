@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-08-14T18:17:30.908431",
-  "total_coupons": 15,
+  "scraped_at": "2026-08-14T23:39:27.162767",
+  "total_coupons": 16,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/raBnnu6",
@@ -16,7 +16,7 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Toledo",
       "added_date": "2026-07-31",
-      "last_seen": "2026-08-13"
+      "last_seen": "2026-08-14"
     },
     {
       "url": "https://offers.greatclips.com/MwFEMRy",
@@ -144,6 +144,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Columbus, OH",
       "added_date": "2026-08-02",
+      "last_seen": "2026-08-14"
+    },
+    {
+      "url": "https://offers.greatclips.com/4DPZcps",
+      "coupon_code": "4DPZcps",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20405/50707-002-1200x600-11.99.jpg",
+      "expiration": "08/28/2026",
+      "location_name": "only at participating OKC area and N. Central & W OK Area",
+      "state": "AREA",
+      "area_name": "only at participating OKC area and N. Central & W OK",
+      "price": "$11.99",
+      "market": "OKC area and N. Central & W OK",
+      "last_verified": "2026-08-14",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in OKC area and N. Central & W OK",
+      "added_date": "2026-08-14",
       "last_seen": "2026-08-14"
     },
     {
