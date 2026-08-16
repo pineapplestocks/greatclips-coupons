@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-16T05:41:10.280384",
+  "scraped_at": "2026-08-16T11:30:09.199470",
   "total_coupons": 16,
   "coupons": [
     {
@@ -96,7 +96,7 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Cleveland, Akron, Canton & Sandusky",
       "added_date": "2026-08-11",
-      "last_seen": "2026-08-15"
+      "last_seen": "2026-08-16"
     },
     {
       "url": "https://offers.greatclips.com/cx7AL0B",
@@ -144,7 +144,7 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Columbus, OH",
       "added_date": "2026-08-02",
-      "last_seen": "2026-08-15"
+      "last_seen": "2026-08-16"
     },
     {
       "url": "https://offers.greatclips.com/4DPZcps",
@@ -208,7 +208,7 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in NJ, PA & DE",
       "added_date": "2026-08-01",
-      "last_seen": "2026-08-15"
+      "last_seen": "2026-08-16"
     },
     {
       "url": "https://offers.greatclips.com/MZusUlO",
@@ -256,7 +256,7 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Greater Western Washington",
       "added_date": "2026-08-09",
-      "last_seen": "2026-08-15"
+      "last_seen": "2026-08-16"
     }
   ]
 }
