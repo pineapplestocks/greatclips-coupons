@@ -8,6 +8,7 @@ import os
 import re
 import sys
 from datetime import datetime, timedelta
+from pathlib import Path
 from html import escape as html_escape
 
 # Paths
@@ -453,8 +454,15 @@ def render_state_nav(states):
     )
 
 
+# Cap on how many location cards are rendered into the HTML itself. All of them
+# still ship in COUPON_DATA, so once JS runs the filters show everything; this only
+# bounds the server-rendered fallback, which would otherwise be ~1.4 MB of markup
+# after area coupons are expanded to one card per salon.
+STATIC_GRID_LIMIT = 48
+
+
 def render_results_grid(regular_coupons):
-    sorted_regular = sorted(regular_coupons, key=get_price)
+    sorted_regular = sorted(regular_coupons, key=get_price)[:STATIC_GRID_LIMIT]
     by_state = {}
     for coupon in sorted_regular:
         state = coupon.get("state") or "Other"
@@ -680,6 +688,81 @@ def render_deal_report(stats, scraped_dt):
                     </article>
                 </section>
     """
+
+
+def expand_area_coupons(coupons):
+    """Turn each market coupon into one listing per salon it is valid at.
+
+    Great Clips issues most offers per market - "participating Chicagoland",
+    "participating Houston" - so on its own the location list came up empty even
+    with 16 live coupons. A Houston coupon is honoured at all six Cypress salons,
+    so it should appear against each of them.
+
+    The expanded rows deliberately carry no `area_name` and a real city/state, so
+    the page's own isAreaBased()/isUniversal() helpers file them under
+    location-specific coupons while the original market card stays in the area
+    section. Returns [] if the salon database is missing, leaving the site
+    unchanged.
+    """
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent / "scripts"))
+        import markets  # noqa: PLC0415
+    except Exception as exc:  # noqa: BLE001
+        print(f"   Skipping area expansion ({exc})")
+        return []
+
+    try:
+        cities, _metros = markets.build_all()
+    except SystemExit as exc:  # data/salons.json absent
+        print(f"   Skipping area expansion ({exc})")
+        return []
+
+    lookup = markets.build_city_lookup(cities)
+    rows = []
+    expanded_markets = 0
+
+    for coupon in coupons:
+        resolved = markets.coupon_market_keys(coupon, cities, lookup)
+        if resolved["scope"] != "area" or not resolved.get("city_keys"):
+            continue
+        market_label = re.sub(
+            r"^(?:only\s+)?(?:at\s+)?participating\s+",
+            "",
+            coupon.get("area_name") or coupon.get("market") or "",
+            flags=re.I,
+        ).strip()
+        expanded_markets += 1
+
+        for city_key in resolved["city_keys"]:
+            city = cities.get(city_key)
+            if not city:
+                continue
+            city_page = f"/salons/{city['state'].lower()}/{city['slug']}"
+            for salon in city["salons"]:
+                rows.append(
+                    {
+                        "url": coupon.get("url"),
+                        "coupon_code": coupon.get("coupon_code"),
+                        "price": coupon.get("price"),
+                        "location_name": salon["street"],
+                        "address": salon["street"],
+                        "city": city["city"],
+                        "state": city["state"],
+                        "zip_code": salon.get("zip") or "",
+                        "expiration": coupon.get("expiration"),
+                        "last_verified": coupon.get("last_verified"),
+                        "market_name": market_label,
+                        "from_market": True,
+                        "city_page": city_page,
+                    }
+                )
+
+    if rows:
+        print(
+            f"   Expanded {expanded_markets} market coupon(s) to "
+            f"{len(rows)} salon listings"
+        )
+    return rows
 
 
 def build_static_app_html(coupons, scraped_at):
@@ -939,6 +1022,10 @@ def generate_website():
     print(f"   Loaded {original_count} coupons")
     if len(coupons) != original_count:
         print(f"   Removed/cleaned {original_count - len(coupons)} blocked or junk coupon(s)")
+
+    # A market coupon is valid at every salon in that market, so list it against
+    # each one; without this the location list sits at zero while 16 offers are live.
+    coupons = coupons + expand_area_coupons(coupons)
     
     # Load template
     if not os.path.exists(TEMPLATE_FILE):
@@ -956,7 +1043,10 @@ def generate_website():
     offer_count = str(len(coupons))
 
     # Replace placeholder with actual data
-    coupons_json = json.dumps(coupons, indent=8)
+    # Compact, not indent=8: expanding market coupons to one row per salon makes
+    # this ~960 records, and pretty-printing them cost about half a megabyte of
+    # whitespace in a file every visitor downloads.
+    coupons_json = json.dumps(coupons, separators=(",", ":"))
     html = re.sub(
         r'const COUPON_DATA = \[\];',
         f'const COUPON_DATA = {coupons_json};',

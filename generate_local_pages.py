@@ -157,11 +157,9 @@ COUPON_WIDGET_JS = """(function () {
   }
 
   function card(c) {
-    var el = document.createElement('a');
-    el.href = c.url;
-    el.target = '_blank';
-    el.rel = 'nofollow noopener';
-    el.className = 'block bg-white rounded-xl border border-slate-200 p-5 ' +
+    var el = document.createElement('button');
+    el.type = 'button';
+    el.className = 'block w-full text-left bg-white rounded-xl border border-slate-200 p-5 ' +
                    'hover:border-purple-400 hover:shadow-md transition-all';
     var expiry = c.expiration
       ? '<p class="text-xs text-slate-400 mt-2">Expires ' + c.expiration + '</p>' : '';
@@ -172,9 +170,31 @@ COUPON_WIDGET_JS = """(function () {
           '<p class="text-sm text-slate-600 mt-1">' + scopeLabel(c) + '</p>' + expiry +
         '</div>' +
         '<span class="shrink-0 bg-purple-600 text-white text-sm font-semibold ' +
-        'rounded-lg px-4 py-2">Get coupon</span>' +
+        'rounded-lg px-4 py-2">Get Coupon</span>' +
       '</div>';
+    // Route through the email capture rather than straight out to the offer.
+    el.addEventListener('click', function () { gcOpenModal(c, null); });
     return el;
+  }
+
+  // Reveal a "Get Coupon" button on each salon, now that we know an offer reaches
+  // this city. Each one carries its own street and ZIP into the signup.
+  function wireSalonButtons(best) {
+    var buttons = document.querySelectorAll('.gc-salon-coupon');
+    for (var i = 0; i < buttons.length; i++) {
+      (function (btn) {
+        if (!best) return;
+        btn.textContent = 'Get Coupon' + (best.price ? ' \\u2013 ' + best.price : '');
+        btn.hidden = false;
+        btn.classList.remove('hidden');
+        btn.addEventListener('click', function () {
+          gcOpenModal(best, {
+            street: btn.getAttribute('data-street') || '',
+            zip: btn.getAttribute('data-zip') || ''
+          });
+        });
+      })(buttons[i]);
+    }
   }
 
   fetch('/data/coupons.json', { cache: 'no-cache' })
@@ -193,6 +213,7 @@ COUPON_WIDGET_JS = """(function () {
       grid.className = 'grid gap-4 sm:grid-cols-2';
       hits.slice(0, 8).forEach(function (c) { grid.appendChild(card(c)); });
       box.appendChild(grid);
+      wireSalonButtons(hits[0]);
 
       var note = document.createElement('p');
       note.className = 'text-xs text-slate-500 mt-4';
@@ -207,6 +228,119 @@ COUPON_WIDGET_JS = """(function () {
         'View all current Great Clips coupons</a>.</p>';
     });
 })();
+
+// --- email capture -------------------------------------------------------
+// Same contract as the homepage: POST to the worker, which stores the signup and
+// mails the coupon through Brevo. Skipping is still allowed so a reader who does
+// not want to hand over an address is not stranded.
+var GC_WORKER_URL = 'https://greatclips-email.mehulchaudhari.workers.dev';
+var gcPending = null;
+var gcPendingSalon = null;
+var gcModalReady = false;
+
+// Built on first use so the markup ships once in this file, not on every page.
+function gcEnsureModal() {
+  if (gcModalReady || document.getElementById('gcEmailModal')) {
+    gcModalReady = true;
+    return;
+  }
+  var host = document.createElement('div');
+  host.innerHTML = GC_MODAL_HTML;
+  document.body.appendChild(host);
+  gcModalReady = true;
+}
+
+function gcOpenModal(coupon, salon) {
+  if (!coupon || !coupon.url) return;
+  gcEnsureModal();
+  gcPending = coupon;
+  gcPendingSalon = salon;
+
+  var page = window.__GC_PAGE__ || {};
+  var label = document.getElementById('gcModalSalon');
+  if (label) {
+    label.textContent = salon && salon.street
+      ? coupon.price + ' at Great Clips, ' + salon.street + ', ' + page.cityLabel
+      : (coupon.price || '') + ' – ' + (page.cityLabel || '');
+  }
+
+  var modal = document.getElementById('gcEmailModal');
+  var form = document.getElementById('gcFormView');
+  var success = document.getElementById('gcSuccessView');
+  if (form) form.classList.remove('hidden');
+  if (success) success.classList.add('hidden');
+  if (modal) modal.classList.remove('hidden');
+  var input = document.getElementById('gcEmailInput');
+  if (input) { input.value = ''; input.focus(); }
+}
+
+function gcCloseModal() {
+  var modal = document.getElementById('gcEmailModal');
+  if (modal) modal.classList.add('hidden');
+}
+
+function gcOpenCoupon() {
+  var url = gcPending && gcPending.url;
+  gcCloseModal();
+  if (url) window.open(url, '_blank', 'noopener');
+}
+
+function gcSkipEmail() {
+  gcOpenCoupon();
+}
+
+function gcSubmitEmail(event) {
+  event.preventDefault();
+  var input = document.getElementById('gcEmailInput');
+  var btn = document.getElementById('gcSubmitBtn');
+  var email = (input && input.value || '').trim();
+  if (!email || email.indexOf('@') === -1) return;
+
+  var page = window.__GC_PAGE__ || {};
+  var salon = gcPendingSalon || {};
+  var payload = {
+    email: email,
+    coupon_url: gcPending && gcPending.url,
+    price: (gcPending && gcPending.price) || '',
+    location_name: salon.street || (page.cityLabel || ''),
+    city: (page.cityLabel || '').split(',')[0],
+    state: page.state || '',
+    zip_code: salon.zip || ''
+  };
+
+  var original = btn ? btn.innerHTML : '';
+  if (btn) { btn.innerHTML = 'Sending... ⏳'; btn.disabled = true; }
+
+  fetch(GC_WORKER_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  })
+    .then(function (res) {
+      if (res.ok) return res.json().catch(function () { return {}; });
+      return res.json().catch(function () { return {}; }).then(function (r) {
+        throw new Error(r.error || 'Unable to send your coupon');
+      });
+    })
+    .then(function () {
+      var successEmail = document.getElementById('gcSuccessEmail');
+      if (successEmail) successEmail.textContent = email;
+      var form = document.getElementById('gcFormView');
+      var success = document.getElementById('gcSuccessView');
+      if (form) form.classList.add('hidden');
+      if (success) success.classList.remove('hidden');
+    })
+    .catch(function (err) {
+      alert(err.message || 'Unable to send your coupon. Please try again.');
+    })
+    .then(function () {
+      if (btn) { btn.innerHTML = original; btn.disabled = false; }
+    });
+}
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') gcCloseModal();
+});
 """
 
 
@@ -317,6 +451,10 @@ def salon_card(salon: dict, index: int) -> str:
         if phone
         else '<span class="text-slate-400">Phone not listed</span>'
     )
+    # The button starts hidden: whether a coupon reaches this salon is only known
+    # once /data/coupons.json loads, so city-coupons.js fills in the price and
+    # reveals it. The data- attributes let the email capture record exactly which
+    # salon a signup came from, ZIP included.
     return f"""                <li class="p-5 border border-slate-200 rounded-xl bg-white">
                     <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
                         <h3 class="font-semibold text-slate-900">
@@ -329,6 +467,13 @@ def salon_card(salon: dict, index: int) -> str:
                     </p>
                     <p class="text-sm mb-2">{phone_html}</p>
                     <p class="text-xs text-slate-500 mb-3">{esc(hours)}</p>
+                    <button type="button" hidden
+                            class="gc-salon-coupon hidden w-full mb-3 bg-gradient-to-r from-violet-600
+                                   to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white
+                                   font-semibold py-2.5 px-4 rounded-xl transition-all shadow-md
+                                   shadow-purple-200"
+                            data-street="{esc(salon['street'])}"
+                            data-zip="{esc(salon['zip'])}">Get Coupon</button>
                     <div class="flex flex-wrap gap-3 text-sm">
                         <a href="{maps_url(salon)}" target="_blank" rel="nofollow noopener"
                            class="text-purple-600 hover:underline">Directions</a>
@@ -336,6 +481,62 @@ def salon_card(salon: dict, index: int) -> str:
                            class="text-slate-500 hover:text-purple-600">Official salon page &amp; check-in</a>
                     </div>
                 </li>
+"""
+
+
+def email_modal_html() -> str:
+    """Email-capture modal, mirroring the homepage's so the flow feels identical.
+
+    Injected by city-coupons.js rather than written into all 2,550 pages: it is
+    identical everywhere and only matters once someone clicks, so shipping it
+    statically cost ~10 MB of duplicated markup for no crawler benefit.
+    """
+    return """    <div id="gcEmailModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="gcCloseModal()"></div>
+        <div class="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-8">
+            <button onclick="gcCloseModal()" aria-label="Close"
+                    class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl">&times;</button>
+
+            <div id="gcFormView">
+                <div class="text-center mb-6">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full mb-4">
+                        <span class="text-3xl">&#9986;</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900">Get Your Coupon!</h3>
+                    <p class="text-slate-600 mt-2">Enter your email and we&rsquo;ll send the coupon link instantly.</p>
+                    <p id="gcModalSalon" class="text-sm font-medium text-purple-600 mt-3"></p>
+                </div>
+                <form onsubmit="gcSubmitEmail(event)" class="space-y-4">
+                    <input type="email" id="gcEmailInput" placeholder="Enter your email" required
+                           class="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors">
+                    <button type="submit" id="gcSubmitBtn"
+                            class="w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-xl transition-all shadow-lg shadow-purple-200">
+                        Send Me the Coupon &#128231;
+                    </button>
+                </form>
+                <button onclick="gcSkipEmail()"
+                        class="w-full mt-3 text-slate-500 hover:text-slate-700 text-sm py-2 transition-colors">
+                    No thanks, just show me the coupon
+                </button>
+                <p class="text-center text-xs text-slate-400 mt-4">
+                    &#128274; No spam, unsubscribe anytime. We respect your privacy.
+                </p>
+            </div>
+
+            <div id="gcSuccessView" class="hidden text-center">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-5">
+                    <span class="text-4xl">&#10003;</span>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">Coupon ready!</h3>
+                <p class="text-slate-600 mb-1">A copy was also sent to:</p>
+                <p class="font-semibold text-purple-600 mb-5" id="gcSuccessEmail"></p>
+                <button onclick="gcOpenCoupon()"
+                        class="w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-xl transition-all">
+                    Open my coupon &rarr;
+                </button>
+            </div>
+        </div>
+    </div>
 """
 
 
@@ -886,8 +1087,9 @@ def main() -> int:
 
     asset_path = REPO_ROOT / "docs" / "assets" / "city-coupons.js"
     asset_path.parent.mkdir(parents=True, exist_ok=True)
+    modal_literal = "var GC_MODAL_HTML = " + json.dumps(email_modal_html()) + ";\n\n"
     with asset_path.open("w", encoding="utf-8") as fh:
-        fh.write(COUPON_WIDGET_JS)
+        fh.write(modal_literal + COUPON_WIDGET_JS)
 
     print()
     print(f"  city pages : {written:,}")
