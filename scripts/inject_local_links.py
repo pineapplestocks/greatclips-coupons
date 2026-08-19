@@ -98,12 +98,76 @@ def state_block(state_name: str, state_abbr: str, members: list[dict]) -> str:
     return wrap(inner)
 
 
-def inject_state_pages(cities: dict, check: bool) -> tuple[int, int]:
+# "Houston" / "100+ locations" cards in the Major Cities grid on a state page.
+CITY_CARD_RE = re.compile(
+    r'(<h3 class="font-semibold text-slate-900">([^<]+)</h3>\s*'
+    r'<p class="text-slate-500 text-sm">)\d+\+ locations(</p>)'
+)
+# "...with over 500 locations across the state."
+STATE_TOTAL_RE = re.compile(r"over [\d,]+ locations")
+# "230+ locations", "230+ Great Clips locations in California"
+STATE_ESTIMATE_RE = re.compile(r"[\d,]+\+(?=([^<>]{0,45}?locations?\b))")
+# Brand-wide figures ("4,400+ US locations") are Great Clips' own published number
+# for the whole chain, so they are left alone - our count is US-only.
+NATIONWIDE_HINT = re.compile(r"\b(?:US|U\.S\.|United States|nationwide|nationally)\b")
+
+
+def fix_state_page_counts(
+    text: str,
+    state_abbr: str,
+    members: list[dict],
+    cities: dict,
+    metros: dict,
+    lookup: dict,
+) -> tuple[str, int]:
+    """Replace invented location counts on a state page with real ones.
+
+    The city cards name metros, so each gets its market's salon total; the prose
+    total gets the state's actual salon count.
+    """
+    fixed = 0
+
+    def card(match: re.Match) -> str:
+        nonlocal fixed
+        label = match.group(2).strip()
+        resolved = markets.resolve_area(label, cities, lookup, state_abbr)
+        keys = resolved.get("metro_keys") or []
+        if not keys:
+            return match.group(0)  # leave anything we cannot verify
+        total = sum(metros[k]["salon_count"] for k in dict.fromkeys(keys) if k in metros)
+        if not total:
+            return match.group(0)
+        fixed += 1
+        plural = "location" if total == 1 else "locations"
+        return f"{match.group(1)}{total} {plural}{match.group(3)}"
+
+    text = CITY_CARD_RE.sub(card, text)
+
+    state_total = sum(c["salon_count"] for c in members)
+
+    text, n = STATE_TOTAL_RE.subn(f"{state_total} locations", text)
+    fixed += n
+
+    def estimate(match: re.Match) -> str:
+        nonlocal fixed
+        if NATIONWIDE_HINT.search(match.group(1) or ""):
+            return match.group(0)
+        fixed += 1
+        return str(state_total)
+
+    text = STATE_ESTIMATE_RE.sub(estimate, text)
+    return text, fixed
+
+
+def inject_state_pages(
+    cities: dict, metros: dict, check: bool
+) -> tuple[int, int, int]:
     by_state: dict[str, list[dict]] = {}
     for city in cities.values():
         by_state.setdefault(city["state"], []).append(city)
 
-    updated = skipped = 0
+    lookup = markets.build_city_lookup(cities)
+    updated = skipped = counts_fixed = 0
     for state_abbr, members in sorted(by_state.items()):
         state_name = members[0]["state_name"]
         path = DOCS / f"{state_name.lower().replace(' ', '-')}.html"
@@ -112,7 +176,12 @@ def inject_state_pages(cities: dict, check: bool) -> tuple[int, int]:
             continue
 
         original = path.read_text(encoding="utf-8")
-        patched, ok = splice(original, state_block(state_name, state_abbr, members))
+        text, fixed = fix_state_page_counts(
+            original, state_abbr, members, cities, metros, lookup
+        )
+        if fixed:
+            counts_fixed += 1
+        patched, ok = splice(text, state_block(state_name, state_abbr, members))
         if not ok:
             print(f"  ! no </main> in {path.name}, skipped")
             skipped += 1
@@ -121,7 +190,7 @@ def inject_state_pages(cities: dict, check: bool) -> tuple[int, int]:
             path.write_text(patched, encoding="utf-8")
         if patched != original:
             updated += 1
-    return updated, skipped
+    return updated, skipped, counts_fixed
 
 
 # ------------------------------------------------------ legacy city pages ----
@@ -311,8 +380,8 @@ def main() -> int:
     cities, metros = markets.build_all()
 
     print("State pages:")
-    updated, skipped = inject_state_pages(cities, args.check)
-    print(f"  updated {updated}, skipped {skipped}")
+    updated, skipped, counts = inject_state_pages(cities, metros, args.check)
+    print(f"  updated {updated}, skipped {skipped}, location counts corrected on {counts}")
 
     print("Legacy city pages:")
     updated_c, skipped_c, fixed = inject_city_pages(cities, metros, args.check)
