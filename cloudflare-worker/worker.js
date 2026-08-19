@@ -113,6 +113,21 @@ async function queryAll(env, sql, ...bindings) {
   return result.results || [];
 }
 
+async function ensureSubscriberSchema(env) {
+  if (!env.DB) return;
+
+  const columns = await queryAll(env, 'PRAGMA table_info(subscribers)');
+  const hasZipCode = columns.some((column) => column.name === 'zip_code');
+  if (!hasZipCode) {
+    await env.DB.prepare('ALTER TABLE subscribers ADD COLUMN zip_code TEXT').run();
+  }
+}
+
+function normalizeZipCode(value) {
+  const zipCode = String(value || '').trim();
+  return /^\d{5}$/.test(zipCode) ? zipCode : '';
+}
+
 async function sendBrevoEmail(env, { toEmail, toName, subject, htmlContent }) {
   return fetch('https://api.brevo.com/v3/smtp/email', {
     method: 'POST',
@@ -161,6 +176,7 @@ async function buildSubscriberSummary(env, now = new Date()) {
   if (!env.DB) {
     throw new Error('DB binding is not configured');
   }
+  await ensureSubscriberSchema(env);
 
   const todayStart = startOfUtcDay(now);
   const tomorrowStart = addDays(todayStart, 1);
@@ -184,6 +200,7 @@ async function buildSubscriberSummary(env, now = new Date()) {
     previousFullMonth,
     latest,
     topStates,
+    topZipCodes,
     topLocations,
     topCoupons,
   ] = await Promise.all([
@@ -196,10 +213,13 @@ async function buildSubscriberSummary(env, now = new Date()) {
     queryFirst(env, 'SELECT COUNT(*) AS count FROM subscribers WHERE subscribed_at >= ?', iso(currentMonthStart)),
     queryFirst(env, 'SELECT COUNT(*) AS count FROM subscribers WHERE subscribed_at >= ? AND subscribed_at < ?', iso(previousMonthStart), iso(previousMonthSamePoint)),
     queryFirst(env, 'SELECT COUNT(*) AS count FROM subscribers WHERE subscribed_at >= ? AND subscribed_at < ?', iso(previousMonthStart), iso(previousMonthEnd)),
-    queryAll(env, `SELECT email, coupon_url, location_name, city, state, subscribed_at
+    queryAll(env, `SELECT email, zip_code, coupon_url, location_name, city, state, subscribed_at
       FROM subscribers ORDER BY subscribed_at DESC LIMIT 8`),
     queryAll(env, `SELECT COALESCE(NULLIF(state, ''), 'Unknown') AS state, COUNT(*) AS count
       FROM subscribers GROUP BY COALESCE(NULLIF(state, ''), 'Unknown')
+      ORDER BY count DESC LIMIT 8`),
+    queryAll(env, `SELECT COALESCE(NULLIF(zip_code, ''), 'Unknown') AS zip_code, COUNT(*) AS count
+      FROM subscribers GROUP BY COALESCE(NULLIF(zip_code, ''), 'Unknown')
       ORDER BY count DESC LIMIT 8`),
     queryAll(env, `SELECT COALESCE(NULLIF(location_name, ''), 'Unknown') AS location_name,
         COALESCE(NULLIF(state, ''), 'Unknown') AS state, COUNT(*) AS count
@@ -239,6 +259,7 @@ async function buildSubscriberSummary(env, now = new Date()) {
     },
     latest,
     topStates,
+    topZipCodes,
     topLocations,
     topCoupons,
   };
@@ -294,6 +315,14 @@ function buildSummaryEmail(summary) {
               ])}
             </table>
 
+            <h2 style="font-size:18px;margin:26px 0 10px;color:#052d22;">Top ZIP codes</h2>
+            <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
+              ${tableRows(summary.topZipCodes, [
+                { key: 'zip_code' },
+                { key: 'count', align: 'right', render: (row) => formatNumber(row.count) },
+              ])}
+            </table>
+
             <h2 style="font-size:18px;margin:26px 0 10px;color:#052d22;">Top locations</h2>
             <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
               ${tableRows(summary.topLocations, [
@@ -314,7 +343,7 @@ function buildSummaryEmail(summary) {
             <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
               ${tableRows(summary.latest, [
                 { key: 'email' },
-                { render: (row) => `${row.location_name || 'Unknown'} ${row.state ? `(${row.state})` : ''}` },
+                { render: (row) => `${row.zip_code || 'No ZIP'} - ${row.location_name || 'Unknown'} ${row.state ? `(${row.state})` : ''}` },
                 { render: (row) => formatDateTime(new Date(row.subscribed_at)) },
               ])}
             </table>
@@ -399,6 +428,7 @@ export default {
     }
 
     const { email, coupon_url, price, location_name, city, state } = body;
+    const zip_code = normalizeZipCode(body.zip_code);
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return jsonResponse({ error: 'Invalid email address' }, 400);
@@ -476,20 +506,20 @@ export default {
                   <div style="color:#4c5d58;font-size:13px;line-height:1.45;">100% authentic Great Clips coupon</div>
                 </td>
                 <td valign="top" width="33.33%" style="padding:0 12px;border-left:1px solid #d7dfd8;border-right:1px solid #d7dfd8;text-align:left;">
-                  <div style="color:#89cf28;font-size:34px;line-height:1;margin-bottom:9px;">[$]</div>
-                  <div style="color:#0a3026;font-size:15px;font-weight:900;margin-bottom:5px;">Instant Savings</div>
-                  <div style="color:#4c5d58;font-size:13px;line-height:1.45;">Show before your cut to save</div>
+                  <div style="color:#89cf28;font-size:34px;line-height:1;margin-bottom:9px;">[&#10003;]</div>
+                  <div style="color:#0a3026;font-size:15px;font-weight:900;margin-bottom:5px;">Ready to Use</div>
+                  <div style="color:#4c5d58;font-size:13px;line-height:1.45;">Open it on your phone at the salon</div>
                 </td>
                 <td valign="top" width="33.33%" style="padding:0 12px;text-align:left;">
-                  <div style="color:#89cf28;font-size:34px;line-height:1;margin-bottom:9px;">[14]</div>
-                  <div style="color:#0a3026;font-size:15px;font-weight:900;margin-bottom:5px;">Valid for 14 Days</div>
-                  <div style="color:#4c5d58;font-size:13px;line-height:1.45;">After your first redeem</div>
+                  <div style="color:#89cf28;font-size:34px;line-height:1;margin-bottom:9px;">[&#9679;]</div>
+                  <div style="color:#0a3026;font-size:15px;font-weight:900;margin-bottom:5px;">Location Specific</div>
+                  <div style="color:#4c5d58;font-size:13px;line-height:1.45;">Check the offer page for full terms</div>
                 </td>
               </tr>
             </table>
 
             <p style="color:#1c2e29;text-align:center;font-size:17px;line-height:1.6;margin:0 0 20px;">
-              Click below to open the coupon on the official Great Clips offer page.
+              Open your coupon now and have it ready before you arrive.
             </p>
 
             <!-- CTA Button -->
@@ -500,54 +530,29 @@ export default {
               </a>
             </div>
 
-            <!-- Tips -->
-            <div style="background:#f8faf6;border:1px solid #dfe8dc;border-radius:16px;padding:24px 26px;margin-bottom:22px;">
-              <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                <tr>
-                  <td valign="top" width="58%" style="padding-right:20px;">
-                    <p style="margin:0 0 20px;font-weight:900;color:#0a3026;font-size:19px;text-transform:uppercase;letter-spacing:0.06em;">How to use it</p>
-                    <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                      <tr>
-                        <td width="38" valign="top" style="padding-bottom:13px;"><div style="background:#8bd124;color:#0a3026;border-radius:999px;width:28px;height:28px;line-height:28px;text-align:center;font-weight:900;">1</div></td>
-                        <td style="color:#1c2e29;font-size:15px;line-height:1.65;padding-bottom:13px;">Open the coupon link on your phone.</td>
-                      </tr>
-                      <tr>
-                        <td width="38" valign="top" style="padding-bottom:13px;"><div style="background:#8bd124;color:#0a3026;border-radius:999px;width:28px;height:28px;line-height:28px;text-align:center;font-weight:900;">2</div></td>
-                        <td style="color:#1c2e29;font-size:15px;line-height:1.65;padding-bottom:13px;">Show it to your stylist <strong>before your haircut.</strong></td>
-                      </tr>
-                      <tr>
-                        <td width="38" valign="top"><div style="background:#8bd124;color:#0a3026;border-radius:999px;width:28px;height:28px;line-height:28px;text-align:center;font-weight:900;">3</div></td>
-                        <td style="color:#1c2e29;font-size:15px;line-height:1.65;">Print it instead if that is easier.</td>
-                      </tr>
-                    </table>
-                  </td>
-                  <td valign="bottom" width="42%" style="text-align:center;">
-                    <div style="background:#eaf2e8;border-radius:999px;width:180px;height:120px;margin:0 auto 10px;"></div>
-                    <div style="background:#ffffff;border:3px solid #1e4a3d;border-radius:8px 8px 0 0;width:190px;margin:-96px auto 0;padding:8px 0;color:#0a3026;font-weight:900;font-size:14px;">Great Clips</div>
-                    <div style="border-left:3px solid #1e4a3d;border-right:3px solid #1e4a3d;border-bottom:3px solid #1e4a3d;width:190px;height:70px;margin:0 auto;background:#f7fbf4;">
-                      <div style="display:inline-block;width:70px;height:58px;border-right:2px solid #8aa297;margin-top:12px;"></div>
-                      <div style="display:inline-block;width:70px;height:58px;margin-top:12px;"></div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
+            <!-- Redemption steps -->
+            <div style="background:#f8faf6;border:1px solid #dfe8dc;border-radius:16px;padding:22px 26px;margin-bottom:22px;">
+              <p style="margin:0 0 14px;font-weight:900;color:#0a3026;font-size:17px;text-transform:uppercase;letter-spacing:0.06em;">Use your coupon in 3 steps</p>
+              <p style="margin:0;color:#1c2e29;font-size:15px;line-height:1.7;"><strong style="color:#6ead17;">1.</strong> Open the offer on your phone &nbsp;&nbsp; <strong style="color:#6ead17;">2.</strong> Show it before your haircut &nbsp;&nbsp; <strong style="color:#6ead17;">3.</strong> Save at the participating salon</p>
             </div>
 
-            <!-- Donation -->
-            <div style="background:#061f1a;background-image:linear-gradient(135deg,#061f1a 0%,#082c24 100%);border-radius:18px;padding:28px 34px;margin-bottom:24px;box-shadow:0 14px 28px rgba(7,30,24,0.16);">
+            <!-- Partner offer -->
+            <div style="background:#061f1a;background-image:linear-gradient(135deg,#061f1a 0%,#0a3529 100%);border-radius:18px;padding:28px 34px;margin-bottom:24px;box-shadow:0 14px 28px rgba(7,30,24,0.16);">
               <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
                 <tr>
-                  <td valign="middle" width="28%" align="center" style="padding-right:20px;">
-                    <div style="background:rgba(255,255,255,0.1);border-radius:999px;width:104px;height:104px;line-height:104px;color:#c7f36a;font-size:48px;">♡</div>
-                  </td>
-                  <td valign="middle" width="72%">
-                    <p style="margin:0 0 8px;color:#c7f36a;font-size:16px;font-weight:900;letter-spacing:0.12em;text-transform:uppercase;">Did the coupon work?</p>
-                    <p style="margin:0 0 18px;color:#ffffff;font-size:17px;line-height:1.45;">A $0.50 Venmo donation helps keep GreatClipsDeal live and updated.</p>
-                    <a href="https://venmo.com/GoldBond123?txn=pay&amp;amount=0.50&amp;note=GreatClipsDeal%20coupon%20worked"
-                       style="display:inline-block;background:#2f92f4;background-image:linear-gradient(135deg,#2f92f4 0%,#1f72db 100%);color:#ffffff;font-weight:900;font-size:17px;padding:13px 34px;border-radius:999px;text-decoration:none;">
-                      Send $0.50 on Venmo
+                  <td valign="middle" width="31%" align="center" style="padding-right:22px;">
+                    <a href="https://curryleafplant.com/products/healthy-curry-leaf-plants-6-inches" style="text-decoration:none;">
+                      <img src="https://curryleafplant.com/cdn/shop/products/Curry-Tree-Leaves.webp?v=1696697979&amp;width=360" width="150" alt="Healthy Curry Leaf Plant from Kumar's Garden" style="display:block;width:150px;max-width:100%;height:auto;border:0;border-radius:14px;">
                     </a>
-                    <p style="margin:12px 0 0;color:#aebfbb;font-size:13px;">@GoldBond123</p>
+                  </td>
+                  <td valign="middle" width="69%">
+                    <p style="margin:0 0 7px;color:#c7f36a;font-size:13px;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;">Partner deal &bull; Save $10</p>
+                    <p style="margin:0 0 8px;color:#ffffff;font-size:23px;line-height:1.2;font-weight:900;">Grow fresh curry leaves at home</p>
+                    <p style="margin:0 0 18px;color:#d6e2de;font-size:15px;line-height:1.5;">Get $10 off a healthy 6-inch Curry Leaf Plant from our partner, Kumar's Garden.</p>
+                    <a href="https://curryleafplant.com/products/healthy-curry-leaf-plants-6-inches"
+                       style="display:inline-block;background:#d7f36f;color:#071e18;font-weight:900;font-size:16px;padding:13px 25px;border-radius:9px;text-decoration:none;">
+                      Shop Curry Leaf Plants &rarr;
+                    </a>
                   </td>
                 </tr>
               </table>
@@ -558,6 +563,7 @@ export default {
             <p style="color:#89938f;font-size:11px;text-align:center;margin:0;line-height:1.7;">
               You received this because you requested a coupon at
               <a href="https://greatclipsdeal.com" style="color:#17211f;font-weight:700;text-decoration:none;">greatclipsdeal.com</a><br>
+              Partner offer provided by Kumar's Garden.<br>
               &copy; 2026 GreatClipsDeal.com &mdash; Not affiliated with Great Clips, Inc.
             </p>
 
@@ -585,11 +591,13 @@ export default {
     // Store subscriber + location in D1
     if (env.DB) {
       try {
+        await ensureSubscriberSchema(env);
         await env.DB.prepare(
-          `INSERT INTO subscribers (email, location_name, city, state, coupon_url, subscribed_at)
-           VALUES (?, ?, ?, ?, ?, ?)`
+          `INSERT INTO subscribers (email, zip_code, location_name, city, state, coupon_url, subscribed_at)
+           VALUES (?, ?, ?, ?, ?, ?, ?)`
         ).bind(
           email,
+          zip_code,
           location_name || '',
           city || '',
           state || '',
