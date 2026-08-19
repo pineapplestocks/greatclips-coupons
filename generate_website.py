@@ -205,6 +205,11 @@ def is_universal(coupon):
 
 
 def is_area_based(coupon):
+    # Rows expanded from a market coupon are salon listings, never area cards.
+    # Checked first because the " area" test below matches real street names -
+    # "1827 W Bay Area Blvd" in Webster, TX filed a genuine salon as an area offer.
+    if coupon.get("from_market"):
+        return False
     state = (coupon.get("state") or "").upper()
     loc = (coupon.get("location_name") or "").lower()
     return bool(state == "AREA" or coupon.get("area_name") or " area" in loc)

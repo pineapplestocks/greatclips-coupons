@@ -522,6 +522,10 @@
 
         // Check if coupon is area-based (works at multiple locations in a specific region)
         function isAreaBased(coupon) {
+            // Listings expanded from a market coupon are salons, not area cards.
+            // Checked first because the ' area' test matches real street names -
+            // "1827 W Bay Area Blvd" in Webster, TX is a salon, not an area offer.
+            if (coupon.from_market) return false;
             const state = (coupon.state || '').toUpperCase();
             const loc = (coupon.location_name || '').toLowerCase();
             return state === 'AREA' || coupon.area_name || loc.includes(' area');
