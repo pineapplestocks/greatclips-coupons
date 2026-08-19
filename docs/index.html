@@ -1842,6 +1842,7 @@
                                 <span class="font-bold text-lg text-purple-600 hidden sm:inline">GreatClipsDeal</span>
                             </a>
                             <div class="hidden md:flex items-center gap-6 text-sm">
+                                <a href="/salons" class="text-slate-600 hover:text-purple-600 font-medium transition-colors">Find a Salon</a>
                                 <a href="/states" class="text-slate-600 hover:text-purple-600 font-medium transition-colors">Browse by State</a>
                                 <a href="/calculator" class="text-slate-600 hover:text-purple-600 font-medium transition-colors">Savings Calculator</a>
                                 <a href="/how-to-use" class="text-slate-600 hover:text-purple-600 font-medium transition-colors">How to Use</a>
@@ -1857,6 +1858,7 @@
                         <!-- Mobile Menu -->
                         <div id="mobileMenu" class="hidden md:hidden pb-4 border-t border-slate-100 pt-3">
                             <div class="flex flex-col gap-3">
+                                <a href="/salons" class="text-slate-600 hover:text-purple-600 font-medium py-1">Find a Salon</a>
                                 <a href="/states" class="text-slate-600 hover:text-purple-600 font-medium py-1">Browse by State</a>
                                 <a href="/calculator" class="text-slate-600 hover:text-purple-600 font-medium py-1">Savings Calculator</a>
                                 <a href="/how-to-use" class="text-slate-600 hover:text-purple-600 font-medium py-1">How to Use</a>
@@ -2180,6 +2182,7 @@
                                     <li><a href="/texas" class="hover:text-purple-400 transition-colors">Texas</a></li>
                                     <li><a href="/florida" class="hover:text-purple-400 transition-colors">Florida</a></li>
                                     <li><a href="/states" class="text-purple-400 hover:text-purple-300 font-medium transition-colors">All 50 States →</a></li>
+                                    <li><a href="/salons" class="text-purple-400 hover:text-purple-300 font-medium transition-colors">Salon directory by city →</a></li>
                                 </ul>
                             </div>
                             <div>
@@ -2304,15 +2307,22 @@
             btn.disabled = true;
 
             // Send coupon via Cloudflare Worker → Brevo
-            let success = false;
             try {
                 const res = await fetch(WORKER_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email, coupon_url: couponUrl, price, ...location })
                 });
-                success = res.ok;
-            } catch (_) {}
+                if (!res.ok) {
+                    const result = await res.json().catch(() => ({}));
+                    throw new Error(result.error || 'Unable to send your coupon');
+                }
+            } catch (error) {
+                alert(error.message || 'Unable to send your coupon. Please try again.');
+                btn.innerHTML = 'Send Me the Coupon 📧';
+                btn.disabled = false;
+                return;
+            }
 
             // Show success view
             document.getElementById('emailFormView').classList.add('hidden');

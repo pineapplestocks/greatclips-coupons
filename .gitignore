@@ -5,6 +5,9 @@ __pycache__/
 .venv/
 venv/
 
+# resumable scrape cache for scripts/fetch_salons.py
+.cache/
+
 # wrangler files
 .wrangler
 .dev.vars*

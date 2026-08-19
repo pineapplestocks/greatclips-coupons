@@ -15,10 +15,17 @@ Run this after any content updates to keep sitemap current.
 """
 
 import os
+import sys
 from datetime import datetime
 from pathlib import Path
 
+# The status lines below use emoji, which crash on a Windows console defaulting to
+# cp1252. CI runs UTF-8, but this script is also run by hand on Windows.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+
 SITEMAP_PATH = "docs/sitemap.xml"
+DOCS_DIR = "docs"
 SITE_URL = "https://greatclipsdeal.com"
 
 def get_today():
@@ -233,20 +240,91 @@ def generate_sitemap():
     return sitemap
 
 
+def generate_salons_sitemap():
+    """Sitemap for the per-city salon pages under docs/salons/.
+
+    Built by scanning the generated files rather than from a hardcoded list, so it
+    can never drift from what was actually published. These pages change only when
+    the salon data changes, so they live in their own sitemap and keep the daily
+    coupon refresh from rewriting thousands of <lastmod> values.
+    """
+    salons_dir = Path(DOCS_DIR) / "salons"
+    if not salons_dir.exists():
+        return None, 0
+
+    entries = []
+    index_file = salons_dir / "index.html"
+    if index_file.exists():
+        entries.append((f"{SITE_URL}/salons", _file_date(index_file), "weekly", "0.8"))
+
+    for path in sorted(salons_dir.glob("*/*.html")):
+        state = path.parent.name
+        slug = path.stem
+        entries.append(
+            (f"{SITE_URL}/salons/{state}/{slug}", _file_date(path), "weekly", "0.7")
+        )
+
+    xml = ['<?xml version="1.0" encoding="UTF-8"?>',
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for loc, lastmod, freq, priority in entries:
+        xml.append(
+            f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{lastmod}</lastmod>\n"
+            f"    <changefreq>{freq}</changefreq>\n"
+            f"    <priority>{priority}</priority>\n  </url>"
+        )
+    xml.append("</urlset>\n")
+    return "\n".join(xml), len(entries)
+
+
+def _file_date(path):
+    """Last-modified date of a generated file, as YYYY-MM-DD."""
+    return datetime.fromtimestamp(path.stat().st_mtime).strftime("%Y-%m-%d")
+
+
+def generate_sitemap_index(children):
+    today = get_today()
+    xml = ['<?xml version="1.0" encoding="UTF-8"?>',
+           '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for name in children:
+        xml.append(
+            f"  <sitemap>\n    <loc>{SITE_URL}/{name}</loc>\n"
+            f"    <lastmod>{today}</lastmod>\n  </sitemap>"
+        )
+    xml.append("</sitemapindex>\n")
+    return "\n".join(xml)
+
+
+def _write(relative_path, text):
+    path = Path(DOCS_DIR) / relative_path
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(text)
+    return path
+
+
 def update_sitemap():
-    """Generate complete sitemap (replaces old append-only approach)"""
-    sitemap = generate_sitemap()
-    
-    # Write to file
-    output_path = Path(SITEMAP_PATH)
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    
-    with open(output_path, 'w') as f:
-        f.write(sitemap)
-    
-    # Count URLs
-    url_count = sitemap.count('<url>')
-    print(f"✅ Generated complete sitemap with {url_count} URLs → {SITEMAP_PATH}")
+    """Write sitemap-main.xml, sitemap-salons.xml and the sitemap.xml index.
+
+    sitemap.xml stays the single URL registered in Search Console and robots.txt;
+    it is now an index pointing at the two child sitemaps.
+    """
+    main_xml = generate_sitemap()
+    _write("sitemap-main.xml", main_xml)
+    main_count = main_xml.count("<url>")
+    print(f"✅ sitemap-main.xml: {main_count} URLs")
+
+    children = ["sitemap-main.xml"]
+    salons_xml, salons_count = generate_salons_sitemap()
+    if salons_xml:
+        _write("sitemap-salons.xml", salons_xml)
+        children.append("sitemap-salons.xml")
+        print(f"✅ sitemap-salons.xml: {salons_count} URLs")
+    else:
+        print("ℹ️  docs/salons/ not built yet - skipping salon sitemap")
+
+    _write("sitemap.xml", generate_sitemap_index(children))
+    total = main_count + salons_count
+    print(f"✅ sitemap.xml index -> {', '.join(children)}  ({total} URLs total)")
 
 
 # Keep backward compatibility - both function names work

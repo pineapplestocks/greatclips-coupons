@@ -45,7 +45,17 @@ jobs:
           mkdir -p docs
           cp -a pages/. docs/
           python scripts/ensure_static_root_files.py
+
+      # generate_pages.py rewrites docs/<state>.html and docs/cities/*.html from
+      # templates that carry no salon data, so the real location counts and the
+      # links down to the per-city pages have to be re-applied afterwards.
+      # Without this step every run would restore the old invented "200+" counts.
+      - name: Re-apply real salon counts and city links
+        run: |
+          python scripts/inject_local_links.py
+          python scripts/export_coupon_feed.py
           python update_sitemap.py
+          python scripts/check_conflict_markers.py
 
       - name: Commit and push changes
         run: |

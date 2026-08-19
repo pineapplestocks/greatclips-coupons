@@ -48,6 +48,12 @@ jobs:
           python generate_website.py
           python scripts/ensure_static_root_files.py
 
+      # Refreshes docs/data/coupons.json, which the per-city salon pages read in
+      # the browser. Only this feed changes on a coupon update - the 2,550 city
+      # pages stay untouched, so a coupon refresh never rewrites the whole site.
+      - name: Publish coupon feed for city pages
+        run: python scripts/export_coupon_feed.py
+
       - name: Commit and push changes (race-safe)
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -59,11 +65,24 @@ jobs:
           else
             git stash
             git pull --rebase origin main
-            git stash pop || true
+            # A bare `git stash pop || true` used to swallow conflicts here, which
+            # committed literal "<<<<<<< Updated upstream" markers into 59 pages and
+            # dropped the AdSense tag from 119 more. Everything under docs/ is
+            # regenerated a few lines below, so on conflict keep the freshly pulled
+            # upstream copy and let the generators rebuild - never leave markers.
+            if ! git stash pop; then
+              echo "::warning::stash pop conflicted; keeping upstream and regenerating"
+              git checkout --ours -- . || true
+              git reset || true
+              git stash drop || true
+            fi
             # Regenerate sitemap after pull to avoid conflict markers in XML
             python update_sitemap.py
             python generate_website.py
             python scripts/ensure_static_root_files.py
+            python scripts/export_coupon_feed.py
+            # Refuse to publish conflict markers, whatever their source.
+            python scripts/check_conflict_markers.py
             git add -A
             git commit -m "🔄 Update coupons $(date +'%Y-%m-%d %H:%M')"
             git push

@@ -1,0 +1,105 @@
+name: Refresh Salon Data
+
+# Re-scrapes the official Great Clips salon locator and rebuilds the per-city
+# pages from it. Salons open and close slowly, so monthly is plenty - and running
+# it rarely keeps the ~2,550 generated pages from churning in git.
+#
+# The fetch is ~4,300 HTTPS requests at 12 workers, roughly 5-10 minutes.
+
+on:
+  schedule:
+    # 08:00 UTC on the 3rd of each month (after the monthly-pages job on the 1st)
+    - cron: '0 8 3 * *'
+  workflow_dispatch:
+    inputs:
+      skip_fetch:
+        description: 'Rebuild pages from the existing data/salons.json without re-scraping'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+env:
+  TZ: America/Phoenix
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync latest main
+        run: git pull --rebase origin main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Fetch salon locations
+        if: ${{ inputs.skip_fetch != true }}
+        run: python scripts/fetch_salons.py
+
+      # fetch_salons.py refuses to write an empty database, but guard the
+      # published pages too: a partial scrape must not delete live city pages.
+      - name: Verify salon data looks sane
+        run: |
+          python - <<'PY'
+          import json, sys
+          with open('data/salons.json', encoding='utf-8') as fh:
+              data = json.load(fh)
+          total = data['total_salons']
+          print(f"salons: {total}, cities: {data['total_cities']}")
+          if total < 3500:
+              sys.exit(f"Only {total} salons parsed - refusing to rebuild pages.")
+          PY
+
+      - name: Rebuild city pages, coupon feed and sitemap
+        run: |
+          python generate_local_pages.py --clean
+          python scripts/export_coupon_feed.py
+          python scripts/inject_local_links.py
+          python update_sitemap.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -A data docs
+          if git diff --staged --quiet; then
+            echo "No salon changes this month"
+          else
+            git commit -m "📍 Refresh salon locations $(date +'%Y-%m-%d')"
+            git push
+          fi
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './docs'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

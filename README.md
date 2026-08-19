@@ -163,6 +163,42 @@ GitHub Actions has limits:
 6. **Website is generated** from the template
 7. **GitHub Pages** deploys the website
 
+## 📍 Local salon pages (`/salons/<st>/<city>`)
+
+Great Clips issues most coupons per **market** ("participating Chicagoland"), not
+per salon. A Chicagoland coupon is valid in ~72 suburbs, so the site publishes a
+page for every US city that has a salon — 2,550 of them — instead of only the
+handful of big metros people rarely search by name.
+
+| Script | Job |
+| --- | --- |
+| `scripts/fetch_salons.py` | Scrapes the official locator sitemap → `data/salons.json` (4,303 salons: address, phone, hours, lat/lng). Resumable via `.cache/`. |
+| `scripts/markets.py` | Clusters cities into the 646 coupon markets, and resolves market strings like "Chicagoland" or "DFW Metroplex" to the cities they cover. Run directly to inspect the model. |
+| `generate_local_pages.py` | Builds `docs/salons/<st>/<city>.html` plus the `/salons` directory. |
+| `scripts/export_coupon_feed.py` | Publishes `docs/data/coupons.json`, tagging each coupon with the cities it reaches. |
+| `scripts/inject_local_links.py` | Adds city directories to the state and legacy metro pages, and keeps their salon counts truthful. |
+
+Two properties worth preserving when editing these:
+
+- **Coupons are injected client-side** from `/data/coupons.json`. That is why a
+  coupon refresh does not rewrite 2,550 static files (and 2,550 git diffs). The
+  static half of each page — the salon list — is the part that ranks.
+- **`inject_local_links.py` must run after `generate_pages.py`.** That legacy
+  generator rebuilds the state and metro pages from salon-free templates, so
+  without the follow-up step the invented "200+ locations" counts come back.
+
+Rebuild everything after a data change:
+
+```bash
+python scripts/fetch_salons.py          # monthly; ~5-10 min
+python generate_local_pages.py --clean
+python scripts/export_coupon_feed.py
+python scripts/inject_local_links.py
+python update_sitemap.py
+```
+
+`.github/workflows/salon-data.yml` does exactly this on the 3rd of each month.
+
 ## 🆓 Cost
 
 **$0** - Everything uses free tiers:
