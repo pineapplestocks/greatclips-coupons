@@ -566,6 +566,39 @@
         };
 
         // Render just the results, not the whole page
+        // Rows beyond the first page of each state, kept out of the DOM until asked for.
+        let pendingRows = {};
+
+        function couponRowHtml(c) {
+            const price = getPrice(c);
+            const name = (c.location_name || '').replace(/'/g, "\'");
+            const city = (c.city || '').replace(/'/g, "\'");
+            return `
+                <tr data-row="1">
+                    <td class="py-2.5 pl-4 pr-3 whitespace-nowrap">
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-md text-sm font-bold ${getPriceBadge(price)}">${c.price || 'N/A'}</span>
+                    </td>
+                    <td class="py-2.5 pr-3 text-slate-900">${c.address || c.location_name || 'Great Clips'}</td>
+                    <td class="py-2.5 pr-3 text-slate-600 whitespace-nowrap">${formatCityState(c)}</td>
+                    <td class="py-2.5 pr-3 text-slate-400 text-sm whitespace-nowrap hidden sm:table-cell">${getExpiration(c)}</td>
+                    <td class="py-2.5 pr-4 text-right whitespace-nowrap">
+                        <button onclick="getCoupon('${c.url}', '${c.price || ''}', '${name}', '${city}', '${c.state || ''}')"
+                            class="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white text-sm font-semibold py-2 px-4 rounded-lg transition-all cursor-pointer">
+                            Get Coupon
+                        </button>
+                    </td>
+                </tr>`;
+        }
+
+        function revealRows(btn, stateId) {
+            const rest = pendingRows[stateId];
+            const body = document.getElementById('rows-' + stateId);
+            if (!rest || !body) { btn.remove(); return; }
+            body.insertAdjacentHTML('beforeend', rest.map(couponRowHtml).join(''));
+            delete pendingRows[stateId];
+            btn.remove();
+        }
+
         function renderResults() {
             currentFilters.search = document.getElementById('search')?.value || '';
             currentFilters.state = document.getElementById('stateFilter')?.value || '';
@@ -626,48 +659,50 @@
                         return a.localeCompare(b);
                     });
                     
-                    // Generate HTML for each state section
-                    resultsGrid.innerHTML = sortedStates.map(state => `
+                    // Generate HTML for each state section. A table, not cards:
+                    // market coupons expand to ~960 near-identical salon entries, and
+                    // a card each meant a very long scroll and ~15 DOM nodes per row.
+                    // Only the first ROWS_PER_STATE rows of each state are built; the
+                    // rest are held in pendingRows and rendered on demand, so a filter
+                    // keystroke does not rebuild a megabyte of markup.
+                    const ROWS_PER_STATE = 20;
+                    pendingRows = {};
+                    resultsGrid.innerHTML = sortedStates.map(state => {
+                        const rows = byState[state];
+                        const stateId = String(state).replace(/[^A-Za-z0-9_-]+/g, '-');
+                        const shown = rows.slice(0, ROWS_PER_STATE);
+                        const rest = rows.slice(ROWS_PER_STATE);
+                        if (rest.length) pendingRows[stateId] = rest;
+                        return `
                         <div class="mb-10" id="state-${state}">
                             <div class="flex items-center gap-3 mb-4">
                                 <h2 class="text-2xl font-bold text-slate-900">${state}</h2>
-                                <span class="bg-purple-100 text-purple-700 text-sm font-medium px-3 py-1 rounded-full">${byState[state].length} coupon${byState[state].length > 1 ? 's' : ''}</span>
+                                <span class="bg-purple-100 text-purple-700 text-sm font-medium px-3 py-1 rounded-full">${rows.length} coupon${rows.length > 1 ? 's' : ''}</span>
                             </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-                                ${byState[state].map(c => {
-                                    const price = getPrice(c);
-                                    return `
-                                    <div class="bg-white rounded-2xl shadow-md shadow-slate-200/50 overflow-hidden card-hover border border-slate-100">
-                                        <div class="p-5">
-                                            <div class="flex items-start justify-between mb-4">
-                                                <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-xl font-bold ${getPriceBadge(price)} shadow-sm">
-                                                    ${c.price || 'N/A'}
-                                                </span>
-                                                <span class="text-slate-400 text-sm">
-                                                    ${getExpiration(c)}
-                                                </span>
-                                            </div>
-                                            <h3 class="font-semibold text-slate-900 text-lg mb-1 line-clamp-2">${c.location_name || 'Great Clips'}</h3>
-                                            <div class="text-slate-500 text-sm mb-4">
-                                                <p class="truncate">${c.address || ''}</p>
-                                                <p class="font-medium text-slate-600">${formatCityState(c)}</p>
-                                            </div>
-                                            <div class="flex gap-2">
-                                                <button onclick="getCoupon('${c.url}', '${c.price || ''}', '${(c.location_name || '').replace(/'/g, "\\'")}', '${(c.city || '').replace(/'/g, "\\'")}', '${c.state || ''}')"
-                                                    class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200 cursor-pointer">
-                                                    Get Coupon
-                                                </button>
-                                                <button onclick="navigator.clipboard.writeText('${c.url}'); this.textContent='✓'; setTimeout(() => this.textContent='📋', 2000)"
-                                                    class="bg-slate-100 hover:bg-slate-200 text-slate-600 p-2.5 rounded-xl transition-colors"
-                                                    title="Copy link">📋</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    `;
-                                }).join('')}
+                            <div class="bg-white rounded-2xl shadow-md shadow-slate-200/50 border border-slate-100 overflow-x-auto">
+                                <table class="w-full text-left min-w-[36rem]">
+                                    <thead>
+                                        <tr class="text-xs uppercase tracking-wide text-slate-400 border-b border-slate-100">
+                                            <th scope="col" class="py-2.5 pl-4 pr-3 font-semibold">Price</th>
+                                            <th scope="col" class="py-2.5 pr-3 font-semibold">Salon address</th>
+                                            <th scope="col" class="py-2.5 pr-3 font-semibold">City</th>
+                                            <th scope="col" class="py-2.5 pr-3 font-semibold hidden sm:table-cell">Expires</th>
+                                            <th scope="col" class="py-2.5 pr-4 font-semibold text-right">Coupon</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="rows-${stateId}" class="divide-y divide-slate-100">
+                                        ${shown.map(couponRowHtml).join('')}
+                                    </tbody>
+                                </table>
+                                ${rest.length ? `
+                                <button onclick="revealRows(this, '${stateId}')"
+                                    class="w-full py-3 text-sm font-semibold text-purple-600 hover:bg-purple-50 border-t border-slate-100 transition-colors">
+                                    Show ${rest.length} more ${state} salon${rest.length > 1 ? 's' : ''}
+                                </button>` : ''}
                             </div>
                         </div>
-                    `).join('');
+                        `;
+                    }).join('');
                 } else {
                     resultsGrid.innerHTML = `
                     <div class="col-span-full text-center py-16 bg-white rounded-2xl shadow-sm">

@@ -323,42 +323,37 @@ def render_area_card(coupon):
     """
 
 
-def render_regular_card(coupon):
+def render_regular_row(coupon):
+    """One salon as a table row.
+
+    Expanding market coupons to one entry per salon turned this list into ~960
+    near-identical items, and a card each was both a very long scroll and about
+    15 DOM nodes to carry four fields - with the street printed twice, once as the
+    heading and again as the address. A row states each field once.
+    """
     price = get_price(coupon)
     coupon_url = coupon.get("url") or ""
     return f"""
-                                            <div class="bg-white rounded-2xl shadow-md shadow-slate-200/50 overflow-hidden card-hover border border-slate-100">
-                                                <div class="p-5">
-                                                    <div class="flex items-start justify-between mb-4">
-                                                        <span class="inline-flex items-center px-3 py-1.5 rounded-lg text-xl font-bold {get_price_badge(price)} shadow-sm">
-                                                            {escape_html(coupon.get("price") or "N/A")}
-                                                        </span>
-                                                        <span class="text-slate-400 text-sm">
-                                                            {escape_html(get_expiration(coupon))}
-                                                        </span>
-                                                    </div>
-                                                    <h3 class="font-semibold text-slate-900 text-lg mb-1 line-clamp-2">{escape_html(coupon.get("location_name") or "Great Clips")}</h3>
-                                                    <div class="text-slate-500 text-sm mb-4">
-                                                        <p class="truncate">{escape_html(coupon.get("address") or "")}</p>
-                                                        <p class="font-medium text-slate-600">{escape_html(format_city_state(coupon))}</p>
-                                                    </div>
-                                                    <div class="flex gap-2">
-                                                        <button onclick='{js_call("getCoupon", coupon_url, coupon.get("price") or "", coupon.get("location_name") or "", coupon.get("city") or "", coupon.get("state") or "")}'
-                                                            class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200 cursor-pointer">
-                                                            Get Coupon
-                                                        </button>
-                                                        <button onclick='{copy_link_handler(coupon_url)}'
-                                                            class="bg-slate-100 hover:bg-slate-200 text-slate-600 p-2.5 rounded-xl transition-colors"
-                                                            title="Copy link">📋</button>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <tr class="border-b border-slate-100 hover:bg-purple-50/40">
+                                                <td class="py-2.5 pl-4 pr-3 whitespace-nowrap">
+                                                    <span class="inline-flex items-center px-2.5 py-1 rounded-md text-sm font-bold {get_price_badge(price)}">{escape_html(coupon.get("price") or "N/A")}</span>
+                                                </td>
+                                                <td class="py-2.5 pr-3 text-slate-900">{escape_html(coupon.get("address") or coupon.get("location_name") or "Great Clips")}</td>
+                                                <td class="py-2.5 pr-3 text-slate-600 whitespace-nowrap">{escape_html(format_city_state(coupon))}</td>
+                                                <td class="py-2.5 pr-3 text-slate-400 text-sm whitespace-nowrap hidden sm:table-cell">{escape_html(get_expiration(coupon))}</td>
+                                                <td class="py-2.5 pr-4 text-right whitespace-nowrap">
+                                                    <button onclick='{js_call("getCoupon", coupon_url, coupon.get("price") or "", coupon.get("location_name") or "", coupon.get("city") or "", coupon.get("state") or "")}'
+                                                        class="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white text-sm font-semibold py-2 px-4 rounded-lg transition-all cursor-pointer">
+                                                        Get Coupon
+                                                    </button>
+                                                </td>
+                                            </tr>
     """
 
 
 def render_state_section(state, coupons):
     state_id = safe_id_component(state)
-    cards_html = "".join(render_regular_card(coupon) for coupon in coupons)
+    rows_html = "".join(render_regular_row(coupon) for coupon in coupons)
     count_label = "coupon" if len(coupons) == 1 else "coupons"
     return f"""
                                 <div class="mb-10" id="state-{state_id}">
@@ -366,8 +361,21 @@ def render_state_section(state, coupons):
                                         <h2 class="text-2xl font-bold text-slate-900">{escape_html(state)}</h2>
                                         <span class="bg-purple-100 text-purple-700 text-sm font-medium px-3 py-1 rounded-full">{len(coupons)} {count_label}</span>
                                     </div>
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-{cards_html}                                    </div>
+                                    <div class="bg-white rounded-2xl shadow-md shadow-slate-200/50 border border-slate-100 overflow-x-auto">
+                                        <table class="w-full text-left min-w-[36rem]">
+                                            <thead>
+                                                <tr class="text-xs uppercase tracking-wide text-slate-400 border-b border-slate-100">
+                                                    <th scope="col" class="py-2.5 pl-4 pr-3 font-semibold">Price</th>
+                                                    <th scope="col" class="py-2.5 pr-3 font-semibold">Salon address</th>
+                                                    <th scope="col" class="py-2.5 pr-3 font-semibold">City</th>
+                                                    <th scope="col" class="py-2.5 pr-3 font-semibold hidden sm:table-cell">Expires</th>
+                                                    <th scope="col" class="py-2.5 pr-4 font-semibold text-right">Coupon</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+{rows_html}                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
     """
 
