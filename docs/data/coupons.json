@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-08-21T12:50:11Z",
- "scraped_at": "2026-08-21T05:50:01.377103",
- "total": 10,
+ "generated_at": "2026-08-21T18:37:50Z",
+ "scraped_at": "2026-08-21T11:37:41.880776",
+ "total": 11,
  "scopes": {
-  "area": 9,
+  "area": 10,
   "state": 1
  },
  "coupons": [
@@ -348,6 +348,31 @@
     "GA/stone-mountain",
     "OH/norwalk",
     "OH/sandusky"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/OloluXg",
+   "coupon_code": "OloluXg",
+   "price": "$9.99",
+   "location_name": "participating Ft. Wayne Area",
+   "state": "AREA",
+   "area_name": "participating Ft. Wayne",
+   "market": "Ft. Wayne",
+   "expiration": "08/28/2026",
+   "last_verified": "2026-08-21",
+   "participating_location_note": "Valid at participating locations in Ft. Wayne",
+   "scope": "area",
+   "price_value": 9.99,
+   "metro_keys": [
+    "IN/new-haven"
+   ],
+   "market_names": [
+    "Fort Wayne, IN"
+   ],
+   "city_keys": [
+    "IN/fort-wayne",
+    "IN/decatur",
+    "IN/new-haven"
    ]
   },
   {

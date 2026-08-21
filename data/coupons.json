@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-08-21T05:50:01.377103",
-  "total_coupons": 10,
+  "scraped_at": "2026-08-21T11:37:41.880776",
+  "total_coupons": 11,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/raBnnu6",
@@ -80,6 +80,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Cleveland, Akron, Canton & Sandusky",
       "added_date": "2026-08-11",
+      "last_seen": "2026-08-21"
+    },
+    {
+      "url": "https://offers.greatclips.com/OloluXg",
+      "coupon_code": "OloluXg",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20382/50707-002-1200x600-9.99.jpg",
+      "expiration": "08/28/2026",
+      "location_name": "only at participating Ft. Wayne Area",
+      "state": "AREA",
+      "area_name": "only at participating Ft. Wayne",
+      "price": "$9.99",
+      "market": "Ft. Wayne",
+      "last_verified": "2026-08-21",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Ft. Wayne",
+      "added_date": "2026-08-21",
       "last_seen": "2026-08-21"
     },
     {
