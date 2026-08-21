@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-08-20T23:48:49.334901",
-  "total_coupons": 17,
+  "scraped_at": "2026-08-21T05:50:01.377103",
+  "total_coupons": 10,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/raBnnu6",
@@ -12,11 +12,11 @@
       "area_name": "participating Toledo",
       "price": "$7.99",
       "market": "Toledo",
-      "last_verified": "2026-08-20",
+      "last_verified": "2026-08-21",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Toledo",
       "added_date": "2026-07-31",
-      "last_seen": "2026-08-20"
+      "last_seen": "2026-08-21"
     },
     {
       "url": "https://offers.greatclips.com/MwFEMRy",
@@ -28,27 +28,11 @@
       "area_name": "participating Indianapolis",
       "price": "$9.99",
       "market": "Indianapolis",
-      "last_verified": "2026-08-20",
+      "last_verified": "2026-08-21",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Indianapolis",
       "added_date": "2026-07-23",
-      "last_seen": "2026-08-20"
-    },
-    {
-      "url": "https://offers.greatclips.com/llFADfo",
-      "coupon_code": "llFADfo",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20004/50707-002-1200x600-9.99.jpg",
-      "expiration": "08/21/2026",
-      "location_name": "only at participating Jacksonville, NE Florida & SE Georgia Area",
-      "state": "AREA",
-      "area_name": "only at participating Jacksonville, NE Florida & SE Georgia",
-      "price": "$9.99",
-      "market": "Jacksonville, NE Florida & SE Georgia",
-      "last_verified": "2026-08-20",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Jacksonville, NE Florida & SE Georgia",
-      "added_date": "2026-07-27",
-      "last_seen": "2026-08-14"
+      "last_seen": "2026-08-21"
     },
     {
       "url": "https://offers.greatclips.com/QTwgFav",
@@ -60,11 +44,11 @@
       "area_name": "participating Cincinnati",
       "price": "$9.99",
       "market": "Cincinnati",
-      "last_verified": "2026-08-20",
+      "last_verified": "2026-08-21",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Cincinnati",
       "added_date": "2026-07-31",
-      "last_seen": "2026-08-20"
+      "last_seen": "2026-08-21"
     },
     {
       "url": "https://offers.greatclips.com/EOu4Uj9",
@@ -76,11 +60,11 @@
       "area_name": "participating Chicagoland",
       "price": "$9.99",
       "market": "Chicagoland",
-      "last_verified": "2026-08-20",
+      "last_verified": "2026-08-21",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Chicagoland",
       "added_date": "2026-08-09",
-      "last_seen": "2026-08-20"
+      "last_seen": "2026-08-21"
     },
     {
       "url": "https://offers.greatclips.com/IDRinKn",
@@ -92,43 +76,11 @@
       "area_name": "only at participating Cleveland, Akron, Canton & Sandusky",
       "price": "$9.99",
       "market": "Cleveland, Akron, Canton & Sandusky",
-      "last_verified": "2026-08-20",
+      "last_verified": "2026-08-21",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Cleveland, Akron, Canton & Sandusky",
       "added_date": "2026-08-11",
-      "last_seen": "2026-08-20"
-    },
-    {
-      "url": "https://offers.greatclips.com/cx7AL0B",
-      "coupon_code": "cx7AL0B",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20381/50707-002-1200x600-10.99.jpg",
-      "expiration": "08/21/2026",
-      "location_name": "participating Houston Area",
-      "state": "AREA",
-      "area_name": "participating Houston",
-      "price": "$10.99",
-      "market": "Houston",
-      "last_verified": "2026-08-20",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Houston",
-      "added_date": "2026-07-23",
-      "last_seen": "2026-08-14"
-    },
-    {
-      "url": "https://offers.greatclips.com/qc4rVjY",
-      "coupon_code": "qc4rVjY",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20002/50707-002-1200x600-10.99.jpg",
-      "expiration": "08/21/2026",
-      "location_name": "participating Las Vegas Area",
-      "state": "AREA",
-      "area_name": "participating Las Vegas",
-      "price": "$10.99",
-      "market": "Las Vegas",
-      "last_verified": "2026-08-20",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Las Vegas",
-      "added_date": "2026-07-30",
-      "last_seen": "2026-08-14"
+      "last_seen": "2026-08-21"
     },
     {
       "url": "https://offers.greatclips.com/i3vMWCQ",
@@ -140,11 +92,11 @@
       "area_name": "only at participating Columbus, OH",
       "price": "$10.99",
       "market": "Columbus, OH",
-      "last_verified": "2026-08-20",
+      "last_verified": "2026-08-21",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Columbus, OH",
       "added_date": "2026-08-02",
-      "last_seen": "2026-08-20"
+      "last_seen": "2026-08-21"
     },
     {
       "url": "https://offers.greatclips.com/4DPZcps",
@@ -156,11 +108,11 @@
       "area_name": "only at participating OKC area and N. Central & W OK",
       "price": "$11.99",
       "market": "OKC area and N. Central & W OK",
-      "last_verified": "2026-08-20",
+      "last_verified": "2026-08-21",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in OKC area and N. Central & W OK",
       "added_date": "2026-08-14",
-      "last_seen": "2026-08-20"
+      "last_seen": "2026-08-21"
     },
     {
       "url": "https://offers.greatclips.com/Lcmtkkh",
@@ -172,11 +124,11 @@
       "area_name": "participating Pittsburgh",
       "price": "$11.99",
       "market": "Pittsburgh",
-      "last_verified": "2026-08-20",
+      "last_verified": "2026-08-21",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Pittsburgh",
       "added_date": "2026-08-17",
-      "last_seen": "2026-08-20"
+      "last_seen": "2026-08-21"
     },
     {
       "url": "https://offers.greatclips.com/GHYlzqZ",
@@ -188,27 +140,11 @@
       "area_name": "participating Detroit",
       "price": "$12.99",
       "market": "Detroit",
-      "last_verified": "2026-08-20",
+      "last_verified": "2026-08-21",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Detroit",
       "added_date": "2026-07-23",
-      "last_seen": "2026-08-20"
-    },
-    {
-      "url": "https://offers.greatclips.com/pENUMY2",
-      "coupon_code": "pENUMY2",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20297/50707-002-1200x600-12.99.jpg",
-      "expiration": "08/21/2026",
-      "location_name": "participating San Antonio Area",
-      "state": "AREA",
-      "area_name": "participating San Antonio",
-      "price": "$12.99",
-      "market": "San Antonio",
-      "last_verified": "2026-08-20",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in San Antonio",
-      "added_date": "2026-08-13",
-      "last_seen": "2026-08-14"
+      "last_seen": "2026-08-21"
     },
     {
       "url": "https://offers.greatclips.com/OK36Ser",
@@ -220,59 +156,11 @@
       "area_name": "only at participating NJ, PA & DE",
       "price": "$13.99",
       "market": "NJ, PA & DE",
-      "last_verified": "2026-08-20",
+      "last_verified": "2026-08-21",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in NJ, PA & DE",
       "added_date": "2026-08-01",
-      "last_seen": "2026-08-20"
-    },
-    {
-      "url": "https://offers.greatclips.com/MZusUlO",
-      "coupon_code": "MZusUlO",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20074/50707-002-1200x600-14.99.jpg",
-      "expiration": "08/21/2026",
-      "location_name": "participating San Diego Area",
-      "state": "AREA",
-      "area_name": "participating San Diego",
-      "price": "$14.99",
-      "market": "San Diego",
-      "last_verified": "2026-08-20",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in San Diego",
-      "added_date": "2026-07-19",
-      "last_seen": "2026-08-11"
-    },
-    {
-      "url": "https://offers.greatclips.com/yXQLlHU",
-      "coupon_code": "yXQLlHU",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20278/50707-002-1200x600-15.99.jpg",
-      "expiration": "08/21/2026",
-      "location_name": "participating Salt Lake City Area",
-      "state": "AREA",
-      "area_name": "participating Salt Lake City",
-      "price": "$15.99",
-      "market": "Salt Lake City",
-      "last_verified": "2026-08-20",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Salt Lake City",
-      "added_date": "2026-08-07",
-      "last_seen": "2026-08-14"
-    },
-    {
-      "url": "https://offers.greatclips.com/hOlFSQ7",
-      "coupon_code": "hOlFSQ7",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/19972/50707-002-1200x600-16.99.jpg",
-      "expiration": "08/21/2026",
-      "location_name": "participating Greater Western Washington Area",
-      "state": "AREA",
-      "area_name": "participating Greater Western Washington",
-      "price": "$16.99",
-      "market": "Greater Western Washington",
-      "last_verified": "2026-08-20",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Greater Western Washington",
-      "added_date": "2026-08-09",
-      "last_seen": "2026-08-16"
+      "last_seen": "2026-08-21"
     }
   ]
 }
