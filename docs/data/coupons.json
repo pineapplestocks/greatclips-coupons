@@ -1,12 +1,27 @@
 {
- "generated_at": "2026-08-22T01:17:13Z",
- "scraped_at": "2026-08-21T18:17:03.772155",
- "total": 11,
+ "generated_at": "2026-08-22T06:41:28Z",
+ "scraped_at": "2026-08-21T23:41:18.503568",
+ "total": 18,
  "scopes": {
-  "area": 10,
-  "state": 1
+  "national": 1,
+  "area": 15,
+  "state": 1,
+  "unknown": 1
  },
  "coupons": [
+  {
+   "url": "https://offers.greatclips.com/yMEcKko",
+   "coupon_code": "yMEcKko",
+   "price": "$5.00",
+   "location_name": "participating US Area",
+   "state": "AREA",
+   "area_name": "participating US",
+   "market": "US",
+   "last_verified": "2026-08-21",
+   "participating_location_note": "Valid at participating US locations",
+   "scope": "national",
+   "price_value": 5.0
+  },
   {
    "url": "https://offers.greatclips.com/raBnnu6",
    "coupon_code": "raBnnu6",
@@ -376,6 +391,62 @@
    ]
   },
   {
+   "url": "https://offers.greatclips.com/skteDvh",
+   "coupon_code": "skteDvh",
+   "price": "$9.99",
+   "location_name": "participating Tulsa Area",
+   "state": "AREA",
+   "area_name": "participating Tulsa",
+   "market": "Tulsa",
+   "expiration": "09/04/2026",
+   "last_verified": "2026-08-21",
+   "participating_location_note": "Valid at participating locations in Tulsa",
+   "scope": "area",
+   "price_value": 9.99,
+   "metro_keys": [
+    "OK/jenks"
+   ],
+   "market_names": [
+    "Tulsa, OK"
+   ],
+   "city_keys": [
+    "OK/tulsa",
+    "OK/broken-arrow",
+    "OK/owasso",
+    "OK/catoosa",
+    "OK/coweta",
+    "OK/jenks",
+    "OK/sand-springs"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/yIfriPt",
+   "coupon_code": "yIfriPt",
+   "price": "$9.99",
+   "location_name": "participating Lansing Area",
+   "state": "AREA",
+   "area_name": "participating Lansing",
+   "market": "Lansing",
+   "expiration": "09/04/2026",
+   "last_verified": "2026-08-21",
+   "participating_location_note": "Valid at participating locations in Lansing",
+   "scope": "area",
+   "price_value": 9.99,
+   "metro_keys": [
+    "MI/charlotte"
+   ],
+   "market_names": [
+    "Lansing, MI"
+   ],
+   "city_keys": [
+    "MI/lansing",
+    "MI/charlotte",
+    "MI/dewitt",
+    "MI/east-lansing",
+    "MI/okemos"
+   ]
+  },
+  {
    "url": "https://offers.greatclips.com/i3vMWCQ",
    "coupon_code": "i3vMWCQ",
    "price": "$10.99",
@@ -497,6 +568,69 @@
    ]
   },
   {
+   "url": "https://offers.greatclips.com/EWNAalN",
+   "coupon_code": "EWNAalN",
+   "price": "$11.99",
+   "location_name": "participating Harrisburg, Lancaster & York Area",
+   "state": "AREA",
+   "area_name": "participating Harrisburg, Lancaster & York",
+   "market": "Harrisburg, Lancaster & York",
+   "expiration": "09/11/2026",
+   "last_verified": "2026-08-21",
+   "participating_location_note": "Valid at participating locations in Harrisburg, Lancaster & York",
+   "scope": "area",
+   "price_value": 11.99,
+   "metro_keys": [
+    "NC/harrisburg",
+    "PA/york"
+   ],
+   "market_names": [
+    "Charlotte, NC/SC",
+    "Harrisburg, PA"
+   ],
+   "city_keys": [
+    "NC/charlotte",
+    "NC/concord",
+    "NC/huntersville",
+    "NC/mooresville",
+    "SC/rock-hill",
+    "NC/cornelius",
+    "SC/fort-mill",
+    "NC/harrisburg",
+    "NC/matthews",
+    "NC/monroe",
+    "NC/albemarle",
+    "SC/indian-land",
+    "NC/indian-trail",
+    "NC/kannapolis",
+    "SC/lake-wylie",
+    "NC/locust",
+    "NC/marvin",
+    "NC/mint-hill",
+    "SC/tega-cay",
+    "NC/waxhaw",
+    "NC/wesley-chapel",
+    "PA/lancaster",
+    "PA/york",
+    "PA/hanover",
+    "PA/harrisburg",
+    "PA/mechanicsburg",
+    "PA/camp-hill",
+    "PA/dover",
+    "PA/enola",
+    "PA/ephrata",
+    "PA/hershey",
+    "PA/lebanon",
+    "PA/linglestown",
+    "PA/manchester",
+    "PA/middletown",
+    "PA/mount-joy",
+    "PA/palmyra",
+    "PA/red-lion",
+    "PA/shrewsbury"
+   ]
+  },
+  {
    "url": "https://offers.greatclips.com/GHYlzqZ",
    "coupon_code": "GHYlzqZ",
    "price": "$12.99",
@@ -571,6 +705,44 @@
    ]
   },
   {
+   "url": "https://offers.greatclips.com/EoCQb2p",
+   "coupon_code": "EoCQb2p",
+   "price": "$12.99",
+   "location_name": "participating Hampton Roads & Peninsula Area",
+   "state": "AREA",
+   "area_name": "participating Hampton Roads & Peninsula",
+   "market": "Hampton Roads & Peninsula",
+   "expiration": "09/11/2026",
+   "last_verified": "2026-08-21",
+   "participating_location_note": "Valid at participating locations in Hampton Roads & Peninsula",
+   "scope": "area",
+   "price_value": 12.99,
+   "metro_keys": [
+    "NC/moyock",
+    "VA/hampton"
+   ],
+   "market_names": [
+    "Virginia Beach, NC/VA",
+    "Norfolk, VA"
+   ],
+   "city_keys": [
+    "VA/virginia-beach",
+    "VA/chesapeake",
+    "NC/elizabeth-city",
+    "NC/moyock",
+    "VA/norfolk",
+    "VA/newport-news",
+    "VA/williamsburg",
+    "VA/hampton",
+    "VA/suffolk",
+    "VA/yorktown",
+    "VA/carrollton",
+    "VA/gloucester",
+    "VA/portsmouth",
+    "VA/smithfield"
+   ]
+  },
+  {
    "url": "https://offers.greatclips.com/OK36Ser",
    "coupon_code": "OK36Ser",
    "price": "$13.99",
@@ -589,6 +761,62 @@
     "PA",
     "DE"
    ]
+  },
+  {
+   "url": "https://offers.greatclips.com/FEDhm2E",
+   "coupon_code": "FEDhm2E",
+   "price": "$14.99",
+   "location_name": "participating Portland Area",
+   "state": "AREA",
+   "area_name": "participating Portland",
+   "market": "Portland",
+   "expiration": "09/11/2026",
+   "last_verified": "2026-08-21",
+   "participating_location_note": "Valid at participating locations in Portland",
+   "scope": "area",
+   "price_value": 14.99,
+   "metro_keys": [
+    "OR/canby"
+   ],
+   "market_names": [
+    "Portland, OR"
+   ],
+   "city_keys": [
+    "OR/hillsboro",
+    "OR/portland",
+    "OR/beaverton",
+    "OR/salem",
+    "OR/tigard",
+    "OR/happy-valley",
+    "OR/milwaukie",
+    "OR/aloha",
+    "OR/canby",
+    "OR/cornelius",
+    "OR/keizer",
+    "OR/lake-oswego",
+    "OR/mcminnville",
+    "OR/newberg",
+    "OR/oregon-city",
+    "OR/sandy",
+    "OR/sherwood",
+    "OR/tualatin",
+    "OR/west-linn",
+    "OR/wilsonville"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/gf1mLrF",
+   "coupon_code": "gf1mLrF",
+   "price": "$17.99",
+   "location_name": "Edmonton-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove Area",
+   "state": "AREA",
+   "area_name": "Edmonton-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
+   "market": "n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
+   "expiration": "08/30/2026",
+   "last_verified": "2026-08-21",
+   "participating_location_note": "Valid at participating locations in n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
+   "scope": "unknown",
+   "price_value": 17.99
   }
  ]
 }

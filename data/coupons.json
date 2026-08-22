@@ -1,7 +1,23 @@
 {
-  "scraped_at": "2026-08-21T18:17:03.772155",
-  "total_coupons": 11,
+  "scraped_at": "2026-08-21T23:41:18.503568",
+  "total_coupons": 18,
   "coupons": [
+    {
+      "url": "https://offers.greatclips.com/yMEcKko",
+      "coupon_code": "yMEcKko",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/16207/50707-002-1200x600-US-Sparkfly-1off-10off5.jpg",
+      "location_name": "participating US Area",
+      "state": "AREA",
+      "area_name": "participating US",
+      "price": "$5.00",
+      "market": "US",
+      "expiration": null,
+      "last_verified": "2026-08-21",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating US locations",
+      "added_date": "2026-08-21",
+      "last_seen": "2026-08-21"
+    },
     {
       "url": "https://offers.greatclips.com/raBnnu6",
       "coupon_code": "raBnnu6",
@@ -99,6 +115,38 @@
       "last_seen": "2026-08-21"
     },
     {
+      "url": "https://offers.greatclips.com/skteDvh",
+      "coupon_code": "skteDvh",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20671/50707-002-1200x600-9.99.jpg",
+      "expiration": "09/04/2026",
+      "location_name": "participating Tulsa Area",
+      "state": "AREA",
+      "area_name": "participating Tulsa",
+      "price": "$9.99",
+      "market": "Tulsa",
+      "last_verified": "2026-08-21",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Tulsa",
+      "added_date": "2026-08-21",
+      "last_seen": "2026-08-21"
+    },
+    {
+      "url": "https://offers.greatclips.com/yIfriPt",
+      "coupon_code": "yIfriPt",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20669/50707-002-1200x600-9.99.jpg",
+      "expiration": "09/04/2026",
+      "location_name": "participating Lansing Area",
+      "state": "AREA",
+      "area_name": "participating Lansing",
+      "price": "$9.99",
+      "market": "Lansing",
+      "last_verified": "2026-08-21",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Lansing",
+      "added_date": "2026-08-21",
+      "last_seen": "2026-08-21"
+    },
+    {
       "url": "https://offers.greatclips.com/i3vMWCQ",
       "coupon_code": "i3vMWCQ",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20277/50707-002-1200x600-10.99.jpg",
@@ -147,6 +195,22 @@
       "last_seen": "2026-08-21"
     },
     {
+      "url": "https://offers.greatclips.com/EWNAalN",
+      "coupon_code": "EWNAalN",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20668/50707-002-1200x600-11.99.jpg",
+      "expiration": "09/11/2026",
+      "location_name": "only at participating Harrisburg, Lancaster & York Area",
+      "state": "AREA",
+      "area_name": "only at participating Harrisburg, Lancaster & York",
+      "price": "$11.99",
+      "market": "Harrisburg, Lancaster & York",
+      "last_verified": "2026-08-21",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Harrisburg, Lancaster & York",
+      "added_date": "2026-08-21",
+      "last_seen": "2026-08-21"
+    },
+    {
       "url": "https://offers.greatclips.com/GHYlzqZ",
       "coupon_code": "GHYlzqZ",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20063/50707-002-1200x600-12.99.jpg",
@@ -163,6 +227,22 @@
       "last_seen": "2026-08-21"
     },
     {
+      "url": "https://offers.greatclips.com/EoCQb2p",
+      "coupon_code": "EoCQb2p",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20696/50707-002-1200x600-12.99.jpg",
+      "expiration": "09/11/2026",
+      "location_name": "only at participating Hampton Roads & Peninsula Area",
+      "state": "AREA",
+      "area_name": "only at participating Hampton Roads & Peninsula",
+      "price": "$12.99",
+      "market": "Hampton Roads & Peninsula",
+      "last_verified": "2026-08-21",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Hampton Roads & Peninsula",
+      "added_date": "2026-08-21",
+      "last_seen": "2026-08-21"
+    },
+    {
       "url": "https://offers.greatclips.com/OK36Ser",
       "coupon_code": "OK36Ser",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20408/50707-002-1200x600-13.99.jpg",
@@ -176,6 +256,38 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in NJ, PA & DE",
       "added_date": "2026-08-01",
+      "last_seen": "2026-08-21"
+    },
+    {
+      "url": "https://offers.greatclips.com/FEDhm2E",
+      "coupon_code": "FEDhm2E",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20697/50707-002-1200x600-14.99.jpg",
+      "expiration": "09/11/2026",
+      "location_name": "participating Portland Area",
+      "state": "AREA",
+      "area_name": "participating Portland",
+      "price": "$14.99",
+      "market": "Portland",
+      "last_verified": "2026-08-21",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Portland",
+      "added_date": "2026-08-21",
+      "last_seen": "2026-08-21"
+    },
+    {
+      "url": "https://offers.greatclips.com/gf1mLrF",
+      "coupon_code": "gf1mLrF",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20553/50707-002-1200x600-17.99.jpg",
+      "expiration": "08/30/2026",
+      "location_name": "n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove Area",
+      "state": "AREA",
+      "area_name": "n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
+      "price": "$17.99",
+      "market": "n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
+      "last_verified": "2026-08-21",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
+      "added_date": "2026-08-21",
       "last_seen": "2026-08-21"
     }
   ]
