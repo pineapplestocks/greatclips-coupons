@@ -144,16 +144,36 @@ def main() -> int:
     batch_size = max(1, args.batch)
     print(f"IndexNow: {len(urls)} url(s) in "
           f"{(len(urls) + batch_size - 1) // batch_size} batch(es)")
-    ok = True
-    for start in range(0, len(urls), batch_size):
-        batch = urls[start : start + batch_size]
+    batches = [urls[i : i + batch_size] for i in range(0, len(urls), batch_size)]
+    failed: list[list[str]] = []
+
+    for index, batch in enumerate(batches):
         if not submit(batch, key, args.dry_run):
-            ok = False
-        if start + batch_size < len(urls) and not args.dry_run:
+            failed.append(batch)
+        if index + 1 < len(batches) and not args.dry_run:
             time.sleep(4)  # be polite between batches
 
-    # A failed ping is not a reason to fail the build; the sitemap still works.
-    print("Done." if ok else "Done with errors (sitemap discovery still applies).")
+    # Throttling is bursty: batches that exhausted their retries often go through
+    # after everything else has been submitted, so sweep them once more.
+    if failed and not args.dry_run:
+        print(f"Retrying {len(failed)} failed batch(es) after a cooldown...")
+        time.sleep(30)
+        still_failed = []
+        for index, batch in enumerate(failed):
+            if not submit(batch, key, args.dry_run):
+                still_failed.append(batch)
+            if index + 1 < len(failed):
+                time.sleep(8)
+        failed = still_failed
+
+    submitted = len(urls) - sum(len(b) for b in failed)
+    print(f"Submitted {submitted}/{len(urls)} urls.")
+    if failed:
+        # Not a build failure: the sitemaps still advertise every URL.
+        print(
+            f"{sum(len(b) for b in failed)} urls were throttled; the sitemap still "
+            "lists them, and the next run will resubmit."
+        )
     return 0
 
 
