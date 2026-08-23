@@ -49,10 +49,18 @@ jobs:
           python scripts/ensure_static_root_files.py
 
       # Refreshes docs/data/coupons.json, which the per-city salon pages read in
-      # the browser. Only this feed changes on a coupon update - the 2,550 city
-      # pages stay untouched, so a coupon refresh never rewrites the whole site.
+      # the browser for the live coupon list.
       - name: Publish coupon feed for city pages
         run: python scripts/export_coupon_feed.py
+
+      # The nationwide offer is baked into every city page as static HTML and
+      # schema.org Offer markup, because crawlers that skip JavaScript - most AI
+      # crawlers included - never see the client-side list. Regenerating keeps that
+      # copy honest. Output is deterministic, so git only sees a diff when the
+      # nationwide offer actually changes; the offer code is not baked in, so a
+      # reissued code alone does not rewrite 2,550 files.
+      - name: Rebuild city pages for the current nationwide offer
+        run: python generate_local_pages.py
 
       - name: Commit and push changes (race-safe)
         run: |
@@ -81,6 +89,7 @@ jobs:
             python generate_website.py
             python scripts/ensure_static_root_files.py
             python scripts/export_coupon_feed.py
+            python generate_local_pages.py
             # Refuse to publish conflict markers, whatever their source.
             python scripts/check_conflict_markers.py
             git add -A

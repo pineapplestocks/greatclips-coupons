@@ -186,11 +186,39 @@ def format_city_state(coupon):
     return ""
 
 
+# Great Clips ships its nationwide offer looking like a regional one:
+#   {"state": "AREA", "market": "US", "area_name": "participating US"}
+# so the state/area_name guards below rejected it and the coupon valid at every US
+# salon was displayed as just another local market deal.
+NATIONWIDE_RE = re.compile(
+    r"\b(?:participating\s+us\b|us\s+area\b|all\s+us\b|all\s+of\s+the\s+us\b"
+    r"|nationwide|entire\s+us\b|across\s+the\s+us\b)",
+    re.I,
+)
+
+
+def is_nationwide(coupon):
+    """True for a coupon valid at participating salons anywhere in the US."""
+    if (coupon.get("from_market") or coupon.get("address")):
+        return False  # a specific salon listing is never the nationwide offer
+    for field in ("market", "state"):
+        if (coupon.get(field) or "").strip().upper() == "US":
+            return True
+    blob = " ".join(
+        str(coupon.get(key) or "")
+        for key in ("area_name", "location_name", "participating_location_note")
+    )
+    return bool(NATIONWIDE_RE.search(blob))
+
+
 def is_universal(coupon):
     loc = (coupon.get("location_name") or "").strip()
     state = (coupon.get("state") or "").upper()
     address = (coupon.get("address") or "").strip()
     city = (coupon.get("city") or "").strip()
+
+    if is_nationwide(coupon):
+        return True
 
     if state in {"AREA", "UNKNOWN"} or coupon.get("area_name"):
         return False
@@ -209,6 +237,9 @@ def is_area_based(coupon):
     # Checked first because the " area" test below matches real street names -
     # "1827 W Bay Area Blvd" in Webster, TX filed a genuine salon as an area offer.
     if coupon.get("from_market"):
+        return False
+    # "participating US Area" is nationwide, not a region, despite the wording.
+    if is_nationwide(coupon):
         return False
     state = (coupon.get("state") or "").upper()
     loc = (coupon.get("location_name") or "").lower()
@@ -778,6 +809,35 @@ def expand_area_coupons(coupons):
     return rows
 
 
+def render_national_banner(coupons):
+    """Server-rendered twin of the pinned nationwide banner.
+
+    Present in the HTML so a crawler - or a reader with JS blocked - still sees
+    that a coupon valid at every US salon is running.
+    """
+    national = sorted(
+        (c for c in coupons if is_nationwide(c)), key=get_price
+    )
+    if not national:
+        return ""
+    offer = national[0]
+    price = escape_html(offer.get("price") or "")
+    return f"""
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-5 mb-6 flex flex-wrap items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">🌎</span>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Valid at every location: {price} nationwide coupon</p>
+                                    <p class="text-sm text-slate-600">Works at participating Great Clips salons anywhere in the US, whatever you filter by.</p>
+                                </div>
+                            </div>
+                            <button onclick='{js_call("getCoupon", offer.get("url") or "", offer.get("price") or "", "Nationwide", "", "")}'
+                                class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-2.5 px-5 rounded-xl transition-all shadow-md">
+                                Get Coupon
+                            </button>
+                        </div>"""
+
+
 def build_static_app_html(coupons, scraped_at):
     universal_coupons = [coupon for coupon in coupons if is_universal(coupon)]
     area_coupons = [coupon for coupon in coupons if is_area_based(coupon)]
@@ -796,6 +856,7 @@ def build_static_app_html(coupons, scraped_at):
     state_options = render_state_options(states)
     state_nav = render_state_nav(states)
     results_grid = render_results_grid(regular_coupons)
+    national_banner = render_national_banner(coupons)
     results_count = len(regular_coupons)
     results_label = "coupon" if results_count == 1 else "coupons"
 
@@ -918,6 +979,9 @@ def build_static_app_html(coupons, scraped_at):
                             <span class="font-semibold text-slate-900">{results_count}</span> location-specific {results_label}
                         </p>
                     </div>
+
+                    <!-- Nationwide offer, pinned so no filter can hide it -->
+                    <div id="nationalBanner">{national_banner}</div>
 
                     <!-- Coupons organized by state -->
                     <div id="resultsGrid">

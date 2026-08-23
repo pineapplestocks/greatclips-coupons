@@ -503,11 +503,28 @@
         }
 
         // Check if coupon is truly universal (works at any US location nationwide)
+        // Great Clips ships the nationwide offer looking regional:
+        //   {state: "AREA", market: "US", area_name: "participating US"}
+        // so the guards below used to reject it and a coupon valid at every US salon
+        // was shown as a local market deal.
+        const NATIONWIDE_RE = /\b(?:participating\s+us\b|us\s+area\b|all\s+us\b|nationwide|entire\s+us\b|across\s+the\s+us\b)/i;
+
+        function isNationwide(coupon) {
+            if (coupon.from_market || coupon.address) return false;
+            if ((coupon.market || '').trim().toUpperCase() === 'US') return true;
+            if ((coupon.state || '').trim().toUpperCase() === 'US') return true;
+            const blob = [coupon.area_name, coupon.location_name,
+                          coupon.participating_location_note].join(' ');
+            return NATIONWIDE_RE.test(blob);
+        }
+
         function isUniversal(coupon) {
             const loc = (coupon.location_name || '').trim();
             const state = (coupon.state || '').toUpperCase();
             const address = (coupon.address || '').trim();
             const city = (coupon.city || '').trim();
+
+            if (isNationwide(coupon)) return true;
 
             // Explicitly non-universal states
             if (state === 'AREA' || state === 'UNKNOWN' || coupon.area_name) return false;
@@ -526,6 +543,8 @@
             // Checked first because the ' area' test matches real street names -
             // "1827 W Bay Area Blvd" in Webster, TX is a salon, not an area offer.
             if (coupon.from_market) return false;
+            // "participating US Area" is nationwide, not a region.
+            if (isNationwide(coupon)) return false;
             const state = (coupon.state || '').toUpperCase();
             const loc = (coupon.location_name || '').toLowerCase();
             return state === 'AREA' || coupon.area_name || loc.includes(' area');
@@ -638,6 +657,35 @@
             const resultsCount = document.getElementById('resultsCount');
             if (resultsCount) {
                 resultsCount.innerHTML = `<span class="font-semibold text-slate-900">${filtered.length}</span> location-specific coupons${stateFilter ? ` in <span class="font-semibold text-purple-600">${stateFilter}</span>` : ''}`;
+            }
+
+            // A nationwide coupon is valid at every salon in the country, so it must
+            // survive any city or state filter - otherwise someone who filters to
+            // their own town sees "no coupons" while a coupon that works there is
+            // live. Pinned above the results rather than repeated on all 4,300
+            // salon rows.
+            const nationalBanner = document.getElementById('nationalBanner');
+            if (nationalBanner) {
+                const national = COUPON_DATA.filter(isNationwide)
+                    .sort((a, b) => getPrice(a) - getPrice(b))[0];
+                if (national) {
+                    nationalBanner.innerHTML = `
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-5 mb-6 flex flex-wrap items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <span class="text-2xl">🌎</span>
+                                <div>
+                                    <p class="font-semibold text-slate-900">Valid at every location: ${national.price} nationwide coupon</p>
+                                    <p class="text-sm text-slate-600">Works at participating Great Clips salons anywhere in the US, whatever you filter by.</p>
+                                </div>
+                            </div>
+                            <button onclick="getCoupon('${national.url}', '${national.price || ''}', 'Nationwide', '', '')"
+                                class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-2.5 px-5 rounded-xl transition-all shadow-md">
+                                Get Coupon
+                            </button>
+                        </div>`;
+                } else {
+                    nationalBanner.innerHTML = '';
+                }
             }
 
             // Update grid - organized by state

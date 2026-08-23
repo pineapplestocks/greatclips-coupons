@@ -72,9 +72,28 @@ var GC_MODAL_HTML = "    <div id=\"gcEmailModal\" class=\"hidden fixed inset-0 z
     }
   }
 
+  // The nationwide section is already in the page's static HTML with its price;
+  // all that is missing is the live offer link behind its button.
+  function wireNationalButton(coupons) {
+    var btn = document.getElementById('gcNationalBtn');
+    if (!btn) return;
+    var national = null;
+    for (var i = 0; i < coupons.length; i++) {
+      if (coupons[i].scope === 'national') { national = coupons[i]; break; }
+    }
+    if (!national) {
+      btn.disabled = true;
+      btn.textContent = 'Nationwide coupon not available right now';
+      btn.className = 'bg-slate-200 text-slate-500 font-semibold py-2.5 px-5 rounded-xl';
+      return;
+    }
+    btn.addEventListener('click', function () { gcOpenModal(national, null); });
+  }
+
   fetch('/data/coupons.json', { cache: 'no-cache' })
     .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
     .then(function (feed) {
+      wireNationalButton(feed.coupons || []);
       var hits = (feed.coupons || []).filter(reaches);
       if (!hits.length) {
         box.innerHTML =

@@ -52,6 +52,7 @@ SITE_URL = "https://greatclipsdeal.com"
 REPO_ROOT = Path(__file__).resolve().parent
 OUT_DIR = REPO_ROOT / "docs" / "salons"
 STATE_STATS_FILE = REPO_ROOT / "data" / "state_history_stats.json"
+FEED_FILE = REPO_ROOT / "docs" / "data" / "coupons.json"
 
 GA_ID = "G-90ZQ7M4EFR"
 # Left empty deliberately: AdSense is not in use, so these pages do not pay the
@@ -197,9 +198,28 @@ COUPON_WIDGET_JS = """(function () {
     }
   }
 
+  // The nationwide section is already in the page's static HTML with its price;
+  // all that is missing is the live offer link behind its button.
+  function wireNationalButton(coupons) {
+    var btn = document.getElementById('gcNationalBtn');
+    if (!btn) return;
+    var national = null;
+    for (var i = 0; i < coupons.length; i++) {
+      if (coupons[i].scope === 'national') { national = coupons[i]; break; }
+    }
+    if (!national) {
+      btn.disabled = true;
+      btn.textContent = 'Nationwide coupon not available right now';
+      btn.className = 'bg-slate-200 text-slate-500 font-semibold py-2.5 px-5 rounded-xl';
+      return;
+    }
+    btn.addEventListener('click', function () { gcOpenModal(national, null); });
+  }
+
   fetch('/data/coupons.json', { cache: 'no-cache' })
     .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
     .then(function (feed) {
+      wireNationalButton(feed.coupons || []);
       var hits = (feed.coupons || []).filter(reaches);
       if (!hits.length) {
         box.innerHTML =
@@ -628,7 +648,9 @@ def coverage_paragraph(city: dict, metro: dict, salon_count: int) -> str:
     )
 
 
-def faq_entries(city: dict, metro: dict, stats: dict) -> list[tuple[str, str]]:
+def faq_entries(
+    city: dict, metro: dict, stats: dict, national: dict | None = None
+) -> list[tuple[str, str]]:
     name, state = city["city"], city["state"]
     count = city["salon_count"]
     zips = sorted({s["zip"] for s in city["salons"] if s["zip"]})
@@ -668,10 +690,102 @@ def faq_entries(city: dict, metro: dict, stats: dict) -> list[tuple[str, str]]:
             f"leave home, which usually cuts the wait to a few minutes.",
         ),
     ]
+
+    # Asked first, because it is the one answer that holds for every city: a
+    # nationwide coupon does not depend on where the reader is.
+    if national and national.get("price"):
+        faqs.insert(
+            0,
+            (
+                f"Is there a nationwide Great Clips coupon that works in {name}?",
+                f"Yes. A {national['price']} Great Clips haircut coupon is currently "
+                f"running nationwide and is valid at participating Great Clips salons "
+                f"anywhere in the United States, including all {count} {plural} in "
+                f"{name}, {state}. It is not tied to a city or market, so it applies "
+                f"here regardless of which local offers are running.",
+            ),
+        )
     return faqs
 
 
 # ------------------------------------------------------------- page builder --
+
+def national_section_html(offer: dict | None, city: dict) -> str:
+    """Static, crawlable statement of the nationwide offer for this city."""
+    if not offer:
+        return ""
+    count = city["salon_count"]
+    price = offer.get("price") or ""
+    plural = "salon" if count == 1 else "salons"
+    return f"""        <section class="bg-emerald-50 border border-emerald-200 rounded-2xl p-8 mb-10">
+            <div class="flex items-start gap-4">
+                <span class="text-3xl leading-none">&#127758;</span>
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-3">
+                        Nationwide Great Clips coupon &ndash; valid in {esc(city['city'])}
+                    </h2>
+                    <p class="text-slate-700 mb-4">
+                        A <strong>{esc(price)} Great Clips haircut coupon</strong> is currently running
+                        nationwide, valid at participating Great Clips salons anywhere in the United
+                        States &ndash; including all {count} {plural} in
+                        {esc(city['city'])}, {esc(city['state'])} listed below. Unlike the
+                        market-specific offers, this one does not depend on your city.
+                    </p>
+                    <button type="button" id="gcNationalBtn"
+                            class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700
+                                   hover:to-teal-700 text-white font-semibold py-2.5 px-5 rounded-xl
+                                   transition-all shadow-md">
+                        Get the {esc(price)} nationwide coupon
+                    </button>
+                    <p class="text-xs text-slate-500 mt-3">
+                        Participation is set by each franchise owner, so confirm at the salon.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+"""
+
+
+def national_offer_schema(offer: dict | None, city: dict, canonical: str) -> dict | None:
+    """schema.org Offer for the nationwide coupon.
+
+    Carries the price so Google can show it as a rich result and so an LLM reading
+    the page has a machine-readable figure rather than only prose. The offer code is
+    deliberately absent - see load_national_offer().
+    """
+    if not offer:
+        return None
+    raw = (offer.get("price") or "").replace("$", "").strip()
+    try:
+        price = f"{float(raw):.2f}"
+    except ValueError:
+        return None
+
+    node = {
+        "@context": "https://schema.org",
+        "@type": "Offer",
+        "name": f"Great Clips ${price} haircut coupon (nationwide)",
+        "description": (
+            f"Nationwide Great Clips coupon for a ${price} haircut, valid at "
+            f"participating Great Clips salons across the United States, including "
+            f"{city['salon_count']} in {city['city']}, {city['state']}."
+        ),
+        "price": price,
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": canonical,
+        "areaServed": {"@type": "Country", "name": "United States"},
+        "itemOffered": {
+            "@type": "Service",
+            "name": "Haircut",
+            "provider": {"@type": "Organization", "name": "Great Clips"},
+        },
+    }
+    if offer.get("expiration"):
+        node["validThrough"] = offer["expiration"]
+    return node
+
 
 def build_city_page(
     city: dict,
@@ -679,6 +793,7 @@ def build_city_page(
     cities: dict,
     stats: dict,
     generated: str,
+    national: dict | None = None,
 ) -> str:
     name, state = city["city"], city["state"]
     state_name = city["state_name"]
@@ -744,7 +859,7 @@ def build_city_page(
             for i, salon in enumerate(city["salons"], 1)
         ],
     }
-    faqs = faq_entries(city, metro, stats)
+    faqs = faq_entries(city, metro, stats, national)
     faq_schema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -765,16 +880,16 @@ def build_city_page(
         "cityLabel": label,
     }
 
-    extra_head = (
+    schema_nodes = [breadcrumb, item_list, faq_schema]
+    offer_schema = national_offer_schema(national, city, canonical)
+    if offer_schema:
+        schema_nodes.insert(1, offer_schema)
+
+    extra_head = "".join(
         '    <script type="application/ld+json">\n'
-        + json.dumps(breadcrumb, separators=(",", ":"))
+        + json.dumps(node, separators=(",", ":"))
         + "\n    </script>\n"
-        '    <script type="application/ld+json">\n'
-        + json.dumps(item_list, separators=(",", ":"))
-        + "\n    </script>\n"
-        '    <script type="application/ld+json">\n'
-        + json.dumps(faq_schema, separators=(",", ":"))
-        + "\n    </script>\n"
+        for node in schema_nodes
     )
 
     # ---- nearby + FAQ markup --------------------------------------------
@@ -850,7 +965,7 @@ def build_city_page(
             </div>
         </section>
 
-        <section class="bg-white rounded-2xl shadow-sm p-8 mb-10">
+{national_section_html(national, city)}        <section class="bg-white rounded-2xl shadow-sm p-8 mb-10">
             <h2 class="text-2xl font-bold text-slate-900 mb-4">Coupons available in {esc(name)} right now</h2>
             <div id="liveCoupons">
                 <p class="text-slate-600">
@@ -1032,6 +1147,30 @@ def load_stats() -> dict:
     return {}
 
 
+def load_national_offer() -> dict | None:
+    """The cheapest coupon valid at participating salons anywhere in the US.
+
+    A nationwide coupon is valid in all 2,550 cities, so it belongs in each page's
+    static HTML and schema - crawlers that do not run JavaScript (most AI crawlers
+    among them) never see the client-side coupon list. The volatile parts are left
+    out on purpose: the offer code changes every time Great Clips reissues it, and
+    baking it in would rewrite all 2,550 pages on every scrape. Price is stable, so
+    price is what gets baked; the live link is still wired up by city-coupons.js.
+    """
+    if not FEED_FILE.exists():
+        return None
+    try:
+        with FEED_FILE.open(encoding="utf-8") as fh:
+            feed = json.load(fh)
+    except (json.JSONDecodeError, OSError):
+        return None
+
+    national = [c for c in feed.get("coupons", []) if c.get("scope") == "national"]
+    if not national:
+        return None
+    return min(national, key=lambda c: c.get("price_value", 999))
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--state", help="only build this state (e.g. TX)")
@@ -1047,6 +1186,11 @@ def main() -> int:
     cities, metros = markets.build_all()
     markets.save_metros(cities, metros)
     stats = load_stats()
+    national = load_national_offer()
+    if national:
+        print(f"Nationwide offer in feed: {national.get('price')} - baking into pages")
+    else:
+        print("No nationwide offer in the feed; pages omit that section")
     generated = datetime.now().strftime("%Y-%m-%d")
 
     targets = sorted(cities.values(), key=lambda c: (c["state"], c["slug"]))
@@ -1069,7 +1213,7 @@ def main() -> int:
     total_bytes = 0
     for city in targets:
         metro = metros[city["metro_key"]]
-        page = build_city_page(city, metro, cities, stats, generated)
+        page = build_city_page(city, metro, cities, stats, generated, national)
         path = OUT_DIR / city["state"].lower() / f"{city['slug']}.html"
         path.parent.mkdir(parents=True, exist_ok=True)
         with path.open("w", encoding="utf-8") as fh:
