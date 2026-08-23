@@ -776,9 +776,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $9.99 in the Tulsa area. Expires Sep 4, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#skteDvh\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "yIfriPt",
+      "coupon_url": "https://offers.greatclips.com/yIfriPt",
+      "post_id": "6a8a6ee5dc319146a29e1a18",
+      "posted_at": "2026-08-23T03:54:13Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips savings update: $9.99 coupon in the Lansing area. Expires Sep 4, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#yIfriPt\n\n#GreatClips #SaveMoney"
     }
   ],
-  "last_post": "2026-08-22T22:26:43Z",
+  "last_post": "2026-08-23T03:54:13Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -921,6 +930,7 @@
     "https://offers.greatclips.com/xQnCtp8",
     "https://offers.greatclips.com/xqTb01a",
     "https://offers.greatclips.com/xz28zQU",
+    "https://offers.greatclips.com/yIfriPt",
     "https://offers.greatclips.com/yMEcKko",
     "https://offers.greatclips.com/yXQLlHU",
     "https://offers.greatclips.com/yYb1TJ8",
