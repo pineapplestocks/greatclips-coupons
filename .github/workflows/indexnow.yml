@@ -1,0 +1,40 @@
+name: Submit URLs to IndexNow
+
+# Pushes URLs to IndexNow (Bing, Yandex, Seznam, Naver) instead of waiting to be
+# crawled. Run "all" after a large batch of pages is published; "core" is enough
+# day to day and already runs as part of the scrape workflow.
+#
+# IndexNow throttles by IP, so this runs from a GitHub runner rather than a
+# developer machine, where repeated batches get their connections reset.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'core = key hub pages, all = every sitemap URL'
+        type: choice
+        default: core
+        options: [core, all]
+      batch:
+        description: 'URLs per request'
+        default: '500'
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Submit
+        run: |
+          python scripts/indexnow_submit.py \
+            --${{ inputs.mode }} --batch ${{ inputs.batch }}

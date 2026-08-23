@@ -1,19 +1,15 @@
-# greatclipsdeal.com - every crawler is welcome, AI assistants included.
+# greatclipsdeal.com - EVERYTHING IS ALLOWED. Every crawler, AI assistants
+# included. There is not a single Disallow rule in this file, by design.
 #
-# IMPORTANT: this file may not be the whole story. Cloudflare can prepend a
-# "Cloudflare Managed content" block ahead of it that disallows GPTBot, ClaudeBot,
-# CCBot, Google-Extended, Applebot-Extended, Bytespider, Amazonbot and
-# meta-externalagent, and sets Content-Signal: ai-train=no. That block is a zone
-# setting, not part of this repository, and it wins in practice. To actually allow
-# AI crawlers, turn it off in the Cloudflare dashboard for this zone:
-#   Security -> Settings -> "Block AI bots"          (turn OFF)
-#   Security -> Settings -> managed robots.txt /     (turn OFF)
-#                           Content Signals Policy
-# Check the result with:  curl https://greatclipsdeal.com/robots.txt
-#
-# The explicit per-agent groups below state the intent regardless, and crawlers
-# that merge same-agent groups and prefer the least restrictive rule will read
-# them as permission.
+# If you run `curl https://greatclipsdeal.com/robots.txt` and see Disallow rules,
+# they are NOT coming from here. Cloudflare injects a "Cloudflare Managed content"
+# block ahead of this file at the edge; it is a zone setting, and no change to
+# this repository can remove it. Turn it off in the Cloudflare dashboard:
+#   Security -> Settings -> "Block AI bots"                 -> OFF
+#   Security -> Settings -> managed robots.txt / Content     -> OFF
+#                           Signals Policy
+# then re-check with curl. Until then those injected rules override the intent
+# stated below.
 
 User-agent: *
 Content-Signal: search=yes,ai-input=yes,ai-train=yes,use=full
