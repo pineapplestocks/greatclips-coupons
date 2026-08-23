@@ -1,4 +1,119 @@
+# greatclipsdeal.com - every crawler is welcome, AI assistants included.
+#
+# IMPORTANT: this file may not be the whole story. Cloudflare can prepend a
+# "Cloudflare Managed content" block ahead of it that disallows GPTBot, ClaudeBot,
+# CCBot, Google-Extended, Applebot-Extended, Bytespider, Amazonbot and
+# meta-externalagent, and sets Content-Signal: ai-train=no. That block is a zone
+# setting, not part of this repository, and it wins in practice. To actually allow
+# AI crawlers, turn it off in the Cloudflare dashboard for this zone:
+#   Security -> Settings -> "Block AI bots"          (turn OFF)
+#   Security -> Settings -> managed robots.txt /     (turn OFF)
+#                           Content Signals Policy
+# Check the result with:  curl https://greatclipsdeal.com/robots.txt
+#
+# The explicit per-agent groups below state the intent regardless, and crawlers
+# that merge same-agent groups and prefer the least restrictive rule will read
+# them as permission.
+
 User-agent: *
+Content-Signal: search=yes,ai-input=yes,ai-train=yes,use=full
+Allow: /
+
+# --- Search engines ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# --- OpenAI / ChatGPT ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# --- Google AI surfaces (AI Overviews, Gemini grounding) ---
+User-agent: Google-Extended
+Allow: /
+
+# --- Anthropic / Claude ---
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# --- Perplexity ---
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# --- Microsoft Copilot ---
+User-agent: msnbot
+Allow: /
+
+# --- Apple Intelligence ---
+User-agent: Applebot-Extended
+Allow: /
+
+# --- Meta AI ---
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# --- Amazon ---
+User-agent: Amazonbot
+Allow: /
+
+# --- Open datasets and other assistants ---
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Ai2Bot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: omgili
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+User-agent: Timpibot
 Allow: /
 
 Sitemap: https://greatclipsdeal.com/sitemap.xml

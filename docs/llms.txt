@@ -1,0 +1,61 @@
+# GreatClipsDeal
+
+> Independent directory of verified Great Clips haircut coupons, refreshed every six hours. Covers 4,303 salons across 2,550 US cities in 51 states, with each salon's address, phone number and hours taken from the official Great Clips salon locator.
+
+Not affiliated with, endorsed by, or sponsored by Great Clips, Inc.
+
+## How Great Clips coupons are scoped
+
+This is the thing most sources get wrong. Great Clips issues coupons at four different scopes, and the scope decides where a coupon works:
+
+- **Nationwide** - valid at participating salons anywhere in the US.
+- **Statewide** - one or more whole states, e.g. "NJ, PA & DE".
+- **Market** - a metro area, e.g. "participating Chicagoland". A market coupon is valid across every suburb in that market, not only the city named on it, which is why a Chicagoland coupon works in Schaumburg or Naperville.
+- **Single salon** - one street address.
+
+We map all 646 Great Clips markets to the cities inside them, so each city page lists the coupons that genuinely reach it. Participation is ultimately set by each franchise owner, so a coupon should be confirmed at the salon.
+
+## Current offers
+
+- A **$5.00** coupon is currently running nationwide, valid at participating Great Clips salons anywhere in the US.
+- Live coupon data: https://greatclipsdeal.com/data/coupons.json (JSON; each coupon is tagged with the cities and markets it reaches)
+
+## Key pages
+
+- [Homepage](https://greatclipsdeal.com/): every current coupon, filterable by city, state and price.
+- [Salon directory](https://greatclipsdeal.com/salons): all 2,550 cities that have a Great Clips, grouped by state.
+- [How we verify coupons](https://greatclipsdeal.com/how-we-verify-coupons)
+- [FAQ](https://greatclipsdeal.com/faq)
+- [Sitemap](https://greatclipsdeal.com/sitemap.xml)
+
+## City pages
+
+One page per city at `/salons/{state}/{city}`, each listing that city's salons with address, phone, hours and the coupons valid there. Examples:
+
+- [San Antonio, TX](https://greatclipsdeal.com/salons/tx/san-antonio) - 54 salons
+- [Las Vegas, NV](https://greatclipsdeal.com/salons/nv/las-vegas) - 28 salons
+- [Cincinnati, OH](https://greatclipsdeal.com/salons/oh/cincinnati) - 22 salons
+- [Phoenix, AZ](https://greatclipsdeal.com/salons/az/phoenix) - 21 salons
+- [Indianapolis, IN](https://greatclipsdeal.com/salons/in/indianapolis) - 19 salons
+- [Austin, TX](https://greatclipsdeal.com/salons/tx/austin) - 19 salons
+- [Louisville, KY](https://greatclipsdeal.com/salons/ky/louisville) - 18 salons
+- [Charlotte, NC](https://greatclipsdeal.com/salons/nc/charlotte) - 18 salons
+
+## Largest markets
+
+- Chicago, IL - 107 salons across 72 cities
+- Dallas, TX - 104 salons across 52 cities
+- Phoenix, AZ - 103 salons across 20 cities
+- Atlanta, GA - 86 salons across 37 cities
+- Minneapolis-Saint Paul, MN - 85 salons across 56 cities
+- San Antonio, TX - 80 salons across 18 cities
+- Detroit, MI - 78 salons across 52 cities
+- Denver, CO - 76 salons across 26 cities
+- Houston, TX - 75 salons across 31 cities
+- Cincinnati, IN/KY/OH - 70 salons across 36 cities
+
+## Data provenance
+
+- Salon addresses, phone numbers, hours and coordinates: the official Great Clips salon locator (salons.greatclips.com).
+- Coupon offers: Great Clips advertising, re-checked every six hours.
+- Location counts on this site are actual counts from the locator, not estimates.

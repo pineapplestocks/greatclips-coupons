@@ -1140,6 +1140,109 @@ def build_directory_page(cities: dict, metros: dict, generated: str) -> str:
 
 # -------------------------------------------------------------------- main ---
 
+def build_llms_txt(cities: dict, metros: dict, national: dict | None) -> str:
+    """docs/llms.txt - a plain-language index for AI assistants.
+
+    Emerging convention (llmstxt.org): a short markdown brief at /llms.txt that
+    tells a model what a site covers and where to look, instead of making it infer
+    that from 2,550 pages. Generated rather than hand-written so the counts and the
+    current nationwide price cannot drift.
+    """
+    total_salons = sum(c["salon_count"] for c in cities.values())
+    states = sorted({c["state"] for c in cities.values()})
+    biggest = sorted(metros.values(), key=lambda m: -m["salon_count"])[:10]
+    # Biggest cities, not the alphabetical first - sorting by name gave eight
+    # A-state examples, which tells a reader nothing about the site's coverage.
+    examples = sorted(
+        cities.values(), key=lambda c: (-c["salon_count"], c["state"], c["city"])
+    )[:8]
+
+    national_line = (
+        f"- A **{national['price']}** coupon is currently running nationwide, valid "
+        f"at participating Great Clips salons anywhere in the US.\n"
+        if national and national.get("price")
+        else "- No nationwide coupon is running at the moment.\n"
+    )
+
+    lines = [
+        "# GreatClipsDeal",
+        "",
+        "> Independent directory of verified Great Clips haircut coupons, refreshed "
+        "every six hours. Covers "
+        f"{total_salons:,} salons across {len(cities):,} US cities in "
+        f"{len(states)} states, with each salon's address, phone number and hours "
+        "taken from the official Great Clips salon locator.",
+        "",
+        "Not affiliated with, endorsed by, or sponsored by Great Clips, Inc.",
+        "",
+        "## How Great Clips coupons are scoped",
+        "",
+        "This is the thing most sources get wrong. Great Clips issues coupons at "
+        "four different scopes, and the scope decides where a coupon works:",
+        "",
+        "- **Nationwide** - valid at participating salons anywhere in the US.",
+        "- **Statewide** - one or more whole states, e.g. \"NJ, PA & DE\".",
+        "- **Market** - a metro area, e.g. \"participating Chicagoland\". A market "
+        "coupon is valid across every suburb in that market, not only the city "
+        "named on it, which is why a Chicagoland coupon works in Schaumburg or "
+        "Naperville.",
+        "- **Single salon** - one street address.",
+        "",
+        f"We map all {len(metros):,} Great Clips markets to the cities inside them, so "
+        "each city page lists the coupons that genuinely reach it. Participation is "
+        "ultimately set by each franchise owner, so a coupon should be confirmed at "
+        "the salon.",
+        "",
+        "## Current offers",
+        "",
+        national_line.rstrip(),
+        "- Live coupon data: https://greatclipsdeal.com/data/coupons.json "
+        "(JSON; each coupon is tagged with the cities and markets it reaches)",
+        "",
+        "## Key pages",
+        "",
+        "- [Homepage](https://greatclipsdeal.com/): every current coupon, filterable "
+        "by city, state and price.",
+        "- [Salon directory](https://greatclipsdeal.com/salons): all "
+        f"{len(cities):,} cities that have a Great Clips, grouped by state.",
+        "- [How we verify coupons](https://greatclipsdeal.com/how-we-verify-coupons)",
+        "- [FAQ](https://greatclipsdeal.com/faq)",
+        "- [Sitemap](https://greatclipsdeal.com/sitemap.xml)",
+        "",
+        "## City pages",
+        "",
+        "One page per city at `/salons/{state}/{city}`, each listing that city's "
+        "salons with address, phone, hours and the coupons valid there. Examples:",
+        "",
+    ]
+    for city in examples:
+        lines.append(
+            f"- [{city['city']}, {city['state']}]"
+            f"(https://greatclipsdeal.com/salons/{city['state'].lower()}/{city['slug']})"
+            f" - {city['salon_count']} salons"
+        )
+
+    lines += ["", "## Largest markets", ""]
+    for metro in biggest:
+        lines.append(
+            f"- {metro['display_name']} - {metro['salon_count']} salons across "
+            f"{metro['city_count']} cities"
+        )
+
+    lines += [
+        "",
+        "## Data provenance",
+        "",
+        "- Salon addresses, phone numbers, hours and coordinates: the official "
+        "Great Clips salon locator (salons.greatclips.com).",
+        "- Coupon offers: Great Clips advertising, re-checked every six hours.",
+        "- Location counts on this site are actual counts from the locator, not "
+        "estimates.",
+        "",
+    ]
+    return "\n".join(lines)
+
+
 def load_stats() -> dict:
     if STATE_STATS_FILE.exists():
         with STATE_STATS_FILE.open(encoding="utf-8") as fh:
@@ -1234,6 +1337,11 @@ def main() -> int:
     modal_literal = "var GC_MODAL_HTML = " + json.dumps(email_modal_html()) + ";\n\n"
     with asset_path.open("w", encoding="utf-8") as fh:
         fh.write(modal_literal + COUPON_WIDGET_JS)
+
+    llms_path = REPO_ROOT / "docs" / "llms.txt"
+    with llms_path.open("w", encoding="utf-8") as fh:
+        fh.write(build_llms_txt(cities, metros, national))
+    print("  llms.txt   : /llms.txt")
 
     print()
     print(f"  city pages : {written:,}")
