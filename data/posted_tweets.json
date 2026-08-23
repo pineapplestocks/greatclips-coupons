@@ -794,9 +794,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips coupon alert: $11.99 haircut in the only at participating Harrisburg, Lancaster & York area. Expires Sep 11, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#EWNAalN\n\n#GreatClips #HaircutCoupon #Deals"
+    },
+    {
+      "coupon_code": "EoCQb2p",
+      "coupon_url": "https://offers.greatclips.com/EoCQb2p",
+      "post_id": "6a8b73c7d8e4c99a11f57e07",
+      "posted_at": "2026-08-23T22:27:19Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips savings update: $12.99 coupon in the only at participating Hampton Roads & Peninsula area. Expires Sep 11, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#EoCQb2p\n\n#GreatClips #SaveMoney"
     }
   ],
-  "last_post": "2026-08-23T16:18:52Z",
+  "last_post": "2026-08-23T22:27:19Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -839,6 +848,7 @@
     "https://offers.greatclips.com/ENSRaLu",
     "https://offers.greatclips.com/EOu4Uj9",
     "https://offers.greatclips.com/EWNAalN",
+    "https://offers.greatclips.com/EoCQb2p",
     "https://offers.greatclips.com/EsXCp7M",
     "https://offers.greatclips.com/F2zEagt",
     "https://offers.greatclips.com/FEY2BPH",
