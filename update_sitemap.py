@@ -106,6 +106,9 @@ def generate_sitemap():
         "blog/great-clips-coupon-prices-data-study",
         "blog/how-long-do-great-clips-coupons-last",
         "blog/which-states-get-the-most-great-clips-coupons",
+        "blog/do-great-clips-coupons-work-at-any-location",
+        "blog/how-many-great-clips-locations",
+        "blog/why-your-great-clips-coupon-didnt-work",
         "author/kumar-chaudhari",
     ]
     
