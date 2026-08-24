@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-23T18:21:16.367851",
+  "scraped_at": "2026-08-24T00:00:26.215563",
   "total_coupons": 18,
   "coupons": [
     {
@@ -12,11 +12,11 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-08-23",
+      "last_verified": "2026-08-24",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-08-21",
-      "last_seen": "2026-08-23"
+      "last_seen": "2026-08-24"
     },
     {
       "url": "https://offers.greatclips.com/raBnnu6",
@@ -28,7 +28,7 @@
       "area_name": "participating Toledo",
       "price": "$7.99",
       "market": "Toledo",
-      "last_verified": "2026-08-23",
+      "last_verified": "2026-08-24",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Toledo",
       "added_date": "2026-07-31",
@@ -44,7 +44,7 @@
       "area_name": "participating Indianapolis",
       "price": "$9.99",
       "market": "Indianapolis",
-      "last_verified": "2026-08-23",
+      "last_verified": "2026-08-24",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Indianapolis",
       "added_date": "2026-07-23",
@@ -60,7 +60,7 @@
       "area_name": "participating Cincinnati",
       "price": "$9.99",
       "market": "Cincinnati",
-      "last_verified": "2026-08-23",
+      "last_verified": "2026-08-24",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Cincinnati",
       "added_date": "2026-07-31",
@@ -76,7 +76,7 @@
       "area_name": "participating Chicagoland",
       "price": "$9.99",
       "market": "Chicagoland",
-      "last_verified": "2026-08-23",
+      "last_verified": "2026-08-24",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Chicagoland",
       "added_date": "2026-08-09",
@@ -92,7 +92,7 @@
       "area_name": "only at participating Cleveland, Akron, Canton & Sandusky",
       "price": "$9.99",
       "market": "Cleveland, Akron, Canton & Sandusky",
-      "last_verified": "2026-08-23",
+      "last_verified": "2026-08-24",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Cleveland, Akron, Canton & Sandusky",
       "added_date": "2026-08-11",
@@ -108,7 +108,7 @@
       "area_name": "only at participating Ft. Wayne",
       "price": "$9.99",
       "market": "Ft. Wayne",
-      "last_verified": "2026-08-23",
+      "last_verified": "2026-08-24",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Ft. Wayne",
       "added_date": "2026-08-21",
@@ -124,11 +124,11 @@
       "area_name": "participating Tulsa",
       "price": "$9.99",
       "market": "Tulsa",
-      "last_verified": "2026-08-23",
+      "last_verified": "2026-08-24",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Tulsa",
       "added_date": "2026-08-21",
-      "last_seen": "2026-08-23"
+      "last_seen": "2026-08-24"
     },
     {
       "url": "https://offers.greatclips.com/yIfriPt",
@@ -140,11 +140,11 @@
       "area_name": "participating Lansing",
       "price": "$9.99",
       "market": "Lansing",
-      "last_verified": "2026-08-23",
+      "last_verified": "2026-08-24",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Lansing",
       "added_date": "2026-08-21",
-      "last_seen": "2026-08-23"
+      "last_seen": "2026-08-24"
     },
     {
       "url": "https://offers.greatclips.com/i3vMWCQ",
@@ -156,7 +156,7 @@
       "area_name": "only at participating Columbus, OH",
       "price": "$10.99",
       "market": "Columbus, OH",
-      "last_verified": "2026-08-23",
+      "last_verified": "2026-08-24",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Columbus, OH",
       "added_date": "2026-08-02",
@@ -172,7 +172,7 @@
       "area_name": "only at participating OKC area and N. Central & W OK",
       "price": "$11.99",
       "market": "OKC area and N. Central & W OK",
-      "last_verified": "2026-08-23",
+      "last_verified": "2026-08-24",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in OKC area and N. Central & W OK",
       "added_date": "2026-08-14",
@@ -188,11 +188,11 @@
       "area_name": "participating Pittsburgh",
       "price": "$11.99",
       "market": "Pittsburgh",
-      "last_verified": "2026-08-23",
+      "last_verified": "2026-08-24",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Pittsburgh",
       "added_date": "2026-08-17",
-      "last_seen": "2026-08-23"
+      "last_seen": "2026-08-24"
     },
     {
       "url": "https://offers.greatclips.com/EWNAalN",
@@ -204,11 +204,11 @@
       "area_name": "only at participating Harrisburg, Lancaster & York",
       "price": "$11.99",
       "market": "Harrisburg, Lancaster & York",
-      "last_verified": "2026-08-23",
+      "last_verified": "2026-08-24",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Harrisburg, Lancaster & York",
       "added_date": "2026-08-21",
-      "last_seen": "2026-08-23"
+      "last_seen": "2026-08-24"
     },
     {
       "url": "https://offers.greatclips.com/GHYlzqZ",
@@ -220,7 +220,7 @@
       "area_name": "participating Detroit",
       "price": "$12.99",
       "market": "Detroit",
-      "last_verified": "2026-08-23",
+      "last_verified": "2026-08-24",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Detroit",
       "added_date": "2026-07-23",
@@ -236,11 +236,11 @@
       "area_name": "only at participating Hampton Roads & Peninsula",
       "price": "$12.99",
       "market": "Hampton Roads & Peninsula",
-      "last_verified": "2026-08-23",
+      "last_verified": "2026-08-24",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Hampton Roads & Peninsula",
       "added_date": "2026-08-21",
-      "last_seen": "2026-08-23"
+      "last_seen": "2026-08-24"
     },
     {
       "url": "https://offers.greatclips.com/OK36Ser",
@@ -252,11 +252,11 @@
       "area_name": "only at participating NJ, PA & DE",
       "price": "$13.99",
       "market": "NJ, PA & DE",
-      "last_verified": "2026-08-23",
+      "last_verified": "2026-08-24",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in NJ, PA & DE",
       "added_date": "2026-08-01",
-      "last_seen": "2026-08-23"
+      "last_seen": "2026-08-24"
     },
     {
       "url": "https://offers.greatclips.com/FEDhm2E",
@@ -268,11 +268,11 @@
       "area_name": "participating Portland",
       "price": "$14.99",
       "market": "Portland",
-      "last_verified": "2026-08-23",
+      "last_verified": "2026-08-24",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Portland",
       "added_date": "2026-08-21",
-      "last_seen": "2026-08-23"
+      "last_seen": "2026-08-24"
     },
     {
       "url": "https://offers.greatclips.com/gf1mLrF",
@@ -284,7 +284,7 @@
       "area_name": "n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
       "price": "$17.99",
       "market": "n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
-      "last_verified": "2026-08-23",
+      "last_verified": "2026-08-24",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
       "added_date": "2026-08-21",
