@@ -812,9 +812,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips savings update: $14.99 coupon in the Portland area. Expires Sep 11, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#FEDhm2E\n\n#GreatClips #SaveMoney"
+    },
+    {
+      "coupon_code": "gf1mLrF",
+      "coupon_url": "https://offers.greatclips.com/gf1mLrF",
+      "post_id": "6a8c71fb6162eddfa9bff6d1",
+      "posted_at": "2026-08-24T16:31:55Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $17.99 in the n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove area. Expires Aug 30, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#gf1mLrF\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-08-24T03:58:10Z",
+  "last_post": "2026-08-24T16:31:55Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -924,6 +933,7 @@
     "https://offers.greatclips.com/fA3QZ66",
     "https://offers.greatclips.com/gGmwxRu",
     "https://offers.greatclips.com/gS1yuyY",
+    "https://offers.greatclips.com/gf1mLrF",
     "https://offers.greatclips.com/hN8vUzK",
     "https://offers.greatclips.com/hOlFSQ7",
     "https://offers.greatclips.com/hwWLU3h",
