@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-08-29T09:20:51.913025",
-  "total_coupons": 9,
+  "scraped_at": "2026-08-29T13:32:51.780120",
+  "total_coupons": 10,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/yMEcKko",
@@ -80,6 +80,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Harrisburg, Lancaster & York",
       "added_date": "2026-08-21",
+      "last_seen": "2026-08-29"
+    },
+    {
+      "url": "https://offers.greatclips.com/lM6ugQf",
+      "coupon_code": "lM6ugQf",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20770/50707-002-1200x600-11.99.jpg",
+      "expiration": "09/18/2026",
+      "location_name": "participating Baltimore Area",
+      "state": "AREA",
+      "area_name": "participating Baltimore",
+      "price": "$11.99",
+      "market": "Baltimore",
+      "last_verified": "2026-08-29",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Baltimore",
+      "added_date": "2026-08-29",
       "last_seen": "2026-08-29"
     },
     {

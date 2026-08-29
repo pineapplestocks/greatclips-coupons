@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-08-29T16:21:04Z",
- "scraped_at": "2026-08-29T09:20:51.913025",
- "total": 9,
+ "generated_at": "2026-08-29T20:33:04Z",
+ "scraped_at": "2026-08-29T13:32:51.780120",
+ "total": 10,
  "scopes": {
   "national": 1,
-  "area": 6,
+  "area": 7,
   "state": 1,
   "unknown": 1
  },
@@ -181,6 +181,41 @@
     "PA/palmyra",
     "PA/red-lion",
     "PA/shrewsbury"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/lM6ugQf",
+   "coupon_code": "lM6ugQf",
+   "price": "$11.99",
+   "location_name": "participating Baltimore Area",
+   "state": "AREA",
+   "area_name": "participating Baltimore",
+   "market": "Baltimore",
+   "expiration": "09/18/2026",
+   "last_verified": "2026-08-29",
+   "participating_location_note": "Valid at participating locations in Baltimore",
+   "scope": "area",
+   "price_value": 11.99,
+   "metro_keys": [
+    "MD/glen-burnie"
+   ],
+   "market_names": [
+    "Baltimore, MD"
+   ],
+   "city_keys": [
+    "MD/glen-burnie",
+    "MD/perry-hall",
+    "MD/arnold",
+    "MD/baltimore",
+    "MD/chester",
+    "MD/dundalk",
+    "MD/edgewater",
+    "MD/elkridge",
+    "MD/ellicott-city",
+    "MD/essex",
+    "MD/odenton",
+    "MD/parkville",
+    "MD/severn"
    ]
   },
   {
