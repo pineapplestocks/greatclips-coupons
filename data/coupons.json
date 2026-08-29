@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-28T23:02:37.433341",
+  "scraped_at": "2026-08-29T09:20:51.913025",
   "total_coupons": 9,
   "coupons": [
     {
@@ -12,11 +12,11 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-08-28",
+      "last_verified": "2026-08-29",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-08-21",
-      "last_seen": "2026-08-28"
+      "last_seen": "2026-08-29"
     },
     {
       "url": "https://offers.greatclips.com/skteDvh",
@@ -28,7 +28,7 @@
       "area_name": "participating Tulsa",
       "price": "$9.99",
       "market": "Tulsa",
-      "last_verified": "2026-08-28",
+      "last_verified": "2026-08-29",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Tulsa",
       "added_date": "2026-08-21",
@@ -44,7 +44,7 @@
       "area_name": "participating Lansing",
       "price": "$9.99",
       "market": "Lansing",
-      "last_verified": "2026-08-28",
+      "last_verified": "2026-08-29",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Lansing",
       "added_date": "2026-08-21",
@@ -60,7 +60,7 @@
       "area_name": "participating Pittsburgh",
       "price": "$11.99",
       "market": "Pittsburgh",
-      "last_verified": "2026-08-28",
+      "last_verified": "2026-08-29",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Pittsburgh",
       "added_date": "2026-08-17",
@@ -76,11 +76,11 @@
       "area_name": "only at participating Harrisburg, Lancaster & York",
       "price": "$11.99",
       "market": "Harrisburg, Lancaster & York",
-      "last_verified": "2026-08-28",
+      "last_verified": "2026-08-29",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Harrisburg, Lancaster & York",
       "added_date": "2026-08-21",
-      "last_seen": "2026-08-28"
+      "last_seen": "2026-08-29"
     },
     {
       "url": "https://offers.greatclips.com/EoCQb2p",
@@ -92,11 +92,11 @@
       "area_name": "only at participating Hampton Roads & Peninsula",
       "price": "$12.99",
       "market": "Hampton Roads & Peninsula",
-      "last_verified": "2026-08-28",
+      "last_verified": "2026-08-29",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Hampton Roads & Peninsula",
       "added_date": "2026-08-21",
-      "last_seen": "2026-08-28"
+      "last_seen": "2026-08-29"
     },
     {
       "url": "https://offers.greatclips.com/OK36Ser",
@@ -108,11 +108,11 @@
       "area_name": "only at participating NJ, PA & DE",
       "price": "$13.99",
       "market": "NJ, PA & DE",
-      "last_verified": "2026-08-28",
+      "last_verified": "2026-08-29",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in NJ, PA & DE",
       "added_date": "2026-08-01",
-      "last_seen": "2026-08-28"
+      "last_seen": "2026-08-29"
     },
     {
       "url": "https://offers.greatclips.com/FEDhm2E",
@@ -124,11 +124,11 @@
       "area_name": "participating Portland",
       "price": "$14.99",
       "market": "Portland",
-      "last_verified": "2026-08-28",
+      "last_verified": "2026-08-29",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Portland",
       "added_date": "2026-08-21",
-      "last_seen": "2026-08-28"
+      "last_seen": "2026-08-29"
     },
     {
       "url": "https://offers.greatclips.com/gf1mLrF",
@@ -140,7 +140,7 @@
       "area_name": "n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
       "price": "$17.99",
       "market": "n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
-      "last_verified": "2026-08-28",
+      "last_verified": "2026-08-29",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
       "added_date": "2026-08-21",
