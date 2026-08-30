@@ -1,12 +1,11 @@
 {
- "generated_at": "2026-08-30T04:10:04Z",
- "scraped_at": "2026-08-29T21:09:47.700469",
- "total": 10,
+ "generated_at": "2026-08-30T11:27:44Z",
+ "scraped_at": "2026-08-30T04:27:34.690887",
+ "total": 9,
  "scopes": {
   "national": 1,
   "area": 7,
-  "state": 1,
-  "unknown": 1
+  "state": 1
  },
  "coupons": [
   {
@@ -17,7 +16,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-08-29",
+   "last_verified": "2026-08-30",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -31,7 +30,7 @@
    "area_name": "participating Tulsa",
    "market": "Tulsa",
    "expiration": "09/04/2026",
-   "last_verified": "2026-08-29",
+   "last_verified": "2026-08-30",
    "participating_location_note": "Valid at participating locations in Tulsa",
    "scope": "area",
    "price_value": 9.99,
@@ -60,7 +59,7 @@
    "area_name": "participating Lansing",
    "market": "Lansing",
    "expiration": "09/04/2026",
-   "last_verified": "2026-08-29",
+   "last_verified": "2026-08-30",
    "participating_location_note": "Valid at participating locations in Lansing",
    "scope": "area",
    "price_value": 9.99,
@@ -87,7 +86,7 @@
    "area_name": "participating Pittsburgh",
    "market": "Pittsburgh",
    "expiration": "09/04/2026",
-   "last_verified": "2026-08-29",
+   "last_verified": "2026-08-30",
    "participating_location_note": "Valid at participating locations in Pittsburgh",
    "scope": "area",
    "price_value": 11.99,
@@ -129,7 +128,7 @@
    "area_name": "participating Harrisburg, Lancaster & York",
    "market": "Harrisburg, Lancaster & York",
    "expiration": "09/11/2026",
-   "last_verified": "2026-08-29",
+   "last_verified": "2026-08-30",
    "participating_location_note": "Valid at participating locations in Harrisburg, Lancaster & York",
    "scope": "area",
    "price_value": 11.99,
@@ -192,7 +191,7 @@
    "area_name": "participating Baltimore",
    "market": "Baltimore",
    "expiration": "09/18/2026",
-   "last_verified": "2026-08-29",
+   "last_verified": "2026-08-30",
    "participating_location_note": "Valid at participating locations in Baltimore",
    "scope": "area",
    "price_value": 11.99,
@@ -227,7 +226,7 @@
    "area_name": "participating Hampton Roads & Peninsula",
    "market": "Hampton Roads & Peninsula",
    "expiration": "09/11/2026",
-   "last_verified": "2026-08-29",
+   "last_verified": "2026-08-30",
    "participating_location_note": "Valid at participating locations in Hampton Roads & Peninsula",
    "scope": "area",
    "price_value": 12.99,
@@ -265,7 +264,7 @@
    "area_name": "participating NJ, PA & DE",
    "market": "NJ, PA & DE",
    "expiration": "09/11/2026",
-   "last_verified": "2026-08-29",
+   "last_verified": "2026-08-30",
    "participating_location_note": "Valid at participating locations in NJ, PA & DE",
    "scope": "state",
    "price_value": 13.99,
@@ -285,7 +284,7 @@
    "area_name": "participating Portland",
    "market": "Portland",
    "expiration": "09/11/2026",
-   "last_verified": "2026-08-29",
+   "last_verified": "2026-08-30",
    "participating_location_note": "Valid at participating locations in Portland",
    "scope": "area",
    "price_value": 14.99,
@@ -317,20 +316,6 @@
     "OR/west-linn",
     "OR/wilsonville"
    ]
-  },
-  {
-   "url": "https://offers.greatclips.com/gf1mLrF",
-   "coupon_code": "gf1mLrF",
-   "price": "$17.99",
-   "location_name": "Edmonton-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove Area",
-   "state": "AREA",
-   "area_name": "Edmonton-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
-   "market": "n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
-   "expiration": "08/30/2026",
-   "last_verified": "2026-08-29",
-   "participating_location_note": "Valid at participating locations in n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
-   "scope": "unknown",
-   "price_value": 17.99
   }
  ]
 }
