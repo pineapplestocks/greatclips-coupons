@@ -109,6 +109,9 @@ def generate_sitemap():
         "blog/do-great-clips-coupons-work-at-any-location",
         "blog/how-many-great-clips-locations",
         "blog/why-your-great-clips-coupon-didnt-work",
+        "blog/what-to-ask-for-at-great-clips",
+        "blog/great-clips-kids-haircut-styles",
+        "blog/clipper-guard-numbers",
         "author/kumar-chaudhari",
     ]
     

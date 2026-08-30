@@ -42,6 +42,25 @@ REVIEWED_DATE = "August 23, 2026"
 
 STATE_NAMES = markets.STATE_NAMES
 
+DEFAULT_SOURCES = (
+    "Salon counts, addresses and hours come from the official Great Clips salon "
+    "locator; coupon figures come from our own tracking, refreshed every six hours. "
+    "Counts on this site are actual counts rather than estimates, and can be checked "
+    'against the <a href="/salons" class="text-purple-600 hover:underline">salon '
+    "directory</a>."
+)
+
+STYLE_SOURCES = (
+    "Style names are taken from the official "
+    '<a href="https://www.greatclips.com/lookbook" target="_blank" rel="noopener" '
+    'class="text-purple-600 hover:underline">Great Clips Lookbook</a>, and the service '
+    'list from their <a href="https://www.greatclips.com/haircare-services/'
+    'additional-services" target="_blank" rel="noopener" class="text-purple-600 '
+    'hover:underline">haircare services</a> pages. Clipper guard sizes are the '
+    "industry standard rather than a Great Clips measurement. We are not affiliated "
+    "with Great Clips."
+)
+
 
 def esc(text) -> str:
     return html.escape(str(text if text is not None else ""), quote=True)
@@ -59,6 +78,7 @@ def page(
     subtitle: str,
     faqs: list[tuple[str, str]],
     body: str,
+    sources: str = "",
 ) -> str:
     canonical = f"{SITE}/blog/{slug}"
     article = {
@@ -163,13 +183,9 @@ def page(
 {faq_html}            </div>
 
             <div class="mt-10 bg-slate-50 border border-slate-200 rounded-xl p-6 text-sm text-slate-600">
-                <p class="font-semibold text-slate-900 mb-2">About this data</p>
-                <p>Salon counts, addresses and hours come from the official Great Clips
-                   salon locator and were last reviewed on {esc(REVIEWED_DATE)}. Coupon
-                   figures come from our own tracking, refreshed every six hours. Counts
-                   on this site are actual counts, not estimates &mdash; if a number here
-                   disagrees with another site, ours is the one you can check against the
-                   <a href="/salons" class="text-purple-600 hover:underline">salon directory</a>.</p>
+                <p class="font-semibold text-slate-900 mb-2">Sources</p>
+                <p>{sources or DEFAULT_SOURCES}</p>
+                <p class="mt-2">Last reviewed {esc(REVIEWED_DATE)}.</p>
             </div>
 
             <div class="mt-8 gradient-bg rounded-2xl p-8 text-center text-white">
@@ -678,6 +694,482 @@ def post_declined(cities, metros, feed) -> tuple[str, str]:
     )
 
 
+def post_what_to_ask(cities, metros, feed) -> tuple[str, str]:
+    """What to ask for at Great Clips."""
+    total = sum(c["salon_count"] for c in cities.values())
+
+    body = findings_box(
+        [
+            "<strong>Ask for a style by name.</strong> Great Clips publishes a "
+            f"Lookbook of <strong>{len(ADULT_STYLES) + len(KIDS_STYLES)} named "
+            "haircuts</strong>, and a stylist recognises those names instantly.",
+            "<strong>Give a guard number for anything clippered</strong> &mdash; "
+            "&#35;2 on the sides means the same thing in every salon in the country.",
+            "<strong>Ask them to pull up your Clip Notes.</strong> Great Clips saves "
+            "your cut details, so a good visit is repeatable at any location.",
+            "Bring a photo. It settles in two seconds what a paragraph of description "
+            "cannot.",
+        ]
+    )
+
+    body += p(
+        "The hard part of a cheap haircut is not the cutting, it is the asking. Ten "
+        "minutes in the chair goes wrong when \"just a trim, maybe shorter on the "
+        "sides\" gets interpreted differently than you pictured. Here is the "
+        "vocabulary that removes the guesswork."
+    )
+
+    body += h2("1. Use the name Great Clips uses")
+    body += p(
+        "Great Clips runs an official Lookbook, and the names in it are the ones "
+        "their stylists are trained on. Saying \"a clippered pushback\" lands "
+        "immediately; describing it does not. These are the adult styles they list:"
+    )
+    body += style_grid(ADULT_STYLES)
+    body += p(
+        "Kids have their own set of names &mdash; see "
+        '<a href="/blog/great-clips-kids-haircut-styles" class="text-purple-600 '
+        'hover:underline">the 17 kids\' styles</a> for those.'
+    )
+
+    body += h2("2. Give a number for anything clippered")
+    body += p(
+        "Clipper guards are numbered, and the numbers are standard sizing rather than "
+        "anything Great Clips invented &mdash; which is why they travel between "
+        "salons and between stylists. \"Two on the sides, scissors on top\" is a "
+        "complete instruction. We break the sizes down in "
+        '<a href="/blog/clipper-guard-numbers" class="text-purple-600 '
+        'hover:underline">clipper guard numbers explained</a>.'
+    )
+
+    body += h2("3. Say where you want the length, not just how much")
+    body += p(
+        "Stylists need three separate answers: the sides, the top, and the back or "
+        "neckline. \"Shorter\" on its own does not say which. A useful sentence names "
+        "all three &mdash; for example, \"number two on the sides, take about an inch "
+        "off the top, and square off the neckline.\""
+    )
+    body += p(
+        "Two more that prevent most surprises: say whether you want your <strong>ears "
+        "showing</strong>, and whether the <strong>fringe should sit above or below "
+        "the eyebrows</strong>. Those are the details people notice afterwards."
+    )
+
+    body += h2("4. Ask for your Clip Notes")
+    body += p(
+        "Great Clips records what was done to your hair under a feature they call "
+        "Clip Notes, tied to your name and phone number. If a previous cut went well, "
+        "asking the stylist to look it up is faster and more accurate than describing "
+        f"it again &mdash; and it works at any of the {total:,} salons, not only the "
+        "one you first visited."
+    )
+
+    body += h2("5. Know what is on the menu")
+    body += p(
+        "Beyond the haircut itself, Great Clips lists <strong>bang trims, beard "
+        "trims, neck trims, shampoo, styling</strong> (including blowdries and updos) "
+        "and <strong>perms</strong>. The perm carries an asterisk on their own service "
+        "page &mdash; availability varies by location &mdash; so ring the salon before "
+        "making a trip for one. A neck trim is the cheap add-on most people do not "
+        "know to ask for, and it is what keeps a fade looking sharp between cuts."
+    )
+    body += p(
+        "Walk-ins are the norm, and Online Check-In puts you in the queue before you "
+        "leave the house."
+    )
+
+    body += h2("6. Then bring a coupon")
+    body += p(
+        "Style sorted, the last step is not paying full price. Which coupons work "
+        "depends on where you are &mdash; most Great Clips offers are tied to a metro "
+        'market. Open <a href="/salons" class="text-purple-600 hover:underline">your '
+        "city</a> to see its salons and the offers valid at them."
+    )
+
+    faqs = [
+        (
+            "What should I ask for at Great Clips?",
+            "Name a style from the Great Clips Lookbook, give a clipper guard number "
+            "for the sides, say how much to take off the top, and state how you want "
+            "the neckline. Asking the stylist to pull up your Clip Notes repeats a cut "
+            "you already liked.",
+        ),
+        (
+            "What is a number 2 haircut?",
+            'A #2 clipper guard cuts hair to about 1/4 inch (6 mm). It is the most '
+            "commonly requested buzz length, short enough to be tidy while still "
+            "showing hair colour.",
+        ),
+        (
+            "Can I bring a picture to Great Clips?",
+            "Yes, and it is the single most reliable way to communicate a cut. A photo "
+            "removes the ambiguity that words like short, medium and trim carry.",
+        ),
+        (
+            "What services does Great Clips offer besides haircuts?",
+            "Great Clips lists bang trims, beard trims, neck trims, shampoo, styling "
+            "including blowdries and updos, and perms. Their own service page marks the "
+            "perm as varying by location, so call ahead if that is what you want.",
+        ),
+        (
+            "Does Great Clips do perms?",
+            "Yes, but not everywhere. Great Clips lists perms among its additional "
+            "services with a note that availability varies by location, so check with "
+            "your local salon first.",
+        ),
+        (
+            "What are Clip Notes at Great Clips?",
+            "Clip Notes are the details of your previous haircut, saved against your "
+            "name and phone number so any Great Clips salon can reproduce it. Ask the "
+            "stylist to look them up instead of describing the cut again.",
+        ),
+    ]
+
+    return (
+        "what-to-ask-for-at-great-clips",
+        page(
+            slug="what-to-ask-for-at-great-clips",
+            title="What to Ask For at Great Clips (Styles, Guards & Exact Words)",
+            description=(
+                "Ask by name. Great Clips publishes 43 named styles in its Lookbook, and "
+                "a guard number settles the sides. The exact wording to use, plus the "
+                "Clip Notes trick that repeats a cut you liked."
+            ),
+            badge="HAIRCUT GUIDE",
+            heading="What to Ask For at Great Clips",
+            subtitle="The names, numbers and exact words that get you the cut you pictured",
+            faqs=faqs,
+            body=body,
+            sources=STYLE_SOURCES,
+        ),
+    )
+
+
+def post_kids_styles(cities, metros, feed) -> tuple[str, str]:
+    """Kids' haircut styles to ask for."""
+    body = findings_box(
+        [
+            f"Great Clips lists <strong>{len(KIDS_STYLES)} kids' haircuts by name</strong> "
+            "in its official Lookbook &mdash; asking by name beats describing.",
+            "<strong>Match the cut to the hair, not the trend.</strong> Curly hair has "
+            "its own entry (curly fade) for a reason.",
+            "<strong>Grow-out matters more for kids.</strong> A taper or classic taper "
+            "keeps its shape for weeks; a hard part fade needs a touch-up sooner.",
+            "Ask for Clip Notes to be saved on the first visit, so the next cut is a "
+            "sentence rather than a negotiation.",
+        ]
+    )
+
+    body += p(
+        "Taking a child for a haircut is mostly a communication problem. The child "
+        "cannot describe what they want, the parent describes it loosely, and "
+        "everyone hopes. Great Clips heads that off by publishing named kids' cuts, "
+        "so you can point at one instead."
+    )
+
+    body += h2(f"The {len(KIDS_STYLES)} kids' styles Great Clips names")
+    body += style_grid(KIDS_STYLES, kids=True)
+
+    body += h2("Short and low-maintenance")
+    body += p(
+        "For a child who hates sitting still, or a summer cut, the shortest options "
+        "are the <strong>buzz cut</strong> and the <strong>textured crew</strong>. "
+        "Both are quick in the chair and need almost nothing at home. A "
+        "<strong>classic taper</strong> is the middle ground: short sides that grow "
+        "out evenly, so the cut still looks deliberate a month later."
+    )
+
+    body += h2("Fades, and how often they need redoing")
+    body += p(
+        "Fades are the most requested kids' cuts and Great Clips names four: "
+        + ", ".join(
+            style_link(s, kids=True)
+            for s in ["taper-fade", "textured-fade", "curly-fade", "hard-part-fade"]
+        )
+        + ". Worth knowing before you choose: the sharper the fade, the faster it "
+        "loses its shape. A taper fade stays tidy for weeks, while a hard part fade "
+        "&mdash; where a line is shaved into the part &mdash; looks best for the first "
+        "week or two."
+    )
+
+    body += h2("Curly and textured hair")
+    body += p(
+        "Curly hair does not fade the same way straight hair does, which is why the "
+        "Lookbook lists a "
+        + style_link("curly-fade", kids=True)
+        + " separately. If your child's hair is curly or coily, ask for that by name "
+        "rather than a generic fade, and say whether you want the curl kept on top."
+    )
+
+    body += h2("Longer cuts and bobs")
+    body += p(
+        "For longer hair the named options are the "
+        + ", ".join(
+            style_link(s, kids=True)
+            for s in [
+                "layered-bob",
+                "chin-length-bob-with-bangs",
+                "one-length-bob",
+                "long-layers",
+            ]
+        )
+        + " and a few more. The practical question is bangs: they look great and they "
+        "need trimming every few weeks. Great Clips does bang trims as a service, so "
+        "that upkeep does not mean a full haircut every time."
+    )
+
+    body += h2("What it costs, and getting it cheaper")
+    body += p(
+        "Kids' pricing and the age cutoff are a separate topic &mdash; we cover both "
+        'in <a href="/blog/great-clips-kids-haircut" class="text-purple-600 '
+        'hover:underline">Great Clips kids haircut prices</a>. The short version is '
+        "that a coupon usually saves several dollars, and which coupons apply depends "
+        'on your metro market. Check <a href="/salons" class="text-purple-600 '
+        'hover:underline">your city</a> for the offers valid nearby.'
+    )
+
+    faqs = [
+        (
+            "What haircuts can I ask for for my child at Great Clips?",
+            f"Great Clips names {len(KIDS_STYLES)} kids' styles in its Lookbook, "
+            "including the buzz cut, classic taper, taper fade, textured fade, curly "
+            "fade, hard part fade, textured crew, side part, undercut with short "
+            "layers and several bobs. Asking by name is more reliable than describing.",
+        ),
+        (
+            "What is the easiest kids' haircut to maintain?",
+            "A buzz cut needs the least upkeep, and a classic taper is the best "
+            "compromise between tidy and low-maintenance because it grows out evenly "
+            "rather than developing a hard line.",
+        ),
+        (
+            "How often do kids' fades need redoing?",
+            "The sharper the fade, the sooner it needs attention. A taper fade holds "
+            "its shape for several weeks; a hard part fade, with a shaved line, looks "
+            "its best for about a week or two.",
+        ),
+        (
+            "What haircut suits curly hair?",
+            "Great Clips lists a curly fade specifically, because curly hair does not "
+            "blend the same way straight hair does. Ask for it by name and say whether "
+            "the curl should be kept long on top.",
+        ),
+        (
+            "Does Great Clips trim bangs separately?",
+            "Yes, bang trims are one of their listed services, which is useful for kids "
+            "with fringes that need upkeep between full haircuts.",
+        ),
+    ]
+
+    return (
+        "great-clips-kids-haircut-styles",
+        page(
+            slug="great-clips-kids-haircut-styles",
+            title=f"{len(KIDS_STYLES)} Kids' Haircuts to Ask For at Great Clips",
+            description=(
+                f"Great Clips names {len(KIDS_STYLES)} kids' styles in its Lookbook. "
+                "Which to pick for curly hair, which grow out best, and how often fades "
+                "need redoing."
+            ),
+            badge="KIDS GUIDE",
+            heading=f"{len(KIDS_STYLES)} Kids' Haircuts to Ask For at Great Clips",
+            subtitle="Ask by name, match the cut to the hair, and know how it grows out",
+            faqs=faqs,
+            body=body,
+            sources=STYLE_SOURCES,
+        ),
+    )
+
+
+def post_guards(cities, metros, feed) -> tuple[str, str]:
+    """Clipper guard numbers explained."""
+    rows = [
+        [f"<strong>{num}</strong>", inches, mm, esc(note)]
+        for num, inches, mm, note in GUARDS
+    ]
+
+    body = findings_box(
+        [
+            "<strong>Guard numbers are eighths of an inch.</strong> A &#35;2 is 2/8 "
+            "&mdash; a quarter inch. That one fact lets you work out any of them.",
+            "<strong>&#35;2 is the most requested</strong> buzz and fade-side length.",
+            "Guard sizing is an industry standard, not a Great Clips one, so the same "
+            "number means the same length in any salon.",
+            "A guard number describes <em>length</em>, not <em>shape</em> &mdash; you "
+            "still need to say fade, taper or all-over.",
+        ]
+    )
+
+    body += p(
+        "Clipper guards are the plastic combs that clip onto the blade and set how "
+        "much hair is left behind. They are numbered, and the numbering is simple "
+        "once you see it: <strong>the number is how many eighths of an inch it "
+        "leaves</strong>. A &#35;4 leaves 4/8, or half an inch."
+    )
+
+    body += h2("Clipper guard sizes")
+    body += table(
+        ["Guard", "Length", "Metric", "What it looks like"],
+        rows,
+        note=(
+            "Standard clipper guard sizing. Individual stylists may run slightly "
+            "shorter or longer depending on the clipper and how the hair is held."
+        ),
+    )
+
+    body += h2("Which number should you ask for?")
+    body += p(
+        "If you want a <strong>buzz cut</strong>, most people land on a &#35;2 or "
+        "&#35;3 &mdash; short and tidy, with enough left to keep your hair colour. A "
+        "&#35;1 is noticeably shorter and starts to show scalp on lighter hair."
+    )
+    body += p(
+        "For a <strong>fade</strong>, you are describing a range rather than one "
+        "number: the sides start short at the bottom and blend up. \"Fade from a zero "
+        "to a three\" tells a stylist exactly what you mean. For <strong>sides with "
+        "scissors on top</strong>, a &#35;2 or &#35;3 on the sides is the usual "
+        "starting point."
+    )
+    body += p(
+        "If you are unsure, <strong>ask for longer than you think</strong>. Going "
+        "shorter takes another thirty seconds; going longer takes a month."
+    )
+
+    body += h2("Length is not shape")
+    body += p(
+        "This is where requests go wrong. A guard number says how much hair is left, "
+        "but not how it is arranged. The same &#35;3 can be an even all-over buzz, the "
+        "bottom of a fade, or the sides under a longer top. Pair the number with a "
+        "shape &mdash; and better still with a style name from the "
+        f'<a href="{LOOKBOOK}" target="_blank" rel="noopener" '
+        'class="text-purple-600 hover:underline">Great Clips Lookbook</a>. Our guide '
+        'to <a href="/blog/what-to-ask-for-at-great-clips" class="text-purple-600 '
+        'hover:underline">what to ask for</a> covers the full sentence to use.'
+    )
+
+    body += h2("Getting it cheap")
+    body += p(
+        "A clipper cut is the quickest service in the salon and the easiest to get on "
+        'a coupon. Check <a href="/salons" class="text-purple-600 hover:underline">'
+        "your city</a> for the offers that reach your local salons."
+    )
+
+    faqs = [
+        (
+            "What do clipper guard numbers mean?",
+            "The number is how many eighths of an inch of hair the guard leaves. A #2 "
+            'leaves 2/8 of an inch, or 1/4 inch (6 mm); a #4 leaves half an inch.',
+        ),
+        (
+            "What is a number 2 haircut?",
+            'About 1/4 inch (6 mm) of hair. It is the most commonly requested buzz and '
+            "fade-side length, short and neat while still showing hair colour.",
+        ),
+        (
+            "What is the difference between a #1 and a #2?",
+            'A #1 leaves 1/8 inch and a #2 leaves 1/4 inch, so a #2 is twice as long. '
+            "On lighter hair a #1 starts to show scalp where a #2 usually does not.",
+        ),
+        (
+            "Which guard number is best for a buzz cut?",
+            "Most people choose a #2 or #3. Go shorter for a tighter look, and longer "
+            "if you are unsure, since taking more off later is quick.",
+        ),
+        (
+            "Are guard numbers the same at every salon?",
+            "Yes. Guard sizing is an industry standard rather than a chain-specific "
+            "one, which is why a number is the most portable way to describe length.",
+        ),
+    ]
+
+    return (
+        "clipper-guard-numbers",
+        page(
+            slug="clipper-guard-numbers",
+            title="Clipper Guard Numbers Explained (#1 to #8, With Lengths)",
+            description=(
+                "Guard numbers are eighths of an inch: a #2 leaves 1/4 inch. Full size "
+                "chart in inches and millimetres, which number to ask for, and why "
+                "length is not the same as shape."
+            ),
+            badge="HAIRCUT GUIDE",
+            heading="Clipper Guard Numbers Explained",
+            subtitle="What #1 to #8 actually leave behind, and which to ask for",
+            faqs=faqs,
+            body=body,
+            sources=STYLE_SOURCES,
+        ),
+    )
+
+
+# ------------------------------------------------------- style vocabulary --
+
+# Style names Great Clips publishes in its own Lookbook. Using their vocabulary is
+# the whole point of these posts: a stylist recognises "clippered pushback"
+# instantly, where "shorter on the sides I guess" starts a guessing game. Taken
+# from greatclips.com/lookbook (42 styles: 25 adult and 17 kids').
+LOOKBOOK = "https://www.greatclips.com/lookbook"
+
+ADULT_STYLES = [
+    "angled-bob", "bald-fade", "bixie", "blunt-bob", "classic-fade", "clipper",
+    "clippered-pushback", "clippered-sides-with-layered-top", "crew",
+    "curly-layered-bob-with-bangs", "fade-with-side-part", "layered-bob",
+    "long-layers", "long-pushback", "long-scissor-cut", "one-length",
+    "parted-scissor-cut", "pixie", "pompadour", "short-fade", "short-layer",
+    "short-pushback", "short-scissor-cut", "shoulder-length-layers-with-bangs",
+    "tousled-layers",
+]
+
+KIDS_STYLES = [
+    "buzz-cut", "chin-length-bob-with-bangs", "classic-taper", "curly-fade",
+    "hard-part-fade", "layered-bob", "layered-bob-with-bangs", "long-layers",
+    "medium-layers", "one-length-bob", "short-layer",
+    "shoulder-length-bob-face-framing", "side-part", "taper-fade",
+    "textured-crew", "textured-fade", "undercut-with-short-layers",
+]
+
+# Standard clipper guard sizing. These are the industry lengths, not a Great Clips
+# invention, which is exactly why a guard number travels between salons.
+GUARDS = [
+    ("#0.5", '1/16"', "1.5 mm", "Shadow of stubble. Skin shows through."),
+    ("#1", '1/8"', "3 mm", "Very short. The tight end of a buzz cut."),
+    ("#2", '1/4"', "6 mm", "The most requested buzz length. Hair still reads dark."),
+    ("#3", '3/8"', "10 mm", "Short but soft. Common on the sides of a fade."),
+    ("#4", '1/2"', "13 mm", "Medium-short. Hair starts to lie down."),
+    ("#5", '5/8"', "16 mm", "Medium. Usual top length on a clipper cut."),
+    ("#6", '3/4"', "19 mm", "Longer top, still uniform."),
+    ("#7", '7/8"', "22 mm", "Long guard, mostly used on top."),
+    ("#8", '1"', "25 mm", "Longest standard guard. A trim, not a buzz."),
+]
+
+
+def style_name(slug: str) -> str:
+    """'clippered-pushback' -> 'Clippered pushback'."""
+    words = slug.replace("-", " ")
+    return words[:1].upper() + words[1:]
+
+
+def style_link(slug: str, kids: bool = False) -> str:
+    path = f"kids-{slug}-haircut" if kids else f"{slug}-haircut"
+    return (
+        f'<a href="{LOOKBOOK}/{path}" target="_blank" rel="noopener" '
+        f'class="text-purple-600 hover:underline">{esc(style_name(slug))}</a>'
+    )
+
+
+def style_grid(slugs: list[str], kids: bool = False) -> str:
+    items = "".join(
+        f'                    <li class="py-1">{style_link(s, kids)}</li>\n'
+        for s in slugs
+    )
+    return f"""            <div class="my-6 border border-slate-200 rounded-xl p-6 bg-slate-50">
+                <ul class="grid sm:grid-cols-2 gap-x-6 list-disc list-inside text-slate-700">
+{items}                </ul>
+            </div>
+
+"""
+
+
 # ------------------------------------------------------------- blog index --
 
 INDEX_START = "<!-- GC-ALL-POSTS:START (generated by scripts/generate_blog_posts.py) -->"
@@ -807,6 +1299,9 @@ def main() -> int:
         post_scopes(cities, metros, feed),
         post_census(cities, metros, feed),
         post_declined(cities, metros, feed),
+        post_what_to_ask(cities, metros, feed),
+        post_kids_styles(cities, metros, feed),
+        post_guards(cities, metros, feed),
     ]
 
     BLOG_DIR.mkdir(parents=True, exist_ok=True)
