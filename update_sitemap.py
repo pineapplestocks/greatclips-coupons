@@ -112,6 +112,8 @@ def generate_sitemap():
         "blog/what-to-ask-for-at-great-clips",
         "blog/great-clips-kids-haircut-styles",
         "blog/clipper-guard-numbers",
+        "blog/great-clips-back-to-school-haircuts",
+        "blog/great-clips-holiday-haircuts",
         "author/kumar-chaudhari",
     ]
     

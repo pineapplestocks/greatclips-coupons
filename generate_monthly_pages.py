@@ -4,6 +4,7 @@ Auto-generate monthly Great Clips coupon landing pages.
 Runs on the 1st of each month via GitHub Actions.
 """
 
+import json
 import os
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -40,12 +41,167 @@ def get_adjacent_months(month, year):
         'next': {'month': next_month, 'year': next_year, 'name': MONTH_NAMES[next_month-1], 'slug': get_month_slug(next_month, next_year)}
     }
 
-def generate_monthly_page(month, year):
+# How far ahead a month page is allowed to be indexed. Beyond this there is
+# nothing true to say about a month yet, and 12 near-identical pages for next year
+# is the doorway pattern Google's spam policy describes. The URLs still exist and
+# still get generated - they just carry noindex until they are close enough to
+# carry real coupon data, at which point a later run removes it.
+INDEX_HORIZON_MONTHS = 4
+
+
+def load_site_data():
+    """Real numbers for the month pages: salon totals and live coupon figures.
+
+    These pages used to hardcode "$5.99", "50+" and "4,400+ salons" identically on
+    all 24 of them, which was both untrue and the reason they read as duplicates.
+    Everything returned here comes from data we actually hold.
+    """
+    data = {"salons": None, "cities": None, "coupon_count": None,
+            "lowest": None, "markets": [], "national": None}
+
+    salons_path = Path(__file__).resolve().parent / "data" / "salons.json"
+    if salons_path.exists():
+        try:
+            with open(salons_path, encoding="utf-8") as fh:
+                payload = json.load(fh)
+            data["salons"] = payload.get("total_salons")
+            data["cities"] = payload.get("total_cities")
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    feed_path = Path(__file__).resolve().parent / "docs" / "data" / "coupons.json"
+    if feed_path.exists():
+        try:
+            with open(feed_path, encoding="utf-8") as fh:
+                feed = json.load(fh)
+            coupons = feed.get("coupons", [])
+            data["coupon_count"] = len(coupons)
+            prices = [c["price_value"] for c in coupons if c.get("price_value")]
+            if prices:
+                data["lowest"] = f"${min(prices):.2f}"
+            data["markets"] = [
+                (c.get("area_name") or "").replace("participating ", "").strip()
+                for c in coupons
+                if c.get("scope") == "area"
+            ][:6]
+            national = [c for c in coupons if c.get("scope") == "national"]
+            if national:
+                data["national"] = min(
+                    national, key=lambda c: c.get("price_value", 999)
+                ).get("price")
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    return data
+
+
+# A real paragraph per month instead of one interchangeable line of filler. These
+# are the things that genuinely differ month to month - when salons are busy, what
+# people are getting cut and why - so the pages stop being keyword variants of
+# each other.
+MONTH_CONTEXT = {
+    1: ("New year, quiet salons",
+        "January is one of the easiest months to walk in. The December rush is over, "
+        "the pre-holiday crowds have gone, and mid-January afternoons are about as "
+        "quiet as a Great Clips gets. If you have been putting off a bigger change "
+        "than a trim, this is the month to have time in the chair for it."),
+    2: ("Short month, steady demand",
+        "February is unremarkable for haircut demand, which works in your favour: no "
+        "seasonal rush means shorter waits. It is also the month people book ahead of "
+        "Valentine's Day, so the weekend before the 14th is busier than the rest of "
+        "the month."),
+    3: ("Growing out the winter cut",
+        "March is when winter length starts to feel like too much. Most requests shift "
+        "from \"just tidy it\" back towards taking real length off. If you grew your "
+        "hair out over winter and want it shaped rather than shortened, say so "
+        "explicitly - ask for layers or a taper rather than a number."),
+    4: ("Spring reset",
+        "April brings the first proper wave of shorter cuts, along with school photos "
+        "and end-of-year events in many districts. Late-April Saturdays get busy for "
+        "that reason. Online Check-In is worth using rather than turning up cold."),
+    5: ("Before-summer clean-up",
+        "May is the run-up to summer, and the month graduations land. Salons see a "
+        "spike in the week before ceremonies, so if you need a cut for one, go early "
+        "in the week rather than the day before."),
+    6: ("Peak buzz-cut season",
+        "June is the shortest-hair month of the year. Buzz cuts and high fades "
+        "dominate as soon as the heat arrives, and kids are out of school so weekday "
+        "mornings fill up in a way they do not during term time. If you want a buzz, "
+        "know your guard number before you sit down."),
+    7: ("Mid-summer, holiday gaps",
+        "July is steady but patchy - salon traffic follows local holidays, so the week "
+        "of the 4th is unpredictable in both directions. Hours can vary around the "
+        "holiday itself, which is the one month it is genuinely worth checking your "
+        "salon's hours before setting off."),
+    8: ("The busiest month of the year",
+        "Back-to-school makes August the single busiest stretch for Great Clips, and "
+        "the last two weeks are the peak of it. Expect the longest waits of the year "
+        "on weekends, and go on a weekday morning if you possibly can. This is also "
+        "when Great Clips most reliably runs promotions, because it is competing for "
+        "the same families everyone else is."),
+    9: ("School photos and the tail of the rush",
+        "September carries the tail of the back-to-school rush plus school photo days, "
+        "which land in the first few weeks in most districts. A cut three to five days "
+        "before a photo sits better than one the night before - freshly cut hair "
+        "rarely photographs the way it will a few days later."),
+    10: ("Quiet, until the end",
+        "October is one of the calmer months until the last week, when Halloween "
+        "costume cuts arrive. If a costume needs a specific look, bring a photo, and "
+        "be clear about what has to grow back afterwards."),
+    11: ("Pre-holiday build-up",
+        "November builds steadily towards Thanksgiving, and the two days before it are "
+        "among the busiest of the year as people tidy up before family photos and "
+        "travel. Salon hours change around the holiday itself. The last week of "
+        "November is a better bet than the fourth Wednesday."),
+    12: ("The December crush",
+        "December is the most crowded month after August. Holiday parties, family "
+        "photographs and end-of-year events all push demand into the same three weeks, "
+        "and hours shift around Christmas Eve, Christmas Day and New Year's Eve. Go in "
+        "the first half of the month if the cut is for a specific occasion."),
+}
+
+
+def generate_monthly_page(month, year, data=None, now=None):
     """Generate HTML for a monthly landing page"""
     month_name = MONTH_NAMES[month - 1]
     slug = get_month_slug(month, year)
     adjacent = get_adjacent_months(month, year)
-    
+    data = data or load_site_data()
+    now = now or datetime.now()
+
+    months_ahead = (year - now.year) * 12 + (month - now.month)
+    far_future = months_ahead > INDEX_HORIZON_MONTHS
+    robots_tag = (
+        '    <meta name="robots" content="noindex, follow">\n' if far_future else ""
+    )
+
+    context_heading, context_body = MONTH_CONTEXT[month]
+
+    # Stat tiles, from real data where we have it.
+    salon_stat = f"{data['salons']:,}" if data.get("salons") else "4,300+"
+    salon_label = (
+        f"US salons in {data['cities']:,} cities" if data.get("cities")
+        else "Participating salons"
+    )
+    price_stat = data.get("lowest") or "$5.99"
+    coupon_stat = (
+        str(data["coupon_count"]) if data.get("coupon_count") is not None else "Daily"
+    )
+
+    market_line = ""
+    if data.get("markets"):
+        market_line = (
+            "Market offers being tracked right now include "
+            + ", ".join(m for m in data["markets"] if m)
+            + "."
+        )
+    national_line = ""
+    if data.get("national"):
+        national_line = (
+            f"A {data['national']} coupon is currently running nationwide, valid at "
+            "participating salons anywhere in the US."
+        )
+
     # Seasonal messaging
     seasonal_tips = {
         1: "Start the new year with a fresh look! Great Clips offers amazing January deals.",
@@ -61,13 +217,13 @@ def generate_monthly_page(month, year):
         11: "Get holiday-ready with November haircut deals.",
         12: "End the year looking great with December savings!"
     }
-    
+
     html = f'''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-adsense-account" content="ca-pub-3200720519944493">
+{robots_tag}    <meta name="google-adsense-account" content="ca-pub-3200720519944493">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-90ZQ7M4EFR"></script>
@@ -180,17 +336,33 @@ def generate_monthly_page(month, year):
         <!-- Stats Grid -->
         <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
             <div class="bg-white rounded-xl p-6 text-center shadow-sm">
-                <div class="text-4xl font-bold text-purple-600 mb-2">$5.99</div>
-                <div class="text-slate-600">Lowest Price Available</div>
+                <div class="text-4xl font-bold text-purple-600 mb-2">{price_stat}</div>
+                <div class="text-slate-600">Lowest tracked price</div>
             </div>
             <div class="bg-white rounded-xl p-6 text-center shadow-sm">
-                <div class="text-4xl font-bold text-purple-600 mb-2">50+</div>
-                <div class="text-slate-600">Active Coupons</div>
+                <div class="text-4xl font-bold text-purple-600 mb-2">{coupon_stat}</div>
+                <div class="text-slate-600">Coupons tracked now</div>
             </div>
             <div class="bg-white rounded-xl p-6 text-center shadow-sm">
-                <div class="text-4xl font-bold text-purple-600 mb-2">4,400+</div>
-                <div class="text-slate-600">Participating Salons</div>
+                <div class="text-4xl font-bold text-purple-600 mb-2">{salon_stat}</div>
+                <div class="text-slate-600">{salon_label}</div>
             </div>
+        </section>
+
+        <!-- What is actually different about this month -->
+        <section class="bg-white rounded-2xl shadow-sm p-8 mb-10">
+            <h2 class="text-2xl font-bold text-slate-900 mb-4">
+                {month_name} at Great Clips: {context_heading}
+            </h2>
+            <p class="text-slate-700 mb-4">{context_body}</p>
+            <p class="text-slate-700 mb-4">{national_line} {market_line}</p>
+            <p class="text-slate-600 text-sm">
+                Which coupons work depends on where you are, because most Great Clips
+                offers are tied to a metro market rather than the whole country.
+                <a href="/salons" class="text-purple-600 hover:underline">Open your city</a>
+                to see its salons and the offers valid there, or read
+                <a href="/blog/do-great-clips-coupons-work-at-any-location" class="text-purple-600 hover:underline">how coupon scopes work</a>.
+            </p>
         </section>
 
         <!-- What to Expect -->
@@ -205,7 +377,7 @@ def generate_monthly_page(month, year):
                     </div>
                     <div>
                         <h3 class="font-semibold text-slate-900 mb-1">$5.99 - $8.99 Deals</h3>
-                        <p class="text-slate-600 text-sm">Most {month_name} coupons offer haircuts between $5.99 and $8.99, saving you up to $10 per visit.</p>
+                        <p class="text-slate-600 text-sm">Most tracked coupons land between {price_stat} and $12.99 depending on your market, against a regular adult cut of roughly $17-$23.</p>
                     </div>
                 </div>
                 <div class="flex gap-4">
@@ -352,12 +524,17 @@ def main():
     # - All remaining months of current year
     # - All months of next year
     pages_generated = []
+    data = load_site_data()
+    print(f"   Data: {data.get('salons')} salons, "
+          f"{data.get('coupon_count')} coupons, lowest {data.get('lowest')}")
     
-    # Current year remaining months
-    for month in range(current_month, 13):
-        html, slug = generate_monthly_page(month, current_year)
+    # The whole current year, not only the months still ahead. Past months keep
+    # picking up residual search traffic, and leaving them unregenerated is what
+    # left seven pages still claiming "4,400+ participating salons".
+    for month in range(1, 13):
+        html, slug = generate_monthly_page(month, current_year, data, now)
         filepath = output_path / f"{slug}.html"
-        with open(filepath, 'w') as f:
+        with open(filepath, 'w', encoding='utf-8') as f:
             f.write(html)
         pages_generated.append(f"{SITE_URL}/{slug}")
         print(f"✓ Generated {slug}.html")
@@ -365,15 +542,15 @@ def main():
     # Next year all months
     next_year = current_year + 1
     for month in range(1, 13):
-        html, slug = generate_monthly_page(month, next_year)
+        html, slug = generate_monthly_page(month, next_year, data, now)
         filepath = output_path / f"{slug}.html"
-        with open(filepath, 'w') as f:
+        with open(filepath, 'w', encoding='utf-8') as f:
             f.write(html)
         pages_generated.append(f"{SITE_URL}/{slug}")
         print(f"✓ Generated {slug}.html")
     
     # Save list of generated URLs for indexing
-    with open('generated_monthly_urls.txt', 'w') as f:
+    with open('generated_monthly_urls.txt', 'w', encoding='utf-8') as f:
         f.write('\n'.join(pages_generated))
     
     print(f"\n✅ Generated {len(pages_generated)} monthly pages!")

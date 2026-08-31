@@ -694,6 +694,261 @@ def post_declined(cities, metros, feed) -> tuple[str, str]:
     )
 
 
+SEASONAL_SOURCES = (
+    "Great Clips promotion activity referenced from their own "
+    '<a href="https://www.greatclips.com/backtoschool" target="_blank" '
+    'rel="noopener" class="text-purple-600 hover:underline">back-to-school</a> and '
+    '<a href="https://www.greatclips.com/promotions/" target="_blank" rel="noopener" '
+    'class="text-purple-600 hover:underline">promotions</a> pages. Salon counts come '
+    "from the official salon locator. Busy-period guidance reflects general salon "
+    "demand patterns, not figures published by Great Clips. We are not affiliated "
+    "with Great Clips."
+)
+
+
+def post_back_to_school(cities, metros, feed) -> tuple[str, str]:
+    """Back-to-school haircuts."""
+    total = sum(c["salon_count"] for c in cities.values())
+
+    body = findings_box(
+        [
+            "<strong>August is the busiest haircut month of the year</strong>, and the "
+            "last two weeks are the peak. Weekend waits are at their longest.",
+            "<strong>Go on a weekday morning.</strong> The same cut that costs you an "
+            "hour on a Saturday takes minutes on a Tuesday at 10am.",
+            "<strong>Great Clips runs a back-to-school campaign</strong> most years, so "
+            "this is one of the better windows for a coupon.",
+            "<strong>Cut three to five days before photo day</strong>, not the night "
+            "before &mdash; hair sits differently once it has settled.",
+        ]
+    )
+
+    body += p(
+        "Back-to-school is the one time of year when a ten-minute haircut can cost you "
+        "an hour of waiting. Every family in the district has the same idea in the "
+        "same fortnight. A little timing solves most of it."
+    )
+
+    body += h2("When to go, and when not to")
+    body += p(
+        "The crunch is the last two weeks of August and the first week of September, "
+        "concentrated on weekends. If your schedule allows any flexibility, a weekday "
+        "morning shortly after opening is the quietest slot of the week, and the "
+        "difference is dramatic during this period."
+    )
+    body += p(
+        "Great Clips takes walk-ins, but Online Check-In is what makes this month "
+        "bearable: you join the queue from home and arrive near your turn instead of "
+        "waiting in the salon. During back-to-school week it is worth doing even for "
+        "a quiet-looking salon."
+    )
+
+    body += h2("Timing around school photos")
+    body += p(
+        "Photo day is usually in the first few weeks of term. Cut too close to it and "
+        "the hair has not settled &mdash; a fresh cut looks different on day one than "
+        "it does on day four, particularly on short cuts with visible lines. Three to "
+        "five days ahead is the sweet spot."
+    )
+
+    body += h2("What to ask for")
+    body += p(
+        "Great Clips names its kids' cuts, which removes the guesswork. For school, "
+        "the cuts that stay tidy longest are the "
+        + ", ".join(
+            style_link(s, kids=True) for s in ["classic-taper", "taper-fade", "textured-crew"]
+        )
+        + " &mdash; all grow out evenly rather than developing a hard line halfway "
+        "through term. The full list is in our "
+        '<a href="/blog/great-clips-kids-haircut-styles" class="text-purple-600 '
+        f'hover:underline">guide to the {len(KIDS_STYLES)} kids\' styles</a>.'
+    )
+    body += p(
+        "If the cut needs to last until half term, ask for it slightly shorter than "
+        "you would normally like it. Two weeks of growth is the difference between "
+        "tidy and shaggy on a short cut."
+    )
+
+    body += h2("Getting a coupon that works")
+    body += p(
+        "Great Clips promotes heavily around back-to-school &mdash; they maintain a "
+        "dedicated back-to-school page &mdash; but most of their coupons are scoped to "
+        "a metro market rather than the whole country, so an offer you see online may "
+        "not apply where you live. Check "
+        '<a href="/salons" class="text-purple-600 hover:underline">your city</a> for '
+        "the offers that actually reach your local salons, and see "
+        '<a href="/blog/do-great-clips-coupons-work-at-any-location" '
+        'class="text-purple-600 hover:underline">how coupon scopes work</a> if an '
+        "offer has ever been declined on you."
+    )
+    body += p(
+        f"With {total:,} salons in the US, most families have more than one within "
+        "reach. During peak weeks, the second-nearest salon is often much faster than "
+        "the closest one."
+    )
+
+    faqs = [
+        (
+            "When is the best time to get a back-to-school haircut?",
+            "Earlier than most people do. The last two weeks of August are the busiest "
+            "of the year, so going in the first half of the month, or on a weekday "
+            "morning, avoids the longest waits.",
+        ),
+        (
+            "How long before school photos should my child get a haircut?",
+            "Three to five days. A cut done the night before has not settled, and short "
+            "cuts in particular look different after a few days.",
+        ),
+        (
+            "Does Great Clips have back-to-school deals?",
+            "Great Clips runs back-to-school promotions most years and maintains a "
+            "dedicated page for them. Availability varies by market, so check which "
+            "offers apply to your city before relying on one.",
+        ),
+        (
+            "How do I avoid the back-to-school wait at Great Clips?",
+            "Use Online Check-In to join the queue before leaving home, go on a weekday "
+            "morning rather than a weekend, and consider the second-nearest salon "
+            "during peak weeks.",
+        ),
+    ]
+
+    return (
+        "great-clips-back-to-school-haircuts",
+        page(
+            slug="great-clips-back-to-school-haircuts",
+            title="Great Clips Back-to-School Haircuts: Timing, Styles & Coupons",
+            description=(
+                "August is the busiest haircut month of the year. When to go to avoid the "
+                "wait, how many days before photo day to cut, which kids' styles last a "
+                "term, and how to find a coupon that works in your market."
+            ),
+            badge="SEASONAL",
+            heading="Back-to-School Haircuts at Great Clips",
+            subtitle="The busiest fortnight of the year, and how to get in and out of it",
+            faqs=faqs,
+            body=body,
+            sources=SEASONAL_SOURCES,
+        ),
+    )
+
+
+def post_holiday(cities, metros, feed) -> tuple[str, str]:
+    """Holiday season haircuts."""
+    body = findings_box(
+        [
+            "<strong>December is the second-busiest month</strong> after August, "
+            "squeezed into roughly three weeks.",
+            "<strong>The two days before Thanksgiving</strong> and the week before "
+            "Christmas are the worst times to walk in without checking first.",
+            "<strong>Salon hours change around the holidays.</strong> Christmas Eve, "
+            "Christmas Day and New Year's Eve commonly run short or closed.",
+            "<strong>Book the cut for the week before the event</strong>, not the day "
+            "of &mdash; and check your salon's hours rather than assuming.",
+        ]
+    )
+
+    body += p(
+        "Holiday season compresses a month of haircuts into three weeks. Family "
+        "photographs, work parties and travel all land together, and salon hours are "
+        "least predictable exactly when demand is highest."
+    )
+
+    body += h2("The two crunch points")
+    body += p(
+        "The first is Thanksgiving. The Tuesday and Wednesday before it are among the "
+        "busiest days of the entire year, as people tidy up before family gatherings "
+        "and travel. The second is the run to Christmas, particularly the final "
+        "weekend before it."
+    )
+    body += p(
+        "Both are avoidable by going a week earlier than feels necessary. A cut keeps "
+        "its shape for two to three weeks, so a haircut in mid-December still looks "
+        "deliberate on Christmas Day."
+    )
+
+    body += h2("Check the hours, this month especially")
+    body += p(
+        "This is the one time of year when turning up unchecked genuinely wastes a "
+        "trip. Great Clips salons are individually operated and holiday hours vary: "
+        "many run reduced hours on Christmas Eve and New Year's Eve and close on "
+        "Christmas Day. Every city page on this site lists each salon's regular hours "
+        "and links to its official page, which is where any holiday exception is "
+        "posted &mdash; find "
+        '<a href="/salons" class="text-purple-600 hover:underline">your city</a> '
+        "before you set off."
+    )
+
+    body += h2("Timing a cut for photographs")
+    body += p(
+        "Holiday photos are the most common reason for a December haircut, and the "
+        "usual mistake is cutting too late. Give it three to five days. Fresh cuts "
+        "photograph harder than settled ones, especially with a flash and especially "
+        "on tight fades where the line is still sharp."
+    )
+
+    body += h2("Coupons over the holidays")
+    body += p(
+        "Great Clips promotes through the season and lists current offers on its "
+        "promotions page, but as ever most coupons are tied to a metro market rather "
+        "than being national. If you are travelling for the holidays, that matters: a "
+        "coupon that works at home may not work where you are going. Check the city "
+        "you will actually be in &mdash; our "
+        '<a href="/salons" class="text-purple-600 hover:underline">directory</a> '
+        "covers every US city with a salon."
+    )
+    body += p(
+        "Gift cards are the other seasonal question. A haircut gift card is a "
+        "reasonable small gift, and it sidesteps the coupon-scope problem entirely "
+        "since it is not restricted to a market."
+    )
+
+    faqs = [
+        (
+            "When is Great Clips busiest during the holidays?",
+            "The two days before Thanksgiving and the final week before Christmas are "
+            "the peaks. Going a week earlier avoids the worst of both, and a cut holds "
+            "its shape for two to three weeks anyway.",
+        ),
+        (
+            "Is Great Clips open on Christmas Eve or Christmas Day?",
+            "Hours vary by salon because each is individually operated. Reduced hours on "
+            "Christmas Eve and closure on Christmas Day are common. Check your salon's "
+            "official page, linked from every city page here, before travelling.",
+        ),
+        (
+            "How far before a holiday party should I get a haircut?",
+            "Three to five days. It gives the cut time to settle, which photographs "
+            "better than a same-day cut, particularly with a flash.",
+        ),
+        (
+            "Can I use a Great Clips coupon while travelling for the holidays?",
+            "Only if it is a nationwide coupon. Market and statewide coupons do not "
+            "travel, so check the offers for the city you are visiting rather than the "
+            "one you live in.",
+        ),
+    ]
+
+    return (
+        "great-clips-holiday-haircuts",
+        page(
+            slug="great-clips-holiday-haircuts",
+            title="Great Clips Holiday Haircuts: Hours, Busy Days & Coupons",
+            description=(
+                "December is the second-busiest haircut month. The two crunch points to "
+                "avoid, why holiday hours need checking, how many days before photos to "
+                "cut, and why a coupon may not travel with you."
+            ),
+            badge="SEASONAL",
+            heading="Holiday Haircuts at Great Clips",
+            subtitle="Thanksgiving, Christmas, changed hours, and coupons that don't travel",
+            faqs=faqs,
+            body=body,
+            sources=SEASONAL_SOURCES,
+        ),
+    )
+
+
 def post_what_to_ask(cities, metros, feed) -> tuple[str, str]:
     """What to ask for at Great Clips."""
     total = sum(c["salon_count"] for c in cities.values())
@@ -1302,6 +1557,8 @@ def main() -> int:
         post_what_to_ask(cities, metros, feed),
         post_kids_styles(cities, metros, feed),
         post_guards(cities, metros, feed),
+        post_back_to_school(cities, metros, feed),
+        post_holiday(cities, metros, feed),
     ]
 
     BLOG_DIR.mkdir(parents=True, exist_ok=True)
