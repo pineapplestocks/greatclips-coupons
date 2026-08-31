@@ -8,6 +8,9 @@ venv/
 # resumable scrape cache for scripts/fetch_salons.py
 .cache/
 
+# build artifact from generate_monthly_pages.py (a URL list, regenerated each run)
+generated_monthly_urls.txt
+
 # wrangler files
 .wrangler
 .dev.vars*
