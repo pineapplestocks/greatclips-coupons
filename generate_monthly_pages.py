@@ -41,6 +41,16 @@ def get_adjacent_months(month, year):
         'next': {'month': next_month, 'year': next_year, 'name': MONTH_NAMES[next_month-1], 'slug': get_month_slug(next_month, next_year)}
     }
 
+
+def month_page_exists(year, now=None):
+    """True when a month page is generated for that year.
+
+    We build the current year and the next one, so December 2027 linking to
+    January 2028, and January 2026 linking to December 2025, were both 404s.
+    """
+    now = now or datetime.now()
+    return now.year <= year <= now.year + 1
+
 # How far ahead a month page is allowed to be indexed. Beyond this there is
 # nothing true to say about a month yet, and 12 near-identical pages for next year
 # is the doorway pattern Google's spam policy describes. The URLs still exist and
@@ -176,6 +186,18 @@ def generate_monthly_page(month, year, data=None, now=None):
     )
 
     context_heading, context_body = MONTH_CONTEXT[month]
+
+    def month_link(entry, arrow_before):
+        if not month_page_exists(entry['year'], now):
+            return '<span></span>'
+        label = f"{entry['name']} {entry['year']}"
+        inner = (f"<span>&larr;</span><span>{label}</span>" if arrow_before
+                 else f"<span>{label}</span><span>&rarr;</span>")
+        return (f'<a href="/{entry["slug"]}" class="flex items-center gap-2 '
+                f'text-purple-600 hover:text-purple-700 font-medium">{inner}</a>')
+
+    prev_link = month_link(adjacent['prev'], True)
+    next_link = month_link(adjacent['next'], False)
 
     # Stat tiles, from real data where we have it.
     salon_stat = f"{data['salons']:,}" if data.get("salons") else "4,300+"
@@ -412,15 +434,9 @@ def generate_monthly_page(month, year, data=None, now=None):
 
         <!-- Month Navigation -->
         <section class="flex justify-between items-center bg-white rounded-xl shadow-sm p-4 mb-10">
-            <a href="/{adjacent['prev']['slug']}" class="flex items-center gap-2 text-purple-600 hover:text-purple-700 font-medium">
-                <span>←</span>
-                <span>{adjacent['prev']['name']} {adjacent['prev']['year']}</span>
-            </a>
+            {prev_link}
             <span class="text-slate-400">Browse by Month</span>
-            <a href="/{adjacent['next']['slug']}" class="flex items-center gap-2 text-purple-600 hover:text-purple-700 font-medium">
-                <span>{adjacent['next']['name']} {adjacent['next']['year']}</span>
-                <span>→</span>
-            </a>
+            {next_link}
         </section>
 
         <!-- Popular States -->

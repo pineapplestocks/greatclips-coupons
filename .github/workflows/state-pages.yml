@@ -44,7 +44,6 @@ jobs:
           python generate_pages.py
           mkdir -p docs
           cp -a pages/. docs/
-          python scripts/ensure_static_root_files.py
 
       # generate_pages.py rewrites docs/<state>.html and docs/cities/*.html from
       # templates that carry no salon data, so the real location counts and the
@@ -54,6 +53,9 @@ jobs:
         run: |
           python scripts/inject_local_links.py
           python scripts/export_coupon_feed.py
+          # After inject: it syncs foo/index.html from foo.html, so it has to see
+          # the freshened titles, and it strips the stray docs/template.html.
+          python scripts/ensure_static_root_files.py
           python update_sitemap.py
           python scripts/check_conflict_markers.py
 

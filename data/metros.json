@@ -13922,7 +13922,7 @@
    "slug": "roseville",
    "salon_count": 4,
    "metro_key": "CA/rancho-cordova",
-   "lat": 38.779653,
+   "lat": 38.779652,
    "lng": -121.300364
   },
   "CA/sacramento": {
@@ -14417,7 +14417,7 @@
    "slug": "castle-rock",
    "salon_count": 4,
    "metro_key": "CO/wheat-ridge",
-   "lat": 39.404136,
+   "lat": 39.404135,
    "lng": -104.860165
   },
   "CO/centennial": {
@@ -15741,7 +15741,7 @@
    "salon_count": 14,
    "metro_key": "FL/winter-park",
    "lat": 28.461091,
-   "lng": -81.345004
+   "lng": -81.345005
   },
   "FL/ormond-beach": {
    "city": "Ormond Beach",
@@ -15911,7 +15911,7 @@
    "slug": "port-charlotte",
    "salon_count": 4,
    "metro_key": "FL/nokomis",
-   "lat": 26.981118,
+   "lat": 26.981119,
    "lng": -82.126963
   },
   "FL/port-orange": {
@@ -19962,7 +19962,7 @@
    "salon_count": 6,
    "metro_key": "KS/olathe",
    "lat": 38.876058,
-   "lng": -94.784465
+   "lng": -94.784466
   },
   "KS/overland-park": {
    "city": "Overland Park",
@@ -20033,7 +20033,7 @@
    "slug": "topeka",
    "salon_count": 4,
    "metro_key": "KS/topeka",
-   "lat": 39.04319,
+   "lat": 39.043191,
    "lng": -95.695472
   },
   "KS/wichita": {
@@ -22248,7 +22248,7 @@
    "salon_count": 4,
    "metro_key": "MN/plymouth",
    "lat": 45.173302,
-   "lng": -93.223937
+   "lng": -93.223938
   },
   "MN/bloomington": {
    "city": "Bloomington",
@@ -27656,7 +27656,7 @@
    "slug": "edmond",
    "salon_count": 6,
    "metro_key": "OK/mustang",
-   "lat": 35.646649,
+   "lat": 35.646648,
    "lng": -97.494113
   },
   "OK/el-reno": {
@@ -29771,7 +29771,7 @@
    "slug": "clarksville",
    "salon_count": 6,
    "metro_key": "TN/clarksville",
-   "lat": 36.574659,
+   "lat": 36.57466,
    "lng": -87.325006
   },
   "TN/cleveland": {
@@ -32472,7 +32472,7 @@
    "salon_count": 4,
    "metro_key": "UT/st-george",
    "lat": 37.088764,
-   "lng": -113.580366
+   "lng": -113.580365
   },
   "UT/salt-lake-city": {
    "city": "Salt Lake City",

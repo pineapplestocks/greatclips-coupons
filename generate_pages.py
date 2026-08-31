@@ -195,7 +195,7 @@ def generate_state_page(slug, data):
     <meta property="og:url" content="https://greatclipsdeal.com/{slug}">
     <meta property="og:title" content="Great Clips Coupons {name} - $5.99+ Haircut Deals">
     <meta property="og:description" content="Find Great Clips coupons for {name}. Daily updated deals at participating salons / confirm locally.">
-    <meta property="og:image" content="https://greatclipsdeal.com/icon-512.png">
+    <meta property="og:image" content="https://greatclipsdeal.com/logo.png">
     
     <!-- Schema: WebPage with geo targeting -->
     <script type="application/ld+json">
@@ -460,7 +460,7 @@ def generate_city_page(slug, data):
     <meta property="og:url" content="https://greatclipsdeal.com/cities/{slug}">
     <meta property="og:title" content="Great Clips Coupons {name} - $5.99+ Haircut Deals">
     <meta property="og:description" content="Find Great Clips coupons for {name}, {state}. Daily updated deals at participating salons / confirm locally.">
-    <meta property="og:image" content="https://greatclipsdeal.com/icon-512.png">
+    <meta property="og:image" content="https://greatclipsdeal.com/logo.png">
     
     <!-- Schema: LocalBusiness -->
     <script type="application/ld+json">

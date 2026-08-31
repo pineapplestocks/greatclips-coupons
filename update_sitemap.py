@@ -215,24 +215,13 @@ def generate_sitemap():
   </url>
 '''
     
-    # === ALL 60 CITIES ===
-    cities = [
-        # Original 10
-        "phoenix", "dallas", "houston", "chicago", "atlanta",
-        "columbus", "indianapolis", "minneapolis", "denver", "detroit",
-        # New 50
-        "los-angeles", "new-york-city", "san-antonio", "san-diego", "san-jose",
-        "austin", "jacksonville", "fort-worth", "charlotte", "san-francisco",
-        "seattle", "nashville", "oklahoma-city", "las-vegas", "portland",
-        "milwaukee", "albuquerque", "tucson", "sacramento", "kansas-city",
-        "mesa", "virginia-beach", "omaha", "colorado-springs", "raleigh",
-        "miami", "tampa", "orlando", "cleveland", "pittsburgh",
-        "cincinnati", "st-louis", "baltimore", "salt-lake-city", "richmond",
-        "louisville", "memphis", "birmingham", "boise", "des-moines",
-        "spokane", "fresno", "tulsa", "wichita", "arlington",
-        "bakersfield", "aurora", "anaheim", "honolulu", "santa-ana",
-    ]
-    
+    # === CITY PAGES ===
+    # Scanned rather than hardcoded: the hand-maintained list had drifted to 60 of
+    # the 68 pages that exist, leaving Akron, Boston, Dayton, El Paso, Jersey City,
+    # Newark, Philadelphia and Toledo out of the sitemap entirely.
+    cities_dir = Path(DOCS_DIR) / "cities"
+    cities = sorted(p.stem for p in cities_dir.glob("*.html") if p.stem != "index")
+
     for city in cities:
         sitemap += f'''  <url>
     <loc>{SITE_URL}/cities/{city}</loc>

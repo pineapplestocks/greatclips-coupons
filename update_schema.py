@@ -57,7 +57,7 @@ HOMEPAGE_SCHEMA = '''
         "url": "https://greatclipsdeal.com/",
         "logo": {
             "@type": "ImageObject",
-            "url": "https://greatclipsdeal.com/icon-512.png",
+            "url": "https://greatclipsdeal.com/logo.png",
             "width": 512,
             "height": 512
         },
@@ -86,7 +86,7 @@ HOMEPAGE_SCHEMA = '''
         "@type": "Product",
         "name": "Great Clips Haircut Coupon",
         "description": "Discounted haircut coupons for Great Clips salons. Updated daily with $5.99-$8.99 deals valid at 4,400+ US locations.",
-        "image": "https://greatclipsdeal.com/icon-512.png",
+        "image": "https://greatclipsdeal.com/logo.png",
         "brand": {
             "@type": "Brand",
             "name": "Great Clips"
@@ -188,7 +188,7 @@ HOMEPAGE_SCHEMA = '''
         "@type": "HowTo",
         "name": "How to Use a Great Clips Coupon",
         "description": "Step-by-step guide to finding and redeeming Great Clips haircut coupons to save up to $10 on your next haircut.",
-        "image": "https://greatclipsdeal.com/icon-512.png",
+        "image": "https://greatclipsdeal.com/logo.png",
         "totalTime": "PT5M",
         "estimatedCost": {
             "@type": "MonetaryAmount",
@@ -478,7 +478,7 @@ def get_how_to_page_schema():
         "@type": "HowTo",
         "name": "How to Use Great Clips Coupons",
         "description": "Complete guide to finding, saving, and redeeming Great Clips haircut coupons. Save up to $10 on every haircut.",
-        "image": "https://greatclipsdeal.com/icon-512.png",
+        "image": "https://greatclipsdeal.com/logo.png",
         "totalTime": "PT10M",
         "estimatedCost": {{
             "@type": "MonetaryAmount",
@@ -648,7 +648,7 @@ def get_blog_article_schema(title, description, url_path):
         "@type": "Article",
         "headline": "{title}",
         "description": "{description}",
-        "image": "https://greatclipsdeal.com/icon-512.png",
+        "image": "https://greatclipsdeal.com/logo.png",
         "datePublished": "{CURRENT_DATE}",
         "dateModified": "{CURRENT_DATE}",
         "author": {{
@@ -661,7 +661,7 @@ def get_blog_article_schema(title, description, url_path):
             "name": "GreatClipsDeal",
             "logo": {{
                 "@type": "ImageObject",
-                "url": "https://greatclipsdeal.com/icon-512.png"
+                "url": "https://greatclipsdeal.com/logo.png"
             }}
         }},
         "mainEntityOfPage": {{

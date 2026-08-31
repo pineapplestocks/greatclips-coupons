@@ -62,6 +62,14 @@ jobs:
       - name: Rebuild city pages for the current nationwide offer
         run: python generate_local_pages.py
 
+      # Keeps titles on the current month, re-applies real salon counts, and syncs
+      # the foo/index.html duplicates. ensure_static runs last so it copies the
+      # finished pages rather than a half-updated set.
+      - name: Refresh local links, months and duplicate pages
+        run: |
+          python scripts/inject_local_links.py
+          python scripts/ensure_static_root_files.py
+
       - name: Commit and push changes (race-safe)
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -84,12 +92,15 @@ jobs:
               git reset || true
               git stash drop || true
             fi
-            # Regenerate sitemap after pull to avoid conflict markers in XML
-            python update_sitemap.py
+            # Rebuild in dependency order after the pull: pages first, then the
+            # post-processing that depends on them, then the sitemap last so it
+            # reflects whatever ended up on disk.
             python generate_website.py
-            python scripts/ensure_static_root_files.py
             python scripts/export_coupon_feed.py
             python generate_local_pages.py
+            python scripts/inject_local_links.py
+            python scripts/ensure_static_root_files.py
+            python update_sitemap.py
             # Refuse to publish conflict markers, whatever their source.
             python scripts/check_conflict_markers.py
             git add -A

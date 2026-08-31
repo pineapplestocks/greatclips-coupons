@@ -86,14 +86,14 @@ def page(
         "@type": "Article",
         "headline": title,
         "description": description,
-        "image": f"{SITE}/icon-512.png",
+        "image": f"{SITE}/logo.png",
         "datePublished": PUBLISHED,
         "dateModified": PUBLISHED,
         "author": {"@type": "Person", "name": AUTHOR, "url": AUTHOR_URL},
         "publisher": {
             "@type": "Organization",
             "name": "GreatClipsDeal",
-            "logo": {"@type": "ImageObject", "url": f"{SITE}/icon-512.png"},
+            "logo": {"@type": "ImageObject", "url": f"{SITE}/logo.png"},
         },
         "mainEntityOfPage": {"@type": "WebPage", "@id": canonical},
     }
@@ -156,7 +156,7 @@ def page(
     <meta property="og:url" content="{canonical}">
     <meta property="og:title" content="{esc(title)}">
     <meta property="og:description" content="{esc(description)}">
-    <meta property="og:image" content="{SITE}/icon-512.png">
+    <meta property="og:image" content="{SITE}/logo.png">
 {schema_blocks}    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .gradient-bg {{ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }}
@@ -450,15 +450,16 @@ def post_census(cities, metros, feed) -> tuple[str, str]:
     rows = []
     for state, count in by_state.most_common():
         city_count = sum(1 for c in cities.values() if c["state"] == state)
-        slug = STATE_NAMES.get(state, state).lower().replace(" ", "-")
-        rows.append(
-            [
-                f'<a href="/{slug}" class="text-purple-600 hover:underline">'
-                f"{esc(STATE_NAMES.get(state, state))}</a>",
-                f"{count}",
-                f"{city_count}",
-            ]
+        name = STATE_NAMES.get(state, state)
+        slug = name.lower().replace(" ", "-")
+        # DC has no state page, so link only where one exists rather than 404.
+        has_page = (REPO_ROOT / "docs" / f"{slug}.html").exists()
+        label = (
+            f'<a href="/{slug}" class="text-purple-600 hover:underline">{esc(name)}</a>'
+            if has_page
+            else esc(name)
         )
+        rows.append([label, f"{count}", f"{city_count}"])
     body += table(
         ["State", "Salons", "Cities"],
         rows,

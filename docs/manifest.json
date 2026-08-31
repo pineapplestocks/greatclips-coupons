@@ -1,0 +1,21 @@
+{
+  "name": "GreatClipsDeal - Great Clips Coupons",
+  "short_name": "GreatClipsDeal",
+  "description": "Verified Great Clips haircut coupons, updated daily, for every US city with a salon.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "561x528",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

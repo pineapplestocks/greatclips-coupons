@@ -29,6 +29,7 @@ import argparse
 import html
 import re
 import sys
+from datetime import datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -372,6 +373,72 @@ def inject_city_pages(cities: dict, metros: dict, check: bool) -> tuple[int, int
     return updated, skipped, fixed_counts
 
 
+MONTH_NAMES = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December",
+]
+
+# Pages that carry a month in their title but are not month-specific content.
+# Month landing pages (january-2026.html and friends) are deliberately excluded -
+# naming their own month is the entire point of them.
+EVERGREEN_WITH_MONTH = [
+    "states.html", "5-99-coupon.html", "6-99-coupon.html",
+    "printable-coupons.html", "coupon-codes.html", "senior-discount.html",
+    "prices.html", "how-to-use.html", "faq.html",
+]
+
+MONTH_TOKEN_RE = re.compile(
+    r"\b(" + "|".join(MONTH_NAMES) + r")\s+(20\d\d)\b"
+)
+
+
+def refresh_stale_months(cities: dict, check: bool) -> tuple[int, int]:
+    """Roll a stale month in a page's title and meta tags forward to the current one.
+
+    generate_pages.py holds only 19 states, so the other 31 state pages are produced
+    by nothing and had been frozen since June - 33 pages were advertising "June
+    2026" in late August, which reads as abandoned in a search result. Rather than
+    strip the month (it is useful for coupon queries) this rewrites it, and it runs
+    on every scrape so it cannot drift again.
+
+    Only <title>, the meta description and og equivalents are touched: body copy may
+    discuss a month for a reason.
+    """
+    now = datetime.now()
+    current = f"{MONTH_NAMES[now.month - 1]} {now.year}"
+
+    targets = [DOCS / f"{c['state_name'].lower().replace(' ', '-')}.html"
+               for c in cities.values()]
+    targets += [DOCS / name for name in EVERGREEN_WITH_MONTH]
+
+    scanned = updated = 0
+    seen = set()
+    for path in targets:
+        if path in seen or not path.exists():
+            continue
+        seen.add(path)
+        scanned += 1
+        original = path.read_text(encoding="utf-8", errors="replace")
+
+        def fix_region(match: re.Match) -> str:
+            return MONTH_TOKEN_RE.sub(current, match.group(0))
+
+        text = original
+        for pattern in (
+            r"<title>.*?</title>",
+            r'<meta name="description" content="[^"]*"',
+            r'<meta property="og:title" content="[^"]*"',
+            r'<meta property="og:description" content="[^"]*"',
+        ):
+            text = re.sub(pattern, fix_region, text, flags=re.S)
+
+        if text != original:
+            updated += 1
+            if not check:
+                path.write_text(text, encoding="utf-8")
+    return scanned, updated
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--check", action="store_true", help="report without writing")
@@ -382,6 +449,9 @@ def main() -> int:
     print("State pages:")
     updated, skipped, counts = inject_state_pages(cities, metros, args.check)
     print(f"  updated {updated}, skipped {skipped}, location counts corrected on {counts}")
+
+    scanned, refreshed = refresh_stale_months(cities, args.check)
+    print(f"Stale months: {refreshed} of {scanned} pages rolled to the current month")
 
     print("Legacy city pages:")
     updated_c, skipped_c, fixed = inject_city_pages(cities, metros, args.check)

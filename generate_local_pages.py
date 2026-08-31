@@ -84,6 +84,16 @@ SCHEMA_DAY = {
 }
 
 
+def state_page_href(state_name: str) -> str | None:
+    """Link target for a state page, or None when there isn't one.
+
+    Every state has a page but the District of Columbia does not, so the DC city
+    page's breadcrumb and the directory listing were both pointing at a 404.
+    """
+    slug = state_name.lower().replace(" ", "-")
+    return f"/{slug}" if (REPO_ROOT / "docs" / f"{slug}.html").exists() else None
+
+
 def esc(text) -> str:
     return html.escape(str(text or ""), quote=True)
 
@@ -805,6 +815,19 @@ def build_city_page(
     plural = "salon" if count == 1 else "salons"
 
     price_sentence, price_badge = price_line(state, stats)
+    state_href = state_page_href(state_name)
+    state_crumb = (
+        f'<a href="{state_href}" class="hover:text-purple-600">{esc(state_name)}</a>'
+        if state_href
+        else f'<span>{esc(state_name)}</span>'
+    )
+    state_all_link = (
+        f'<a href="{state_href}" class="text-purple-600 font-medium hover:underline">'
+        f'See every {esc(state_name)} city with a Great Clips &rarr;</a>'
+        if state_href
+        else '<a href="/salons" class="text-purple-600 font-medium hover:underline">'
+             'Browse every state in the salon directory &rarr;</a>'
+    )
     nearby = markets.nearest_cities(city, cities, limit=10, max_mi=40.0)
     streets = [s["street"] for s in city["salons"]]
 
@@ -925,7 +948,7 @@ def build_city_page(
             <span class="mx-2">&rsaquo;</span>
             <a href="/salons" class="hover:text-purple-600">Salons</a>
             <span class="mx-2">&rsaquo;</span>
-            <a href="/{state_slug}" class="hover:text-purple-600">{esc(state_name)}</a>
+            {state_crumb}
             <span class="mx-2">&rsaquo;</span>
             <span class="text-slate-900">{esc(name)}</span>
         </nav>
@@ -999,9 +1022,7 @@ def build_city_page(
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
 {nearby_html}            </div>
             <p class="mt-6">
-                <a href="/{state_slug}" class="text-purple-600 font-medium hover:underline">
-                    See every {esc(state_name)} city with a Great Clips &rarr;
-                </a>
+                {state_all_link}
             </p>
         </section>
 
@@ -1034,7 +1055,12 @@ def build_directory_page(cities: dict, metros: dict, generated: str) -> str:
         members = by_state[state]
         salons = sum(c["salon_count"] for c in members)
         state_name = members[0]["state_name"]
-        state_slug = state_name.lower().replace(" ", "-")
+        href = state_page_href(state_name)
+        state_label = (
+            f'<a href="{href}" class="hover:text-purple-600">{esc(state_name)}</a>'
+            if href
+            else esc(state_name)
+        )
         top = sorted(members, key=lambda c: -c["salon_count"])[:6]
         links = " · ".join(
             f'<a href="/salons/{c["state"].lower()}/{c["slug"]}" '
@@ -1045,7 +1071,7 @@ def build_directory_page(cities: dict, metros: dict, generated: str) -> str:
             f"""                <div class="p-5 border border-slate-200 rounded-xl bg-white">
                     <div class="flex items-baseline justify-between gap-3 mb-2">
                         <h3 class="font-semibold text-slate-900">
-                            <a href="/{state_slug}" class="hover:text-purple-600">{esc(state_name)}</a>
+                            {state_label}
                         </h3>
                         <span class="text-xs text-slate-500">{salons} salons &middot; {len(members)} cities</span>
                     </div>
