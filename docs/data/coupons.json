@@ -1,10 +1,11 @@
 {
- "generated_at": "2026-08-31T22:36:01Z",
- "scraped_at": "2026-08-31T15:35:46.718566",
- "total": 9,
+ "generated_at": "2026-09-01T04:01:44Z",
+ "scraped_at": "2026-08-31T21:01:23.036642",
+ "total": 10,
  "scopes": {
   "national": 1,
   "area": 7,
+  "unknown": 1,
   "state": 1
  },
  "coupons": [
@@ -254,6 +255,20 @@
     "VA/portsmouth",
     "VA/smithfield"
    ]
+  },
+  {
+   "url": "https://offers.greatclips.com/isjblpZ",
+   "coupon_code": "isjblpZ",
+   "price": "$12.99",
+   "location_name": "participating NE & Central PA Area",
+   "state": "AREA",
+   "area_name": "participating NE & Central PA",
+   "market": "NE & Central PA",
+   "expiration": "09/11/2026",
+   "last_verified": "2026-08-31",
+   "participating_location_note": "Valid at participating locations in NE & Central PA",
+   "scope": "unknown",
+   "price_value": 12.99
   },
   {
    "url": "https://offers.greatclips.com/OK36Ser",

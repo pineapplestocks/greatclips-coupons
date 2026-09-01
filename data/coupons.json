@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-08-31T15:35:46.718566",
-  "total_coupons": 9,
+  "scraped_at": "2026-08-31T21:01:23.036642",
+  "total_coupons": 10,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/yMEcKko",
@@ -112,6 +112,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Hampton Roads & Peninsula",
       "added_date": "2026-08-21",
+      "last_seen": "2026-08-31"
+    },
+    {
+      "url": "https://offers.greatclips.com/isjblpZ",
+      "coupon_code": "isjblpZ",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20701/50707-002-1200x600-12.99.jpg",
+      "expiration": "09/11/2026",
+      "location_name": "only at participating NE & Central PA Area",
+      "state": "AREA",
+      "area_name": "only at participating NE & Central PA",
+      "price": "$12.99",
+      "market": "NE & Central PA",
+      "last_verified": "2026-08-31",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in NE & Central PA",
+      "added_date": "2026-08-31",
       "last_seen": "2026-08-31"
     },
     {
