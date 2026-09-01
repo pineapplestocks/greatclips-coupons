@@ -830,9 +830,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $11.99 in the Baltimore area. Expires Sep 18, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#lM6ugQf\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "isjblpZ",
+      "coupon_url": "https://offers.greatclips.com/isjblpZ",
+      "post_id": "6a968cfbfeac3a9187e8092e",
+      "posted_at": "2026-09-01T08:29:47Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $12.99 in the only at participating NE & Central PA area. Expires Sep 11, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#isjblpZ\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-08-29T23:59:12Z",
+  "last_post": "2026-09-01T08:29:47Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -947,6 +956,7 @@
     "https://offers.greatclips.com/hOlFSQ7",
     "https://offers.greatclips.com/hwWLU3h",
     "https://offers.greatclips.com/i3vMWCQ",
+    "https://offers.greatclips.com/isjblpZ",
     "https://offers.greatclips.com/kwDlonG",
     "https://offers.greatclips.com/lAdePNG",
     "https://offers.greatclips.com/lM6ugQf",
