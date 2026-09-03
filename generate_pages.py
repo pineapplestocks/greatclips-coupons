@@ -5,7 +5,12 @@ Generate SEO-optimized state and city pages for GreatClipsDeal.com
 
 import json
 import os
+import sys
 from datetime import datetime
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "scripts"))
+
+import national_offer  # noqa: E402
 
 NOW = datetime.now()
 CURRENT_YEAR = NOW.strftime("%Y")
@@ -23,6 +28,17 @@ try:
 except (OSError, json.JSONDecodeError):
     STATE_STATS = {}
     STATS_PERIOD = ""
+
+
+# The cheapest coupon actually in the feed. These templates used to hardcode
+# "$5.99-$8.99", a range no coupon had matched for months, which is how 50 state
+# pages came to advertise prices that were not running while ignoring the live
+# nationwide coupon. scripts/inject_local_links.py corrects the rendered pages on
+# every run; sourcing the figure here keeps the templates from lying in the first
+# place. FLOOR_PLUS keeps the old "from this price up" shape where that reads better.
+_NATIONAL = national_offer.national_offer()
+FLOOR = national_offer.price_text(_NATIONAL) or national_offer.floor_price() or "$5.99"
+FLOOR_PLUS = f"{FLOOR}+"
 
 
 def slugify(value):
@@ -162,7 +178,7 @@ def generate_state_page(slug, data):
     featured_city_links = get_featured_city_links(name, cities)
     related_states = RELATED_STATE_LINKS.get(slug, ['texas', 'california', 'florida', 'ohio'])
     stats = STATE_STATS.get(code)
-    lowest_tile_value = f"${stats['lowest_price']:.2f}" if stats else "$5.99+"
+    lowest_tile_value = f"${stats['lowest_price']:.2f}" if stats else FLOOR_PLUS
     lowest_tile_label = f"Lowest {code} price we've tracked" if stats else "Coupon prices from"
     stats_section = build_state_stats_section(name, code)
     
@@ -186,14 +202,14 @@ def generate_state_page(slug, data):
     <meta name="google-adsense-account" content="ca-pub-3200720519944493">
     
     <title>Great Clips Coupons {name} ({CURRENT_MONTH} {CURRENT_YEAR}) - Local Haircut Deals</title>
-    <meta name="description" content="Find Great Clips coupons for {name}. Save $5-$10 on haircuts at participating salons / confirm locally. Updated daily with $5.99-$8.99 deals.">
+    <meta name="description" content="Find Great Clips coupons for {name}. Save $5-$10 on haircuts at participating salons / confirm locally. Updated daily, from {FLOOR}.">
     <meta name="keywords" content="Great Clips coupons {name}, Great Clips {code}, Great Clips coupon {cities[0]}, {name} haircut coupons, cheap haircuts {name}">
     <link rel="canonical" href="https://greatclipsdeal.com/{slug}">
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://greatclipsdeal.com/{slug}">
-    <meta property="og:title" content="Great Clips Coupons {name} - $5.99+ Haircut Deals">
+    <meta property="og:title" content="Great Clips Coupons {name} - {FLOOR_PLUS} Haircut Deals">
     <meta property="og:description" content="Find Great Clips coupons for {name}. Daily updated deals at participating salons / confirm locally.">
     <meta property="og:image" content="https://greatclipsdeal.com/logo.png">
     
@@ -203,7 +219,7 @@ def generate_state_page(slug, data):
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Great Clips Coupons in {name} - {CURRENT_MONTH} {CURRENT_YEAR}",
-        "description": "Find Great Clips haircut coupons for {name}. Daily updated deals from $5.99-$8.99 at participating salons / confirm locally.",
+        "description": "Find Great Clips haircut coupons for {name}. Daily updated deals from {FLOOR} at participating salons / confirm locally.",
         "url": "https://greatclipsdeal.com/{slug}",
         "dateModified": "{CURRENT_DATE}",
         "about": {{
@@ -242,7 +258,7 @@ def generate_state_page(slug, data):
                 "name": "How much does a Great Clips haircut cost in {name}?",
                 "acceptedAnswer": {{
                     "@type": "Answer",
-                    "text": "Great Clips haircuts in {name} typically cost $15-19 without a coupon. With coupons from greatclipsdeal.com, {name} customers can pay as little as $5.99-$8.99."
+                    "text": "Great Clips haircuts in {name} typically cost $15-19 without a coupon. With coupons from greatclipsdeal.com, {name} customers can pay as little as {FLOOR}."
                 }}
             }},
             {{
@@ -369,7 +385,7 @@ def generate_state_page(slug, data):
             <div class="space-y-6">
                 <div>
                     <h3 class="font-bold text-slate-900 mb-2">How much does a Great Clips haircut cost in {name}?</h3>
-                    <p class="text-slate-600">Without a coupon, expect to pay $15-19 for an adult haircut. With our coupons, you can pay as little as $5.99-$8.99.</p>
+                    <p class="text-slate-600">Without a coupon, expect to pay $15-19 for an adult haircut. With our coupons, you can pay as little as {FLOOR}.</p>
                 </div>
                 <div>
                     <h3 class="font-bold text-slate-900 mb-2">Do coupons work at Great Clips in {name}?</h3>
@@ -428,7 +444,7 @@ def generate_city_page(slug, data):
     state_code = data['state_code']
     locations = data['locations']
     city_stats = STATE_STATS.get(state_code)
-    city_lowest_value = f"${city_stats['lowest_price']:.2f}" if city_stats else "$5.99+"
+    city_lowest_value = f"${city_stats['lowest_price']:.2f}" if city_stats else FLOOR_PLUS
     city_lowest_label = f"Lowest {state_code} price we've tracked" if city_stats else "Coupon prices from"
     
     return f'''<!DOCTYPE html>
@@ -451,14 +467,14 @@ def generate_city_page(slug, data):
     <meta name="google-adsense-account" content="ca-pub-3200720519944493">
     
     <title>Great Clips Coupons {name}, {state_code} ({CURRENT_MONTH} {CURRENT_YEAR}) - Local Deals</title>
-    <meta name="description" content="Find Great Clips coupons for {name}, {state}. Save $5-$10 on haircuts at participating salons / confirm locally. Updated daily with $5.99-$8.99 deals.">
+    <meta name="description" content="Find Great Clips coupons for {name}, {state}. Save $5-$10 on haircuts at participating salons / confirm locally. Updated daily, from {FLOOR}.">
     <meta name="keywords" content="Great Clips coupons {name}, Great Clips {name} {state_code}, {name} haircut coupons, cheap haircuts {name}">
     <link rel="canonical" href="https://greatclipsdeal.com/cities/{slug}">
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://greatclipsdeal.com/cities/{slug}">
-    <meta property="og:title" content="Great Clips Coupons {name} - $5.99+ Haircut Deals">
+    <meta property="og:title" content="Great Clips Coupons {name} - {FLOOR_PLUS} Haircut Deals">
     <meta property="og:description" content="Find Great Clips coupons for {name}, {state}. Daily updated deals at participating salons / confirm locally.">
     <meta property="og:image" content="https://greatclipsdeal.com/logo.png">
     
@@ -468,7 +484,7 @@ def generate_city_page(slug, data):
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Great Clips Coupons in {name}, {state_code}",
-        "description": "Find Great Clips haircut coupons for {name}, {state}. Daily updated deals from $5.99-$8.99 at participating salons / confirm locally.",
+        "description": "Find Great Clips haircut coupons for {name}, {state}. Daily updated deals from {FLOOR} at participating salons / confirm locally.",
         "url": "https://greatclipsdeal.com/cities/{slug}",
         "dateModified": "{CURRENT_DATE}",
         "about": {{
@@ -508,7 +524,7 @@ def generate_city_page(slug, data):
                 "name": "How much is a Great Clips haircut in {name}?",
                 "acceptedAnswer": {{
                     "@type": "Answer",
-                    "text": "Great Clips haircuts in {name} typically cost $15-19 without a coupon. With coupons from greatclipsdeal.com, you can pay as little as $5.99-$8.99 at participating salons in {name}; confirm locally before you go."
+                    "text": "Great Clips haircuts in {name} typically cost $15-19 without a coupon. With coupons from greatclipsdeal.com, you can pay as little as {FLOOR} at participating salons in {name}; confirm locally before you go."
                 }}
             }},
             {{
@@ -578,7 +594,7 @@ def generate_city_page(slug, data):
             </p>
             <p class="text-slate-600 mb-4">
                 Our coupons are pulled from official Great Clips Facebook ads and are typically accepted at participating salons in {name}.
-                Prices typically range from <strong>$5.99 to $8.99</strong> with a coupon, compared to $15-19 regular price.
+                Prices typically start at <strong>{FLOOR}</strong> with a coupon, compared to $15-19 regular price.
             </p>
             <p class="text-slate-600">
                 <strong>Pro tip:</strong> Use the Great Clips app to check wait times at {name} locations before you go!
@@ -591,7 +607,7 @@ def generate_city_page(slug, data):
             <div class="space-y-6">
                 <div>
                     <h3 class="font-bold text-slate-900 mb-2">What's the cheapest Great Clips haircut in {name}?</h3>
-                    <p class="text-slate-600">With our coupons, you can get haircuts for as low as $5.99 at {name} Great Clips locations.</p>
+                    <p class="text-slate-600">With our coupons, you can get haircuts for as low as {FLOOR} at {name} Great Clips locations.</p>
                 </div>
                 <div>
                     <h3 class="font-bold text-slate-900 mb-2">Do I need an appointment at Great Clips {name}?</h3>

@@ -47,6 +47,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent / "scripts"))
 
 import markets  # noqa: E402
+import national_offer  # noqa: E402
 
 SITE_URL = "https://greatclipsdeal.com"
 REPO_ROOT = Path(__file__).resolve().parent
@@ -1279,25 +1280,12 @@ def load_stats() -> dict:
 def load_national_offer() -> dict | None:
     """The cheapest coupon valid at participating salons anywhere in the US.
 
-    A nationwide coupon is valid in all 2,550 cities, so it belongs in each page's
-    static HTML and schema - crawlers that do not run JavaScript (most AI crawlers
-    among them) never see the client-side coupon list. The volatile parts are left
-    out on purpose: the offer code changes every time Great Clips reissues it, and
-    baking it in would rewrite all 2,550 pages on every scrape. Price is stable, so
-    price is what gets baked; the live link is still wired up by city-coupons.js.
+    Thin wrapper over scripts/national_offer.py, which is now shared with the
+    state and metro page builders. This loader used to live here privately, and
+    being the only caller is why /alabama and /cities/dallas spent months with no
+    mention of a nationwide coupon that was valid at every salon they list.
     """
-    if not FEED_FILE.exists():
-        return None
-    try:
-        with FEED_FILE.open(encoding="utf-8") as fh:
-            feed = json.load(fh)
-    except (json.JSONDecodeError, OSError):
-        return None
-
-    national = [c for c in feed.get("coupons", []) if c.get("scope") == "national"]
-    if not national:
-        return None
-    return min(national, key=lambda c: c.get("price_value", 999))
+    return national_offer.national_offer()
 
 
 def main() -> int:

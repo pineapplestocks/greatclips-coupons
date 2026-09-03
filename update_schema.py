@@ -6,7 +6,12 @@ Run this once to update all HTML files with proper schema markup
 
 import os
 import re
+import sys
 from datetime import datetime
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "scripts"))
+
+import national_offer  # noqa: E402
 
 # Current date for freshness signals
 CURRENT_DATE = datetime.now().strftime("%Y-%m-%d")
@@ -14,6 +19,10 @@ CURRENT_YEAR = datetime.now().strftime("%Y")
 CURRENT_MONTH = datetime.now().strftime("%B")
 SITE_URL = "https://greatclipsdeal.com"
 SITE_ROOT = f"{SITE_URL}/"
+# The live coupon floor, so the state-page schema below quotes a price that is
+# actually running instead of the hardcoded "$5.99-$8.99" it used to emit.
+FLOOR = (national_offer.price_text(national_offer.national_offer())
+         or national_offer.floor_price() or "$5.99")
 GREAT_CLIPS_URL = "https://www.greatclips.com/"
 
 # ============================================================================
@@ -379,7 +388,7 @@ def get_state_page_schema(state_name, state_code):
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Great Clips Coupons in {state_name} - {CURRENT_MONTH} {CURRENT_YEAR}",
-        "description": "Find Great Clips haircut coupons for {state_name}. Daily updated deals from $5.99-$8.99 at {state_name} Great Clips locations.",
+        "description": "Find Great Clips haircut coupons for {state_name}. Daily updated deals from {FLOOR} at {state_name} Great Clips locations.",
         "url": "https://greatclipsdeal.com/{state_code.lower()}",
         "inLanguage": "en-US",
         "dateModified": "{CURRENT_DATE}",
@@ -452,7 +461,7 @@ def get_state_page_schema(state_name, state_code):
                 "name": "How much does a haircut cost at Great Clips in {state_name}?",
                 "acceptedAnswer": {{
                     "@type": "Answer",
-                    "text": "Great Clips haircuts in {state_name} typically cost $15-19 without a coupon. With coupons from greatclipsdeal.com, {state_name} customers can pay as little as $5.99-$8.99."
+                    "text": "Great Clips haircuts in {state_name} typically cost $15-19 without a coupon. With coupons from greatclipsdeal.com, {state_name} customers can pay as little as {FLOOR}."
                 }}
             }},
             {{
