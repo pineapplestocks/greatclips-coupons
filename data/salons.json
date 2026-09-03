@@ -1,7 +1,7 @@
 {
- "fetched_at": "2026-08-19T11:45:17Z",
+ "fetched_at": "2026-09-03T12:45:38Z",
  "source": "https://salons.greatclips.com/",
- "total_salons": 4303,
+ "total_salons": 4302,
  "total_cities": 2561,
  "salons": [
   {
@@ -1969,11 +1969,11 @@
    "lat": 34.885984,
    "lng": -92.110225,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "9 AM - 6 PM",
     "Sunday": "10 AM - 5 PM"
    }
@@ -2053,11 +2053,11 @@
    "lat": 34.754183,
    "lng": -92.417837,
    "hours": {
-    "Monday": "9 AM - 8 PM",
-    "Tuesday": "9 AM - 8 PM",
-    "Wednesday": "9 AM - 8 PM",
-    "Thursday": "9 AM - 8 PM",
-    "Friday": "9 AM - 8 PM",
+    "Monday": "9 AM - 7 PM",
+    "Tuesday": "9 AM - 7 PM",
+    "Wednesday": "9 AM - 7 PM",
+    "Thursday": "9 AM - 7 PM",
+    "Friday": "9 AM - 7 PM",
     "Saturday": "9 AM - 6 PM",
     "Sunday": "10 AM - 5 PM"
    }
@@ -6326,6 +6326,27 @@
    }
   },
   {
+   "path": "us/ca/concord/3375-port-chicago-highway",
+   "url": "https://salons.greatclips.com/us/ca/concord/3375-port-chicago-highway",
+   "country": "US",
+   "street": "3375 Port Chicago Highway",
+   "city": "Concord",
+   "state": "CA",
+   "zip": "94520",
+   "phone": "(925) 822-3099",
+   "lat": 37.994111,
+   "lng": -122.032345,
+   "hours": {
+    "Monday": "9 AM - 8 PM",
+    "Tuesday": "9 AM - 8 PM",
+    "Wednesday": "9 AM - 8 PM",
+    "Thursday": "9 AM - 8 PM",
+    "Friday": "9 AM - 8 PM",
+    "Saturday": "9 AM - 6 PM",
+    "Sunday": "9 AM - 5 PM"
+   }
+  },
+  {
    "path": "us/ca/corona/1240-e-ontario-ave",
    "url": "https://salons.greatclips.com/us/ca/corona/1240-e-ontario-ave",
    "country": "US",
@@ -6673,11 +6694,11 @@
    "lat": 33.048105,
    "lng": -117.256344,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "8:30 AM - 8 PM",
+    "Tuesday": "8:30 AM - 8 PM",
+    "Wednesday": "8:30 AM - 8 PM",
+    "Thursday": "8:30 AM - 8 PM",
+    "Friday": "8:30 AM - 8 PM",
     "Saturday": "8 AM - 7 PM",
     "Sunday": "8 AM - 7 PM"
    }
@@ -7219,13 +7240,13 @@
    "lat": 34.42636,
    "lng": -117.372006,
    "hours": {
-    "Monday": "9 AM - 8 PM",
-    "Tuesday": "9 AM - 8 PM",
-    "Wednesday": "9 AM - 8 PM",
-    "Thursday": "9 AM - 8 PM",
-    "Friday": "9 AM - 8 PM",
-    "Saturday": "8 AM - 6 PM",
-    "Sunday": "8 AM - 6 PM"
+    "Monday": "9 AM - 5 PM",
+    "Tuesday": "9 AM - 5 PM",
+    "Wednesday": "9 AM - 5 PM",
+    "Thursday": "9 AM - 5 PM",
+    "Friday": "9 AM - 5 PM",
+    "Saturday": "9 AM - 5 PM",
+    "Sunday": "9 AM - 5 PM"
    }
   },
   {
@@ -7434,8 +7455,8 @@
     "Wednesday": "9 AM - 7 PM",
     "Thursday": "9 AM - 7 PM",
     "Friday": "9 AM - 7 PM",
-    "Sunday": "9 AM - 7 PM",
-    "Saturday": "8 AM - 6 PM"
+    "Saturday": "8 AM - 6 PM",
+    "Sunday": "8 AM - 7 PM"
    }
   },
   {
@@ -7492,13 +7513,13 @@
    "lat": 34.118924,
    "lng": -117.779944,
    "hours": {
-    "Monday": "8 AM - 7 PM",
-    "Tuesday": "8 AM - 7 PM",
-    "Wednesday": "8 AM - 7 PM",
-    "Thursday": "8 AM - 7 PM",
-    "Friday": "8 AM - 7 PM",
-    "Saturday": "8 AM - 6 PM",
-    "Sunday": "9 AM - 5 PM"
+    "Monday": "9 AM - 6 PM",
+    "Tuesday": "9 AM - 6 PM",
+    "Wednesday": "9 AM - 6 PM",
+    "Thursday": "9 AM - 6 PM",
+    "Friday": "9 AM - 6 PM",
+    "Sunday": "9 AM - 6 PM",
+    "Saturday": "8 AM - 5 PM"
    }
   },
   {
@@ -8127,8 +8148,8 @@
     "Wednesday": "10 AM - 6 PM",
     "Thursday": "10 AM - 6 PM",
     "Friday": "10 AM - 6 PM",
-    "Saturday": "9 AM - 5 PM",
-    "Sunday": "9 AM - 5 PM"
+    "Saturday": "8 AM - 6 PM",
+    "Sunday": "8 AM - 6 PM"
    }
   },
   {
@@ -8234,6 +8255,27 @@
     "Friday": "9 AM - 8 PM",
     "Saturday": "9 AM - 6 PM",
     "Sunday": "9 AM - 6 PM"
+   }
+  },
+  {
+   "path": "us/ca/novato/922-diablo-ave",
+   "url": "https://salons.greatclips.com/us/ca/novato/922-diablo-ave",
+   "country": "US",
+   "street": "922 Diablo Ave",
+   "city": "Novato",
+   "state": "CA",
+   "zip": "94947",
+   "phone": "(415) 895-1861",
+   "lat": 38.102485,
+   "lng": -122.57175,
+   "hours": {
+    "Monday": "8:30 AM - 7 PM",
+    "Tuesday": "8:30 AM - 7 PM",
+    "Wednesday": "8:30 AM - 7 PM",
+    "Thursday": "8:30 AM - 7 PM",
+    "Friday": "8:30 AM - 7 PM",
+    "Saturday": "9 AM - 6 PM",
+    "Sunday": "9 AM - 5 PM"
    }
   },
   {
@@ -8626,11 +8668,11 @@
    "lat": 33.804992,
    "lng": -117.227535,
    "hours": {
-    "Monday": "8:30 AM - 8 PM",
-    "Tuesday": "8:30 AM - 8 PM",
-    "Wednesday": "8:30 AM - 8 PM",
-    "Thursday": "8:30 AM - 8 PM",
-    "Friday": "8:30 AM - 8 PM",
+    "Monday": "8:30 AM - 6 PM",
+    "Tuesday": "8:30 AM - 6 PM",
+    "Wednesday": "8:30 AM - 6 PM",
+    "Thursday": "8:30 AM - 6 PM",
+    "Friday": "8:30 AM - 6 PM",
     "Saturday": "8 AM - 6 PM",
     "Sunday": "8 AM - 6 PM"
    }
@@ -9592,13 +9634,13 @@
    "lat": 34.177377,
    "lng": -117.330265,
    "hours": {
-    "Monday": "9 AM - 5 PM",
-    "Tuesday": "9 AM - 5 PM",
-    "Wednesday": "9 AM - 5 PM",
-    "Thursday": "9 AM - 5 PM",
-    "Friday": "9 AM - 5 PM",
-    "Saturday": "8 AM - 4 PM",
-    "Sunday": "8 AM - 4 PM"
+    "Monday": "9 AM - 8 PM",
+    "Tuesday": "9 AM - 8 PM",
+    "Wednesday": "9 AM - 8 PM",
+    "Thursday": "9 AM - 8 PM",
+    "Friday": "9 AM - 8 PM",
+    "Saturday": "8 AM - 6 PM",
+    "Sunday": "8 AM - 6 PM"
    }
   },
   {
@@ -10054,11 +10096,11 @@
    "lat": 37.220617,
    "lng": -121.862001,
    "hours": {
-    "Monday": "9 AM - 8 PM",
-    "Tuesday": "9 AM - 8 PM",
-    "Wednesday": "9 AM - 8 PM",
-    "Thursday": "9 AM - 8 PM",
-    "Friday": "9 AM - 8 PM",
+    "Monday": "9 AM - 7 PM",
+    "Tuesday": "9 AM - 7 PM",
+    "Wednesday": "9 AM - 7 PM",
+    "Thursday": "9 AM - 7 PM",
+    "Friday": "9 AM - 7 PM",
     "Saturday": "8 AM - 7 PM",
     "Sunday": "9 AM - 6 PM"
    }
@@ -10585,7 +10627,7 @@
     "Thursday": "9 AM - 8 PM",
     "Friday": "9 AM - 8 PM",
     "Saturday": "8:30 AM - 6 PM",
-    "Sunday": "8:30 AM - 7:30 PM"
+    "Sunday": "8:30 AM - 7 PM"
    }
   },
   {
@@ -10810,11 +10852,11 @@
    "lat": 34.108185,
    "lng": -117.662983,
    "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
+    "Monday": "9 AM - 8 PM",
+    "Tuesday": "9 AM - 8 PM",
+    "Wednesday": "9 AM - 8 PM",
+    "Thursday": "9 AM - 8 PM",
+    "Friday": "9 AM - 8 PM",
     "Saturday": "9 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -14953,7 +14995,7 @@
     "Thursday": "8 AM - 7 PM",
     "Friday": "8 AM - 7 PM",
     "Saturday": "8 AM - 5 PM",
-    "Sunday": "10 AM - 4 PM"
+    "Sunday": "10 AM - 3 PM"
    }
   },
   {
@@ -15850,11 +15892,11 @@
    "lat": 28.560117,
    "lng": -81.822083,
    "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -16990,27 +17032,6 @@
     "Thursday": "8 AM - 7 PM",
     "Friday": "8 AM - 7 PM",
     "Saturday": "8 AM - 5 PM",
-    "Sunday": "9 AM - 5 PM"
-   }
-  },
-  {
-   "path": "us/fl/melbourne/3600-n-wickham-rd",
-   "url": "https://salons.greatclips.com/us/fl/melbourne/3600-n-wickham-rd",
-   "country": "US",
-   "street": "3600 N Wickham Rd",
-   "city": "Melbourne",
-   "state": "FL",
-   "zip": "32935",
-   "phone": "(321) 428-3701",
-   "lat": 28.163987,
-   "lng": -80.672414,
-   "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
-    "Saturday": "9 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
   },
@@ -20963,6 +20984,27 @@
    }
   },
   {
+   "path": "us/ga/augusta/3851-evans-to-locks-road",
+   "url": "https://salons.greatclips.com/us/ga/augusta/3851-evans-to-locks-road",
+   "country": "US",
+   "street": "3851 Evans to Locks Road",
+   "city": "Augusta",
+   "state": "GA",
+   "zip": "30907",
+   "phone": "(706) 750-0023",
+   "lat": 33.551681,
+   "lng": -82.088217,
+   "hours": {
+    "Monday": "9 AM - 8 PM",
+    "Tuesday": "9 AM - 8 PM",
+    "Wednesday": "9 AM - 8 PM",
+    "Thursday": "9 AM - 8 PM",
+    "Friday": "9 AM - 8 PM",
+    "Saturday": "9 AM - 6 PM",
+    "Sunday": "10 AM - 6 PM"
+   }
+  },
+  {
    "path": "us/ga/austell/1757-e-west-connector",
    "url": "https://salons.greatclips.com/us/ga/austell/1757-e-west-connector",
    "country": "US",
@@ -21336,7 +21378,7 @@
     "Wednesday": "8:30 AM - 7:30 PM",
     "Thursday": "8:30 AM - 7:30 PM",
     "Friday": "8:30 AM - 7:30 PM",
-    "Saturday": "8 AM - 5 PM",
+    "Saturday": "8 AM - 2 PM",
     "Sunday": "11 AM - 5 PM"
    }
   },
@@ -22150,11 +22192,11 @@
    "lat": 34.54983,
    "lng": -83.282631,
    "hours": {
-    "Monday": "10 AM - 6 PM",
-    "Tuesday": "10 AM - 6 PM",
-    "Wednesday": "10 AM - 6 PM",
-    "Thursday": "10 AM - 6 PM",
-    "Friday": "10 AM - 6 PM",
+    "Monday": "9 AM - 6 PM",
+    "Tuesday": "9 AM - 6 PM",
+    "Wednesday": "9 AM - 6 PM",
+    "Thursday": "9 AM - 6 PM",
+    "Friday": "9 AM - 6 PM",
     "Saturday": "9 AM - 6 PM",
     "Sunday": "12 PM - 5 PM"
    }
@@ -25016,16 +25058,16 @@
    }
   },
   {
-   "path": "us/ia/des-moines/2450-e-euclid-ave",
-   "url": "https://salons.greatclips.com/us/ia/des-moines/2450-e-euclid-ave",
+   "path": "us/ia/des-moines/2448-e-euclid-ave",
+   "url": "https://salons.greatclips.com/us/ia/des-moines/2448-e-euclid-ave",
    "country": "US",
-   "street": "2450 E Euclid Ave",
+   "street": "2448 E Euclid Ave",
    "city": "Des Moines",
    "state": "IA",
    "zip": "50317",
    "phone": "(515) 262-0345",
-   "lat": 41.62847,
-   "lng": -93.571894,
+   "lat": 41.628517,
+   "lng": -93.571663,
    "hours": {
     "Monday": "8 AM - 7 PM",
     "Tuesday": "8 AM - 7 PM",
@@ -26578,8 +26620,8 @@
    "state": "IL",
    "zip": "60103",
    "phone": "(630) 289-3230",
-   "lat": 41.973938,
-   "lng": -88.207588,
+   "lat": 41.972696,
+   "lng": -88.206118,
    "hours": {
     "Monday": "9 AM - 8 PM",
     "Tuesday": "9 AM - 8 PM",
@@ -26670,8 +26712,8 @@
     "Wednesday": "8 AM - 7 PM",
     "Thursday": "8 AM - 7 PM",
     "Friday": "8 AM - 7 PM",
-    "Saturday": "8 AM - 5 PM",
-    "Sunday": "8 AM - 2 PM"
+    "Saturday": "8 AM - 6 PM",
+    "Sunday": "8 AM - 3 PM"
    }
   },
   {
@@ -27904,11 +27946,11 @@
    "lat": 38.922387,
    "lng": -90.192514,
    "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8 AM - 5 PM",
     "Sunday": "9 AM - 4 PM"
    }
@@ -28114,34 +28156,13 @@
    "lat": 39.722494,
    "lng": -90.269439,
    "hours": {
-    "Monday": "9 AM - 6 PM",
-    "Tuesday": "9 AM - 6 PM",
-    "Wednesday": "9 AM - 6 PM",
-    "Thursday": "9 AM - 6 PM",
-    "Friday": "9 AM - 6 PM",
-    "Saturday": "8 AM - 5 PM",
-    "Sunday": "9 AM - 3 PM"
-   }
-  },
-  {
-   "path": "us/il/jerseyville/1600-s-state-st",
-   "url": "https://salons.greatclips.com/us/il/jerseyville/1600-s-state-st",
-   "country": "US",
-   "street": "1600 S State St",
-   "city": "Jerseyville",
-   "state": "IL",
-   "zip": "62052",
-   "phone": "(618) 498-1377",
-   "lat": 39.1019,
-   "lng": -90.313585,
-   "hours": {
-    "Monday": "10 AM - 6 PM",
-    "Tuesday": "10 AM - 6 PM",
-    "Wednesday": "10 AM - 6 PM",
-    "Thursday": "10 AM - 6 PM",
-    "Friday": "10 AM - 6 PM",
-    "Saturday": "9 AM - 5 PM",
-    "Sunday": "9 AM - 4 PM"
+    "Monday": "9 AM - 4 PM",
+    "Tuesday": "9 AM - 4 PM",
+    "Wednesday": "9 AM - 4 PM",
+    "Thursday": "9 AM - 4 PM",
+    "Friday": "9 AM - 4 PM",
+    "Saturday": "9 AM - 3 PM",
+    "Sunday": "12 AM - 12 AM"
    }
   },
   {
@@ -28408,13 +28429,13 @@
    "lat": 37.739499,
    "lng": -88.949593,
    "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
-    "Saturday": "9 AM - 6 PM",
-    "Sunday": "11 AM - 4 PM"
+    "Monday": "9 AM - 5 PM",
+    "Tuesday": "9 AM - 5 PM",
+    "Wednesday": "9 AM - 5 PM",
+    "Thursday": "9 AM - 5 PM",
+    "Friday": "9 AM - 5 PM",
+    "Saturday": "9 AM - 5 PM",
+    "Sunday": "12 AM - 12 AM"
    }
   },
   {
@@ -29059,11 +29080,11 @@
    "lat": 41.705478,
    "lng": -88.30418,
    "hours": {
-    "Monday": "8:30 AM - 8 PM",
-    "Tuesday": "8:30 AM - 8 PM",
-    "Wednesday": "8:30 AM - 8 PM",
-    "Thursday": "8:30 AM - 8 PM",
-    "Friday": "8:30 AM - 8 PM",
+    "Monday": "9 AM - 7 PM",
+    "Tuesday": "9 AM - 7 PM",
+    "Wednesday": "9 AM - 7 PM",
+    "Thursday": "9 AM - 7 PM",
+    "Friday": "9 AM - 7 PM",
     "Saturday": "8:30 AM - 5:30 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -29085,7 +29106,7 @@
     "Wednesday": "8:30 AM - 8 PM",
     "Thursday": "8:30 AM - 8 PM",
     "Friday": "8:30 AM - 8 PM",
-    "Saturday": "8 AM - 6 PM",
+    "Saturday": "8 AM - 5 PM",
     "Sunday": "9 AM - 5 PM"
    }
   },
@@ -29484,8 +29505,8 @@
     "Wednesday": "8 AM - 7 PM",
     "Thursday": "8 AM - 7 PM",
     "Friday": "8 AM - 7 PM",
-    "Saturday": "8 AM - 5 PM",
-    "Sunday": "8 AM - 2 PM"
+    "Saturday": "8 AM - 6 PM",
+    "Sunday": "8 AM - 3 PM"
    }
   },
   {
@@ -29526,8 +29547,8 @@
     "Wednesday": "8 AM - 7 PM",
     "Thursday": "8 AM - 7 PM",
     "Friday": "8 AM - 7 PM",
-    "Saturday": "8 AM - 5 PM",
-    "Sunday": "8 AM - 2 PM"
+    "Saturday": "8 AM - 6 PM",
+    "Sunday": "8 AM - 3 PM"
    }
   },
   {
@@ -31663,12 +31684,12 @@
    "lat": 39.584925,
    "lng": -86.102908,
    "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
-    "Saturday": "9 AM - 6 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
+    "Saturday": "8 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
   },
@@ -32713,11 +32734,11 @@
    "lat": 41.568598,
    "lng": -87.507218,
    "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
+    "Monday": "9 AM - 8 PM",
+    "Tuesday": "9 AM - 8 PM",
+    "Wednesday": "9 AM - 8 PM",
+    "Thursday": "9 AM - 8 PM",
+    "Friday": "9 AM - 8 PM",
     "Saturday": "8:30 AM - 5:30 PM",
     "Sunday": "9 AM - 4 PM"
    }
@@ -33899,27 +33920,6 @@
    }
   },
   {
-   "path": "us/ks/el-dorado/2733-w-central-ave",
-   "url": "https://salons.greatclips.com/us/ks/el-dorado/2733-w-central-ave",
-   "country": "US",
-   "street": "2733 W Central Ave",
-   "city": "El Dorado",
-   "state": "KS",
-   "zip": "67042",
-   "phone": "(316) 452-2884",
-   "lat": 37.816893,
-   "lng": -96.891449,
-   "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
-    "Saturday": "9 AM - 6 PM",
-    "Sunday": "10 AM - 5 PM"
-   }
-  },
-  {
    "path": "us/ks/emporia/2326-industrial-rd",
    "url": "https://salons.greatclips.com/us/ks/emporia/2326-industrial-rd",
    "country": "US",
@@ -34336,7 +34336,7 @@
     "Thursday": "9 AM - 7 PM",
     "Friday": "9 AM - 7 PM",
     "Saturday": "8 AM - 5 PM",
-    "Sunday": "10 AM - 4 PM"
+    "Sunday": "10 AM - 3 PM"
    }
   },
   {
@@ -34918,11 +34918,11 @@
    "lat": 37.729484,
    "lng": -97.463276,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "9 AM - 7 PM",
+    "Tuesday": "9 AM - 7 PM",
+    "Wednesday": "9 AM - 7 PM",
+    "Thursday": "9 AM - 7 PM",
+    "Friday": "9 AM - 7 PM",
     "Saturday": "9 AM - 6 PM",
     "Sunday": "10 AM - 6 PM"
    }
@@ -35254,11 +35254,11 @@
    "lat": 39.026383,
    "lng": -84.452225,
    "hours": {
-    "Monday": "8 AM - 7 PM",
-    "Tuesday": "8 AM - 7 PM",
-    "Wednesday": "8 AM - 7 PM",
-    "Thursday": "8 AM - 7 PM",
-    "Friday": "8 AM - 7 PM",
+    "Monday": "8:30 AM - 7 PM",
+    "Tuesday": "8:30 AM - 7 PM",
+    "Wednesday": "8:30 AM - 7 PM",
+    "Thursday": "8:30 AM - 7 PM",
+    "Friday": "8:30 AM - 7 PM",
     "Saturday": "9 AM - 6 PM",
     "Sunday": "9 AM - 4 PM"
    }
@@ -37858,11 +37858,11 @@
    "lat": 39.606201,
    "lng": -75.791365,
    "hours": {
-    "Monday": "10 AM - 6 PM",
-    "Tuesday": "10 AM - 6 PM",
-    "Wednesday": "10 AM - 6 PM",
-    "Thursday": "10 AM - 6 PM",
-    "Friday": "10 AM - 6 PM",
+    "Monday": "9 AM - 6 PM",
+    "Tuesday": "9 AM - 6 PM",
+    "Wednesday": "9 AM - 6 PM",
+    "Thursday": "9 AM - 6 PM",
+    "Friday": "9 AM - 6 PM",
     "Saturday": "8 AM - 5 PM",
     "Sunday": "9 AM - 4 PM"
    }
@@ -38488,11 +38488,11 @@
    "lat": 42.302847,
    "lng": -83.705987,
    "hours": {
-    "Monday": "10 AM - 7 PM",
-    "Tuesday": "10 AM - 7 PM",
-    "Wednesday": "10 AM - 7 PM",
-    "Thursday": "10 AM - 7 PM",
-    "Friday": "10 AM - 7 PM",
+    "Monday": "8:30 AM - 7 PM",
+    "Tuesday": "8:30 AM - 7 PM",
+    "Wednesday": "8:30 AM - 7 PM",
+    "Thursday": "8:30 AM - 7 PM",
+    "Friday": "8:30 AM - 7 PM",
     "Saturday": "9 AM - 6 PM",
     "Sunday": "10 AM - 5 PM"
    }
@@ -39795,7 +39795,7 @@
     "Wednesday": "9 AM - 7 PM",
     "Thursday": "9 AM - 7 PM",
     "Friday": "9 AM - 7 PM",
-    "Saturday": "9 AM - 3 PM",
+    "Saturday": "9 AM - 6 PM",
     "Sunday": "10 AM - 5 PM"
    }
   },
@@ -40168,11 +40168,11 @@
    "lat": 42.272307,
    "lng": -85.629433,
    "hours": {
-    "Monday": "10 AM - 6 PM",
-    "Tuesday": "10 AM - 6 PM",
-    "Wednesday": "10 AM - 6 PM",
-    "Thursday": "10 AM - 6 PM",
-    "Friday": "10 AM - 6 PM",
+    "Monday": "9 AM - 7 PM",
+    "Tuesday": "9 AM - 7 PM",
+    "Wednesday": "9 AM - 7 PM",
+    "Thursday": "9 AM - 7 PM",
+    "Friday": "9 AM - 7 PM",
     "Saturday": "8 AM - 5 PM",
     "Sunday": "10 AM - 3 PM"
    }
@@ -41008,11 +41008,11 @@
    "lat": 42.652982,
    "lng": -83.13391,
    "hours": {
-    "Monday": "9 AM - 8 PM",
-    "Tuesday": "9 AM - 8 PM",
-    "Wednesday": "9 AM - 8 PM",
-    "Thursday": "9 AM - 8 PM",
-    "Friday": "9 AM - 8 PM",
+    "Monday": "9 AM - 7 PM",
+    "Tuesday": "9 AM - 7 PM",
+    "Wednesday": "9 AM - 7 PM",
+    "Thursday": "9 AM - 7 PM",
+    "Friday": "9 AM - 7 PM",
     "Saturday": "9 AM - 7 PM",
     "Sunday": "10 AM - 5 PM"
    }
@@ -42139,8 +42139,8 @@
    "state": "MN",
    "zip": "55309",
    "phone": "(763) 263-9800",
-   "lat": 45.334185,
-   "lng": -93.734677,
+   "lat": 45.334247,
+   "lng": -93.734402,
    "hours": {
     "Monday": "8 AM - 7 PM",
     "Tuesday": "8 AM - 7 PM",
@@ -42814,11 +42814,11 @@
    "lat": 44.911385,
    "lng": -93.353187,
    "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
+    "Monday": "10 AM - 6 PM",
+    "Tuesday": "10 AM - 6 PM",
+    "Wednesday": "10 AM - 6 PM",
+    "Thursday": "10 AM - 6 PM",
+    "Friday": "10 AM - 6 PM",
     "Saturday": "8 AM - 5 PM",
     "Sunday": "9 AM - 4 PM"
    }
@@ -43255,11 +43255,11 @@
    "lat": 45.093855,
    "lng": -93.426489,
    "hours": {
-    "Monday": "10 AM - 7 PM",
-    "Tuesday": "10 AM - 7 PM",
-    "Wednesday": "10 AM - 7 PM",
-    "Thursday": "10 AM - 7 PM",
-    "Friday": "10 AM - 7 PM",
+    "Monday": "10 AM - 6 PM",
+    "Tuesday": "10 AM - 6 PM",
+    "Wednesday": "10 AM - 6 PM",
+    "Thursday": "10 AM - 6 PM",
+    "Friday": "10 AM - 6 PM",
     "Saturday": "9 AM - 5 PM",
     "Sunday": "9 AM - 4 PM"
    }
@@ -43297,11 +43297,11 @@
    "lat": 45.134704,
    "lng": -93.477307,
    "hours": {
-    "Monday": "8 AM - 7 PM",
-    "Tuesday": "8 AM - 7 PM",
-    "Wednesday": "8 AM - 7 PM",
-    "Thursday": "8 AM - 7 PM",
-    "Friday": "8 AM - 7 PM",
+    "Monday": "8 AM - 8 PM",
+    "Tuesday": "8 AM - 8 PM",
+    "Wednesday": "8 AM - 8 PM",
+    "Thursday": "8 AM - 8 PM",
+    "Friday": "8 AM - 8 PM",
     "Saturday": "8 AM - 5 PM",
     "Sunday": "9 AM - 4 PM"
    }
@@ -43570,13 +43570,13 @@
    "lat": 44.542924,
    "lng": -93.564406,
    "hours": {
-    "Monday": "8 AM - 7 PM",
-    "Tuesday": "8 AM - 7 PM",
-    "Wednesday": "8 AM - 7 PM",
-    "Thursday": "8 AM - 7 PM",
-    "Friday": "8 AM - 7 PM",
+    "Monday": "8 AM - 8 PM",
+    "Tuesday": "8 AM - 8 PM",
+    "Wednesday": "8 AM - 8 PM",
+    "Thursday": "8 AM - 8 PM",
+    "Friday": "8 AM - 8 PM",
     "Saturday": "8 AM - 5 PM",
-    "Sunday": "8 AM - 3 PM"
+    "Sunday": "8 AM - 4 PM"
    }
   },
   {
@@ -43612,11 +43612,11 @@
    "lat": 44.453195,
    "lng": -93.162418,
    "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8 AM - 5 PM",
     "Sunday": "9 AM - 4 PM"
    }
@@ -44898,7 +44898,7 @@
     "Wednesday": "10 AM - 6 PM",
     "Thursday": "10 AM - 6 PM",
     "Friday": "10 AM - 6 PM",
-    "Saturday": "9 AM - 5 PM",
+    "Saturday": "9 AM - 6 PM",
     "Sunday": "12 AM - 12 AM"
    }
   },
@@ -45334,11 +45334,11 @@
    "lat": 39.048352,
    "lng": -94.354606,
    "hours": {
-    "Monday": "8 AM - 7 PM",
-    "Tuesday": "8 AM - 7 PM",
-    "Wednesday": "8 AM - 7 PM",
-    "Thursday": "8 AM - 7 PM",
-    "Friday": "8 AM - 7 PM",
+    "Monday": "9 AM - 7 PM",
+    "Tuesday": "9 AM - 7 PM",
+    "Wednesday": "9 AM - 7 PM",
+    "Thursday": "9 AM - 7 PM",
+    "Friday": "9 AM - 7 PM",
     "Saturday": "8 AM - 5 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -45382,7 +45382,7 @@
     "Thursday": "9 AM - 6 PM",
     "Friday": "9 AM - 6 PM",
     "Saturday": "9 AM - 6 PM",
-    "Sunday": "12 AM - 12 AM"
+    "Sunday": "12 PM - 5 PM"
    }
   },
   {
@@ -46237,12 +46237,12 @@
    "lat": 38.674802,
    "lng": -90.411986,
    "hours": {
-    "Monday": "10 AM - 6 PM",
-    "Tuesday": "10 AM - 6 PM",
-    "Wednesday": "10 AM - 6 PM",
-    "Thursday": "10 AM - 6 PM",
-    "Friday": "10 AM - 6 PM",
-    "Saturday": "8 AM - 4 PM",
+    "Monday": "9 AM - 7 PM",
+    "Tuesday": "9 AM - 7 PM",
+    "Wednesday": "9 AM - 7 PM",
+    "Thursday": "9 AM - 7 PM",
+    "Friday": "9 AM - 7 PM",
+    "Saturday": "8 AM - 5 PM",
     "Sunday": "9 AM - 3 PM"
    }
   },
@@ -46405,11 +46405,11 @@
    "lat": 37.182003,
    "lng": -93.3573,
    "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
+    "Monday": "8:30 AM - 7:30 PM",
+    "Tuesday": "8:30 AM - 7:30 PM",
+    "Wednesday": "8:30 AM - 7:30 PM",
+    "Thursday": "8:30 AM - 7:30 PM",
+    "Friday": "8:30 AM - 7:30 PM",
     "Saturday": "8 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -47308,11 +47308,11 @@
    "lat": 35.901367,
    "lng": -79.950494,
    "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8:30 AM - 6 PM",
     "Sunday": "10 AM - 5 PM"
    }
@@ -47368,8 +47368,8 @@
    "state": "NC",
    "zip": "28803",
    "phone": "(828) 298-5100",
-   "lat": 35.575236,
-   "lng": -82.514886,
+   "lat": 35.575365,
+   "lng": -82.515215,
    "hours": {
     "Monday": "9 AM - 7 PM",
     "Tuesday": "9 AM - 7 PM",
@@ -47518,11 +47518,11 @@
    "lat": 33.974114,
    "lng": -78.132494,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8:30 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -49093,11 +49093,11 @@
    "lat": 34.391999,
    "lng": -77.678411,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8:30 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -49114,13 +49114,13 @@
    "lat": 34.450719,
    "lng": -77.604356,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8:30 AM - 6 PM",
-    "Sunday": "9 AM - 5 PM"
+    "Sunday": "9 AM - 6 PM"
    }
   },
   {
@@ -49198,11 +49198,11 @@
    "lat": 35.305757,
    "lng": -82.454619,
    "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "9 AM - 6 PM",
     "Sunday": "10 AM - 4 PM"
    }
@@ -49492,11 +49492,11 @@
    "lat": 34.800661,
    "lng": -77.441432,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8:30 AM - 6 PM",
     "Sunday": "9 AM - 6 PM"
    }
@@ -49660,11 +49660,11 @@
    "lat": 34.218929,
    "lng": -78.019516,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8:30 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -50038,11 +50038,11 @@
    "lat": 35.553607,
    "lng": -80.856022,
    "hours": {
-    "Monday": "8:30 AM - 7:30 PM",
-    "Tuesday": "8:30 AM - 7:30 PM",
-    "Wednesday": "8:30 AM - 7:30 PM",
-    "Thursday": "8:30 AM - 7:30 PM",
-    "Friday": "8:30 AM - 7:30 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "9 AM - 6 PM",
     "Sunday": "11 AM - 5 PM"
    }
@@ -50080,11 +50080,11 @@
    "lat": 34.735569,
    "lng": -76.792497,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8:30 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -50185,11 +50185,11 @@
    "lat": 35.101061,
    "lng": -77.100345,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8:30 AM - 6 PM",
     "Sunday": "9 AM - 6 PM"
    }
@@ -50227,11 +50227,11 @@
    "lat": 33.903405,
    "lng": -78.440684,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8:30 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -50289,6 +50289,27 @@
    "phone": "(919) 307-4040",
    "lat": 35.816486,
    "lng": -78.692338,
+   "hours": {
+    "Monday": "9 AM - 7 PM",
+    "Tuesday": "9 AM - 7 PM",
+    "Wednesday": "9 AM - 7 PM",
+    "Thursday": "9 AM - 7 PM",
+    "Friday": "9 AM - 7 PM",
+    "Saturday": "9 AM - 6 PM",
+    "Sunday": "10 AM - 5 PM"
+   }
+  },
+  {
+   "path": "us/nc/raleigh/424-e-six-forks-rd",
+   "url": "https://salons.greatclips.com/us/nc/raleigh/424-e-six-forks-rd",
+   "country": "US",
+   "street": "424 E Six Forks Rd",
+   "city": "Raleigh",
+   "state": "NC",
+   "zip": "27609",
+   "phone": "(919) 301-8061",
+   "lat": 35.819965,
+   "lng": -78.625972,
    "hours": {
     "Monday": "9 AM - 7 PM",
     "Tuesday": "9 AM - 7 PM",
@@ -50710,11 +50731,11 @@
    "lat": 33.97847,
    "lng": -78.374669,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8:30 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -50815,11 +50836,11 @@
    "lat": 33.942817,
    "lng": -78.029461,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8:30 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -51172,11 +51193,11 @@
    "lat": 34.196267,
    "lng": -77.889728,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8:30 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -51193,11 +51214,11 @@
    "lat": 34.23511,
    "lng": -77.874582,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "9 AM - 8 PM",
+    "Tuesday": "9 AM - 8 PM",
+    "Wednesday": "9 AM - 8 PM",
+    "Thursday": "9 AM - 8 PM",
+    "Friday": "9 AM - 8 PM",
     "Saturday": "8:30 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -51214,11 +51235,11 @@
    "lat": 34.173964,
    "lng": -77.926235,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "8:30 AM - 8 PM",
+    "Tuesday": "8:30 AM - 8 PM",
+    "Wednesday": "8:30 AM - 8 PM",
+    "Thursday": "8:30 AM - 8 PM",
+    "Friday": "8:30 AM - 8 PM",
     "Saturday": "8:30 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -51235,11 +51256,11 @@
    "lat": 34.124753,
    "lng": -77.902462,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8:30 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -51256,11 +51277,11 @@
    "lat": 34.236735,
    "lng": -77.831082,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8:30 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -51277,11 +51298,11 @@
    "lat": 34.297843,
    "lng": -77.790937,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "9 AM - 8 PM",
+    "Tuesday": "9 AM - 8 PM",
+    "Wednesday": "9 AM - 8 PM",
+    "Thursday": "9 AM - 8 PM",
+    "Friday": "9 AM - 8 PM",
     "Saturday": "8:30 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -54915,8 +54936,8 @@
     "Wednesday": "9 AM - 8 PM",
     "Thursday": "9 AM - 8 PM",
     "Friday": "9 AM - 8 PM",
-    "Saturday": "8 AM - 7 PM",
-    "Sunday": "8 AM - 7 PM"
+    "Saturday": "9 AM - 6 PM",
+    "Sunday": "9 AM - 6 PM"
    }
   },
   {
@@ -55309,11 +55330,11 @@
    "lat": 36.239864,
    "lng": -115.210142,
    "hours": {
-    "Monday": "8 AM - 8 PM",
-    "Tuesday": "8 AM - 8 PM",
-    "Wednesday": "8 AM - 8 PM",
-    "Thursday": "8 AM - 8 PM",
-    "Friday": "8 AM - 8 PM",
+    "Monday": "10 AM - 7 PM",
+    "Tuesday": "10 AM - 7 PM",
+    "Wednesday": "10 AM - 7 PM",
+    "Thursday": "10 AM - 7 PM",
+    "Friday": "10 AM - 7 PM",
     "Saturday": "8 AM - 7 PM",
     "Sunday": "8 AM - 6 PM"
    }
@@ -55579,8 +55600,8 @@
    "state": "NV",
    "zip": "89145",
    "phone": "(702) 333-1677",
-   "lat": 36.161829,
-   "lng": -115.245276,
+   "lat": 36.161722,
+   "lng": -115.245362,
    "hours": {
     "Monday": "8 AM - 8 PM",
     "Tuesday": "8 AM - 8 PM",
@@ -55792,13 +55813,13 @@
    "lat": 36.216044,
    "lng": -115.993351,
    "hours": {
-    "Monday": "8 AM - 8 PM",
-    "Tuesday": "8 AM - 8 PM",
-    "Wednesday": "8 AM - 8 PM",
-    "Thursday": "8 AM - 8 PM",
-    "Friday": "8 AM - 8 PM",
-    "Saturday": "8 AM - 7 PM",
-    "Sunday": "8 AM - 7 PM"
+    "Monday": "7:30 AM - 7:30 PM",
+    "Tuesday": "7:30 AM - 7:30 PM",
+    "Wednesday": "7:30 AM - 7:30 PM",
+    "Thursday": "7:30 AM - 7:30 PM",
+    "Friday": "7:30 AM - 7:30 PM",
+    "Saturday": "7:30 AM - 6:30 PM",
+    "Sunday": "7:30 AM - 6 PM"
    }
   },
   {
@@ -57750,7 +57771,7 @@
     "Wednesday": "9 AM - 7:30 PM",
     "Thursday": "9 AM - 7:30 PM",
     "Friday": "9 AM - 7:30 PM",
-    "Saturday": "9 AM - 6 PM",
+    "Saturday": "8 AM - 5 PM",
     "Sunday": "9 AM - 4 PM"
    }
   },
@@ -57835,7 +57856,7 @@
     "Thursday": "9 AM - 7:30 PM",
     "Friday": "9 AM - 7:30 PM",
     "Saturday": "8 AM - 5 PM",
-    "Sunday": "9 AM - 4 PM"
+    "Sunday": "11 AM - 4 PM"
    }
   },
   {
@@ -57855,8 +57876,8 @@
     "Wednesday": "8 AM - 7 PM",
     "Thursday": "8 AM - 7 PM",
     "Friday": "8 AM - 7 PM",
-    "Saturday": "9 AM - 6 PM",
-    "Sunday": "10 AM - 5 PM"
+    "Saturday": "8 AM - 5 PM",
+    "Sunday": "9 AM - 4 PM"
    }
   },
   {
@@ -60955,8 +60976,8 @@
    "state": "OH",
    "zip": "44134",
    "phone": "(440) 885-3691",
-   "lat": 41.359588,
-   "lng": -81.685444,
+   "lat": 41.359424,
+   "lng": -81.68545,
    "hours": {
     "Monday": "9 AM - 7 PM",
     "Tuesday": "9 AM - 7 PM",
@@ -61609,11 +61630,11 @@
    "lat": 41.689591,
    "lng": -83.725159,
    "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
+    "Monday": "9 AM - 8 PM",
+    "Tuesday": "9 AM - 8 PM",
+    "Wednesday": "9 AM - 8 PM",
+    "Thursday": "9 AM - 8 PM",
+    "Friday": "9 AM - 8 PM",
     "Saturday": "9 AM - 6 PM",
     "Sunday": "10 AM - 5 PM"
    }
@@ -61756,11 +61777,11 @@
    "lat": 41.704671,
    "lng": -83.587821,
    "hours": {
-    "Monday": "8 AM - 8 PM",
-    "Tuesday": "8 AM - 8 PM",
-    "Wednesday": "8 AM - 8 PM",
-    "Thursday": "8 AM - 8 PM",
-    "Friday": "8 AM - 8 PM",
+    "Monday": "9 AM - 8 PM",
+    "Tuesday": "9 AM - 8 PM",
+    "Wednesday": "9 AM - 8 PM",
+    "Thursday": "9 AM - 8 PM",
+    "Friday": "9 AM - 8 PM",
     "Saturday": "8 AM - 5 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -62071,11 +62092,11 @@
    "lat": 39.524716,
    "lng": -83.457284,
    "hours": {
-    "Monday": "9 AM - 7:30 PM",
-    "Tuesday": "9 AM - 7:30 PM",
-    "Wednesday": "9 AM - 7:30 PM",
-    "Thursday": "9 AM - 7:30 PM",
-    "Friday": "9 AM - 7:30 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "9 AM - 6 PM",
     "Sunday": "9 AM - 4 PM"
    }
@@ -63709,13 +63730,13 @@
    "lat": 44.10513,
    "lng": -121.307152,
    "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
-    "Saturday": "9 AM - 6 PM",
-    "Sunday": "9 AM - 5 PM"
+    "Monday": "9 AM - 5 PM",
+    "Tuesday": "9 AM - 5 PM",
+    "Wednesday": "9 AM - 5 PM",
+    "Thursday": "9 AM - 5 PM",
+    "Friday": "9 AM - 5 PM",
+    "Sunday": "9 AM - 5 PM",
+    "Saturday": "9 AM - 6 PM"
    }
   },
   {
@@ -64114,7 +64135,7 @@
     "Thursday": "9 AM - 5 PM",
     "Friday": "9 AM - 5 PM",
     "Saturday": "10 AM - 5 PM",
-    "Sunday": "10 AM - 2:30 PM"
+    "Sunday": "10 AM - 3 PM"
    }
   },
   {
@@ -65189,27 +65210,6 @@
    }
   },
   {
-   "path": "us/pa/carlisle/950-walnut-bottom-rd",
-   "url": "https://salons.greatclips.com/us/pa/carlisle/950-walnut-bottom-rd",
-   "country": "US",
-   "street": "950 Walnut Bottom Rd",
-   "city": "Carlisle",
-   "state": "PA",
-   "zip": "17015",
-   "phone": "(717) 706-3692",
-   "lat": 40.182361,
-   "lng": -77.212749,
-   "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
-    "Saturday": "9 AM - 6 PM",
-    "Sunday": "10 AM - 4 PM"
-   }
-  },
-  {
    "path": "us/pa/chalfont/4275-county-line-rd",
    "url": "https://salons.greatclips.com/us/pa/chalfont/4275-county-line-rd",
    "country": "US",
@@ -65746,11 +65746,11 @@
    "lat": 41.351971,
    "lng": -79.721726,
    "hours": {
-    "Monday": "10 AM - 6 PM",
-    "Tuesday": "10 AM - 6 PM",
-    "Wednesday": "10 AM - 6 PM",
-    "Thursday": "10 AM - 6 PM",
-    "Friday": "10 AM - 6 PM",
+    "Monday": "10 AM - 5 PM",
+    "Tuesday": "10 AM - 5 PM",
+    "Wednesday": "10 AM - 5 PM",
+    "Thursday": "10 AM - 5 PM",
+    "Friday": "10 AM - 5 PM",
     "Saturday": "9 AM - 6 PM",
     "Sunday": "10 AM - 4 PM"
    }
@@ -65851,11 +65851,11 @@
    "lat": 40.561521,
    "lng": -76.010233,
    "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8 AM - 6 PM",
     "Sunday": "9 AM - 4 PM"
    }
@@ -65893,13 +65893,13 @@
    "lat": 39.770183,
    "lng": -76.958427,
    "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8 AM - 5 PM",
-    "Sunday": "9 AM - 3 PM"
+    "Sunday": "9 AM - 4 PM"
    }
   },
   {
@@ -66103,11 +66103,11 @@
    "lat": 40.813397,
    "lng": -79.550068,
    "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
+    "Monday": "9 AM - 8 PM",
+    "Tuesday": "9 AM - 8 PM",
+    "Wednesday": "9 AM - 8 PM",
+    "Thursday": "9 AM - 8 PM",
+    "Friday": "9 AM - 8 PM",
     "Saturday": "8:30 AM - 5:30 PM",
     "Sunday": "10 AM - 4 PM"
    }
@@ -67447,11 +67447,11 @@
    "lat": 40.568345,
    "lng": -79.803857,
    "hours": {
-    "Monday": "8 AM - 7 PM",
-    "Tuesday": "8 AM - 7 PM",
-    "Wednesday": "8 AM - 7 PM",
-    "Thursday": "8 AM - 7 PM",
-    "Friday": "8 AM - 7 PM",
+    "Monday": "9 AM - 7 PM",
+    "Tuesday": "9 AM - 7 PM",
+    "Wednesday": "9 AM - 7 PM",
+    "Thursday": "9 AM - 7 PM",
+    "Friday": "9 AM - 7 PM",
     "Saturday": "8 AM - 5 PM",
     "Sunday": "9 AM - 4 PM"
    }
@@ -68035,11 +68035,11 @@
    "lat": 32.427599,
    "lng": -80.72991,
    "hours": {
-    "Monday": "9 AM - 5 PM",
-    "Tuesday": "9 AM - 5 PM",
-    "Wednesday": "9 AM - 5 PM",
-    "Thursday": "9 AM - 5 PM",
-    "Friday": "9 AM - 5 PM",
+    "Monday": "9 AM - 3 PM",
+    "Tuesday": "9 AM - 3 PM",
+    "Wednesday": "9 AM - 3 PM",
+    "Thursday": "9 AM - 3 PM",
+    "Friday": "9 AM - 3 PM",
     "Saturday": "9 AM - 4 PM",
     "Sunday": "10 AM - 4 PM"
    }
@@ -68896,12 +68896,12 @@
    "lat": 32.310378,
    "lng": -80.975383,
    "hours": {
-    "Monday": "9 AM - 5 PM",
-    "Tuesday": "9 AM - 5 PM",
-    "Wednesday": "9 AM - 5 PM",
-    "Thursday": "9 AM - 5 PM",
-    "Friday": "9 AM - 5 PM",
-    "Saturday": "9 AM - 3 PM",
+    "Monday": "9 AM - 4 PM",
+    "Tuesday": "9 AM - 4 PM",
+    "Wednesday": "9 AM - 4 PM",
+    "Thursday": "9 AM - 4 PM",
+    "Friday": "9 AM - 4 PM",
+    "Saturday": "9 AM - 4 PM",
     "Sunday": "10 AM - 4 PM"
    }
   },
@@ -70140,7 +70140,7 @@
     "Wednesday": "11 AM - 7 PM",
     "Thursday": "11 AM - 7 PM",
     "Friday": "11 AM - 7 PM",
-    "Saturday": "9 AM - 5 PM",
+    "Saturday": "9 AM - 3 PM",
     "Sunday": "12 AM - 12 AM"
    }
   },
@@ -71778,8 +71778,8 @@
     "Wednesday": "8 AM - 7 PM",
     "Thursday": "8 AM - 7 PM",
     "Friday": "8 AM - 7 PM",
-    "Saturday": "8 AM - 5 PM",
-    "Sunday": "10 AM - 3:30 PM"
+    "Saturday": "9 AM - 9 PM",
+    "Sunday": "10 AM - 4 PM"
    }
   },
   {
@@ -72949,11 +72949,11 @@
    "lat": 33.102671,
    "lng": -97.226882,
    "hours": {
-    "Monday": "9 AM - 8 PM",
-    "Tuesday": "9 AM - 8 PM",
-    "Wednesday": "9 AM - 8 PM",
-    "Thursday": "9 AM - 8 PM",
-    "Friday": "9 AM - 8 PM",
+    "Monday": "8 AM - 8 PM",
+    "Tuesday": "8 AM - 8 PM",
+    "Wednesday": "8 AM - 8 PM",
+    "Thursday": "8 AM - 8 PM",
+    "Friday": "8 AM - 8 PM",
     "Saturday": "9 AM - 7 PM",
     "Sunday": "9 AM - 6 PM"
    }
@@ -73324,8 +73324,8 @@
    "state": "TX",
    "zip": "78731",
    "phone": "(512) 231-1325",
-   "lat": 30.353125,
-   "lng": -97.754082,
+   "lat": 30.353096,
+   "lng": -97.75421,
    "hours": {
     "Monday": "9 AM - 8 PM",
     "Tuesday": "9 AM - 8 PM",
@@ -77212,11 +77212,11 @@
    "lat": 32.571002,
    "lng": -96.308458,
    "hours": {
-    "Monday": "8:30 AM - 7:30 PM",
-    "Tuesday": "8:30 AM - 7:30 PM",
-    "Wednesday": "8:30 AM - 7:30 PM",
-    "Thursday": "8:30 AM - 7:30 PM",
-    "Friday": "8:30 AM - 7:30 PM",
+    "Monday": "8 AM - 7 PM",
+    "Tuesday": "8 AM - 7 PM",
+    "Wednesday": "8 AM - 7 PM",
+    "Thursday": "8 AM - 7 PM",
+    "Friday": "8 AM - 7 PM",
     "Saturday": "8 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
@@ -78688,7 +78688,7 @@
     "Thursday": "9 AM - 7:30 PM",
     "Friday": "9 AM - 7:30 PM",
     "Saturday": "9 AM - 6 PM",
-    "Sunday": "9 AM - 5 PM"
+    "Sunday": "9 AM - 4:30 PM"
    }
   },
   {
@@ -81769,12 +81769,12 @@
    "lat": 32.415302,
    "lng": -96.841767,
    "hours": {
-    "Monday": "9 AM - 6 PM",
-    "Tuesday": "9 AM - 6 PM",
-    "Wednesday": "9 AM - 6 PM",
-    "Thursday": "9 AM - 6 PM",
-    "Friday": "9 AM - 6 PM",
-    "Saturday": "9 AM - 5 PM",
+    "Monday": "9 AM - 7 PM",
+    "Tuesday": "9 AM - 7 PM",
+    "Wednesday": "9 AM - 7 PM",
+    "Thursday": "9 AM - 7 PM",
+    "Friday": "9 AM - 7 PM",
+    "Saturday": "9 AM - 6 PM",
     "Sunday": "10 AM - 5 PM"
    }
   },
@@ -81986,27 +81986,6 @@
     "Friday": "9 AM - 8 PM",
     "Saturday": "9 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
-   }
-  },
-  {
-   "path": "us/tx/wylie/430-s-hwy-78",
-   "url": "https://salons.greatclips.com/us/tx/wylie/430-s-hwy-78",
-   "country": "US",
-   "street": "430 S Hwy 78",
-   "city": "Wylie",
-   "state": "TX",
-   "zip": "75098",
-   "phone": "(972) 886-8403",
-   "lat": 33.009128,
-   "lng": -96.545509,
-   "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
-    "Saturday": "9 AM - 6 PM",
-    "Sunday": "10 AM - 5 PM"
    }
   },
   {
@@ -83848,11 +83827,11 @@
    "lat": 37.365783,
    "lng": -78.843926,
    "hours": {
-    "Monday": "9 AM - 7 PM",
-    "Tuesday": "9 AM - 7 PM",
-    "Wednesday": "9 AM - 7 PM",
-    "Thursday": "9 AM - 7 PM",
-    "Friday": "9 AM - 7 PM",
+    "Monday": "9 AM - 6 PM",
+    "Tuesday": "9 AM - 6 PM",
+    "Wednesday": "9 AM - 6 PM",
+    "Thursday": "9 AM - 6 PM",
+    "Friday": "9 AM - 6 PM",
     "Saturday": "9 AM - 5 PM",
     "Sunday": "12 AM - 12 AM"
    }
@@ -84436,11 +84415,11 @@
    "lat": 37.673824,
    "lng": -77.462784,
    "hours": {
-    "Monday": "9 AM - 8 PM",
-    "Tuesday": "9 AM - 8 PM",
-    "Wednesday": "9 AM - 8 PM",
-    "Thursday": "9 AM - 8 PM",
-    "Friday": "9 AM - 8 PM",
+    "Monday": "8:30 AM - 7 PM",
+    "Tuesday": "8:30 AM - 7 PM",
+    "Wednesday": "8:30 AM - 7 PM",
+    "Thursday": "8:30 AM - 7 PM",
+    "Friday": "8:30 AM - 7 PM",
     "Saturday": "9 AM - 7 PM",
     "Sunday": "12 PM - 6 PM"
    }
@@ -84903,8 +84882,8 @@
     "Wednesday": "10 AM - 6 PM",
     "Thursday": "10 AM - 6 PM",
     "Friday": "10 AM - 6 PM",
-    "Sunday": "10 AM - 6 PM",
-    "Saturday": "9 AM - 7 PM"
+    "Saturday": "10 AM - 6 PM",
+    "Sunday": "10 AM - 6 PM"
    }
   },
   {
@@ -85423,12 +85402,12 @@
    "lat": 36.875947,
    "lng": -76.038637,
    "hours": {
-    "Monday": "9 AM - 6 PM",
-    "Tuesday": "9 AM - 6 PM",
-    "Wednesday": "9 AM - 6 PM",
-    "Thursday": "9 AM - 6 PM",
-    "Friday": "9 AM - 6 PM",
-    "Saturday": "9 AM - 6 PM",
+    "Monday": "9 AM - 7 PM",
+    "Tuesday": "9 AM - 7 PM",
+    "Wednesday": "9 AM - 7 PM",
+    "Thursday": "9 AM - 7 PM",
+    "Friday": "9 AM - 7 PM",
+    "Saturday": "10 AM - 6 PM",
     "Sunday": "10 AM - 5 PM"
    }
   },
@@ -85549,12 +85528,12 @@
    "lat": 36.822199,
    "lng": -76.149497,
    "hours": {
-    "Monday": "10 AM - 6 PM",
-    "Tuesday": "10 AM - 6 PM",
-    "Wednesday": "10 AM - 6 PM",
-    "Thursday": "10 AM - 6 PM",
-    "Friday": "10 AM - 6 PM",
-    "Saturday": "10 AM - 6 PM",
+    "Monday": "9 AM - 6 PM",
+    "Tuesday": "9 AM - 6 PM",
+    "Wednesday": "9 AM - 6 PM",
+    "Thursday": "9 AM - 6 PM",
+    "Friday": "9 AM - 6 PM",
+    "Saturday": "9 AM - 7 PM",
     "Sunday": "10 AM - 6 PM"
    }
   },
@@ -86344,8 +86323,8 @@
    "state": "WA",
    "zip": "98332",
    "phone": "(253) 853-3338",
-   "lat": 47.36141,
-   "lng": -122.605402,
+   "lat": 47.361476,
+   "lng": -122.605837,
    "hours": {
     "Monday": "8 AM - 7 PM",
     "Tuesday": "8 AM - 7 PM",
@@ -86452,12 +86431,12 @@
    "lat": 47.759281,
    "lng": -122.247745,
    "hours": {
-    "Monday": "10 AM - 6 PM",
-    "Tuesday": "10 AM - 6 PM",
-    "Wednesday": "10 AM - 6 PM",
-    "Thursday": "10 AM - 6 PM",
-    "Friday": "10 AM - 6 PM",
-    "Saturday": "10 AM - 6 PM",
+    "Monday": "9 AM - 6 PM",
+    "Tuesday": "9 AM - 6 PM",
+    "Wednesday": "9 AM - 6 PM",
+    "Thursday": "9 AM - 6 PM",
+    "Friday": "9 AM - 6 PM",
+    "Saturday": "9 AM - 6 PM",
     "Sunday": "9 AM - 5 PM"
    }
   },
@@ -86746,11 +86725,11 @@
    "lat": 48.936771,
    "lng": -122.483583,
    "hours": {
-    "Monday": "8 AM - 7 PM",
-    "Tuesday": "8 AM - 7 PM",
-    "Wednesday": "8 AM - 7 PM",
-    "Thursday": "8 AM - 7 PM",
-    "Friday": "8 AM - 7 PM",
+    "Monday": "9 AM - 7 PM",
+    "Tuesday": "9 AM - 7 PM",
+    "Wednesday": "9 AM - 7 PM",
+    "Thursday": "9 AM - 7 PM",
+    "Friday": "9 AM - 7 PM",
     "Saturday": "8 AM - 5 PM",
     "Sunday": "10 AM - 3 PM"
    }
@@ -88452,7 +88431,7 @@
     "Wednesday": "9 AM - 7 PM",
     "Thursday": "9 AM - 7 PM",
     "Friday": "9 AM - 7 PM",
-    "Saturday": "8 AM - 5 PM",
+    "Saturday": "9 AM - 5 PM",
     "Sunday": "9 AM - 2 PM"
    }
   },
@@ -88468,11 +88447,11 @@
    "lat": 42.939807,
    "lng": -88.861354,
    "hours": {
-    "Monday": "8:30 AM - 7 PM",
-    "Tuesday": "8:30 AM - 7 PM",
-    "Wednesday": "8:30 AM - 7 PM",
-    "Thursday": "8:30 AM - 7 PM",
-    "Friday": "8:30 AM - 7 PM",
+    "Monday": "9 AM - 7 PM",
+    "Tuesday": "9 AM - 7 PM",
+    "Wednesday": "9 AM - 7 PM",
+    "Thursday": "9 AM - 7 PM",
+    "Friday": "9 AM - 7 PM",
     "Saturday": "8 AM - 5 PM",
     "Sunday": "9 AM - 3 PM"
    }

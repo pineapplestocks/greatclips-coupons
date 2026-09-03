@@ -1,6 +1,6 @@
 {
  "total_cities": 2550,
- "total_metros": 646,
+ "total_metros": 645,
  "metros": {
   "AK/eagle-river": {
    "name": "Anchorage",
@@ -844,8 +844,8 @@
    "states": [
     "CA"
    ],
-   "salon_count": 33,
-   "city_count": 28,
+   "salon_count": 34,
+   "city_count": 29,
    "reach_mi": 35.0,
    "city_keys": [
     "CA/danville",
@@ -857,6 +857,7 @@
     "CA/burlingame",
     "CA/castro-valley",
     "CA/clayton",
+    "CA/concord",
     "CA/dublin",
     "CA/el-cerrito",
     "CA/foster-city",
@@ -1081,15 +1082,15 @@
    ]
   },
   "CA/napa": {
-   "name": "Concord",
-   "display_name": "Concord, CA",
+   "name": "Vallejo",
+   "display_name": "Vallejo, CA",
    "anchor_city": "Napa",
    "anchor_state": "CA",
    "states": [
     "CA"
    ],
-   "salon_count": 12,
-   "city_count": 8,
+   "salon_count": 13,
+   "city_count": 9,
    "reach_mi": 35.0,
    "city_keys": [
     "CA/fairfield",
@@ -1097,6 +1098,7 @@
     "CA/petaluma",
     "CA/vacaville",
     "CA/american-canyon",
+    "CA/novato",
     "CA/pinole",
     "CA/san-rafael",
     "CA/sonoma"
@@ -1870,9 +1872,9 @@
    "states": [
     "FL"
    ],
-   "salon_count": 7,
+   "salon_count": 6,
    "city_count": 5,
-   "reach_mi": 25.0,
+   "reach_mi": 18.0,
    "city_keys": [
     "FL/melbourne",
     "FL/cocoa-beach",
@@ -2175,12 +2177,12 @@
     "GA",
     "SC"
    ],
-   "salon_count": 11,
+   "salon_count": 12,
    "city_count": 6,
    "reach_mi": 25.0,
    "city_keys": [
-    "SC/aiken",
     "GA/augusta",
+    "SC/aiken",
     "GA/evans",
     "GA/grovetown",
     "SC/north-augusta",
@@ -4084,21 +4086,6 @@
     "KS/dodge-city"
    ]
   },
-  "KS/el-dorado": {
-   "name": "El Dorado",
-   "display_name": "El Dorado, KS",
-   "anchor_city": "El Dorado",
-   "anchor_state": "KS",
-   "states": [
-    "KS"
-   ],
-   "salon_count": 1,
-   "city_count": 1,
-   "reach_mi": 25.0,
-   "city_keys": [
-    "KS/el-dorado"
-   ]
-  },
   "KS/emporia": {
    "name": "Emporia",
    "display_name": "Emporia, KS",
@@ -5828,8 +5815,8 @@
     "IL",
     "MO"
    ],
-   "salon_count": 65,
-   "city_count": 44,
+   "salon_count": 64,
+   "city_count": 43,
    "reach_mi": 45.0,
    "city_keys": [
     "MO/saint-louis",
@@ -5858,7 +5845,6 @@
     "MO/high-ridge",
     "IL/highland",
     "MO/imperial",
-    "IL/jerseyville",
     "MO/kirkwood",
     "MO/manchester",
     "MO/maryland-heights",
@@ -6277,7 +6263,7 @@
    "states": [
     "NC"
    ],
-   "salon_count": 43,
+   "salon_count": 44,
    "city_count": 22,
    "reach_mi": 35.0,
    "city_keys": [
@@ -8543,20 +8529,18 @@
    ]
   },
   "PA/shippensburg": {
-   "name": "Carlisle",
-   "display_name": "Carlisle, PA",
+   "name": "Chambersburg",
+   "display_name": "Chambersburg, PA",
    "anchor_city": "Shippensburg",
    "anchor_state": "PA",
    "states": [
     "PA"
    ],
-   "salon_count": 5,
-   "city_count": 4,
-   "reach_mi": 25.0,
+   "salon_count": 2,
+   "city_count": 2,
+   "reach_mi": 18.0,
    "city_keys": [
-    "PA/carlisle",
     "PA/chambersburg",
-    "PA/gettysburg",
     "PA/shippensburg"
    ]
   },
@@ -8671,8 +8655,8 @@
    "states": [
     "PA"
    ],
-   "salon_count": 26,
-   "city_count": 18,
+   "salon_count": 28,
+   "city_count": 20,
    "reach_mi": 35.0,
    "city_keys": [
     "PA/lancaster",
@@ -8681,9 +8665,11 @@
     "PA/harrisburg",
     "PA/mechanicsburg",
     "PA/camp-hill",
+    "PA/carlisle",
     "PA/dover",
     "PA/enola",
     "PA/ephrata",
+    "PA/gettysburg",
     "PA/hershey",
     "PA/lebanon",
     "PA/linglestown",
@@ -9616,7 +9602,7 @@
    "states": [
     "TX"
    ],
-   "salon_count": 104,
+   "salon_count": 103,
    "city_count": 52,
    "reach_mi": 45.0,
    "city_keys": [
@@ -9642,7 +9628,6 @@
     "TX/richardson",
     "TX/rowlett",
     "TX/watauga",
-    "TX/wylie",
     "TX/anna",
     "TX/argyle",
     "TX/bartonville",
@@ -9671,7 +9656,8 @@
     "TX/terrell",
     "TX/the-colony",
     "TX/trophy-club",
-    "TX/waxahachie"
+    "TX/waxahachie",
+    "TX/wylie"
    ]
   },
   "TX/fredericksburg": {
@@ -12998,6 +12984,15 @@
    "lat": 36.838008,
    "lng": -119.694699
   },
+  "CA/concord": {
+   "city": "Concord",
+   "state": "CA",
+   "slug": "concord",
+   "salon_count": 1,
+   "metro_key": "CA/castro-valley",
+   "lat": 37.994111,
+   "lng": -122.032345
+  },
   "CA/corona": {
    "city": "Corona",
    "state": "CA",
@@ -13591,6 +13586,15 @@
    "metro_key": "CA/los-angeles",
    "lat": 34.235895,
    "lng": -118.534732
+  },
+  "CA/novato": {
+   "city": "Novato",
+   "state": "CA",
+   "slug": "novato",
+   "salon_count": 1,
+   "metro_key": "CA/napa",
+   "lat": 38.102485,
+   "lng": -122.57175
   },
   "CA/oakland": {
    "city": "Oakland",
@@ -15576,10 +15580,10 @@
    "city": "Melbourne",
    "state": "FL",
    "slug": "melbourne",
-   "salon_count": 3,
+   "salon_count": 2,
    "metro_key": "FL/melbourne",
-   "lat": 28.210265,
-   "lng": -80.711186
+   "lat": 28.233404,
+   "lng": -80.730572
   },
   "FL/middleburg": {
    "city": "Middleburg",
@@ -16332,10 +16336,10 @@
    "city": "Augusta",
    "state": "GA",
    "slug": "augusta",
-   "salon_count": 2,
+   "salon_count": 3,
    "metro_key": "GA/augusta",
-   "lat": 33.49941,
-   "lng": -82.054292
+   "lat": 33.516834,
+   "lng": -82.0656
   },
   "GA/austell": {
    "city": "Austell",
@@ -17342,8 +17346,8 @@
    "slug": "des-moines",
    "salon_count": 5,
    "metro_key": "IA/ankeny",
-   "lat": 41.587994,
-   "lng": -93.65338
+   "lat": 41.588003,
+   "lng": -93.653334
   },
   "IA/dubuque": {
    "city": "Dubuque",
@@ -17774,8 +17778,8 @@
    "slug": "bartlett",
    "salon_count": 1,
    "metro_key": "IL/glen-ellyn",
-   "lat": 41.973938,
-   "lng": -88.207588
+   "lat": 41.972696,
+   "lng": -88.206118
   },
   "IL/batavia": {
    "city": "Batavia",
@@ -18244,15 +18248,6 @@
    "metro_key": "IL/jacksonville",
    "lat": 39.722494,
    "lng": -90.269439
-  },
-  "IL/jerseyville": {
-   "city": "Jerseyville",
-   "state": "IL",
-   "slug": "jerseyville",
-   "salon_count": 1,
-   "metro_key": "MO/des-peres",
-   "lat": 39.1019,
-   "lng": -90.313585
   },
   "IL/joliet": {
    "city": "Joliet",
@@ -19828,15 +19823,6 @@
    "metro_key": "KS/dodge-city",
    "lat": 37.767969,
    "lng": -100.034343
-  },
-  "KS/el-dorado": {
-   "city": "El Dorado",
-   "state": "KS",
-   "slug": "el-dorado",
-   "salon_count": 1,
-   "metro_key": "KS/el-dorado",
-   "lat": 37.816893,
-   "lng": -96.891449
   },
   "KS/emporia": {
    "city": "Emporia",
@@ -22238,8 +22224,8 @@
    "slug": "big-lake",
    "salon_count": 1,
    "metro_key": "MN/plymouth",
-   "lat": 45.334185,
-   "lng": -93.734677
+   "lat": 45.334247,
+   "lng": -93.734402
   },
   "MN/blaine": {
    "city": "Blaine",
@@ -23705,8 +23691,8 @@
    "slug": "asheville",
    "salon_count": 4,
    "metro_key": "NC/asheville",
-   "lat": 35.573166,
-   "lng": -82.541926
+   "lat": 35.573199,
+   "lng": -82.542008
   },
   "NC/belmont": {
    "city": "Belmont",
@@ -24360,10 +24346,10 @@
    "city": "Raleigh",
    "state": "NC",
    "slug": "raleigh",
-   "salon_count": 9,
+   "salon_count": 10,
    "metro_key": "NC/apex",
-   "lat": 35.819155,
-   "lng": -78.649709
+   "lat": 35.819236,
+   "lng": -78.647335
   },
   "NC/randleman": {
    "city": "Randleman",
@@ -25649,8 +25635,8 @@
    "slug": "las-vegas",
    "salon_count": 28,
    "metro_key": "NV/las-vegas",
-   "lat": 36.138324,
-   "lng": -115.230365
+   "lat": 36.13832,
+   "lng": -115.230368
   },
   "NV/mesquite": {
    "city": "Mesquite",
@@ -27089,8 +27075,8 @@
    "slug": "parma",
    "salon_count": 2,
    "metro_key": "OH/fairlawn",
-   "lat": 41.381409,
-   "lng": -81.690736
+   "lat": 41.381327,
+   "lng": -81.690739
   },
   "OH/parma-heights": {
    "city": "Parma Heights",
@@ -28248,10 +28234,10 @@
    "city": "Carlisle",
    "state": "PA",
    "slug": "carlisle",
-   "salon_count": 2,
-   "metro_key": "PA/shippensburg",
-   "lat": 40.20111,
-   "lng": -77.188552
+   "salon_count": 1,
+   "metro_key": "PA/york",
+   "lat": 40.219858,
+   "lng": -77.164355
   },
   "PA/chalfont": {
    "city": "Chalfont",
@@ -28447,7 +28433,7 @@
    "state": "PA",
    "slug": "gettysburg",
    "salon_count": 1,
-   "metro_key": "PA/shippensburg",
+   "metro_key": "PA/york",
    "lat": 39.846408,
    "lng": -77.19833
   },
@@ -30410,8 +30396,8 @@
    "slug": "austin",
    "salon_count": 19,
    "metro_key": "TX/georgetown",
-   "lat": 30.326707,
-   "lng": -97.798375
+   "lat": 30.326705,
+   "lng": -97.798382
   },
   "TX/azle": {
    "city": "Azle",
@@ -32145,10 +32131,10 @@
    "city": "Wylie",
    "state": "TX",
    "slug": "wylie",
-   "salon_count": 2,
+   "salon_count": 1,
    "metro_key": "TX/farmers-branch",
-   "lat": 33.009936,
-   "lng": -96.569133
+   "lat": 33.010745,
+   "lng": -96.592758
   },
   "UT/american-fork": {
    "city": "American Fork",
@@ -33299,8 +33285,8 @@
    "slug": "gig-harbor",
    "salon_count": 2,
    "metro_key": "WA/spanaway",
-   "lat": 47.332223,
-   "lng": -122.592101
+   "lat": 47.332256,
+   "lng": -122.592319
   },
   "WA/graham": {
    "city": "Graham",

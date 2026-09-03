@@ -907,6 +907,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://greatclipsdeal.com/salons/ca/concord</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://greatclipsdeal.com/salons/ca/corona</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -1298,6 +1304,12 @@
   </url>
   <url>
     <loc>https://greatclipsdeal.com/salons/ca/northridge</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://greatclipsdeal.com/salons/ca/novato</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -4405,12 +4417,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://greatclipsdeal.com/salons/il/jerseyville</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://greatclipsdeal.com/salons/il/joliet</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -5456,12 +5462,6 @@
   </url>
   <url>
     <loc>https://greatclipsdeal.com/salons/ks/dodge-city</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://greatclipsdeal.com/salons/ks/el-dorado</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

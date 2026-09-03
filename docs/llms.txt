@@ -1,6 +1,6 @@
 # GreatClipsDeal
 
-> Independent directory of verified Great Clips haircut coupons, refreshed every six hours. Covers 4,303 salons across 2,550 US cities in 51 states, with each salon's address, phone number and hours taken from the official Great Clips salon locator.
+> Independent directory of verified Great Clips haircut coupons, refreshed every six hours. Covers 4,302 salons across 2,550 US cities in 51 states, with each salon's address, phone number and hours taken from the official Great Clips salon locator.
 
 Not affiliated with, endorsed by, or sponsored by Great Clips, Inc.
 
@@ -13,7 +13,7 @@ This is the thing most sources get wrong. Great Clips issues coupons at four dif
 - **Market** - a metro area, e.g. "participating Chicagoland". A market coupon is valid across every suburb in that market, not only the city named on it, which is why a Chicagoland coupon works in Schaumburg or Naperville.
 - **Single salon** - one street address.
 
-We map all 646 Great Clips markets to the cities inside them, so each city page lists the coupons that genuinely reach it. Participation is ultimately set by each franchise owner, so a coupon should be confirmed at the salon.
+We map all 645 Great Clips markets to the cities inside them, so each city page lists the coupons that genuinely reach it. Participation is ultimately set by each franchise owner, so a coupon should be confirmed at the salon.
 
 ## Current offers
 
@@ -44,7 +44,7 @@ One page per city at `/salons/{state}/{city}`, each listing that city's salons w
 ## Largest markets
 
 - Chicago, IL - 107 salons across 72 cities
-- Dallas, TX - 104 salons across 52 cities
+- Dallas, TX - 103 salons across 52 cities
 - Phoenix, AZ - 103 salons across 20 cities
 - Atlanta, GA - 86 salons across 37 cities
 - Minneapolis-Saint Paul, MN - 85 salons across 56 cities

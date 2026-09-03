@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-03T10:49:53Z",
+ "generated_at": "2026-09-03T12:45:44Z",
  "scraped_at": "2026-09-03T03:49:34.633827",
  "total": 10,
  "scopes": {
@@ -169,9 +169,11 @@
     "PA/harrisburg",
     "PA/mechanicsburg",
     "PA/camp-hill",
+    "PA/carlisle",
     "PA/dover",
     "PA/enola",
     "PA/ephrata",
+    "PA/gettysburg",
     "PA/hershey",
     "PA/lebanon",
     "PA/linglestown",
