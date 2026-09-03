@@ -1050,6 +1050,48 @@ def _state_code_list(area: str) -> list[str]:
     return list(dict.fromkeys(codes))
 
 
+def _consensus_state(
+    tokens: list[str], lookup: dict[str, list[dict]]
+) -> str | None:
+    """The state that a market's place names agree on, if they agree at all.
+
+    "Harrisburg, Lancaster & York" is central Pennsylvania, but Harrisburg is also
+    a Charlotte suburb in NC, and there are Lancasters in CA, OH and TX. Resolving
+    each name on its own "take the biggest market" rule therefore spread one PA
+    coupon across 16 NC and 5 SC cities - Charlotte, Concord and Rock Hill were all
+    told they had an $11.99 offer valid only in Pennsylvania.
+
+    Reading the names together fixes it: whichever state the most of them share
+    becomes the hint, and resolve_name() then refuses same-name cities elsewhere.
+
+    Deliberately conservative - a winner has to cover at least two names and beat
+    every other state outright. Genuine two-state markets ("Philadelphia &
+    Wilmington") tie at one name each and are left to the existing behaviour.
+    """
+    by_state: dict[str, set[str]] = {}
+    salons: dict[str, int] = {}
+    for token in tokens:
+        norm = normalize_city(token)
+        for cand in lookup.get(norm, []):
+            st = cand["state"]
+            by_state.setdefault(st, set()).add(norm)
+            salons[st] = salons.get(st, 0) + cand["salon_count"]
+    if not by_state:
+        return None
+
+    ranked = sorted(
+        by_state.items(),
+        key=lambda kv: (len(kv[1]), salons.get(kv[0], 0)),
+        reverse=True,
+    )
+    best_state, best_names = ranked[0]
+    if len(best_names) < 2:
+        return None
+    if len(ranked) > 1 and len(ranked[1][1]) == len(best_names):
+        return None  # no outright winner
+    return best_state
+
+
 def resolve_area(
     area: str,
     cities: dict[str, dict],
@@ -1135,6 +1177,11 @@ def resolve_area(
         }
 
     tokens = _candidate_tokens(area)
+    # Names in one market string describe one region, so let them scope each other
+    # before any is resolved on its own.
+    if not state_hint:
+        state_hint = _consensus_state(tokens, lookup)
+
     for token in tokens:
         # A trailing state code scopes the token: "West NV" -> NV.
         hint = state_hint

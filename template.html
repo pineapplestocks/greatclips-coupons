@@ -656,7 +656,17 @@
             // Update results count
             const resultsCount = document.getElementById('resultsCount');
             if (resultsCount) {
-                resultsCount.innerHTML = `<span class="font-semibold text-slate-900">${filtered.length}</span> location-specific coupons${stateFilter ? ` in <span class="font-semibold text-purple-600">${stateFilter}</span>` : ''}`;
+                // One row is one coupon at one salon, and overlapping markets can put the
+                // same salon in twice, so report both numbers. Neither is a count of
+                // places a coupon works: the pinned nationwide offer below is valid at
+                // every one of the ~4,300 US salons.
+                const salonKeys = new Set(filtered.map(c => `${c.address || ''}|${c.city || ''}|${c.state || ''}`));
+                const couponWord = filtered.length === 1 ? 'local coupon' : 'local coupons';
+                let label = `<span class="font-semibold text-slate-900">${filtered.length}</span> ${couponWord}`;
+                if (salonKeys.size && salonKeys.size !== filtered.length) {
+                    label += ` at <span class="font-semibold text-slate-900">${salonKeys.size}</span> ${salonKeys.size === 1 ? 'salon' : 'salons'}`;
+                }
+                resultsCount.innerHTML = `${label}${stateFilter ? ` in <span class="font-semibold text-purple-600">${stateFilter}</span>` : ''}`;
             }
 
             // A nationwide coupon is valid at every salon in the country, so it must
@@ -1053,7 +1063,7 @@
                 <section class="max-w-7xl mx-auto px-4 pb-12">
                     <div class="flex items-center justify-between mb-6">
                         <p id="resultsCount" class="text-slate-600">
-                            <span class="font-semibold text-slate-900">${filtered.length}</span> location-specific coupons
+                            <span class="font-semibold text-slate-900">${filtered.length}</span> local coupons
                         </p>
                     </div>
 

@@ -758,6 +758,105 @@ def national_section_html(offer: dict | None, city: dict) -> str:
 """
 
 
+def coupons_for_city(feed_coupons: list[dict], city: dict) -> list[dict]:
+    """The coupons valid in this city - Python twin of reaches() in the widget JS.
+
+    Kept deliberately in step with COUPON_WIDGET_JS above: if the two disagree, a
+    crawler and a reader see different coupons on the same page.
+    """
+    state = city["state"]
+    city_key = city["key"]
+    metro_key = city["metro_key"]
+    hits = []
+    for c in feed_coupons:
+        scope = c.get("scope")
+        if scope == "national":
+            hits.append(c)
+        elif scope == "state":
+            states = c.get("coupon_states") or (
+                [c["coupon_state"]] if c.get("coupon_state") else []
+            )
+            if state in states:
+                hits.append(c)
+        elif city_key in (c.get("city_keys") or []):
+            hits.append(c)
+        elif metro_key in (c.get("metro_keys") or []):
+            hits.append(c)
+    return sorted(hits, key=lambda c: c.get("price_value", 999))
+
+
+def coupon_scope_label(coupon: dict, state: str) -> str:
+    """Where one coupon is valid, in words. Twin of scopeLabel() in the widget JS."""
+    scope = coupon.get("scope")
+    if scope == "national":
+        return "Valid at participating US salons"
+    if scope == "state":
+        states = coupon.get("coupon_states") or (
+            [coupon["coupon_state"]] if coupon.get("coupon_state") else []
+        )
+        if len(states) > 1:
+            return f"Valid across {', '.join(states)}"
+        return f"Valid across {states[0] if states else state}"
+    if scope == "salon":
+        return "Salon-specific offer"
+    names = coupon.get("market_names") or []
+    if names:
+        return f"Valid across the {' & '.join(names)} market"
+    return "Regional offer"
+
+
+def live_coupons_html(hits: list[dict], city: dict, label: str, scraped_at: str) -> str:
+    """Static, crawlable list of the coupons that reach this city.
+
+    The widget replaces this wholesale once /data/coupons.json loads, so it exists
+    for whoever never runs the script - most AI crawlers among them. Before this,
+    the served HTML followed the heading "Coupons available in Cypress right now"
+    with nothing but "Loading verified offers for Cypress, TX...", which is a thin
+    result on the exact query the page is built to win.
+
+    No links to offers.greatclips.com here on purpose: the interactive cards
+    already handle redemption, and 2,550 pages each sprouting a handful of
+    outbound offer links is not a trade worth making for a fallback.
+    """
+    if not hits:
+        return f"""                <p class="text-slate-600">
+                    No live coupon is verified for {esc(label)} right now. National offers appear
+                    here as soon as they are found &ndash;
+                    <a class="text-purple-600 underline" href="/">check every current coupon</a>.
+                </p>
+"""
+
+    state = city["state"]
+    cards = []
+    for coupon in hits[:8]:
+        price = esc(coupon.get("price") or "")
+        scope_text = esc(coupon_scope_label(coupon, state))
+        expires = coupon.get("expiration")
+        expires_html = (
+            f'\n                        <p class="text-xs text-slate-500 mt-2">Expires {esc(expires)}</p>'
+            if expires
+            else ""
+        )
+        cards.append(
+            f"""                    <div class="bg-white rounded-xl border border-slate-200 p-5">
+                        <p class="text-2xl font-bold text-purple-600">{price}</p>
+                        <p class="text-slate-700 mt-1">{scope_text}</p>{expires_html}
+                    </div>
+"""
+        )
+
+    shown = min(len(hits), 8)
+    verified = esc((scraped_at or "")[:10])
+    reach = "offer that reaches" if len(hits) == 1 else "offers that reach"
+    note = f"Showing {shown} of {len(hits)} {reach} {esc(label)}."
+    if verified:
+        note += f" Verified {verified}."
+    return f"""                <div class="grid gap-4 sm:grid-cols-2">
+{''.join(cards)}                </div>
+                <p class="text-xs text-slate-500 mt-4">{note}</p>
+"""
+
+
 def national_offer_schema(offer: dict | None, city: dict, canonical: str) -> dict | None:
     """schema.org Offer for the nationwide coupon.
 
@@ -805,6 +904,8 @@ def build_city_page(
     stats: dict,
     generated: str,
     national: dict | None = None,
+    feed_coupons: list[dict] | None = None,
+    scraped_at: str = "",
 ) -> str:
     name, state = city["city"], city["state"]
     state_name = city["state_name"]
@@ -814,6 +915,10 @@ def build_city_page(
     state_slug = state_name.lower().replace(" ", "-")
     label = f"{name}, {state}"
     plural = "salon" if count == 1 else "salons"
+
+    live_coupons = live_coupons_html(
+        coupons_for_city(feed_coupons or [], city), city, label, scraped_at
+    )
 
     price_sentence, price_badge = price_line(state, stats)
     state_href = state_page_href(state_name)
@@ -992,11 +1097,7 @@ def build_city_page(
 {national_section_html(national, city)}        <section class="bg-white rounded-2xl shadow-sm p-8 mb-10">
             <h2 class="text-2xl font-bold text-slate-900 mb-4">Coupons available in {esc(name)} right now</h2>
             <div id="liveCoupons">
-                <p class="text-slate-600">
-                    Loading verified offers for {esc(label)}&hellip;
-                    <a class="text-purple-600 underline" href="/">browse every current coupon</a>.
-                </p>
-            </div>
+{live_coupons}            </div>
         </section>
 
         <section class="bg-white rounded-2xl shadow-sm p-8 mb-10">
@@ -1303,7 +1404,14 @@ def main() -> int:
     cities, metros = markets.build_all()
     markets.save_metros(cities, metros)
     stats = load_stats()
+    feed = national_offer.load_feed()
+    feed_coupons = feed.get("coupons") or []
+    scraped_at = feed.get("scraped_at") or ""
     national = load_national_offer()
+    if feed_coupons:
+        print(f"Feed: {len(feed_coupons)} coupons - rendering each city's into its HTML")
+    else:
+        print("Feed empty or missing; the coupon list falls back to the widget only")
     if national:
         print(f"Nationwide offer in feed: {national.get('price')} - baking into pages")
     else:
@@ -1330,7 +1438,9 @@ def main() -> int:
     total_bytes = 0
     for city in targets:
         metro = metros[city["metro_key"]]
-        page = build_city_page(city, metro, cities, stats, generated, national)
+        page = build_city_page(
+            city, metro, cities, stats, generated, national, feed_coupons, scraped_at
+        )
         path = OUT_DIR / city["state"].lower() / f"{city['slug']}.html"
         path.parent.mkdir(parents=True, exist_ok=True)
         with path.open("w", encoding="utf-8") as fh:

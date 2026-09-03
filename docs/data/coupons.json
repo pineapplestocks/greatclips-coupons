@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-03T15:57:47Z",
+ "generated_at": "2026-09-03T16:14:17Z",
  "scraped_at": "2026-09-03T08:57:27.588107",
  "total": 10,
  "scopes": {
@@ -134,35 +134,12 @@
    "scope": "area",
    "price_value": 11.99,
    "metro_keys": [
-    "NC/harrisburg",
     "PA/york"
    ],
    "market_names": [
-    "Charlotte, NC/SC",
     "Harrisburg, PA"
    ],
    "city_keys": [
-    "NC/charlotte",
-    "NC/concord",
-    "NC/huntersville",
-    "NC/mooresville",
-    "SC/rock-hill",
-    "NC/cornelius",
-    "SC/fort-mill",
-    "NC/harrisburg",
-    "NC/matthews",
-    "NC/monroe",
-    "NC/albemarle",
-    "SC/indian-land",
-    "NC/indian-trail",
-    "NC/kannapolis",
-    "SC/lake-wylie",
-    "NC/locust",
-    "NC/marvin",
-    "NC/mint-hill",
-    "SC/tega-cay",
-    "NC/waxhaw",
-    "NC/wesley-chapel",
     "PA/lancaster",
     "PA/york",
     "PA/hanover",

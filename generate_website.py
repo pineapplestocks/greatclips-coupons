@@ -527,12 +527,29 @@ def parse_expiration_date(coupon):
 
 
 def compute_deal_stats(coupons, scraped_dt):
-    """Compute the numbers that drive the editorial copy. All values come from live data."""
+    """Compute the numbers that drive the editorial copy. All values come from live data.
+
+    `regular` is the local half of the board - the per-salon rows expanded from
+    market coupons. It deliberately excludes the nationwide offer, which is pinned
+    separately so that no filter can hide it.
+
+    Every headline number below has to add that offer back in, though. A coupon
+    valid at all 4,300 US salons is the cheapest haircut available to almost every
+    reader, so leaving it out of the aggregates made the page understate itself
+    badly: it advertised "$9.99 lowest price today" and "8 states" while a $5.00
+    coupon good in all 50 was live and shown directly underneath.
+    """
     regular = [c for c in coupons if not is_universal(c) and not is_area_based(c)]
     priced = sorted(
         [(get_price(c), c) for c in regular if get_price(c) < 999],
         key=lambda pair: pair[0],
     )
+
+    national_offers = [c for c in coupons if is_universal(c)]
+    national = min(national_offers, key=get_price) if national_offers else None
+    national_price = get_price(national) if national else None
+    if national_price is not None and national_price >= 999:
+        national_price = None
 
     stats = {
         "location_count": len(regular),
@@ -549,6 +566,17 @@ def compute_deal_stats(coupons, scraped_dt):
         "expiring_week_count": 0,
         "area_count": sum(1 for c in coupons if is_area_based(c)),
         "verified_today": 0,
+        "national": national,
+        "national_price": national_price,
+        "national_count": len(national_offers),
+        # Every live offer, nationwide included - what "active coupons" means.
+        "active_count": len(regular)
+        + sum(1 for c in coupons if is_area_based(c))
+        + len(national_offers),
+        # The lowest price a reader can actually get today, from either half of
+        # the board, and whether it comes from the nationwide offer.
+        "best_price": None,
+        "best_is_national": False,
     }
 
     if priced:
@@ -560,6 +588,15 @@ def compute_deal_stats(coupons, scraped_dt):
         stats["median_price"] = prices[len(prices) // 2]
         stats["max_price"] = prices[-1]
         stats["under_10_count"] = sum(1 for p in prices if p < 10)
+
+    candidates = [p for p in (stats["cheapest_price"], national_price) if p is not None]
+    if candidates:
+        stats["best_price"] = min(candidates)
+        stats["best_is_national"] = (
+            national_price is not None and national_price <= (stats["cheapest_price"] or national_price)
+        )
+    if national_price is not None and national_price < 10:
+        stats["under_10_count"] += 1
 
     by_state = {}
     for coupon in regular:
@@ -595,17 +632,42 @@ def coverage_noun(stats):
 
 
 def render_stats_strip(stats, formatted_date):
-    if not stats["priced_count"]:
+    if not stats["priced_count"] and not stats["national_price"]:
         return ""
 
-    cheapest = stats["cheapest"]
-    cheapest_place = format_city_state(cheapest) if cheapest else ""
-    cheapest_where = f" in {cheapest_place}" if cheapest_place else ""
+    # Where the cheapest price comes from. The nationwide offer has no city, so it
+    # is described by its reach instead of by a location.
+    if stats["best_is_national"]:
+        cheapest_where = ", valid at participating salons nationwide"
+    else:
+        cheapest = stats["cheapest"]
+        cheapest_place = format_city_state(cheapest) if cheapest else ""
+        cheapest_where = f" in {cheapest_place}" if cheapest_place else ""
+
+    # A nationwide coupon reaches every state, so the coverage tile counts states
+    # with a *local* deal only when there is no nationwide offer to speak of.
+    if stats["national"]:
+        coverage_value, coverage_label = "All 50", "states covered"
+    else:
+        coverage_value = str(len(stats["state_codes"]))
+        coverage_label = coverage_noun(stats)
+
+    local_states = len(stats["state_codes"])
+    if stats["national"]:
+        reach_phrase = (
+            f"one of them valid at participating salons in all 50 states and the rest "
+            f"concentrated in {local_states} {coverage_noun(stats)}"
+            if local_states
+            else "valid at participating salons in all 50 states"
+        )
+    else:
+        reach_phrase = f"across {local_states} {coverage_noun(stats)}"
+
     tiles = [
-        (str(stats["location_count"] + stats["area_count"]), "active coupons"),
-        (str(len(stats["state_codes"])), coverage_noun(stats)),
-        (format_price(stats["cheapest_price"]), "lowest price today"),
-        (format_price(stats["median_price"]), "typical coupon price"),
+        (str(stats["active_count"]), "active coupons"),
+        (coverage_value, coverage_label),
+        (format_price(stats["best_price"]), "lowest price today"),
+        (format_price(stats["median_price"]), "typical local price"),
     ]
     tiles_html = "".join(
         f"""
@@ -627,9 +689,9 @@ def render_stats_strip(stats, formatted_date):
                         <p class="text-slate-600 text-sm md:text-base leading-relaxed">
                             Every six hours our system scans Great Clips' official Facebook advertising and indexes each live
                             coupon it finds — as of {escape_html(formatted_date)}, that's
-                            <strong>{stats["location_count"] + stats["area_count"]} active offers</strong> across
-                            {len(stats["state_codes"])} {coverage_noun(stats)}. The cheapest haircut on the board right now is
-                            <strong>{escape_html(format_price(stats["cheapest_price"]))}</strong>{escape_html(cheapest_where)}.
+                            <strong>{stats["active_count"]} active offers</strong>, {escape_html(reach_phrase)}.
+                            The cheapest haircut on the board right now is
+                            <strong>{escape_html(format_price(stats["best_price"]))}</strong>{escape_html(cheapest_where)}.
                             Every card links straight to the official offer page on offers.greatclips.com — no codes to type and
                             no email signup. Read <a href="/how-we-verify-coupons" class="text-purple-600 hover:underline font-medium">how we verify coupons</a>
                             or compare against <a href="/prices" class="text-purple-600 hover:underline font-medium">regular Great Clips prices</a>.
@@ -640,7 +702,7 @@ def render_stats_strip(stats, formatted_date):
 
 
 def render_deal_report(stats, scraped_dt):
-    if not stats["priced_count"]:
+    if not stats["priced_count"] and not stats["national_price"]:
         return ""
 
     report_date = scraped_dt.strftime("%B %d, %Y").replace(" 0", " ")
@@ -648,7 +710,33 @@ def render_deal_report(stats, scraped_dt):
     cheapest_place = format_city_state(cheapest) if cheapest else ""
     cheapest_location = (cheapest.get("location_name") or "").strip() if cheapest else ""
 
-    if stats["cheapest_count"] > 1:
+    # The regional count covers only the local half of the board; say so, rather
+    # than let a reader take it for the site's whole coverage.
+    national_clause = (
+        f", plus a {format_price(stats['national_price'])} nationwide offer good in all 50"
+        if stats["national_price"] is not None
+        else ""
+    )
+
+    if stats["best_is_national"]:
+        # The nationwide offer undercuts every local one, so it is the answer to
+        # "what is the cheapest haircut today" for a reader anywhere in the country.
+        cheapest_sentence = (
+            f"The lowest price on the board is {format_price(stats['best_price'])}, and it is the "
+            f"nationwide offer — valid at participating Great Clips salons in all 50 states, so it "
+            f"applies wherever you are."
+        )
+        if stats["cheapest_price"] is not None:
+            cheapest_sentence += (
+                f" The cheapest market-specific coupon is "
+                f"{format_price(stats['cheapest_price'])}"
+            )
+            if cheapest_location and cheapest_place:
+                cheapest_sentence += f" at {cheapest_location} in {cheapest_place}"
+            elif cheapest_place:
+                cheapest_sentence += f" in {cheapest_place}"
+            cheapest_sentence += "."
+    elif stats["cheapest_count"] > 1:
         cheapest_sentence = (
             f"The lowest price on the board is {format_price(stats['cheapest_price'])}, currently offered at "
             f"{stats['cheapest_count']} locations"
@@ -700,9 +788,10 @@ def render_deal_report(stats, scraped_dt):
 
                         <div class="prose-slate space-y-4 text-slate-600 leading-relaxed">
                             <p>
-                                Our latest scan indexed <strong class="text-slate-900">{stats["location_count"]} location-specific coupons</strong>
-                                and {stats["area_count"]} regional offers across {len(stats["state_codes"])} {coverage_noun(stats)}.
-                                {escape_html(cheapest_sentence)} The typical (median) coupon today is
+                                Our latest scan indexed {stats["area_count"]} regional offers, valid between them at
+                                <strong class="text-slate-900">{stats["location_count"]} salons</strong> across
+                                {len(stats["state_codes"])} {coverage_noun(stats)}{escape_html(national_clause)}.
+                                {escape_html(cheapest_sentence)} The typical (median) local coupon today is
                                 <strong class="text-slate-900">{escape_html(format_price(stats["median_price"]))}</strong>, with prices running as high as
                                 {escape_html(format_price(stats["max_price"]))} in higher-cost metro areas —
                                 {stats["under_10_count"]} of today's coupons get you a haircut for under $10.
@@ -765,9 +854,26 @@ def expand_area_coupons(coupons):
     rows = []
     expanded_markets = 0
 
+    # A statewide coupon ("participating NJ, PA & DE") resolves its states but not
+    # its cities, so filtering on scope == "area" alone dropped it entirely: 221
+    # salons in NJ, PA and DE had a $13.99 coupon that produced no listing at all
+    # and went uncounted. Its cities are every city in those states.
+    cities_by_state: dict[str, list[str]] = {}
+    for key, city in cities.items():
+        cities_by_state.setdefault(city["state"], []).append(key)
+
     for coupon in coupons:
         resolved = markets.coupon_market_keys(coupon, cities, lookup)
-        if resolved["scope"] != "area" or not resolved.get("city_keys"):
+        city_keys = list(resolved.get("city_keys") or [])
+        if resolved["scope"] == "state" and not city_keys:
+            for code in resolved.get("states") or []:
+                city_keys.extend(cities_by_state.get(code, []))
+        elif resolved["scope"] != "area":
+            # "NE & Central PA" and friends resolve to nothing. Expanding them
+            # across all of PA would claim a north-eastern offer is valid in
+            # Pittsburgh, so they stay area cards only until the market resolves.
+            continue
+        if not city_keys:
             continue
         market_label = re.sub(
             r"^(?:only\s+)?(?:at\s+)?participating\s+",
@@ -777,7 +883,7 @@ def expand_area_coupons(coupons):
         ).strip()
         expanded_markets += 1
 
-        for city_key in resolved["city_keys"]:
+        for city_key in city_keys:
             city = cities.get(city_key)
             if not city:
                 continue
@@ -807,6 +913,16 @@ def expand_area_coupons(coupons):
             f"{len(rows)} salon listings"
         )
     return rows
+
+
+def build_results_label(rows, salons):
+    """"N local coupons at M salons" - the two numbers the list actually has."""
+    coupon_word = "local coupon" if rows == 1 else "local coupons"
+    salon_word = "salon" if salons == 1 else "salons"
+    label = f'<span class="font-semibold text-slate-900">{rows}</span> {coupon_word}'
+    if salons and salons != rows:
+        label += f' at <span class="font-semibold text-slate-900">{salons}</span> {salon_word}'
+    return label
 
 
 def render_national_banner(coupons):
@@ -857,8 +973,22 @@ def build_static_app_html(coupons, scraped_at):
     state_nav = render_state_nav(states)
     results_grid = render_results_grid(regular_coupons)
     national_banner = render_national_banner(coupons)
+    # One row is one coupon at one salon, and overlapping markets mean a salon can
+    # appear twice - a Pittsburgh salon carries both the Pittsburgh market coupon
+    # and the tri-state one. So the row count is not a salon count, and neither is
+    # a count of places a coupon works: the nationwide offer pinned directly below
+    # this line is valid at every one of the ~4,300 US salons. Say exactly what the
+    # list holds instead.
     results_count = len(regular_coupons)
-    results_label = "coupon" if results_count == 1 else "coupons"
+    results_salons = len({
+        (
+            (c.get("address") or "").strip(),
+            (c.get("city") or "").strip(),
+            (c.get("state") or "").strip(),
+        )
+        for c in regular_coupons
+    })
+    results_label = build_results_label(results_count, results_salons)
 
     return f"""
                 <!-- Navigation -->
@@ -976,7 +1106,7 @@ def build_static_app_html(coupons, scraped_at):
                 <section class="max-w-7xl mx-auto px-4 pb-12">
                     <div class="flex items-center justify-between mb-6">
                         <p id="resultsCount" class="text-slate-600">
-                            <span class="font-semibold text-slate-900">{results_count}</span> location-specific {results_label}
+                            {results_label}
                         </p>
                     </div>
 
