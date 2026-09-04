@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-04T03:22:47Z",
- "scraped_at": "2026-09-03T20:22:27.256331",
- "total": 10,
+ "generated_at": "2026-09-04T10:49:00Z",
+ "scraped_at": "2026-09-04T03:48:37.595147",
+ "total": 7,
  "scopes": {
   "national": 1,
-  "area": 7,
+  "area": 4,
   "unknown": 1,
   "state": 1
  },
@@ -17,108 +17,10 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-09-03",
+   "last_verified": "2026-09-04",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
-  },
-  {
-   "url": "https://offers.greatclips.com/skteDvh",
-   "coupon_code": "skteDvh",
-   "price": "$9.99",
-   "location_name": "participating Tulsa Area",
-   "state": "AREA",
-   "area_name": "participating Tulsa",
-   "market": "Tulsa",
-   "expiration": "09/04/2026",
-   "last_verified": "2026-09-03",
-   "participating_location_note": "Valid at participating locations in Tulsa",
-   "scope": "area",
-   "price_value": 9.99,
-   "metro_keys": [
-    "OK/jenks"
-   ],
-   "market_names": [
-    "Tulsa, OK"
-   ],
-   "city_keys": [
-    "OK/tulsa",
-    "OK/broken-arrow",
-    "OK/owasso",
-    "OK/catoosa",
-    "OK/coweta",
-    "OK/jenks",
-    "OK/sand-springs"
-   ]
-  },
-  {
-   "url": "https://offers.greatclips.com/yIfriPt",
-   "coupon_code": "yIfriPt",
-   "price": "$9.99",
-   "location_name": "participating Lansing Area",
-   "state": "AREA",
-   "area_name": "participating Lansing",
-   "market": "Lansing",
-   "expiration": "09/04/2026",
-   "last_verified": "2026-09-03",
-   "participating_location_note": "Valid at participating locations in Lansing",
-   "scope": "area",
-   "price_value": 9.99,
-   "metro_keys": [
-    "MI/charlotte"
-   ],
-   "market_names": [
-    "Lansing, MI"
-   ],
-   "city_keys": [
-    "MI/lansing",
-    "MI/charlotte",
-    "MI/dewitt",
-    "MI/east-lansing",
-    "MI/okemos"
-   ]
-  },
-  {
-   "url": "https://offers.greatclips.com/Lcmtkkh",
-   "coupon_code": "Lcmtkkh",
-   "price": "$11.99",
-   "location_name": "participating Pittsburgh Area",
-   "state": "AREA",
-   "area_name": "participating Pittsburgh",
-   "market": "Pittsburgh",
-   "expiration": "09/04/2026",
-   "last_verified": "2026-09-03",
-   "participating_location_note": "Valid at participating locations in Pittsburgh",
-   "scope": "area",
-   "price_value": 11.99,
-   "metro_keys": [
-    "PA/verona"
-   ],
-   "market_names": [
-    "Pittsburgh, PA"
-   ],
-   "city_keys": [
-    "PA/pittsburgh",
-    "PA/allison-park",
-    "PA/bethel-park",
-    "PA/bridgeville",
-    "PA/canonsburg",
-    "PA/cranberry-township",
-    "PA/greensburg",
-    "PA/kittanning",
-    "PA/latrobe",
-    "PA/leechburg",
-    "PA/mars",
-    "PA/monroeville",
-    "PA/murrysville",
-    "PA/natrona-heights",
-    "PA/north-huntingdon",
-    "PA/pleasant-hills",
-    "PA/tarentum",
-    "PA/verona",
-    "PA/wexford",
-    "PA/white-oak"
-   ]
   },
   {
    "url": "https://offers.greatclips.com/EWNAalN",
@@ -129,7 +31,7 @@
    "area_name": "participating Harrisburg, Lancaster & York",
    "market": "Harrisburg, Lancaster & York",
    "expiration": "09/11/2026",
-   "last_verified": "2026-09-03",
+   "last_verified": "2026-09-04",
    "participating_location_note": "Valid at participating locations in Harrisburg, Lancaster & York",
    "scope": "area",
    "price_value": 11.99,
@@ -171,7 +73,7 @@
    "area_name": "participating Baltimore",
    "market": "Baltimore",
    "expiration": "09/18/2026",
-   "last_verified": "2026-09-03",
+   "last_verified": "2026-09-04",
    "participating_location_note": "Valid at participating locations in Baltimore",
    "scope": "area",
    "price_value": 11.99,
@@ -206,7 +108,7 @@
    "area_name": "participating Hampton Roads & Peninsula",
    "market": "Hampton Roads & Peninsula",
    "expiration": "09/11/2026",
-   "last_verified": "2026-09-03",
+   "last_verified": "2026-09-04",
    "participating_location_note": "Valid at participating locations in Hampton Roads & Peninsula",
    "scope": "area",
    "price_value": 12.99,
@@ -244,7 +146,7 @@
    "area_name": "participating NE & Central PA",
    "market": "NE & Central PA",
    "expiration": "09/11/2026",
-   "last_verified": "2026-09-03",
+   "last_verified": "2026-09-04",
    "participating_location_note": "Valid at participating locations in NE & Central PA",
    "scope": "unknown",
    "price_value": 12.99
@@ -258,7 +160,7 @@
    "area_name": "participating NJ, PA & DE",
    "market": "NJ, PA & DE",
    "expiration": "09/11/2026",
-   "last_verified": "2026-09-03",
+   "last_verified": "2026-09-04",
    "participating_location_note": "Valid at participating locations in NJ, PA & DE",
    "scope": "state",
    "price_value": 13.99,
@@ -278,7 +180,7 @@
    "area_name": "participating Portland",
    "market": "Portland",
    "expiration": "09/11/2026",
-   "last_verified": "2026-09-03",
+   "last_verified": "2026-09-04",
    "participating_location_note": "Valid at participating locations in Portland",
    "scope": "area",
    "price_value": 14.99,

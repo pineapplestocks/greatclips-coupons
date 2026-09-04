@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-09-03T20:22:27.256331",
-  "total_coupons": 10,
+  "scraped_at": "2026-09-04T03:48:37.595147",
+  "total_coupons": 7,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/yMEcKko",
@@ -12,59 +12,11 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-09-03",
+      "last_verified": "2026-09-04",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-08-21",
       "last_seen": "2026-08-31"
-    },
-    {
-      "url": "https://offers.greatclips.com/skteDvh",
-      "coupon_code": "skteDvh",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20671/50707-002-1200x600-9.99.jpg",
-      "expiration": "09/04/2026",
-      "location_name": "participating Tulsa Area",
-      "state": "AREA",
-      "area_name": "participating Tulsa",
-      "price": "$9.99",
-      "market": "Tulsa",
-      "last_verified": "2026-09-03",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Tulsa",
-      "added_date": "2026-08-21",
-      "last_seen": "2026-08-28"
-    },
-    {
-      "url": "https://offers.greatclips.com/yIfriPt",
-      "coupon_code": "yIfriPt",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20669/50707-002-1200x600-9.99.jpg",
-      "expiration": "09/04/2026",
-      "location_name": "participating Lansing Area",
-      "state": "AREA",
-      "area_name": "participating Lansing",
-      "price": "$9.99",
-      "market": "Lansing",
-      "last_verified": "2026-09-03",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Lansing",
-      "added_date": "2026-08-21",
-      "last_seen": "2026-08-28"
-    },
-    {
-      "url": "https://offers.greatclips.com/Lcmtkkh",
-      "coupon_code": "Lcmtkkh",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20670/50707-002-1200x600-11.99.jpg",
-      "expiration": "09/04/2026",
-      "location_name": "participating Pittsburgh Area",
-      "state": "AREA",
-      "area_name": "participating Pittsburgh",
-      "price": "$11.99",
-      "market": "Pittsburgh",
-      "last_verified": "2026-09-03",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Pittsburgh",
-      "added_date": "2026-08-17",
-      "last_seen": "2026-08-28"
     },
     {
       "url": "https://offers.greatclips.com/EWNAalN",
@@ -76,11 +28,11 @@
       "area_name": "only at participating Harrisburg, Lancaster & York",
       "price": "$11.99",
       "market": "Harrisburg, Lancaster & York",
-      "last_verified": "2026-09-03",
+      "last_verified": "2026-09-04",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Harrisburg, Lancaster & York",
       "added_date": "2026-08-21",
-      "last_seen": "2026-09-03"
+      "last_seen": "2026-09-04"
     },
     {
       "url": "https://offers.greatclips.com/lM6ugQf",
@@ -92,11 +44,11 @@
       "area_name": "participating Baltimore",
       "price": "$11.99",
       "market": "Baltimore",
-      "last_verified": "2026-09-03",
+      "last_verified": "2026-09-04",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Baltimore",
       "added_date": "2026-08-29",
-      "last_seen": "2026-09-03"
+      "last_seen": "2026-09-04"
     },
     {
       "url": "https://offers.greatclips.com/EoCQb2p",
@@ -108,11 +60,11 @@
       "area_name": "only at participating Hampton Roads & Peninsula",
       "price": "$12.99",
       "market": "Hampton Roads & Peninsula",
-      "last_verified": "2026-09-03",
+      "last_verified": "2026-09-04",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Hampton Roads & Peninsula",
       "added_date": "2026-08-21",
-      "last_seen": "2026-09-03"
+      "last_seen": "2026-09-04"
     },
     {
       "url": "https://offers.greatclips.com/isjblpZ",
@@ -124,7 +76,7 @@
       "area_name": "only at participating NE & Central PA",
       "price": "$12.99",
       "market": "NE & Central PA",
-      "last_verified": "2026-09-03",
+      "last_verified": "2026-09-04",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in NE & Central PA",
       "added_date": "2026-08-31",
@@ -140,11 +92,11 @@
       "area_name": "only at participating NJ, PA & DE",
       "price": "$13.99",
       "market": "NJ, PA & DE",
-      "last_verified": "2026-09-03",
+      "last_verified": "2026-09-04",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in NJ, PA & DE",
       "added_date": "2026-08-01",
-      "last_seen": "2026-09-03"
+      "last_seen": "2026-09-04"
     },
     {
       "url": "https://offers.greatclips.com/FEDhm2E",
@@ -156,11 +108,11 @@
       "area_name": "participating Portland",
       "price": "$14.99",
       "market": "Portland",
-      "last_verified": "2026-09-03",
+      "last_verified": "2026-09-04",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Portland",
       "added_date": "2026-08-21",
-      "last_seen": "2026-09-03"
+      "last_seen": "2026-09-04"
     }
   ]
 }
