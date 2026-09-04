@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-09-04T03:48:37.595147",
-  "total_coupons": 7,
+  "scraped_at": "2026-09-04T08:55:14.565617",
+  "total_coupons": 9,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/yMEcKko",
@@ -51,6 +51,22 @@
       "last_seen": "2026-09-04"
     },
     {
+      "url": "https://offers.greatclips.com/G4nYVOB",
+      "coupon_code": "G4nYVOB",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20699/50707-002-1200x600-11.99.jpg",
+      "expiration": "09/11/2026",
+      "location_name": "only at participating Springfield-Holyoke Area",
+      "state": "AREA",
+      "area_name": "only at participating Springfield-Holyoke",
+      "price": "$11.99",
+      "market": "Springfield-Holyoke",
+      "last_verified": "2026-09-04",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Springfield-Holyoke",
+      "added_date": "2026-09-04",
+      "last_seen": "2026-09-04"
+    },
+    {
       "url": "https://offers.greatclips.com/EoCQb2p",
       "coupon_code": "EoCQb2p",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20696/50707-002-1200x600-12.99.jpg",
@@ -80,7 +96,7 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in NE & Central PA",
       "added_date": "2026-08-31",
-      "last_seen": "2026-09-02"
+      "last_seen": "2026-09-04"
     },
     {
       "url": "https://offers.greatclips.com/OK36Ser",
@@ -112,6 +128,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Portland",
       "added_date": "2026-08-21",
+      "last_seen": "2026-09-04"
+    },
+    {
+      "url": "https://offers.greatclips.com/0EauRlu",
+      "coupon_code": "0EauRlu",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20773/50707-002-1200x600-14.99.jpg",
+      "expiration": "09/11/2026",
+      "location_name": "participating Buffalo Area",
+      "state": "AREA",
+      "area_name": "participating Buffalo",
+      "price": "$14.99",
+      "market": "Buffalo",
+      "last_verified": "2026-09-04",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Buffalo",
+      "added_date": "2026-09-04",
       "last_seen": "2026-09-04"
     }
   ]

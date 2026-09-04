@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-04T12:42:42Z",
- "scraped_at": "2026-09-04T03:48:37.595147",
- "total": 7,
+ "generated_at": "2026-09-04T15:55:35Z",
+ "scraped_at": "2026-09-04T08:55:14.565617",
+ "total": 9,
  "scopes": {
   "national": 1,
-  "area": 4,
+  "area": 6,
   "unknown": 1,
   "state": 1
  },
@@ -97,6 +97,40 @@
     "MD/odenton",
     "MD/parkville",
     "MD/severn"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/G4nYVOB",
+   "coupon_code": "G4nYVOB",
+   "price": "$11.99",
+   "location_name": "participating Springfield-Holyoke Area",
+   "state": "AREA",
+   "area_name": "participating Springfield-Holyoke",
+   "market": "Springfield-Holyoke",
+   "expiration": "09/11/2026",
+   "last_verified": "2026-09-04",
+   "participating_location_note": "Valid at participating locations in Springfield-Holyoke",
+   "scope": "area",
+   "price_value": 11.99,
+   "metro_keys": [
+    "IL/springfield",
+    "MA/chicopee"
+   ],
+   "market_names": [
+    "Springfield Area, IL",
+    "Springfield Area, CT/MA"
+   ],
+   "city_keys": [
+    "IL/springfield",
+    "MA/chicopee",
+    "MA/east-longmeadow",
+    "CT/enfield",
+    "MA/feeding-hills",
+    "MA/holyoke",
+    "MA/ludlow",
+    "MA/northampton",
+    "MA/west-springfield",
+    "MA/westfield"
    ]
   },
   {
@@ -211,6 +245,84 @@
     "OR/tualatin",
     "OR/west-linn",
     "OR/wilsonville"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/0EauRlu",
+   "coupon_code": "0EauRlu",
+   "price": "$14.99",
+   "location_name": "participating Buffalo Area",
+   "state": "AREA",
+   "area_name": "participating Buffalo",
+   "market": "Buffalo",
+   "expiration": "09/11/2026",
+   "last_verified": "2026-09-04",
+   "participating_location_note": "Valid at participating locations in Buffalo",
+   "scope": "area",
+   "price_value": 14.99,
+   "metro_keys": [
+    "MN/plymouth"
+   ],
+   "market_names": [
+    "Minneapolis-Saint Paul, MN"
+   ],
+   "city_keys": [
+    "MN/blaine",
+    "MN/bloomington",
+    "MN/eagan",
+    "MN/lakeville",
+    "MN/maple-grove",
+    "MN/minnetonka",
+    "MN/plymouth",
+    "MN/white-bear-lake",
+    "MN/burnsville",
+    "MN/coon-rapids",
+    "MN/cottage-grove",
+    "MN/eden-prairie",
+    "MN/edina",
+    "MN/forest-lake",
+    "MN/minneapolis",
+    "MN/richfield",
+    "MN/roseville",
+    "MN/saint-paul",
+    "MN/saint-louis-park",
+    "MN/vadnais-heights",
+    "MN/albertville",
+    "MN/andover",
+    "MN/apple-valley",
+    "MN/arden-hills",
+    "MN/belle-plaine",
+    "MN/big-lake",
+    "MN/brooklyn-park",
+    "MN/buffalo",
+    "MN/cambridge",
+    "MN/champlin",
+    "MN/chanhassen",
+    "MN/chaska",
+    "MN/circle-pines",
+    "MN/crystal",
+    "MN/delano",
+    "MN/elk-river",
+    "MN/fridley",
+    "MN/ham-lake",
+    "MN/hugo",
+    "MN/inver-grove-heights",
+    "MN/maplewood",
+    "MN/medina",
+    "MN/monticello",
+    "MN/mound",
+    "MN/new-prague",
+    "MN/otsego",
+    "MN/princeton",
+    "MN/ramsey",
+    "MN/rogers",
+    "MN/rosemount",
+    "MN/saint-anthony",
+    "MN/saint-francis",
+    "MN/savage",
+    "MN/shakopee",
+    "MN/shorewood",
+    "MN/waconia"
    ]
   }
  ]
