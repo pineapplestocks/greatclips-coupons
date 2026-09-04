@@ -839,9 +839,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $12.99 in the only at participating NE & Central PA area. Expires Sep 11, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#isjblpZ\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "G4nYVOB",
+      "coupon_url": "https://offers.greatclips.com/G4nYVOB",
+      "post_id": "6a9b12128debcebde7b883ef",
+      "posted_at": "2026-09-04T18:46:42Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $11.99 in the only at participating Springfield-Holyoke area. Expires Sep 11, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#G4nYVOB\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-09-01T08:29:47Z",
+  "last_post": "2026-09-04T18:46:42Z",
   "posted": [
     "https://offers.greatclips.com/0GYOPx2",
     "https://offers.greatclips.com/0j32OaD",
@@ -890,6 +899,7 @@
     "https://offers.greatclips.com/FEDhm2E",
     "https://offers.greatclips.com/FEY2BPH",
     "https://offers.greatclips.com/FNfcvQo",
+    "https://offers.greatclips.com/G4nYVOB",
     "https://offers.greatclips.com/GHYlzqZ",
     "https://offers.greatclips.com/Gd3zMNb",
     "https://offers.greatclips.com/HmaYB7H",
