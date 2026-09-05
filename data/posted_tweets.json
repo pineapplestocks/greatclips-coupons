@@ -866,9 +866,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips coupon alert: $10.99 haircut in the only at participating Dallas-Ft. Worth area. Expires Sep 11, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#xEEIGXP\n\n#GreatClips #HaircutCoupon #Deals"
+    },
+    {
+      "coupon_code": "RtEvBAF",
+      "coupon_url": "https://offers.greatclips.com/RtEvBAF",
+      "post_id": "6a9ca892534afc9129e719b7",
+      "posted_at": "2026-09-05T23:41:07Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $10.99 in the Salisbury area. Expires Sep 18, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#RtEvBAF\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-09-05T17:52:47Z",
+  "last_post": "2026-09-05T23:41:07Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -955,6 +964,7 @@
     "https://offers.greatclips.com/QTwgFav",
     "https://offers.greatclips.com/R12OToz",
     "https://offers.greatclips.com/RM5iPmQ",
+    "https://offers.greatclips.com/RtEvBAF",
     "https://offers.greatclips.com/VGLk34N",
     "https://offers.greatclips.com/VRDfsr4",
     "https://offers.greatclips.com/VfFt8ot",
