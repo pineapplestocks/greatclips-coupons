@@ -121,6 +121,21 @@ async function ensureSubscriberSchema(env) {
   if (!hasZipCode) {
     await env.DB.prepare('ALTER TABLE subscribers ADD COLUMN zip_code TEXT').run();
   }
+  const hasUnsub = columns.some((column) => column.name === 'unsubscribed_at');
+  if (!hasUnsub) {
+    await env.DB.prepare('ALTER TABLE subscribers ADD COLUMN unsubscribed_at TEXT').run();
+  }
+
+  // Ledger of drip sends: one row per address per campaign, so the random
+  // nightly pick can never mail the same person twice.
+  await env.DB.prepare(
+    `CREATE TABLE IF NOT EXISTS campaign_sends (
+       email TEXT NOT NULL,
+       campaign TEXT NOT NULL,
+       sent_at TEXT NOT NULL,
+       PRIMARY KEY (email, campaign)
+     )`
+  ).run();
 }
 
 function normalizeZipCode(value) {
@@ -378,6 +393,151 @@ async function sendSubscriberSummary(env, source = 'manual') {
   return { ok: true, source, sent_to: env.ADMIN_EMAIL || DEFAULT_ADMIN_EMAIL, summary };
 }
 
+// ============================================================
+// Daily coupon drip
+//
+// Mails a capped, random slice of older subscribers the live nationwide
+// coupon, so the site earns a steady trickle of return visits instead of one
+// blast. Deliberately conservative: it only runs when a national coupon is
+// actually live, never mails the same address twice (campaign_sends), skips
+// anyone who unsubscribed, and stops at DRIP_DAILY_CAP so it stays inside the
+// Brevo free tier.
+// ============================================================
+
+const DRIP_CAMPAIGN = 'nationwide-drip';
+const DRIP_DAILY_CAP = 100;
+const DRIP_MIN_AGE_DAYS = 10;   // leave recent signups alone; they just got one
+const FEED_URL = 'https://greatclipsdeal.com/data/coupons.json';
+const SITE_URL = 'https://greatclipsdeal.com';
+
+async function fetchNationalCoupon() {
+  const res = await fetch(FEED_URL, { cf: { cacheTtl: 60 } });
+  if (!res.ok) throw new Error('coupon feed ' + res.status);
+  const feed = await res.json();
+  const national = (feed.coupons || []).filter((c) => c.scope === 'national');
+  if (!national.length) return null;
+  // cheapest wins, matching scripts/national_offer.py
+  national.sort((a, b) => (a.price_value == null ? 1e9 : a.price_value) - (b.price_value == null ? 1e9 : b.price_value));
+  return national[0];
+}
+
+// Signed so an unsubscribe link cannot be forged or enumerated.
+async function unsubToken(env, email) {
+  const secret = env.UNSUB_SECRET || env.BREVO_API_KEY || 'gcd-fallback';
+  const key = await crypto.subtle.importKey(
+    'raw', new TextEncoder().encode(secret),
+    { name: 'HMAC', hash: 'SHA-256' }, false, ['sign']
+  );
+  const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(email.toLowerCase()));
+  return [...new Uint8Array(sig)].slice(0, 16).map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function unsubUrl(env, email) {
+  const token = await unsubToken(env, email);
+  return SITE_URL + '/unsubscribe?e=' + encodeURIComponent(email) + '&t=' + token;
+}
+
+function dripHtml(coupon, unsubscribeUrl) {
+  const q = '?subscribed=1&utm_source=brevo&utm_medium=email&utm_campaign=nationwide-drip';
+  const price = escapeHtml(coupon.price || '$5.00');
+  return `<!doctype html><html><body style="margin:0;padding:0;background:#f2f4f5;font-family:Arial,Helvetica,sans-serif;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">Get ${price} off your next haircut at participating Great Clips locations.</div>
+<table role="presentation" width="100%" bgcolor="#f2f4f5"><tr><td align="center" style="padding:20px 10px;">
+<table role="presentation" width="600" style="width:600px;max-width:600px;background:#ffffff;">
+  <tr><td bgcolor="#003e42" style="background:#003e42;padding:24px 30px;color:#ffffff;font-size:23px;font-weight:bold;">
+    GreatClipsDeal<span style="color:#5fd3bd;">.com</span>
+    <div style="margin-top:5px;color:#8fd8ca;font-size:10px;font-weight:bold;letter-spacing:2px;">INDEPENDENT COUPON TRACKER</div>
+  </td></tr>
+  <tr><td><a href="${SITE_URL}/${q}" target="_blank"><img src="${SITE_URL}/assets/email/coupon-5off.jpg"
+      alt="Haircut coupon: ${price} off at participating Great Clips locations"
+      width="600" style="width:100%;max-width:600px;height:auto;display:block;background:#00615c;"></a></td></tr>
+  <tr><td align="center" style="padding:28px 40px 0;color:#061631;">
+    <div style="color:#008c79;font-size:15px;font-weight:bold;letter-spacing:4px;">NATIONWIDE OFFER</div>
+    <div style="font-size:52px;line-height:56px;font-weight:800;padding-top:8px;">${price} OFF</div>
+    <div style="font-size:28px;line-height:34px;font-weight:800;">your next haircut</div>
+    <div style="padding:16px 0 0;color:#34445c;font-size:16px;line-height:25px;">
+      Valid at participating Great Clips locations anywhere in the US.
+    </div>
+  </td></tr>
+  <tr><td align="center" style="padding:26px 40px 0;">
+    <table role="presentation"><tr><td bgcolor="#00947e" style="border-radius:40px;">
+      <a href="${SITE_URL}/${q}" target="_blank" style="display:block;padding:17px 44px;color:#ffffff;font-size:20px;font-weight:bold;text-decoration:none;">
+        Get my ${price} coupon &nbsp; &rarr;</a>
+    </td></tr></table>
+    <div style="padding-top:13px;color:#47546b;font-size:14px;">
+      One click on the site &mdash; you will not be asked for your email again.
+    </div>
+  </td></tr>
+  <tr><td align="center" style="padding:30px 40px 34px;color:#7a8598;font-size:11px;line-height:18px;">
+    <div style="border-top:1px solid #d9dfe4;padding-top:20px;">
+      You are receiving this because you requested a Great Clips coupon at GreatClipsDeal.com.<br>
+      <a href="${unsubscribeUrl}" style="color:#455168;">Unsubscribe</a><br><br>
+      Great Clips Deal &middot; 1383 E Dara Pl, Chandler, AZ 85249, United States<br><br>
+      GreatClipsDeal is an independent coupon directory and is not affiliated with,
+      endorsed by, or sponsored by Great Clips, Inc.
+    </div>
+  </td></tr>
+</table></td></tr></table></body></html>`;
+}
+
+async function runDailyDrip(env, trigger) {
+  if (!env.DB || !env.BREVO_API_KEY) return { ok: false, reason: 'not configured' };
+  await ensureSubscriberSchema(env);
+
+  const coupon = await fetchNationalCoupon();
+  if (!coupon) {
+    console.log('drip: no live national coupon, sending nothing');
+    return { ok: true, sent: 0, reason: 'no national coupon' };
+  }
+
+  const cutoff = new Date(Date.now() - DRIP_MIN_AGE_DAYS * DAY_MS).toISOString();
+  const candidates = await queryAll(env,
+    `SELECT lower(trim(s.email)) AS email
+       FROM subscribers s
+      WHERE s.email LIKE '%_@_%.__%'
+        AND s.subscribed_at < ?
+        AND s.unsubscribed_at IS NULL
+        AND NOT EXISTS (
+              SELECT 1 FROM campaign_sends c
+               WHERE c.email = lower(trim(s.email)) AND c.campaign = ?
+            )
+      GROUP BY lower(trim(s.email))
+      ORDER BY RANDOM()
+      LIMIT ?`,
+    cutoff, DRIP_CAMPAIGN, DRIP_DAILY_CAP);
+
+  let sent = 0;
+  let failed = 0;
+  for (const row of candidates) {
+    const email = row.email;
+    try {
+      const res = await sendBrevoEmail(env, {
+        toEmail: email,
+        subject: 'Your ' + (coupon.price || '$5.00') + ' off Great Clips coupon is live',
+        htmlContent: dripHtml(coupon, await unsubUrl(env, email)),
+      });
+      if (!res.ok) {
+        // Out of credits or throttled: stop cleanly rather than burn the list.
+        const body = await res.text();
+        console.error('drip send failed', res.status, body.slice(0, 200));
+        failed++;
+        if (res.status === 402 || res.status === 429) break;
+        continue;
+      }
+      await env.DB.prepare(
+        'INSERT OR IGNORE INTO campaign_sends (email, campaign, sent_at) VALUES (?, ?, ?)'
+      ).bind(email, DRIP_CAMPAIGN, new Date().toISOString()).run();
+      sent++;
+    } catch (err) {
+      console.error('drip error', email, err);
+      failed++;
+    }
+  }
+
+  console.log('drip(' + trigger + '): ' + sent + ' sent, ' + failed + ' failed, ' + candidates.length + ' candidates');
+  return { ok: true, sent, failed, candidates: candidates.length, coupon: coupon.coupon_code };
+}
+
 export default {
   async fetch(request, env) {
     // Handle CORS preflight
@@ -386,6 +546,40 @@ export default {
     }
 
     const url = new URL(request.url);
+
+    if (url.pathname === '/unsubscribe') {
+      const email = (url.searchParams.get('e') || '').trim().toLowerCase();
+      const token = url.searchParams.get('t') || '';
+      const page = (msg) => new Response(
+        '<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+        + '<div style="font-family:system-ui,sans-serif;max-width:520px;margin:16vh auto;padding:0 24px;text-align:center;">'
+        + '<h1 style="font-size:22px;color:#061631;">' + msg + '</h1>'
+        + '<p style="color:#5b6676;font-size:15px;">GreatClipsDeal.com</p></div>',
+        { headers: { 'Content-Type': 'text/html; charset=utf-8' } });
+
+      if (!email || token !== await unsubToken(env, email)) {
+        return page('That unsubscribe link is not valid.');
+      }
+      try {
+        await ensureSubscriberSchema(env);
+        await env.DB.prepare(
+          'UPDATE subscribers SET unsubscribed_at = ? WHERE lower(trim(email)) = ?'
+        ).bind(new Date().toISOString(), email).run();
+      } catch (err) {
+        console.error('unsubscribe error', err);
+        return page('Something went wrong. Please try again.');
+      }
+      return page('You are unsubscribed. You will not receive these emails again.');
+    }
+
+    if (url.pathname === '/admin/run-drip') {
+      if (request.method !== 'POST') return jsonResponse({ error: 'Method not allowed' }, 405);
+      if (!env.ADMIN_TOKEN || request.headers.get('Authorization') !== `Bearer ${env.ADMIN_TOKEN}`) {
+        return jsonResponse({ error: 'Unauthorized' }, 401);
+      }
+      return jsonResponse(await runDailyDrip(env, 'manual'));
+    }
+
     if (url.pathname === '/admin/send-summary') {
       if (request.method !== 'POST') {
         return jsonResponse({ error: 'Method not allowed' }, 405);
@@ -614,6 +808,7 @@ export default {
 
   async scheduled(event, env, ctx) {
     ctx.waitUntil(sendSubscriberSummary(env, 'scheduled'));
+    ctx.waitUntil(runDailyDrip(env, 'scheduled'));
   },
 };
 
