@@ -857,9 +857,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips coupon alert: $14.99 haircut in the Buffalo area. Expires Sep 11, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#0EauRlu\n\n#GreatClips #HaircutCoupon #Deals"
+    },
+    {
+      "coupon_code": "xEEIGXP",
+      "coupon_url": "https://offers.greatclips.com/xEEIGXP",
+      "post_id": "6a9c56eff97391de04bb2845",
+      "posted_at": "2026-09-05T17:52:47Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips coupon alert: $10.99 haircut in the only at participating Dallas-Ft. Worth area. Expires Sep 11, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#xEEIGXP\n\n#GreatClips #HaircutCoupon #Deals"
     }
   ],
-  "last_post": "2026-09-04T23:50:31Z",
+  "last_post": "2026-09-05T17:52:47Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1006,6 +1015,7 @@
     "https://offers.greatclips.com/vMaE8CK",
     "https://offers.greatclips.com/vmmOwot",
     "https://offers.greatclips.com/wGjjdyK",
+    "https://offers.greatclips.com/xEEIGXP",
     "https://offers.greatclips.com/xHe7OEx",
     "https://offers.greatclips.com/xQnCtp8",
     "https://offers.greatclips.com/xqTb01a",
