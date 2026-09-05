@@ -269,6 +269,18 @@ var gcPending = null;
 var gcPendingSalon = null;
 var gcModalReady = false;
 
+// Subscribers arriving from a campaign link (?subscribed=1) already gave us
+// their email. Remember that so no visit re-gates them.
+try {
+  if (new URLSearchParams(location.search).get('subscribed') === '1') {
+    localStorage.setItem('gcd_subscribed', '1');
+  }
+} catch (e) {}
+
+function gcIsSubscriber() {
+  try { return localStorage.getItem('gcd_subscribed') === '1'; } catch (e) { return false; }
+}
+
 // Built on first use so the markup ships once in this file, not on every page.
 function gcEnsureModal() {
   if (gcModalReady || document.getElementById('gcEmailModal')) {
@@ -282,6 +294,10 @@ function gcEnsureModal() {
 }
 
 function gcOpenModal(coupon, salon) {
+  if (gcIsSubscriber()) {
+    if (coupon && coupon.url) window.open(coupon.url, '_blank', 'noopener');
+    return;
+  }
   if (!coupon || !coupon.url) return;
   gcEnsureModal();
   gcPending = coupon;

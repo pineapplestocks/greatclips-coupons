@@ -1238,7 +1238,23 @@
         let pendingLocation = { location_name: '', city: '', state: '' };
         const WORKER_URL = 'https://greatclips-email.mehulchaudhari.workers.dev';
 
+        // Subscribers arriving from a campaign link (?subscribed=1) already gave
+        // us their email. Remember that so no visit re-gates them.
+        try {
+            if (new URLSearchParams(location.search).get('subscribed') === '1') {
+                localStorage.setItem('gcd_subscribed', '1');
+            }
+        } catch (e) {}
+
+        function isSubscriber() {
+            try { return localStorage.getItem('gcd_subscribed') === '1'; } catch (e) { return false; }
+        }
+
         function getCoupon(url, price, location_name, city, state) {
+            if (isSubscriber()) {
+                window.open(url, '_blank', 'noopener');
+                return;
+            }
             // Always show email modal — coupon is delivered by email
             pendingCouponUrl = url;
             pendingCouponPrice = price || '';

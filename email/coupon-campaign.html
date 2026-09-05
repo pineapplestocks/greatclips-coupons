@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-apple-disable-message-reformatting">
+  <title>$5 Great Clips Haircut Coupon</title>
+
+  <!--
+    Brevo campaign: nationwide $5.00 Great Clips coupon (code yMEcKko).
+    Paste into Brevo > Campaigns > Email > Create > "Paste your code".
+
+    BEFORE SENDING
+      1. Replace POSTAL_ADDRESS_HERE. CAN-SPAM requires a real physical mailing
+         address in commercial email. A PO box is fine; the placeholder is not.
+      2. Leave {{ unsubscribe }} in place. Brevo fills it per recipient.
+      3. The email no longer embeds the offer URL. The site serves whatever
+         coupon is live in docs/data/coupons.json, so the link cannot go stale.
+
+    LANDING BEHAVIOR
+      Every link carries ?subscribed=1. The site stores it (localStorage) and
+      hands subscribers their coupon in one click instead of re-opening the
+      email modal they already went through. The UTM tags make the campaign
+      visible in GA4 under source "brevo" / campaign "nationwide-5off".
+
+    IMAGES
+      One image: the $5 OFF hero, self-hosted at
+      https://greatclipsdeal.com/assets/email/coupon-5off.jpg so it cannot
+      rotate away like the rackcdn URL it came from. The site deploy must be
+      LIVE before the campaign is sent or the hero 404s. Clients that block
+      images fall back to alt text plus the live-text offer section below,
+      which restates the whole offer. Everything else is tables and
+      background colors.
+
+    ON BRANDING
+      This sends as GreatClipsDeal. Naming Great Clips to say whose coupons you
+      track is nominative use and fine. Their logo, their registered tagline and
+      their photography are not -- an email that reads as official Great Clips
+      marketing invites a trademark and false-endorsement claim the footer
+      disclaimer does not cure, and trips brand-impersonation filtering at Gmail.
+  -->
+
+  <style>
+    body { margin:0 !important; padding:0 !important; background:#f2f4f5; font-family:Arial, Helvetica, sans-serif; }
+    table { border-collapse:collapse; }
+    img { border:0; display:block; max-width:100%; }
+    a { text-decoration:none; }
+
+    @media only screen and (max-width:620px) {
+      .email-container { width:100% !important; }
+      .mobile-padding  { padding-left:22px !important; padding-right:22px !important; }
+      .hero-title      { font-size:48px !important; line-height:48px !important; }
+      .feature         { display:block !important; width:100% !important; padding:16px 0 !important;
+                         border-left:0 !important; border-right:0 !important; }
+      .deal-column     { display:block !important; width:100% !important; }
+      .deal-button     { margin-top:20px !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PREHEADER -->
+  <div style="display:none;font-size:1px;color:#f2f4f5;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;">
+    Get $5 off your next haircut at participating Great Clips locations. No expiration date on this one.
+  </div>
+
+  <table role="presentation" width="100%" bgcolor="#f2f4f5">
+    <tr>
+      <td align="center" style="padding:20px 10px;">
+
+        <table role="presentation" width="600" class="email-container"
+               style="width:600px;max-width:600px;background:#ffffff;">
+
+          <!-- ========== HEADER ========== -->
+          <tr>
+            <td bgcolor="#003e42" style="background:#003e42;padding:24px 30px;">
+              <table role="presentation" width="100%">
+                <tr>
+                  <td valign="middle" style="color:#ffffff;font-size:23px;line-height:26px;font-weight:bold;letter-spacing:-0.3px;">
+                    GreatClipsDeal<span style="color:#5fd3bd;">.com</span>
+                    <div style="margin-top:5px;color:#8fd8ca;font-size:10px;line-height:14px;font-weight:bold;letter-spacing:2px;">
+                      INDEPENDENT COUPON TRACKER
+                    </div>
+                  </td>
+                  <td align="right" valign="middle"
+                      style="color:#ffffff;font-size:11px;line-height:15px;font-weight:bold;text-transform:uppercase;">
+                    THOUSANDS<br>OF LOCATIONS
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ========== HERO ========== -->
+          <tr>
+            <td>
+              <a href="https://greatclipsdeal.com/?subscribed=1&amp;utm_source=brevo&amp;utm_medium=email&amp;utm_campaign=nationwide-5off" target="_blank">
+                <img src="https://greatclipsdeal.com/assets/email/coupon-5off.jpg"
+                     alt="Haircut coupon: $5 off at participating Great Clips locations"
+                     width="600" height="300"
+                     style="width:100%;max-width:600px;height:auto;display:block;background:#00615c;">
+              </a>
+            </td>
+          </tr>
+
+          <!-- ========== MAIN OFFER ========== -->
+          <tr>
+            <td align="center" class="mobile-padding" style="padding:28px 45px 8px;">
+              <div style="color:#008c79;font-size:17px;line-height:22px;font-weight:bold;letter-spacing:5px;">
+                NATIONWIDE OFFER
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" class="mobile-padding" style="padding:0 35px;color:#061631;">
+              <div class="hero-title" style="font-size:58px;line-height:60px;font-weight:800;">$5.00 OFF</div>
+              <div style="font-size:32px;line-height:38px;font-weight:800;">your next haircut</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" class="mobile-padding"
+                style="padding:18px 55px 22px;color:#34445c;font-size:16px;line-height:25px;">
+              This coupon is valid at participating Great Clips locations anywhere in the
+              US &mdash; not just one metro.<br>
+              It also came through with no expiration date attached.
+            </td>
+          </tr>
+
+          <!-- CTA -->
+          <tr>
+            <td align="center" class="mobile-padding" style="padding:0 50px;">
+              <table role="presentation" width="100%" style="max-width:420px;">
+                <tr>
+                  <td align="center" bgcolor="#00947e" style="border-radius:40px;">
+                    <a href="https://greatclipsdeal.com/?subscribed=1&amp;utm_source=brevo&amp;utm_medium=email&amp;utm_campaign=nationwide-5off" target="_blank"
+                       style="display:block;padding:18px 20px;color:#ffffff;font-size:21px;line-height:24px;font-weight:bold;">
+                      Get my $5.00 coupon &nbsp; &rarr;
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" style="padding:13px 20px 28px;color:#47546b;font-size:14px;line-height:20px;">
+              One more click on the site and the coupon is yours &mdash; as a subscriber you will not be asked for your email again.
+            </td>
+          </tr>
+
+          <!-- ========== LOCAL DEALS ========== -->
+          <tr>
+            <td class="mobile-padding" style="padding:0 28px 28px;">
+              <table role="presentation" width="100%" bgcolor="#eef8f7" style="background:#eef8f7;border-radius:14px;">
+                <tr>
+                  <td class="deal-column" width="65%" valign="middle" style="padding:23px 20px 23px 24px;">
+                    <div style="color:#071832;font-size:21px;line-height:26px;font-weight:bold;margin-bottom:8px;">
+                      Want the deals near you instead?
+                    </div>
+                    <div style="color:#43516a;font-size:14px;line-height:22px;">
+                      Great Clips runs separate market coupons that are often cheaper than the
+                      nationwide one. We track them by city &mdash;
+                      <a href="https://greatclipsdeal.com/salons?subscribed=1&amp;utm_source=brevo&amp;utm_medium=email&amp;utm_campaign=nationwide-5off"
+                         style="color:#008b77;font-weight:bold;text-decoration:underline;">find your local salon</a>
+                      to see what is live in your area.
+                    </div>
+                  </td>
+                  <td class="deal-column" width="35%" align="center" valign="middle" style="padding:20px;">
+                    <table role="presentation" class="deal-button">
+                      <tr>
+                        <td bgcolor="#d4f1ed" style="border-radius:30px;">
+                          <a href="https://greatclipsdeal.com/salons?subscribed=1&amp;utm_source=brevo&amp;utm_medium=email&amp;utm_campaign=nationwide-5off"
+                             style="display:block;padding:13px 18px;color:#007d6e;font-size:14px;line-height:18px;font-weight:bold;white-space:nowrap;">
+                            Find your local salon &rarr;
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                    <div style="padding-top:10px;color:#59657a;font-size:11px;line-height:16px;">
+                      See local offers, hours and more.
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ========== BENEFITS ========== -->
+          <tr>
+            <td class="mobile-padding" style="padding:0 30px 30px;">
+              <table role="presentation" width="100%">
+                <tr>
+
+                  <td class="feature" width="33.33%" align="center" valign="top" style="padding:5px 12px;">
+                    <div style="font-size:26px;line-height:30px;">&#128205;</div>
+                    <div style="margin-top:12px;color:#071832;font-size:14px;font-weight:bold;line-height:19px;">
+                      Thousands of locations
+                    </div>
+                    <div style="margin-top:6px;color:#607086;font-size:12px;line-height:18px;">
+                      Valid at participating salons across the US.
+                    </div>
+                  </td>
+
+                  <td class="feature" width="33.33%" align="center" valign="top"
+                      style="padding:5px 12px;border-left:1px solid #dce2e6;border-right:1px solid #dce2e6;">
+                    <div style="font-size:26px;line-height:30px;">&#9986;&#65039;</div>
+                    <div style="margin-top:12px;color:#071832;font-size:14px;font-weight:bold;line-height:19px;">
+                      No form to fill out
+                    </div>
+                    <div style="margin-top:6px;color:#607086;font-size:12px;line-height:18px;">
+                      Just click and get your coupon.
+                    </div>
+                  </td>
+
+                  <td class="feature" width="33.33%" align="center" valign="top" style="padding:5px 12px;">
+                    <div style="font-size:26px;line-height:30px;">&#128197;</div>
+                    <div style="margin-top:12px;color:#071832;font-size:14px;font-weight:bold;line-height:19px;">
+                      Checked every day
+                    </div>
+                    <div style="margin-top:6px;color:#607086;font-size:12px;line-height:18px;">
+                      We re-verify offers so you do not hit a dead link.
+                    </div>
+                  </td>
+
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ========== FOOTER ========== -->
+          <tr>
+            <td style="padding:0 35px;"><div style="height:1px;background:#d9dfe4;"></div></td>
+          </tr>
+
+          <tr>
+            <td align="center" style="padding:20px 38px 8px;color:#647188;font-size:12px;line-height:19px;">
+              You are receiving this because you requested a Great Clips coupon at
+              <strong style="color:#34445c;">GreatClipsDeal.com</strong>.
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" style="padding:4px 30px;font-size:12px;">
+              <a href="{{ unsubscribe }}" style="color:#455168;text-decoration:underline;">Unsubscribe</a>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" style="padding:10px 30px 0;color:#59657a;font-size:11px;line-height:18px;">
+              POSTAL_ADDRESS_HERE
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" style="padding:13px 50px 30px;color:#7a8598;font-size:10px;line-height:17px;">
+              GreatClipsDeal is an independent coupon directory and is not affiliated with,
+              endorsed by, or sponsored by Great Clips, Inc. Coupon availability is set by
+              Great Clips and can change without notice.
+            </td>
+          </tr>
+
+        </table>
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
