@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-05T20:25:06.189548",
+  "scraped_at": "2026-09-06T03:27:49.700283",
   "total_coupons": 16,
   "coupons": [
     {
@@ -12,7 +12,7 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-08-21",
@@ -30,11 +30,11 @@
       "expiration": "09/13/2026",
       "price": "$5.00",
       "market": "CA",
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-05",
-      "last_seen": "2026-09-05"
+      "last_seen": "2026-09-06"
     },
     {
       "url": "https://offers.greatclips.com/XDcpSFp",
@@ -48,7 +48,7 @@
       "expiration": "09/12/2026",
       "price": "$7.99",
       "market": "WI",
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-05",
@@ -64,11 +64,11 @@
       "area_name": "only at participating Dallas-Ft. Worth",
       "price": "$10.99",
       "market": "Dallas-Ft. Worth",
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Dallas-Ft. Worth",
       "added_date": "2026-09-05",
-      "last_seen": "2026-09-05"
+      "last_seen": "2026-09-06"
     },
     {
       "url": "https://offers.greatclips.com/RtEvBAF",
@@ -80,11 +80,11 @@
       "area_name": "participating Salisbury",
       "price": "$10.99",
       "market": "Salisbury",
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Salisbury",
       "added_date": "2026-09-05",
-      "last_seen": "2026-09-05"
+      "last_seen": "2026-09-06"
     },
     {
       "url": "https://offers.greatclips.com/EWNAalN",
@@ -96,7 +96,7 @@
       "area_name": "only at participating Harrisburg, Lancaster & York",
       "price": "$11.99",
       "market": "Harrisburg, Lancaster & York",
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Harrisburg, Lancaster & York",
       "added_date": "2026-08-21",
@@ -112,11 +112,11 @@
       "area_name": "participating Baltimore",
       "price": "$11.99",
       "market": "Baltimore",
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Baltimore",
       "added_date": "2026-08-29",
-      "last_seen": "2026-09-05"
+      "last_seen": "2026-09-06"
     },
     {
       "url": "https://offers.greatclips.com/G4nYVOB",
@@ -128,7 +128,7 @@
       "area_name": "only at participating Springfield-Holyoke",
       "price": "$11.99",
       "market": "Springfield-Holyoke",
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Springfield-Holyoke",
       "added_date": "2026-09-04",
@@ -144,7 +144,7 @@
       "area_name": "only at participating Hampton Roads & Peninsula",
       "price": "$12.99",
       "market": "Hampton Roads & Peninsula",
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Hampton Roads & Peninsula",
       "added_date": "2026-08-21",
@@ -160,7 +160,7 @@
       "area_name": "only at participating NE & Central PA",
       "price": "$12.99",
       "market": "NE & Central PA",
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in NE & Central PA",
       "added_date": "2026-08-31",
@@ -176,7 +176,7 @@
       "area_name": "only at participating NJ, PA & DE",
       "price": "$13.99",
       "market": "NJ, PA & DE",
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in NJ, PA & DE",
       "added_date": "2026-08-01",
@@ -192,7 +192,7 @@
       "area_name": "participating Portland",
       "price": "$14.99",
       "market": "Portland",
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Portland",
       "added_date": "2026-08-21",
@@ -208,7 +208,7 @@
       "area_name": "participating Buffalo",
       "price": "$14.99",
       "market": "Buffalo",
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Buffalo",
       "added_date": "2026-09-04",
@@ -224,11 +224,11 @@
       "area_name": "only at participating Dallas-Ft. Worth",
       "price": "$14.99",
       "market": "Dallas-Ft. Worth",
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Dallas-Ft. Worth",
       "added_date": "2026-09-05",
-      "last_seen": "2026-09-05"
+      "last_seen": "2026-09-06"
     },
     {
       "url": "https://offers.greatclips.com/F84tFdv",
@@ -240,11 +240,11 @@
       "area_name": "participating Barrie, Orillia, Bradford, Innisfil & Alliston",
       "price": "$17.99",
       "market": "Barrie, Orillia, Bradford, Innisfil & Alliston",
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Barrie, Orillia, Bradford, Innisfil & Alliston",
       "added_date": "2026-09-05",
-      "last_seen": "2026-09-05"
+      "last_seen": "2026-09-06"
     },
     {
       "url": "https://offers.greatclips.com/n5ot5sF",
@@ -256,11 +256,11 @@
       "area_name": "W, Brantford & Guelph",
       "price": "$18.99",
       "market": "W, Brantford & Guelph",
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in W, Brantford & Guelph",
       "added_date": "2026-09-05",
-      "last_seen": "2026-09-05"
+      "last_seen": "2026-09-06"
     }
   ]
 }
