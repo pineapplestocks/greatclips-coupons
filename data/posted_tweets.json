@@ -893,9 +893,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips savings update: $17.99 coupon in the Barrie, Orillia, Bradford, Innisfil & Alliston area. Expires Sep 13, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#F84tFdv\n\n#GreatClips #SaveMoney"
+    },
+    {
+      "coupon_code": "n5ot5sF",
+      "coupon_url": "https://offers.greatclips.com/n5ot5sF",
+      "post_id": "6a9df9befd0e130a89b33fdd",
+      "posted_at": "2026-09-06T23:39:43Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips savings update: $18.99 coupon in the W, Brantford & Guelph area. Expires Sep 13, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#n5ot5sF\n\n#GreatClips #SaveMoney"
     }
   ],
-  "last_post": "2026-09-06T17:58:27Z",
+  "last_post": "2026-09-06T23:39:43Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1023,6 +1032,7 @@
     "https://offers.greatclips.com/lgNo1Rl",
     "https://offers.greatclips.com/llFADfo",
     "https://offers.greatclips.com/miieZuZ",
+    "https://offers.greatclips.com/n5ot5sF",
     "https://offers.greatclips.com/n7XAL9e",
     "https://offers.greatclips.com/nk46Jaj",
     "https://offers.greatclips.com/o5aXidu",
