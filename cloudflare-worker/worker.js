@@ -125,6 +125,10 @@ async function ensureSubscriberSchema(env) {
   if (!hasUnsub) {
     await env.DB.prepare('ALTER TABLE subscribers ADD COLUMN unsubscribed_at TEXT').run();
   }
+  const hasBounced = columns.some((column) => column.name === 'bounced_at');
+  if (!hasBounced) {
+    await env.DB.prepare('ALTER TABLE subscribers ADD COLUMN bounced_at TEXT').run();
+  }
 
   // Ledger of drip sends: one row per address per campaign, so the random
   // nightly pick can never mail the same person twice.
@@ -407,6 +411,15 @@ async function sendSubscriberSummary(env, source = 'manual') {
 const DRIP_CAMPAIGN = 'nationwide-drip';
 const DRIP_DAILY_CAP = 100;
 const DRIP_MIN_AGE_DAYS = 10;   // leave recent signups alone; they just got one
+
+// The first 200-contact send bounced 4.0% hard on the *newest* addresses, and
+// the drip deliberately targets older ones. Providers throttle past ~5% and
+// Brevo suspends the account - which would take coupon delivery down with it.
+// So: pull hard bounces back from Brevo each run and never retry them, and
+// stop the drip entirely if the trailing rate crosses the ceiling.
+const DRIP_BOUNCE_CEILING = 0.04;
+const DRIP_BOUNCE_WINDOW_DAYS = 3;
+const DRIP_BOUNCE_MIN_SAMPLE = 50;   // do not judge a rate on a tiny sample
 const FEED_URL = 'https://greatclipsdeal.com/data/coupons.json';
 const SITE_URL = 'https://greatclipsdeal.com';
 
@@ -480,6 +493,62 @@ function dripHtml(coupon, unsubscribeUrl) {
 </table></td></tr></table></body></html>`;
 }
 
+// Pull hard bounces back from Brevo and mark them in D1, so a dead address is
+// picked once and never again. Brevo blocklists them on its side too, but that
+// does not stop this Worker from burning a daily slot on them.
+async function syncHardBounces(env, days = 7) {
+  const fmt = (d) => d.toISOString().slice(0, 10);
+  const startDate = fmt(new Date(Date.now() - days * DAY_MS));
+  const endDate = fmt(new Date());
+  let marked = 0;
+
+  for (let offset = 0; offset < 1000; offset += 100) {
+    const url = 'https://api.brevo.com/v3/smtp/statistics/events'
+      + `?limit=100&offset=${offset}&startDate=${startDate}&endDate=${endDate}&event=hardBounces`;
+    let body;
+    try {
+      const res = await fetch(url, {
+        headers: { 'api-key': env.BREVO_API_KEY, accept: 'application/json' },
+      });
+      if (!res.ok) break;
+      body = await res.json();
+    } catch (err) {
+      console.error('bounce sync error', err);
+      break;
+    }
+    const events = body.events || [];
+    if (!events.length) break;
+    for (const ev of events) {
+      const email = String(ev.email || '').trim().toLowerCase();
+      if (!email) continue;
+      const result = await env.DB.prepare(
+        'UPDATE subscribers SET bounced_at = ? WHERE lower(trim(email)) = ? AND bounced_at IS NULL'
+      ).bind(ev.date || new Date().toISOString(), email).run();
+      marked += (result.meta && result.meta.changes) || 0;
+    }
+    if (events.length < 100) break;
+  }
+  return marked;
+}
+
+// Hard-bounce rate among drip sends over the trailing window.
+async function recentBounceRate(env) {
+  const since = new Date(Date.now() - DRIP_BOUNCE_WINDOW_DAYS * DAY_MS).toISOString();
+  const row = await queryFirst(env,
+    `SELECT COUNT(*) AS sent,
+            SUM(CASE WHEN EXISTS (
+                  SELECT 1 FROM subscribers s
+                   WHERE lower(trim(s.email)) = c.email AND s.bounced_at IS NOT NULL
+                ) THEN 1 ELSE 0 END) AS bounced
+       FROM campaign_sends c
+      WHERE c.campaign = ? AND c.sent_at >= ?`,
+    DRIP_CAMPAIGN, since);
+  const sent = Number((row && row.sent) || 0);
+  const bounced = Number((row && row.bounced) || 0);
+  if (sent < DRIP_BOUNCE_MIN_SAMPLE) return { rate: 0, sent, bounced, judged: false };
+  return { rate: bounced / sent, sent, bounced, judged: true };
+}
+
 async function runDailyDrip(env, trigger) {
   if (!env.DB || !env.BREVO_API_KEY) return { ok: false, reason: 'not configured' };
   await ensureSubscriberSchema(env);
@@ -490,6 +559,21 @@ async function runDailyDrip(env, trigger) {
     return { ok: true, sent: 0, reason: 'no national coupon' };
   }
 
+  // Retire addresses Brevo has already hard-bounced, then check whether the
+  // trailing rate is healthy enough to keep sending at all.
+  const retired = await syncHardBounces(env);
+  const health = await recentBounceRate(env);
+  if (health.judged && health.rate > DRIP_BOUNCE_CEILING) {
+    console.error(
+      `drip HALTED: hard-bounce rate ${(health.rate * 100).toFixed(1)}% over last `
+      + `${health.sent} sends exceeds ceiling ${(DRIP_BOUNCE_CEILING * 100).toFixed(1)}%`
+    );
+    return {
+      ok: true, sent: 0, halted: true, reason: 'bounce rate above ceiling',
+      bounceRate: health.rate, window: health.sent, retired,
+    };
+  }
+
   const cutoff = new Date(Date.now() - DRIP_MIN_AGE_DAYS * DAY_MS).toISOString();
   const candidates = await queryAll(env,
     `SELECT lower(trim(s.email)) AS email
@@ -497,6 +581,7 @@ async function runDailyDrip(env, trigger) {
       WHERE s.email LIKE '%_@_%.__%'
         AND s.subscribed_at < ?
         AND s.unsubscribed_at IS NULL
+        AND s.bounced_at IS NULL
         AND NOT EXISTS (
               SELECT 1 FROM campaign_sends c
                WHERE c.email = lower(trim(s.email)) AND c.campaign = ?
@@ -534,8 +619,16 @@ async function runDailyDrip(env, trigger) {
     }
   }
 
-  console.log('drip(' + trigger + '): ' + sent + ' sent, ' + failed + ' failed, ' + candidates.length + ' candidates');
-  return { ok: true, sent, failed, candidates: candidates.length, coupon: coupon.coupon_code };
+  console.log(
+    'drip(' + trigger + '): ' + sent + ' sent, ' + failed + ' failed, '
+    + candidates.length + ' candidates, ' + retired + ' retired, trailing bounce '
+    + (health.judged ? (health.rate * 100).toFixed(1) + '%' : 'n/a')
+  );
+  return {
+    ok: true, sent, failed, candidates: candidates.length,
+    coupon: coupon.coupon_code, retired,
+    bounceRate: health.judged ? health.rate : null,
+  };
 }
 
 export default {
