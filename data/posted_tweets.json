@@ -911,9 +911,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $5.00 in Brentwood, CA. Expires Sep 13, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#udfr0nU\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "u7R1t67",
+      "coupon_url": "https://offers.greatclips.com/u7R1t67",
+      "post_id": "6a9f1181dcfd5421cc8daf97",
+      "posted_at": "2026-09-07T19:33:21Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $5.00 at participating US locations. Limited time offer.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#u7R1t67\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-09-07T08:07:14Z",
+  "last_post": "2026-09-07T19:33:21Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1060,6 +1069,7 @@
     "https://offers.greatclips.com/tIESEyJ",
     "https://offers.greatclips.com/tPJAO4N",
     "https://offers.greatclips.com/tjVfvhA",
+    "https://offers.greatclips.com/u7R1t67",
     "https://offers.greatclips.com/uadPCj8",
     "https://offers.greatclips.com/udfr0nU",
     "https://offers.greatclips.com/vMaE8CK",
