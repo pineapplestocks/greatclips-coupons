@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-08T03:30:49Z",
- "scraped_at": "2026-09-07T20:30:30.393325",
- "total": 17,
+ "generated_at": "2026-09-08T10:47:21Z",
+ "scraped_at": "2026-09-08T03:47:01.948694",
+ "total": 21,
  "scopes": {
   "national": 2,
-  "salon": 2,
+  "salon": 6,
   "area": 9,
   "unknown": 3,
   "state": 1
@@ -18,7 +18,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-09-07",
+   "last_verified": "2026-09-08",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -33,7 +33,7 @@
    "address": "4431-D Balfour Rd",
    "market": "CA",
    "expiration": "09/13/2026",
-   "last_verified": "2026-09-07",
+   "last_verified": "2026-09-08",
    "scope": "salon",
    "price_value": 5.0,
    "city_keys": [
@@ -48,7 +48,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-09-07",
+   "last_verified": "2026-09-08",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -63,11 +63,62 @@
    "address": "611 Hometown Circle",
    "market": "WI",
    "expiration": "09/12/2026",
-   "last_verified": "2026-09-07",
+   "last_verified": "2026-09-08",
    "scope": "salon",
    "price_value": 7.99,
    "city_keys": [
     "WI/verona"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/g9cBmt2",
+   "coupon_code": "g9cBmt2",
+   "price": "$8.99",
+   "location_name": "Market",
+   "city": "Ocala,",
+   "state": "FL",
+   "address": "Cherrywood at 9570 SW 62nd Ave",
+   "market": "FL",
+   "expiration": "10/09/2026",
+   "last_verified": "2026-09-08",
+   "scope": "salon",
+   "price_value": 8.99,
+   "city_keys": [
+    "FL/ocala"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/QnuB9hY",
+   "coupon_code": "QnuB9hY",
+   "price": "$8.99",
+   "location_name": "Grand Oaks Town Center",
+   "city": "Ocala,",
+   "state": "FL",
+   "address": "2575 SW 42nd St",
+   "market": "FL",
+   "expiration": "10/09/2026",
+   "last_verified": "2026-09-08",
+   "scope": "salon",
+   "price_value": 8.99,
+   "city_keys": [
+    "FL/ocala"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/8NUmR2H",
+   "coupon_code": "8NUmR2H",
+   "price": "$8.99",
+   "location_name": "La Plaza Grande",
+   "city": "The Villages,",
+   "state": "FL",
+   "address": "1126 Bichara Blvd",
+   "market": "FL",
+   "expiration": "10/09/2026",
+   "last_verified": "2026-09-08",
+   "scope": "salon",
+   "price_value": 8.99,
+   "city_keys": [
+    "FL/the-villages"
    ]
   },
   {
@@ -79,7 +130,7 @@
    "area_name": "participating Dallas-Ft. Worth",
    "market": "Dallas-Ft. Worth",
    "expiration": "09/11/2026",
-   "last_verified": "2026-09-07",
+   "last_verified": "2026-09-08",
    "participating_location_note": "Valid at participating locations in Dallas-Ft. Worth",
    "scope": "area",
    "price_value": 10.99,
@@ -168,7 +219,7 @@
    "area_name": "participating Salisbury",
    "market": "Salisbury",
    "expiration": "09/18/2026",
-   "last_verified": "2026-09-07",
+   "last_verified": "2026-09-08",
    "participating_location_note": "Valid at participating locations in Salisbury",
    "scope": "area",
    "price_value": 10.99,
@@ -198,7 +249,7 @@
    "area_name": "participating Harrisburg, Lancaster & York",
    "market": "Harrisburg, Lancaster & York",
    "expiration": "09/11/2026",
-   "last_verified": "2026-09-07",
+   "last_verified": "2026-09-08",
    "participating_location_note": "Valid at participating locations in Harrisburg, Lancaster & York",
    "scope": "area",
    "price_value": 11.99,
@@ -240,7 +291,7 @@
    "area_name": "participating Baltimore",
    "market": "Baltimore",
    "expiration": "09/18/2026",
-   "last_verified": "2026-09-07",
+   "last_verified": "2026-09-08",
    "participating_location_note": "Valid at participating locations in Baltimore",
    "scope": "area",
    "price_value": 11.99,
@@ -275,7 +326,7 @@
    "area_name": "participating Springfield-Holyoke",
    "market": "Springfield-Holyoke",
    "expiration": "09/11/2026",
-   "last_verified": "2026-09-07",
+   "last_verified": "2026-09-08",
    "participating_location_note": "Valid at participating locations in Springfield-Holyoke",
    "scope": "area",
    "price_value": 11.99,
@@ -309,7 +360,7 @@
    "area_name": "participating Hampton Roads & Peninsula",
    "market": "Hampton Roads & Peninsula",
    "expiration": "09/11/2026",
-   "last_verified": "2026-09-07",
+   "last_verified": "2026-09-08",
    "participating_location_note": "Valid at participating locations in Hampton Roads & Peninsula",
    "scope": "area",
    "price_value": 12.99,
@@ -347,7 +398,7 @@
    "area_name": "participating NE & Central PA",
    "market": "NE & Central PA",
    "expiration": "09/11/2026",
-   "last_verified": "2026-09-07",
+   "last_verified": "2026-09-08",
    "participating_location_note": "Valid at participating locations in NE & Central PA",
    "scope": "unknown",
    "price_value": 12.99
@@ -361,7 +412,7 @@
    "area_name": "participating NJ, PA & DE",
    "market": "NJ, PA & DE",
    "expiration": "09/11/2026",
-   "last_verified": "2026-09-07",
+   "last_verified": "2026-09-08",
    "participating_location_note": "Valid at participating locations in NJ, PA & DE",
    "scope": "state",
    "price_value": 13.99,
@@ -381,7 +432,7 @@
    "area_name": "participating Portland",
    "market": "Portland",
    "expiration": "09/11/2026",
-   "last_verified": "2026-09-07",
+   "last_verified": "2026-09-08",
    "participating_location_note": "Valid at participating locations in Portland",
    "scope": "area",
    "price_value": 14.99,
@@ -423,7 +474,7 @@
    "area_name": "participating Buffalo",
    "market": "Buffalo",
    "expiration": "09/11/2026",
-   "last_verified": "2026-09-07",
+   "last_verified": "2026-09-08",
    "participating_location_note": "Valid at participating locations in Buffalo",
    "scope": "area",
    "price_value": 14.99,
@@ -501,7 +552,7 @@
    "area_name": "participating Dallas-Ft. Worth",
    "market": "Dallas-Ft. Worth",
    "expiration": "09/11/2026",
-   "last_verified": "2026-09-07",
+   "last_verified": "2026-09-08",
    "participating_location_note": "Valid at participating locations in Dallas-Ft. Worth",
    "scope": "area",
    "price_value": 14.99,
@@ -590,7 +641,7 @@
    "area_name": "participating Barrie, Orillia, Bradford, Innisfil & Alliston",
    "market": "Barrie, Orillia, Bradford, Innisfil & Alliston",
    "expiration": "09/13/2026",
-   "last_verified": "2026-09-07",
+   "last_verified": "2026-09-08",
    "participating_location_note": "Valid at participating locations in Barrie, Orillia, Bradford, Innisfil & Alliston",
    "scope": "unknown",
    "price_value": 17.99
@@ -604,10 +655,27 @@
    "area_name": "W, Brantford & Guelph",
    "market": "W, Brantford & Guelph",
    "expiration": "09/13/2026",
-   "last_verified": "2026-09-07",
+   "last_verified": "2026-09-08",
    "participating_location_note": "Valid at participating locations in W, Brantford & Guelph",
    "scope": "unknown",
    "price_value": 18.99
+  },
+  {
+   "url": "https://offers.greatclips.com/ZPzrMSl",
+   "coupon_code": "ZPzrMSl",
+   "price": "$19.99",
+   "location_name": "Evergreen Village Square",
+   "city": "San Jose,",
+   "state": "CA",
+   "address": "4055 Evergreen Village Sq",
+   "market": "CA",
+   "expiration": "10/07/2026",
+   "last_verified": "2026-09-08",
+   "scope": "salon",
+   "price_value": 19.99,
+   "city_keys": [
+    "CA/san-jose"
+   ]
   }
  ]
 }
