@@ -920,9 +920,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $5.00 at participating US locations. Limited time offer.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#u7R1t67\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "XDcpSFp",
+      "coupon_url": "https://offers.greatclips.com/XDcpSFp",
+      "post_id": "6a9f51534c4e8f2911766109",
+      "posted_at": "2026-09-08T00:05:40Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $7.99 in Verona, WI. Expires Sep 12, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#XDcpSFp\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-09-07T19:33:21Z",
+  "last_post": "2026-09-08T00:05:40Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1018,6 +1027,7 @@
     "https://offers.greatclips.com/VtlklLX",
     "https://offers.greatclips.com/WA4FJ3X",
     "https://offers.greatclips.com/WwsRrEB",
+    "https://offers.greatclips.com/XDcpSFp",
     "https://offers.greatclips.com/XWc0Vrw",
     "https://offers.greatclips.com/Z0LoKH1",
     "https://offers.greatclips.com/aCAtuVU",
