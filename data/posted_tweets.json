@@ -929,9 +929,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $7.99 in Verona, WI. Expires Sep 12, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#XDcpSFp\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "8NUmR2H",
+      "coupon_url": "https://offers.greatclips.com/8NUmR2H",
+      "post_id": "6aa05e4a3cd197086556d1e8",
+      "posted_at": "2026-09-08T19:13:14Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $8.99 in The Villages, FL. Expires Oct 9, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#8NUmR2H\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-09-08T00:05:40Z",
+  "last_post": "2026-09-08T19:13:14Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -961,6 +970,7 @@
     "https://offers.greatclips.com/6bWu89Y",
     "https://offers.greatclips.com/7mvadpZ",
     "https://offers.greatclips.com/7zUyCOc",
+    "https://offers.greatclips.com/8NUmR2H",
     "https://offers.greatclips.com/8RKvAIm",
     "https://offers.greatclips.com/8Ti2aVG",
     "https://offers.greatclips.com/8k2v1IW",
