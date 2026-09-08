@@ -938,9 +938,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $8.99 in The Villages, FL. Expires Oct 9, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#8NUmR2H\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "QnuB9hY",
+      "coupon_url": "https://offers.greatclips.com/QnuB9hY",
+      "post_id": "6aa0a0d83bd0dd9ef31f873e",
+      "posted_at": "2026-09-08T23:57:12Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $8.99 in Ocala, FL. Expires Oct 9, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#QnuB9hY\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-09-08T19:13:14Z",
+  "last_post": "2026-09-08T23:57:12Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1028,6 +1037,7 @@
     "https://offers.greatclips.com/PUlEQje",
     "https://offers.greatclips.com/PiUV2AO",
     "https://offers.greatclips.com/QTwgFav",
+    "https://offers.greatclips.com/QnuB9hY",
     "https://offers.greatclips.com/R12OToz",
     "https://offers.greatclips.com/RM5iPmQ",
     "https://offers.greatclips.com/RtEvBAF",
