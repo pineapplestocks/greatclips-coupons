@@ -947,9 +947,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Fresh haircut savings: $8.99 in Ocala, FL. Expires Oct 9, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#QnuB9hY\n\n#GreatClips #HaircutDeals"
+    },
+    {
+      "coupon_code": "g9cBmt2",
+      "coupon_url": "https://offers.greatclips.com/g9cBmt2",
+      "post_id": "6aa11200902203594c3ab9b9",
+      "posted_at": "2026-09-09T08:00:00Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips coupon alert: $8.99 haircut in Ocala, FL. Expires Oct 9, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#g9cBmt2\n\n#GreatClips #HaircutCoupon #Deals"
     }
   ],
-  "last_post": "2026-09-08T23:57:12Z",
+  "last_post": "2026-09-09T08:00:00Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1065,6 +1074,7 @@
     "https://offers.greatclips.com/ebloYZE",
     "https://offers.greatclips.com/eftOLOl",
     "https://offers.greatclips.com/fA3QZ66",
+    "https://offers.greatclips.com/g9cBmt2",
     "https://offers.greatclips.com/gGmwxRu",
     "https://offers.greatclips.com/gS1yuyY",
     "https://offers.greatclips.com/gf1mLrF",
