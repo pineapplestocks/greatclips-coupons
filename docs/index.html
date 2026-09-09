@@ -1099,7 +1099,7 @@
                                     oninput="debounceSearch()"
                                     class="w-full pl-10 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all outline-none">
                             </div>
-                            <select id="stateFilter" onchange="renderResults()"
+                            <select id="stateFilter" onchange="renderResults(); syncStateNav()"
                                 class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all outline-none appearance-none cursor-pointer">
                                 <option value="">All States</option>
 <option value="CA">CA</option><option value="CT">CT</option><option value="DE">DE</option><option value="FL">FL</option><option value="IL">IL</option><option value="MA">MA</option><option value="MD">MD</option><option value="MN">MN</option><option value="NC">NC</option><option value="NJ">NJ</option><option value="OR">OR</option><option value="PA">PA</option><option value="TX">TX</option><option value="VA">VA</option><option value="WI">WI</option>
@@ -1128,65 +1128,95 @@
                         <p class="text-sm text-slate-500 mb-3 font-medium">Jump to state:</p>
                         <div class="flex flex-wrap gap-2" id="stateNav">
 
-                                    <a href="#state-CA" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
+                                    <button type="button" data-state="CA" aria-pressed="false"
+                                            onclick="jumpToState('CA')"
+                                            class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium cursor-pointer">
                                         CA
-                                    </a>
+                                    </button>
         
-                                    <a href="#state-CT" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
+                                    <button type="button" data-state="CT" aria-pressed="false"
+                                            onclick="jumpToState('CT')"
+                                            class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium cursor-pointer">
                                         CT
-                                    </a>
+                                    </button>
         
-                                    <a href="#state-DE" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
+                                    <button type="button" data-state="DE" aria-pressed="false"
+                                            onclick="jumpToState('DE')"
+                                            class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium cursor-pointer">
                                         DE
-                                    </a>
+                                    </button>
         
-                                    <a href="#state-FL" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
+                                    <button type="button" data-state="FL" aria-pressed="false"
+                                            onclick="jumpToState('FL')"
+                                            class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium cursor-pointer">
                                         FL
-                                    </a>
+                                    </button>
         
-                                    <a href="#state-IL" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
+                                    <button type="button" data-state="IL" aria-pressed="false"
+                                            onclick="jumpToState('IL')"
+                                            class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium cursor-pointer">
                                         IL
-                                    </a>
+                                    </button>
         
-                                    <a href="#state-MA" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
+                                    <button type="button" data-state="MA" aria-pressed="false"
+                                            onclick="jumpToState('MA')"
+                                            class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium cursor-pointer">
                                         MA
-                                    </a>
+                                    </button>
         
-                                    <a href="#state-MD" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
+                                    <button type="button" data-state="MD" aria-pressed="false"
+                                            onclick="jumpToState('MD')"
+                                            class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium cursor-pointer">
                                         MD
-                                    </a>
+                                    </button>
         
-                                    <a href="#state-MN" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
+                                    <button type="button" data-state="MN" aria-pressed="false"
+                                            onclick="jumpToState('MN')"
+                                            class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium cursor-pointer">
                                         MN
-                                    </a>
+                                    </button>
         
-                                    <a href="#state-NC" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
+                                    <button type="button" data-state="NC" aria-pressed="false"
+                                            onclick="jumpToState('NC')"
+                                            class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium cursor-pointer">
                                         NC
-                                    </a>
+                                    </button>
         
-                                    <a href="#state-NJ" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
+                                    <button type="button" data-state="NJ" aria-pressed="false"
+                                            onclick="jumpToState('NJ')"
+                                            class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium cursor-pointer">
                                         NJ
-                                    </a>
+                                    </button>
         
-                                    <a href="#state-OR" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
+                                    <button type="button" data-state="OR" aria-pressed="false"
+                                            onclick="jumpToState('OR')"
+                                            class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium cursor-pointer">
                                         OR
-                                    </a>
+                                    </button>
         
-                                    <a href="#state-PA" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
+                                    <button type="button" data-state="PA" aria-pressed="false"
+                                            onclick="jumpToState('PA')"
+                                            class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium cursor-pointer">
                                         PA
-                                    </a>
+                                    </button>
         
-                                    <a href="#state-TX" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
+                                    <button type="button" data-state="TX" aria-pressed="false"
+                                            onclick="jumpToState('TX')"
+                                            class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium cursor-pointer">
                                         TX
-                                    </a>
+                                    </button>
         
-                                    <a href="#state-VA" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
+                                    <button type="button" data-state="VA" aria-pressed="false"
+                                            onclick="jumpToState('VA')"
+                                            class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium cursor-pointer">
                                         VA
-                                    </a>
+                                    </button>
         
-                                    <a href="#state-WI" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
+                                    <button type="button" data-state="WI" aria-pressed="false"
+                                            onclick="jumpToState('WI')"
+                                            class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium cursor-pointer">
                                         WI
-                                    </a>
+                                    </button>
         
                         </div>
                     </div>
@@ -2385,6 +2415,38 @@
             btn.remove();
         }
 
+        // The "Jump to state" chips drive the same filter the dropdown does. They used
+        // to be <a href="#state-XX"> anchors, but renderResults() rebuilds #resultsGrid
+        // on every filter change, so those targets only existed for whichever states
+        // happened to be rendered at the time - and once any filter was applied most of
+        // them pointed at nothing. Filtering is also what the chips are actually for.
+        function syncStateNav() {
+            const active = document.getElementById('stateFilter')?.value || '';
+            document.querySelectorAll('#stateNav [data-state]').forEach((chip) => {
+                const on = chip.dataset.state === active;
+                chip.classList.toggle('bg-purple-600', on);
+                chip.classList.toggle('text-white', on);
+                chip.classList.toggle('bg-slate-100', !on);
+                chip.classList.toggle('text-slate-700', !on);
+                // Kill the light hover tint while active, or hovering the selected
+                // chip flips it back to looking unselected.
+                chip.classList.toggle('hover:bg-purple-100', !on);
+                chip.classList.toggle('hover:text-purple-700', !on);
+                chip.setAttribute('aria-pressed', on ? 'true' : 'false');
+            });
+        }
+
+        function jumpToState(state) {
+            const select = document.getElementById('stateFilter');
+            if (!select) return;
+            // Clicking the active chip clears the filter, so the chips toggle.
+            select.value = select.value === state ? '' : state;
+            renderResults();
+            syncStateNav();
+            const anchor = document.getElementById('resultsCount');
+            if (anchor) anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
         function renderResults() {
             currentFilters.search = document.getElementById('search')?.value || '';
             currentFilters.state = document.getElementById('stateFilter')?.value || '';
@@ -2538,7 +2600,7 @@
                         </div>
                         <p class="text-xl text-slate-600 font-medium mb-2">No coupons found</p>
                         <p class="text-slate-400 mb-4">Try adjusting your filters</p>
-                        <button onclick="document.getElementById('search').value=''; document.getElementById('stateFilter').value=''; document.getElementById('maxPrice').value=''; renderResults()"
+                        <button onclick="document.getElementById('search').value=''; document.getElementById('stateFilter').value=''; document.getElementById('maxPrice').value=''; renderResults(); syncStateNav()"
                             class="text-purple-600 hover:text-purple-700 font-semibold">
                             Clear all filters →
                         </button>
@@ -2786,7 +2848,7 @@
                                     oninput="debounceSearch()"
                                     class="w-full pl-10 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all outline-none">
                             </div>
-                            <select id="stateFilter" onchange="renderResults()"
+                            <select id="stateFilter" onchange="renderResults(); syncStateNav()"
                                 class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all outline-none appearance-none cursor-pointer">
                                 <option value="">All States</option>
                                 ${states.map(s => `<option value="${s}">${s}</option>`).join('')}
@@ -2817,9 +2879,11 @@
                             ${(() => {
                                 const statesInData = [...new Set(regularCoupons.map(c => c.state).filter(Boolean))].sort();
                                 return statesInData.map(state => `
-                                    <a href="#state-${state}" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
+                                    <button type="button" data-state="${state}" aria-pressed="false"
+                                            onclick="jumpToState('${state}')"
+                                            class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium cursor-pointer">
                                         ${state}
-                                    </a>
+                                    </button>
                                 `).join('');
                             })()}
                         </div>
@@ -2991,6 +3055,7 @@
 
         // Initial render
         render();
+        syncStateNav();
         
         // Register Service Worker for PWA
         if ('serviceWorker' in navigator) {

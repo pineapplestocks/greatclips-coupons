@@ -488,11 +488,26 @@ def render_state_options(states):
 
 
 def render_state_nav(states):
+    """The "Jump to state" chips, as filter buttons rather than anchors.
+
+    These used to be `<a href="#state-XX">`, which was broken twice over: the
+    server-rendered grid is capped at STATIC_GRID_LIMIT cards, so most states
+    have no `id="state-XX"` section to jump to, and renderResults() rebuilds
+    the grid on every filter change anyway. Filtering is also what a visitor
+    means by clicking a state.
+
+    This nav is the one that ships. The JS render() in template.html builds an
+    equivalent block, but it early-returns whenever #resultsGrid already exists
+    -- which it always does here -- so that copy never runs on the built page.
+    jumpToState()/syncStateNav() live in template.html and drive #stateFilter.
+    """
     return "".join(
         f"""
-                                    <a href="#state-{safe_id_component(state)}" class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium">
+                                    <button type="button" data-state="{escape_html(state)}" aria-pressed="false"
+                                            onclick="jumpToState('{escape_html(state)}')"
+                                            class="px-3 py-1.5 text-sm bg-slate-100 hover:bg-purple-100 text-slate-700 hover:text-purple-700 rounded-lg transition-colors font-medium cursor-pointer">
                                         {escape_html(state)}
-                                    </a>
+                                    </button>
         """
         for state in states
     )
@@ -1069,7 +1084,7 @@ def build_static_app_html(coupons, scraped_at):
                                     oninput="debounceSearch()"
                                     class="w-full pl-10 pr-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all outline-none">
                             </div>
-                            <select id="stateFilter" onchange="renderResults()"
+                            <select id="stateFilter" onchange="renderResults(); syncStateNav()"
                                 class="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all outline-none appearance-none cursor-pointer">
                                 <option value="">All States</option>
 {state_options}
