@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-10T20:31:49Z",
- "scraped_at": "2026-09-10T13:31:29.504465",
- "total": 21,
+ "generated_at": "2026-09-11T03:30:38Z",
+ "scraped_at": "2026-09-10T20:30:18.670560",
+ "total": 22,
  "scopes": {
   "national": 2,
   "salon": 6,
   "area": 9,
-  "unknown": 3,
+  "unknown": 4,
   "state": 1
  },
  "coupons": [
@@ -400,6 +400,20 @@
    "expiration": "09/11/2026",
    "last_verified": "2026-09-10",
    "participating_location_note": "Valid at participating locations in NE & Central PA",
+   "scope": "unknown",
+   "price_value": 12.99
+  },
+  {
+   "url": "https://offers.greatclips.com/e1j8GvR",
+   "coupon_code": "e1j8GvR",
+   "price": "$12.99",
+   "location_name": "participating West & SW Michigan Area",
+   "state": "AREA",
+   "area_name": "participating West & SW Michigan",
+   "market": "West & SW Michigan",
+   "expiration": "10/02/2026",
+   "last_verified": "2026-09-10",
+   "participating_location_note": "Valid at participating locations in West & SW Michigan",
    "scope": "unknown",
    "price_value": 12.99
   },

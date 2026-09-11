@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-09-10T13:31:29.504465",
-  "total_coupons": 21,
+  "scraped_at": "2026-09-10T20:30:18.670560",
+  "total_coupons": 22,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/yMEcKko",
@@ -235,6 +235,22 @@
       "participating_location_note": "Valid at participating locations in NE & Central PA",
       "added_date": "2026-08-31",
       "last_seen": "2026-09-04"
+    },
+    {
+      "url": "https://offers.greatclips.com/e1j8GvR",
+      "coupon_code": "e1j8GvR",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20976/50707-002-1200x600-12.99.jpg",
+      "expiration": "10/02/2026",
+      "location_name": "only at participating West & SW Michigan Area",
+      "state": "AREA",
+      "area_name": "only at participating West & SW Michigan",
+      "price": "$12.99",
+      "market": "West & SW Michigan",
+      "last_verified": "2026-09-10",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in West & SW Michigan",
+      "added_date": "2026-09-10",
+      "last_seen": "2026-09-10"
     },
     {
       "url": "https://offers.greatclips.com/OK36Ser",
