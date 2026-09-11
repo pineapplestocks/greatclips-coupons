@@ -6,7 +6,9 @@ compatibility_date = "2024-01-01"
 # Cloudflare dashboard: Workers & Pages > greatclips-email > Settings > Variables
 
 [triggers]
-crons = ["0 15 * * *"]
+# 11am / 1pm / 3pm ET. Three slices of 45 keep each run under the Free plan's
+# 50-subrequest limit; the subscriber summary only goes out on the first.
+crons = ["0 15 * * *", "0 17 * * *", "0 19 * * *"]
 
 [[d1_databases]]
 binding = "DB"

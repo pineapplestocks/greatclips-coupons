@@ -403,13 +403,20 @@ async function sendSubscriberSummary(env, source = 'manual') {
 // Mails a capped slice of subscribers the live nationwide coupon, newest
 // eligible first, so the site earns a steady trickle of return visits instead
 // of one blast. Deliberately conservative: it only runs when a national coupon is
-// actually live, never mails the same address twice (campaign_sends), skips
-// anyone who unsubscribed, and stops at DRIP_DAILY_CAP so it stays inside the
-// Brevo free tier.
+// actually live, never mails the same address twice (campaign_sends), and skips
+// anyone who unsubscribed.
+//
+// Why the run is capped at 45: the Workers Free plan allows 50 outbound fetches
+// per invocation. The coupon feed and the Brevo bounce sync use two, so send
+// #49 onward throws "Too many subrequests" — which is exactly why the nightly
+// run stalled at 47-48 for a week (diagnosed 2026-09-11). Volume comes from
+// running three times a day (see [triggers] in wrangler.toml) rather than from
+// a bigger batch. Brevo's 300/day is the next ceiling; the coupon-request
+// emails need most of the rest of it.
 // ============================================================
 
 const DRIP_CAMPAIGN = 'nationwide-drip';
-const DRIP_DAILY_CAP = 100;
+const DRIP_RUN_CAP = 45;         // per invocation; see note above
 const DRIP_MIN_AGE_DAYS = 2;    // skip only people who just received their coupon email
 
 // The first 200-contact send bounced 4.0% hard on the *newest* addresses, and
@@ -743,7 +750,7 @@ async function runDailyDrip(env, trigger) {
       GROUP BY lower(trim(s.email))
       ORDER BY MAX(s.subscribed_at) DESC
       LIMIT ?`,
-    cutoff, DRIP_CAMPAIGN, DRIP_DAILY_CAP);
+    cutoff, DRIP_CAMPAIGN, DRIP_RUN_CAP);
 
   let sent = 0;
   let failed = 0;
@@ -1024,8 +1031,12 @@ ${EMAIL_STYLE}
   },
 
   async scheduled(event, env, ctx) {
-    ctx.waitUntil(sendSubscriberSummary(env, 'scheduled'));
-    ctx.waitUntil(runDailyDrip(env, 'scheduled'));
+    // Three triggers a day (wrangler.toml). The owner's summary goes out once,
+    // on the first; every trigger runs a drip slice.
+    if (event.cron === '0 15 * * *') {
+      ctx.waitUntil(sendSubscriberSummary(env, 'scheduled'));
+    }
+    ctx.waitUntil(runDailyDrip(env, 'scheduled ' + event.cron));
   },
 };
 
