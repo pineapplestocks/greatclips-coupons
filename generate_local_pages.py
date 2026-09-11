@@ -540,7 +540,7 @@ def email_modal_html() -> str:
     """
     return """    <div id="gcEmailModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
         <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="gcCloseModal()"></div>
-        <div class="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-8">
+        <div class="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 max-h-[90vh] overflow-y-auto">
             <button onclick="gcCloseModal()" aria-label="Close"
                     class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-2xl">&times;</button>
 
@@ -571,16 +571,33 @@ def email_modal_html() -> str:
             </div>
 
             <div id="gcSuccessView" class="hidden text-center">
-                <div class="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-5">
-                    <span class="text-4xl">&#10003;</span>
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                    <span class="text-3xl">&#10003;</span>
                 </div>
-                <h3 class="text-2xl font-bold text-slate-900 mb-2">Coupon ready!</h3>
-                <p class="text-slate-600 mb-1">A copy was also sent to:</p>
-                <p class="font-semibold text-purple-600 mb-5" id="gcSuccessEmail"></p>
+                <h3 class="text-2xl font-bold text-slate-900 mb-2">Check your email!</h3>
+                <p class="text-slate-600 mb-1">Your coupon link is on its way to:</p>
+                <p class="font-semibold text-purple-600 mb-4" id="gcSuccessEmail"></p>
                 <button onclick="gcOpenCoupon()"
                         class="w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-xl transition-all">
                     Open my coupon &rarr;
                 </button>
+                <p class="text-slate-500 text-xs mt-3">Didn&rsquo;t get it? Check your spam folder. It usually arrives within 30 seconds.</p>
+
+                <!-- GC-DEAL-DROPPER: WhatsApp group promo shown after signup -->
+                <div class="mt-5 rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-left">
+                    <div class="flex items-center gap-3">
+                        <img src="/assets/email/deal-dropper-logo.png" alt="Deal Dropper" width="48" height="48" class="w-12 h-12 rounded-xl shrink-0">
+                        <div>
+                            <p class="text-[11px] font-bold tracking-widest text-emerald-700 uppercase">While you&rsquo;re here</p>
+                            <p class="text-base font-extrabold text-slate-900 leading-tight">Join Deal Dropper on WhatsApp</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-700 text-sm mt-3">Price glitches and massive coupons on Amazon products, dropped in your chat as they happen. Free to join, leave anytime.</p>
+                    <a href="https://chat.whatsapp.com/Jgifq2XjPAkIgfXMdwM5j5" target="_blank" rel="noopener"
+                        class="mt-3 flex items-center justify-center w-full bg-[#1fa855] hover:bg-[#178f47] text-white font-bold py-3 px-6 rounded-xl transition-colors">
+                        Join the WhatsApp group &rarr;
+                    </a>
+                </div>
             </div>
         </div>
     </div>
