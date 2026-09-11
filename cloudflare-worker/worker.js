@@ -450,13 +450,141 @@ async function unsubUrl(env, email) {
   return SITE_URL + '/unsubscribe?e=' + encodeURIComponent(email) + '&t=' + token;
 }
 
-function dripHtml(coupon, unsubscribeUrl) {
+// ============================================================
+// Deal Dropper partner block
+//
+// Shared by the coupon-request email and the daily drip. The WhatsApp invite
+// comes from the DEAL_DROPPER_URL Worker variable (set in the dashboard, no
+// redeploy needed), falling back to the constant below. If neither holds a
+// real chat.whatsapp.com invite the whole block is omitted, so a broken link
+// can never reach a subscriber.
+// ============================================================
+
+const DEAL_DROPPER_URL = 'https://chat.whatsapp.com/Jgifq2XjPAkIgfXMdwM5j5';
+
+// Served from the site so the image comes from the sending domain. Commit the
+// file to docs/assets/email/ and let Pages deploy before the Worker ships.
+const DEAL_DROPPER_LOGO = SITE_URL + '/assets/email/deal-dropper-logo.png';
+
+// Refresh these when the group shares better examples. "Usually on Amazon" is
+// the comparison price advertised in the source post; only call something a
+// price error once that has actually been confirmed. Optional `image`: a
+// 56px-ish square hosted under docs/assets/email/, shown as a row thumbnail.
+const DEAL_DROPPER_DEALS = [
+  { name: 'Goya Chick Peas',        detail: '8-pack',                  usually: '$11.99', deal: '$6.44' },
+  { name: 'BEAR Fruit Snack Rolls', detail: '24-pack',                 usually: '$21.00', deal: '$11.39' },
+  { name: 'Hanes Full-Zip Hoodie',  detail: 'select size/color',       usually: '$28.00', deal: '$9.09' },
+  { name: 'Vaseline Lotion',        detail: '6 bottles, with coupons', usually: '$47.88', deal: '$17.61' },
+];
+
+// Shared <head> styles for subscriber emails: client resets plus the phone
+// layout. Gmail, Apple Mail and Outlook.com honour these media queries;
+// Outlook desktop ignores them and gets the desktop layout, which still fits.
+const EMAIL_STYLE = `<style>
+html,body{margin:0!important;padding:0!important;width:100%!important;}
+body,table,td,a{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+table,td{mso-table-lspace:0pt;mso-table-rspace:0pt;}
+img{-ms-interpolation-mode:bicubic;outline:none;text-decoration:none;}
+a[x-apple-data-detectors]{color:inherit!important;text-decoration:none!important;}
+@media screen and (max-width:620px){
+  .outer-pad{padding:10px 8px!important;}
+  .masthead{padding:16px 18px!important;}
+  .masthead-note{display:none!important;}
+  .hero-pad{padding-left:20px!important;padding-right:20px!important;}
+  .hero-title{font-size:43px!important;line-height:45px!important;letter-spacing:-1.5px!important;}
+  .hero-copy{font-size:20px!important;line-height:27px!important;}
+  .coupon-card{padding:18px 10px!important;}
+  .coupon-label{font-size:12px!important;letter-spacing:2px!important;}
+  .coupon-price{font-size:76px!important;line-height:80px!important;}
+  .cta{font-size:20px!important;line-height:25px!important;padding:17px 10px!important;}
+  .step{padding:6px 2px!important;}
+  .step-number{display:block!important;margin:0 auto 5px!important;}
+  .step-label{display:block!important;padding-left:0!important;text-align:center!important;font-size:12px!important;line-height:16px!important;}
+  .promo-pad{padding-left:18px!important;padding-right:18px!important;}
+  .eyebrow{font-size:10px!important;letter-spacing:1.2px!important;}
+  .promo-title{font-size:26px!important;line-height:30px!important;}
+  .promo-copy{font-size:15px!important;line-height:22px!important;}
+  .price-heading{font-size:9px!important;letter-spacing:.5px!important;}
+  .product-name{font-size:14px!important;line-height:19px!important;}
+  .product-detail{font-size:12px!important;line-height:16px!important;}
+  .deal-price{font-size:19px!important;line-height:24px!important;}
+}
+</style>`;
+
+// Accepts the invite with or without WhatsApp's share-tracking query string
+// (?s=cl&p=i...) and returns the canonical https://chat.whatsapp.com/<code>.
+function dealDropperUrl(env) {
+  const raw = String((env && env.DEAL_DROPPER_URL) || DEAL_DROPPER_URL || '').trim();
+  const m = raw.match(/^https:\/\/chat\.whatsapp\.com\/([A-Za-z0-9_-]+)(?:[?#].*)?$/);
+  return m ? 'https://chat.whatsapp.com/' + m[1] : '';
+}
+
+function dealDropperHtml(env) {
+  const url = dealDropperUrl(env);
+  if (!url) return '';
+  const withThumbs = DEAL_DROPPER_DEALS.some((d) => d.image);
+  const rows = DEAL_DROPPER_DEALS.map((d, i) => {
+    const line = i ? 'border-top:1px solid #e4ede6;' : '';
+    const thumb = !withThumbs ? '' : `
+          <td width="72" valign="middle" style="padding:14px 0 14px 16px;${line}">${d.image ? `
+            <img src="${escapeHtml(d.image)}" width="56" height="56" alt="" style="display:block;width:56px;height:56px;border:0;border-radius:8px;">` : ''}</td>`;
+    return `
+        <tr>${thumb}
+          <td valign="middle" style="padding:14px 16px;${line}">
+            <div class="product-name" style="color:#063c2d;font-size:16px;line-height:21px;font-weight:700;">${escapeHtml(d.name)}</div>
+            <div class="product-detail" style="color:#66736e;font-size:14px;line-height:19px;">${escapeHtml(d.detail)}</div></td>
+          <td align="right" valign="middle" style="padding:14px 16px;${line}white-space:nowrap;">
+            <div style="color:#8a958f;font-size:14px;line-height:18px;text-decoration:line-through;">${escapeHtml(d.usually)}</div>
+            <div class="deal-price" style="color:#063c2d;font-size:21px;line-height:26px;font-weight:800;">${escapeHtml(d.deal)}</div></td>
+        </tr>`;
+  }).join('');
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#e8f6ea" style="background:#e8f6ea;border-radius:20px;">
+  <tr><td class="promo-pad eyebrow" style="padding:28px 28px 0;color:#063c2d;font-size:12px;line-height:16px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;">Also from us &middot; Free WhatsApp group</td></tr>
+  <tr><td class="promo-pad" style="padding:16px 28px 0;">
+    <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+      <td valign="middle" style="padding-right:16px;">
+        <a href="${url}" target="_blank"><img src="${DEAL_DROPPER_LOGO}" width="72" height="72" alt="Deal Dropper"
+          style="display:block;width:72px;height:72px;border:0;border-radius:16px;background:#0b1424;"></a></td>
+      <td valign="middle" class="promo-title" style="color:#063c2d;font-size:30px;line-height:34px;font-weight:900;letter-spacing:-0.3px;">Your next deal is one WhatsApp away.</td>
+    </tr></table>
+  </td></tr>
+  <tr><td class="promo-pad promo-copy" style="padding:12px 28px 0;color:#3d4f47;font-size:16px;line-height:24px;">
+    Amazon finds for your pantry, family &amp; home. Shopping links and coupon steps included.
+  </td></tr>
+  <tr><td class="promo-pad" style="padding:22px 28px 0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+      <td valign="bottom" class="price-heading" style="color:#063c2d;font-size:11px;line-height:15px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;">Recent deals we shared</td>
+      <td align="right" valign="bottom" class="price-heading" style="color:#66736e;font-size:11px;line-height:15px;font-weight:800;letter-spacing:1px;text-transform:uppercase;">Usually on Amazon*<br>Deal Price Alerted</td>
+    </tr></table>
+  </td></tr>
+  <tr><td class="promo-pad" style="padding:10px 28px 0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="background:#ffffff;border-radius:14px;">${rows}
+    </table>
+  </td></tr>
+  <tr><td class="promo-pad" style="padding:22px 28px 0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" bgcolor="#1fa855" style="border-radius:12px;">
+      <a class="cta" href="${url}" target="_blank" style="display:block;padding:18px 24px;color:#ffffff;font-size:20px;line-height:24px;font-weight:800;text-decoration:none;">
+        Join Deal Dropper &mdash; It&rsquo;s Free &nbsp;&rarr;</a>
+    </td></tr></table>
+  </td></tr>
+  <tr><td class="promo-pad" align="center" style="padding:12px 28px 0;color:#3d4f47;font-size:14px;line-height:20px;">Free to join. Leave anytime.</td></tr>
+  <tr><td class="promo-pad" align="center" style="padding:18px 28px 24px;color:#66736e;font-size:12px;line-height:18px;">
+    *Recently shared offers, not guaranteed current prices. &ldquo;Usually on Amazon&rdquo; is the comparison price
+    advertised in the source post. Coupons, eligibility, sizes, and availability vary; check the final checkout price.<br>
+    As an Amazon Associate, I earn from qualifying purchases.
+  </td></tr>
+</table>`;
+}
+
+function dripHtml(env, coupon, unsubscribeUrl) {
   const q = '?subscribed=1&utm_source=brevo&utm_medium=email&utm_campaign=nationwide-drip';
   const price = escapeHtml(coupon.price || '$5.00');
-  return `<!doctype html><html><body style="margin:0;padding:0;background:#f2f4f5;font-family:Arial,Helvetica,sans-serif;">
+  const dealDropper = dealDropperHtml(env);
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">${EMAIL_STYLE}</head>
+<body style="margin:0;padding:0;background:#f2f4f5;font-family:Arial,Helvetica,sans-serif;">
 <div style="display:none;max-height:0;overflow:hidden;opacity:0;">Get ${price} off your next haircut at participating Great Clips locations.</div>
 <table role="presentation" width="100%" bgcolor="#f2f4f5"><tr><td align="center" style="padding:20px 10px;">
-<table role="presentation" width="600" style="width:600px;max-width:600px;background:#ffffff;">
+<table role="presentation" width="600" style="width:100%;max-width:600px;background:#ffffff;">
   <tr><td bgcolor="#003e42" style="background:#003e42;padding:24px 30px;color:#ffffff;font-size:23px;font-weight:bold;">
     GreatClipsDeal<span style="color:#5fd3bd;">.com</span>
     <div style="margin-top:5px;color:#8fd8ca;font-size:10px;font-weight:bold;letter-spacing:2px;">INDEPENDENT COUPON TRACKER</div>
@@ -481,6 +609,7 @@ function dripHtml(coupon, unsubscribeUrl) {
       One click on the site &mdash; you will not be asked for your email again.
     </div>
   </td></tr>
+  ${dealDropper ? `<tr><td class="hero-pad" style="padding:30px 40px 0;">${dealDropper}</td></tr>` : ''}
   <tr><td align="center" style="padding:30px 40px 34px;color:#7a8598;font-size:11px;line-height:18px;">
     <div style="border-top:1px solid #d9dfe4;padding-top:20px;">
       You are receiving this because you requested a Great Clips coupon at GreatClipsDeal.com.<br>
@@ -599,7 +728,7 @@ async function runDailyDrip(env, trigger) {
       const res = await sendBrevoEmail(env, {
         toEmail: email,
         subject: 'Your ' + (coupon.price || '$5.00') + ' off Great Clips coupon is live',
-        htmlContent: dripHtml(coupon, await unsubUrl(env, email)),
+        htmlContent: dripHtml(env, coupon, await unsubUrl(env, email)),
       });
       if (!res.ok) {
         // Out of credits or throttled: stop cleanly rather than burn the list.
@@ -733,133 +862,103 @@ export default {
     const priceStr = escapeHtml(price ? price : 'Great Clips');
     const subjectPrice = price ? String(price).slice(0, 40) : 'Great Clips';
     const subject = `Your ${subjectPrice} Great Clips coupon is ready`;
+    // Replaces the old curry leaf partner ad. Empty until DEAL_DROPPER_URL is set.
+    const dealDropper = dealDropperHtml(env);
 
+    const unsubscribeUrl = await unsubUrl(env, email);
+    const ticketPrice = price ? priceStr : 'Coupon';
     const htmlContent = `<!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Great Clips Coupon</title>
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
+  <title>Your ${priceStr} Great Clips coupon is ready</title>
+  <!--[if mso]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]-->
+${EMAIL_STYLE}
 </head>
-<body style="margin:0;padding:0;background:#eef2ec;font-family:Arial,Helvetica,sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="background:#eef2ec;padding:0;">
-    <tr><td align="center">
-      <table width="680" cellpadding="0" cellspacing="0" role="presentation" style="max-width:680px;width:100%;background:#ffffff;border-radius:0 0 30px 30px;overflow:hidden;">
+<body style="margin:0;padding:0;background:#f5f4f0;font-family:Arial,Helvetica,sans-serif;color:#063c2d;">
+  <div style="display:none;font-size:1px;line-height:1px;color:#f5f4f0;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">Open your ${priceStr} haircut coupon${dealDropper ? ' &mdash; plus get Amazon deal alerts from our free WhatsApp group.' : ' and show it before your haircut.'}</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#f5f4f0" style="background:#f5f4f0;"><tr><td class="outer-pad" align="center" style="padding:24px 12px;">
+  <!--[if mso]><table role="presentation" width="640" align="center"><tr><td><![endif]-->
+  <table role="presentation" width="640" cellpadding="0" cellspacing="0" style="width:100%;max-width:640px;">
 
-        <!-- Header -->
-        <tr>
-          <td style="background:#052d22;background-image:linear-gradient(135deg,#052d22 0%,#083f2f 55%,#031d17 100%);padding:34px 44px 96px;text-align:left;">
-            <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
-              <tr>
-                <td valign="top" style="width:66%;padding-right:18px;">
-                  <div style="display:inline-block;background:#d7f36f;color:#071e18;border-radius:999px;padding:10px 15px;font-size:12px;font-weight:900;letter-spacing:0.12em;text-transform:uppercase;box-shadow:0 8px 18px rgba(0,0,0,0.14);">Coupon ready <span style="display:inline-block;margin-left:8px;background:#ffffff;color:#83c91e;border-radius:999px;width:22px;height:22px;line-height:22px;text-align:center;">✓</span></div>
-                  <h1 style="color:#ffffff;margin:26px 0 14px;font-size:45px;line-height:1.06;font-weight:900;letter-spacing:0;">Your Great Clips deal is <span style="color:#a6df3e;">ready.</span></h1>
-                  <p style="color:#edf5f1;margin:0;font-size:18px;line-height:1.55;">Open your coupon, show it before your cut, and save at participating salons.</p>
-                </td>
-                <td valign="top" align="right" style="width:34%;padding-top:22px;">
-                  <div style="color:#ffffff;font-size:42px;line-height:0.95;font-weight:400;letter-spacing:0;">Great<br>Clips</div>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
+    <!-- Coupon card -->
+    <tr><td>
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="background:#ffffff;border-radius:18px;">
+        <tr><td class="masthead" style="padding:18px 26px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+            <td style="color:#063c2d;font-size:20px;line-height:26px;font-weight:700;letter-spacing:-0.5px;"><span style="font-size:25px;">&#9986;</span>&nbsp; GreatClipsDeal.com</td>
+            <td class="masthead-note" align="right" style="color:#66736e;font-size:10px;line-height:26px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;">Your coupon is ready</td>
+          </tr></table>
+        </td></tr>
 
-        <!-- Body -->
-        <tr>
-          <td style="background:#ffffff;padding:0 44px 34px;">
-
-            <!-- Price badge -->
-            <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="margin-top:-54px;margin-bottom:30px;">
-              <tr>
-                <td align="center">
-                  <table width="520" cellpadding="0" cellspacing="0" role="presentation" style="max-width:520px;width:100%;background:#ffffff;border:1px solid #dfe8dc;border-radius:18px;box-shadow:0 18px 35px rgba(7,30,24,0.14);">
-                    <tr>
-                      <td align="center" style="padding:28px 20px 30px;">
-                        <div style="color:#0a3026;font-size:16px;font-weight:900;letter-spacing:0.24em;text-transform:uppercase;margin-bottom:13px;">Great Clips Haircut</div>
-                        <div style="color:#052d22;font-size:76px;line-height:0.95;font-weight:900;letter-spacing:0;">${priceStr}</div>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
-
-            <!-- Value props -->
-            <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom:34px;">
-              <tr>
-                <td valign="top" width="33.33%" style="padding:0 12px;text-align:left;">
-                  <div style="color:#89cf28;font-size:34px;line-height:1;margin-bottom:9px;">[+]</div>
-                  <div style="color:#0a3026;font-size:15px;font-weight:900;margin-bottom:5px;">Official Offer</div>
-                  <div style="color:#4c5d58;font-size:13px;line-height:1.45;">100% authentic Great Clips coupon</div>
-                </td>
-                <td valign="top" width="33.33%" style="padding:0 12px;border-left:1px solid #d7dfd8;border-right:1px solid #d7dfd8;text-align:left;">
-                  <div style="color:#89cf28;font-size:34px;line-height:1;margin-bottom:9px;">[&#10003;]</div>
-                  <div style="color:#0a3026;font-size:15px;font-weight:900;margin-bottom:5px;">Ready to Use</div>
-                  <div style="color:#4c5d58;font-size:13px;line-height:1.45;">Open it on your phone at the salon</div>
-                </td>
-                <td valign="top" width="33.33%" style="padding:0 12px;text-align:left;">
-                  <div style="color:#89cf28;font-size:34px;line-height:1;margin-bottom:9px;">[&#9679;]</div>
-                  <div style="color:#0a3026;font-size:15px;font-weight:900;margin-bottom:5px;">Location Specific</div>
-                  <div style="color:#4c5d58;font-size:13px;line-height:1.45;">Check the offer page for full terms</div>
-                </td>
-              </tr>
-            </table>
-
-            <p style="color:#1c2e29;text-align:center;font-size:17px;line-height:1.6;margin:0 0 20px;">
-              Open your coupon now and have it ready before you arrive.
-            </p>
-
-            <!-- CTA Button -->
-            <div style="text-align:center;margin-bottom:26px;">
-              <a href="${safeCouponUrl}"
-                 style="display:inline-block;background:#87d11f;background-image:linear-gradient(135deg,#94dc25 0%,#6fbd16 100%);color:#ffffff;font-weight:900;font-size:23px;padding:18px 58px;border-radius:10px;text-decoration:none;letter-spacing:0;box-shadow:0 12px 24px rgba(106,184,20,0.28);">
-                Open My Coupon &rarr;
-              </a>
-            </div>
-
-            <!-- Redemption steps -->
-            <div style="background:#f8faf6;border:1px solid #dfe8dc;border-radius:16px;padding:22px 26px;margin-bottom:22px;">
-              <p style="margin:0 0 14px;font-weight:900;color:#0a3026;font-size:17px;text-transform:uppercase;letter-spacing:0.06em;">Use your coupon in 3 steps</p>
-              <p style="margin:0;color:#1c2e29;font-size:15px;line-height:1.7;"><strong style="color:#6ead17;">1.</strong> Open the offer on your phone &nbsp;&nbsp; <strong style="color:#6ead17;">2.</strong> Show it before your haircut &nbsp;&nbsp; <strong style="color:#6ead17;">3.</strong> Save at the participating salon</p>
-            </div>
-
-            <!-- Partner offer -->
-            <div style="background:#061f1a;background-image:linear-gradient(135deg,#061f1a 0%,#0a3529 100%);border-radius:18px;padding:28px 34px;margin-bottom:24px;box-shadow:0 14px 28px rgba(7,30,24,0.16);">
-              <table width="100%" cellpadding="0" cellspacing="0" role="presentation">
-                <tr>
-                  <td valign="middle" width="31%" align="center" style="padding-right:22px;">
-                    <a href="https://curryleafplant.com/products/healthy-curry-leaf-plants-6-inches" style="text-decoration:none;">
-                      <img src="https://curryleafplant.com/cdn/shop/products/Curry-Tree-Leaves.webp?v=1696697979&amp;width=360" width="150" alt="Healthy Curry Leaf Plant from Kumar's Garden" style="display:block;width:150px;max-width:100%;height:auto;border:0;border-radius:14px;">
-                    </a>
-                  </td>
-                  <td valign="middle" width="69%">
-                    <p style="margin:0 0 7px;color:#c7f36a;font-size:13px;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;">Partner deal &bull; Save $10</p>
-                    <p style="margin:0 0 8px;color:#ffffff;font-size:23px;line-height:1.2;font-weight:900;">Grow fresh curry leaves at home</p>
-                    <p style="margin:0 0 18px;color:#d6e2de;font-size:15px;line-height:1.5;">Get $10 off a healthy 6-inch Curry Leaf Plant from our partner, Kumar's Garden.</p>
-                    <a href="https://curryleafplant.com/products/healthy-curry-leaf-plants-6-inches"
-                       style="display:inline-block;background:#d7f36f;color:#071e18;font-weight:900;font-size:16px;padding:13px 25px;border-radius:9px;text-decoration:none;">
-                      Shop Curry Leaf Plants &rarr;
-                    </a>
-                  </td>
-                </tr>
+        <!-- Hero -->
+        <tr><td>
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#063c2d" style="background:#063c2d;">
+            <tr><td class="hero-pad" style="padding:30px 34px 0;">
+              <div class="hero-title" style="color:#ffffff;font-size:57px;line-height:58px;font-weight:800;letter-spacing:-2px;">Fresh cut.<br>Better price.</div>
+              <div class="hero-copy" style="padding-top:14px;color:#b8e9bf;font-size:25px;line-height:31px;font-weight:700;">Your Great Clips haircut coupon is ready.</div>
+            </td></tr>
+            <tr><td class="hero-pad" style="padding:26px 34px 0;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="background:#ffffff;border:2px dashed #93b8a3;border-radius:14px;">
+                <tr><td class="coupon-card" align="center" style="padding:22px 20px 20px;">
+                  <div class="coupon-label" style="color:#063c2d;font-size:13px;line-height:18px;font-weight:800;letter-spacing:3px;text-transform:uppercase;">Great Clips Haircut</div>
+                  <div class="coupon-price" style="padding-top:6px;font-size:96px;line-height:100px;font-weight:900;letter-spacing:-2px;"><a href="${safeCouponUrl}" style="color:#063c2d;text-decoration:none;">${ticketPrice}</a></div>
+                  <div style="padding-top:6px;color:#4c5d58;font-size:13px;line-height:18px;">At participating salons. See coupon for details.</div>
+                </td></tr>
               </table>
-            </div>
+            </td></tr>
+            <tr><td class="hero-pad" style="padding:22px 34px 0;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" bgcolor="#c6f542" style="border-radius:12px;">
+                <a class="cta" href="${safeCouponUrl}" style="display:block;padding:18px 24px;color:#063c2d;font-size:24px;line-height:28px;font-weight:800;text-decoration:none;">Open My Coupon &nbsp;&rarr;</a>
+              </td></tr></table>
+            </td></tr>
+            <tr><td class="hero-pad" align="center" style="padding:14px 34px 30px;color:#ffffff;font-size:14px;line-height:20px;">Open on your phone &nbsp;&bull;&nbsp; Show before your haircut</td></tr>
+          </table>
+        </td></tr>
 
-            <hr style="border:none;border-top:1px solid #dfe8dc;margin:0 0 18px;">
-
-            <p style="color:#89938f;font-size:11px;text-align:center;margin:0;line-height:1.7;">
-              You received this because you requested a coupon at
-              <a href="https://greatclipsdeal.com" style="color:#17211f;font-weight:700;text-decoration:none;">greatclipsdeal.com</a><br>
-              Partner offer provided by Kumar's Garden.<br>
-              &copy; 2026 GreatClipsDeal.com &mdash; Not affiliated with Great Clips, Inc.
-            </p>
-
-          </td>
-        </tr>
-
+        <!-- 3 steps -->
+        <tr><td style="padding:18px 12px 20px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+              <td class="step" width="33%" align="center" style="padding:4px 6px;">
+                <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+                  <td class="step-number" width="26" height="26" align="center" valign="middle" bgcolor="#063c2d" style="border-radius:13px;color:#ffffff;font-size:13px;line-height:26px;font-weight:800;">1</td>
+                  <td class="step-label" style="padding-left:10px;color:#063c2d;font-size:15px;line-height:20px;font-weight:600;">Open coupon</td>
+                </tr></table>
+              </td>
+              <td class="step" width="33%" align="center" style="padding:4px 6px;border-left:1px solid #dfe6e0;border-right:1px solid #dfe6e0;">
+                <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+                  <td class="step-number" width="26" height="26" align="center" valign="middle" bgcolor="#063c2d" style="border-radius:13px;color:#ffffff;font-size:13px;line-height:26px;font-weight:800;">2</td>
+                  <td class="step-label" style="padding-left:10px;color:#063c2d;font-size:15px;line-height:20px;font-weight:600;">Show your stylist</td>
+                </tr></table>
+              </td>
+              <td class="step" width="33%" align="center" style="padding:4px 6px;">
+                <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+                  <td class="step-number" width="26" height="26" align="center" valign="middle" bgcolor="#063c2d" style="border-radius:13px;color:#ffffff;font-size:13px;line-height:26px;font-weight:800;">3</td>
+                  <td class="step-label" style="padding-left:10px;color:#063c2d;font-size:15px;line-height:20px;font-weight:600;">Enjoy your savings</td>
+                </tr></table>
+              </td>
+          </tr></table>
+        </td></tr>
       </table>
     </td></tr>
+
+    <!-- Partner block -->
+    ${dealDropper ? `<tr><td style="padding-top:16px;">${dealDropper}</td></tr>` : ''}
+
+    <!-- Footer -->
+    <tr><td align="center" style="padding:24px 20px 0;color:#66736e;font-size:12px;line-height:20px;">
+      You requested a coupon at <a href="https://greatclipsdeal.com" style="color:#063c2d;font-weight:700;text-decoration:none;">GreatClipsDeal.com</a>.<br>
+      <a href="${unsubscribeUrl}" style="color:#66736e;">Unsubscribe</a> &nbsp;&middot;&nbsp; &copy; 2026 GreatClipsDeal.com<br>
+      Great Clips Deal &middot; 1383 E Dara Pl, Chandler, AZ 85249, United States<br>
+      Not affiliated with Great Clips, Inc.
+    </td></tr>
+
   </table>
+  <!--[if mso]></td></tr></table><![endif]-->
+  </td></tr></table>
 </body>
 </html>`;
 
