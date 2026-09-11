@@ -965,9 +965,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Fresh haircut savings: $19.99 in San Jose, CA. Expires Oct 7, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#ZPzrMSl\n\n#GreatClips #HaircutDeals"
+    },
+    {
+      "coupon_code": "e1j8GvR",
+      "coupon_url": "https://offers.greatclips.com/e1j8GvR",
+      "post_id": "6aa3b40774b1f1d0ccd6251c",
+      "posted_at": "2026-09-11T07:55:51Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $12.99 in the only at participating West & SW Michigan area. Expires Oct 2, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#e1j8GvR\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-09-09T19:01:40Z",
+  "last_post": "2026-09-11T07:55:51Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1081,6 +1090,7 @@
     "https://offers.greatclips.com/cx7AL0B",
     "https://offers.greatclips.com/djuGGDk",
     "https://offers.greatclips.com/dkIygSf",
+    "https://offers.greatclips.com/e1j8GvR",
     "https://offers.greatclips.com/ebloYZE",
     "https://offers.greatclips.com/eftOLOl",
     "https://offers.greatclips.com/fA3QZ66",
