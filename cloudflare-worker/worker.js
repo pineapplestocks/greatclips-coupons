@@ -400,9 +400,9 @@ async function sendSubscriberSummary(env, source = 'manual') {
 // ============================================================
 // Daily coupon drip
 //
-// Mails a capped, random slice of older subscribers the live nationwide
-// coupon, so the site earns a steady trickle of return visits instead of one
-// blast. Deliberately conservative: it only runs when a national coupon is
+// Mails a capped slice of subscribers the live nationwide coupon, newest
+// eligible first, so the site earns a steady trickle of return visits instead
+// of one blast. Deliberately conservative: it only runs when a national coupon is
 // actually live, never mails the same address twice (campaign_sends), skips
 // anyone who unsubscribed, and stops at DRIP_DAILY_CAP so it stays inside the
 // Brevo free tier.
@@ -410,7 +410,7 @@ async function sendSubscriberSummary(env, source = 'manual') {
 
 const DRIP_CAMPAIGN = 'nationwide-drip';
 const DRIP_DAILY_CAP = 100;
-const DRIP_MIN_AGE_DAYS = 10;   // leave recent signups alone; they just got one
+const DRIP_MIN_AGE_DAYS = 2;    // skip only people who just received their coupon email
 
 // The first 200-contact send bounced 4.0% hard on the *newest* addresses, and
 // the drip deliberately targets older ones. Providers throttle past ~5% and
@@ -741,7 +741,7 @@ async function runDailyDrip(env, trigger) {
                WHERE c.email = lower(trim(s.email)) AND c.campaign = ?
             )
       GROUP BY lower(trim(s.email))
-      ORDER BY RANDOM()
+      ORDER BY MAX(s.subscribed_at) DESC
       LIMIT ?`,
     cutoff, DRIP_CAMPAIGN, DRIP_DAILY_CAP);
 
