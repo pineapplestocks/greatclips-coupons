@@ -568,7 +568,7 @@ function dealDropperHtml(env) {
     </table>
   </td></tr>`;
   return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#e8f6ea" style="background:#e8f6ea;border-radius:20px;">
-  <tr><td class="promo-pad eyebrow" style="padding:28px 28px 0;color:#063c2d;font-size:12px;line-height:16px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;">Also from us &middot; Free WhatsApp group</td></tr>
+  <tr><td class="promo-pad eyebrow" style="padding:28px 28px 0;color:#063c2d;font-size:12px;line-height:16px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;"><span style="color:#1fa855;">Price errors &amp; glitched deals</span><br>Take advantage with our WhatsApp group</td></tr>
   <tr><td class="promo-pad" style="padding:16px 28px 0;">
     <table role="presentation" cellpadding="0" cellspacing="0"><tr>
       <td valign="middle" style="padding-right:16px;">
