@@ -140,6 +140,13 @@ async function ensureSubscriberSchema(env) {
        PRIMARY KEY (email, campaign)
      )`
   ).run();
+
+  // Every join and lookup in this file goes through lower(trim(email)). Without
+  // this index each one is a full scan of the table, which is how a day of drip
+  // runs plus ad-hoc queries exhausted D1's free-tier read quota (2026-09-11).
+  await env.DB.prepare(
+    'CREATE INDEX IF NOT EXISTS idx_subscribers_email_norm ON subscribers (lower(trim(email)))'
+  ).run();
 }
 
 function normalizeZipCode(value) {
@@ -1048,8 +1055,14 @@ ${EMAIL_STYLE}
 
     // Store subscriber + location in D1
     if (env.DB) {
+      // Schema upkeep must never cost us the row: when D1's free-tier read quota
+      // is exhausted the PRAGMA fails while the INSERT (a write) still works.
       try {
         await ensureSubscriberSchema(env);
+      } catch (err) {
+        console.error('D1 schema error:', err);
+      }
+      try {
         await env.DB.prepare(
           `INSERT INTO subscribers (email, zip_code, location_name, city, state, coupon_url, subscribed_at)
            VALUES (?, ?, ?, ?, ?, ?, ?)`
