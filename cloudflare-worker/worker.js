@@ -466,6 +466,18 @@ const DEAL_DROPPER_URL = 'https://chat.whatsapp.com/Jgifq2XjPAkIgfXMdwM5j5';
 // file to docs/assets/email/ and let Pages deploy before the Worker ships.
 const DEAL_DROPPER_LOGO = SITE_URL + '/assets/email/deal-dropper-logo.png';
 
+// Featured "latest drop" card shown above the deals table. Set to null to hide
+// it. The image is hosted under docs/assets/email/ like the logo.
+const DEAL_DROPPER_SPOTLIGHT = {
+  title: '80 bags of Cheez-It.',
+  price: '$16.63',
+  emoji: '🤯',
+  blurb: 'That’s about 21¢ per bag for lunchboxes, office snacks, or stocking the pantry.',
+  note: 'Amazon currently shows 58% off its displayed bundle “was” price.',
+  image: SITE_URL + '/assets/email/deal-cheezit.jpg',
+  alt: '80-count Cheez-It snack bags',
+};
+
 // Refresh these when the group shares better examples. "Usually on Amazon" is
 // the comparison price advertised in the source post; only call something a
 // price error once that has actually been confirmed. The owner chose to run
@@ -505,6 +517,7 @@ a[x-apple-data-detectors]{color:inherit!important;text-decoration:none!important
   .eyebrow{font-size:10px!important;letter-spacing:1.2px!important;}
   .promo-title{font-size:26px!important;line-height:30px!important;}
   .promo-copy{font-size:15px!important;line-height:22px!important;}
+  .spot-title{font-size:19px!important;line-height:24px!important;}
   .price-heading{font-size:9px!important;letter-spacing:.5px!important;}
   .product-name{font-size:14px!important;line-height:19px!important;}
   .product-detail{font-size:12px!important;line-height:16px!important;}
@@ -539,6 +552,21 @@ function dealDropperHtml(env) {
             <div class="deal-price" style="color:#063c2d;font-size:21px;line-height:26px;font-weight:800;">${escapeHtml(d.deal)}</div></td>
         </tr>`;
   }).join('');
+  const sp = DEAL_DROPPER_SPOTLIGHT;
+  const spot = !sp ? '' : `
+  <tr><td class="promo-pad" style="padding:20px 28px 0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="background:#ffffff;border-radius:14px;">
+      <tr><td style="padding:14px 14px 0;">
+        <a href="${url}" target="_blank"><img src="${sp.image}" width="556" alt="${escapeHtml(sp.alt)}"
+          style="display:block;width:100%;max-width:556px;height:auto;border:0;border-radius:10px;"></a></td></tr>
+      <tr><td style="padding:14px 16px 18px;">
+        <div class="eyebrow" style="color:#1fa855;font-size:11px;line-height:15px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;">Latest drop</div>
+        <div class="spot-title" style="padding-top:6px;color:#063c2d;font-size:22px;line-height:27px;font-weight:900;">${escapeHtml(sp.title)} Just <span style="color:#0f7a52;">${escapeHtml(sp.price)}</span>. ${sp.emoji || ''}</div>
+        <div style="padding-top:6px;color:#3d4f47;font-size:15px;line-height:22px;">${escapeHtml(sp.blurb)}</div>
+        <div style="padding-top:8px;color:#66736e;font-size:13px;line-height:18px;">${escapeHtml(sp.note)}</div>
+      </td></tr>
+    </table>
+  </td></tr>`;
   return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#e8f6ea" style="background:#e8f6ea;border-radius:20px;">
   <tr><td class="promo-pad eyebrow" style="padding:28px 28px 0;color:#063c2d;font-size:12px;line-height:16px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;">Also from us &middot; Free WhatsApp group</td></tr>
   <tr><td class="promo-pad" style="padding:16px 28px 0;">
@@ -552,6 +580,7 @@ function dealDropperHtml(env) {
   <tr><td class="promo-pad promo-copy" style="padding:12px 28px 0;color:#3d4f47;font-size:16px;line-height:24px;">
     Amazon finds for your pantry, family &amp; home. Shopping links and coupon steps included.
   </td></tr>
+${spot}
   <tr><td class="promo-pad" style="padding:22px 28px 0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
       <td valign="bottom" class="price-heading" style="color:#063c2d;font-size:11px;line-height:15px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;">Recent deals we shared</td>
@@ -563,9 +592,10 @@ function dealDropperHtml(env) {
     </table>
   </td></tr>
   <tr><td class="promo-pad" style="padding:22px 28px 28px;">
+    <div class="promo-copy" style="padding-bottom:12px;text-align:center;color:#063c2d;font-size:16px;line-height:22px;font-weight:700;">Want alerts like this directly in WhatsApp?</div>
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" bgcolor="#1fa855" style="border-radius:12px;">
       <a class="cta" href="${url}" target="_blank" style="display:block;padding:18px 24px;color:#ffffff;font-size:20px;line-height:24px;font-weight:800;text-decoration:none;">
-        Join Deal Dropper &mdash; It&rsquo;s Free &nbsp;&rarr;</a>
+        Join Deal Dropper &nbsp;&rarr;</a>
     </td></tr></table>
   </td></tr>
 </table>`;
