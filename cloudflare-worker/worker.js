@@ -422,7 +422,7 @@ async function sendSubscriberSummary(env, source = 'manual') {
 
 const DRIP_CAMPAIGN = 'nationwide-drip';
 const DRIP_RUN_CAP = 44;         // per invocation; see note above
-const BREVO_COUPON_RESERVE = 100; // sends kept back for today's coupon-request emails
+const BREVO_COUPON_RESERVE = 150; // sends kept back for today's coupon-request emails (100 ran dry on 2026-09-11)
 const DRIP_MIN_AGE_DAYS = 2;    // skip only people who just received their coupon email
 
 // The first 200-contact send bounced 4.0% hard on the *newest* addresses, and
