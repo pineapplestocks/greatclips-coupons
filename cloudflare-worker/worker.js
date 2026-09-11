@@ -406,17 +406,23 @@ async function sendSubscriberSummary(env, source = 'manual') {
 // actually live, never mails the same address twice (campaign_sends), and skips
 // anyone who unsubscribed.
 //
-// Why the run is capped at 45: the Workers Free plan allows 50 outbound fetches
-// per invocation. The coupon feed and the Brevo bounce sync use two, so send
-// #49 onward throws "Too many subrequests" — which is exactly why the nightly
-// run stalled at 47-48 for a week (diagnosed 2026-09-11). Volume comes from
-// running three times a day (see [triggers] in wrangler.toml) rather than from
-// a bigger batch. Brevo's 300/day is the next ceiling; the coupon-request
-// emails need most of the rest of it.
+// Why the run is capped at 44: the Workers Free plan allows 50 outbound fetches
+// per invocation. The coupon feed, the Brevo credit check and the bounce sync
+// use three (more if bounces paginate), so a bigger batch throws "Too many
+// subrequests" — which is exactly why the nightly run stalled at 47-48 for a
+// week (diagnosed 2026-09-11). Volume comes from running three times a day
+// (see [triggers] in wrangler.toml) rather than from a bigger batch.
+//
+// Brevo's 300/day is the other ceiling, shared with the coupon-request emails
+// that every signup triggers. Each run asks Brevo what is left today and only
+// spends what sits above BREVO_COUPON_RESERVE, so the drip can never starve
+// coupon delivery. Manual runs (/admin/run-drip) follow the same rule, so
+// they are safe to fire until one reports sent: 0.
 // ============================================================
 
 const DRIP_CAMPAIGN = 'nationwide-drip';
-const DRIP_RUN_CAP = 45;         // per invocation; see note above
+const DRIP_RUN_CAP = 44;         // per invocation; see note above
+const BREVO_COUPON_RESERVE = 100; // sends kept back for today's coupon-request emails
 const DRIP_MIN_AGE_DAYS = 2;    // skip only people who just received their coupon email
 
 // The first 200-contact send bounced 4.0% hard on the *newest* addresses, and
@@ -710,6 +716,22 @@ async function recentBounceRate(env) {
   return { rate: bounced / sent, sent, bounced, judged: true };
 }
 
+// Brevo's remaining daily allowance as GET /v3/account reports it
+// (plan[].creditsType === 'sendLimit'). null when the lookup fails, in which
+// case the drip falls back to the plain per-run cap.
+async function brevoCreditsLeft(env) {
+  try {
+    const res = await fetch('https://api.brevo.com/v3/account', { headers: { 'api-key': env.BREVO_API_KEY } });
+    if (!res.ok) return null;
+    const account = await res.json();
+    const plan = (account.plan || []).find((p) => p.creditsType === 'sendLimit');
+    const credits = plan ? Number(plan.credits) : NaN;
+    return Number.isFinite(credits) ? credits : null;
+  } catch {
+    return null;
+  }
+}
+
 async function runDailyDrip(env, trigger) {
   if (!env.DB || !env.BREVO_API_KEY) return { ok: false, reason: 'not configured' };
   await ensureSubscriberSchema(env);
@@ -735,6 +757,16 @@ async function runDailyDrip(env, trigger) {
     };
   }
 
+  // Spend only what Brevo has left today above the coupon-email reserve.
+  const credits = await brevoCreditsLeft(env);
+  const allowance = credits == null
+    ? DRIP_RUN_CAP
+    : Math.max(0, Math.min(DRIP_RUN_CAP, credits - BREVO_COUPON_RESERVE));
+  if (allowance === 0) {
+    console.log(`drip(${trigger}): skipped - Brevo has ${credits} sends left today and ${BREVO_COUPON_RESERVE} are reserved for coupon emails`);
+    return { ok: true, sent: 0, reason: 'brevo reserve', credits, reserve: BREVO_COUPON_RESERVE, retired };
+  }
+
   const cutoff = new Date(Date.now() - DRIP_MIN_AGE_DAYS * DAY_MS).toISOString();
   const candidates = await queryAll(env,
     `SELECT lower(trim(s.email)) AS email
@@ -750,7 +782,7 @@ async function runDailyDrip(env, trigger) {
       GROUP BY lower(trim(s.email))
       ORDER BY MAX(s.subscribed_at) DESC
       LIMIT ?`,
-    cutoff, DRIP_CAMPAIGN, DRIP_RUN_CAP);
+    cutoff, DRIP_CAMPAIGN, allowance);
 
   let sent = 0;
   let failed = 0;
@@ -786,7 +818,7 @@ async function runDailyDrip(env, trigger) {
     + (health.judged ? (health.rate * 100).toFixed(1) + '%' : 'n/a')
   );
   return {
-    ok: true, sent, failed, candidates: candidates.length,
+    ok: true, sent, failed, candidates: candidates.length, credits, allowance,
     coupon: coupon.coupon_code, retired,
     bounceRate: health.judged ? health.rate : null,
   };
@@ -832,6 +864,14 @@ export default {
         return jsonResponse({ error: 'Unauthorized' }, 401);
       }
       return jsonResponse(await runDailyDrip(env, 'manual'));
+    }
+
+    if (url.pathname === '/admin/brevo-credits') {
+      if (!env.ADMIN_TOKEN || request.headers.get('Authorization') !== `Bearer ${env.ADMIN_TOKEN}`) {
+        return jsonResponse({ error: 'Unauthorized' }, 401);
+      }
+      const credits = await brevoCreditsLeft(env);
+      return jsonResponse({ credits, reserve: BREVO_COUPON_RESERVE, drip_allowance_now: credits == null ? null : Math.max(0, credits - BREVO_COUPON_RESERVE) });
     }
 
     if (url.pathname === '/admin/send-summary') {
