@@ -468,7 +468,8 @@ const DEAL_DROPPER_LOGO = SITE_URL + '/assets/email/deal-dropper-logo.png';
 
 // Refresh these when the group shares better examples. "Usually on Amazon" is
 // the comparison price advertised in the source post; only call something a
-// price error once that has actually been confirmed. Optional `image`: a
+// price error once that has actually been confirmed. The owner chose to run
+// the block without a footnote or Associates disclosure. Optional `image`: a
 // 56px-ish square hosted under docs/assets/email/, shown as a row thumbnail.
 const DEAL_DROPPER_DEALS = [
   { name: 'Goya Chick Peas',        detail: '8-pack',                  usually: '$11.99', deal: '$6.44' },
@@ -554,24 +555,18 @@ function dealDropperHtml(env) {
   <tr><td class="promo-pad" style="padding:22px 28px 0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
       <td valign="bottom" class="price-heading" style="color:#063c2d;font-size:11px;line-height:15px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;">Recent deals we shared</td>
-      <td align="right" valign="bottom" class="price-heading" style="color:#66736e;font-size:11px;line-height:15px;font-weight:800;letter-spacing:1px;text-transform:uppercase;">Usually on Amazon*<br>Deal Price Alerted</td>
+      <td align="right" valign="bottom" class="price-heading" style="color:#66736e;font-size:11px;line-height:15px;font-weight:800;letter-spacing:1px;text-transform:uppercase;">Usually on Amazon<br>Deal Price Alerted</td>
     </tr></table>
   </td></tr>
   <tr><td class="promo-pad" style="padding:10px 28px 0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="background:#ffffff;border-radius:14px;">${rows}
     </table>
   </td></tr>
-  <tr><td class="promo-pad" style="padding:22px 28px 0;">
+  <tr><td class="promo-pad" style="padding:22px 28px 28px;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" bgcolor="#1fa855" style="border-radius:12px;">
       <a class="cta" href="${url}" target="_blank" style="display:block;padding:18px 24px;color:#ffffff;font-size:20px;line-height:24px;font-weight:800;text-decoration:none;">
         Join Deal Dropper &mdash; It&rsquo;s Free &nbsp;&rarr;</a>
     </td></tr></table>
-  </td></tr>
-  <tr><td class="promo-pad" align="center" style="padding:12px 28px 0;color:#3d4f47;font-size:14px;line-height:20px;">Free to join. Leave anytime.</td></tr>
-  <tr><td class="promo-pad" align="center" style="padding:18px 28px 24px;color:#66736e;font-size:12px;line-height:18px;">
-    *Recently shared offers, not guaranteed current prices. &ldquo;Usually on Amazon&rdquo; is the comparison price
-    advertised in the source post. Coupons, eligibility, sizes, and availability vary; check the final checkout price.<br>
-    As an Amazon Associate, I earn from qualifying purchases.
   </td></tr>
 </table>`;
 }
