@@ -586,6 +586,8 @@ a[x-apple-data-detectors]{color:inherit!important;text-decoration:none!important
   .promo-title{font-size:26px!important;line-height:30px!important;}
   .promo-copy{font-size:15px!important;line-height:22px!important;}
   .spot-title{font-size:19px!important;line-height:24px!important;}
+  .teaser-title{font-size:21px!important;line-height:26px!important;}
+  .teaser-pad{padding-left:16px!important;padding-right:16px!important;}
   .price-heading{font-size:9px!important;letter-spacing:.5px!important;}
   .product-name{font-size:14px!important;line-height:19px!important;}
   .product-detail{font-size:12px!important;line-height:16px!important;}
@@ -595,6 +597,18 @@ a[x-apple-data-detectors]{color:inherit!important;text-decoration:none!important
 
 // Accepts the invite with or without WhatsApp's share-tracking query string
 // (?s=cl&p=i...) and returns the canonical https://chat.whatsapp.com/<code>.
+// Teaser for an upcoming drop, rendered directly above the join button - the
+// point is to make joining time-sensitive. Set to null once the drop has
+// happened, or it turns into a promise the group did not keep. Optional
+// `image`: a wide banner hosted under docs/assets/email/.
+const DEAL_DROPPER_TEASER = {
+  eyebrow: 'Coming next week in the group',
+  headline: 'Kerrygold Butter \u2014 100% off',
+  sub: 'Free butter, not a typo. Members get the alert the moment it drops.',
+  image: '',
+  alt: '',
+};
+
 function dealDropperUrl(env) {
   const raw = String((env && env.DEAL_DROPPER_URL) || DEAL_DROPPER_URL || '').trim();
   const m = raw.match(/^https:\/\/chat\.whatsapp\.com\/([A-Za-z0-9_-]+)(?:[?#].*)?$/);
@@ -635,6 +649,19 @@ function dealDropperHtml(env) {
       </td></tr>
     </table>
   </td></tr>`;
+  const tz = DEAL_DROPPER_TEASER;
+  const teaser = !tz ? '' : `
+  <tr><td class="promo-pad" style="padding:20px 28px 0;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#ffd24a" style="background:#ffd24a;border-radius:14px;">
+      ${tz.image ? `<tr><td style="padding:12px 12px 0;"><a href="${url}" target="_blank"><img src="${escapeHtml(tz.image)}" width="532" alt="${escapeHtml(tz.alt || '')}" style="display:block;width:100%;max-width:532px;height:auto;border:0;border-radius:9px;"></a></td></tr>` : ''}
+      <tr><td class="teaser-pad" style="padding:16px 20px 18px;">
+        <div class="eyebrow" style="color:#7a5800;font-size:11px;line-height:15px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;">${escapeHtml(tz.eyebrow)}</div>
+        <div class="teaser-title" style="padding-top:5px;color:#3d2b00;font-size:24px;line-height:29px;font-weight:900;">${escapeHtml(tz.headline)}</div>
+        <div style="padding-top:5px;color:#5c4300;font-size:15px;line-height:21px;">${escapeHtml(tz.sub)}</div>
+      </td></tr>
+    </table>
+  </td></tr>`;
+
   return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#e8f6ea" style="background:#e8f6ea;border-radius:20px;">
   <tr><td class="promo-pad eyebrow" style="padding:28px 28px 0;color:#063c2d;font-size:12px;line-height:16px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;"><span style="color:#1fa855;">Price errors &amp; glitched deals</span><br>Take advantage with our WhatsApp group</td></tr>
   <tr><td class="promo-pad" style="padding:16px 28px 0;">
@@ -659,6 +686,7 @@ ${spot}
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#ffffff" style="background:#ffffff;border-radius:14px;">${rows}
     </table>
   </td></tr>
+${teaser}
   <tr><td class="promo-pad" style="padding:22px 28px 28px;">
     <div class="promo-copy" style="padding-bottom:12px;text-align:center;color:#063c2d;font-size:16px;line-height:22px;font-weight:700;">Want alerts like this directly in WhatsApp?</div>
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" bgcolor="#1fa855" style="border-radius:12px;">
