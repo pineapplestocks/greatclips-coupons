@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-12T03:35:48Z",
- "scraped_at": "2026-09-11T20:35:27.822988",
- "total": 13,
+ "generated_at": "2026-09-12T10:16:05Z",
+ "scraped_at": "2026-09-12T03:15:42.866091",
+ "total": 12,
  "scopes": {
   "national": 2,
-  "salon": 6,
+  "salon": 5,
   "area": 2,
   "unknown": 3
  },
@@ -17,7 +17,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-09-11",
+   "last_verified": "2026-09-12",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -32,7 +32,7 @@
    "address": "4431-D Balfour Rd",
    "market": "CA",
    "expiration": "09/13/2026",
-   "last_verified": "2026-09-11",
+   "last_verified": "2026-09-12",
    "scope": "salon",
    "price_value": 5.0,
    "city_keys": [
@@ -47,27 +47,10 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-09-11",
+   "last_verified": "2026-09-12",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
-  },
-  {
-   "url": "https://offers.greatclips.com/XDcpSFp",
-   "coupon_code": "XDcpSFp",
-   "price": "$7.99",
-   "location_name": "Hometown Circle",
-   "city": "Verona,",
-   "state": "WI",
-   "address": "611 Hometown Circle",
-   "market": "WI",
-   "expiration": "09/12/2026",
-   "last_verified": "2026-09-11",
-   "scope": "salon",
-   "price_value": 7.99,
-   "city_keys": [
-    "WI/verona"
-   ]
   },
   {
    "url": "https://offers.greatclips.com/g9cBmt2",
@@ -79,7 +62,7 @@
    "address": "Cherrywood at 9570 SW 62nd Ave",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-11",
+   "last_verified": "2026-09-12",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -96,7 +79,7 @@
    "address": "2575 SW 42nd St",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-11",
+   "last_verified": "2026-09-12",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -113,7 +96,7 @@
    "address": "1126 Bichara Blvd",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-11",
+   "last_verified": "2026-09-12",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -129,7 +112,7 @@
    "area_name": "participating Salisbury",
    "market": "Salisbury",
    "expiration": "09/18/2026",
-   "last_verified": "2026-09-11",
+   "last_verified": "2026-09-12",
    "participating_location_note": "Valid at participating locations in Salisbury",
    "scope": "area",
    "price_value": 10.99,
@@ -159,7 +142,7 @@
    "area_name": "participating Baltimore",
    "market": "Baltimore",
    "expiration": "09/18/2026",
-   "last_verified": "2026-09-11",
+   "last_verified": "2026-09-12",
    "participating_location_note": "Valid at participating locations in Baltimore",
    "scope": "area",
    "price_value": 11.99,
@@ -194,7 +177,7 @@
    "area_name": "participating West & SW Michigan",
    "market": "West & SW Michigan",
    "expiration": "10/02/2026",
-   "last_verified": "2026-09-11",
+   "last_verified": "2026-09-12",
    "participating_location_note": "Valid at participating locations in West & SW Michigan",
    "scope": "unknown",
    "price_value": 12.99
@@ -208,7 +191,7 @@
    "area_name": "participating Barrie, Orillia, Bradford, Innisfil & Alliston",
    "market": "Barrie, Orillia, Bradford, Innisfil & Alliston",
    "expiration": "09/13/2026",
-   "last_verified": "2026-09-11",
+   "last_verified": "2026-09-12",
    "participating_location_note": "Valid at participating locations in Barrie, Orillia, Bradford, Innisfil & Alliston",
    "scope": "unknown",
    "price_value": 17.99
@@ -222,7 +205,7 @@
    "area_name": "W, Brantford & Guelph",
    "market": "W, Brantford & Guelph",
    "expiration": "09/13/2026",
-   "last_verified": "2026-09-11",
+   "last_verified": "2026-09-12",
    "participating_location_note": "Valid at participating locations in W, Brantford & Guelph",
    "scope": "unknown",
    "price_value": 18.99
@@ -237,7 +220,7 @@
    "address": "4055 Evergreen Village Sq",
    "market": "CA",
    "expiration": "10/07/2026",
-   "last_verified": "2026-09-11",
+   "last_verified": "2026-09-12",
    "scope": "salon",
    "price_value": 19.99,
    "city_keys": [

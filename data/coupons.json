@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-09-11T20:35:27.822988",
-  "total_coupons": 13,
+  "scraped_at": "2026-09-12T03:15:42.866091",
+  "total_coupons": 12,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/yMEcKko",
@@ -12,11 +12,11 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-09-11",
+      "last_verified": "2026-09-12",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-08-21",
-      "last_seen": "2026-09-11"
+      "last_seen": "2026-09-12"
     },
     {
       "url": "https://offers.greatclips.com/udfr0nU",
@@ -30,7 +30,7 @@
       "expiration": "09/13/2026",
       "price": "$5.00",
       "market": "CA",
-      "last_verified": "2026-09-11",
+      "last_verified": "2026-09-12",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-05",
@@ -46,29 +46,11 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-09-11",
+      "last_verified": "2026-09-12",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-09-07",
-      "last_seen": "2026-09-11"
-    },
-    {
-      "url": "https://offers.greatclips.com/XDcpSFp",
-      "coupon_code": "XDcpSFp",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8457/50707-002-1200x600-7.99.jpg",
-      "valid_text": "Valid at Great Clips Hometown Circle at 611 Hometown Circle in Verona, WI. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 09/12/2026",
-      "location_name": "Hometown Circle",
-      "address": "611 Hometown Circle",
-      "city": "Verona,",
-      "state": "WI",
-      "expiration": "09/12/2026",
-      "price": "$7.99",
-      "market": "WI",
-      "last_verified": "2026-09-11",
-      "source": "facebook_ad_library",
-      "participating_location_note": null,
-      "added_date": "2026-09-05",
-      "last_seen": "2026-09-05"
+      "last_seen": "2026-09-12"
     },
     {
       "url": "https://offers.greatclips.com/g9cBmt2",
@@ -82,11 +64,11 @@
       "expiration": "10/09/2026",
       "price": "$8.99",
       "market": "FL",
-      "last_verified": "2026-09-11",
+      "last_verified": "2026-09-12",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
-      "last_seen": "2026-09-08"
+      "last_seen": "2026-09-12"
     },
     {
       "url": "https://offers.greatclips.com/QnuB9hY",
@@ -100,11 +82,11 @@
       "expiration": "10/09/2026",
       "price": "$8.99",
       "market": "FL",
-      "last_verified": "2026-09-11",
+      "last_verified": "2026-09-12",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
-      "last_seen": "2026-09-10"
+      "last_seen": "2026-09-12"
     },
     {
       "url": "https://offers.greatclips.com/8NUmR2H",
@@ -118,11 +100,11 @@
       "expiration": "10/09/2026",
       "price": "$8.99",
       "market": "FL",
-      "last_verified": "2026-09-11",
+      "last_verified": "2026-09-12",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
-      "last_seen": "2026-09-10"
+      "last_seen": "2026-09-12"
     },
     {
       "url": "https://offers.greatclips.com/RtEvBAF",
@@ -134,7 +116,7 @@
       "area_name": "participating Salisbury",
       "price": "$10.99",
       "market": "Salisbury",
-      "last_verified": "2026-09-11",
+      "last_verified": "2026-09-12",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Salisbury",
       "added_date": "2026-09-05",
@@ -150,7 +132,7 @@
       "area_name": "participating Baltimore",
       "price": "$11.99",
       "market": "Baltimore",
-      "last_verified": "2026-09-11",
+      "last_verified": "2026-09-12",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Baltimore",
       "added_date": "2026-08-29",
@@ -166,11 +148,11 @@
       "area_name": "only at participating West & SW Michigan",
       "price": "$12.99",
       "market": "West & SW Michigan",
-      "last_verified": "2026-09-11",
+      "last_verified": "2026-09-12",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in West & SW Michigan",
       "added_date": "2026-09-10",
-      "last_seen": "2026-09-11"
+      "last_seen": "2026-09-12"
     },
     {
       "url": "https://offers.greatclips.com/F84tFdv",
@@ -182,7 +164,7 @@
       "area_name": "participating Barrie, Orillia, Bradford, Innisfil & Alliston",
       "price": "$17.99",
       "market": "Barrie, Orillia, Bradford, Innisfil & Alliston",
-      "last_verified": "2026-09-11",
+      "last_verified": "2026-09-12",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Barrie, Orillia, Bradford, Innisfil & Alliston",
       "added_date": "2026-09-05",
@@ -198,7 +180,7 @@
       "area_name": "W, Brantford & Guelph",
       "price": "$18.99",
       "market": "W, Brantford & Guelph",
-      "last_verified": "2026-09-11",
+      "last_verified": "2026-09-12",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in W, Brantford & Guelph",
       "added_date": "2026-09-05",
@@ -216,7 +198,7 @@
       "expiration": "10/07/2026",
       "price": "$19.99",
       "market": "CA",
-      "last_verified": "2026-09-11",
+      "last_verified": "2026-09-12",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
