@@ -130,8 +130,8 @@ async function ensureSubscriberSchema(env) {
     await env.DB.prepare('ALTER TABLE subscribers ADD COLUMN bounced_at TEXT').run();
   }
 
-  // Ledger of drip sends: one row per address per campaign, so the random
-  // nightly pick can never mail the same person twice.
+  // Ledger of drip sends: one row per address per campaign, so the nightly
+  // pick can never mail the same person twice.
   await env.DB.prepare(
     `CREATE TABLE IF NOT EXISTS campaign_sends (
        email TEXT NOT NULL,
@@ -140,6 +140,13 @@ async function ensureSubscriberSchema(env) {
        PRIMARY KEY (email, campaign)
      )`
   ).run();
+
+  // Which provider carried each send, so the daily SendGrid budget can be
+  // counted without an API that reports it.
+  const sendCols = await queryAll(env, 'PRAGMA table_info(campaign_sends)');
+  if (!sendCols.some((column) => column.name === 'provider')) {
+    await env.DB.prepare("ALTER TABLE campaign_sends ADD COLUMN provider TEXT DEFAULT 'brevo'").run();
+  }
 
   // Every join and lookup in this file goes through lower(trim(email)). Without
   // this index each one is a full scan of the table, which is how a day of drip
@@ -171,6 +178,40 @@ async function sendBrevoEmail(env, { toEmail, toName, subject, htmlContent }) {
       htmlContent,
     }),
   });
+}
+
+// SendGrid's v3 send API. 202 means queued; anything else is a failure whose
+// body carries the reason (403 almost always means the From address has not
+// been verified under Sender Authentication).
+async function sendSendGridEmail(env, { toEmail, toName, subject, htmlContent, unsubscribeUrl }) {
+  const from = env.SENDGRID_SENDER || env.SENDER_EMAIL || 'noreply@greatclipsdeal.com';
+  const headers = { 'Content-Type': 'application/json', Authorization: `Bearer ${env.SENDGRID_API_KEY}` };
+  const payload = {
+    personalizations: [{ to: [toName ? { email: toEmail, name: toName } : { email: toEmail }] }],
+    from: { email: from, name: 'Great Clips Deal' },
+    subject,
+    content: [{ type: 'text/html', value: htmlContent }],
+  };
+  // One-click unsubscribe, so a recipient never has to hunt for the link.
+  if (unsubscribeUrl) {
+    payload.headers = {
+      'List-Unsubscribe': `<${unsubscribeUrl}>`,
+      'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+    };
+  }
+  return fetch('https://api.sendgrid.com/v3/mail/send', {
+    method: 'POST', headers, body: JSON.stringify(payload),
+  });
+}
+
+// How much of today's SendGrid allowance is still unspent.
+async function sendGridLeftToday(env) {
+  if (!env.SENDGRID_API_KEY) return 0;
+  const row = await queryFirst(env,
+    "SELECT COUNT(*) AS n FROM campaign_sends WHERE provider = 'sendgrid' AND date(sent_at) = date('now')");
+  const used = Number((row && row.n) || 0);
+  const cap = Number(env.SENDGRID_DAILY_CAP || SENDGRID_DAILY_CAP);
+  return Math.max(0, cap - used);
 }
 
 function statCard(label, value, subtext) {
@@ -430,6 +471,13 @@ async function sendSubscriberSummary(env, source = 'manual') {
 const DRIP_CAMPAIGN = 'nationwide-drip';
 const DRIP_RUN_CAP = 44;         // per invocation; see note above
 const BREVO_COUPON_RESERVE = 150; // sends kept back for today's coupon-request emails (100 ran dry on 2026-09-11)
+
+// SendGrid runs alongside Brevo purely to raise the ceiling: its free tier is
+// 100 messages a day, and the drip spends that budget first so Brevo's 300 is
+// left for the signup-triggered coupon emails. Usage is counted from
+// campaign_sends.provider rather than an API call - SendGrid's free plan does
+// not expose a remaining-quota endpoint.
+const SENDGRID_DAILY_CAP = 100;
 const DRIP_MIN_AGE_DAYS = 2;    // skip only people who just received their coupon email
 
 // The first 200-contact send bounced 4.0% hard on the *newest* addresses, and
@@ -764,15 +812,19 @@ async function runDailyDrip(env, trigger) {
     };
   }
 
-  // Spend only what Brevo has left today above the coupon-email reserve.
+  // Budget for this run: SendGrid's free allowance first, then whatever Brevo
+  // has above the reserve it keeps for signup-triggered coupon emails.
+  const sgLeft = await sendGridLeftToday(env);
   const credits = await brevoCreditsLeft(env);
-  const allowance = credits == null
+  const brevoLeft = credits == null
     ? DRIP_RUN_CAP
-    : Math.max(0, Math.min(DRIP_RUN_CAP, credits - BREVO_COUPON_RESERVE));
+    : Math.max(0, credits - BREVO_COUPON_RESERVE);
+  const allowance = Math.min(DRIP_RUN_CAP, sgLeft + brevoLeft);
   if (allowance === 0) {
-    console.log(`drip(${trigger}): skipped - Brevo has ${credits} sends left today and ${BREVO_COUPON_RESERVE} are reserved for coupon emails`);
-    return { ok: true, sent: 0, reason: 'brevo reserve', credits, reserve: BREVO_COUPON_RESERVE, retired };
+    console.log(`drip(${trigger}): skipped - SendGrid has ${sgLeft} left today and Brevo has ${credits} with ${BREVO_COUPON_RESERVE} reserved`);
+    return { ok: true, sent: 0, reason: 'no budget', sendgridLeft: sgLeft, credits, reserve: BREVO_COUPON_RESERVE, retired };
   }
+  let sgBudget = sgLeft;
 
   const cutoff = new Date(Date.now() - DRIP_MIN_AGE_DAYS * DAY_MS).toISOString();
   const candidates = await queryAll(env,
@@ -793,25 +845,41 @@ async function runDailyDrip(env, trigger) {
 
   let sent = 0;
   let failed = 0;
+  let sentSendGrid = 0;
+  let sgBroken = false;   // stop trying SendGrid after it fails; do not burn the run
   for (const row of candidates) {
     const email = row.email;
     try {
-      const res = await sendBrevoEmail(env, {
+      const unsubscribeUrl = await unsubUrl(env, email);
+      const message = {
         toEmail: email,
         subject: 'Your ' + (coupon.price || '$5.00') + ' off Great Clips coupon is live',
-        htmlContent: dripHtml(env, coupon, await unsubUrl(env, email)),
-      });
+        htmlContent: dripHtml(env, coupon, unsubscribeUrl),
+        unsubscribeUrl,
+      };
+      const useSendGrid = !sgBroken && sgBudget > 0 && env.SENDGRID_API_KEY;
+      const res = useSendGrid
+        ? await sendSendGridEmail(env, message)
+        : await sendBrevoEmail(env, message);
       if (!res.ok) {
         // Out of credits or throttled: stop cleanly rather than burn the list.
         const body = await res.text();
-        console.error('drip send failed', res.status, body.slice(0, 200));
+        console.error(`drip send failed via ${useSendGrid ? 'sendgrid' : 'brevo'}`, res.status, body.slice(0, 200));
         failed++;
+        if (useSendGrid) {
+          // A SendGrid failure is usually configuration (403 = unverified
+          // sender), so stop using it this run and let Brevo carry the rest.
+          sgBroken = true;
+          sgBudget = 0;
+          continue;
+        }
         if (res.status === 402 || res.status === 429) break;
         continue;
       }
+      if (useSendGrid) { sgBudget--; sentSendGrid++; }
       await env.DB.prepare(
-        'INSERT OR IGNORE INTO campaign_sends (email, campaign, sent_at) VALUES (?, ?, ?)'
-      ).bind(email, DRIP_CAMPAIGN, new Date().toISOString()).run();
+        'INSERT OR IGNORE INTO campaign_sends (email, campaign, sent_at, provider) VALUES (?, ?, ?, ?)'
+      ).bind(email, DRIP_CAMPAIGN, new Date().toISOString(), useSendGrid ? 'sendgrid' : 'brevo').run();
       sent++;
     } catch (err) {
       console.error('drip error', email, err);
@@ -820,12 +888,14 @@ async function runDailyDrip(env, trigger) {
   }
 
   console.log(
-    'drip(' + trigger + '): ' + sent + ' sent, ' + failed + ' failed, '
+    'drip(' + trigger + '): ' + sent + ' sent (' + sentSendGrid + ' sendgrid, '
+    + (sent - sentSendGrid) + ' brevo), ' + failed + ' failed, '
     + candidates.length + ' candidates, ' + retired + ' retired, trailing bounce '
     + (health.judged ? (health.rate * 100).toFixed(1) + '%' : 'n/a')
   );
   return {
     ok: true, sent, failed, candidates: candidates.length, credits, allowance,
+    sentSendGrid, sentBrevo: sent - sentSendGrid, sendgridLeft: sgBudget,
     coupon: coupon.coupon_code, retired,
     bounceRate: health.judged ? health.rate : null,
   };
@@ -873,12 +943,19 @@ export default {
       return jsonResponse(await runDailyDrip(env, 'manual'));
     }
 
-    if (url.pathname === '/admin/brevo-credits') {
+    if (url.pathname === '/admin/brevo-credits' || url.pathname === '/admin/email-budget') {
       if (!env.ADMIN_TOKEN || request.headers.get('Authorization') !== `Bearer ${env.ADMIN_TOKEN}`) {
         return jsonResponse({ error: 'Unauthorized' }, 401);
       }
+      await ensureSubscriberSchema(env);
       const credits = await brevoCreditsLeft(env);
-      return jsonResponse({ credits, reserve: BREVO_COUPON_RESERVE, drip_allowance_now: credits == null ? null : Math.max(0, credits - BREVO_COUPON_RESERVE) });
+      const brevoForDrip = credits == null ? null : Math.max(0, credits - BREVO_COUPON_RESERVE);
+      const sendgridLeft = await sendGridLeftToday(env);
+      return jsonResponse({
+        sendgrid: { configured: Boolean(env.SENDGRID_API_KEY), cap: SENDGRID_DAILY_CAP, left_today: sendgridLeft },
+        brevo: { credits, reserve: BREVO_COUPON_RESERVE, left_for_drip: brevoForDrip },
+        drip_allowance_now: (brevoForDrip == null ? 0 : brevoForDrip) + sendgridLeft,
+      });
     }
 
     if (url.pathname === '/admin/send-summary') {
