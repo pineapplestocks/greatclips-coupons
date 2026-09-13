@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-13T03:41:53Z",
- "scraped_at": "2026-09-12T20:41:40.622982",
- "total": 13,
+ "generated_at": "2026-09-13T11:16:11Z",
+ "scraped_at": "2026-09-13T04:15:48.636145",
+ "total": 10,
  "scopes": {
   "national": 2,
-  "salon": 5,
+  "salon": 4,
   "area": 3,
-  "unknown": 3
+  "unknown": 1
  },
  "coupons": [
   {
@@ -17,27 +17,10 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-09-12",
+   "last_verified": "2026-09-13",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
-  },
-  {
-   "url": "https://offers.greatclips.com/udfr0nU",
-   "coupon_code": "udfr0nU",
-   "price": "$5.00",
-   "location_name": "Brentwood",
-   "city": "Brentwood,",
-   "state": "CA",
-   "address": "4431-D Balfour Rd",
-   "market": "CA",
-   "expiration": "09/13/2026",
-   "last_verified": "2026-09-12",
-   "scope": "salon",
-   "price_value": 5.0,
-   "city_keys": [
-    "CA/brentwood"
-   ]
   },
   {
    "url": "https://offers.greatclips.com/u7R1t67",
@@ -47,7 +30,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-09-12",
+   "last_verified": "2026-09-13",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -62,7 +45,7 @@
    "address": "Cherrywood at 9570 SW 62nd Ave",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-12",
+   "last_verified": "2026-09-13",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -79,7 +62,7 @@
    "address": "2575 SW 42nd St",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-12",
+   "last_verified": "2026-09-13",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -96,7 +79,7 @@
    "address": "1126 Bichara Blvd",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-12",
+   "last_verified": "2026-09-13",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -112,7 +95,7 @@
    "area_name": "participating Salisbury",
    "market": "Salisbury",
    "expiration": "09/18/2026",
-   "last_verified": "2026-09-12",
+   "last_verified": "2026-09-13",
    "participating_location_note": "Valid at participating locations in Salisbury",
    "scope": "area",
    "price_value": 10.99,
@@ -142,7 +125,7 @@
    "area_name": "participating Baltimore",
    "market": "Baltimore",
    "expiration": "09/18/2026",
-   "last_verified": "2026-09-12",
+   "last_verified": "2026-09-13",
    "participating_location_note": "Valid at participating locations in Baltimore",
    "scope": "area",
    "price_value": 11.99,
@@ -177,7 +160,7 @@
    "area_name": "participating West & SW Michigan",
    "market": "West & SW Michigan",
    "expiration": "10/02/2026",
-   "last_verified": "2026-09-12",
+   "last_verified": "2026-09-13",
    "participating_location_note": "Valid at participating locations in West & SW Michigan",
    "scope": "unknown",
    "price_value": 12.99
@@ -191,7 +174,7 @@
    "area_name": "participating San Diego",
    "market": "San Diego",
    "expiration": "09/25/2026",
-   "last_verified": "2026-09-12",
+   "last_verified": "2026-09-13",
    "participating_location_note": "Valid at participating locations in San Diego",
    "scope": "area",
    "price_value": 12.99,
@@ -217,34 +200,6 @@
    ]
   },
   {
-   "url": "https://offers.greatclips.com/F84tFdv",
-   "coupon_code": "F84tFdv",
-   "price": "$17.99",
-   "location_name": "participating Barrie, Orillia, Bradford, Innisfil & Alliston Area",
-   "state": "AREA",
-   "area_name": "participating Barrie, Orillia, Bradford, Innisfil & Alliston",
-   "market": "Barrie, Orillia, Bradford, Innisfil & Alliston",
-   "expiration": "09/13/2026",
-   "last_verified": "2026-09-12",
-   "participating_location_note": "Valid at participating locations in Barrie, Orillia, Bradford, Innisfil & Alliston",
-   "scope": "unknown",
-   "price_value": 17.99
-  },
-  {
-   "url": "https://offers.greatclips.com/n5ot5sF",
-   "coupon_code": "n5ot5sF",
-   "price": "$18.99",
-   "location_name": "W, Brantford & Guelph Area",
-   "state": "AREA",
-   "area_name": "W, Brantford & Guelph",
-   "market": "W, Brantford & Guelph",
-   "expiration": "09/13/2026",
-   "last_verified": "2026-09-12",
-   "participating_location_note": "Valid at participating locations in W, Brantford & Guelph",
-   "scope": "unknown",
-   "price_value": 18.99
-  },
-  {
    "url": "https://offers.greatclips.com/ZPzrMSl",
    "coupon_code": "ZPzrMSl",
    "price": "$19.99",
@@ -254,7 +209,7 @@
    "address": "4055 Evergreen Village Sq",
    "market": "CA",
    "expiration": "10/07/2026",
-   "last_verified": "2026-09-12",
+   "last_verified": "2026-09-13",
    "scope": "salon",
    "price_value": 19.99,
    "city_keys": [

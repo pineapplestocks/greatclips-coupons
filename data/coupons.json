@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-09-12T20:41:40.622982",
-  "total_coupons": 13,
+  "scraped_at": "2026-09-13T04:15:48.636145",
+  "total_coupons": 10,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/yMEcKko",
@@ -12,29 +12,11 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-09-12",
+      "last_verified": "2026-09-13",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-08-21",
-      "last_seen": "2026-09-12"
-    },
-    {
-      "url": "https://offers.greatclips.com/udfr0nU",
-      "coupon_code": "udfr0nU",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8432/50707-002-1200x600-US-Sparkfly-5off.jpg",
-      "valid_text": "Valid at Great Clips Brentwood at 4431-D Balfour Rd in Brentwood, CA. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 09/13/2026",
-      "location_name": "Brentwood",
-      "address": "4431-D Balfour Rd",
-      "city": "Brentwood,",
-      "state": "CA",
-      "expiration": "09/13/2026",
-      "price": "$5.00",
-      "market": "CA",
-      "last_verified": "2026-09-12",
-      "source": "facebook_ad_library",
-      "participating_location_note": null,
-      "added_date": "2026-09-05",
-      "last_seen": "2026-09-06"
+      "last_seen": "2026-09-13"
     },
     {
       "url": "https://offers.greatclips.com/u7R1t67",
@@ -46,11 +28,11 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-09-12",
+      "last_verified": "2026-09-13",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-09-07",
-      "last_seen": "2026-09-12"
+      "last_seen": "2026-09-13"
     },
     {
       "url": "https://offers.greatclips.com/g9cBmt2",
@@ -64,7 +46,7 @@
       "expiration": "10/09/2026",
       "price": "$8.99",
       "market": "FL",
-      "last_verified": "2026-09-12",
+      "last_verified": "2026-09-13",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
@@ -82,11 +64,11 @@
       "expiration": "10/09/2026",
       "price": "$8.99",
       "market": "FL",
-      "last_verified": "2026-09-12",
+      "last_verified": "2026-09-13",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
-      "last_seen": "2026-09-12"
+      "last_seen": "2026-09-13"
     },
     {
       "url": "https://offers.greatclips.com/8NUmR2H",
@@ -100,11 +82,11 @@
       "expiration": "10/09/2026",
       "price": "$8.99",
       "market": "FL",
-      "last_verified": "2026-09-12",
+      "last_verified": "2026-09-13",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
-      "last_seen": "2026-09-12"
+      "last_seen": "2026-09-13"
     },
     {
       "url": "https://offers.greatclips.com/RtEvBAF",
@@ -116,7 +98,7 @@
       "area_name": "participating Salisbury",
       "price": "$10.99",
       "market": "Salisbury",
-      "last_verified": "2026-09-12",
+      "last_verified": "2026-09-13",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Salisbury",
       "added_date": "2026-09-05",
@@ -132,7 +114,7 @@
       "area_name": "participating Baltimore",
       "price": "$11.99",
       "market": "Baltimore",
-      "last_verified": "2026-09-12",
+      "last_verified": "2026-09-13",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Baltimore",
       "added_date": "2026-08-29",
@@ -148,11 +130,11 @@
       "area_name": "only at participating West & SW Michigan",
       "price": "$12.99",
       "market": "West & SW Michigan",
-      "last_verified": "2026-09-12",
+      "last_verified": "2026-09-13",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in West & SW Michigan",
       "added_date": "2026-09-10",
-      "last_seen": "2026-09-12"
+      "last_seen": "2026-09-13"
     },
     {
       "url": "https://offers.greatclips.com/Sotihua",
@@ -164,43 +146,11 @@
       "area_name": "participating San Diego",
       "price": "$12.99",
       "market": "San Diego",
-      "last_verified": "2026-09-12",
+      "last_verified": "2026-09-13",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in San Diego",
       "added_date": "2026-09-12",
-      "last_seen": "2026-09-12"
-    },
-    {
-      "url": "https://offers.greatclips.com/F84tFdv",
-      "coupon_code": "F84tFdv",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20790/50707-002-1200x600-17.99.jpg",
-      "expiration": "09/13/2026",
-      "location_name": "participating Barrie, Orillia, Bradford, Innisfil & Alliston Area",
-      "state": "AREA",
-      "area_name": "participating Barrie, Orillia, Bradford, Innisfil & Alliston",
-      "price": "$17.99",
-      "market": "Barrie, Orillia, Bradford, Innisfil & Alliston",
-      "last_verified": "2026-09-12",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Barrie, Orillia, Bradford, Innisfil & Alliston",
-      "added_date": "2026-09-05",
-      "last_seen": "2026-09-06"
-    },
-    {
-      "url": "https://offers.greatclips.com/n5ot5sF",
-      "coupon_code": "n5ot5sF",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20791/50707-002-1200x600-18.99.jpg",
-      "expiration": "09/13/2026",
-      "location_name": "W, Brantford & Guelph Area",
-      "state": "AREA",
-      "area_name": "W, Brantford & Guelph",
-      "price": "$18.99",
-      "market": "W, Brantford & Guelph",
-      "last_verified": "2026-09-12",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in W, Brantford & Guelph",
-      "added_date": "2026-09-05",
-      "last_seen": "2026-09-06"
+      "last_seen": "2026-09-13"
     },
     {
       "url": "https://offers.greatclips.com/ZPzrMSl",
@@ -214,7 +164,7 @@
       "expiration": "10/07/2026",
       "price": "$19.99",
       "market": "CA",
-      "last_verified": "2026-09-12",
+      "last_verified": "2026-09-13",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
