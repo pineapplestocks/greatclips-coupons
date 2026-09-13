@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-09-12T20:17:59Z",
- "scraped_at": "2026-09-12T13:17:41.362930",
- "total": 12,
+ "generated_at": "2026-09-13T03:41:53Z",
+ "scraped_at": "2026-09-12T20:41:40.622982",
+ "total": 13,
  "scopes": {
   "national": 2,
   "salon": 5,
-  "area": 2,
+  "area": 3,
   "unknown": 3
  },
  "coupons": [
@@ -181,6 +181,40 @@
    "participating_location_note": "Valid at participating locations in West & SW Michigan",
    "scope": "unknown",
    "price_value": 12.99
+  },
+  {
+   "url": "https://offers.greatclips.com/Sotihua",
+   "coupon_code": "Sotihua",
+   "price": "$12.99",
+   "location_name": "participating San Diego Area",
+   "state": "AREA",
+   "area_name": "participating San Diego",
+   "market": "San Diego",
+   "expiration": "09/25/2026",
+   "last_verified": "2026-09-12",
+   "participating_location_note": "Valid at participating locations in San Diego",
+   "scope": "area",
+   "price_value": 12.99,
+   "metro_keys": [
+    "CA/san-diego"
+   ],
+   "market_names": [
+    "San Diego, CA"
+   ],
+   "city_keys": [
+    "CA/san-diego",
+    "CA/chula-vista",
+    "CA/oceanside",
+    "CA/poway",
+    "CA/el-cajon",
+    "CA/encinitas",
+    "CA/escondido",
+    "CA/imperial-beach",
+    "CA/la-mesa",
+    "CA/san-marcos",
+    "CA/santee",
+    "CA/vista"
+   ]
   },
   {
    "url": "https://offers.greatclips.com/F84tFdv",
