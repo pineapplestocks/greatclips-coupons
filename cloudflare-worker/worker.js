@@ -154,6 +154,19 @@ async function ensureSubscriberSchema(env) {
   await env.DB.prepare(
     'CREATE INDEX IF NOT EXISTS idx_subscribers_email_norm ON subscribers (lower(trim(email)))'
   ).run();
+
+  // Every "how many signed up since X" query in the summary, and the drip's own
+  // cutoff filter, range-scan this column. Without the index each one is a full
+  // table scan - which is how a day's normal traffic was reading millions of
+  // rows against D1's free-tier daily cap.
+  await env.DB.prepare(
+    'CREATE INDEX IF NOT EXISTS idx_subscribers_subscribed_at ON subscribers (subscribed_at)'
+  ).run();
+
+  // Same for the bounce-rate window and the SendGrid daily budget count.
+  await env.DB.prepare(
+    'CREATE INDEX IF NOT EXISTS idx_campaign_sends_campaign_sent ON campaign_sends (campaign, sent_at)'
+  ).run();
 }
 
 function normalizeZipCode(value) {
