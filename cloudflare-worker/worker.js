@@ -442,7 +442,7 @@ async function sendSubscriberSummary(env, source = 'manual') {
   }
 
   const summary = await buildSubscriberSummary(env);
-  const subject = `GreatClipsDeal subscribers: ${formatNumber(summary.counts.total)} total, ${formatSigned(summary.counts.monthDelta)} MTD`;
+  const subject = `GreatClipsDeal subscribers: ${formatNumber(summary.counts.unique)} unique, ${formatSigned(summary.counts.monthDelta)} MTD`;
   const brevoRes = await sendBrevoEmail(env, {
     toEmail: env.ADMIN_EMAIL || DEFAULT_ADMIN_EMAIL,
     toName: 'Mehul',
@@ -467,12 +467,12 @@ async function sendSubscriberSummary(env, source = 'manual') {
 // actually live, never mails the same address twice (campaign_sends), and skips
 // anyone who unsubscribed.
 //
-// Why the run is capped at 44: the Workers Free plan allows 50 outbound fetches
-// per invocation. The coupon feed, the Brevo credit check and the bounce sync
-// use three (more if bounces paginate), so a bigger batch throws "Too many
-// subrequests" — which is exactly why the nightly run stalled at 47-48 for a
-// week (diagnosed 2026-09-11). Volume comes from running three times a day
-// (see [triggers] in wrangler.toml) rather than from a bigger batch.
+// The cap used to be 44 because the Workers Free plan allows only 50 outbound
+// fetches per invocation, which is why the nightly run stalled at 47-48 for a
+// week (diagnosed 2026-09-11). The account moved to Workers Paid on
+// 2026-09-13, raising that ceiling to 1000, so the real limit is now the email
+// budget below rather than the runtime. Three runs of 100 comfortably cover a
+// day's combined SendGrid + Brevo allowance.
 //
 // Brevo's 300/day is the other ceiling, shared with the coupon-request emails
 // that every signup triggers. Each run asks Brevo what is left today and only
@@ -482,7 +482,7 @@ async function sendSubscriberSummary(env, source = 'manual') {
 // ============================================================
 
 const DRIP_CAMPAIGN = 'nationwide-drip';
-const DRIP_RUN_CAP = 44;         // per invocation; see note above
+const DRIP_RUN_CAP = 100;        // per invocation; see note above
 const BREVO_COUPON_RESERVE = 150; // sends kept back for today's coupon-request emails (100 ran dry on 2026-09-11)
 
 // SendGrid runs alongside Brevo purely to raise the ceiling: its free tier is
@@ -614,7 +614,10 @@ a[x-apple-data-detectors]{color:inherit!important;text-decoration:none!important
 // point is to make joining time-sensitive. Set to null once the drop has
 // happened, or it turns into a promise the group did not keep. Optional
 // `image`: a wide banner hosted under docs/assets/email/.
+// `expires`: the teaser stops rendering after this UTC date, so a dated promise
+// can never outlive the drop it is promising.
 const DEAL_DROPPER_TEASER = {
+  expires: '2026-09-22',
   eyebrow: 'Coming next week in the group',
   headline: 'Kerrygold Butter \u2014 100% off',
   sub: 'Free butter, not a typo. Members get the alert the moment it drops.',
@@ -662,7 +665,9 @@ function dealDropperHtml(env) {
       </td></tr>
     </table>
   </td></tr>`;
-  const tz = DEAL_DROPPER_TEASER;
+  const tz = (DEAL_DROPPER_TEASER && (!DEAL_DROPPER_TEASER.expires
+    || new Date().toISOString().slice(0, 10) <= DEAL_DROPPER_TEASER.expires))
+    ? DEAL_DROPPER_TEASER : null;
   const teaser = !tz ? '' : `
   <tr><td class="promo-pad" style="padding:20px 28px 0;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#ffd24a" style="background:#ffd24a;border-radius:14px;">
@@ -828,6 +833,94 @@ async function brevoCreditsLeft(env) {
   }
 }
 
+// ============================================================
+// Subscriber backfill
+//
+// The coupon email is sent before the D1 insert, so when D1 refused queries
+// (its free-tier daily cap rejects writes as well as reads) the recipient got
+// their coupon and we lost the record. Brevo's event log still knows who was
+// mailed, so it is the source of truth for repairing the gap.
+//
+// Only the request email counts - its subject ends "coupon is ready", while
+// the drip's ends "coupon is live". Drip recipients are already subscribers.
+// ============================================================
+
+const BACKFILL_SUBJECT_MATCH = 'coupon is ready';
+
+async function backfillSubscribers(env, { days = 30, apply = false, event = 'delivered' } = {}) {
+  if (!env.DB || !env.BREVO_API_KEY) return { ok: false, reason: 'not configured' };
+  await ensureSubscriberSchema(env);
+
+  const fmt = (d) => d.toISOString().slice(0, 10);
+  const startDate = fmt(new Date(Date.now() - days * DAY_MS));
+  const endDate = fmt(new Date());
+
+  // earliest delivery per address - that is the closest thing we have to when
+  // they actually signed up
+  const seen = new Map();
+  let brevoError = null;
+  let pages = 0;
+  let scanned = 0;
+  for (let offset = 0; offset < 20000; offset += 100) {
+    const url = 'https://api.brevo.com/v3/smtp/statistics/events'
+      + `?limit=100&offset=${offset}&startDate=${startDate}&endDate=${endDate}&event=${encodeURIComponent(event)}`;
+    let body;
+    try {
+      const res = await fetch(url, { headers: { 'api-key': env.BREVO_API_KEY, accept: 'application/json' } });
+      if (!res.ok) {
+        brevoError = `HTTP ${res.status}: ${(await res.text()).slice(0, 300)}`;
+        console.error('backfill: brevo', brevoError);
+        break;
+      }
+      body = await res.json();
+    } catch (err) {
+      brevoError = String((err && err.message) || err);
+      console.error('backfill fetch error', brevoError);
+      break;
+    }
+    const events = body.events || [];
+    pages++;
+    scanned += events.length;
+    for (const ev of events) {
+      const subject = String(ev.subject || '').toLowerCase();
+      if (!subject.includes(BACKFILL_SUBJECT_MATCH)) continue;
+      const email = String(ev.email || '').trim().toLowerCase();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) continue;
+      let when;
+      try { when = new Date(ev.date).toISOString(); } catch { when = new Date().toISOString(); }
+      const prior = seen.get(email);
+      if (!prior || when < prior) seen.set(email, when);
+    }
+    if (events.length < 100) break;
+  }
+
+  // Anything already on the list is left alone, including addresses that later
+  // unsubscribed or bounced - re-adding those would be a real error.
+  const rows = await queryAll(env, 'SELECT DISTINCT lower(trim(email)) AS e FROM subscribers');
+  const existing = new Set(rows.map((r) => r.e));
+  const missing = [...seen.entries()].filter(([email]) => !existing.has(email));
+
+  const result = {
+    ok: true, apply, event, window_days: days, startDate, endDate, brevoError, brevo_pages: pages, events_scanned: scanned,
+    coupon_recipients: seen.size, already_on_list: seen.size - missing.length,
+    missing: missing.length, sample: missing.slice(0, 10).map(([e, d]) => ({ email: e, sent: d })),
+  };
+  if (!apply || !missing.length) return result;
+
+  let inserted = 0;
+  for (let i = 0; i < missing.length; i += 50) {
+    const chunk = missing.slice(i, i + 50);
+    await env.DB.batch(chunk.map(([email, when]) => env.DB.prepare(
+      `INSERT INTO subscribers (email, zip_code, location_name, city, state, coupon_url, subscribed_at)
+       VALUES (?, '', '', '', '', '', ?)`
+    ).bind(email, when)));
+    inserted += chunk.length;
+  }
+  result.inserted = inserted;
+  console.log(`backfill: inserted ${inserted} subscribers recovered from Brevo`);
+  return result;
+}
+
 async function runDailyDrip(env, trigger) {
   if (!env.DB || !env.BREVO_API_KEY) return { ok: false, reason: 'not configured' };
   await ensureSubscriberSchema(env);
@@ -974,6 +1067,19 @@ export default {
         return page('Something went wrong. Please try again.');
       }
       return page('You are unsubscribed. You will not receive these emails again.');
+    }
+
+    if (url.pathname === '/admin/backfill-subscribers') {
+      if (request.method !== 'POST') return jsonResponse({ error: 'Method not allowed' }, 405);
+      if (!env.ADMIN_TOKEN || request.headers.get('Authorization') !== `Bearer ${env.ADMIN_TOKEN}`) {
+        return jsonResponse({ error: 'Unauthorized' }, 401);
+      }
+      // Dry run unless ?apply=1, so the damage of a wrong window is a report.
+      return jsonResponse(await backfillSubscribers(env, {
+        days: Math.min(90, Math.max(1, Number(url.searchParams.get('days') || 30))),
+        apply: url.searchParams.get('apply') === '1',
+        event: url.searchParams.get('event') || 'delivered',
+      }));
     }
 
     if (url.pathname === '/admin/run-drip') {
