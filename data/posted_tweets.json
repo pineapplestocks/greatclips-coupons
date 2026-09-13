@@ -974,9 +974,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $12.99 in the only at participating West & SW Michigan area. Expires Oct 2, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#e1j8GvR\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "Sotihua",
+      "coupon_url": "https://offers.greatclips.com/Sotihua",
+      "post_id": "6aa65a4a66679b076f22f8d8",
+      "posted_at": "2026-09-13T08:09:47Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $12.99 in the San Diego area. Expires Sep 25, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#Sotihua\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-09-11T07:55:51Z",
+  "last_post": "2026-09-13T08:09:47Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1068,6 +1077,7 @@
     "https://offers.greatclips.com/R12OToz",
     "https://offers.greatclips.com/RM5iPmQ",
     "https://offers.greatclips.com/RtEvBAF",
+    "https://offers.greatclips.com/Sotihua",
     "https://offers.greatclips.com/VGLk34N",
     "https://offers.greatclips.com/VRDfsr4",
     "https://offers.greatclips.com/VfFt8ot",
