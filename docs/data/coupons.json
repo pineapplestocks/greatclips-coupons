@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-09-14T03:50:53Z",
- "scraped_at": "2026-09-13T20:50:37.780038",
+ "generated_at": "2026-09-14T12:04:56Z",
+ "scraped_at": "2026-09-14T05:04:34.434458",
  "total": 10,
  "scopes": {
   "national": 2,
@@ -17,7 +17,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-09-13",
+   "last_verified": "2026-09-14",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -30,7 +30,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-09-13",
+   "last_verified": "2026-09-14",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -45,7 +45,7 @@
    "address": "Cherrywood at 9570 SW 62nd Ave",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-13",
+   "last_verified": "2026-09-14",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -62,7 +62,7 @@
    "address": "2575 SW 42nd St",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-13",
+   "last_verified": "2026-09-14",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -79,7 +79,7 @@
    "address": "1126 Bichara Blvd",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-13",
+   "last_verified": "2026-09-14",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -95,7 +95,7 @@
    "area_name": "participating Salisbury",
    "market": "Salisbury",
    "expiration": "09/18/2026",
-   "last_verified": "2026-09-13",
+   "last_verified": "2026-09-14",
    "participating_location_note": "Valid at participating locations in Salisbury",
    "scope": "area",
    "price_value": 10.99,
@@ -125,7 +125,7 @@
    "area_name": "participating Baltimore",
    "market": "Baltimore",
    "expiration": "09/18/2026",
-   "last_verified": "2026-09-13",
+   "last_verified": "2026-09-14",
    "participating_location_note": "Valid at participating locations in Baltimore",
    "scope": "area",
    "price_value": 11.99,
@@ -160,7 +160,7 @@
    "area_name": "participating West & SW Michigan",
    "market": "West & SW Michigan",
    "expiration": "10/02/2026",
-   "last_verified": "2026-09-13",
+   "last_verified": "2026-09-14",
    "participating_location_note": "Valid at participating locations in West & SW Michigan",
    "scope": "unknown",
    "price_value": 12.99
@@ -174,7 +174,7 @@
    "area_name": "participating San Diego",
    "market": "San Diego",
    "expiration": "09/25/2026",
-   "last_verified": "2026-09-13",
+   "last_verified": "2026-09-14",
    "participating_location_note": "Valid at participating locations in San Diego",
    "scope": "area",
    "price_value": 12.99,
@@ -209,7 +209,7 @@
    "address": "4055 Evergreen Village Sq",
    "market": "CA",
    "expiration": "10/07/2026",
-   "last_verified": "2026-09-13",
+   "last_verified": "2026-09-14",
    "scope": "salon",
    "price_value": 19.99,
    "city_keys": [
