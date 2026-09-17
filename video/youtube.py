@@ -32,9 +32,13 @@ def upload_captions(service, video_id, folder):
         if (track['snippet'].get('language')=='en'
                 and track['snippet'].get('trackKind')!='asr'):
             return 'existing'
-    service.captions().insert(part='snippet',body={'snippet':{
-        'videoId':video_id,'language':'en','name':'English - GreatClipsDeal','isDraft':False}},
-        media_body=MediaFileUpload(str(path),mimetype='application/octet-stream')).execute(num_retries=3)
+    media=MediaFileUpload(str(path),mimetype='application/octet-stream')
+    try:
+        service.captions().insert(part='snippet',body={'snippet':{
+            'videoId':video_id,'language':'en','name':'English - GreatClipsDeal','isDraft':False}},
+            media_body=media).execute(num_retries=3)
+    finally:
+        media.stream().close()
     return 'uploaded'
 
 
