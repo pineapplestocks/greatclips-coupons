@@ -16,34 +16,7 @@ def write_json(path,value):
     temporary.replace(path)
 
 
-def metadata(plan,timeline):
-    link=f"{SITE}/?utm_source=youtube&utm_medium=video&utm_campaign={plan['id']}"
-    intro=("Learn how to find Great Clips coupons near you, check the offer terms, and request your coupon link."
-           if plan["type"]=="guide" else f"Selected local Great Clips offers checked on {plan['date']}. Participation and availability can change.")
-    lines=[f"Browse coupon listings: {link}","",intro,"", "In this video:"]
-    # YouTube chapters must be at least ten seconds; group fast cuts together.
-    chapter_rows=[]
-    end=sum(row.get("duration",0) for row in timeline)
-    for row in timeline:
-        if not chapter_rows or row["start"]-chapter_rows[-1]["start"]>=10:
-            chapter_rows.append(row)
-    if end and len(chapter_rows)>1 and end-chapter_rows[-1]["start"]<10:
-        chapter_rows.pop()
-    for row in chapter_rows:
-        minutes,seconds=divmod(int(row["start"]),60)
-        lines.append(f"{minutes:02}:{seconds:02} {row['title']}")
-    if plan["offers"]:
-        lines.extend(["","Offers featured (confirm terms before visiting):"])
-        for o in plan["offers"]:
-            place = f"{o['address']}, {o['location']}" if o['address'] else f"Participating {o['location']} salons"
-            lines.append(f"- {place}: {o['label']}; expires {o['expiration']}. Official terms: {o['url']}")
-    lines.extend(["","Coupon requests on our website use email delivery. Check each offer's participating locations, expiration, and restrictions.",
-                  "Illustrated UI steps and an AI-generated generic salon image; not footage of a specific Great Clips salon. Neural narration is computer-generated.",
-                  "GreatClipsDeal is an independent coupon resource, not affiliated with or endorsed by Great Clips."])
-    description="\n".join(lines)
-    return {"snippet":{"title":plan["title"],"description":description,
-                       "tags":["Great Clips coupons","haircut coupons","GreatClipsDeal","how to use coupons"],
-                       "categoryId":"26","defaultLanguage":"en","defaultAudioLanguage":"en"}}
+from video.seo import metadata
 
 
 def main():

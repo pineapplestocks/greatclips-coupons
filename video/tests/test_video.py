@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from datetime import date
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import patch, MagicMock
 
 from video.planner import build_plan, classify_amount, fingerprint, inspect_offer, verify_offer, VERSION
 from video.render import approximate_cues, group_boundaries, timestamp, Speaker
@@ -119,6 +119,27 @@ class PlanningTests(unittest.TestCase):
 
 
 class MediaTests(unittest.TestCase):
+    def test_live_metadata_edit_preserves_privacy_and_backs_up_snippet(self):
+        from video.youtube import update_metadata
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)
+            (p/'youtube-receipt.json').write_text(json.dumps({'video_id':'owned-video'}))
+            desired={'title':'New title','description':'Accurate new description','tags':['coupon']}
+            (p/'youtube.json').write_text(json.dumps({'snippet':desired}))
+            old={'title':'Old title','description':'Old description','tags':[],
+                 'categoryId':'26','defaultLanguage':'en','defaultAudioLanguage':'en'}
+            service=MagicMock();credentials=MagicMock()
+            service.videos().list().execute.return_value={'items':[{'snippet':old}]}
+            service.videos().update().execute.return_value={'snippet':{**old,**desired}}
+            with patch('video.youtube.connect',return_value=(service,credentials)),patch('video.youtube.upload_captions',return_value='uploaded'):
+                result=update_metadata(p)
+            call=service.videos().update.call_args.kwargs
+            self.assertEqual(call['part'],'snippet')
+            self.assertNotIn('status',call['body'])
+            self.assertEqual(call['body']['snippet']['defaultAudioLanguage'],'en')
+            self.assertEqual(json.loads((p/'youtube-before-seo.json').read_text())['snippet'],old)
+            self.assertTrue(result['seo_updated'])
+
     def test_robotic_voice_cannot_be_selected_or_used_as_fallback(self):
         with self.assertRaises(ValueError):
             Speaker("sapi")
@@ -169,10 +190,31 @@ class MediaTests(unittest.TestCase):
 
     def test_metadata_tracking_and_chapters(self):
         plan=build_plan({}, {"videos":[]},today=TODAY)
-        result=metadata(plan,[{"start":0,"title":"Introduction"},{"start":20,"title":"Find your city"}])
+        result=metadata(plan,[{"start":0,"duration":10,"title":"Introduction"},
+                              {"start":10,"duration":10,"title":"Find your city"},
+                              {"start":20,"duration":10,"title":"Use the coupon"}])
         self.assertIn("utm_source=youtube",result["snippet"]["description"])
-        self.assertIn("00:20 Find your city",result["snippet"]["description"])
+        self.assertIn("00:20 Search coupons near your salon",result["snippet"]["description"])
         self.assertLess(len(result["snippet"]["title"]),100)
+
+    def test_short_video_does_not_claim_invalid_chapters(self):
+        plan=build_plan({}, {"videos":[]},today=TODAY)
+        result=metadata(plan,[{"start":0,"duration":9,"title":"Intro"},
+                              {"start":9,"duration":9,"title":"Offer"}])
+        self.assertNotIn('CHAPTERS',result['snippet']['description'])
+
+    def test_local_seo_keeps_offer_type_location_and_expiration(self):
+        plan=build_plan({'coupons':[row()]},{'videos':[]},'local',TODAY,
+                        verifier=lambda c,t:inspect_offer(c,page('$5 off a haircut'),t))
+        result=metadata(plan,[])['snippet']
+        self.assertIn('Ocala',result['title'])
+        self.assertIn('$5.00 OFF',result['title'])
+        self.assertNotIn('$5.00 haircut',result['title'])
+        self.assertIn('123 Example Street',result['description'])
+        self.assertIn('2026-10-09',result['description'])
+        self.assertIn('not nationwide',result['description'])
+        self.assertLess(len(result['description']),5000)
+        self.assertLess(sum(len(t)+3 for t in result['tags']),500)
 
     def test_atomic_state_write(self):
         with tempfile.TemporaryDirectory() as d:

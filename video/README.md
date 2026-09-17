@@ -137,6 +137,33 @@ thumbnail. Deal uploads must happen on their live-check date.
 
 ## Maintenance
 
+### Search metadata and captions
+
+All new uploads use `seo.py` for location-and-offer titles, unique descriptive
+opening lines, tracked website links, exact addresses and expirations, a small
+set of relevant tags, and three relevant hashtags. Dollar-off coupons remain
+discounts, never advertised as fixed haircut prices. Chapters use actual scene
+starts and require at least three sections of ten seconds each.
+
+For updates to already-published videos and English SRT uploads, authorize with:
+
+```powershell
+python -m video.youtube authorize --manage-videos --client-secrets C:/path/to/client.json
+python -m video.youtube update-metadata output/videos/EPISODE_ID
+```
+
+Replace the Actions token secret after reauthorization. The extra YouTube scope
+is required by Google's metadata and caption endpoints. Metadata updates back
+up the previous values, preserve other writable snippet fields, and never write
+the privacy/status part. Existing English caption tracks are preserved. Future
+uploads attach generated English captions when the token has this permission;
+upload-only tokens can still publish the video with the improved metadata.
+
+Caption timing is estimated from each neural utterance, not forced alignment.
+Search optimization improves relevance and clarity; it cannot guarantee ranks.
+Check impressions, click-through rate and viewer retention in YouTube Studio
+once the channel has enough traffic to compare results.
+
 - `planner.py`: offer selection, factual checks, short scripts
 - `neural.py`: verified model downloads and local neural speech
 - `motion.py`: frame-by-frame visuals, animation, thumbnail, captions
@@ -144,6 +171,7 @@ thumbnail. Deal uploads must happen on their live-check date.
 - `render.py`: speech caching, timing, encoding, audio mix
 - `__main__.py`: CLI, metadata, grouped chapters, history
 - `youtube.py`: optional OAuth and uploading
+- `seo.py`: factual search titles, descriptions, tags and valid chapter lists
 
 The illustrated steps describe the current email-based coupon flow. A future
 website flow change needs a corresponding script/visual update. The generated
