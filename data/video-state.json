@@ -85,6 +85,21 @@
       "actual_privacy": "public",
       "seo_updated": true,
       "captions": "uploaded"
+    },
+    {
+      "id": "3be6703962174e436153",
+      "type": "local",
+      "date": "2026-09-17",
+      "offer_keys": [
+        "7adb39fec0285eaaafcb"
+      ],
+      "status": "uploaded",
+      "location": "San Jose",
+      "video_id": "89eYOY8Qwr8",
+      "requested_privacy": "public",
+      "actual_privacy": "public",
+      "thumbnail_uploaded": true,
+      "captions": "uploaded"
     }
   ]
 }
