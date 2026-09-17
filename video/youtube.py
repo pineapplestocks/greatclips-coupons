@@ -29,7 +29,8 @@ def upload_captions(service, video_id, folder):
         return 'missing'
     tracks=service.captions().list(part='snippet',videoId=video_id).execute().get('items',[])
     for track in tracks:
-        if track['snippet'].get('language')=='en':
+        if (track['snippet'].get('language')=='en'
+                and track['snippet'].get('trackKind')!='asr'):
             return 'existing'
     service.captions().insert(part='snippet',body={'snippet':{
         'videoId':video_id,'language':'en','name':'English - GreatClipsDeal','isDraft':False}},
@@ -56,7 +57,8 @@ def update_metadata(folder):
         backup.write_text(json.dumps({'snippet':previous},indent=2),encoding='utf-8')
     snippet={**previous,**desired}
     response=service.videos().update(part='snippet',body={'id':receipt['video_id'],'snippet':snippet}).execute(num_retries=3)
-    if any(response['snippet'].get(k)!=snippet[k] for k in ('title','description','tags')):
+    if (any(response['snippet'].get(k)!=snippet[k] for k in ('title','description'))
+            or set(response['snippet'].get('tags',[]))!=set(snippet.get('tags',[]))):
         raise RuntimeError('YouTube did not return the expected metadata.')
     receipt['seo_updated']=True
     # Save the metadata result even if caption processing needs a later retry.

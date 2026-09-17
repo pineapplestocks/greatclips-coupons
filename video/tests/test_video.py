@@ -119,18 +119,30 @@ class PlanningTests(unittest.TestCase):
 
 
 class MediaTests(unittest.TestCase):
+    def test_captions_supplement_automatic_tracks_but_preserve_uploaded_english(self):
+        from video.youtube import upload_captions
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d);(p/'captions.srt').write_text('1\n00:00:00,000 --> 00:00:01,000\nHello\n')
+            service=MagicMock()
+            service.captions().list().execute.return_value={'items':[{'snippet':{'language':'en','trackKind':'asr'}}]}
+            self.assertEqual(upload_captions(service,'video',p),'uploaded')
+            service.captions().insert.assert_called_once()
+            service.captions().list().execute.return_value={'items':[{'snippet':{'language':'en','trackKind':'standard'}}]}
+            self.assertEqual(upload_captions(service,'video',p),'existing')
+            service.captions().insert.assert_called_once()
+
     def test_live_metadata_edit_preserves_privacy_and_backs_up_snippet(self):
         from video.youtube import update_metadata
         with tempfile.TemporaryDirectory() as d:
             p=Path(d)
             (p/'youtube-receipt.json').write_text(json.dumps({'video_id':'owned-video'}))
-            desired={'title':'New title','description':'Accurate new description','tags':['coupon']}
+            desired={'title':'New title','description':'Accurate new description','tags':['coupon','haircut']}
             (p/'youtube.json').write_text(json.dumps({'snippet':desired}))
             old={'title':'Old title','description':'Old description','tags':[],
                  'categoryId':'26','defaultLanguage':'en','defaultAudioLanguage':'en'}
             service=MagicMock();credentials=MagicMock()
             service.videos().list().execute.return_value={'items':[{'snippet':old}]}
-            service.videos().update().execute.return_value={'snippet':{**old,**desired}}
+            service.videos().update().execute.return_value={'snippet':{**old,**desired,'tags':['haircut','coupon']}}
             with patch('video.youtube.connect',return_value=(service,credentials)),patch('video.youtube.upload_captions',return_value='uploaded'):
                 result=update_metadata(p)
             call=service.videos().update.call_args.kwargs

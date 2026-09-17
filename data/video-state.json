@@ -9,7 +9,9 @@
       "video_id": "M44uRi9Iu8w",
       "requested_privacy": "public",
       "thumbnail_uploaded": true,
-      "verified_public": true
+      "verified_public": true,
+      "seo_updated": true,
+      "captions": "uploaded"
     },
     {
       "id": "3d76e0a95d91a12e4c90",
@@ -24,7 +26,9 @@
       "requested_privacy": "public",
       "actual_privacy": "public",
       "thumbnail_uploaded": true,
-      "verified_public": true
+      "verified_public": true,
+      "seo_updated": true,
+      "captions": "uploaded"
     },
     {
       "id": "27e73f35e739563cd216",
@@ -40,7 +44,9 @@
       "requested_privacy": "public",
       "actual_privacy": "public",
       "thumbnail_uploaded": true,
-      "verified_public": true
+      "verified_public": true,
+      "seo_updated": true,
+      "captions": "uploaded"
     },
     {
       "id": "d78e468f73a0c14335e7",
@@ -54,7 +60,9 @@
       "video_id": "WBSlHc9Izww",
       "requested_privacy": "public",
       "actual_privacy": "public",
-      "thumbnail_uploaded": true
+      "thumbnail_uploaded": true,
+      "seo_updated": true,
+      "captions": "uploaded"
     }
   ]
 }
