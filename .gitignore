@@ -16,3 +16,8 @@ generated_monthly_urls.txt
 .dev.vars*
 !.dev.vars.example
 !.env.example
+
+# Generated video packages and OAuth credentials
+output/
+client_secret*.json
+youtube-client*.json

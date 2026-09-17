@@ -1,0 +1,10 @@
+Pillow>=11.0,<13
+imageio-ffmpeg>=0.6,<0.7
+edge-tts>=7.2,<8
+requests>=2.32,<3
+beautifulsoup4>=4.12,<5
+google-api-python-client>=2.150,<3
+google-auth-oauthlib>=1.2,<2
+kokoro-onnx>=0.6.1,<0.7
+soundfile>=0.13,<1
+numpy>=2,<3

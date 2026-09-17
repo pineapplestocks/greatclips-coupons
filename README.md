@@ -2,6 +2,9 @@
 
 Automatically scrapes Great Clips coupons from Facebook Ad Library and deploys a searchable website to GitHub Pages.
 
+Automated narrated YouTube videos, thumbnails, captions, and optional uploads are
+available through `python -m video`. See [video setup and automation](video/README.md).
+
 ## 🚀 Features
 
 - **Automated scraping** - Runs daily via GitHub Actions

@@ -1,0 +1,46 @@
+{
+  "videos": [
+    {
+      "id": "a0752627b9d0758cfb4c",
+      "type": "guide",
+      "date": "2026-09-17",
+      "offer_keys": [],
+      "status": "uploaded",
+      "video_id": "M44uRi9Iu8w",
+      "requested_privacy": "public",
+      "thumbnail_uploaded": true,
+      "verified_public": true
+    },
+    {
+      "id": "3d76e0a95d91a12e4c90",
+      "type": "local",
+      "date": "2026-09-17",
+      "offer_keys": [
+        "151b628f8f5baeb088cd"
+      ],
+      "status": "uploaded",
+      "location": "New Mexico",
+      "video_id": "qo6pPi3FlnI",
+      "requested_privacy": "public",
+      "actual_privacy": "public",
+      "thumbnail_uploaded": true,
+      "verified_public": true
+    },
+    {
+      "id": "27e73f35e739563cd216",
+      "type": "local",
+      "date": "2026-09-17",
+      "offer_keys": [
+        "73a50919289208c9a47f",
+        "e1ef792f590b2ad41893"
+      ],
+      "status": "uploaded",
+      "location": "Ocala",
+      "video_id": "vLS2LBU-pO0",
+      "requested_privacy": "public",
+      "actual_privacy": "public",
+      "thumbnail_uploaded": true,
+      "verified_public": true
+    }
+  ]
+}
