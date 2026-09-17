@@ -17,8 +17,8 @@ DATA_FILE = os.path.join(SCRIPT_DIR, "data", "coupons.json")
 TEMPLATE_FILE = os.path.join(SCRIPT_DIR, "template.html")
 OUTPUT_DIR = os.path.join(SCRIPT_DIR, "docs")  # GitHub Pages uses /docs
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "index.html")
-BLOCKED_COUPON_CODES = {"6bWu89Y"}
-BLOCKED_COUPON_URLS = {"https://offers.greatclips.com/6bWu89Y"}
+BLOCKED_COUPON_CODES = {"6bWu89Y", "yMEcKko"}
+BLOCKED_COUPON_URLS = {f"https://offers.greatclips.com/{code}" for code in BLOCKED_COUPON_CODES}
 
 
 def _ensure_utf8_stdout():

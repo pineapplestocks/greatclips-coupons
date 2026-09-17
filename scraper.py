@@ -809,6 +809,10 @@ def save_results(new_coupons):
     # Merge new coupons with existing (removes expired, avoids duplicates)
     coupons = merge_coupons(existing_coupons, new_coupons)
 
+    # Honor manual removals before checking/saving rediscovered offers.
+    from generate_website import is_blocked_coupon
+    coupons = [coupon for coupon in coupons if not is_blocked_coupon(coupon)]
+
     # Remove any coupons whose offer page now shows "This offer has ended"
     coupons = purge_ended_offers(coupons)
 

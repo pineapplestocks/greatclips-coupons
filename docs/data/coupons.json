@@ -1,27 +1,14 @@
 {
- "generated_at": "2026-09-16T20:59:41Z",
+ "generated_at": "2026-09-17T03:10:34Z",
  "scraped_at": "2026-09-16T13:59:20.897320",
- "total": 11,
+ "total": 10,
  "scopes": {
-  "national": 2,
+  "national": 1,
   "salon": 4,
   "unknown": 2,
   "area": 3
  },
  "coupons": [
-  {
-   "url": "https://offers.greatclips.com/yMEcKko",
-   "coupon_code": "yMEcKko",
-   "price": "$5.00",
-   "location_name": "participating US Area",
-   "state": "AREA",
-   "area_name": "participating US",
-   "market": "US",
-   "last_verified": "2026-09-16",
-   "participating_location_note": "Valid at participating US locations",
-   "scope": "national",
-   "price_value": 5.0
-  },
   {
    "url": "https://offers.greatclips.com/u7R1t67",
    "coupon_code": "u7R1t67",
