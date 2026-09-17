@@ -41,6 +41,20 @@
       "actual_privacy": "public",
       "thumbnail_uploaded": true,
       "verified_public": true
+    },
+    {
+      "id": "d78e468f73a0c14335e7",
+      "type": "local",
+      "date": "2026-09-17",
+      "offer_keys": [
+        "b2e7df4c76814da6beec"
+      ],
+      "status": "uploaded",
+      "location": "San Diego",
+      "video_id": "WBSlHc9Izww",
+      "requested_privacy": "public",
+      "actual_privacy": "public",
+      "thumbnail_uploaded": true
     }
   ]
 }
