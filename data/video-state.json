@@ -63,6 +63,17 @@
       "thumbnail_uploaded": true,
       "seo_updated": true,
       "captions": "uploaded"
+    },
+    {
+      "id": "5c844e719ab2740008e6",
+      "type": "user_short",
+      "date": "2026-09-17",
+      "offer_keys": [],
+      "status": "uploaded",
+      "video_id": "uCsu9iBZKBo",
+      "actual_privacy": "public",
+      "seo_updated": true,
+      "captions": "uploaded"
     }
   ]
 }
