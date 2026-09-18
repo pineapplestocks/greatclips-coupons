@@ -27,6 +27,7 @@
     el('start').onclick=begin;el('retry').onclick=load;
   }
   function resume(){
+    const chat=new URL(record.whatsapp_url);chat.searchParams.set('text','Send me this coupon\nGC-'+record.id);record.whatsapp_url=chat.href;
     el('start').hidden=true;el('open').hidden=false;el('open').href=record.whatsapp_url;
     el('open').textContent='Send request on WhatsApp ↗';
     el('status').textContent='Send the prepared message. The bot will reply with your group invite.';

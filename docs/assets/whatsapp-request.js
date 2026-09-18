@@ -22,7 +22,7 @@
       el('connection').className='connection online';
     }catch(e){el('status').textContent='Unable to refresh the status right now. Your request is saved; check WhatsApp or refresh this page.';}
   }
-  function show(){el('start').hidden=true;el('progress').hidden=false;el('selected').textContent='Your coupon is on its way.';el('offer-name').textContent=record.label;el('message').href=record.whatsapp_url;el('join').href=record.group_invite;el('reference').textContent='Request GC-'+record.id;clearInterval(timer);timer=setInterval(status,15000);status();}
+  function show(){const chat=new URL(record.whatsapp_url);chat.searchParams.set('text','Send me this coupon\nGC-'+record.id);record.whatsapp_url=chat.href;el('start').hidden=true;el('progress').hidden=false;el('selected').textContent='Your coupon is on its way.';el('offer-name').textContent=record.label;el('message').href=record.whatsapp_url;el('join').href=record.group_invite;el('reference').textContent='Request GC-'+record.id;clearInterval(timer);timer=setInterval(status,15000);status();}
   el('begin').onclick=async()=>{
     if(!el('consent').checked)return;
     el('begin').disabled=true;el('error').textContent='';
