@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-09-17T20:39:58.069753",
-  "total_coupons": 10,
+  "scraped_at": "2026-09-18T03:44:16.231489",
+  "total_coupons": 8,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/u7R1t67",
@@ -12,11 +12,11 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-09-17",
+      "last_verified": "2026-09-18",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-09-07",
-      "last_seen": "2026-09-17"
+      "last_seen": "2026-09-18"
     },
     {
       "url": "https://offers.greatclips.com/g9cBmt2",
@@ -30,7 +30,7 @@
       "expiration": "10/09/2026",
       "price": "$8.99",
       "market": "FL",
-      "last_verified": "2026-09-17",
+      "last_verified": "2026-09-18",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
@@ -48,11 +48,11 @@
       "expiration": "10/09/2026",
       "price": "$8.99",
       "market": "FL",
-      "last_verified": "2026-09-17",
+      "last_verified": "2026-09-18",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
-      "last_seen": "2026-09-17"
+      "last_seen": "2026-09-18"
     },
     {
       "url": "https://offers.greatclips.com/8NUmR2H",
@@ -66,11 +66,11 @@
       "expiration": "10/09/2026",
       "price": "$8.99",
       "market": "FL",
-      "last_verified": "2026-09-17",
+      "last_verified": "2026-09-18",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
-      "last_seen": "2026-09-17"
+      "last_seen": "2026-09-18"
     },
     {
       "url": "https://offers.greatclips.com/8S2VjOP",
@@ -82,43 +82,11 @@
       "area_name": "participating New Mexico",
       "price": "$8.99",
       "market": "New Mexico",
-      "last_verified": "2026-09-17",
+      "last_verified": "2026-09-18",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in New Mexico",
       "added_date": "2026-09-15",
-      "last_seen": "2026-09-17"
-    },
-    {
-      "url": "https://offers.greatclips.com/RtEvBAF",
-      "coupon_code": "RtEvBAF",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20772/50707-002-1200x600-10.99.jpg",
-      "expiration": "09/18/2026",
-      "location_name": "participating Salisbury Area",
-      "state": "AREA",
-      "area_name": "participating Salisbury",
-      "price": "$10.99",
-      "market": "Salisbury",
-      "last_verified": "2026-09-17",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Salisbury",
-      "added_date": "2026-09-05",
-      "last_seen": "2026-09-11"
-    },
-    {
-      "url": "https://offers.greatclips.com/lM6ugQf",
-      "coupon_code": "lM6ugQf",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20770/50707-002-1200x600-11.99.jpg",
-      "expiration": "09/18/2026",
-      "location_name": "participating Baltimore Area",
-      "state": "AREA",
-      "area_name": "participating Baltimore",
-      "price": "$11.99",
-      "market": "Baltimore",
-      "last_verified": "2026-09-17",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Baltimore",
-      "added_date": "2026-08-29",
-      "last_seen": "2026-09-11"
+      "last_seen": "2026-09-18"
     },
     {
       "url": "https://offers.greatclips.com/e1j8GvR",
@@ -130,11 +98,11 @@
       "area_name": "only at participating West & SW Michigan",
       "price": "$12.99",
       "market": "West & SW Michigan",
-      "last_verified": "2026-09-17",
+      "last_verified": "2026-09-18",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in West & SW Michigan",
       "added_date": "2026-09-10",
-      "last_seen": "2026-09-17"
+      "last_seen": "2026-09-18"
     },
     {
       "url": "https://offers.greatclips.com/Sotihua",
@@ -146,11 +114,11 @@
       "area_name": "participating San Diego",
       "price": "$12.99",
       "market": "San Diego",
-      "last_verified": "2026-09-17",
+      "last_verified": "2026-09-18",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in San Diego",
       "added_date": "2026-09-12",
-      "last_seen": "2026-09-17"
+      "last_seen": "2026-09-18"
     },
     {
       "url": "https://offers.greatclips.com/ZPzrMSl",
@@ -164,7 +132,7 @@
       "expiration": "10/07/2026",
       "price": "$19.99",
       "market": "CA",
-      "last_verified": "2026-09-17",
+      "last_verified": "2026-09-18",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",

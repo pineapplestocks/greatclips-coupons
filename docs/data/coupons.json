@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-18T03:40:21Z",
- "scraped_at": "2026-09-17T20:39:58.069753",
- "total": 10,
+ "generated_at": "2026-09-18T10:44:39Z",
+ "scraped_at": "2026-09-18T03:44:16.231489",
+ "total": 8,
  "scopes": {
   "national": 1,
   "salon": 4,
   "unknown": 2,
-  "area": 3
+  "area": 1
  },
  "coupons": [
   {
@@ -17,7 +17,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-09-17",
+   "last_verified": "2026-09-18",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -32,7 +32,7 @@
    "address": "Cherrywood at 9570 SW 62nd Ave",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-17",
+   "last_verified": "2026-09-18",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -49,7 +49,7 @@
    "address": "2575 SW 42nd St",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-17",
+   "last_verified": "2026-09-18",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -66,7 +66,7 @@
    "address": "1126 Bichara Blvd",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-17",
+   "last_verified": "2026-09-18",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -82,75 +82,10 @@
    "area_name": "participating New Mexico",
    "market": "New Mexico",
    "expiration": "09/25/2026",
-   "last_verified": "2026-09-17",
+   "last_verified": "2026-09-18",
    "participating_location_note": "Valid at participating locations in New Mexico",
    "scope": "unknown",
    "price_value": 8.99
-  },
-  {
-   "url": "https://offers.greatclips.com/RtEvBAF",
-   "coupon_code": "RtEvBAF",
-   "price": "$10.99",
-   "location_name": "participating Salisbury Area",
-   "state": "AREA",
-   "area_name": "participating Salisbury",
-   "market": "Salisbury",
-   "expiration": "09/18/2026",
-   "last_verified": "2026-09-17",
-   "participating_location_note": "Valid at participating locations in Salisbury",
-   "scope": "area",
-   "price_value": 10.99,
-   "metro_keys": [
-    "NC/mocksville"
-   ],
-   "market_names": [
-    "Winston Salem, NC"
-   ],
-   "city_keys": [
-    "NC/winston-salem",
-    "NC/clemmons",
-    "NC/lexington",
-    "NC/salisbury",
-    "NC/statesville",
-    "NC/lewisville",
-    "NC/mocksville",
-    "NC/pfafftown"
-   ]
-  },
-  {
-   "url": "https://offers.greatclips.com/lM6ugQf",
-   "coupon_code": "lM6ugQf",
-   "price": "$11.99",
-   "location_name": "participating Baltimore Area",
-   "state": "AREA",
-   "area_name": "participating Baltimore",
-   "market": "Baltimore",
-   "expiration": "09/18/2026",
-   "last_verified": "2026-09-17",
-   "participating_location_note": "Valid at participating locations in Baltimore",
-   "scope": "area",
-   "price_value": 11.99,
-   "metro_keys": [
-    "MD/glen-burnie"
-   ],
-   "market_names": [
-    "Baltimore, MD"
-   ],
-   "city_keys": [
-    "MD/glen-burnie",
-    "MD/perry-hall",
-    "MD/arnold",
-    "MD/baltimore",
-    "MD/chester",
-    "MD/dundalk",
-    "MD/edgewater",
-    "MD/elkridge",
-    "MD/ellicott-city",
-    "MD/essex",
-    "MD/odenton",
-    "MD/parkville",
-    "MD/severn"
-   ]
   },
   {
    "url": "https://offers.greatclips.com/e1j8GvR",
@@ -161,7 +96,7 @@
    "area_name": "participating West & SW Michigan",
    "market": "West & SW Michigan",
    "expiration": "10/02/2026",
-   "last_verified": "2026-09-17",
+   "last_verified": "2026-09-18",
    "participating_location_note": "Valid at participating locations in West & SW Michigan",
    "scope": "unknown",
    "price_value": 12.99
@@ -175,7 +110,7 @@
    "area_name": "participating San Diego",
    "market": "San Diego",
    "expiration": "09/25/2026",
-   "last_verified": "2026-09-17",
+   "last_verified": "2026-09-18",
    "participating_location_note": "Valid at participating locations in San Diego",
    "scope": "area",
    "price_value": 12.99,
@@ -210,7 +145,7 @@
    "address": "4055 Evergreen Village Sq",
    "market": "CA",
    "expiration": "10/07/2026",
-   "last_verified": "2026-09-17",
+   "last_verified": "2026-09-18",
    "scope": "salon",
    "price_value": 19.99,
    "city_keys": [
