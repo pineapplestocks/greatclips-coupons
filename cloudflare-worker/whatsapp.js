@@ -39,7 +39,7 @@ export async function currentOffer(url) {
   try { parsed=new URL(url); } catch { fail('Choose a current coupon.'); }
   if (parsed.origin!=='https://offers.greatclips.com' || parsed.username || parsed.password ||
       ['yMEcKko','6bWu89Y'].includes(parsed.pathname.slice(1))) fail('Choose a current coupon.');
-  const response=await fetch(FEED,{cache:'no-store',signal:AbortSignal.timeout(10000)});
+  const response=await fetch(FEED,{headers:{'Cache-Control':'no-cache'},signal:AbortSignal.timeout(10000)});
   if (!response.ok) fail('Coupon listings are temporarily unavailable.',503);
   const feed=await response.json();
   const offer=feed.coupons?.find(c=>c.url===url);
