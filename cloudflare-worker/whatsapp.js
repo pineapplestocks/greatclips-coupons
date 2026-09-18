@@ -166,7 +166,7 @@ async function route(request,env) {
     const offer=await currentOffer(String(b.coupon_url||''));
     const id=random(),token=random();
     await run(env,'INSERT INTO whatsapp_requests(id,status_token,coupon_url,coupon_label,created_at,ip_hash,consent_version) VALUES(?,?,?,?,?,?,?)',id,token,offer.url,offer.label,Date.now(),hash,CONSENT);
-    const message=`Please send my ${offer.label} after I join ${GROUP}. Request GC-${id}. I agree to receive the group invitation and this coupon privately on WhatsApp.`;
+    const message=`Send me this coupon\nGC-${id}`;
     return json({id,token,label:offer.label,whatsapp_url:`https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`,group_invite:INVITE},201);
   }
   return json({error:'Not found'},404);
