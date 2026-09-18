@@ -1497,7 +1497,7 @@ def main() -> int:
     asset_path.parent.mkdir(parents=True, exist_ok=True)
     modal_literal = "var GC_MODAL_HTML = " + json.dumps(email_modal_html()) + ";\n\n"
     with asset_path.open("w", encoding="utf-8") as fh:
-        fh.write(modal_literal + COUPON_WIDGET_JS + "\n// Shared WhatsApp request routing.\n{ const script = document.createElement('script'); script.src = '/assets/whatsapp-entry.js?v=6'; document.head.appendChild(script); }\n")
+        fh.write(modal_literal + COUPON_WIDGET_JS + "\n// Shared WhatsApp request routing.\n{ const script = document.createElement('script'); script.src = '/assets/whatsapp-entry.js?v=7'; document.head.appendChild(script); }\n")
 
     llms_path = REPO_ROOT / "docs" / "llms.txt"
     with llms_path.open("w", encoding="utf-8") as fh:
