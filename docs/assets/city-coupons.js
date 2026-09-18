@@ -257,4 +257,4 @@ document.addEventListener('keydown', function (e) {
 });
 
 // Shared WhatsApp request routing.
-{ const script = document.createElement('script'); script.src = '/assets/whatsapp-entry.js?v=11'; document.head.appendChild(script); }
+{ const script = document.createElement('script'); script.src = '/assets/whatsapp-entry.js?v=12'; document.head.appendChild(script); }

@@ -71,7 +71,17 @@
   }
   async function resume(){
     const current=record,selected=coupon;
-    el('start').hidden=true;el('open').hidden=true;el('status').textContent='Preparing your message…';
+    el('start').hidden=true;el('open').hidden=true;el('status').textContent='Checking delivery availability…';
+    try {
+      const response=await fetch(api+'/config',{cache:'no-store'});
+      if(!response.ok)throw new Error();
+      const availability=await response.json();
+      if(record!==current||!dialog.open)return;
+      if(!availability.enabled||!availability.online)throw new Error();
+    } catch {
+      if(record===current)el('status').textContent='WhatsApp coupon delivery is currently paused. Please check back later.';
+      return;
+    }
     if(!current.request_code){
       try{
         const r=await fetch(api+'/status',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+current.token},body:JSON.stringify({id:current.id})});
@@ -103,7 +113,7 @@
     try{
       const r=await fetch(api+'/config',{cache:'no-store'});if(!r.ok)throw new Error('Unable to connect. Please try again.');
       const c=await r.json();if(coupon!==selected)return;config=c;
-      if(!c.enabled||!c.online)throw new Error('Delivery is temporarily offline. Please try again shortly.');
+      if(!c.enabled||!c.online)throw new Error('WhatsApp coupon delivery is currently paused. Please check back later.');
       el('status').textContent='';el('start').disabled=false;
     }catch(e){if(coupon!==selected)return;el('status').textContent=e.message;el('retry').hidden=false;}
   }
