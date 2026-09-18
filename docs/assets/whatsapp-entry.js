@@ -13,7 +13,7 @@
     dialog=document.createElement('dialog');dialog.id='waCouponDialog';dialog.setAttribute('aria-labelledby','wa-title');dialog.setAttribute('tabindex','-1');
     dialog.innerHTML=`<button id="wa-close" class="wa-close" aria-label="Close coupon popup">×</button>
       <div class="wa-icon" aria-hidden="true">✂</div>
-      <h2 id="wa-title">Get your coupon</h2>
+      <h2 id="wa-title">Get your Great Clips Coupon!</h2>
       <p class="wa-copy" id="wa-description">Send the message and join our Amazon deals group to get this coupon.</p>
       <button id="wa-start" class="wa-primary">Join WhatsApp group →</button>
       <a id="wa-open" class="wa-primary" target="_blank" rel="noopener noreferrer" hidden>Open WhatsApp ↗</a>
