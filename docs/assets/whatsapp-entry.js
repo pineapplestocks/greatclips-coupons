@@ -29,12 +29,12 @@
     el('start').onclick=begin;el('retry').onclick=load;
   }
   async function resume(){
-    const current=record;
+    const current=record,selected=coupon;
     el('start').hidden=true;el('open').hidden=true;el('status').textContent='Preparing your message…';
     if(!current.request_code){
       try{
         const r=await fetch(api+'/status',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+current.token},body:JSON.stringify({id:current.id})});
-        if(r.ok){const d=await r.json();current.request_code=d.request_code;try{sessionStorage.setItem('wa-coupon:'+coupon,JSON.stringify(current));}catch{}}
+        if(r.ok){const d=await r.json();current.request_code=d.request_code;try{sessionStorage.setItem('wa-coupon:'+selected,JSON.stringify(current));}catch{}}
       }catch{/* Existing long references remain valid if the connection fails. */}
     }
     if(record!==current||!dialog.open)return;
