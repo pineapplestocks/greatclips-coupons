@@ -1,15 +1,83 @@
-// Shared entry point for the homepage and generated salon pages.
+// A single popup shared by the homepage and salon pages.
 (() => {
-  const config=fetch('https://greatclips-email.mehulchaudhari.workers.dev/whatsapp/config',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error();return r.json();});
-  config.catch(()=>{});
+  if(window.gcWhatsAppPopup)return;
+  window.gcWhatsAppPopup=true;
+  const api='https://greatclips-email.mehulchaudhari.workers.dev/whatsapp';
+  const css=document.createElement('link');css.rel='stylesheet';css.href='/assets/whatsapp-popup.css?v=1';document.head.append(css);
+  let dialog,coupon,config,record,pending=false,poll,opener;
+  const el=id=>document.getElementById('wa-'+id);
+  const terminal=['sent','uncertain','cancelled','rejected','unavailable','expired'];
+  const saved=url=>{try{return JSON.parse(sessionStorage.getItem('wa-coupon:'+url)||'null');}catch{return null;}};
+  function build(){
+    if(dialog)return;
+    dialog=document.createElement('dialog');dialog.id='waCouponDialog';dialog.setAttribute('aria-labelledby','wa-title');
+    dialog.innerHTML=`<button id="wa-close" class="wa-close" aria-label="Close coupon popup">×</button>
+      <div class="wa-icon" aria-hidden="true">✂</div><p class="wa-kicker">YOUR COUPON, IN YOUR CHAT</p>
+      <h2 id="wa-title">Join WhatsApp.<br>Get your coupon.</h2>
+      <p class="wa-copy" id="wa-description">Send the prepared message to get our group invite. Once you join Deal Dropper, we’ll send this coupon privately.</p>
+      <div class="wa-perks"><span>✓ Automatic delivery</span><span>✓ No email needed</span></div>
+      <button id="wa-start" class="wa-primary">Join WhatsApp & get coupon ↗</button>
+      <a id="wa-open" class="wa-primary" target="_blank" rel="noopener noreferrer" hidden>Open WhatsApp ↗</a>
+      <p id="wa-status" class="wa-status" role="status" aria-live="polite"></p>
+      <button id="wa-retry" class="wa-retry" hidden>Try again</button>
+      <p class="wa-fine">By continuing, you request a private group invite and this coupon. Deal Dropper shares Amazon deals and coupons; group members may see your number. No ongoing private marketing. <a href="/privacy">Privacy</a></p>`;
+    document.body.append(dialog);
+    el('close').onclick=()=>dialog.close();
+    dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
+    dialog.addEventListener('close',()=>{clearInterval(poll);opener?.focus();});
+    el('start').onclick=begin;el('retry').onclick=load;
+  }
+  function resume(){
+    el('start').hidden=true;el('open').hidden=false;el('open').href=record.whatsapp_url;
+    el('open').textContent='Send request on WhatsApp ↗';
+    el('status').textContent='Send the prepared message. The bot will reply with your group invite.';
+    clearInterval(poll);poll=setInterval(status,5000);status();
+  }
+  async function status(){
+    const current=record;if(!current||!dialog.open)return;
+    try{
+      const r=await fetch(api+'/status',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+current.token},body:JSON.stringify({id:current.id})});
+      if(!r.ok)return;const d=await r.json();if(record!==current)return;
+      const copy={awaiting_message:'Send the prepared message in WhatsApp to receive the group invite.',awaiting_join:'Your request is linked. Join the group with the same number to receive your coupon.',ready:'Membership confirmed. Your coupon is being sent automatically.',sending:'Sending your coupon. Check your private WhatsApp chat.',sent:'Coupon sent! Check your private WhatsApp chat.',uncertain:'Your delivery needs checking. Please reply in your WhatsApp chat for help.',cancelled:'This request was cancelled.',rejected:'This request was closed.',unavailable:'This coupon is no longer available. Please choose another offer.',expired:'This request expired. Close this popup and choose a current coupon.'};
+      el('status').textContent=copy[d.status]||'Checking your request...';
+      if(d.status==='awaiting_join'){el('open').href=current.group_invite;el('open').textContent='Join WhatsApp group ↗';}
+      el('open').hidden=!['awaiting_message','awaiting_join'].includes(d.status);
+      if(terminal.includes(d.status)){clearInterval(poll);if(['cancelled','rejected','expired','unavailable'].includes(d.status)){try{sessionStorage.removeItem('wa-coupon:'+coupon);}catch{}}}
+    }catch{/* The bot continues privately even if the page cannot refresh. */}
+  }
+  async function load(){
+    const selected=coupon;el('retry').hidden=true;el('start').disabled=true;el('status').textContent='Connecting to WhatsApp delivery…';
+    try{
+      const r=await fetch(api+'/config',{cache:'no-store'});if(!r.ok)throw new Error('Unable to connect. Please try again.');
+      const c=await r.json();if(coupon!==selected)return;config=c;
+      if(!c.enabled||!c.online)throw new Error('Delivery is temporarily offline. Please try again shortly.');
+      el('status').textContent='';el('start').disabled=false;
+    }catch(e){if(coupon!==selected)return;el('status').textContent=e.message;el('retry').hidden=false;}
+  }
+  async function begin(){
+    if(pending||!config?.online)return;
+    pending=true;el('start').disabled=true;el('status').textContent='Preparing your WhatsApp message…';
+    const selected=coupon;
+    // Open during the click so mobile popup blockers cannot swallow the chat.
+    const chat=window.open('about:blank','_blank');if(chat)chat.opener=null;
+    try{
+      const r=await fetch(api+'/requests',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({coupon_url:selected,consent:true,consent_version:config.consent_version})});
+      const d=await r.json();if(!r.ok)throw new Error(d.error||'Unable to create your request.');
+      try{sessionStorage.setItem('wa-coupon:'+selected,JSON.stringify(d));}catch{}
+      if(coupon===selected){record=d;resume();}
+      if(chat&&!chat.closed)chat.location.replace(d.whatsapp_url);else window.location.assign(d.whatsapp_url);
+    }catch(e){if(chat&&!chat.closed)chat.close();if(coupon===selected){el('status').textContent=e.message;el('start').disabled=false;}}
+    finally{pending=false;}
+  }
+  function open(url){
+    if(pending)return;
+    build();opener=document.activeElement;coupon=url;config=null;record=saved(url);clearInterval(poll);
+    el('start').hidden=false;el('open').hidden=true;el('retry').hidden=true;dialog.showModal();
+    if(record)resume();else load();
+    el('close').focus();
+  }
   for(const name of ['getCoupon','gcOpenModal']){
-    const original=window[name];if(typeof original!=='function')continue;
-    window[name]=async function(...args){
-      let c;
-      try{c=await config;}catch{alert('Unable to load coupon delivery. Please try again shortly.');return;}
-      if(!c.enabled)return original.apply(this,args);
-      const url=name==='getCoupon'?args[0]:args[0]?.url;
-      if(url)location.href='/whatsapp-coupon.html?coupon='+encodeURIComponent(url);
-    };
+    if(typeof window[name]!=='function')continue;
+    window[name]=function(...args){const url=name==='getCoupon'?args[0]:args[0]?.url;if(url)open(url);};
   }
 })();
