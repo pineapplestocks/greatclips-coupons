@@ -182,21 +182,21 @@ COUPON_WIDGET_JS = """(function () {
           '<p class="text-sm text-slate-600 mt-1">' + scopeLabel(c) + '</p>' + expiry +
         '</div>' +
         '<span class="shrink-0 bg-purple-600 text-white text-sm font-semibold ' +
-        'rounded-lg px-4 py-2">Get Coupon on WhatsApp</span>' +
+        'rounded-lg px-4 py-2">Get Coupon</span>' +
       '</div>';
     // Route through the email capture rather than straight out to the offer.
     el.addEventListener('click', function () { gcOpenModal(c, null); });
     return el;
   }
 
-  // Reveal a "Get Coupon on WhatsApp" button on each salon, now that we know an offer reaches
+  // Reveal a "Get Coupon" button on each salon, now that we know an offer reaches
   // this city. Each one carries its own street and ZIP into the signup.
   function wireSalonButtons(best) {
     var buttons = document.querySelectorAll('.gc-salon-coupon');
     for (var i = 0; i < buttons.length; i++) {
       (function (btn) {
         if (!best) return;
-        btn.textContent = 'Get Coupon on WhatsApp' + (best.price ? ' \\u2013 ' + best.price : '');
+        btn.textContent = 'Get Coupon' + (best.price ? ' \\u2013 ' + best.price : '');
         btn.hidden = false;
         btn.classList.remove('hidden');
         btn.addEventListener('click', function () {
@@ -243,10 +243,6 @@ COUPON_WIDGET_JS = """(function () {
       var grid = document.createElement('div');
       grid.className = 'grid gap-4 sm:grid-cols-2';
       hits.slice(0, 8).forEach(function (c) { grid.appendChild(card(c)); });
-      var deliveryNote = document.createElement('p');
-      deliveryNote.className = 'text-sm text-emerald-800 bg-emerald-50 rounded-xl p-4 mb-4';
-      deliveryNote.textContent = 'Get your coupon on WhatsApp: send your request, join Deal Dropper, and receive it automatically after membership verification. No email needed.';
-      box.appendChild(deliveryNote);
       box.appendChild(grid);
       wireSalonButtons(hits[0]);
 
@@ -524,7 +520,7 @@ def salon_card(salon: dict, index: int) -> str:
                                    font-semibold py-2.5 px-4 rounded-xl transition-all shadow-md
                                    shadow-purple-200"
                             data-street="{esc(salon['street'])}"
-                            data-zip="{esc(salon['zip'])}">Get Coupon on WhatsApp</button>
+                            data-zip="{esc(salon['zip'])}">Get Coupon</button>
                     <div class="flex flex-wrap gap-3 text-sm">
                         <a href="{maps_url(salon)}" target="_blank" rel="nofollow noopener"
                            class="text-purple-600 hover:underline">Directions</a>
@@ -1173,7 +1169,7 @@ def build_city_page(
     </main>
 {footer_html()}
     <script>window.__GC_PAGE__ = {json.dumps(page_state, separators=(",", ":"))};</script>
-    <script src="/assets/city-coupons.js" defer></script>
+    <script src="/assets/city-coupons.js?v=email-1" defer></script>
 </body>
 </html>
 """
@@ -1497,7 +1493,7 @@ def main() -> int:
     asset_path.parent.mkdir(parents=True, exist_ok=True)
     modal_literal = "var GC_MODAL_HTML = " + json.dumps(email_modal_html()) + ";\n\n"
     with asset_path.open("w", encoding="utf-8") as fh:
-        fh.write(modal_literal + COUPON_WIDGET_JS + "\n// Shared WhatsApp request routing.\n{ const script = document.createElement('script'); script.src = '/assets/whatsapp-entry.js?v=12'; document.head.appendChild(script); }\n")
+        fh.write(modal_literal + COUPON_WIDGET_JS)
 
     llms_path = REPO_ROOT / "docs" / "llms.txt"
     with llms_path.open("w", encoding="utf-8") as fh:

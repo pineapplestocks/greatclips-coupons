@@ -1,5 +1,7 @@
 // A single popup shared by the homepage and salon pages.
 (() => {
+  // Email delivery is restored. Ignore stale cached WhatsApp loaders.
+  if(!['A','B','C'].includes(new URLSearchParams(location.search).get('wa_preview')))return;
   if(window.gcWhatsAppPopup)return;
   window.gcWhatsAppPopup=true;
   const api='https://greatclips-email.mehulchaudhari.workers.dev/whatsapp';

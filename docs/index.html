@@ -342,7 +342,7 @@
             {
                 "@type": "HowToStep",
                 "name": "Click to reveal",
-                "text": "Choose a coupon, send the prefilled WhatsApp request, and join Deal Dropper with the same number. After membership verification, the selected coupon is sent automatically in your private chat. Check the official offer for its validity period.",
+                "text": "Click the Get Coupon button to open the official Great Clips offer page. This starts the 14-day validity period.",
                 "position": 2
             },
             {
@@ -1683,7 +1683,7 @@
                     <td class="py-2.5 pr-4 text-right whitespace-nowrap">
                         <button onclick="getCoupon('${c.url}', '${c.price || ''}', '${name}', '${city}', '${c.state || ''}')"
                             class="bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white text-sm font-semibold py-2 px-4 rounded-lg transition-all cursor-pointer">
-                            Get Coupon on WhatsApp
+                            Get Coupon
                         </button>
                     </td>
                 </tr>`;
@@ -1802,7 +1802,7 @@
                             </div>
                             <button onclick="getCoupon('${national.url}', '${national.price || ''}', 'Nationwide', '', '')"
                                 class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-2.5 px-5 rounded-xl transition-all shadow-md">
-                                Get Coupon on WhatsApp
+                                Get Coupon
                             </button>
                         </div>`;
                 } else {
@@ -1973,15 +1973,9 @@
                     </div>
                 </header>
 
-                <section class="max-w-7xl mx-auto px-4 my-5" aria-label="WhatsApp coupon delivery">
-                    <div class="rounded-2xl border border-emerald-200 bg-emerald-50 px-5 py-4 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-                        <div><p class="font-bold text-emerald-950">Your coupon, delivered on WhatsApp</p><p class="text-sm text-emerald-800 mt-1">Send your request, join Deal Dropper, and receive your selected coupon automatically.</p></div>
-                    </div>
-                </section>
-
                 <!-- Universal Coupons Featured Section -->
                 ${universalCoupons.length > 0 ? `
-                <section class="max-w-7xl mx-auto px-4 mt-4 relative z-10 mb-8">
+                <section class="max-w-7xl mx-auto px-4 -mt-8 relative z-10 mb-8">
                     <div class="bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 rounded-2xl p-1 universal-glow">
                         <div class="bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600 rounded-xl p-6 md:p-8 relative overflow-hidden">
                             <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
@@ -2026,7 +2020,7 @@
                                                 <div class="space-y-2">
                                                     <button onclick="getCoupon('${c.url}', '${c.price || ''}', 'US-wide', '', '')"
                                                         class="block w-full bg-white text-purple-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-purple-50 transition-colors cursor-pointer">
-                                                        Get coupon on WhatsApp →
+                                                        Get your coupon now →
                                                     </button>
                                                     <button onclick="shareCoupon('${c.url}', '${c.price || ''}')"
                                                         class="w-full bg-white/20 hover:bg-white/30 text-white font-medium py-2.5 px-4 rounded-lg text-center transition-colors flex items-center justify-center gap-2">
@@ -2098,7 +2092,7 @@
                                                 <div class="space-y-2">
                                                     <button onclick="getCoupon('${c.url}', '${c.price || ''}', '${areaName.replace(/'/g, "\\'")}', '', '${c.state || ''}')"
                                                         class="block w-full bg-white text-orange-600 font-semibold py-3 px-4 rounded-lg text-center hover:bg-orange-50 transition-colors cursor-pointer">
-                                                        Get coupon on WhatsApp →
+                                                        Get your coupon now →
                                                     </button>
                                                     <button onclick="shareCoupon('${c.url}', '${c.price || ''}')"
                                                         class="w-full bg-white/20 hover:bg-white/30 text-white font-medium py-2.5 px-4 rounded-lg text-center transition-colors flex items-center justify-center gap-2">
@@ -2234,7 +2228,7 @@
                                                     <div class="flex gap-2">
                                                         <button onclick="getCoupon('${c.url}', '${c.price || ''}', '${(c.location_name || '').replace(/'/g, "\\'")}', '${(c.city || '').replace(/'/g, "\\'")}', '${c.state || ''}')"
                                                             class="flex-1 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold py-2.5 px-4 rounded-xl text-center transition-all shadow-md shadow-purple-200 cursor-pointer">
-                                                            Get Coupon on WhatsApp
+                                                            Get Coupon
                                                         </button>
                                                         <button onclick="navigator.clipboard.writeText('${c.url}'); this.textContent='✓'; setTimeout(() => this.textContent='📋', 2000)"
                                                             class="bg-slate-100 hover:bg-slate-200 text-slate-600 p-2.5 rounded-xl transition-colors"
@@ -2315,7 +2309,7 @@
                             <div class="space-y-4 text-sm">
                                 <div>
                                     <h4 class="font-medium text-white">How do I use a Great Clips coupon?</h4>
-                                    <p class="text-slate-400">Click "Get Coupon on WhatsApp", send your request, and join Deal Dropper. Your selected coupon arrives privately after membership verification. Open the official offer and show it to your stylist before your haircut. <a href="/how-to-use" class="text-purple-400 hover:underline">See full guide</a>.</p>
+                                    <p class="text-slate-400">Click "Get Coupon" to open the offer page. Show it to the stylist before your haircut, either on your phone or printed. <a href="/how-to-use" class="text-purple-400 hover:underline">See full guide</a>.</p>
                                 </div>
                                 <div>
                                     <h4 class="font-medium text-white">Are these Great Clips coupons legitimate?</h4>
@@ -2539,6 +2533,5 @@
             </div>
         </div>
     </div>
-<script src="/assets/whatsapp-entry.js?v=12"></script>
 </body>
 </html>
