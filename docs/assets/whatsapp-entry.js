@@ -3,10 +3,46 @@
   if(window.gcWhatsAppPopup)return;
   window.gcWhatsAppPopup=true;
   const api='https://greatclips-email.mehulchaudhari.workers.dev/whatsapp';
-  const css=document.createElement('link');css.rel='stylesheet';css.href='/assets/whatsapp-popup.css?v=5';document.head.append(css);
+  const css=document.createElement('link');css.rel='stylesheet';css.href='/assets/whatsapp-popup.css?v=6';document.head.append(css);
   const waIcon='<svg class="wa-brand-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M20.4 3.6a11 11 0 0 0-17.3 13L1.5 22.5l6-1.6A11 11 0 0 0 20.4 3.6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.4 6.5c-.3-.6-.6-.6-.9-.6h-.7c-.3 0-.6.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.3 5.2 4.5 2.6 1 3.1.8 3.7.8.6-.1 1.8-.8 2.1-1.5.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.7-.5l-2.1-1c-.3-.1-.6-.2-.8.2l-.9 1.1c-.2.2-.4.3-.7.1-1.1-.5-2-1-2.9-2-.8-.8-1.2-1.5-1.3-1.8-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2.1-.4 0-.6l-.9-2.3Z" fill="currentColor"/></svg>';
   function buttonLabel(node,text){node.innerHTML=waIcon;const label=document.createElement('span');label.textContent=text;node.append(label);const arrow=document.createElement('span');arrow.className='wa-arrow';arrow.setAttribute('aria-hidden','true');arrow.textContent='→';node.append(arrow);}
-  let dialog,coupon,config,record,pending=false,poll,opener;
+  const experimentId='wa-popup-v1';
+  const previewCode=new URLSearchParams(location.search).get('wa_preview');
+  const preview=['A','B','C'].includes(previewCode)?previewCode:null;
+  const control={variant:'A',tracked:false,copy:{host:true,title:'Get your Great Clips Coupon!',copy:'Message me and join my group. Your coupon arrives automatically! Stick around for haircut deals, Amazon price glitches and big coupon stacks.',button:'Text My Coupon on WhatsApp'}};
+  async function assign(){
+    try{
+      let visitor;
+      if(!preview){
+        if(navigator.globalPrivacyControl||navigator.doNotTrack==='1')return control;
+        const key='gc-popup-experiment-v1';
+        let saved;try{saved=JSON.parse(localStorage.getItem(key)||'null');}catch{}
+        if(!saved||!/^[a-f0-9]{32}$/.test(saved.id)||Date.now()-saved.created>90*86400000){saved={id:crypto.randomUUID().replaceAll('-',''),created:Date.now()};localStorage.setItem(key,JSON.stringify(saved));}
+        visitor=saved.id;
+      }
+      const response=await fetch(api+'/experiment',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(preview?{action:'preview',variant:preview}:{action:'assign',visitor_id:visitor}),signal:AbortSignal.timeout(1800)});
+      if(!response.ok)return control;
+      return {...await response.json(),visitor_id:visitor};
+    }catch{return control;}
+  }
+  const assignment=assign();
+  let dialog,coupon,config,record,pending=false,poll,opener,cohort=control,openRun=0;
+  function track(event){
+    if(!cohort.tracked||preview)return;
+    fetch(api+'/experiment',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'event',event,visitor_id:cohort.visitor_id}),keepalive:true}).catch(()=>{});
+  }
+  function variation(value){
+    cohort=value||control;const copy=cohort.copy||control.copy;
+    dialog.dataset.variant=cohort.variant||'A';
+    dialog.querySelector('.wa-host').hidden=copy.host===false;
+    el('offer-mark').hidden=copy.host!==false;
+    const parts=copy.title.split('Great Clips');el('title').replaceChildren(document.createTextNode(parts[0]));
+    if(parts.length>1){const brand=document.createElement('span');brand.style.whiteSpace='nowrap';brand.textContent='Great Clips';el('title').append(brand,document.createTextNode(parts.slice(1).join('Great Clips')));}
+    el('description').textContent=copy.copy;
+    buttonLabel(el('start'),copy.button);
+    el('preview').hidden=!preview;
+    el('preview').textContent=preview?'Preview '+preview+' · excluded from results':'';
+  }
   const el=id=>document.getElementById('wa-'+id);
   const terminal=['sent','uncertain','cancelled','rejected','unavailable','expired'];
   const saved=url=>{try{return JSON.parse(sessionStorage.getItem('wa-coupon:'+url)||'null');}catch{return null;}};
@@ -15,18 +51,23 @@
     dialog=document.createElement('dialog');dialog.id='waCouponDialog';dialog.setAttribute('aria-labelledby','wa-title');dialog.setAttribute('tabindex','-1');
     dialog.innerHTML=`<button id="wa-close" class="wa-close" aria-label="Close coupon popup">×</button>
       <div class="wa-host"><img src="/assets/kumar-avatar.svg" width="64" height="64" alt="Illustrated avatar"><span>Hey, I’m Kumar!</span></div>
+      <div id="wa-offer-mark" class="wa-offer-mark" aria-hidden="true" hidden>✂</div>
       <h2 id="wa-title">Get your <span style="white-space:nowrap">Great Clips</span> Coupon!</h2>
       <p class="wa-copy" id="wa-description">Message me and join my group. Your coupon arrives automatically! Stick around for haircut deals, Amazon price glitches and big coupon stacks.</p>
       <button id="wa-start" class="wa-primary">Text My Coupon on WhatsApp</button>
       <a id="wa-open" class="wa-primary" target="_blank" rel="noopener noreferrer" hidden>Open WhatsApp ↗</a>
       <p id="wa-status" class="wa-status" role="status" aria-live="polite"></p>
-      <button id="wa-retry" class="wa-retry" hidden>Try again</button>`;
+      <button id="wa-retry" class="wa-retry" hidden>Try again</button>
+      <p id="wa-preview" class="wa-preview" hidden></p>`;
     document.body.append(dialog);
     buttonLabel(el('start'),'Text My Coupon on WhatsApp');
-    el('close').onclick=()=>dialog.close();
-    dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
-    dialog.addEventListener('close',()=>{clearInterval(poll);opener?.focus();});
+    const close=()=>{track('dismiss');dialog.close();};
+    el('close').onclick=close;
+    dialog.addEventListener('cancel',()=>track('dismiss'));
+    dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)close();}});
+    dialog.addEventListener('close',()=>{if(!dialog.open){clearInterval(poll);opener?.focus();}});
     el('start').onclick=begin;el('retry').onclick=load;
+    el('open').onclick=()=>{if(el('open').href.startsWith('https://wa.me/'))track('click');};
   }
   async function resume(){
     const current=record,selected=coupon;
@@ -57,6 +98,7 @@
     }catch{/* The bot continues privately even if the page cannot refresh. */}
   }
   async function load(){
+    if(preview){config={online:true};el('start').disabled=false;el('status').textContent='';return;}
     const selected=coupon;el('retry').hidden=true;el('start').disabled=true;el('status').textContent='Connecting to WhatsApp delivery…';
     try{
       const r=await fetch(api+'/config',{cache:'no-store'});if(!r.ok)throw new Error('Unable to connect. Please try again.');
@@ -66,24 +108,30 @@
     }catch(e){if(coupon!==selected)return;el('status').textContent=e.message;el('retry').hidden=false;}
   }
   async function begin(){
+    if(preview){el('status').textContent='Preview only. No request is created or message sent.';return;}
     if(pending||!config?.online)return;
+    track('click');
     pending=true;el('start').disabled=true;el('status').textContent='Preparing your WhatsApp message…';
     const selected=coupon;
     // Open during the click so mobile popup blockers cannot swallow the chat.
     const chat=window.open('about:blank','_blank');if(chat)chat.opener=null;
     try{
-      const r=await fetch(api+'/requests',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({coupon_url:selected,consent:true,consent_version:config.consent_version})});
+      const r=await fetch(api+'/requests',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({coupon_url:selected,consent:true,consent_version:config.consent_version,...(cohort.tracked?{experiment_id:experimentId,experiment_visitor:cohort.visitor_id}:{})})});
       const d=await r.json();if(!r.ok)throw new Error(d.error||'Unable to create your request.');
+      d.experiment=cohort;
       try{sessionStorage.setItem('wa-coupon:'+selected,JSON.stringify(d));}catch{}
       if(coupon===selected){record=d;resume();}
       if(chat&&!chat.closed)chat.location.replace(d.whatsapp_url);else window.location.assign(d.whatsapp_url);
     }catch(e){if(chat&&!chat.closed)chat.close();if(coupon===selected){el('status').textContent=e.message;el('start').disabled=false;}}
     finally{pending=false;}
   }
-  function open(url){
+  async function open(url){
     if(pending)return;
-    build();opener=document.activeElement;coupon=url;config=null;record=saved(url);clearInterval(poll);
-    el('start').hidden=false;el('open').hidden=true;el('retry').hidden=true;dialog.showModal();
+    const run=++openRun,previous=preview?null:saved(url);
+    const selected=preview?await assignment:previous?(previous.experiment||control):await assignment;
+    if(run!==openRun)return;
+    build();opener=document.activeElement;coupon=url;config=null;record=previous;clearInterval(poll);variation(selected);
+    el('start').hidden=false;el('open').hidden=true;el('retry').hidden=true;dialog.showModal();track('view');
     if(record)resume();else load();
     dialog.focus({preventScroll:true});
   }

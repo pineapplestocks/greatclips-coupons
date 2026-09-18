@@ -1,4 +1,5 @@
 // Automatically fulfill explicit coupon requests after verified group membership.
+import { experimentAction, experimentReport, requestAttribution } from './whatsapp-experiment.js';
 const SITE = 'https://greatclipsdeal.com';
 const FEED = SITE + '/data/coupons.json';
 const DAY = 86400000;
@@ -83,6 +84,14 @@ async function route(request,env) {
   }
   if (!env.DB) fail('Request storage unavailable.',503);
   if (request.method!=='POST') fail('Method not allowed.',405);
+  if(path==='/whatsapp/experiment/report') {
+    await authorize(request,env.ADMIN_TOKEN);
+    return json(await experimentReport(env));
+  }
+  if(path==='/whatsapp/experiment') {
+    if(!ORIGINS.has(request.headers.get('Origin')))fail('Use the website.',403);
+    return json(await experimentAction(request,env,await body(request)));
+  }
   if (path==='/whatsapp/admin') {
     await authorize(request,env.ADMIN_TOKEN);
     const b=await body(request);
@@ -124,7 +133,7 @@ async function route(request,env) {
       if(r.status==='awaiting_message') {
         const existing=await one(env,"SELECT id FROM whatsapp_requests WHERE wa_id=? AND coupon_url=? AND status IN ('awaiting_join','ready','awaiting_approval','approved','sending','sent','uncertain') LIMIT 1",b.wa_id,r.coupon_url);
         if(existing && existing.id!==r.id) fail('This number already requested this coupon.',409);
-        const changed=await run(env,"UPDATE whatsapp_requests SET wa_id=?,sender_jid=?,display_name=?,status='awaiting_join' WHERE id=? AND wa_id IS NULL AND status='awaiting_message'",b.wa_id,b.sender_jid,String(b.display_name||'').slice(0,80),r.id);
+        const changed=await run(env,"UPDATE whatsapp_requests SET wa_id=?,sender_jid=?,display_name=?,claimed_at=?,status='awaiting_join' WHERE id=? AND wa_id IS NULL AND status='awaiting_message'",b.wa_id,b.sender_jid,String(b.display_name||'').slice(0,80),Date.now(),r.id);
         if(!changed.meta.changes) fail('Request already claimed; retry.',409);
       } else if(!['awaiting_join','ready','awaiting_approval','approved'].includes(r.status)) fail('Request already finished.',409);
       return json({ok:true,id:r.id,invite:INVITE,label:r.coupon_label,group_name:GROUP});
@@ -132,8 +141,10 @@ async function route(request,env) {
     if(b.action==='membership') {
       if(typeof b.member!=='boolean') fail('Membership result required.');
       await run(env,`UPDATE whatsapp_requests SET member_verified=?,member_checked_at=?,
+        membership_initial=COALESCE(membership_initial,?),
+        member_confirmed_at=CASE WHEN ?=1 THEN COALESCE(member_confirmed_at,?) ELSE member_confirmed_at END,
         status=CASE WHEN ?=1 THEN 'ready' ELSE 'awaiting_join' END
-        WHERE id=? AND wa_id IS NOT NULL AND status IN ('awaiting_join','ready','awaiting_approval','approved')`,b.member?1:0,Date.now(),b.member?1:0,r.id);
+        WHERE id=? AND wa_id IS NOT NULL AND status IN ('awaiting_join','ready','awaiting_approval','approved')`,b.member?1:0,Date.now(),b.member?1:0,b.member?1:0,Date.now(),b.member?1:0,r.id);
       const updated=await one(env,'SELECT status FROM whatsapp_requests WHERE id=?',r.id);
       return json({ok:true,status:updated.status});
     }
@@ -177,8 +188,10 @@ async function route(request,env) {
     const count=await one(env,'SELECT COUNT(*) AS n FROM whatsapp_requests WHERE ip_hash=? AND created_at>?',hash,Date.now()-3600000);
     if(count.n>=5) fail('Too many requests. Please try again in an hour.',429);
     const offer=await currentOffer(String(b.coupon_url||''));
+    let attribution=null;
+    try{attribution=await requestAttribution(env,b);}catch(error){console.error('Experiment attribution unavailable:',error.name);}
     const id=random(),token=random();
-    await run(env,'INSERT INTO whatsapp_requests(id,status_token,coupon_url,coupon_label,created_at,ip_hash,consent_version) VALUES(?,?,?,?,?,?,?)',id,token,offer.url,offer.label,Date.now(),hash,CONSENT);
+    await run(env,'INSERT INTO whatsapp_requests(id,status_token,coupon_url,coupon_label,created_at,ip_hash,consent_version,experiment_id,experiment_visitor) VALUES(?,?,?,?,?,?,?,?,?)',id,token,offer.url,offer.label,Date.now(),hash,CONSENT,attribution?.experiment_id||null,attribution?.visitor_id||null);
     const code=await reference(env,{id});
     const message=`Send me my Great Clips coupon! (GC-${code})`;
     return json({id,token,request_code:code,label:offer.label,whatsapp_url:`https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`,group_invite:INVITE},201);

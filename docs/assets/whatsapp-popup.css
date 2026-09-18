@@ -20,3 +20,7 @@
 @media(prefers-reduced-motion:reduce){#waCouponDialog .wa-primary{transition:none}}
 
 #waCouponDialog .wa-host{display:flex;align-items:center;justify-content:center;gap:12px;margin:0 0 21px;color:#6d28d9;font-size:16px;font-weight:700}#waCouponDialog .wa-host img{width:64px;height:64px;border-radius:50%;border:3px solid #fff;box-shadow:0 3px 12px #7c3aed15}#waCouponDialog .wa-copy{font-size:16px;line-height:1.65}
+
+#waCouponDialog .wa-offer-mark{width:48px;height:48px;margin:0 auto 20px;border-radius:16px;background:#ede9fe;color:#7c3aed;display:grid;place-items:center;font-size:28px}#waCouponDialog[data-variant="B"]{max-width:400px}#waCouponDialog[data-variant="B"] h2{font-size:30px}#waCouponDialog[data-variant="C"] h2{font-size:27px}#waCouponDialog .wa-preview{font-size:11px;color:#7c3aed;margin:13px 0 0}
+
+#waCouponDialog .wa-close{box-sizing:border-box;padding:0;display:grid;place-items:center}

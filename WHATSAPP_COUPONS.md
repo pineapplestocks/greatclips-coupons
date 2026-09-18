@@ -13,9 +13,11 @@ A database claim and local receipt precede each send. Ambiguous/interrupted send
 ## Deployment
 
 - Tests: `node --test tests/whatsapp.test.mjs`, plus `node --test test/coupon-gate.test.js` in the bot folder. These use fake numbers and mocked sends.
-- Apply migrations 002, 003 and 004 in order using Wrangler D1 and `--config wrangler.toml`.
+- Apply migrations 002, 003, 004 and 005 in order using Wrangler D1 and `--config wrangler.toml`.
 - Set `WHATSAPP_BRIDGE_TOKEN` with `wrangler secret put` and the matching bot secret locally.
 - Deploy with `npx wrangler deploy --config wrangler.toml --keep-vars`. Publish `docs` through the existing Pages workflow.
 - Restart only the existing bot instance. Confirm `/whatsapp/config` returns enabled and online.
 - Windows task `WhatsApp Deals Automatic Delivery` starts the supervised bot at Mehul's sign-in. Its local script is `C:\Users\mehul\whatsapp-deals\scripts\run-supervised.ps1`; it restarts an exited bot after 30 seconds. The computer must stay awake and online. Do not run a second `npm start` alongside it. Logs are in the bot's `data/supervised.stdout.log` and `data/supervised.stderr.log`.
 - Pause by setting `WHATSAPP_COUPONS_ENABLED="false"` in `wrangler.toml` and redeploying. The popup then shows delivery as unavailable.
+
+Popup A/B/C testing and the private results dashboard are documented in [WHATSAPP_EXPERIMENT.md](WHATSAPP_EXPERIMENT.md).

@@ -7,6 +7,7 @@
  */
 
 import { handleWhatsApp } from './whatsapp.js';
+import { maintainExperiment } from './whatsapp-experiment.js';
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -1311,6 +1312,7 @@ ${EMAIL_STYLE}
   },
 
   async scheduled(event, env, ctx) {
+    ctx.waitUntil(maintainExperiment(env));
     if (env.DB) ctx.waitUntil(env.DB.prepare('DELETE FROM whatsapp_requests WHERE created_at<?').bind(Date.now()-90*86400000).run());
     // Three triggers a day (wrangler.toml). The owner's summary goes out once,
     // on the first; every trigger runs a drip slice.
