@@ -3,7 +3,7 @@
   if(window.gcWhatsAppPopup)return;
   window.gcWhatsAppPopup=true;
   const api='https://greatclips-email.mehulchaudhari.workers.dev/whatsapp';
-  const css=document.createElement('link');css.rel='stylesheet';css.href='/assets/whatsapp-popup.css?v=4';document.head.append(css);
+  const css=document.createElement('link');css.rel='stylesheet';css.href='/assets/whatsapp-popup.css?v=5';document.head.append(css);
   const waIcon='<svg class="wa-brand-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none"><path d="M20.4 3.6a11 11 0 0 0-17.3 13L1.5 22.5l6-1.6A11 11 0 0 0 20.4 3.6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.4 6.5c-.3-.6-.6-.6-.9-.6h-.7c-.3 0-.6.1-.8.4-.3.3-1 1-1 2.4s1.1 2.8 1.2 3c.2.2 2.1 3.3 5.2 4.5 2.6 1 3.1.8 3.7.8.6-.1 1.8-.8 2.1-1.5.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.7-.5l-2.1-1c-.3-.1-.6-.2-.8.2l-.9 1.1c-.2.2-.4.3-.7.1-1.1-.5-2-1-2.9-2-.8-.8-1.2-1.5-1.3-1.8-.2-.3 0-.5.1-.7l.5-.6.3-.5c.1-.2.1-.4 0-.6l-.9-2.3Z" fill="currentColor"/></svg>';
   function buttonLabel(node,text){node.innerHTML=waIcon;const label=document.createElement('span');label.textContent=text;node.append(label);const arrow=document.createElement('span');arrow.className='wa-arrow';arrow.setAttribute('aria-hidden','true');arrow.textContent='→';node.append(arrow);}
   let dialog,coupon,config,record,pending=false,poll,opener;
@@ -14,9 +14,9 @@
     if(dialog)return;
     dialog=document.createElement('dialog');dialog.id='waCouponDialog';dialog.setAttribute('aria-labelledby','wa-title');dialog.setAttribute('tabindex','-1');
     dialog.innerHTML=`<button id="wa-close" class="wa-close" aria-label="Close coupon popup">×</button>
-      <div class="wa-icon" aria-hidden="true">✂</div>
+      <div class="wa-host"><img src="/assets/kumar-avatar.svg" width="64" height="64" alt="Illustrated avatar"><span>Hey, I’m Kumar!</span></div>
       <h2 id="wa-title">Get your <span style="white-space:nowrap">Great Clips</span> Coupon!</h2>
-      <p class="wa-copy" id="wa-description">Message us, join our deals group, and get your coupon.</p>
+      <p class="wa-copy" id="wa-description">Message me and join my group. Your coupon arrives automatically! Stick around for haircut deals, Amazon price glitches and big coupon stacks.</p>
       <button id="wa-start" class="wa-primary">Text My Coupon on WhatsApp</button>
       <a id="wa-open" class="wa-primary" target="_blank" rel="noopener noreferrer" hidden>Open WhatsApp ↗</a>
       <p id="wa-status" class="wa-status" role="status" aria-live="polite"></p>

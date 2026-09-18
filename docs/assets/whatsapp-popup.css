@@ -18,3 +18,5 @@
 #waCouponDialog .wa-primary>span:not(.wa-arrow){min-width:0}
 @media(max-width:390px){#waCouponDialog{padding:30px 20px 24px}#waCouponDialog .wa-primary{gap:8px;padding:15px 9px;font-size:14px}#waCouponDialog .wa-brand-icon{width:25px;height:25px}}
 @media(prefers-reduced-motion:reduce){#waCouponDialog .wa-primary{transition:none}}
+
+#waCouponDialog .wa-host{display:flex;align-items:center;justify-content:center;gap:12px;margin:0 0 21px;color:#6d28d9;font-size:16px;font-weight:700}#waCouponDialog .wa-host img{width:64px;height:64px;border-radius:50%;border:3px solid #fff;box-shadow:0 3px 12px #7c3aed15}#waCouponDialog .wa-copy{font-size:16px;line-height:1.65}
