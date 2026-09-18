@@ -251,3 +251,6 @@ function gcSubmitEmail(event) {
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') gcCloseModal();
 });
+
+// Shared WhatsApp request routing.
+{ const script = document.createElement('script'); script.src = '/assets/whatsapp-entry.js'; document.head.appendChild(script); }
