@@ -15,6 +15,17 @@ const one = (env, sql, ...args) => env.DB.prepare(sql).bind(...args).first();
 const run = (env, sql, ...args) => env.DB.prepare(sql).bind(...args).run();
 const rows = async (env, sql, ...args) => (await env.DB.prepare(sql).bind(...args).all()).results;
 const random = () => crypto.randomUUID().replaceAll('-', '');
+const shortCode = () => Array.from(crypto.getRandomValues(new Uint8Array(8)), b => 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'[b & 31]).join('');
+async function reference(env, r) {
+  if(r.request_code)return r.request_code;
+  for(let attempt=0;attempt<5;attempt++) {
+    try {
+      await run(env,'UPDATE whatsapp_requests SET request_code=? WHERE id=? AND request_code IS NULL',shortCode(),r.id);
+      return (await one(env,'SELECT request_code FROM whatsapp_requests WHERE id=?',r.id)).request_code;
+    } catch(error) { if(!String(error.message).includes('UNIQUE'))throw error; }
+  }
+  fail('Unable to prepare your coupon reference. Try again.',503);
+}
 
 async function equal(a, b) {
   if (!a || !b) return false;
@@ -103,7 +114,9 @@ async function route(request,env) {
       await run(env,"UPDATE whatsapp_requests SET status='cancelled' WHERE wa_id=? AND status IN ('awaiting_join','ready','awaiting_approval','approved')",b.wa_id);
       return json({ok:true});
     }
-    const r=await one(env,'SELECT * FROM whatsapp_requests WHERE id=?',String(b.id||''));
+    const r=b.action==='claim'
+      ? await one(env,'SELECT * FROM whatsapp_requests WHERE id=? OR request_code=?',String(b.id||'').toLowerCase(),String(b.id||'').toUpperCase())
+      : await one(env,'SELECT * FROM whatsapp_requests WHERE id=?',String(b.id||''));
     if(!active(r)) fail('Request missing or older than seven days.',404);
     if(b.action==='claim') {
       if(!/^\d{7,15}$/.test(b.wa_id||'') || !/^[0-9:]+@(s\.whatsapp\.net|lid)$/.test(b.sender_jid||'')) fail('Verified sender required.');
@@ -114,7 +127,7 @@ async function route(request,env) {
         const changed=await run(env,"UPDATE whatsapp_requests SET wa_id=?,sender_jid=?,display_name=?,status='awaiting_join' WHERE id=? AND wa_id IS NULL AND status='awaiting_message'",b.wa_id,b.sender_jid,String(b.display_name||'').slice(0,80),r.id);
         if(!changed.meta.changes) fail('Request already claimed; retry.',409);
       } else if(!['awaiting_join','ready','awaiting_approval','approved'].includes(r.status)) fail('Request already finished.',409);
-      return json({ok:true,invite:INVITE,label:r.coupon_label,group_name:GROUP});
+      return json({ok:true,id:r.id,invite:INVITE,label:r.coupon_label,group_name:GROUP});
     }
     if(b.action==='membership') {
       if(typeof b.member!=='boolean') fail('Membership result required.');
@@ -147,7 +160,7 @@ async function route(request,env) {
     const b=await body(request);
     const r=await one(env,'SELECT * FROM whatsapp_requests WHERE id=?',String(b.id||''));
     if(!r || !await equal(request.headers.get('Authorization'),`Bearer ${r.status_token}`)) fail('Request not found.',404);
-    return json(publicStatus(r));
+    return json({...publicStatus(r),request_code:await reference(env,r)});
   }
   if(path==='/whatsapp/requests') {
     if(!ORIGINS.has(request.headers.get('Origin'))) fail('Use the coupon request page.',403);
@@ -166,8 +179,9 @@ async function route(request,env) {
     const offer=await currentOffer(String(b.coupon_url||''));
     const id=random(),token=random();
     await run(env,'INSERT INTO whatsapp_requests(id,status_token,coupon_url,coupon_label,created_at,ip_hash,consent_version) VALUES(?,?,?,?,?,?,?)',id,token,offer.url,offer.label,Date.now(),hash,CONSENT);
-    const message=`Send me this coupon\nGC-${id}`;
-    return json({id,token,label:offer.label,whatsapp_url:`https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`,group_invite:INVITE},201);
+    const code=await reference(env,{id});
+    const message=`Send me my Great Clips coupon! (GC-${code})`;
+    return json({id,token,request_code:code,label:offer.label,whatsapp_url:`https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`,group_invite:INVITE},201);
   }
   return json({error:'Not found'},404);
 }

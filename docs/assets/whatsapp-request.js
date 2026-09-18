@@ -11,6 +11,7 @@
     try{
       const r=await fetch(api+'/status',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+record.token},body:JSON.stringify({id:record.id})});
       const data=await r.json();if(!r.ok)throw new Error(data.error);
+      if(data.request_code){record.request_code=data.request_code;const chat=new URL(record.whatsapp_url);chat.searchParams.set('text','Send me my Great Clips coupon! (GC-'+data.request_code+')');el('message').href=chat.href;el('reference').textContent='Request GC-'+data.request_code;}
       el('status').textContent=messages[data.status]||'Checking your request...';
       const stage=data.status==='awaiting_message'?0:data.status==='awaiting_join'?1:2;
       ['message','join','delivery'].forEach((name,i)=>{el('step-'+name).className=i<stage||data.status==='sent'?'done':i===stage?'active':'';});
@@ -22,7 +23,7 @@
       el('connection').className='connection online';
     }catch(e){el('status').textContent='Unable to refresh the status right now. Your request is saved; check WhatsApp or refresh this page.';}
   }
-  function show(){const chat=new URL(record.whatsapp_url);chat.searchParams.set('text','Send me this coupon\nGC-'+record.id);record.whatsapp_url=chat.href;el('start').hidden=true;el('progress').hidden=false;el('selected').textContent='Your coupon is on its way.';el('offer-name').textContent=record.label;el('message').href=record.whatsapp_url;el('join').href=record.group_invite;el('reference').textContent='Request GC-'+record.id;clearInterval(timer);timer=setInterval(status,15000);status();}
+  function show(){const chat=new URL(record.whatsapp_url);chat.searchParams.set('text','Send me my Great Clips coupon! (GC-'+(record.request_code||record.id)+')');record.whatsapp_url=chat.href;el('start').hidden=true;el('progress').hidden=false;el('selected').textContent='Your coupon is on its way.';el('offer-name').textContent=record.label;el('message').href=record.whatsapp_url;el('join').href=record.group_invite;el('reference').textContent='Request GC-'+record.id;clearInterval(timer);timer=setInterval(status,15000);status();}
   el('begin').onclick=async()=>{
     if(!el('consent').checked)return;
     el('begin').disabled=true;el('error').textContent='';

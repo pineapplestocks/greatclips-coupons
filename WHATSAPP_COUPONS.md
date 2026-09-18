@@ -1,6 +1,6 @@
 # Automatic WhatsApp coupon delivery
 
-The customer selects a coupon and sees one popup on the same page. Clicking its WhatsApp button requests a private invitation and coupon; there is no consent checkbox or separate landing page. WhatsApp opens with a prefilled request, which they send before joining with the same number. A random request code matches that number to the selected offer. The bot checks actual group membership and sends the coupon automatically, usually within about a minute while online. There is no approval queue or manual release step. Invite clicks alone never prove membership.
+The customer selects a coupon and sees one popup on the same page. Clicking its WhatsApp button requests a private invitation and coupon; there is no consent checkbox or separate landing page. WhatsApp opens with a prefilled request, which they send before joining with the same number. An eight-character public reference matches that number to the selected offer. Full internal request IDs and status tokens remain unchanged; old 32-character message references still work. Saved requests receive short references through the authenticated status endpoint. The bot checks actual group membership and sends the coupon automatically, usually within about a minute while online. There is no approval queue or manual release step. Invite clicks alone never prove membership.
 
 The homepage and salon buttons use `/assets/whatsapp-entry.js`. The popup handles progress and can show the group invite after the private request is linked. `/whatsapp-coupon.html` remains available for existing request links, but main coupon buttons no longer navigate there. The bot runs from `C:\Users\mehul\whatsapp-deals` using its existing unofficial Baileys linked-device session. Keep the computer and bot online. New requests fail closed after three minutes without a verified-group heartbeat.
 
@@ -13,7 +13,7 @@ A database claim and local receipt precede each send. Ambiguous/interrupted send
 ## Deployment
 
 - Tests: `node --test tests/whatsapp.test.mjs`, plus `node --test test/coupon-gate.test.js` in the bot folder. These use fake numbers and mocked sends.
-- Apply migrations 002 and 003 in order using Wrangler D1 and `--config wrangler.toml`.
+- Apply migrations 002, 003 and 004 in order using Wrangler D1 and `--config wrangler.toml`.
 - Set `WHATSAPP_BRIDGE_TOKEN` with `wrangler secret put` and the matching bot secret locally.
 - Deploy with `npx wrangler deploy --config wrangler.toml --keep-vars`. Publish `docs` through the existing Pages workflow.
 - Restart only the existing bot instance. Confirm `/whatsapp/config` returns enabled and online.

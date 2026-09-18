@@ -28,8 +28,17 @@
     dialog.addEventListener('close',()=>{clearInterval(poll);opener?.focus();});
     el('start').onclick=begin;el('retry').onclick=load;
   }
-  function resume(){
-    const chat=new URL(record.whatsapp_url);chat.searchParams.set('text','Send me this coupon\nGC-'+record.id);record.whatsapp_url=chat.href;
+  async function resume(){
+    const current=record;
+    el('start').hidden=true;el('open').hidden=true;el('status').textContent='Preparing your message…';
+    if(!current.request_code){
+      try{
+        const r=await fetch(api+'/status',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+current.token},body:JSON.stringify({id:current.id})});
+        if(r.ok){const d=await r.json();current.request_code=d.request_code;try{sessionStorage.setItem('wa-coupon:'+coupon,JSON.stringify(current));}catch{}}
+      }catch{/* Existing long references remain valid if the connection fails. */}
+    }
+    if(record!==current||!dialog.open)return;
+    const chat=new URL(record.whatsapp_url);chat.searchParams.set('text','Send me my Great Clips coupon! (GC-'+(record.request_code||record.id)+')');record.whatsapp_url=chat.href;
     el('start').hidden=true;el('open').hidden=false;el('open').href=record.whatsapp_url;
     buttonLabel(el('open'),'Text My Coupon on WhatsApp');
     el('status').textContent='Send the prepared message. The bot will reply with your group invite.';

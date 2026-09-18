@@ -9,6 +9,7 @@ function setup() {
   const db=new DatabaseSync(':memory:');
   db.exec(readFileSync(new URL('../cloudflare-worker/migrations/002_whatsapp_coupon_requests.sql',import.meta.url),'utf8'));
   db.exec(readFileSync(new URL('../cloudflare-worker/migrations/003_whatsapp_automatic_delivery.sql',import.meta.url),'utf8'));
+  db.exec(readFileSync(new URL('../cloudflare-worker/migrations/004_whatsapp_short_references.sql',import.meta.url),'utf8'));
   const env={ADMIN_TOKEN:'admin-test',WHATSAPP_BRIDGE_TOKEN:'bridge-test',WHATSAPP_COUPONS_ENABLED:'true',DB:{
     prepare(sql) { return { bind(...args) {
       const s=db.prepare(sql);
@@ -32,11 +33,18 @@ test('request binding, verified membership, automatic release and at-most-once d
   assert.equal((await call('requests',{coupon_url:url,consent:false})).status,400);
   const created=await create();assert.equal(created.status,201);
   const {id,token}=created.data;
+  assert.match(created.data.request_code,/^[A-HJ-NP-Z2-9]{8}$/);
+  assert.equal(new URL(created.data.whatsapp_url).searchParams.get('text'),`Send me my Great Clips coupon! (GC-${created.data.request_code})`);
   assert.equal((await call('status',{id},'wrong')).status,404);
   assert.equal((await call('status',{id},token)).data.status,'awaiting_message');
+  db.prepare('UPDATE whatsapp_requests SET request_code=NULL WHERE id=?').run(id);
+  const restored=(await call('status',{id},token)).data.request_code;
+  assert.match(restored,/^[A-HJ-NP-Z2-9]{8}$/,'saved legacy requests receive a short reference');
+  created.data.request_code=restored;
   assert.equal((await call('admin',{action:'approve',id,confirmed:true},token)).status,401);
   assert.equal((await bridge({action:'start-send',id})).status,409);
-  assert.equal((await bridge({action:'claim',id,wa_id:'15555550123',sender_jid:'15555550123@s.whatsapp.net'})).status,200);
+  const claim=await bridge({action:'claim',id:created.data.request_code.toLowerCase(),wa_id:'15555550123',sender_jid:'15555550123@s.whatsapp.net'});
+  assert.equal(claim.status,200);assert.equal(claim.data.id,id);
   assert.equal((await bridge({action:'claim',id,wa_id:'15555550124',sender_jid:'15555550124@s.whatsapp.net'})).status,409);
   assert.equal((await bridge({action:'start-send',id})).status,409,'nonmember cannot receive');
   assert.equal((await bridge({action:'membership',id,member:true})).data.status,'ready','verified membership automatically releases coupon');
