@@ -1,5 +1,4 @@
-// Coupon fulfillment only. The linked-device bridge verifies membership;
-// an authenticated administrator must approve before the bridge may send.
+// Automatically fulfill explicit coupon requests after verified group membership.
 const SITE = 'https://greatclipsdeal.com';
 const FEED = SITE + '/data/coupons.json';
 const DAY = 86400000;
@@ -82,14 +81,8 @@ async function route(request,env) {
     }
     const r=await one(env,'SELECT * FROM whatsapp_requests WHERE id=?',String(b.id||''));
     if(!active(r)) fail('Request missing or older than seven days.',404);
-    if(b.action==='approve') {
-      if(b.confirmed!==true) fail('Confirm you checked the person in the group.');
-      if(!r.wa_id || !r.member_verified || Date.now()-r.member_checked_at>180000) fail('Wait for a fresh group membership check.',409);
-      await currentOffer(r.coupon_url);
-      const result=await run(env,"UPDATE whatsapp_requests SET status='approved',approved_at=?,error=NULL WHERE id=? AND status='awaiting_approval'",Date.now(),r.id);
-      if(!result.meta.changes) fail('Request is not awaiting approval.',409);
-    } else if(b.action==='reject') {
-      await run(env,"UPDATE whatsapp_requests SET status='rejected' WHERE id=? AND status IN ('awaiting_message','awaiting_join','awaiting_approval','approved')",r.id);
+    if(b.action==='reject') {
+      await run(env,"UPDATE whatsapp_requests SET status='rejected' WHERE id=? AND status IN ('awaiting_message','awaiting_join','ready','awaiting_approval','approved')",r.id);
     } else fail('Unknown action.');
     return json({ok:true});
   }
@@ -104,10 +97,10 @@ async function route(request,env) {
     }
     if(env.WHATSAPP_COUPONS_ENABLED!=='true') fail('Coupon delivery is paused.',503);
     if(b.action==='pending') return json({requests:await rows(env,`SELECT id,wa_id,sender_jid,status FROM whatsapp_requests
-      WHERE created_at>? AND status IN ('awaiting_join','awaiting_approval','approved') ORDER BY created_at LIMIT 100`,Date.now()-7*DAY)});
+      WHERE created_at>? AND status IN ('awaiting_join','ready','awaiting_approval','approved') ORDER BY created_at LIMIT 100`,Date.now()-7*DAY)});
     if(b.action==='stop') {
       if(!/^\d{7,15}$/.test(b.wa_id||'')) fail('Invalid number.');
-      await run(env,"UPDATE whatsapp_requests SET status='cancelled' WHERE wa_id=? AND status IN ('awaiting_join','awaiting_approval','approved')",b.wa_id);
+      await run(env,"UPDATE whatsapp_requests SET status='cancelled' WHERE wa_id=? AND status IN ('awaiting_join','ready','awaiting_approval','approved')",b.wa_id);
       return json({ok:true});
     }
     const r=await one(env,'SELECT * FROM whatsapp_requests WHERE id=?',String(b.id||''));
@@ -116,29 +109,29 @@ async function route(request,env) {
       if(!/^\d{7,15}$/.test(b.wa_id||'') || !/^[0-9:]+@(s\.whatsapp\.net|lid)$/.test(b.sender_jid||'')) fail('Verified sender required.');
       if(r.wa_id && r.wa_id!==b.wa_id) fail('This request is already linked to another number.',409);
       if(r.status==='awaiting_message') {
-        const existing=await one(env,"SELECT id FROM whatsapp_requests WHERE wa_id=? AND coupon_url=? AND status IN ('awaiting_join','awaiting_approval','approved','sending','sent','uncertain') LIMIT 1",b.wa_id,r.coupon_url);
+        const existing=await one(env,"SELECT id FROM whatsapp_requests WHERE wa_id=? AND coupon_url=? AND status IN ('awaiting_join','ready','awaiting_approval','approved','sending','sent','uncertain') LIMIT 1",b.wa_id,r.coupon_url);
         if(existing && existing.id!==r.id) fail('This number already requested this coupon.',409);
         const changed=await run(env,"UPDATE whatsapp_requests SET wa_id=?,sender_jid=?,display_name=?,status='awaiting_join' WHERE id=? AND wa_id IS NULL AND status='awaiting_message'",b.wa_id,b.sender_jid,String(b.display_name||'').slice(0,80),r.id);
         if(!changed.meta.changes) fail('Request already claimed; retry.',409);
-      } else if(!['awaiting_join','awaiting_approval','approved'].includes(r.status)) fail('Request already finished.',409);
+      } else if(!['awaiting_join','ready','awaiting_approval','approved'].includes(r.status)) fail('Request already finished.',409);
       return json({ok:true,invite:INVITE,label:r.coupon_label,group_name:GROUP});
     }
     if(b.action==='membership') {
       if(typeof b.member!=='boolean') fail('Membership result required.');
       await run(env,`UPDATE whatsapp_requests SET member_verified=?,member_checked_at=?,
-        status=CASE WHEN status='approved' AND ?=1 THEN 'approved' WHEN ?=1 THEN 'awaiting_approval' ELSE 'awaiting_join' END,
-        approved_at=CASE WHEN ?=0 THEN NULL ELSE approved_at END
-        WHERE id=? AND wa_id IS NOT NULL AND status IN ('awaiting_join','awaiting_approval','approved')`,b.member?1:0,Date.now(),b.member?1:0,b.member?1:0,b.member?1:0,r.id);
-      return json({ok:true});
+        status=CASE WHEN ?=1 THEN 'ready' ELSE 'awaiting_join' END
+        WHERE id=? AND wa_id IS NOT NULL AND status IN ('awaiting_join','ready','awaiting_approval','approved')`,b.member?1:0,Date.now(),b.member?1:0,r.id);
+      const updated=await one(env,'SELECT status FROM whatsapp_requests WHERE id=?',r.id);
+      return json({ok:true,status:updated.status});
     }
     if(b.action==='start-send') {
-      if(r.status!=='approved' || !r.member_verified || Date.now()-r.member_checked_at>120000) fail('Approval and a fresh membership check are required.',409);
+      if(r.status!=='ready' || !r.member_verified || Date.now()-r.member_checked_at>120000) fail('A fresh verified group membership check is required.',409);
       let offer;
       try { offer=await currentOffer(r.coupon_url); } catch(e) {
-        if(e.status===409) await run(env,"UPDATE whatsapp_requests SET status='unavailable',error=? WHERE id=? AND status='approved'",e.message,r.id);
+        if(e.status===409) await run(env,"UPDATE whatsapp_requests SET status='unavailable',error=? WHERE id=? AND status='ready'",e.message,r.id);
         throw e;
       }
-      const changed=await run(env,"UPDATE whatsapp_requests SET status='sending' WHERE id=? AND status='approved'",r.id);
+      const changed=await run(env,"UPDATE whatsapp_requests SET status='sending' WHERE id=? AND status='ready'",r.id);
       if(!changed.meta.changes) fail('A send was already started.',409);
       return json({id:r.id,wa_id:r.wa_id,sender_jid:r.sender_jid,
         text:`Your requested ${offer.label} is ready.\n\n${offer.url}\n\nExpiration: ${offer.expiration}. Check the official offer for price, participating salons and restrictions before visiting.\n\nYou requested this coupon from GreatClipsDeal.com after joining ${GROUP}. Independent coupon resource; not affiliated with Great Clips.`});
