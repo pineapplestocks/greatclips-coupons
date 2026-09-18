@@ -3,24 +3,23 @@
   if(window.gcWhatsAppPopup)return;
   window.gcWhatsAppPopup=true;
   const api='https://greatclips-email.mehulchaudhari.workers.dev/whatsapp';
-  const css=document.createElement('link');css.rel='stylesheet';css.href='/assets/whatsapp-popup.css?v=1';document.head.append(css);
+  const css=document.createElement('link');css.rel='stylesheet';css.href='/assets/whatsapp-popup.css?v=2';document.head.append(css);
   let dialog,coupon,config,record,pending=false,poll,opener;
   const el=id=>document.getElementById('wa-'+id);
   const terminal=['sent','uncertain','cancelled','rejected','unavailable','expired'];
   const saved=url=>{try{return JSON.parse(sessionStorage.getItem('wa-coupon:'+url)||'null');}catch{return null;}};
   function build(){
     if(dialog)return;
-    dialog=document.createElement('dialog');dialog.id='waCouponDialog';dialog.setAttribute('aria-labelledby','wa-title');
+    dialog=document.createElement('dialog');dialog.id='waCouponDialog';dialog.setAttribute('aria-labelledby','wa-title');dialog.setAttribute('tabindex','-1');
     dialog.innerHTML=`<button id="wa-close" class="wa-close" aria-label="Close coupon popup">×</button>
-      <div class="wa-icon" aria-hidden="true">✂</div><p class="wa-kicker">YOUR COUPON, IN YOUR CHAT</p>
-      <h2 id="wa-title">Join WhatsApp.<br>Get your coupon.</h2>
-      <p class="wa-copy" id="wa-description">Send the prepared message to get our group invite. Once you join Deal Dropper, we’ll send this coupon privately.</p>
-      <div class="wa-perks"><span>✓ Automatic delivery</span><span>✓ No email needed</span></div>
-      <button id="wa-start" class="wa-primary">Join WhatsApp & get coupon ↗</button>
+      <div class="wa-icon" aria-hidden="true">✂</div>
+      <h2 id="wa-title">Get your coupon</h2>
+      <p class="wa-copy" id="wa-description">Send the message and join our Amazon deals group to get this coupon.</p>
+      <button id="wa-start" class="wa-primary">Join WhatsApp group →</button>
       <a id="wa-open" class="wa-primary" target="_blank" rel="noopener noreferrer" hidden>Open WhatsApp ↗</a>
       <p id="wa-status" class="wa-status" role="status" aria-live="polite"></p>
       <button id="wa-retry" class="wa-retry" hidden>Try again</button>
-      <p class="wa-fine">By continuing, you request a private group invite and this coupon. Deal Dropper shares Amazon deals and coupons; group members may see your number. No ongoing private marketing. <a href="/privacy">Privacy</a></p>`;
+      <p class="wa-fine"><a href="/privacy">Privacy</a></p>`;
     document.body.append(dialog);
     el('close').onclick=()=>dialog.close();
     dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
@@ -74,7 +73,7 @@
     build();opener=document.activeElement;coupon=url;config=null;record=saved(url);clearInterval(poll);
     el('start').hidden=false;el('open').hidden=true;el('retry').hidden=true;dialog.showModal();
     if(record)resume();else load();
-    el('close').focus();
+    dialog.focus({preventScroll:true});
   }
   for(const name of ['getCoupon','gcOpenModal']){
     if(typeof window[name]!=='function')continue;
