@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-19T03:36:59Z",
- "scraped_at": "2026-09-18T20:36:44.125238",
- "total": 8,
+ "generated_at": "2026-09-19T10:28:45Z",
+ "scraped_at": "2026-09-19T03:28:22.441789",
+ "total": 12,
  "scopes": {
   "national": 1,
   "salon": 4,
-  "unknown": 2,
-  "area": 1
+  "unknown": 3,
+  "area": 4
  },
  "coupons": [
   {
@@ -17,7 +17,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-09-18",
+   "last_verified": "2026-09-19",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -32,7 +32,7 @@
    "address": "Cherrywood at 9570 SW 62nd Ave",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-18",
+   "last_verified": "2026-09-19",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -49,7 +49,7 @@
    "address": "2575 SW 42nd St",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-18",
+   "last_verified": "2026-09-19",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -66,7 +66,7 @@
    "address": "1126 Bichara Blvd",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-18",
+   "last_verified": "2026-09-19",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -82,10 +82,117 @@
    "area_name": "participating New Mexico",
    "market": "New Mexico",
    "expiration": "09/25/2026",
-   "last_verified": "2026-09-18",
+   "last_verified": "2026-09-19",
    "participating_location_note": "Valid at participating locations in New Mexico",
    "scope": "unknown",
    "price_value": 8.99
+  },
+  {
+   "url": "https://offers.greatclips.com/rDKX0S8",
+   "coupon_code": "rDKX0S8",
+   "price": "$8.99",
+   "location_name": "participating Houston Area",
+   "state": "AREA",
+   "area_name": "participating Houston",
+   "market": "Houston",
+   "expiration": "10/02/2026",
+   "last_verified": "2026-09-19",
+   "participating_location_note": "Valid at participating locations in Houston",
+   "scope": "area",
+   "price_value": 8.99,
+   "metro_keys": [
+    "TX/houston"
+   ],
+   "market_names": [
+    "Houston, TX"
+   ],
+   "city_keys": [
+    "TX/houston",
+    "TX/katy",
+    "TX/cypress",
+    "TX/spring",
+    "TX/conroe",
+    "TX/missouri-city",
+    "TX/pearland",
+    "TX/richmond",
+    "TX/baytown",
+    "TX/kingwood",
+    "TX/league-city",
+    "TX/magnolia",
+    "TX/the-woodlands",
+    "TX/tomball",
+    "TX/alvin",
+    "TX/cleveland",
+    "TX/crosby",
+    "TX/friendswood",
+    "TX/humble",
+    "TX/la-porte",
+    "TX/liberty",
+    "TX/manvel",
+    "TX/mont-belvieu",
+    "TX/montgomery",
+    "TX/new-caney",
+    "TX/porter",
+    "TX/stafford",
+    "TX/sugar-land",
+    "TX/texas-city",
+    "TX/webster",
+    "TX/willis"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/dEk0iJA",
+   "coupon_code": "dEk0iJA",
+   "price": "$9.99",
+   "location_name": "participating San Antonio Area",
+   "state": "AREA",
+   "area_name": "participating San Antonio",
+   "market": "San Antonio",
+   "expiration": "10/02/2026",
+   "last_verified": "2026-09-19",
+   "participating_location_note": "Valid at participating locations in San Antonio",
+   "scope": "area",
+   "price_value": 9.99,
+   "metro_keys": [
+    "TX/schertz"
+   ],
+   "market_names": [
+    "San Antonio, TX"
+   ],
+   "city_keys": [
+    "TX/san-antonio",
+    "TX/new-braunfels",
+    "TX/boerne",
+    "TX/cibolo",
+    "TX/converse",
+    "TX/san-marcos",
+    "TX/seguin",
+    "TX/buda",
+    "TX/bulverde",
+    "TX/dripping-springs",
+    "TX/helotes",
+    "TX/kyle",
+    "TX/live-oak",
+    "TX/lockhart",
+    "TX/lytle",
+    "TX/schertz",
+    "TX/universal-city",
+    "TX/windcrest"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/ooRyocE",
+   "coupon_code": "ooRyocE",
+   "price": "$10.99",
+   "location_name": "Western AZ Area",
+   "state": "AREA",
+   "area_name": "Western AZ",
+   "market": "Western AZ",
+   "expiration": "10/09/2026",
+   "last_verified": "2026-09-19",
+   "participating_location_note": "Valid at participating locations in Western AZ",
+   "scope": "unknown",
+   "price_value": 10.99
   },
   {
    "url": "https://offers.greatclips.com/e1j8GvR",
@@ -96,7 +203,7 @@
    "area_name": "participating West & SW Michigan",
    "market": "West & SW Michigan",
    "expiration": "10/02/2026",
-   "last_verified": "2026-09-18",
+   "last_verified": "2026-09-19",
    "participating_location_note": "Valid at participating locations in West & SW Michigan",
    "scope": "unknown",
    "price_value": 12.99
@@ -110,7 +217,7 @@
    "area_name": "participating San Diego",
    "market": "San Diego",
    "expiration": "09/25/2026",
-   "last_verified": "2026-09-18",
+   "last_verified": "2026-09-19",
    "participating_location_note": "Valid at participating locations in San Diego",
    "scope": "area",
    "price_value": 12.99,
@@ -136,6 +243,47 @@
    ]
   },
   {
+   "url": "https://offers.greatclips.com/VvNG05O",
+   "coupon_code": "VvNG05O",
+   "price": "$14.99",
+   "location_name": "participating Greater Los Angeles Area",
+   "state": "AREA",
+   "area_name": "participating Greater Los Angeles",
+   "market": "Greater Los Angeles",
+   "expiration": "10/02/2026",
+   "last_verified": "2026-09-19",
+   "participating_location_note": "Valid at participating locations in Greater Los Angeles",
+   "scope": "area",
+   "price_value": 14.99,
+   "metro_keys": [
+    "CA/los-angeles"
+   ],
+   "market_names": [
+    "Los Angeles, CA"
+   ],
+   "city_keys": [
+    "CA/los-angeles",
+    "CA/torrance",
+    "CA/valencia",
+    "CA/agoura-hills",
+    "CA/alhambra",
+    "CA/buena-park",
+    "CA/burbank",
+    "CA/canyon-country",
+    "CA/downey",
+    "CA/la-canada-flintridge",
+    "CA/lakewood",
+    "CA/long-beach",
+    "CA/monrovia",
+    "CA/northridge",
+    "CA/seal-beach",
+    "CA/simi-valley",
+    "CA/thousand-oaks",
+    "CA/west-hills",
+    "CA/whittier"
+   ]
+  },
+  {
    "url": "https://offers.greatclips.com/ZPzrMSl",
    "coupon_code": "ZPzrMSl",
    "price": "$19.99",
@@ -145,7 +293,7 @@
    "address": "4055 Evergreen Village Sq",
    "market": "CA",
    "expiration": "10/07/2026",
-   "last_verified": "2026-09-18",
+   "last_verified": "2026-09-19",
    "scope": "salon",
    "price_value": 19.99,
    "city_keys": [
