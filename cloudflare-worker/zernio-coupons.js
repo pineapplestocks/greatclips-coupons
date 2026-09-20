@@ -1,9 +1,10 @@
+import { experimentAction, requestAttribution, experimentReport } from './zernio-experiment.js';
 import { currentOffer } from './whatsapp.js';
 const SITE='https://greatclipsdeal.com', DAY=86400000;
 const one=(e,s,...a)=>e.DB.prepare(s).bind(...a).first();
 const run=(e,s,...a)=>e.DB.prepare(s).bind(...a).run();
 const ready=e=>e.ZERNIO_COUPONS_ENABLED==='true'&&!!e.ZERNIO_API_KEY&&!!e.ZERNIO_WEBHOOK_SECRET&&!!e.ZERNIO_ACCOUNT_ID&&/^\d{8,15}$/.test(e.ZERNIO_PHONE||'')&&/^https:\/\/chat\.whatsapp\.com\/[A-Za-z0-9]+$/.test(e.ZERNIO_GROUP_INVITE||'');
-const response=(body,status=200)=>new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store','Access-Control-Allow-Origin':SITE,'Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type'}});
+const response=(body,status=200)=>new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store','Access-Control-Allow-Origin':SITE,'Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type, Authorization'}});
 async function mac(secret,text){const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(secret),{name:'HMAC',hash:'SHA-256'},false,['sign']);return Array.from(new Uint8Array(await crypto.subtle.sign('HMAC',key,new TextEncoder().encode(text))),v=>v.toString(16).padStart(2,'0')).join('');}
 export async function validSignature(secret,raw,signature){if(!secret||!signature||!/^[a-f0-9]{64}$/.test(signature))return false;const expected=await mac(secret,raw);return [...expected].reduce((n,c,i)=>n|(c.charCodeAt(0)^signature.charCodeAt(i)),0)===0;}
 export async function handleZernio(request,env,ctx){
@@ -13,6 +14,14 @@ export async function handleZernio(request,env,ctx){
   if(path==='/zernio/config'&&request.method==='GET')return response({enabled:ready(env)});
   if(request.method!=='POST')return response({error:'Method not allowed'},405);
   const raw=await request.text();if(raw.length>65536)return response({error:'Too large'},413);
+  if(path==='/zernio/experiment/report'){
+   if(!env.ADMIN_TOKEN||request.headers.get('Authorization')!=='Bearer '+env.ADMIN_TOKEN)return response({error:'Unauthorized'},401);
+   return response(await experimentReport(env));
+  }
+  if(path==='/zernio/experiment'){
+   if(![SITE,'https://www.greatclipsdeal.com'].includes(request.headers.get('Origin')))return response({error:'Use the website'},403);
+   return response(await experimentAction(request,env,JSON.parse(raw)));
+  }
   if(path==='/zernio/webhook'){
    if(!await validSignature(env.ZERNIO_WEBHOOK_SECRET,raw,request.headers.get('X-Zernio-Signature')))return response({error:'Invalid signature'},401);
    const b=JSON.parse(raw);
@@ -34,7 +43,8 @@ export async function handleZernio(request,env,ctx){
   if((await one(env,'SELECT COUNT(*) n FROM zernio_coupon_requests WHERE ip_hash=? AND created_at>?',hash,Date.now()-DAY)).n>=30)return response({error:'Please try again later or use email.'},429);
   const b=JSON.parse(raw),offer=await currentOffer(b.coupon_url);
   const code=Array.from(crypto.getRandomValues(new Uint8Array(8)),v=>'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'[v&31]).join('');
-  await run(env,'INSERT INTO zernio_coupon_requests(code,coupon_url,label,created_at,ip_hash) VALUES(?,?,?,?,?)',code,offer.url,offer.label,Date.now(),hash);
+  let attribution=null;try{attribution=await requestAttribution(env,b);}catch{/* Analytics must never block coupons. */}
+  await run(env,'INSERT INTO zernio_coupon_requests(code,coupon_url,label,created_at,ip_hash,experiment_id,experiment_visitor) VALUES(?,?,?,?,?,?,?)',code,offer.url,offer.label,Date.now(),hash,attribution?.experiment_id||null,attribution?.visitor_id||null);
   return response({whatsapp_url:'https://wa.me/'+env.ZERNIO_PHONE+'?text='+encodeURIComponent('Send me my Great Clips coupon! (GC-'+code+')')});
  }catch(error){return response({error:error.status&&error.status<500?error.message:'Unable to complete this request. Please use email.'},error.status||500);}
 }
@@ -75,7 +85,7 @@ export async function processZernioEvent(env,b){
   if(await one(env,'SELECT id FROM zernio_outbox WHERE id=? AND sent_at IS NOT NULL','coupon:'+code))await run(env,'UPDATE zernio_coupon_requests SET sent_at=COALESCE(sent_at,?) WHERE code=?',Date.now(),code);
   return;
  }
- await run(env,'UPDATE zernio_coupon_requests SET conversation_id=?,sender_id=? WHERE code=? AND conversation_id IS NULL',c,sender,code);
+ await run(env,'UPDATE zernio_coupon_requests SET conversation_id=?,sender_id=?,claimed_at=? WHERE code=? AND conversation_id IS NULL',c,sender,Date.now(),code);
  r=await one(env,'SELECT * FROM zernio_coupon_requests WHERE code=?',code);
  if(r.conversation_id!==c||r.sender_id!==sender||r.sent_at)return;
  await send(env,'invite:'+code,c,{message:"Hey, I’m Kumar! Join my deals group here:\n"+env.ZERNIO_GROUP_INVITE+"\n\nThen tap “I’ve joined” below and I’ll send your selected Great Clips coupon. Reply STOP to cancel.",buttons:[{type:'postback',title:"I’ve joined",payload:'gc_joined:'+code}]});

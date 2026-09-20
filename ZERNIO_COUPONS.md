@@ -15,3 +15,5 @@ Test: node --test tests/zernio-coupons.test.mjs tests/whatsapp.test.mjs tests/wh
 Pause: set ZERNIO_COUPONS_ENABLED=false and redeploy. Email stays available and queue processing stops. No automatic activation of the legacy WhatsApp bot.
 
 Sources: https://docs.zernio.com/webhooks ; https://docs.zernio.com/webhooks/inbox ; https://docs.zernio.com/messages/send-inbox-message .
+
+Popup experiment and GA4 tracking: see ZERNIO_EXPERIMENT.md.

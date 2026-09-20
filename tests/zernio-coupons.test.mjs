@@ -2,6 +2,7 @@ import test from 'node:test';import assert from 'node:assert/strict';import {Dat
 import{handleZernio,drainZernio}from'../cloudflare-worker/zernio-coupons.js';
 function fixture(){
  const db=new DatabaseSync(':memory:');db.exec(readFileSync(new URL('../cloudflare-worker/migrations/006_zernio_self_confirmation.sql',import.meta.url),'utf8'));
+ db.exec("ALTER TABLE zernio_coupon_requests ADD COLUMN experiment_id TEXT; ALTER TABLE zernio_coupon_requests ADD COLUMN experiment_visitor TEXT; ALTER TABLE zernio_coupon_requests ADD COLUMN claimed_at INTEGER;");
  const env={ZERNIO_COUPONS_ENABLED:'true',ZERNIO_API_KEY:'fake',ZERNIO_WEBHOOK_SECRET:'secret',ZERNIO_ACCOUNT_ID:'account',ZERNIO_PHONE:'15555550123',ZERNIO_GROUP_INVITE:'https://chat.whatsapp.com/example',DB:{prepare(sql){return{bind(...args){const s=db.prepare(sql);return{first:async()=>s.get(...args),all:async()=>({results:s.all(...args)}),run:async()=>({meta:{changes:s.run(...args).changes}})}}}}}};
  const pending=[];const ctx={waitUntil(p){pending.push(p)}};
  const call=async(path,data,signature=true)=>{const raw=JSON.stringify(data);return handleZernio(new Request('https://test/zernio/'+path,{method:'POST',headers:{Origin:'https://greatclipsdeal.com','CF-Connecting-IP':'192.0.2.1','X-Zernio-Signature':signature?createHmac('sha256','secret').update(raw).digest('hex'):'bad'},body:raw}),env,ctx)};
