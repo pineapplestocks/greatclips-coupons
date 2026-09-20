@@ -252,4 +252,4 @@ document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') gcCloseModal();
 });
 
-{ const script=document.createElement("script"); script.src="/assets/zernio-coupon-option.js?v=2"; document.head.appendChild(script); }
+{ const script=document.createElement("script"); script.src="/assets/zernio-coupon-option.js?v=3"; document.head.appendChild(script); }
