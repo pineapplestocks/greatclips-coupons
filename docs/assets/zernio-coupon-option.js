@@ -28,7 +28,7 @@
    const section=document.createElement('div');section.className='gc-whatsapp-option';
    section.style.cssText='margin:0;text-align:center';
    const offer=document.createElement('div');offer.style.cssText='text-align:left;background:#f5f0ff;border:1px solid #e5d9ff;border-radius:14px;padding:15px 16px;margin:0 0 18px';
-   const label=document.createElement('p');label.textContent='YOUR SELECTED OFFER';label.style.cssText='font-size:11px;letter-spacing:.08em;font-weight:800;color:#7c3aed;margin:0 0 5px';
+   const label=document.createElement('p');label.textContent='Your Selected Coupon';label.style.cssText='font-size:11px;letter-spacing:.08em;font-weight:800;color:#7c3aed;margin:0 0 5px';
    const title=document.createElement('p');title.className='gc-selected-title';title.style.cssText='font-size:20px;font-weight:800;color:#0f172a;line-height:1.3;margin:0';
    const location=document.createElement('p');location.className='gc-selected-location';location.style.cssText='font-size:14px;line-height:1.5;color:#64748b;margin:5px 0 0';
    offer.append(label,title,location);
