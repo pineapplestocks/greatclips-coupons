@@ -6,6 +6,7 @@
  *   SENDER_EMAIL   — a verified sender email in your Brevo account (e.g. coupons@greatclipsdeal.com)
  */
 
+import { handleZernio, drainZernio, cleanupZernio } from './zernio-coupons.js';
 import { handleWhatsApp } from './whatsapp.js';
 import { maintainExperiment } from './whatsapp-experiment.js';
 
@@ -1039,7 +1040,8 @@ async function runDailyDrip(env, trigger) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
+    if (new URL(request.url).pathname.startsWith('/zernio/')) return handleZernio(request, env, ctx);
     if (new URL(request.url).pathname.startsWith('/whatsapp/')) return handleWhatsApp(request, env);
     // Handle CORS preflight
     if (request.method === 'OPTIONS') {
@@ -1312,6 +1314,8 @@ ${EMAIL_STYLE}
   },
 
   async scheduled(event, env, ctx) {
+    if (event.cron === "* * * * *") { ctx.waitUntil(drainZernio(env)); return; }
+    ctx.waitUntil(cleanupZernio(env));
     ctx.waitUntil(maintainExperiment(env));
     if (env.DB) ctx.waitUntil(env.DB.prepare('DELETE FROM whatsapp_requests WHERE created_at<?').bind(Date.now()-90*86400000).run());
     // Three triggers a day (wrangler.toml). The owner's summary goes out once,

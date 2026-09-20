@@ -1,6 +1,6 @@
 # Automatic WhatsApp coupon delivery
 
-**Current status (September 18, 2026): disabled following the bot account suspension. The website uses the original email coupon flow again. Both Worker WhatsApp flags and the Windows automatic-delivery task remain disabled. Do not restart the bot as part of routine deployment.**
+**Current status (September 18, 2026): disabled following the bot account suspension. The legacy bot remains disabled. The new official Zernio self-confirmation flow is documented in ZERNIO_COUPONS.md; email remains available. Both Worker WhatsApp flags and the Windows automatic-delivery task remain disabled. Do not restart the bot as part of routine deployment.**
 
 The customer selects a coupon and sees one popup on the same page. Clicking its WhatsApp button requests a private invitation and coupon; there is no consent checkbox or separate landing page. WhatsApp opens with a prefilled request, which they send before joining with the same number. An eight-character public reference matches that number to the selected offer. Full internal request IDs and status tokens remain unchanged; old 32-character message references still work. Saved requests receive short references through the authenticated status endpoint. The bot checks actual group membership and sends the coupon automatically, usually within about a minute while online. There is no approval queue or manual release step. Invite clicks alone never prove membership.
 

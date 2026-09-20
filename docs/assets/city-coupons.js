@@ -251,3 +251,5 @@ function gcSubmitEmail(event) {
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') gcCloseModal();
 });
+
+{ const script=document.createElement("script"); script.src="/assets/zernio-coupon-option.js?v=1"; document.head.appendChild(script); }

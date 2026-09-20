@@ -5,6 +5,10 @@ compatibility_date = "2024-01-01"
 [vars]
 WHATSAPP_COUPONS_ENABLED = "false"
 WHATSAPP_EXPERIMENT_ENABLED = "false"
+ZERNIO_COUPONS_ENABLED = "true"
+ZERNIO_ACCOUNT_ID = "6aaedbb68d284ffb211d1a35"
+ZERNIO_PHONE = "14795984840"
+ZERNIO_GROUP_INVITE = "https://chat.whatsapp.com/Jgifq2XjPAkIgfXMdwM5j5"
 
 # Secrets (BREVO_API_KEY and SENDER_EMAIL) must be set via the
 # Cloudflare dashboard: Workers & Pages > greatclips-email > Settings > Variables
@@ -12,7 +16,7 @@ WHATSAPP_EXPERIMENT_ENABLED = "false"
 [triggers]
 # 11am / 1pm / 3pm ET. Three slices of 45 keep each run under the Free plan's
 # 50-subrequest limit; the subscriber summary only goes out on the first.
-crons = ["0 15 * * *", "0 17 * * *", "0 19 * * *"]
+crons = ["* * * * *", "0 15 * * *", "0 17 * * *", "0 19 * * *"]
 
 [[d1_databases]]
 binding = "DB"
