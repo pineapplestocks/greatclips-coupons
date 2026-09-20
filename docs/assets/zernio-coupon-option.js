@@ -34,9 +34,9 @@
    offer.append(label,title,location);
    const button=document.createElement('button');button.disabled=!enabled;button.type='button';button.textContent='Text My Coupon on WhatsApp';
    button.style.cssText='width:100%;padding:15px 12px;border:0;border-radius:12px;background:#08ad59;color:white;font:inherit;font-weight:800;cursor:pointer';
-   const note=document.createElement('p');note.textContent='Send your request, join the group, then tap “I’ve joined” to get your coupon.';
-   note.style.cssText='font-size:14px;line-height:1.5;color:#64748b;margin:10px 0';
-   const reassurance=document.createElement('p');reassurance.textContent='Free to join · Leave anytime';reassurance.style.cssText='font-size:13px;color:#64748b;margin:12px 0 0';
+   const note=document.createElement('p');note.textContent='1: Join Group\n2: Receive Text with Coupon';
+   note.style.cssText='font-size:16px;font-weight:700;line-height:1.8;white-space:pre-line;color:#334155;margin:0 0 16px';
+   const reassurance=document.createElement('p');reassurance.textContent='After joining, tap “I’ve joined” in WhatsApp to receive your coupon.';reassurance.style.cssText='font-size:13px;color:#64748b;margin:12px 0 0';
    const status=document.createElement('p');status.setAttribute('role','status');status.style.cssText='font-size:14px;color:#64748b';if(loaded&&!enabled)status.textContent='WhatsApp is temporarily unavailable. Please try again later.';
    button.onclick=async()=>{
     const url=id==='emailFormView'?(typeof pendingCouponUrl==='undefined'?'':pendingCouponUrl):window.gcPending?.url;
@@ -52,7 +52,7 @@
     }catch(error){if(chat&&!chat.closed)chat.close();status.textContent='Unable to open WhatsApp. Please try again.';}
     finally{delete section.dataset.busy;button.disabled=!enabled;}
    };
-   section.append(offer,button,note,reassurance,status);form.before(section);updateOffer(section,id);
+   section.append(offer,note,button,reassurance,status);form.before(section);updateOffer(section,id);
   }
  }
  install();new MutationObserver(install).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:["class"]});
