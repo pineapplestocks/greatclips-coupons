@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-20T03:52:50Z",
- "scraped_at": "2026-09-19T20:52:30.469541",
- "total": 12,
+ "generated_at": "2026-09-20T10:49:51Z",
+ "scraped_at": "2026-09-20T03:49:29.004171",
+ "total": 13,
  "scopes": {
   "national": 1,
   "salon": 4,
   "unknown": 3,
-  "area": 4
+  "area": 5
  },
  "coupons": [
   {
@@ -17,7 +17,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-09-19",
+   "last_verified": "2026-09-20",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -32,7 +32,7 @@
    "address": "Cherrywood at 9570 SW 62nd Ave",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-19",
+   "last_verified": "2026-09-20",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -49,7 +49,7 @@
    "address": "2575 SW 42nd St",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-19",
+   "last_verified": "2026-09-20",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -66,7 +66,7 @@
    "address": "1126 Bichara Blvd",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-19",
+   "last_verified": "2026-09-20",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -82,7 +82,7 @@
    "area_name": "participating New Mexico",
    "market": "New Mexico",
    "expiration": "09/25/2026",
-   "last_verified": "2026-09-19",
+   "last_verified": "2026-09-20",
    "participating_location_note": "Valid at participating locations in New Mexico",
    "scope": "unknown",
    "price_value": 8.99
@@ -96,7 +96,7 @@
    "area_name": "participating Houston",
    "market": "Houston",
    "expiration": "10/02/2026",
-   "last_verified": "2026-09-19",
+   "last_verified": "2026-09-20",
    "participating_location_note": "Valid at participating locations in Houston",
    "scope": "area",
    "price_value": 8.99,
@@ -149,7 +149,7 @@
    "area_name": "participating San Antonio",
    "market": "San Antonio",
    "expiration": "10/02/2026",
-   "last_verified": "2026-09-19",
+   "last_verified": "2026-09-20",
    "participating_location_note": "Valid at participating locations in San Antonio",
    "scope": "area",
    "price_value": 9.99,
@@ -189,10 +189,38 @@
    "area_name": "Western AZ",
    "market": "Western AZ",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-19",
+   "last_verified": "2026-09-20",
    "participating_location_note": "Valid at participating locations in Western AZ",
    "scope": "unknown",
    "price_value": 10.99
+  },
+  {
+   "url": "https://offers.greatclips.com/e2skyqs",
+   "coupon_code": "e2skyqs",
+   "price": "$11.99",
+   "location_name": "participating Paducah-Cape Girardeau Area",
+   "state": "AREA",
+   "area_name": "participating Paducah-Cape Girardeau",
+   "market": "Paducah-Cape Girardeau",
+   "expiration": "10/02/2026",
+   "last_verified": "2026-09-20",
+   "participating_location_note": "Valid at participating locations in Paducah-Cape Girardeau",
+   "scope": "area",
+   "price_value": 11.99,
+   "metro_keys": [
+    "KY/lone-oak",
+    "MO/cape-girardeau"
+   ],
+   "market_names": [
+    "Lone Oak, KY",
+    "Cape Girardeau, MO"
+   ],
+   "city_keys": [
+    "KY/lone-oak",
+    "KY/paducah",
+    "MO/cape-girardeau",
+    "MO/jackson"
+   ]
   },
   {
    "url": "https://offers.greatclips.com/e1j8GvR",
@@ -203,7 +231,7 @@
    "area_name": "participating West & SW Michigan",
    "market": "West & SW Michigan",
    "expiration": "10/02/2026",
-   "last_verified": "2026-09-19",
+   "last_verified": "2026-09-20",
    "participating_location_note": "Valid at participating locations in West & SW Michigan",
    "scope": "unknown",
    "price_value": 12.99
@@ -217,7 +245,7 @@
    "area_name": "participating San Diego",
    "market": "San Diego",
    "expiration": "09/25/2026",
-   "last_verified": "2026-09-19",
+   "last_verified": "2026-09-20",
    "participating_location_note": "Valid at participating locations in San Diego",
    "scope": "area",
    "price_value": 12.99,
@@ -251,7 +279,7 @@
    "area_name": "participating Greater Los Angeles",
    "market": "Greater Los Angeles",
    "expiration": "10/02/2026",
-   "last_verified": "2026-09-19",
+   "last_verified": "2026-09-20",
    "participating_location_note": "Valid at participating locations in Greater Los Angeles",
    "scope": "area",
    "price_value": 14.99,
@@ -293,7 +321,7 @@
    "address": "4055 Evergreen Village Sq",
    "market": "CA",
    "expiration": "10/07/2026",
-   "last_verified": "2026-09-19",
+   "last_verified": "2026-09-20",
    "scope": "salon",
    "price_value": 19.99,
    "city_keys": [
