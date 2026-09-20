@@ -5,6 +5,7 @@ import{handleZernio,drainZernio}from'../cloudflare-worker/zernio-coupons.js';
 function fixture(){
  const {db,env:baseEnv}=setup();db.exec(readFileSync(new URL('../cloudflare-worker/migrations/006_zernio_self_confirmation.sql',import.meta.url),'utf8'));
  db.exec(readFileSync(new URL('../cloudflare-worker/migrations/007_zernio_experiment.sql',import.meta.url),'utf8'));
+ db.exec(readFileSync(new URL('../cloudflare-worker/migrations/008_zernio_emoji_references.sql',import.meta.url),'utf8'));
  const env={ADMIN_TOKEN:'test-admin',ZERNIO_EXPERIMENT_ENABLED:'true',ZERNIO_COUPONS_ENABLED:'true',ZERNIO_API_KEY:'fake',ZERNIO_WEBHOOK_SECRET:'secret',ZERNIO_ACCOUNT_ID:'account',ZERNIO_PHONE:'15555550123',ZERNIO_GROUP_INVITE:'https://chat.whatsapp.com/example',DB:{prepare(sql){return{bind(...args){const s=db.prepare(sql);return{first:async()=>s.get(...args),all:async()=>({results:s.all(...args)}),run:async()=>({meta:{changes:s.run(...args).changes}})}}}}}};
  const pending=[];const ctx={waitUntil(p){pending.push(p)}};
  const call=async(path,data,signature=true)=>{const raw=JSON.stringify(data);return handleZernio(new Request('https://test/zernio/'+path,{method:'POST',headers:{Origin:'https://greatclipsdeal.com','CF-Connecting-IP':'192.0.2.1','X-Zernio-Signature':signature?createHmac('sha256','secret').update(raw).digest('hex'):'bad'},body:raw}),env,ctx)};
@@ -25,8 +26,8 @@ test('real-traffic experiment: stable allocation, excluded preview, deduplicated
  globalThis.fetch=async url=>{if(String(url).includes('/data/coupons.json'))return Response.json({coupons:[{url:'https://offers.greatclips.com/valid',last_verified:new Date().toISOString().slice(0,10)}]});sends++;return Response.json({data:{messageId:'out'+sends}})};
  try{
   const r=await f.call('requests',{coupon_url:'https://offers.greatclips.com/valid',experiment_id:'zernio-popup-v1',experiment_visitor:id});assert.equal(r.status,200);
-  const code=decodeURIComponent((await r.json()).whatsapp_url).match(/GC-([A-Z2-9]{8})/)[1];
-  await f.call('webhook',f.event('GC-'+code));await f.flush();
+  const message=new URL((await r.json()).whatsapp_url).searchParams.get('text');const code=f.db.prepare('SELECT code FROM zernio_coupon_requests').get().code;
+  await f.call('webhook',f.event(message));await f.flush();
   await f.call('webhook',f.event('','m2','c1','gc_joined:'+code));await f.flush();
   await f.call('webhook',f.event('','m2','c1','gc_joined:'+code));await f.flush();assert.equal(sends,2);
   report=await experimentReport(f.env);const row=report.live.find(r=>r.variant===a.variant);

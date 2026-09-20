@@ -17,3 +17,5 @@ Pause: set ZERNIO_COUPONS_ENABLED=false and redeploy. Email stays available and 
 Sources: https://docs.zernio.com/webhooks ; https://docs.zernio.com/webhooks/inbox ; https://docs.zernio.com/messages/send-inbox-message .
 
 Popup experiment and GA4 tracking: see ZERNIO_EXPERIMENT.md.
+
+Emoji references (migration 008): new wa.me messages contain two emoji instead of a visible GC reference. The internal code, conversation binding, self-confirmation and experiment attribution remain unchanged. Each pair is reserved atomically for one request and is never reused, including after request cleanup, so old copied messages cannot resolve to a newer coupon. Permanent reservations hold only pair and random internal code, no phone or coupon URL. The finite pool is over 90,000 combinations; bounded allocation retries fail closed if crowded. Existing GC messages continue to work. Variation selectors and spacing are normalized. Missing or unknown pairs in coupon requests receive a retry link; unrelated chats are ignored. Pairs are routing references, not authentication; editing a pair into another valid pair can change the requested offer, just like editing the old reference.

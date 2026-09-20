@@ -1,3 +1,4 @@
+import { readPair, reservePair } from './zernio-emoji.js';
 import { experimentAction, requestAttribution, experimentReport } from './zernio-experiment.js';
 import { currentOffer } from './whatsapp.js';
 const SITE='https://greatclipsdeal.com', DAY=86400000;
@@ -43,9 +44,10 @@ export async function handleZernio(request,env,ctx){
   if((await one(env,'SELECT COUNT(*) n FROM zernio_coupon_requests WHERE ip_hash=? AND created_at>?',hash,Date.now()-DAY)).n>=30)return response({error:'Please try again later or use email.'},429);
   const b=JSON.parse(raw),offer=await currentOffer(b.coupon_url);
   const code=Array.from(crypto.getRandomValues(new Uint8Array(8)),v=>'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'[v&31]).join('');
+  const pair=await reservePair(env,code);
   let attribution=null;try{attribution=await requestAttribution(env,b);}catch{/* Analytics must never block coupons. */}
   await run(env,'INSERT INTO zernio_coupon_requests(code,coupon_url,label,created_at,ip_hash,experiment_id,experiment_visitor) VALUES(?,?,?,?,?,?,?)',code,offer.url,offer.label,Date.now(),hash,attribution?.experiment_id||null,attribution?.visitor_id||null);
-  return response({whatsapp_url:'https://wa.me/'+env.ZERNIO_PHONE+'?text='+encodeURIComponent('Send me my Great Clips coupon! (GC-'+code+')')});
+  return response({whatsapp_url:'https://wa.me/'+env.ZERNIO_PHONE+'?text='+encodeURIComponent('Hi! Please send me my Great Clips coupon '+pair)});
  }catch(error){return response({error:error.status&&error.status<500?error.message:'Unable to complete this request. Please use email.'},error.status||500);}
 }
 async function send(env,id,conversation,body){
@@ -69,8 +71,14 @@ export async function processZernioEvent(env,b){
  if(await one(env,'SELECT conversation_id FROM zernio_optouts WHERE conversation_id=?',c))return;
  const confirm=/^gc_joined:([A-Z2-9]{8})$/.exec(b.metadata?.interactiveId||'');
  const match=/\bGC-([A-Z2-9]{8})\b/i.exec(text);
- if(!confirm&&!match)return; // Leave ordinary chats to the owner.
- const code=(confirm||match)[1].toUpperCase();
+ let code=(confirm||match)?.[1].toUpperCase();
+ if(!code&&/great\s*clips\s+coupon/i.test(text)){
+  const pair=readPair(text),reference=pair?await one(env,'SELECT code FROM zernio_emoji_references WHERE pair=?',pair):null;
+  if(reference)code=reference.code;
+  if(!code){await send(env,'retry:'+b.id,c,{message:'Please open your selected coupon at '+SITE+' and tap the WhatsApp button again. Send the prepared message with both emojis so I can find your coupon.'});return;}
+ }
+ if(!code)return; // Leave ordinary chats to the owner.
+
  let r=await one(env,'SELECT * FROM zernio_coupon_requests WHERE code=?',code);
  if(!r||r.cancelled_at||Date.now()-r.created_at>7*DAY)return;
  if(confirm){
