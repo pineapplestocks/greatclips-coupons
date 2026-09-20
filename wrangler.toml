@@ -8,7 +8,7 @@ WHATSAPP_EXPERIMENT_ENABLED = "false"
 ZERNIO_COUPONS_ENABLED = "true"
 ZERNIO_ACCOUNT_ID = "6aaedbb68d284ffb211d1a35"
 ZERNIO_PHONE = "14795984840"
-ZERNIO_GROUP_INVITE = "https://chat.whatsapp.com/Jgifq2XjPAkIgfXMdwM5j5"
+ZERNIO_GROUP_INVITE = "https://chat.whatsapp.com/D89n6zvsVZU9SUkeiZ3SgB"
 
 # Secrets (BREVO_API_KEY and SENDER_EMAIL) must be set via the
 # Cloudflare dashboard: Workers & Pages > greatclips-email > Settings > Variables
