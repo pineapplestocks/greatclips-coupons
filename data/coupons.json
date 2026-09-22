@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-21T20:47:02.597923",
+  "scraped_at": "2026-09-22T04:08:12.671710",
   "total_coupons": 13,
   "coupons": [
     {
@@ -12,11 +12,11 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-09-21",
+      "last_verified": "2026-09-22",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-09-07",
-      "last_seen": "2026-09-21"
+      "last_seen": "2026-09-22"
     },
     {
       "url": "https://offers.greatclips.com/g9cBmt2",
@@ -30,7 +30,7 @@
       "expiration": "10/09/2026",
       "price": "$8.99",
       "market": "FL",
-      "last_verified": "2026-09-21",
+      "last_verified": "2026-09-22",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
@@ -48,7 +48,7 @@
       "expiration": "10/09/2026",
       "price": "$8.99",
       "market": "FL",
-      "last_verified": "2026-09-21",
+      "last_verified": "2026-09-22",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
@@ -66,7 +66,7 @@
       "expiration": "10/09/2026",
       "price": "$8.99",
       "market": "FL",
-      "last_verified": "2026-09-21",
+      "last_verified": "2026-09-22",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
@@ -82,7 +82,7 @@
       "area_name": "participating New Mexico",
       "price": "$8.99",
       "market": "New Mexico",
-      "last_verified": "2026-09-21",
+      "last_verified": "2026-09-22",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in New Mexico",
       "added_date": "2026-09-15",
@@ -98,11 +98,11 @@
       "area_name": "participating Houston",
       "price": "$8.99",
       "market": "Houston",
-      "last_verified": "2026-09-21",
+      "last_verified": "2026-09-22",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Houston",
       "added_date": "2026-09-19",
-      "last_seen": "2026-09-21"
+      "last_seen": "2026-09-22"
     },
     {
       "url": "https://offers.greatclips.com/dEk0iJA",
@@ -114,11 +114,11 @@
       "area_name": "participating San Antonio",
       "price": "$9.99",
       "market": "San Antonio",
-      "last_verified": "2026-09-21",
+      "last_verified": "2026-09-22",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in San Antonio",
       "added_date": "2026-09-19",
-      "last_seen": "2026-09-21"
+      "last_seen": "2026-09-22"
     },
     {
       "url": "https://offers.greatclips.com/ooRyocE",
@@ -130,11 +130,11 @@
       "area_name": "Western AZ",
       "price": "$10.99",
       "market": "Western AZ",
-      "last_verified": "2026-09-21",
+      "last_verified": "2026-09-22",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Western AZ",
       "added_date": "2026-09-19",
-      "last_seen": "2026-09-21"
+      "last_seen": "2026-09-22"
     },
     {
       "url": "https://offers.greatclips.com/e2skyqs",
@@ -146,7 +146,7 @@
       "area_name": "only at participating Paducah-Cape Girardeau",
       "price": "$11.99",
       "market": "Paducah-Cape Girardeau",
-      "last_verified": "2026-09-21",
+      "last_verified": "2026-09-22",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Paducah-Cape Girardeau",
       "added_date": "2026-09-20",
@@ -162,11 +162,11 @@
       "area_name": "only at participating West & SW Michigan",
       "price": "$12.99",
       "market": "West & SW Michigan",
-      "last_verified": "2026-09-21",
+      "last_verified": "2026-09-22",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in West & SW Michigan",
       "added_date": "2026-09-10",
-      "last_seen": "2026-09-21"
+      "last_seen": "2026-09-22"
     },
     {
       "url": "https://offers.greatclips.com/Sotihua",
@@ -178,7 +178,7 @@
       "area_name": "participating San Diego",
       "price": "$12.99",
       "market": "San Diego",
-      "last_verified": "2026-09-21",
+      "last_verified": "2026-09-22",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in San Diego",
       "added_date": "2026-09-12",
@@ -194,11 +194,11 @@
       "area_name": "participating Greater Los Angeles",
       "price": "$14.99",
       "market": "Greater Los Angeles",
-      "last_verified": "2026-09-21",
+      "last_verified": "2026-09-22",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Greater Los Angeles",
       "added_date": "2026-09-19",
-      "last_seen": "2026-09-21"
+      "last_seen": "2026-09-22"
     },
     {
       "url": "https://offers.greatclips.com/ZPzrMSl",
@@ -212,7 +212,7 @@
       "expiration": "10/07/2026",
       "price": "$19.99",
       "market": "CA",
-      "last_verified": "2026-09-21",
+      "last_verified": "2026-09-22",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
