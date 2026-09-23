@@ -1037,9 +1037,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips savings update: $14.99 coupon in the Greater Los Angeles area. Expires Oct 2, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#VvNG05O\n\n#GreatClips #SaveMoney"
+    },
+    {
+      "coupon_code": "Vu49Mxx",
+      "coupon_url": "https://offers.greatclips.com/Vu49Mxx",
+      "post_id": "6ab427964def0d02fffbc294",
+      "posted_at": "2026-09-23T19:25:10Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $9.99 in the Austin area. Expires Oct 9, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#Vu49Mxx\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-09-21T00:00:12Z",
+  "last_post": "2026-09-23T19:25:10Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1137,6 +1146,7 @@
     "https://offers.greatclips.com/VRDfsr4",
     "https://offers.greatclips.com/VfFt8ot",
     "https://offers.greatclips.com/VtlklLX",
+    "https://offers.greatclips.com/Vu49Mxx",
     "https://offers.greatclips.com/VvNG05O",
     "https://offers.greatclips.com/WA4FJ3X",
     "https://offers.greatclips.com/WwsRrEB",
