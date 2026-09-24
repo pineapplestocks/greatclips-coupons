@@ -100,6 +100,21 @@
       "actual_privacy": "public",
       "thumbnail_uploaded": true,
       "captions": "uploaded"
+    },
+    {
+      "id": "830dd8455ef3641d6fb0",
+      "type": "local",
+      "date": "2026-09-24",
+      "offer_keys": [
+        "568136451edc6dbf9d05"
+      ],
+      "status": "uploaded",
+      "location": "Austin",
+      "video_id": "2CR4uZs_gMU",
+      "requested_privacy": "public",
+      "actual_privacy": "public",
+      "thumbnail_uploaded": true,
+      "captions": "uploaded"
     }
   ]
 }
