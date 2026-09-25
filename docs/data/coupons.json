@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-25T03:54:10Z",
- "scraped_at": "2026-09-24T20:53:49.835447",
- "total": 14,
+ "generated_at": "2026-09-25T11:22:17Z",
+ "scraped_at": "2026-09-25T04:22:00.192609",
+ "total": 12,
  "scopes": {
   "national": 1,
   "salon": 4,
-  "unknown": 3,
-  "area": 6
+  "area": 5,
+  "unknown": 2
  },
  "coupons": [
   {
@@ -17,7 +17,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-09-24",
+   "last_verified": "2026-09-25",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -32,7 +32,7 @@
    "address": "Cherrywood at 9570 SW 62nd Ave",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-24",
+   "last_verified": "2026-09-25",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -49,7 +49,7 @@
    "address": "2575 SW 42nd St",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-24",
+   "last_verified": "2026-09-25",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -66,26 +66,12 @@
    "address": "1126 Bichara Blvd",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-24",
+   "last_verified": "2026-09-25",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
     "FL/the-villages"
    ]
-  },
-  {
-   "url": "https://offers.greatclips.com/8S2VjOP",
-   "coupon_code": "8S2VjOP",
-   "price": "$8.99",
-   "location_name": "participating New Mexico Area",
-   "state": "AREA",
-   "area_name": "participating New Mexico",
-   "market": "New Mexico",
-   "expiration": "09/25/2026",
-   "last_verified": "2026-09-24",
-   "participating_location_note": "Valid at participating locations in New Mexico",
-   "scope": "unknown",
-   "price_value": 8.99
   },
   {
    "url": "https://offers.greatclips.com/rDKX0S8",
@@ -96,7 +82,7 @@
    "area_name": "participating Houston",
    "market": "Houston",
    "expiration": "10/02/2026",
-   "last_verified": "2026-09-24",
+   "last_verified": "2026-09-25",
    "participating_location_note": "Valid at participating locations in Houston",
    "scope": "area",
    "price_value": 8.99,
@@ -149,7 +135,7 @@
    "area_name": "participating San Antonio",
    "market": "San Antonio",
    "expiration": "10/02/2026",
-   "last_verified": "2026-09-24",
+   "last_verified": "2026-09-25",
    "participating_location_note": "Valid at participating locations in San Antonio",
    "scope": "area",
    "price_value": 9.99,
@@ -189,7 +175,7 @@
    "area_name": "participating Austin",
    "market": "Austin",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-24",
+   "last_verified": "2026-09-25",
    "participating_location_note": "Valid at participating locations in Austin",
    "scope": "area",
    "price_value": 9.99,
@@ -224,7 +210,7 @@
    "area_name": "Western AZ",
    "market": "Western AZ",
    "expiration": "10/09/2026",
-   "last_verified": "2026-09-24",
+   "last_verified": "2026-09-25",
    "participating_location_note": "Valid at participating locations in Western AZ",
    "scope": "unknown",
    "price_value": 10.99
@@ -238,7 +224,7 @@
    "area_name": "participating Paducah-Cape Girardeau",
    "market": "Paducah-Cape Girardeau",
    "expiration": "10/02/2026",
-   "last_verified": "2026-09-24",
+   "last_verified": "2026-09-25",
    "participating_location_note": "Valid at participating locations in Paducah-Cape Girardeau",
    "scope": "area",
    "price_value": 11.99,
@@ -266,44 +252,10 @@
    "area_name": "participating West & SW Michigan",
    "market": "West & SW Michigan",
    "expiration": "10/02/2026",
-   "last_verified": "2026-09-24",
+   "last_verified": "2026-09-25",
    "participating_location_note": "Valid at participating locations in West & SW Michigan",
    "scope": "unknown",
    "price_value": 12.99
-  },
-  {
-   "url": "https://offers.greatclips.com/Sotihua",
-   "coupon_code": "Sotihua",
-   "price": "$12.99",
-   "location_name": "participating San Diego Area",
-   "state": "AREA",
-   "area_name": "participating San Diego",
-   "market": "San Diego",
-   "expiration": "09/25/2026",
-   "last_verified": "2026-09-24",
-   "participating_location_note": "Valid at participating locations in San Diego",
-   "scope": "area",
-   "price_value": 12.99,
-   "metro_keys": [
-    "CA/san-diego"
-   ],
-   "market_names": [
-    "San Diego, CA"
-   ],
-   "city_keys": [
-    "CA/san-diego",
-    "CA/chula-vista",
-    "CA/oceanside",
-    "CA/poway",
-    "CA/el-cajon",
-    "CA/encinitas",
-    "CA/escondido",
-    "CA/imperial-beach",
-    "CA/la-mesa",
-    "CA/san-marcos",
-    "CA/santee",
-    "CA/vista"
-   ]
   },
   {
    "url": "https://offers.greatclips.com/VvNG05O",
@@ -314,7 +266,7 @@
    "area_name": "participating Greater Los Angeles",
    "market": "Greater Los Angeles",
    "expiration": "10/02/2026",
-   "last_verified": "2026-09-24",
+   "last_verified": "2026-09-25",
    "participating_location_note": "Valid at participating locations in Greater Los Angeles",
    "scope": "area",
    "price_value": 14.99,
@@ -356,7 +308,7 @@
    "address": "4055 Evergreen Village Sq",
    "market": "CA",
    "expiration": "10/07/2026",
-   "last_verified": "2026-09-24",
+   "last_verified": "2026-09-25",
    "scope": "salon",
    "price_value": 19.99,
    "city_keys": [
