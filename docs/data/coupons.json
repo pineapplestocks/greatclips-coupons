@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-09-26T13:03:40Z",
- "scraped_at": "2026-09-26T03:58:26.814972",
- "total": 13,
+ "generated_at": "2026-09-26T15:58:40Z",
+ "scraped_at": "2026-09-26T08:58:21.674444",
+ "total": 14,
  "scopes": {
   "national": 1,
   "salon": 4,
-  "area": 6,
+  "area": 7,
   "unknown": 2
  },
  "coupons": [
@@ -214,6 +214,33 @@
    "participating_location_note": "Valid at participating locations in Western AZ",
    "scope": "unknown",
    "price_value": 10.99
+  },
+  {
+   "url": "https://offers.greatclips.com/sp39D67",
+   "coupon_code": "sp39D67",
+   "price": "$10.99",
+   "location_name": "participating Las Vegas Area",
+   "state": "AREA",
+   "area_name": "participating Las Vegas",
+   "market": "Las Vegas",
+   "expiration": "10/16/2026",
+   "last_verified": "2026-09-26",
+   "participating_location_note": "Valid at participating locations in Las Vegas",
+   "scope": "area",
+   "price_value": 10.99,
+   "metro_keys": [
+    "NV/las-vegas"
+   ],
+   "market_names": [
+    "Las Vegas, NV"
+   ],
+   "city_keys": [
+    "NV/las-vegas",
+    "NV/henderson",
+    "NV/north-las-vegas",
+    "NV/boulder-city",
+    "NV/nellis-afb"
+   ]
   },
   {
    "url": "https://offers.greatclips.com/e2skyqs",
