@@ -1064,9 +1064,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips savings update: $14.99 coupon in the Greater Western Washington area. Expires Oct 9, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#8FJ8mLg\n\n#GreatClips #SaveMoney"
+    },
+    {
+      "coupon_code": "j6HHWsk",
+      "coupon_url": "https://offers.greatclips.com/j6HHWsk",
+      "post_id": "6abe2e86f2fcbd2a087229d8",
+      "posted_at": "2026-10-01T09:57:26Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $9.99 in the Greater Triangle area. Expires Oct 23, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#j6HHWsk\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-09-27T00:22:34Z",
+  "last_post": "2026-10-01T09:57:26Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1200,6 +1209,7 @@
     "https://offers.greatclips.com/hwWLU3h",
     "https://offers.greatclips.com/i3vMWCQ",
     "https://offers.greatclips.com/isjblpZ",
+    "https://offers.greatclips.com/j6HHWsk",
     "https://offers.greatclips.com/kwDlonG",
     "https://offers.greatclips.com/lAdePNG",
     "https://offers.greatclips.com/lM6ugQf",
