@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-09-30T14:58:09.004161",
-  "total_coupons": 14,
+  "scraped_at": "2026-09-30T21:40:27.874988",
+  "total_coupons": 17,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/u7R1t67",
@@ -52,7 +52,7 @@
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
-      "last_seen": "2026-09-28"
+      "last_seen": "2026-09-30"
     },
     {
       "url": "https://offers.greatclips.com/8NUmR2H",
@@ -70,7 +70,7 @@
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
-      "last_seen": "2026-09-28"
+      "last_seen": "2026-09-30"
     },
     {
       "url": "https://offers.greatclips.com/rDKX0S8",
@@ -87,6 +87,24 @@
       "participating_location_note": "Valid at participating locations in Houston",
       "added_date": "2026-09-19",
       "last_seen": "2026-09-25"
+    },
+    {
+      "url": "https://offers.greatclips.com/ki2QSE0",
+      "coupon_code": "ki2QSE0",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8458/50707-002-1200x600-8.99.jpg",
+      "valid_text": "Valid at Great Clips Market at Cherrywood at 9570 SW 62nd Ave in Ocala, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 10/09/2026",
+      "location_name": "Market",
+      "address": "Cherrywood at 9570 SW 62nd Ave",
+      "city": "Ocala,",
+      "state": "FL",
+      "expiration": "10/09/2026",
+      "price": "$8.99",
+      "market": "FL",
+      "last_verified": "2026-09-30",
+      "source": "facebook_ad_library",
+      "participating_location_note": null,
+      "added_date": "2026-09-30",
+      "last_seen": "2026-09-30"
     },
     {
       "url": "https://offers.greatclips.com/dEk0iJA",
@@ -118,6 +136,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Austin",
       "added_date": "2026-09-23",
+      "last_seen": "2026-09-30"
+    },
+    {
+      "url": "https://offers.greatclips.com/j6HHWsk",
+      "coupon_code": "j6HHWsk",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21034/50707-002-1200x600-9.99.jpg",
+      "expiration": "10/23/2026",
+      "location_name": "participating Greater Triangle Area",
+      "state": "AREA",
+      "area_name": "participating Greater Triangle",
+      "price": "$9.99",
+      "market": "Greater Triangle",
+      "last_verified": "2026-09-30",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Greater Triangle",
+      "added_date": "2026-09-30",
       "last_seen": "2026-09-30"
     },
     {
@@ -214,6 +248,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Greater Western Washington",
       "added_date": "2026-09-26",
+      "last_seen": "2026-09-30"
+    },
+    {
+      "url": "https://offers.greatclips.com/MYE0aAk",
+      "coupon_code": "MYE0aAk",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21037/50707-002-1200x600-14.99.jpg",
+      "expiration": "10/16/2026",
+      "location_name": "only at participating Washington D.C. Area",
+      "state": "AREA",
+      "area_name": "only at participating Washington D.C.",
+      "price": "$14.99",
+      "market": "Washington D.C.",
+      "last_verified": "2026-09-30",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Washington D.C.",
+      "added_date": "2026-09-30",
       "last_seen": "2026-09-30"
     },
     {

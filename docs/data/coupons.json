@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-09-30T21:58:30Z",
- "scraped_at": "2026-09-30T14:58:09.004161",
- "total": 14,
+ "generated_at": "2026-10-01T04:40:49Z",
+ "scraped_at": "2026-09-30T21:40:27.874988",
+ "total": 17,
  "scopes": {
   "national": 1,
-  "salon": 4,
-  "area": 7,
-  "unknown": 2
+  "salon": 5,
+  "area": 8,
+  "unknown": 3
  },
  "coupons": [
   {
@@ -127,6 +127,23 @@
    ]
   },
   {
+   "url": "https://offers.greatclips.com/ki2QSE0",
+   "coupon_code": "ki2QSE0",
+   "price": "$8.99",
+   "location_name": "Market",
+   "city": "Ocala,",
+   "state": "FL",
+   "address": "Cherrywood at 9570 SW 62nd Ave",
+   "market": "FL",
+   "expiration": "10/09/2026",
+   "last_verified": "2026-09-30",
+   "scope": "salon",
+   "price_value": 8.99,
+   "city_keys": [
+    "FL/ocala"
+   ]
+  },
+  {
    "url": "https://offers.greatclips.com/dEk0iJA",
    "coupon_code": "dEk0iJA",
    "price": "$9.99",
@@ -199,6 +216,50 @@
     "TX/marble-falls",
     "TX/pflugerville",
     "TX/taylor"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/j6HHWsk",
+   "coupon_code": "j6HHWsk",
+   "price": "$9.99",
+   "location_name": "participating Greater Triangle Area",
+   "state": "AREA",
+   "area_name": "participating Greater Triangle",
+   "market": "Greater Triangle",
+   "expiration": "10/23/2026",
+   "last_verified": "2026-09-30",
+   "participating_location_note": "Valid at participating locations in Greater Triangle",
+   "scope": "area",
+   "price_value": 9.99,
+   "metro_keys": [
+    "NC/apex"
+   ],
+   "market_names": [
+    "Raleigh-Durham, NC"
+   ],
+   "city_keys": [
+    "NC/raleigh",
+    "NC/cary",
+    "NC/chapel-hill",
+    "NC/durham",
+    "NC/wake-forest",
+    "NC/apex",
+    "NC/clayton",
+    "NC/garner",
+    "NC/holly-springs",
+    "NC/benson",
+    "NC/carrboro",
+    "NC/fuquay-varina",
+    "NC/hillsborough",
+    "NC/knightdale",
+    "NC/mebane",
+    "NC/morrisville",
+    "NC/pittsboro",
+    "NC/rolesville",
+    "NC/siler-city",
+    "NC/smithfield",
+    "NC/wendell",
+    "NC/youngsville"
    ]
   },
   {
@@ -388,6 +449,20 @@
     "WA/university-place",
     "WA/yelm"
    ]
+  },
+  {
+   "url": "https://offers.greatclips.com/MYE0aAk",
+   "coupon_code": "MYE0aAk",
+   "price": "$14.99",
+   "location_name": "participating Washington D.C. Area",
+   "state": "AREA",
+   "area_name": "participating Washington D.C.",
+   "market": "Washington D.C.",
+   "expiration": "10/16/2026",
+   "last_verified": "2026-09-30",
+   "participating_location_note": "Valid at participating locations in Washington D.C.",
+   "scope": "unknown",
+   "price_value": 14.99
   },
   {
    "url": "https://offers.greatclips.com/ZPzrMSl",
