@@ -115,6 +115,21 @@
       "actual_privacy": "public",
       "thumbnail_uploaded": true,
       "captions": "uploaded"
+    },
+    {
+      "id": "e8ce9e498c62c0a79035",
+      "type": "local",
+      "date": "2026-10-01",
+      "offer_keys": [
+        "e9969bb42158e935a0be"
+      ],
+      "status": "uploaded",
+      "location": "Atlanta & North Georgia",
+      "video_id": "S-7p0dOxtzk",
+      "requested_privacy": "public",
+      "actual_privacy": "public",
+      "thumbnail_uploaded": true,
+      "captions": "uploaded"
     }
   ]
 }
