@@ -1100,9 +1100,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips savings update: $14.99 coupon in the only at participating Washington D.C. area. Expires Oct 16, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#MYE0aAk\n\n#GreatClips #SaveMoney"
+    },
+    {
+      "coupon_code": "ki2QSE0",
+      "coupon_url": "https://offers.greatclips.com/ki2QSE0",
+      "post_id": "6ac0117d9c546d86ef1822e4",
+      "posted_at": "2026-10-02T20:18:05Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips savings update: $8.99 coupon in Ocala, FL. Expires Oct 9, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#ki2QSE0\n\n#GreatClips #SaveMoney"
     }
   ],
-  "last_post": "2026-10-02T09:33:32Z",
+  "last_post": "2026-10-02T20:18:05Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1240,6 +1249,7 @@
     "https://offers.greatclips.com/i3vMWCQ",
     "https://offers.greatclips.com/isjblpZ",
     "https://offers.greatclips.com/j6HHWsk",
+    "https://offers.greatclips.com/ki2QSE0",
     "https://offers.greatclips.com/kwDlonG",
     "https://offers.greatclips.com/lAdePNG",
     "https://offers.greatclips.com/lM6ugQf",
