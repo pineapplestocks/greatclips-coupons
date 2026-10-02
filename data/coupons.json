@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-10-01T21:32:10.125093",
-  "total_coupons": 19,
+  "scraped_at": "2026-10-02T05:02:27.204476",
+  "total_coupons": 14,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/u7R1t67",
@@ -12,7 +12,7 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-10-01",
+      "last_verified": "2026-10-02",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-09-07",
@@ -30,7 +30,7 @@
       "expiration": "10/09/2026",
       "price": "$8.99",
       "market": "FL",
-      "last_verified": "2026-10-01",
+      "last_verified": "2026-10-02",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
@@ -48,11 +48,11 @@
       "expiration": "10/09/2026",
       "price": "$8.99",
       "market": "FL",
-      "last_verified": "2026-10-01",
+      "last_verified": "2026-10-02",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
-      "last_seen": "2026-10-01"
+      "last_seen": "2026-10-02"
     },
     {
       "url": "https://offers.greatclips.com/8NUmR2H",
@@ -66,27 +66,11 @@
       "expiration": "10/09/2026",
       "price": "$8.99",
       "market": "FL",
-      "last_verified": "2026-10-01",
+      "last_verified": "2026-10-02",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",
-      "last_seen": "2026-10-01"
-    },
-    {
-      "url": "https://offers.greatclips.com/rDKX0S8",
-      "coupon_code": "rDKX0S8",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20999/50707-002-1200x600-8.99.jpg",
-      "expiration": "10/02/2026",
-      "location_name": "participating Houston Area",
-      "state": "AREA",
-      "area_name": "participating Houston",
-      "price": "$8.99",
-      "market": "Houston",
-      "last_verified": "2026-10-01",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Houston",
-      "added_date": "2026-09-19",
-      "last_seen": "2026-09-25"
+      "last_seen": "2026-10-02"
     },
     {
       "url": "https://offers.greatclips.com/ki2QSE0",
@@ -100,27 +84,11 @@
       "expiration": "10/09/2026",
       "price": "$8.99",
       "market": "FL",
-      "last_verified": "2026-10-01",
+      "last_verified": "2026-10-02",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-30",
-      "last_seen": "2026-10-01"
-    },
-    {
-      "url": "https://offers.greatclips.com/dEk0iJA",
-      "coupon_code": "dEk0iJA",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20998/50707-002-1200x600-9.99.jpg",
-      "expiration": "10/02/2026",
-      "location_name": "participating San Antonio Area",
-      "state": "AREA",
-      "area_name": "participating San Antonio",
-      "price": "$9.99",
-      "market": "San Antonio",
-      "last_verified": "2026-10-01",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in San Antonio",
-      "added_date": "2026-09-19",
-      "last_seen": "2026-09-25"
+      "last_seen": "2026-10-02"
     },
     {
       "url": "https://offers.greatclips.com/Vu49Mxx",
@@ -132,11 +100,11 @@
       "area_name": "participating Austin",
       "price": "$9.99",
       "market": "Austin",
-      "last_verified": "2026-10-01",
+      "last_verified": "2026-10-02",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Austin",
       "added_date": "2026-09-23",
-      "last_seen": "2026-10-01"
+      "last_seen": "2026-10-02"
     },
     {
       "url": "https://offers.greatclips.com/j6HHWsk",
@@ -148,11 +116,11 @@
       "area_name": "participating Greater Triangle",
       "price": "$9.99",
       "market": "Greater Triangle",
-      "last_verified": "2026-10-01",
+      "last_verified": "2026-10-02",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Greater Triangle",
       "added_date": "2026-09-30",
-      "last_seen": "2026-10-01"
+      "last_seen": "2026-10-02"
     },
     {
       "url": "https://offers.greatclips.com/YubPRmS",
@@ -164,11 +132,11 @@
       "area_name": "only at participating Atlanta & North Georgia",
       "price": "$9.99",
       "market": "Atlanta & North Georgia",
-      "last_verified": "2026-10-01",
+      "last_verified": "2026-10-02",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Atlanta & North Georgia",
       "added_date": "2026-10-01",
-      "last_seen": "2026-10-01"
+      "last_seen": "2026-10-02"
     },
     {
       "url": "https://offers.greatclips.com/ooRyocE",
@@ -180,11 +148,11 @@
       "area_name": "Western AZ",
       "price": "$10.99",
       "market": "Western AZ",
-      "last_verified": "2026-10-01",
+      "last_verified": "2026-10-02",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Western AZ",
       "added_date": "2026-09-19",
-      "last_seen": "2026-10-01"
+      "last_seen": "2026-10-02"
     },
     {
       "url": "https://offers.greatclips.com/sp39D67",
@@ -196,27 +164,11 @@
       "area_name": "participating Las Vegas",
       "price": "$10.99",
       "market": "Las Vegas",
-      "last_verified": "2026-10-01",
+      "last_verified": "2026-10-02",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Las Vegas",
       "added_date": "2026-09-26",
-      "last_seen": "2026-10-01"
-    },
-    {
-      "url": "https://offers.greatclips.com/e2skyqs",
-      "coupon_code": "e2skyqs",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20778/50707-002-1200x600-11.99.jpg",
-      "expiration": "10/02/2026",
-      "location_name": "only at participating Paducah-Cape Girardeau Area",
-      "state": "AREA",
-      "area_name": "only at participating Paducah-Cape Girardeau",
-      "price": "$11.99",
-      "market": "Paducah-Cape Girardeau",
-      "last_verified": "2026-10-01",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Paducah-Cape Girardeau",
-      "added_date": "2026-09-20",
-      "last_seen": "2026-09-20"
+      "last_seen": "2026-10-02"
     },
     {
       "url": "https://offers.greatclips.com/eSWLmcD",
@@ -228,43 +180,11 @@
       "area_name": "only at participating Twin Cities & surrounding area",
       "price": "$11.99",
       "market": "Twin Cities & surrounding area",
-      "last_verified": "2026-10-01",
+      "last_verified": "2026-10-02",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Twin Cities & surrounding area",
       "added_date": "2026-10-01",
-      "last_seen": "2026-10-01"
-    },
-    {
-      "url": "https://offers.greatclips.com/e1j8GvR",
-      "coupon_code": "e1j8GvR",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20976/50707-002-1200x600-12.99.jpg",
-      "expiration": "10/02/2026",
-      "location_name": "only at participating West & SW Michigan Area",
-      "state": "AREA",
-      "area_name": "only at participating West & SW Michigan",
-      "price": "$12.99",
-      "market": "West & SW Michigan",
-      "last_verified": "2026-10-01",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in West & SW Michigan",
-      "added_date": "2026-09-10",
-      "last_seen": "2026-09-25"
-    },
-    {
-      "url": "https://offers.greatclips.com/VvNG05O",
-      "coupon_code": "VvNG05O",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20996/50707-002-1200x600-14.99.jpg",
-      "expiration": "10/02/2026",
-      "location_name": "participating Greater Los Angeles Area",
-      "state": "AREA",
-      "area_name": "participating Greater Los Angeles",
-      "price": "$14.99",
-      "market": "Greater Los Angeles",
-      "last_verified": "2026-10-01",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Greater Los Angeles",
-      "added_date": "2026-09-19",
-      "last_seen": "2026-09-25"
+      "last_seen": "2026-10-02"
     },
     {
       "url": "https://offers.greatclips.com/8FJ8mLg",
@@ -276,11 +196,11 @@
       "area_name": "participating Greater Western Washington",
       "price": "$14.99",
       "market": "Greater Western Washington",
-      "last_verified": "2026-10-01",
+      "last_verified": "2026-10-02",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Greater Western Washington",
       "added_date": "2026-09-26",
-      "last_seen": "2026-10-01"
+      "last_seen": "2026-10-02"
     },
     {
       "url": "https://offers.greatclips.com/MYE0aAk",
@@ -292,11 +212,11 @@
       "area_name": "only at participating Washington D.C.",
       "price": "$14.99",
       "market": "Washington D.C.",
-      "last_verified": "2026-10-01",
+      "last_verified": "2026-10-02",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Washington D.C.",
       "added_date": "2026-09-30",
-      "last_seen": "2026-10-01"
+      "last_seen": "2026-10-02"
     },
     {
       "url": "https://offers.greatclips.com/ZPzrMSl",
@@ -310,7 +230,7 @@
       "expiration": "10/07/2026",
       "price": "$19.99",
       "market": "CA",
-      "last_verified": "2026-10-01",
+      "last_verified": "2026-10-02",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-09-08",

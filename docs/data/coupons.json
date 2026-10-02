@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-10-02T04:32:31Z",
- "scraped_at": "2026-10-01T21:32:10.125093",
- "total": 19,
+ "generated_at": "2026-10-02T12:02:50Z",
+ "scraped_at": "2026-10-02T05:02:27.204476",
+ "total": 14,
  "scopes": {
   "national": 1,
   "salon": 5,
-  "area": 10,
-  "unknown": 3
+  "area": 6,
+  "unknown": 2
  },
  "coupons": [
   {
@@ -17,7 +17,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-10-01",
+   "last_verified": "2026-10-02",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -32,7 +32,7 @@
    "address": "Cherrywood at 9570 SW 62nd Ave",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-10-01",
+   "last_verified": "2026-10-02",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -49,7 +49,7 @@
    "address": "2575 SW 42nd St",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-10-01",
+   "last_verified": "2026-10-02",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -66,64 +66,11 @@
    "address": "1126 Bichara Blvd",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-10-01",
+   "last_verified": "2026-10-02",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
     "FL/the-villages"
-   ]
-  },
-  {
-   "url": "https://offers.greatclips.com/rDKX0S8",
-   "coupon_code": "rDKX0S8",
-   "price": "$8.99",
-   "location_name": "participating Houston Area",
-   "state": "AREA",
-   "area_name": "participating Houston",
-   "market": "Houston",
-   "expiration": "10/02/2026",
-   "last_verified": "2026-10-01",
-   "participating_location_note": "Valid at participating locations in Houston",
-   "scope": "area",
-   "price_value": 8.99,
-   "metro_keys": [
-    "TX/houston"
-   ],
-   "market_names": [
-    "Houston, TX"
-   ],
-   "city_keys": [
-    "TX/houston",
-    "TX/katy",
-    "TX/cypress",
-    "TX/spring",
-    "TX/conroe",
-    "TX/missouri-city",
-    "TX/pearland",
-    "TX/richmond",
-    "TX/baytown",
-    "TX/kingwood",
-    "TX/league-city",
-    "TX/magnolia",
-    "TX/the-woodlands",
-    "TX/tomball",
-    "TX/alvin",
-    "TX/cleveland",
-    "TX/crosby",
-    "TX/friendswood",
-    "TX/humble",
-    "TX/la-porte",
-    "TX/liberty",
-    "TX/manvel",
-    "TX/mont-belvieu",
-    "TX/montgomery",
-    "TX/new-caney",
-    "TX/porter",
-    "TX/stafford",
-    "TX/sugar-land",
-    "TX/texas-city",
-    "TX/webster",
-    "TX/willis"
    ]
   },
   {
@@ -136,51 +83,11 @@
    "address": "Cherrywood at 9570 SW 62nd Ave",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-10-01",
+   "last_verified": "2026-10-02",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
     "FL/ocala"
-   ]
-  },
-  {
-   "url": "https://offers.greatclips.com/dEk0iJA",
-   "coupon_code": "dEk0iJA",
-   "price": "$9.99",
-   "location_name": "participating San Antonio Area",
-   "state": "AREA",
-   "area_name": "participating San Antonio",
-   "market": "San Antonio",
-   "expiration": "10/02/2026",
-   "last_verified": "2026-10-01",
-   "participating_location_note": "Valid at participating locations in San Antonio",
-   "scope": "area",
-   "price_value": 9.99,
-   "metro_keys": [
-    "TX/schertz"
-   ],
-   "market_names": [
-    "San Antonio, TX"
-   ],
-   "city_keys": [
-    "TX/san-antonio",
-    "TX/new-braunfels",
-    "TX/boerne",
-    "TX/cibolo",
-    "TX/converse",
-    "TX/san-marcos",
-    "TX/seguin",
-    "TX/buda",
-    "TX/bulverde",
-    "TX/dripping-springs",
-    "TX/helotes",
-    "TX/kyle",
-    "TX/live-oak",
-    "TX/lockhart",
-    "TX/lytle",
-    "TX/schertz",
-    "TX/universal-city",
-    "TX/windcrest"
    ]
   },
   {
@@ -192,7 +99,7 @@
    "area_name": "participating Austin",
    "market": "Austin",
    "expiration": "10/09/2026",
-   "last_verified": "2026-10-01",
+   "last_verified": "2026-10-02",
    "participating_location_note": "Valid at participating locations in Austin",
    "scope": "area",
    "price_value": 9.99,
@@ -227,7 +134,7 @@
    "area_name": "participating Greater Triangle",
    "market": "Greater Triangle",
    "expiration": "10/23/2026",
-   "last_verified": "2026-10-01",
+   "last_verified": "2026-10-02",
    "participating_location_note": "Valid at participating locations in Greater Triangle",
    "scope": "area",
    "price_value": 9.99,
@@ -271,7 +178,7 @@
    "area_name": "participating Atlanta & North Georgia",
    "market": "Atlanta & North Georgia",
    "expiration": "10/23/2026",
-   "last_verified": "2026-10-01",
+   "last_verified": "2026-10-02",
    "participating_location_note": "Valid at participating locations in Atlanta & North Georgia",
    "scope": "area",
    "price_value": 9.99,
@@ -330,7 +237,7 @@
    "area_name": "Western AZ",
    "market": "Western AZ",
    "expiration": "10/09/2026",
-   "last_verified": "2026-10-01",
+   "last_verified": "2026-10-02",
    "participating_location_note": "Valid at participating locations in Western AZ",
    "scope": "unknown",
    "price_value": 10.99
@@ -344,7 +251,7 @@
    "area_name": "participating Las Vegas",
    "market": "Las Vegas",
    "expiration": "10/16/2026",
-   "last_verified": "2026-10-01",
+   "last_verified": "2026-10-02",
    "participating_location_note": "Valid at participating locations in Las Vegas",
    "scope": "area",
    "price_value": 10.99,
@@ -363,34 +270,6 @@
    ]
   },
   {
-   "url": "https://offers.greatclips.com/e2skyqs",
-   "coupon_code": "e2skyqs",
-   "price": "$11.99",
-   "location_name": "participating Paducah-Cape Girardeau Area",
-   "state": "AREA",
-   "area_name": "participating Paducah-Cape Girardeau",
-   "market": "Paducah-Cape Girardeau",
-   "expiration": "10/02/2026",
-   "last_verified": "2026-10-01",
-   "participating_location_note": "Valid at participating locations in Paducah-Cape Girardeau",
-   "scope": "area",
-   "price_value": 11.99,
-   "metro_keys": [
-    "KY/lone-oak",
-    "MO/cape-girardeau"
-   ],
-   "market_names": [
-    "Lone Oak, KY",
-    "Cape Girardeau, MO"
-   ],
-   "city_keys": [
-    "KY/lone-oak",
-    "KY/paducah",
-    "MO/cape-girardeau",
-    "MO/jackson"
-   ]
-  },
-  {
    "url": "https://offers.greatclips.com/eSWLmcD",
    "coupon_code": "eSWLmcD",
    "price": "$11.99",
@@ -399,7 +278,7 @@
    "area_name": "participating Twin Cities & surrounding area",
    "market": "Twin Cities & surrounding area",
    "expiration": "10/16/2026",
-   "last_verified": "2026-10-01",
+   "last_verified": "2026-10-02",
    "participating_location_note": "Valid at participating locations in Twin Cities & surrounding area",
    "scope": "area",
    "price_value": 11.99,
@@ -469,61 +348,6 @@
    ]
   },
   {
-   "url": "https://offers.greatclips.com/e1j8GvR",
-   "coupon_code": "e1j8GvR",
-   "price": "$12.99",
-   "location_name": "participating West & SW Michigan Area",
-   "state": "AREA",
-   "area_name": "participating West & SW Michigan",
-   "market": "West & SW Michigan",
-   "expiration": "10/02/2026",
-   "last_verified": "2026-10-01",
-   "participating_location_note": "Valid at participating locations in West & SW Michigan",
-   "scope": "unknown",
-   "price_value": 12.99
-  },
-  {
-   "url": "https://offers.greatclips.com/VvNG05O",
-   "coupon_code": "VvNG05O",
-   "price": "$14.99",
-   "location_name": "participating Greater Los Angeles Area",
-   "state": "AREA",
-   "area_name": "participating Greater Los Angeles",
-   "market": "Greater Los Angeles",
-   "expiration": "10/02/2026",
-   "last_verified": "2026-10-01",
-   "participating_location_note": "Valid at participating locations in Greater Los Angeles",
-   "scope": "area",
-   "price_value": 14.99,
-   "metro_keys": [
-    "CA/los-angeles"
-   ],
-   "market_names": [
-    "Los Angeles, CA"
-   ],
-   "city_keys": [
-    "CA/los-angeles",
-    "CA/torrance",
-    "CA/valencia",
-    "CA/agoura-hills",
-    "CA/alhambra",
-    "CA/buena-park",
-    "CA/burbank",
-    "CA/canyon-country",
-    "CA/downey",
-    "CA/la-canada-flintridge",
-    "CA/lakewood",
-    "CA/long-beach",
-    "CA/monrovia",
-    "CA/northridge",
-    "CA/seal-beach",
-    "CA/simi-valley",
-    "CA/thousand-oaks",
-    "CA/west-hills",
-    "CA/whittier"
-   ]
-  },
-  {
    "url": "https://offers.greatclips.com/8FJ8mLg",
    "coupon_code": "8FJ8mLg",
    "price": "$14.99",
@@ -532,7 +356,7 @@
    "area_name": "participating Greater Western Washington",
    "market": "Greater Western Washington",
    "expiration": "10/09/2026",
-   "last_verified": "2026-10-01",
+   "last_verified": "2026-10-02",
    "participating_location_note": "Valid at participating locations in Greater Western Washington",
    "scope": "area",
    "price_value": 14.99,
@@ -596,7 +420,7 @@
    "area_name": "participating Washington D.C.",
    "market": "Washington D.C.",
    "expiration": "10/16/2026",
-   "last_verified": "2026-10-01",
+   "last_verified": "2026-10-02",
    "participating_location_note": "Valid at participating locations in Washington D.C.",
    "scope": "unknown",
    "price_value": 14.99
@@ -611,7 +435,7 @@
    "address": "4055 Evergreen Village Sq",
    "market": "CA",
    "expiration": "10/07/2026",
-   "last_verified": "2026-10-01",
+   "last_verified": "2026-10-02",
    "scope": "salon",
    "price_value": 19.99,
    "city_keys": [
