@@ -1082,9 +1082,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips coupon alert: $9.99 haircut in the only at participating Atlanta & North Georgia area. Expires Oct 23, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#YubPRmS\n\n#GreatClips #HaircutCoupon #Deals"
+    },
+    {
+      "coupon_code": "eSWLmcD",
+      "coupon_url": "https://offers.greatclips.com/eSWLmcD",
+      "post_id": "6abf08b663de9e09a28744b6",
+      "posted_at": "2026-10-02T01:28:22Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $11.99 in the only at participating Twin Cities & surrounding area area. Expires Oct 16, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#eSWLmcD\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-10-01T20:45:35Z",
+  "last_post": "2026-10-02T01:28:22Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1207,6 +1216,7 @@
     "https://offers.greatclips.com/dkIygSf",
     "https://offers.greatclips.com/e1j8GvR",
     "https://offers.greatclips.com/e2skyqs",
+    "https://offers.greatclips.com/eSWLmcD",
     "https://offers.greatclips.com/ebloYZE",
     "https://offers.greatclips.com/eftOLOl",
     "https://offers.greatclips.com/fA3QZ66",
