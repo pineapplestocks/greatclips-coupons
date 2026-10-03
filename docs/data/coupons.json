@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-10-03T04:15:03Z",
- "scraped_at": "2026-10-02T21:14:45.093379",
- "total": 14,
+ "generated_at": "2026-10-03T11:16:03Z",
+ "scraped_at": "2026-10-03T04:15:39.996896",
+ "total": 16,
  "scopes": {
   "national": 1,
   "salon": 5,
-  "area": 6,
+  "area": 8,
   "unknown": 2
  },
  "coupons": [
@@ -17,7 +17,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-10-02",
+   "last_verified": "2026-10-03",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -32,7 +32,7 @@
    "address": "Cherrywood at 9570 SW 62nd Ave",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-10-02",
+   "last_verified": "2026-10-03",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -49,7 +49,7 @@
    "address": "2575 SW 42nd St",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-10-02",
+   "last_verified": "2026-10-03",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -66,7 +66,7 @@
    "address": "1126 Bichara Blvd",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-10-02",
+   "last_verified": "2026-10-03",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
@@ -83,11 +83,38 @@
    "address": "Cherrywood at 9570 SW 62nd Ave",
    "market": "FL",
    "expiration": "10/09/2026",
-   "last_verified": "2026-10-02",
+   "last_verified": "2026-10-03",
    "scope": "salon",
    "price_value": 8.99,
    "city_keys": [
     "FL/ocala"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/JQx3e5q",
+   "coupon_code": "JQx3e5q",
+   "price": "$8.99",
+   "location_name": "icipating Greenville, Spartanburg, Hendersonville & Asheville Area",
+   "state": "AREA",
+   "area_name": "icipating Greenville, Spartanburg, Hendersonville & Asheville",
+   "market": "icipating Greenville, Spartanburg, Hendersonville & Asheville",
+   "expiration": "10/23/2026",
+   "last_verified": "2026-10-03",
+   "participating_location_note": "Valid at participating locations in icipating Greenville, Spartanburg, Hendersonville & Asheville",
+   "scope": "area",
+   "price_value": 8.99,
+   "metro_keys": [
+    "NC/asheville"
+   ],
+   "market_names": [
+    "Asheville, NC"
+   ],
+   "city_keys": [
+    "NC/asheville",
+    "NC/hendersonville",
+    "NC/arden",
+    "NC/candler",
+    "NC/weaverville"
    ]
   },
   {
@@ -99,7 +126,7 @@
    "area_name": "participating Austin",
    "market": "Austin",
    "expiration": "10/09/2026",
-   "last_verified": "2026-10-02",
+   "last_verified": "2026-10-03",
    "participating_location_note": "Valid at participating locations in Austin",
    "scope": "area",
    "price_value": 9.99,
@@ -134,7 +161,7 @@
    "area_name": "participating Greater Triangle",
    "market": "Greater Triangle",
    "expiration": "10/23/2026",
-   "last_verified": "2026-10-02",
+   "last_verified": "2026-10-03",
    "participating_location_note": "Valid at participating locations in Greater Triangle",
    "scope": "area",
    "price_value": 9.99,
@@ -178,7 +205,7 @@
    "area_name": "participating Atlanta & North Georgia",
    "market": "Atlanta & North Georgia",
    "expiration": "10/23/2026",
-   "last_verified": "2026-10-02",
+   "last_verified": "2026-10-03",
    "participating_location_note": "Valid at participating locations in Atlanta & North Georgia",
    "scope": "area",
    "price_value": 9.99,
@@ -229,6 +256,70 @@
    ]
   },
   {
+   "url": "https://offers.greatclips.com/MbFSX5B",
+   "coupon_code": "MbFSX5B",
+   "price": "$9.99",
+   "location_name": "participating Greater Tampa Bay, Lakeland & Sarasota Area",
+   "state": "AREA",
+   "area_name": "participating Greater Tampa Bay, Lakeland & Sarasota",
+   "market": "Greater Tampa Bay, Lakeland & Sarasota",
+   "expiration": "10/23/2026",
+   "last_verified": "2026-10-03",
+   "participating_location_note": "Valid at participating locations in Greater Tampa Bay, Lakeland & Sarasota",
+   "scope": "area",
+   "price_value": 9.99,
+   "metro_keys": [
+    "FL/temple-terrace",
+    "FL/bartow",
+    "FL/nokomis"
+   ],
+   "market_names": [
+    "Tampa-Saint Petersburg, FL",
+    "Lakeland, FL",
+    "Sarasota-Bradenton, FL"
+   ],
+   "city_keys": [
+    "FL/tampa",
+    "FL/saint-petersburg",
+    "FL/clearwater",
+    "FL/lutz",
+    "FL/riverview",
+    "FL/apollo-beach",
+    "FL/largo",
+    "FL/palm-harbor",
+    "FL/valrico",
+    "FL/wesley-chapel",
+    "FL/belleair-bluffs",
+    "FL/brandon",
+    "FL/dunedin",
+    "FL/land-o-lakes",
+    "FL/lithia",
+    "FL/odessa",
+    "FL/palmetto",
+    "FL/plant-city",
+    "FL/san-antonio",
+    "FL/sun-city-center",
+    "FL/tarpon-springs",
+    "FL/temple-terrace",
+    "FL/trinity",
+    "FL/wimauma",
+    "FL/zephyrhills",
+    "FL/lakeland",
+    "FL/bartow",
+    "FL/lake-wales",
+    "FL/winter-haven",
+    "FL/sarasota",
+    "FL/lakewood-ranch",
+    "FL/port-charlotte",
+    "FL/bradenton",
+    "FL/venice",
+    "FL/north-port",
+    "FL/parrish",
+    "FL/englewood",
+    "FL/nokomis"
+   ]
+  },
+  {
    "url": "https://offers.greatclips.com/ooRyocE",
    "coupon_code": "ooRyocE",
    "price": "$10.99",
@@ -237,7 +328,7 @@
    "area_name": "Western AZ",
    "market": "Western AZ",
    "expiration": "10/09/2026",
-   "last_verified": "2026-10-02",
+   "last_verified": "2026-10-03",
    "participating_location_note": "Valid at participating locations in Western AZ",
    "scope": "unknown",
    "price_value": 10.99
@@ -251,7 +342,7 @@
    "area_name": "participating Las Vegas",
    "market": "Las Vegas",
    "expiration": "10/16/2026",
-   "last_verified": "2026-10-02",
+   "last_verified": "2026-10-03",
    "participating_location_note": "Valid at participating locations in Las Vegas",
    "scope": "area",
    "price_value": 10.99,
@@ -278,7 +369,7 @@
    "area_name": "participating Twin Cities & surrounding area",
    "market": "Twin Cities & surrounding area",
    "expiration": "10/16/2026",
-   "last_verified": "2026-10-02",
+   "last_verified": "2026-10-03",
    "participating_location_note": "Valid at participating locations in Twin Cities & surrounding area",
    "scope": "area",
    "price_value": 11.99,
@@ -356,7 +447,7 @@
    "area_name": "participating Greater Western Washington",
    "market": "Greater Western Washington",
    "expiration": "10/09/2026",
-   "last_verified": "2026-10-02",
+   "last_verified": "2026-10-03",
    "participating_location_note": "Valid at participating locations in Greater Western Washington",
    "scope": "area",
    "price_value": 14.99,
@@ -420,7 +511,7 @@
    "area_name": "participating Washington D.C.",
    "market": "Washington D.C.",
    "expiration": "10/16/2026",
-   "last_verified": "2026-10-02",
+   "last_verified": "2026-10-03",
    "participating_location_note": "Valid at participating locations in Washington D.C.",
    "scope": "unknown",
    "price_value": 14.99
@@ -435,7 +526,7 @@
    "address": "4055 Evergreen Village Sq",
    "market": "CA",
    "expiration": "10/07/2026",
-   "last_verified": "2026-10-02",
+   "last_verified": "2026-10-03",
    "scope": "salon",
    "price_value": 19.99,
    "city_keys": [
