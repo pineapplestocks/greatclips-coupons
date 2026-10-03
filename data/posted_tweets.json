@@ -1109,9 +1109,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips savings update: $8.99 coupon in Ocala, FL. Expires Oct 9, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#ki2QSE0\n\n#GreatClips #SaveMoney"
+    },
+    {
+      "coupon_code": "JQx3e5q",
+      "coupon_url": "https://offers.greatclips.com/JQx3e5q",
+      "post_id": "6ac1501baa79e514b9fad927",
+      "posted_at": "2026-10-03T18:57:31Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $8.99 in the icipating Greenville, Spartanburg, Hendersonville & Asheville area. Expires Oct 23, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#JQx3e5q\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-10-02T20:18:05Z",
+  "last_post": "2026-10-03T18:57:31Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1179,6 +1188,7 @@
     "https://offers.greatclips.com/ITuSpPq",
     "https://offers.greatclips.com/Iq7XsJZ",
     "https://offers.greatclips.com/JIiOv3l",
+    "https://offers.greatclips.com/JQx3e5q",
     "https://offers.greatclips.com/K5gVU2t",
     "https://offers.greatclips.com/KEpDQCZ",
     "https://offers.greatclips.com/KIyxTax",
