@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-03T11:16:03Z",
+ "generated_at": "2026-10-03T13:16:31Z",
  "scraped_at": "2026-10-03T04:15:39.996896",
  "total": 16,
  "scopes": {
@@ -166,33 +166,37 @@
    "scope": "area",
    "price_value": 9.99,
    "metro_keys": [
-    "NC/apex"
+    "NC/fuquay-varina",
+    "NC/hillsborough"
    ],
    "market_names": [
-    "Raleigh-Durham, NC"
+    "Raleigh, NC",
+    "Durham, NC"
    ],
    "city_keys": [
     "NC/raleigh",
     "NC/cary",
-    "NC/chapel-hill",
-    "NC/durham",
     "NC/wake-forest",
     "NC/apex",
     "NC/clayton",
     "NC/garner",
     "NC/holly-springs",
     "NC/benson",
-    "NC/carrboro",
     "NC/fuquay-varina",
-    "NC/hillsborough",
     "NC/knightdale",
-    "NC/mebane",
     "NC/morrisville",
-    "NC/pittsboro",
     "NC/rolesville",
-    "NC/siler-city",
     "NC/smithfield",
     "NC/wendell",
+    "NC/chapel-hill",
+    "NC/durham",
+    "NC/burlington",
+    "NC/carrboro",
+    "NC/hillsborough",
+    "NC/mebane",
+    "NC/pittsboro",
+    "NC/roxboro",
+    "NC/siler-city",
     "NC/youngsville"
    ]
   },

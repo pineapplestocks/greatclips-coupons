@@ -1,6 +1,6 @@
 # GreatClipsDeal
 
-> Independent directory of verified Great Clips haircut coupons, refreshed every six hours. Covers 4,302 salons across 2,550 US cities in 51 states, with each salon's address, phone number and hours taken from the official Great Clips salon locator.
+> Independent directory of verified Great Clips haircut coupons, refreshed every six hours. Covers 4,304 salons across 2,551 US cities in 51 states, with each salon's address, phone number and hours taken from the official Great Clips salon locator.
 
 Not affiliated with, endorsed by, or sponsored by Great Clips, Inc.
 
@@ -23,7 +23,7 @@ We map all 645 Great Clips markets to the cities inside them, so each city page 
 ## Key pages
 
 - [Homepage](https://greatclipsdeal.com/): every current coupon, filterable by city, state and price.
-- [Salon directory](https://greatclipsdeal.com/salons): all 2,550 cities that have a Great Clips, grouped by state.
+- [Salon directory](https://greatclipsdeal.com/salons): all 2,551 cities that have a Great Clips, grouped by state.
 - [How we verify coupons](https://greatclipsdeal.com/how-we-verify-coupons)
 - [FAQ](https://greatclipsdeal.com/faq)
 - [Sitemap](https://greatclipsdeal.com/sitemap.xml)
@@ -49,7 +49,7 @@ One page per city at `/salons/{state}/{city}`, each listing that city's salons w
 - Atlanta, GA - 86 salons across 37 cities
 - Minneapolis-Saint Paul, MN - 85 salons across 56 cities
 - San Antonio, TX - 80 salons across 18 cities
-- Detroit, MI - 78 salons across 52 cities
+- Detroit, MI - 77 salons across 51 cities
 - Denver, CO - 76 salons across 26 cities
 - Houston, TX - 75 salons across 31 cities
 - Cincinnati, IN/KY/OH - 70 salons across 36 cities

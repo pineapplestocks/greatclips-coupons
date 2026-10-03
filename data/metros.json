@@ -1,5 +1,5 @@
 {
- "total_cities": 2550,
+ "total_cities": 2551,
  "total_metros": 645,
  "metros": {
   "AK/eagle-river": {
@@ -844,8 +844,8 @@
    "states": [
     "CA"
    ],
-   "salon_count": 34,
-   "city_count": 29,
+   "salon_count": 35,
+   "city_count": 30,
    "reach_mi": 35.0,
    "city_keys": [
     "CA/danville",
@@ -861,6 +861,7 @@
     "CA/dublin",
     "CA/el-cerrito",
     "CA/foster-city",
+    "CA/hayward",
     "CA/lafayette",
     "CA/martinez",
     "CA/menlo-park",
@@ -902,8 +903,8 @@
    "states": [
     "CA"
    ],
-   "salon_count": 33,
-   "city_count": 24,
+   "salon_count": 32,
+   "city_count": 23,
    "reach_mi": 35.0,
    "city_keys": [
     "CA/riverside",
@@ -927,7 +928,6 @@
     "CA/pomona",
     "CA/rancho-cucamonga",
     "CA/rancho-santa-margarita",
-    "CA/rialto",
     "CA/tustin",
     "CA/upland"
    ]
@@ -1733,26 +1733,6 @@
     "FL/lake-worth"
    ]
   },
-  "FL/edgewater": {
-   "name": "Daytona Beach",
-   "display_name": "Daytona Beach, FL",
-   "anchor_city": "Edgewater",
-   "anchor_state": "FL",
-   "states": [
-    "FL"
-   ],
-   "salon_count": 9,
-   "city_count": 6,
-   "reach_mi": 25.0,
-   "city_keys": [
-    "FL/deland",
-    "FL/deltona",
-    "FL/port-orange",
-    "FL/daytona-beach",
-    "FL/edgewater",
-    "FL/new-smyrna-beach"
-   ]
-  },
   "FL/fort-myers": {
    "name": "Cape Coral",
    "display_name": "Cape Coral, FL",
@@ -1872,14 +1852,15 @@
    "states": [
     "FL"
    ],
-   "salon_count": 6,
-   "city_count": 5,
-   "reach_mi": 18.0,
+   "salon_count": 8,
+   "city_count": 6,
+   "reach_mi": 25.0,
    "city_keys": [
     "FL/melbourne",
     "FL/cocoa-beach",
     "FL/palm-bay",
     "FL/rockledge",
+    "FL/titusville",
     "FL/west-melbourne"
    ]
   },
@@ -1948,12 +1929,11 @@
    "states": [
     "FL"
    ],
-   "salon_count": 3,
-   "city_count": 2,
+   "salon_count": 2,
+   "city_count": 1,
    "reach_mi": 25.0,
    "city_keys": [
-    "FL/palm-coast",
-    "FL/ormond-beach"
+    "FL/palm-coast"
    ]
   },
   "FL/panama-city-beach": {
@@ -1988,6 +1968,28 @@
     "FL/gulf-breeze",
     "FL/milton",
     "FL/pace"
+   ]
+  },
+  "FL/port-orange": {
+   "name": "Daytona Beach",
+   "display_name": "Daytona Beach, FL",
+   "anchor_city": "Port Orange",
+   "anchor_state": "FL",
+   "states": [
+    "FL"
+   ],
+   "salon_count": 11,
+   "city_count": 8,
+   "reach_mi": 25.0,
+   "city_keys": [
+    "FL/deland",
+    "FL/deltona",
+    "FL/port-orange",
+    "FL/daytona-beach",
+    "FL/edgewater",
+    "FL/new-smyrna-beach",
+    "FL/orange-city",
+    "FL/ormond-beach"
    ]
   },
   "FL/port-saint-lucie": {
@@ -2142,19 +2144,19 @@
    "states": [
     "FL"
    ],
-   "salon_count": 48,
-   "city_count": 20,
+   "salon_count": 45,
+   "city_count": 18,
    "reach_mi": 35.0,
    "city_keys": [
     "FL/orlando",
     "FL/clermont",
     "FL/kissimmee",
-    "FL/oviedo",
     "FL/altamonte-springs",
     "FL/apopka",
     "FL/davenport",
     "FL/lake-mary",
     "FL/ocoee",
+    "FL/oviedo",
     "FL/saint-cloud",
     "FL/winter-garden",
     "FL/winter-springs",
@@ -2162,8 +2164,6 @@
     "FL/champions-gate",
     "FL/groveland",
     "FL/minneola",
-    "FL/orange-city",
-    "FL/titusville",
     "FL/windermere",
     "FL/winter-park"
    ]
@@ -5079,8 +5079,8 @@
    "states": [
     "MI"
    ],
-   "salon_count": 78,
-   "city_count": 52,
+   "salon_count": 77,
+   "city_count": 51,
    "reach_mi": 45.0,
    "city_keys": [
     "MI/ann-arbor",
@@ -5098,7 +5098,6 @@
     "MI/sterling-heights",
     "MI/taylor",
     "MI/westland",
-    "MI/allen-park",
     "MI/berkley",
     "MI/beverly-hills",
     "MI/birmingham",
@@ -6255,42 +6254,6 @@
     "NC/whispering-pines"
    ]
   },
-  "NC/apex": {
-   "name": "Raleigh-Durham",
-   "display_name": "Raleigh-Durham, NC",
-   "anchor_city": "Apex",
-   "anchor_state": "NC",
-   "states": [
-    "NC"
-   ],
-   "salon_count": 44,
-   "city_count": 22,
-   "reach_mi": 35.0,
-   "city_keys": [
-    "NC/raleigh",
-    "NC/cary",
-    "NC/chapel-hill",
-    "NC/durham",
-    "NC/wake-forest",
-    "NC/apex",
-    "NC/clayton",
-    "NC/garner",
-    "NC/holly-springs",
-    "NC/benson",
-    "NC/carrboro",
-    "NC/fuquay-varina",
-    "NC/hillsborough",
-    "NC/knightdale",
-    "NC/mebane",
-    "NC/morrisville",
-    "NC/pittsboro",
-    "NC/rolesville",
-    "NC/siler-city",
-    "NC/smithfield",
-    "NC/wendell",
-    "NC/youngsville"
-   ]
-  },
   "NC/asheville": {
    "name": "Asheville",
    "display_name": "Asheville, NC",
@@ -6392,6 +6355,34 @@
     "NC/franklin"
    ]
   },
+  "NC/fuquay-varina": {
+   "name": "Raleigh",
+   "display_name": "Raleigh, NC",
+   "anchor_city": "Fuquay Varina",
+   "anchor_state": "NC",
+   "states": [
+    "NC"
+   ],
+   "salon_count": 32,
+   "city_count": 14,
+   "reach_mi": 35.0,
+   "city_keys": [
+    "NC/raleigh",
+    "NC/cary",
+    "NC/wake-forest",
+    "NC/apex",
+    "NC/clayton",
+    "NC/garner",
+    "NC/holly-springs",
+    "NC/benson",
+    "NC/fuquay-varina",
+    "NC/knightdale",
+    "NC/morrisville",
+    "NC/rolesville",
+    "NC/smithfield",
+    "NC/wendell"
+   ]
+  },
   "NC/greenville": {
    "name": "Greenville-Washington",
    "display_name": "Greenville-Washington Area, NC",
@@ -6459,6 +6450,30 @@
     "NC/wesley-chapel"
    ]
   },
+  "NC/hillsborough": {
+   "name": "Durham",
+   "display_name": "Durham, NC",
+   "anchor_city": "Hillsborough",
+   "anchor_state": "NC",
+   "states": [
+    "NC"
+   ],
+   "salon_count": 15,
+   "city_count": 10,
+   "reach_mi": 35.0,
+   "city_keys": [
+    "NC/chapel-hill",
+    "NC/durham",
+    "NC/burlington",
+    "NC/carrboro",
+    "NC/hillsborough",
+    "NC/mebane",
+    "NC/pittsboro",
+    "NC/roxboro",
+    "NC/siler-city",
+    "NC/youngsville"
+   ]
+  },
   "NC/jacksonville": {
    "name": "Jacksonville Area",
    "display_name": "Jacksonville Area, NC",
@@ -6482,12 +6497,11 @@
    "states": [
     "NC"
    ],
-   "salon_count": 25,
-   "city_count": 14,
+   "salon_count": 23,
+   "city_count": 13,
    "reach_mi": 35.0,
    "city_keys": [
     "NC/greensboro",
-    "NC/burlington",
     "NC/high-point",
     "NC/kernersville",
     "NC/archdale",
@@ -6660,21 +6674,6 @@
     "NC/roanoke-rapids"
    ]
   },
-  "NC/roxboro": {
-   "name": "Roxboro",
-   "display_name": "Roxboro, NC",
-   "anchor_city": "Roxboro",
-   "anchor_state": "NC",
-   "states": [
-    "NC"
-   ],
-   "salon_count": 1,
-   "city_count": 1,
-   "reach_mi": 18.0,
-   "city_keys": [
-    "NC/roxboro"
-   ]
-  },
   "NC/waynesville": {
    "name": "Sylva",
    "display_name": "Sylva, NC",
@@ -6699,12 +6698,13 @@
    "states": [
     "NC"
    ],
-   "salon_count": 4,
-   "city_count": 4,
+   "salon_count": 5,
+   "city_count": 5,
    "reach_mi": 25.0,
    "city_keys": [
     "NC/goldsboro",
     "NC/rocky-mount",
+    "NC/selma",
     "NC/wilson",
     "NC/zebulon"
    ]
@@ -7023,8 +7023,8 @@
     "NJ",
     "PA"
    ],
-   "salon_count": 16,
-   "city_count": 14,
+   "salon_count": 17,
+   "city_count": 15,
    "reach_mi": 35.0,
    "city_keys": [
     "NJ/hamilton",
@@ -7035,6 +7035,7 @@
     "NJ/east-windsor",
     "NJ/hillsborough",
     "NJ/medford",
+    "NJ/monroe-township",
     "PA/newtown",
     "NJ/north-brunswick",
     "NJ/pennington",
@@ -10756,15 +10757,15 @@
    "states": [
     "VA"
    ],
-   "salon_count": 20,
+   "salon_count": 21,
    "city_count": 10,
    "reach_mi": 25.0,
    "city_keys": [
     "VA/midlothian",
     "VA/richmond",
+    "VA/glen-allen",
     "VA/chester",
     "VA/chesterfield",
-    "VA/glen-allen",
     "VA/mechanicsville",
     "VA/ashland",
     "VA/colonial-heights",
@@ -13218,6 +13219,15 @@
    "lat": 36.328498,
    "lng": -119.676317
   },
+  "CA/hayward": {
+   "city": "Hayward",
+   "state": "CA",
+   "slug": "hayward",
+   "salon_count": 1,
+   "metro_key": "CA/castro-valley",
+   "lat": 37.614789,
+   "lng": -122.087424
+  },
   "CA/healdsburg": {
    "city": "Healdsburg",
    "state": "CA",
@@ -13874,15 +13884,6 @@
    "metro_key": "CA/castro-valley",
    "lat": 37.455764,
    "lng": -122.229072
-  },
-  "CA/rialto": {
-   "city": "Rialto",
-   "state": "CA",
-   "slug": "rialto",
-   "salon_count": 1,
-   "metro_key": "CA/corona",
-   "lat": 34.077461,
-   "lng": -117.371156
   },
   "CA/riverbank": {
    "city": "Riverbank",
@@ -15033,8 +15034,8 @@
    "slug": "altamonte-springs",
    "salon_count": 2,
    "metro_key": "FL/winter-park",
-   "lat": 28.663296,
-   "lng": -81.41556
+   "lat": 28.663056,
+   "lng": -81.414666
   },
   "FL/apollo-beach": {
    "city": "Apollo Beach",
@@ -15159,8 +15160,8 @@
    "slug": "celebration",
    "salon_count": 1,
    "metro_key": "FL/winter-park",
-   "lat": 28.30302,
-   "lng": -81.570509
+   "lat": 28.303806,
+   "lng": -81.570402
   },
   "FL/champions-gate": {
    "city": "Champions Gate",
@@ -15230,18 +15231,18 @@
    "state": "FL",
    "slug": "daytona-beach",
    "salon_count": 1,
-   "metro_key": "FL/edgewater",
-   "lat": 29.223952,
-   "lng": -81.091173
+   "metro_key": "FL/port-orange",
+   "lat": 29.22443,
+   "lng": -81.090403
   },
   "FL/deland": {
    "city": "DeLand",
    "state": "FL",
    "slug": "deland",
    "salon_count": 2,
-   "metro_key": "FL/edgewater",
-   "lat": 29.021266,
-   "lng": -81.298289
+   "metro_key": "FL/port-orange",
+   "lat": 29.02049,
+   "lng": -81.298403
   },
   "FL/delray-beach": {
    "city": "Delray Beach",
@@ -15257,7 +15258,7 @@
    "state": "FL",
    "slug": "deltona",
    "salon_count": 2,
-   "metro_key": "FL/edgewater",
+   "metro_key": "FL/port-orange",
    "lat": 28.917286,
    "lng": -81.217498
   },
@@ -15275,7 +15276,7 @@
    "state": "FL",
    "slug": "edgewater",
    "salon_count": 1,
-   "metro_key": "FL/edgewater",
+   "metro_key": "FL/port-orange",
    "lat": 28.971585,
    "lng": -80.897527
   },
@@ -15580,10 +15581,10 @@
    "city": "Melbourne",
    "state": "FL",
    "slug": "melbourne",
-   "salon_count": 2,
+   "salon_count": 3,
    "metro_key": "FL/melbourne",
-   "lat": 28.233404,
-   "lng": -80.730572
+   "lat": 28.228142,
+   "lng": -80.711366
   },
   "FL/middleburg": {
    "city": "Middleburg",
@@ -15662,7 +15663,7 @@
    "state": "FL",
    "slug": "new-smyrna-beach",
    "salon_count": 1,
-   "metro_key": "FL/edgewater",
+   "metro_key": "FL/port-orange",
    "lat": 29.014677,
    "lng": -80.944044
   },
@@ -15725,7 +15726,7 @@
    "state": "FL",
    "slug": "orange-city",
    "salon_count": 1,
-   "metro_key": "FL/winter-park",
+   "metro_key": "FL/port-orange",
    "lat": 28.914472,
    "lng": -81.296004
   },
@@ -15752,7 +15753,7 @@
    "state": "FL",
    "slug": "ormond-beach",
    "salon_count": 1,
-   "metro_key": "FL/palm-coast",
+   "metro_key": "FL/port-orange",
    "lat": 29.285028,
    "lng": -81.084642
   },
@@ -15760,10 +15761,10 @@
    "city": "Oviedo",
    "state": "FL",
    "slug": "oviedo",
-   "salon_count": 3,
+   "salon_count": 2,
    "metro_key": "FL/winter-park",
-   "lat": 28.645276,
-   "lng": -81.214974
+   "lat": 28.639736,
+   "lng": -81.220729
   },
   "FL/pace": {
    "city": "Pace",
@@ -15923,7 +15924,7 @@
    "state": "FL",
    "slug": "port-orange",
    "salon_count": 2,
-   "metro_key": "FL/edgewater",
+   "metro_key": "FL/port-orange",
    "lat": 29.125423,
    "lng": -81.031324
   },
@@ -16148,7 +16149,7 @@
    "state": "FL",
    "slug": "titusville",
    "salon_count": 1,
-   "metro_key": "FL/winter-park",
+   "metro_key": "FL/melbourne",
    "lat": 28.55878,
    "lng": -80.824989
   },
@@ -16878,8 +16879,8 @@
    "slug": "mcdonough",
    "salon_count": 3,
    "metro_key": "GA/tucker",
-   "lat": 33.460198,
-   "lng": -84.101013
+   "lat": 33.460369,
+   "lng": -84.101689
   },
   "GA/milledgeville": {
    "city": "Milledgeville",
@@ -17517,8 +17518,8 @@
    "slug": "waukee",
    "salon_count": 1,
    "metro_key": "IA/ankeny",
-   "lat": 41.614469,
-   "lng": -93.860974
+   "lat": 41.61566,
+   "lng": -93.85724
   },
   "IA/waverly": {
    "city": "Waverly",
@@ -17544,8 +17545,8 @@
    "slug": "west-des-moines",
    "salon_count": 3,
    "metro_key": "IA/ankeny",
-   "lat": 41.572332,
-   "lng": -93.775112
+   "lat": 41.572379,
+   "lng": -93.774922
   },
   "IA/windsor-heights": {
    "city": "Windsor Heights",
@@ -19308,8 +19309,8 @@
    "slug": "greenwood",
    "salon_count": 4,
    "metro_key": "IN/martinsville",
-   "lat": 39.585654,
-   "lng": -86.144612
+   "lat": 39.585558,
+   "lng": -86.144537
   },
   "IN/hammond": {
    "city": "Hammond",
@@ -20019,8 +20020,8 @@
    "slug": "topeka",
    "salon_count": 4,
    "metro_key": "KS/topeka",
-   "lat": 39.04319,
-   "lng": -95.695472
+   "lat": 39.043128,
+   "lng": -95.695141
   },
   "KS/wichita": {
    "city": "Wichita",
@@ -21084,15 +21085,6 @@
    "lat": 41.873228,
    "lng": -84.028566
   },
-  "MI/allen-park": {
-   "city": "Allen Park",
-   "state": "MI",
-   "slug": "allen-park",
-   "salon_count": 1,
-   "metro_key": "MI/farmington",
-   "lat": 42.280627,
-   "lng": -83.208273
-  },
   "MI/allendale": {
    "city": "Allendale",
    "state": "MI",
@@ -21108,8 +21100,8 @@
    "slug": "ann-arbor",
    "salon_count": 4,
    "metro_key": "MI/farmington",
-   "lat": 42.272804,
-   "lng": -83.761659
+   "lat": 42.272712,
+   "lng": -83.760814
   },
   "MI/battle-creek": {
    "city": "Battle Creek",
@@ -21585,8 +21577,8 @@
    "slug": "jackson",
    "salon_count": 2,
    "metro_key": "MI/jackson",
-   "lat": 42.262852,
-   "lng": -84.394263
+   "lat": 42.263503,
+   "lng": -84.394956
   },
   "MI/jenison": {
    "city": "Jenison",
@@ -23654,7 +23646,7 @@
    "state": "NC",
    "slug": "apex",
    "salon_count": 2,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/fuquay-varina",
    "lat": 35.741481,
    "lng": -78.857883
   },
@@ -23708,7 +23700,7 @@
    "state": "NC",
    "slug": "benson",
    "salon_count": 1,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/fuquay-varina",
    "lat": 35.518263,
    "lng": -78.560851
   },
@@ -23744,7 +23736,7 @@
    "state": "NC",
    "slug": "burlington",
    "salon_count": 2,
-   "metro_key": "NC/jamestown",
+   "metro_key": "NC/hillsborough",
    "lat": 36.07591,
    "lng": -79.504484
   },
@@ -23780,7 +23772,7 @@
    "state": "NC",
    "slug": "carrboro",
    "salon_count": 1,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/hillsborough",
    "lat": 35.916266,
    "lng": -79.095638
   },
@@ -23789,7 +23781,7 @@
    "state": "NC",
    "slug": "cary",
    "salon_count": 4,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/fuquay-varina",
    "lat": 35.794454,
    "lng": -78.829063
   },
@@ -23798,7 +23790,7 @@
    "state": "NC",
    "slug": "chapel-hill",
    "salon_count": 3,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/hillsborough",
    "lat": 35.901698,
    "lng": -79.051738
   },
@@ -23816,9 +23808,9 @@
    "state": "NC",
    "slug": "clayton",
    "salon_count": 2,
-   "metro_key": "NC/apex",
-   "lat": 35.653544,
-   "lng": -78.414757
+   "metro_key": "NC/fuquay-varina",
+   "lat": 35.653347,
+   "lng": -78.414981
   },
   "NC/clemmons": {
    "city": "Clemmons",
@@ -23861,7 +23853,7 @@
    "state": "NC",
    "slug": "durham",
    "salon_count": 3,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/hillsborough",
    "lat": 35.96883,
    "lng": -78.939566
   },
@@ -23915,7 +23907,7 @@
    "state": "NC",
    "slug": "fuquay-varina",
    "salon_count": 1,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/fuquay-varina",
    "lat": 35.595584,
    "lng": -78.775162
   },
@@ -23924,7 +23916,7 @@
    "state": "NC",
    "slug": "garner",
    "salon_count": 2,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/fuquay-varina",
    "lat": 35.646223,
    "lng": -78.591599
   },
@@ -24023,7 +24015,7 @@
    "state": "NC",
    "slug": "hillsborough",
    "salon_count": 1,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/hillsborough",
    "lat": 36.056421,
    "lng": -79.08346
   },
@@ -24032,7 +24024,7 @@
    "state": "NC",
    "slug": "holly-springs",
    "salon_count": 2,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/fuquay-varina",
    "lat": 35.653361,
    "lng": -78.817286
   },
@@ -24113,7 +24105,7 @@
    "state": "NC",
    "slug": "knightdale",
    "salon_count": 1,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/fuquay-varina",
    "lat": 35.794824,
    "lng": -78.505759
   },
@@ -24212,7 +24204,7 @@
    "state": "NC",
    "slug": "mebane",
    "salon_count": 1,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/hillsborough",
    "lat": 36.066478,
    "lng": -79.271324
   },
@@ -24275,7 +24267,7 @@
    "state": "NC",
    "slug": "morrisville",
    "salon_count": 1,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/fuquay-varina",
    "lat": 35.828275,
    "lng": -78.850274
   },
@@ -24338,7 +24330,7 @@
    "state": "NC",
    "slug": "pittsboro",
    "salon_count": 1,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/hillsborough",
    "lat": 35.754628,
    "lng": -79.170206
   },
@@ -24347,9 +24339,9 @@
    "state": "NC",
    "slug": "raleigh",
    "salon_count": 10,
-   "metro_key": "NC/apex",
-   "lat": 35.819236,
-   "lng": -78.647335
+   "metro_key": "NC/fuquay-varina",
+   "lat": 35.819175,
+   "lng": -78.647326
   },
   "NC/randleman": {
    "city": "Randleman",
@@ -24392,7 +24384,7 @@
    "state": "NC",
    "slug": "rolesville",
    "salon_count": 1,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/fuquay-varina",
    "lat": 35.909795,
    "lng": -78.476511
   },
@@ -24401,7 +24393,7 @@
    "state": "NC",
    "slug": "roxboro",
    "salon_count": 1,
-   "metro_key": "NC/roxboro",
+   "metro_key": "NC/hillsborough",
    "lat": 36.404131,
    "lng": -78.97932
   },
@@ -24422,6 +24414,15 @@
    "metro_key": "NC/aberdeen",
    "lat": 35.459832,
    "lng": -79.182919
+  },
+  "NC/selma": {
+   "city": "Selma",
+   "state": "NC",
+   "slug": "selma",
+   "salon_count": 1,
+   "metro_key": "NC/wilson",
+   "lat": 35.517047,
+   "lng": -78.277342
   },
   "NC/shallotte": {
    "city": "Shallotte",
@@ -24455,7 +24456,7 @@
    "state": "NC",
    "slug": "siler-city",
    "salon_count": 1,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/hillsborough",
    "lat": 35.732241,
    "lng": -79.428122
   },
@@ -24464,7 +24465,7 @@
    "state": "NC",
    "slug": "smithfield",
    "salon_count": 1,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/fuquay-varina",
    "lat": 35.518456,
    "lng": -78.315123
   },
@@ -24509,7 +24510,7 @@
    "state": "NC",
    "slug": "wake-forest",
    "salon_count": 3,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/fuquay-varina",
    "lat": 35.974787,
    "lng": -78.576553
   },
@@ -24563,7 +24564,7 @@
    "state": "NC",
    "slug": "wendell",
    "salon_count": 1,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/fuquay-varina",
    "lat": 35.774081,
    "lng": -78.435058
   },
@@ -24626,7 +24627,7 @@
    "state": "NC",
    "slug": "youngsville",
    "salon_count": 1,
-   "metro_key": "NC/apex",
+   "metro_key": "NC/hillsborough",
    "lat": 36.039537,
    "lng": -78.496672
   },
@@ -25242,6 +25243,15 @@
    "lat": 39.876785,
    "lng": -74.815482
   },
+  "NJ/monroe-township": {
+   "city": "Monroe Township",
+   "state": "NJ",
+   "slug": "monroe-township",
+   "salon_count": 1,
+   "metro_key": "NJ/pennington",
+   "lat": 40.315229,
+   "lng": -74.439561
+  },
   "NJ/morganville": {
    "city": "Morganville",
    "state": "NJ",
@@ -25635,8 +25645,8 @@
    "slug": "las-vegas",
    "salon_count": 28,
    "metro_key": "NV/las-vegas",
-   "lat": 36.13832,
-   "lng": -115.230368
+   "lat": 36.138328,
+   "lng": -115.230628
   },
   "NV/mesquite": {
    "city": "Mesquite",
@@ -28182,8 +28192,8 @@
    "slug": "bridgeville",
    "salon_count": 1,
    "metro_key": "PA/verona",
-   "lat": 40.366953,
-   "lng": -80.110575
+   "lat": 40.36477,
+   "lng": -80.111165
   },
   "PA/brodheadsville": {
    "city": "Brodheadsville",
@@ -29595,8 +29605,8 @@
    "slug": "taylors",
    "salon_count": 1,
    "metro_key": "SC/mauldin",
-   "lat": 34.901641,
-   "lng": -82.337622
+   "lat": 34.90156,
+   "lng": -82.337589
   },
   "SC/tega-cay": {
    "city": "Tega Cay",
@@ -30180,8 +30190,8 @@
    "slug": "piney-flats",
    "salon_count": 1,
    "metro_key": "TN/kingsport",
-   "lat": 36.425912,
-   "lng": -82.317594
+   "lat": 36.425105,
+   "lng": -82.3185
   },
   "TN/pleasant-view": {
    "city": "Pleasant View",
@@ -30873,8 +30883,8 @@
    "slug": "fort-worth",
    "salon_count": 14,
    "metro_key": "TX/hudson-oaks",
-   "lat": 32.803887,
-   "lng": -97.349798
+   "lat": 32.803969,
+   "lng": -97.34999
   },
   "TX/fredericksburg": {
    "city": "Fredericksburg",
@@ -31665,8 +31675,8 @@
    "slug": "plainview",
    "salon_count": 1,
    "metro_key": "TX/plainview",
-   "lat": 34.198071,
-   "lng": -101.751208
+   "lat": 34.197681,
+   "lng": -101.749996
   },
   "TX/plano": {
    "city": "Plano",
@@ -32806,10 +32816,10 @@
    "city": "Glen Allen",
    "state": "VA",
    "slug": "glen-allen",
-   "salon_count": 2,
+   "salon_count": 3,
    "metro_key": "VA/midlothian",
-   "lat": 37.663815,
-   "lng": -77.535608
+   "lat": 37.669749,
+   "lng": -77.55404
   },
   "VA/gloucester": {
    "city": "Gloucester",
@@ -33024,8 +33034,8 @@
    "slug": "virginia-beach",
    "salon_count": 11,
    "metro_key": "NC/moyock",
-   "lat": 36.827746,
-   "lng": -76.093184
+   "lat": 36.82797,
+   "lng": -76.093132
   },
   "VA/williamsburg": {
    "city": "Williamsburg",
@@ -33159,8 +33169,8 @@
    "slug": "bremerton",
    "salon_count": 1,
    "metro_key": "WA/newcastle",
-   "lat": 47.610005,
-   "lng": -122.627062
+   "lat": 47.60964,
+   "lng": -122.62663
   },
   "WA/burlington": {
    "city": "Burlington",
@@ -33762,8 +33772,8 @@
    "slug": "altoona",
    "salon_count": 1,
    "metro_key": "WI/eau-claire",
-   "lat": 44.815924,
-   "lng": -91.454993
+   "lat": 44.819506,
+   "lng": -91.45962
   },
   "WI/appleton": {
    "city": "Appleton",
