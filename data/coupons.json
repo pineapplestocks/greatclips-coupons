@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-10-04T13:58:30.919026",
-  "total_coupons": 16,
+  "scraped_at": "2026-10-04T21:34:37.287421",
+  "total_coupons": 17,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/u7R1t67",
@@ -107,6 +107,22 @@
       "last_seen": "2026-10-04"
     },
     {
+      "url": "https://offers.greatclips.com/zSjOo4J",
+      "coupon_code": "zSjOo4J",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21246/50707-002-1200x600-8.99.jpg",
+      "expiration": "10/23/2026",
+      "location_name": "participating Middle Tennessee Area",
+      "state": "AREA",
+      "area_name": "participating Middle Tennessee",
+      "price": "$8.99",
+      "market": "Middle Tennessee",
+      "last_verified": "2026-10-04",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Middle Tennessee",
+      "added_date": "2026-10-04",
+      "last_seen": "2026-10-04"
+    },
+    {
       "url": "https://offers.greatclips.com/Vu49Mxx",
       "coupon_code": "Vu49Mxx",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21000/50707-002-1200x600-9.99.jpg",
@@ -200,7 +216,7 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Las Vegas",
       "added_date": "2026-09-26",
-      "last_seen": "2026-10-02"
+      "last_seen": "2026-10-04"
     },
     {
       "url": "https://offers.greatclips.com/eSWLmcD",

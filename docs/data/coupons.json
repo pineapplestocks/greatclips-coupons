@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-10-04T20:58:50Z",
- "scraped_at": "2026-10-04T13:58:30.919026",
- "total": 16,
+ "generated_at": "2026-10-05T04:34:58Z",
+ "scraped_at": "2026-10-04T21:34:37.287421",
+ "total": 17,
  "scopes": {
   "national": 1,
   "salon": 5,
-  "area": 8,
+  "area": 9,
   "unknown": 2
  },
  "coupons": [
@@ -115,6 +115,48 @@
     "NC/arden",
     "NC/candler",
     "NC/weaverville"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/zSjOo4J",
+   "coupon_code": "zSjOo4J",
+   "price": "$8.99",
+   "location_name": "participating Middle Tennessee Area",
+   "state": "AREA",
+   "area_name": "participating Middle Tennessee",
+   "market": "Middle Tennessee",
+   "expiration": "10/23/2026",
+   "last_verified": "2026-10-04",
+   "participating_location_note": "Valid at participating locations in Middle Tennessee",
+   "scope": "area",
+   "price_value": 8.99,
+   "metro_keys": [
+    "TN/nashville",
+    "TN/shelbyville"
+   ],
+   "market_names": [
+    "Nashville, TN",
+    "Murfreesboro, TN"
+   ],
+   "city_keys": [
+    "TN/nashville",
+    "TN/franklin",
+    "TN/brentwood",
+    "TN/gallatin",
+    "TN/hendersonville",
+    "TN/lebanon",
+    "TN/mount-juliet",
+    "TN/smyrna",
+    "TN/ashland-city",
+    "TN/dickson",
+    "TN/fairview",
+    "TN/goodlettsville",
+    "TN/hermitage",
+    "TN/nolensville",
+    "TN/springfield",
+    "TN/white-house",
+    "TN/murfreesboro",
+    "TN/shelbyville"
    ]
   },
   {
