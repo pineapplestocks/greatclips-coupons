@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-10-05T17:07:37Z",
- "scraped_at": "2026-10-05T06:52:27.046817",
- "total": 17,
+ "generated_at": "2026-10-05T23:50:53Z",
+ "scraped_at": "2026-10-05T16:50:31.778009",
+ "total": 19,
  "scopes": {
   "national": 1,
   "salon": 5,
-  "area": 9,
+  "area": 11,
   "unknown": 2
  },
  "coupons": [
@@ -157,6 +157,48 @@
     "TN/white-house",
     "TN/murfreesboro",
     "TN/shelbyville"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/u9jCQce",
+   "coupon_code": "u9jCQce",
+   "price": "$8.99",
+   "location_name": "participating Pittsburgh Area",
+   "state": "AREA",
+   "area_name": "participating Pittsburgh",
+   "market": "Pittsburgh",
+   "expiration": "10/23/2026",
+   "last_verified": "2026-10-05",
+   "participating_location_note": "Valid at participating locations in Pittsburgh",
+   "scope": "area",
+   "price_value": 8.99,
+   "metro_keys": [
+    "PA/verona"
+   ],
+   "market_names": [
+    "Pittsburgh, PA"
+   ],
+   "city_keys": [
+    "PA/pittsburgh",
+    "PA/allison-park",
+    "PA/bethel-park",
+    "PA/bridgeville",
+    "PA/canonsburg",
+    "PA/cranberry-township",
+    "PA/greensburg",
+    "PA/kittanning",
+    "PA/latrobe",
+    "PA/leechburg",
+    "PA/mars",
+    "PA/monroeville",
+    "PA/murrysville",
+    "PA/natrona-heights",
+    "PA/north-huntingdon",
+    "PA/pleasant-hills",
+    "PA/tarentum",
+    "PA/verona",
+    "PA/wexford",
+    "PA/white-oak"
    ]
   },
   {
@@ -363,6 +405,52 @@
     "FL/parrish",
     "FL/englewood",
     "FL/nokomis"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/CqMFYx7",
+   "coupon_code": "CqMFYx7",
+   "price": "$9.99",
+   "location_name": "ly at participating Orlando, Ocala, Daytona Beach & Melbourne Area",
+   "state": "AREA",
+   "area_name": "ly at participating Orlando, Ocala, Daytona Beach & Melbourne",
+   "market": "ly at participating Orlando, Ocala, Daytona Beach & Melbourne",
+   "expiration": "10/30/2026",
+   "last_verified": "2026-10-05",
+   "participating_location_note": "Valid at participating locations in ly at participating Orlando, Ocala, Daytona Beach & Melbourne",
+   "scope": "area",
+   "price_value": 9.99,
+   "metro_keys": [
+    "FL/the-villages",
+    "FL/port-orange",
+    "FL/melbourne"
+   ],
+   "market_names": [
+    "Ocala, FL",
+    "Daytona Beach, FL",
+    "Melbourne-Palm Bay, FL"
+   ],
+   "city_keys": [
+    "FL/ocala",
+    "FL/eustis",
+    "FL/the-villages",
+    "FL/mount-dora",
+    "FL/tavares",
+    "FL/wildwood",
+    "FL/deland",
+    "FL/deltona",
+    "FL/port-orange",
+    "FL/daytona-beach",
+    "FL/edgewater",
+    "FL/new-smyrna-beach",
+    "FL/orange-city",
+    "FL/ormond-beach",
+    "FL/melbourne",
+    "FL/cocoa-beach",
+    "FL/palm-bay",
+    "FL/rockledge",
+    "FL/titusville",
+    "FL/west-melbourne"
    ]
   },
   {

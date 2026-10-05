@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-10-05T06:52:27.046817",
-  "total_coupons": 17,
+  "scraped_at": "2026-10-05T16:50:31.778009",
+  "total_coupons": 19,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/u7R1t67",
@@ -123,6 +123,22 @@
       "last_seen": "2026-10-05"
     },
     {
+      "url": "https://offers.greatclips.com/u9jCQce",
+      "coupon_code": "u9jCQce",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21086/50707-002-1200x600-8.99.jpg",
+      "expiration": "10/23/2026",
+      "location_name": "participating Pittsburgh Area",
+      "state": "AREA",
+      "area_name": "participating Pittsburgh",
+      "price": "$8.99",
+      "market": "Pittsburgh",
+      "last_verified": "2026-10-05",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Pittsburgh",
+      "added_date": "2026-10-05",
+      "last_seen": "2026-10-05"
+    },
+    {
       "url": "https://offers.greatclips.com/Vu49Mxx",
       "coupon_code": "Vu49Mxx",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21000/50707-002-1200x600-9.99.jpg",
@@ -184,6 +200,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Greater Tampa Bay, Lakeland & Sarasota",
       "added_date": "2026-10-03",
+      "last_seen": "2026-10-05"
+    },
+    {
+      "url": "https://offers.greatclips.com/CqMFYx7",
+      "coupon_code": "CqMFYx7",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21079/50707-002-1200x600-9.99.jpg",
+      "expiration": "10/30/2026",
+      "location_name": "ly at participating Orlando, Ocala, Daytona Beach & Melbourne Area",
+      "state": "AREA",
+      "area_name": "ly at participating Orlando, Ocala, Daytona Beach & Melbourne",
+      "price": "$9.99",
+      "market": "ly at participating Orlando, Ocala, Daytona Beach & Melbourne",
+      "last_verified": "2026-10-05",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in ly at participating Orlando, Ocala, Daytona Beach & Melbourne",
+      "added_date": "2026-10-05",
       "last_seen": "2026-10-05"
     },
     {
