@@ -17,7 +17,7 @@ We map all 645 Great Clips markets to the cities inside them, so each city page 
 
 ## Current offers
 
-- A **$5.00** coupon is currently running nationwide, valid at participating Great Clips salons anywhere in the US.
+- No nationwide coupon is running at the moment.
 - Live coupon data: https://greatclipsdeal.com/data/coupons.json (JSON; each coupon is tagged with the cities and markets it reaches)
 
 ## Key pages
