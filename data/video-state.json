@@ -130,6 +130,21 @@
       "actual_privacy": "public",
       "thumbnail_uploaded": true,
       "captions": "uploaded"
+    },
+    {
+      "id": "3838a88c6df80735271a",
+      "type": "local",
+      "date": "2026-10-08",
+      "offer_keys": [
+        "eb486b0deccf038186c3"
+      ],
+      "status": "uploaded",
+      "location": "Greater Tampa Bay, Lakeland & Sarasota",
+      "video_id": "7ZGqDcyVq8s",
+      "requested_privacy": "public",
+      "actual_privacy": "public",
+      "thumbnail_uploaded": true,
+      "captions": "uploaded"
     }
   ]
 }
