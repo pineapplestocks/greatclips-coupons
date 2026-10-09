@@ -1,79 +1,7 @@
 {
-  "scraped_at": "2026-10-08T22:02:30.429134",
-  "total_coupons": 18,
+  "scraped_at": "2026-10-09T05:44:51.095791",
+  "total_coupons": 13,
   "coupons": [
-    {
-      "url": "https://offers.greatclips.com/g9cBmt2",
-      "coupon_code": "g9cBmt2",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8458/50707-002-1200x600-8.99.jpg",
-      "valid_text": "Valid at Great Clips Market at Cherrywood at 9570 SW 62nd Ave in Ocala, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 10/09/2026",
-      "location_name": "Market",
-      "address": "Cherrywood at 9570 SW 62nd Ave",
-      "city": "Ocala,",
-      "state": "FL",
-      "expiration": "10/09/2026",
-      "price": "$8.99",
-      "market": "FL",
-      "last_verified": "2026-10-08",
-      "source": "facebook_ad_library",
-      "participating_location_note": null,
-      "added_date": "2026-09-08",
-      "last_seen": "2026-09-20"
-    },
-    {
-      "url": "https://offers.greatclips.com/QnuB9hY",
-      "coupon_code": "QnuB9hY",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8458/50707-002-1200x600-8.99.jpg",
-      "valid_text": "Valid at Great Clips Grand Oaks Town Center at 2575 SW 42nd St in Ocala, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 10/09/2026",
-      "location_name": "Grand Oaks Town Center",
-      "address": "2575 SW 42nd St",
-      "city": "Ocala,",
-      "state": "FL",
-      "expiration": "10/09/2026",
-      "price": "$8.99",
-      "market": "FL",
-      "last_verified": "2026-10-08",
-      "source": "facebook_ad_library",
-      "participating_location_note": null,
-      "added_date": "2026-09-08",
-      "last_seen": "2026-10-02"
-    },
-    {
-      "url": "https://offers.greatclips.com/8NUmR2H",
-      "coupon_code": "8NUmR2H",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8458/50707-002-1200x600-8.99.jpg",
-      "valid_text": "Valid at Great Clips La Plaza Grande at 1126 Bichara Blvd in The Villages, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 10/09/2026",
-      "location_name": "La Plaza Grande",
-      "address": "1126 Bichara Blvd",
-      "city": "The Villages,",
-      "state": "FL",
-      "expiration": "10/09/2026",
-      "price": "$8.99",
-      "market": "FL",
-      "last_verified": "2026-10-08",
-      "source": "facebook_ad_library",
-      "participating_location_note": null,
-      "added_date": "2026-09-08",
-      "last_seen": "2026-10-02"
-    },
-    {
-      "url": "https://offers.greatclips.com/ki2QSE0",
-      "coupon_code": "ki2QSE0",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8458/50707-002-1200x600-8.99.jpg",
-      "valid_text": "Valid at Great Clips Market at Cherrywood at 9570 SW 62nd Ave in Ocala, FL. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 10/09/2026",
-      "location_name": "Market",
-      "address": "Cherrywood at 9570 SW 62nd Ave",
-      "city": "Ocala,",
-      "state": "FL",
-      "expiration": "10/09/2026",
-      "price": "$8.99",
-      "market": "FL",
-      "last_verified": "2026-10-08",
-      "source": "facebook_ad_library",
-      "participating_location_note": null,
-      "added_date": "2026-09-30",
-      "last_seen": "2026-10-02"
-    },
     {
       "url": "https://offers.greatclips.com/JQx3e5q",
       "coupon_code": "JQx3e5q",
@@ -84,11 +12,11 @@
       "area_name": "icipating Greenville, Spartanburg, Hendersonville & Asheville",
       "price": "$8.99",
       "market": "icipating Greenville, Spartanburg, Hendersonville & Asheville",
-      "last_verified": "2026-10-08",
+      "last_verified": "2026-10-09",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in icipating Greenville, Spartanburg, Hendersonville & Asheville",
       "added_date": "2026-10-03",
-      "last_seen": "2026-10-08"
+      "last_seen": "2026-10-09"
     },
     {
       "url": "https://offers.greatclips.com/zSjOo4J",
@@ -100,11 +28,11 @@
       "area_name": "participating Middle Tennessee",
       "price": "$8.99",
       "market": "Middle Tennessee",
-      "last_verified": "2026-10-08",
+      "last_verified": "2026-10-09",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Middle Tennessee",
       "added_date": "2026-10-04",
-      "last_seen": "2026-10-08"
+      "last_seen": "2026-10-09"
     },
     {
       "url": "https://offers.greatclips.com/u9jCQce",
@@ -116,27 +44,11 @@
       "area_name": "participating Pittsburgh",
       "price": "$8.99",
       "market": "Pittsburgh",
-      "last_verified": "2026-10-08",
+      "last_verified": "2026-10-09",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Pittsburgh",
       "added_date": "2026-10-05",
-      "last_seen": "2026-10-08"
-    },
-    {
-      "url": "https://offers.greatclips.com/Vu49Mxx",
-      "coupon_code": "Vu49Mxx",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21000/50707-002-1200x600-9.99.jpg",
-      "expiration": "10/09/2026",
-      "location_name": "participating Austin Area",
-      "state": "AREA",
-      "area_name": "participating Austin",
-      "price": "$9.99",
-      "market": "Austin",
-      "last_verified": "2026-10-08",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Austin",
-      "added_date": "2026-09-23",
-      "last_seen": "2026-10-02"
+      "last_seen": "2026-10-09"
     },
     {
       "url": "https://offers.greatclips.com/j6HHWsk",
@@ -148,11 +60,11 @@
       "area_name": "participating Greater Triangle",
       "price": "$9.99",
       "market": "Greater Triangle",
-      "last_verified": "2026-10-08",
+      "last_verified": "2026-10-09",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Greater Triangle",
       "added_date": "2026-09-30",
-      "last_seen": "2026-10-08"
+      "last_seen": "2026-10-09"
     },
     {
       "url": "https://offers.greatclips.com/YubPRmS",
@@ -164,11 +76,11 @@
       "area_name": "only at participating Atlanta & North Georgia",
       "price": "$9.99",
       "market": "Atlanta & North Georgia",
-      "last_verified": "2026-10-08",
+      "last_verified": "2026-10-09",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Atlanta & North Georgia",
       "added_date": "2026-10-01",
-      "last_seen": "2026-10-08"
+      "last_seen": "2026-10-09"
     },
     {
       "url": "https://offers.greatclips.com/MbFSX5B",
@@ -180,11 +92,11 @@
       "area_name": "only at participating Greater Tampa Bay, Lakeland & Sarasota",
       "price": "$9.99",
       "market": "Greater Tampa Bay, Lakeland & Sarasota",
-      "last_verified": "2026-10-08",
+      "last_verified": "2026-10-09",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Greater Tampa Bay, Lakeland & Sarasota",
       "added_date": "2026-10-03",
-      "last_seen": "2026-10-08"
+      "last_seen": "2026-10-09"
     },
     {
       "url": "https://offers.greatclips.com/CqMFYx7",
@@ -196,27 +108,11 @@
       "area_name": "ly at participating Orlando, Ocala, Daytona Beach & Melbourne",
       "price": "$9.99",
       "market": "ly at participating Orlando, Ocala, Daytona Beach & Melbourne",
-      "last_verified": "2026-10-08",
+      "last_verified": "2026-10-09",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in ly at participating Orlando, Ocala, Daytona Beach & Melbourne",
       "added_date": "2026-10-05",
-      "last_seen": "2026-10-08"
-    },
-    {
-      "url": "https://offers.greatclips.com/ooRyocE",
-      "coupon_code": "ooRyocE",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/20995/50707-002-1200x600-10.99.jpg",
-      "expiration": "10/09/2026",
-      "location_name": "Western AZ Area",
-      "state": "AREA",
-      "area_name": "Western AZ",
-      "price": "$10.99",
-      "market": "Western AZ",
-      "last_verified": "2026-10-08",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Western AZ",
-      "added_date": "2026-09-19",
-      "last_seen": "2026-10-04"
+      "last_seen": "2026-10-09"
     },
     {
       "url": "https://offers.greatclips.com/sp39D67",
@@ -228,11 +124,11 @@
       "area_name": "participating Las Vegas",
       "price": "$10.99",
       "market": "Las Vegas",
-      "last_verified": "2026-10-08",
+      "last_verified": "2026-10-09",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Las Vegas",
       "added_date": "2026-09-26",
-      "last_seen": "2026-10-08"
+      "last_seen": "2026-10-09"
     },
     {
       "url": "https://offers.greatclips.com/eSWLmcD",
@@ -244,11 +140,11 @@
       "area_name": "only at participating Twin Cities & surrounding area",
       "price": "$11.99",
       "market": "Twin Cities & surrounding area",
-      "last_verified": "2026-10-08",
+      "last_verified": "2026-10-09",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Twin Cities & surrounding area",
       "added_date": "2026-10-01",
-      "last_seen": "2026-10-08"
+      "last_seen": "2026-10-09"
     },
     {
       "url": "https://offers.greatclips.com/fENCxqR",
@@ -260,27 +156,11 @@
       "area_name": "participating Portland",
       "price": "$11.99",
       "market": "Portland",
-      "last_verified": "2026-10-08",
+      "last_verified": "2026-10-09",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Portland",
       "added_date": "2026-10-07",
-      "last_seen": "2026-10-08"
-    },
-    {
-      "url": "https://offers.greatclips.com/8FJ8mLg",
-      "coupon_code": "8FJ8mLg",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21035/50707-002-1200x600-14.99.jpg",
-      "expiration": "10/09/2026",
-      "location_name": "participating Greater Western Washington Area",
-      "state": "AREA",
-      "area_name": "participating Greater Western Washington",
-      "price": "$14.99",
-      "market": "Greater Western Washington",
-      "last_verified": "2026-10-08",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Greater Western Washington",
-      "added_date": "2026-09-26",
-      "last_seen": "2026-10-08"
+      "last_seen": "2026-10-09"
     },
     {
       "url": "https://offers.greatclips.com/MYE0aAk",
@@ -292,11 +172,43 @@
       "area_name": "only at participating Washington D.C.",
       "price": "$14.99",
       "market": "Washington D.C.",
-      "last_verified": "2026-10-08",
+      "last_verified": "2026-10-09",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Washington D.C.",
       "added_date": "2026-09-30",
-      "last_seen": "2026-10-08"
+      "last_seen": "2026-10-09"
+    },
+    {
+      "url": "https://offers.greatclips.com/8FJ8mLg",
+      "coupon_code": "8FJ8mLg",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21035/50707-002-1200x600-14.99.jpg",
+      "expiration": "10/09/2026",
+      "location_name": "participating Greater Western Washington Area",
+      "state": "AREA",
+      "area_name": "participating Greater Western Washington",
+      "price": "$14.99",
+      "market": "Greater Western Washington",
+      "last_verified": "2026-10-09",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Greater Western Washington",
+      "added_date": "2026-10-09",
+      "last_seen": "2026-10-09"
+    },
+    {
+      "url": "https://offers.greatclips.com/KQbSyWd",
+      "coupon_code": "KQbSyWd",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21368/50707-002-1200x600-15.99.jpg",
+      "expiration": "11/01/2026",
+      "location_name": "n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove Area",
+      "state": "AREA",
+      "area_name": "n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
+      "price": "$15.99",
+      "market": "n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
+      "last_verified": "2026-10-09",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
+      "added_date": "2026-10-09",
+      "last_seen": "2026-10-09"
     }
   ]
 }
