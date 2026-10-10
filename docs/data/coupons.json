@@ -1,12 +1,49 @@
 {
- "generated_at": "2026-10-09T22:23:28Z",
- "scraped_at": "2026-10-09T15:23:09.730022",
- "total": 13,
+ "generated_at": "2026-10-10T04:48:31Z",
+ "scraped_at": "2026-10-09T21:48:14.536455",
+ "total": 17,
  "scopes": {
-  "area": 11,
-  "unknown": 2
+  "area": 14,
+  "unknown": 3
  },
  "coupons": [
+  {
+   "url": "https://offers.greatclips.com/W2GZYMS",
+   "coupon_code": "W2GZYMS",
+   "price": "$7.99",
+   "location_name": "participating Birmingham & Central Alabama Area",
+   "state": "AREA",
+   "area_name": "participating Birmingham & Central Alabama",
+   "market": "Birmingham & Central Alabama",
+   "expiration": "10/23/2026",
+   "last_verified": "2026-10-09",
+   "participating_location_note": "Valid at participating locations in Birmingham & Central Alabama",
+   "scope": "area",
+   "price_value": 7.99,
+   "metro_keys": [
+    "AL/cahaba-heights"
+   ],
+   "market_names": [
+    "Birmingham, AL"
+   ],
+   "city_keys": [
+    "AL/birmingham",
+    "AL/hoover",
+    "AL/alabaster",
+    "AL/bessemer",
+    "AL/cahaba-heights",
+    "AL/calera",
+    "AL/chelsea",
+    "AL/gardendale",
+    "AL/helena",
+    "AL/homewood",
+    "AL/leeds",
+    "AL/pelham",
+    "AL/trussville",
+    "AL/vestavia",
+    "AL/vestavia-hills"
+   ]
+  },
   {
    "url": "https://offers.greatclips.com/JQx3e5q",
    "coupon_code": "JQx3e5q",
@@ -336,6 +373,41 @@
    ]
   },
   {
+   "url": "https://offers.greatclips.com/MUqHtOe",
+   "coupon_code": "MUqHtOe",
+   "price": "$9.99",
+   "location_name": "participating Piedmont Triad - N. Carolina Area",
+   "state": "AREA",
+   "area_name": "participating Piedmont Triad - N. Carolina",
+   "market": "Piedmont Triad - N. Carolina",
+   "expiration": "10/23/2026",
+   "last_verified": "2026-10-09",
+   "participating_location_note": "Valid at participating locations in Piedmont Triad - N. Carolina",
+   "scope": "area",
+   "price_value": 9.99,
+   "metro_keys": [
+    "NC/jamestown"
+   ],
+   "market_names": [
+    "Greensboro-Winston Salem, NC"
+   ],
+   "city_keys": [
+    "NC/greensboro",
+    "NC/high-point",
+    "NC/kernersville",
+    "NC/archdale",
+    "NC/asheboro",
+    "NC/jamestown",
+    "NC/king",
+    "NC/mayodan",
+    "NC/oak-ridge",
+    "NC/randleman",
+    "NC/reidsville",
+    "NC/thomasville",
+    "NC/walkertown"
+   ]
+  },
+  {
    "url": "https://offers.greatclips.com/sp39D67",
    "coupon_code": "sp39D67",
    "price": "$10.99",
@@ -483,6 +555,108 @@
    ]
   },
   {
+   "url": "https://offers.greatclips.com/KcMq06H",
+   "coupon_code": "KcMq06H",
+   "price": "$11.99",
+   "location_name": "participating Denver Area",
+   "state": "AREA",
+   "area_name": "participating Denver",
+   "market": "Denver",
+   "expiration": "10/30/2026",
+   "last_verified": "2026-10-09",
+   "participating_location_note": "Valid at participating locations in Denver",
+   "scope": "area",
+   "price_value": 11.99,
+   "metro_keys": [
+    "CO/wheat-ridge"
+   ],
+   "market_names": [
+    "Denver, CO"
+   ],
+   "city_keys": [
+    "CO/aurora",
+    "CO/denver",
+    "CO/littleton",
+    "CO/broomfield",
+    "CO/englewood",
+    "CO/castle-rock",
+    "CO/westminster",
+    "CO/arvada",
+    "CO/centennial",
+    "CO/highlands-ranch",
+    "CO/thornton",
+    "CO/lakewood",
+    "CO/parker",
+    "CO/wheat-ridge",
+    "CO/boulder",
+    "CO/brighton",
+    "CO/commerce-city",
+    "CO/conifer",
+    "CO/edgewater",
+    "CO/erie",
+    "CO/frederick",
+    "CO/glendale",
+    "CO/golden",
+    "CO/lone-tree",
+    "CO/louisville",
+    "CO/superior"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/fRwLvEh",
+   "coupon_code": "fRwLvEh",
+   "price": "$12.99",
+   "location_name": "participating Sacramento & Central Valley Area",
+   "state": "AREA",
+   "area_name": "participating Sacramento & Central Valley",
+   "market": "Sacramento & Central Valley",
+   "expiration": "10/30/2026",
+   "last_verified": "2026-10-09",
+   "participating_location_note": "Valid at participating locations in Sacramento & Central Valley",
+   "scope": "area",
+   "price_value": 12.99,
+   "metro_keys": [
+    "CA/fresno",
+    "CA/patterson",
+    "CA/bakersfield",
+    "CA/rancho-cordova"
+   ],
+   "market_names": [
+    "Fresno, CA",
+    "Modesto, CA",
+    "Bakersfield, CA",
+    "Sacramento, CA"
+   ],
+   "city_keys": [
+    "CA/fresno",
+    "CA/clovis",
+    "CA/modesto",
+    "CA/patterson",
+    "CA/riverbank",
+    "CA/turlock",
+    "CA/bakersfield",
+    "CA/sacramento",
+    "CA/roseville",
+    "CA/elk-grove",
+    "CA/citrus-heights",
+    "CA/el-dorado-hills",
+    "CA/folsom",
+    "CA/rancho-cordova",
+    "CA/rocklin",
+    "CA/antelope",
+    "CA/auburn",
+    "CA/cameron-park",
+    "CA/carmichael",
+    "CA/davis",
+    "CA/fair-oaks",
+    "CA/jackson",
+    "CA/lincoln",
+    "CA/placerville",
+    "CA/west-sacramento",
+    "CA/woodland"
+   ]
+  },
+  {
    "url": "https://offers.greatclips.com/MYE0aAk",
    "coupon_code": "MYE0aAk",
    "price": "$14.99",
@@ -497,68 +671,18 @@
    "price_value": 14.99
   },
   {
-   "url": "https://offers.greatclips.com/8FJ8mLg",
-   "coupon_code": "8FJ8mLg",
+   "url": "https://offers.greatclips.com/5T8LS8t",
+   "coupon_code": "5T8LS8t",
    "price": "$14.99",
-   "location_name": "participating Greater Western Washington Area",
+   "location_name": "participating Greater N.H. & Mass. Area",
    "state": "AREA",
-   "area_name": "participating Greater Western Washington",
-   "market": "Greater Western Washington",
-   "expiration": "10/09/2026",
+   "area_name": "participating Greater N.H. & Mass.",
+   "market": "Greater N.H. & Mass.",
+   "expiration": "10/30/2026",
    "last_verified": "2026-10-09",
-   "participating_location_note": "Valid at participating locations in Greater Western Washington",
-   "scope": "area",
-   "price_value": 14.99,
-   "metro_keys": [
-    "WA/newcastle",
-    "WA/spanaway"
-   ],
-   "market_names": [
-    "Seattle, WA",
-    "Tacoma, WA"
-   ],
-   "city_keys": [
-    "WA/redmond",
-    "WA/seattle",
-    "WA/bellevue",
-    "WA/issaquah",
-    "WA/renton",
-    "WA/sammamish",
-    "WA/bainbridge-island",
-    "WA/bothell",
-    "WA/bremerton",
-    "WA/covington",
-    "WA/des-moines",
-    "WA/duvall",
-    "WA/edmonds",
-    "WA/kenmore",
-    "WA/kent",
-    "WA/kirkland",
-    "WA/maple-valley",
-    "WA/mercer-island",
-    "WA/newcastle",
-    "WA/port-orchard",
-    "WA/poulsbo",
-    "WA/silverdale",
-    "WA/snoqualmie",
-    "WA/west-seattle",
-    "WA/woodinville",
-    "WA/lacey",
-    "WA/puyallup",
-    "WA/tacoma",
-    "WA/federal-way",
-    "WA/gig-harbor",
-    "WA/lakewood",
-    "WA/auburn",
-    "WA/bonney-lake",
-    "WA/graham",
-    "WA/milton",
-    "WA/spanaway",
-    "WA/sumner",
-    "WA/tumwater",
-    "WA/university-place",
-    "WA/yelm"
-   ]
+   "participating_location_note": "Valid at participating locations in Greater N.H. & Mass.",
+   "scope": "unknown",
+   "price_value": 14.99
   },
   {
    "url": "https://offers.greatclips.com/KQbSyWd",
