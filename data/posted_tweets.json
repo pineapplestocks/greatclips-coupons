@@ -1190,9 +1190,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips coupon alert: $9.99 haircut in the only at participating Piedmont Triad - N. Carolina area. Expires Oct 23, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#MUqHtOe\n\n#GreatClips #HaircutCoupon #Deals"
+    },
+    {
+      "coupon_code": "KcMq06H",
+      "coupon_url": "https://offers.greatclips.com/KcMq06H",
+      "post_id": "6acadc16c4de2d2b124523ce",
+      "posted_at": "2026-10-11T00:45:10Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips coupon alert: $11.99 haircut in the Denver area. Expires Oct 30, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#KcMq06H\n\n#GreatClips #HaircutCoupon #Deals"
     }
   ],
-  "last_post": "2026-10-10T19:41:28Z",
+  "last_post": "2026-10-11T00:45:10Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1267,6 +1276,7 @@
     "https://offers.greatclips.com/KIyxTax",
     "https://offers.greatclips.com/KQbSyWd",
     "https://offers.greatclips.com/KW4CV4V",
+    "https://offers.greatclips.com/KcMq06H",
     "https://offers.greatclips.com/LA9ZDU6",
     "https://offers.greatclips.com/Lcmtkkh",
     "https://offers.greatclips.com/Lg8M6iE",
