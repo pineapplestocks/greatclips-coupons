@@ -145,6 +145,21 @@
       "actual_privacy": "public",
       "thumbnail_uploaded": true,
       "captions": "uploaded"
+    },
+    {
+      "id": "dcd01b8d63cb1dcbea3a",
+      "type": "local",
+      "date": "2026-10-15",
+      "offer_keys": [
+        "9f6e2377f942d98ed68f"
+      ],
+      "status": "uploaded",
+      "location": "Birmingham & Central Alabama",
+      "video_id": "G-IWKbjV4vI",
+      "requested_privacy": "public",
+      "actual_privacy": "public",
+      "thumbnail_uploaded": true,
+      "captions": "uploaded"
     }
   ]
 }
