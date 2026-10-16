@@ -1217,9 +1217,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Fresh haircut savings: $14.99 in the only at participating Greater N.H. & Mass. area. Expires Oct 30, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#5T8LS8t\n\n#GreatClips #HaircutDeals"
+    },
+    {
+      "coupon_code": "zzmQCwk",
+      "coupon_url": "https://offers.greatclips.com/zzmQCwk",
+      "post_id": "6ad2779c93503c7a0a5bc7c5",
+      "posted_at": "2026-10-16T19:14:36Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $7.99 in the Chattanooga area. Expires Oct 23, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#zzmQCwk\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-10-11T19:53:21Z",
+  "last_post": "2026-10-16T19:14:36Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1414,6 +1423,7 @@
     "https://offers.greatclips.com/yXQLlHU",
     "https://offers.greatclips.com/yYb1TJ8",
     "https://offers.greatclips.com/yiuVvFj",
-    "https://offers.greatclips.com/zSjOo4J"
+    "https://offers.greatclips.com/zSjOo4J",
+    "https://offers.greatclips.com/zzmQCwk"
   ]
 }
