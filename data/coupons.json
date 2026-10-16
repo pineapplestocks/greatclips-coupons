@@ -1,6 +1,6 @@
 {
-  "scraped_at": "2026-10-16T03:54:31.878011",
-  "total_coupons": 13,
+  "scraped_at": "2026-10-16T09:14:26.775127",
+  "total_coupons": 14,
   "coupons": [
     {
       "url": "https://offers.greatclips.com/W2GZYMS",
@@ -16,6 +16,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Birmingham & Central Alabama",
       "added_date": "2026-10-09",
+      "last_seen": "2026-10-16"
+    },
+    {
+      "url": "https://offers.greatclips.com/zzmQCwk",
+      "coupon_code": "zzmQCwk",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21205/50707-002-1200x600-7.99.jpg",
+      "expiration": "10/23/2026",
+      "location_name": "participating Chattanooga Area",
+      "state": "AREA",
+      "area_name": "participating Chattanooga",
+      "price": "$7.99",
+      "market": "Chattanooga",
+      "last_verified": "2026-10-16",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Chattanooga",
+      "added_date": "2026-10-16",
       "last_seen": "2026-10-16"
     },
     {

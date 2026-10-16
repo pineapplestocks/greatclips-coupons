@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-10-16T13:13:45Z",
- "scraped_at": "2026-10-16T03:54:31.878011",
- "total": 13,
+ "generated_at": "2026-10-16T16:14:48Z",
+ "scraped_at": "2026-10-16T09:14:26.775127",
+ "total": 14,
  "scopes": {
-  "area": 11,
+  "area": 12,
   "unknown": 2
  },
  "coupons": [
@@ -42,6 +42,36 @@
     "AL/trussville",
     "AL/vestavia",
     "AL/vestavia-hills"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/zzmQCwk",
+   "coupon_code": "zzmQCwk",
+   "price": "$7.99",
+   "location_name": "participating Chattanooga Area",
+   "state": "AREA",
+   "area_name": "participating Chattanooga",
+   "market": "Chattanooga",
+   "expiration": "10/23/2026",
+   "last_verified": "2026-10-16",
+   "participating_location_note": "Valid at participating locations in Chattanooga",
+   "scope": "area",
+   "price_value": 7.99,
+   "metro_keys": [
+    "TN/chattanooga"
+   ],
+   "market_names": [
+    "Chattanooga, GA/TN"
+   ],
+   "city_keys": [
+    "TN/chattanooga",
+    "TN/cleveland",
+    "TN/hixson",
+    "TN/ooltewah",
+    "GA/fort-oglethorpe",
+    "GA/dalton",
+    "TN/harrison",
+    "TN/soddy-daisy"
    ]
   },
   {
