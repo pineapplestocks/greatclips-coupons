@@ -160,6 +160,21 @@
       "actual_privacy": "public",
       "thumbnail_uploaded": true,
       "captions": "uploaded"
+    },
+    {
+      "id": "15289ea0da57eedfbe1a",
+      "type": "local",
+      "date": "2026-10-22",
+      "offer_keys": [
+        "575b6e3fbc8053035fda"
+      ],
+      "status": "uploaded",
+      "location": "Denver",
+      "video_id": "EinYZwtxgUk",
+      "requested_privacy": "public",
+      "actual_privacy": "public",
+      "thumbnail_uploaded": true,
+      "captions": "uploaded"
     }
   ]
 }
