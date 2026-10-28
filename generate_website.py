@@ -10,6 +10,7 @@ import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 from html import escape as html_escape
+from coupon_validity import is_expired
 
 # Paths
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -100,6 +101,8 @@ def normalize_coupons(coupons):
     """Clean data issues before rendering: junk rows, UNKNOWN state, truncated area names."""
     cleaned = []
     for coupon in coupons:
+        if is_expired(coupon):
+            continue
         has_price = bool(coupon.get("price"))
         has_location = bool(coupon.get("location_name") or coupon.get("area_name") or coupon.get("city"))
         if not has_price and not has_location:
@@ -170,8 +173,7 @@ def get_expiration(coupon):
     if expiration and expiration != "N/A":
         return expiration
 
-    future_date = datetime.now() + timedelta(days=14)
-    return future_date.strftime("%m/%d/%Y")
+    return "See official offer"
 
 
 def format_city_state(coupon):
@@ -1271,7 +1273,7 @@ def generate_website():
     coupons_json = json.dumps(coupons, separators=(",", ":"))
     html = re.sub(
         r'const COUPON_DATA = \[\];',
-        f'const COUPON_DATA = {coupons_json};',
+        lambda _: f'const COUPON_DATA = {coupons_json};',
         html
     )
 

@@ -11,6 +11,7 @@ import time
 import os
 import sys
 from datetime import datetime, timedelta
+from coupon_validity import is_expired as has_expired_date
 from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 try:
@@ -216,8 +217,7 @@ def is_expired(coupon):
     
     try:
         # Parse expiration date (format: MM/DD/YYYY)
-        exp_date = datetime.strptime(exp_str, '%m/%d/%Y')
-        return datetime.now() > exp_date
+        return has_expired_date(coupon)
     except:
         return False
 

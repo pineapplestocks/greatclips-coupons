@@ -406,6 +406,21 @@
     <script>
         // Coupon data will be injected here by generate_website.py
         const COUPON_DATA = [];
+        // Expire dated offers at the end of the visitor's local calendar day.
+        function isCurrentCoupon(coupon) {
+            const raw = String(coupon.expiration || '').trim();
+            const m = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(raw);
+            const iso = /^(\d{4})-(\d{2})-(\d{2})$/.exec(raw);
+            if (!m && !iso) return true;
+            const year = Number(m ? m[3] : iso[1]);
+            const month = Number(m ? m[1] : iso[2]);
+            const day = Number(m ? m[2] : iso[3]);
+            const now = new Date();
+            return year * 10000 + month * 100 + day >= now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
+        }
+        const currentCoupons = COUPON_DATA.filter(isCurrentCoupon);
+        const removedExpiredCoupons = currentCoupons.length !== COUPON_DATA.length;
+        COUPON_DATA.splice(0, COUPON_DATA.length, ...currentCoupons);
         const LAST_UPDATED = "{{LAST_UPDATED}}";
 
         // Format date like "December 31st, 2026"
@@ -438,13 +453,7 @@
             if (coupon.expiration && coupon.expiration !== 'N/A') {
                 return coupon.expiration;
             }
-            // Calculate 14 days from today
-            const futureDate = new Date();
-            futureDate.setDate(futureDate.getDate() + 14);
-            const month = (futureDate.getMonth() + 1).toString().padStart(2, '0');
-            const day = futureDate.getDate().toString().padStart(2, '0');
-            const year = futureDate.getFullYear();
-            return `${month}/${day}/${year}`;
+            return 'See official offer';
         }
         
         // Format city, state - removes trailing commas from city
@@ -824,7 +833,7 @@
         // Render the app
         function render() {
             const app = document.getElementById('app');
-            if (document.getElementById('resultsGrid')) {
+            if (document.getElementById('resultsGrid') && !removedExpiredCoupons) {
                 return;
             }
 

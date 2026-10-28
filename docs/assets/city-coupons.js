@@ -93,8 +93,14 @@ var GC_MODAL_HTML = "    <div id=\"gcEmailModal\" class=\"hidden fixed inset-0 z
   fetch('/data/coupons.json', { cache: 'no-cache' })
     .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
     .then(function (feed) {
-      wireNationalButton(feed.coupons || []);
-      var hits = (feed.coupons || []).filter(reaches);
+      var active = (feed.coupons || []).filter(function (c) {
+        var match = /^([0-9]{1,2})[/]([0-9]{1,2})[/]([0-9]{4})$/.exec(c.expiration || '');
+        if (!match) return true;
+        var now = new Date();
+        return Number(match[3]) * 10000 + Number(match[1]) * 100 + Number(match[2]) >= now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
+      });
+      wireNationalButton(active);
+      var hits = active.filter(reaches);
       if (!hits.length) {
         box.innerHTML =
           '<p class="text-slate-600">No live coupon is verified for ' + PAGE.cityLabel +

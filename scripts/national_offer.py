@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from coupon_validity import is_expired
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 FEED_FILE = REPO_ROOT / "docs" / "data" / "coupons.json"
@@ -61,7 +62,7 @@ def national_offer(feed: dict | None = None) -> dict | None:
     the nationwide section entirely rather than fall back to a guess.
     """
     data = load_feed() if feed is None else feed
-    national = [c for c in data.get("coupons", []) if c.get("scope") == "national"]
+    national = [c for c in data.get("coupons", []) if c.get("scope") == "national" and not is_expired(c)]
     if not national:
         return None
     return min(national, key=_price_value)
@@ -75,7 +76,7 @@ def floor_price(feed: dict | None = None) -> str | None:
     matched for months.
     """
     data = load_feed() if feed is None else feed
-    coupons = data.get("coupons") or []
+    coupons = [c for c in (data.get("coupons") or []) if not is_expired(c)]
     if not coupons:
         return None
     cheapest = min(coupons, key=_price_value)

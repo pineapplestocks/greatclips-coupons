@@ -43,6 +43,9 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: python scraper.py
 
+      - name: Test coupon expiry and Unicode rendering
+        run: python -m unittest discover -s tests -p test_coupon_expiry.py
+
       - name: Generate website
         run: |
           python generate_website.py
