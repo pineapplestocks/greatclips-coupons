@@ -1226,9 +1226,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $7.99 in the Chattanooga area. Expires Oct 23, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#zzmQCwk\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "dBcUgpB",
+      "coupon_url": "https://offers.greatclips.com/dBcUgpB",
+      "post_id": "6ae25ea7a5c5e21e3b07e900",
+      "posted_at": "2026-10-28T20:44:23Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $7.99 in the Cleveland, Akron, Canton & Sandusky area. Expires Nov 6, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#dBcUgpB\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-10-16T19:14:36Z",
+  "last_post": "2026-10-28T20:44:23Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1355,6 +1364,7 @@
     "https://offers.greatclips.com/c0Vjn1o",
     "https://offers.greatclips.com/ctHkG1h",
     "https://offers.greatclips.com/cx7AL0B",
+    "https://offers.greatclips.com/dBcUgpB",
     "https://offers.greatclips.com/dEk0iJA",
     "https://offers.greatclips.com/djuGGDk",
     "https://offers.greatclips.com/dkIygSf",
