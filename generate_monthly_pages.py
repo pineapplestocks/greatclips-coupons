@@ -8,6 +8,7 @@ import json
 import os
 from datetime import datetime, timedelta
 from pathlib import Path
+from coupon_validity import is_expired
 
 # Configuration
 OUTPUT_DIR = "docs"  # Where pages are served from
@@ -84,7 +85,7 @@ def load_site_data():
         try:
             with open(feed_path, encoding="utf-8") as fh:
                 feed = json.load(fh)
-            coupons = feed.get("coupons", [])
+            coupons = [c for c in feed.get("coupons", []) if not is_expired(c)]
             data["coupon_count"] = len(coupons)
             prices = [c["price_value"] for c in coupons if c.get("price_value")]
             if prices:

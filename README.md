@@ -1,9 +1,23 @@
 # Great Clips Coupon Scraper & Website
 
-Automatically scrapes Great Clips coupons from Facebook Ad Library and deploys a searchable website to GitHub Pages.
+Automatically scrapes Great Clips coupons from Facebook Ad Library every six hours. The public greatclipsdeal.com domain serves the `greatclips-coupons` Cloudflare Worker assets; Workers Builds follows committed `docs/` updates. GitHub Pages is also deployed.
 
 Automated narrated YouTube videos, thumbnails, captions, and optional uploads are
 available through `python -m video`. See [video setup and automation](video/README.md).
+
+## Production checks
+
+The scrape workflow runs regression tests before contacting sources, verifies existing offers against readable official terms, and audits the generated homepage/feed before committing. An unavailable or challenge page cannot refresh an offer's verification date. Printed expiry dates are inclusive; expired offers are filtered in the scraper, build and browser.
+
+```powershell
+python -m unittest discover -s tests -p "test_coupon*.py"
+python scripts/inject_local_links.py --check
+python scripts/audit_coupon_pipeline.py
+```
+
+To request a fresh scan: `gh workflow run scrape.yml --repo pineapplestocks/greatclips-coupons --ref main`. Confirm **both** the scrape/deploy run and the `Workers Builds: greatclips-coupons` check succeed, then compare the live `/data/coupons.json` scan timestamp with the committed source. Failed runs retain a job summary and the publication audit artifact when available.
+
+For a direct public-site deployment, use `wrangler deploy --config wrangler.jsonc`. The separate `wrangler.toml` targets the email Worker and is not the website deployment config. The legacy service-worker navigation proxy is retired.
 
 ## 🚀 Features
 

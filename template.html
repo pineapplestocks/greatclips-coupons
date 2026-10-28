@@ -1277,13 +1277,13 @@
         render();
         syncStateNav();
         
-        // Register Service Worker for PWA
+        // Retire the old navigation proxy without registering a new worker.
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
-                .then(reg => console.log('Service Worker registered'))
-                .catch(err => console.log('Service Worker not registered', err));
+            navigator.serviceWorker.getRegistration('/').then(reg => {
+                if (reg && reg.active && new URL(reg.active.scriptURL).pathname === '/sw.js') reg.unregister();
+            }).catch(() => {});
         }
-        
+
         // ============ EMAIL CAPTURE SYSTEM ============
         let pendingCouponUrl = '';
         let pendingCouponPrice = '';

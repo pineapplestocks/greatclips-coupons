@@ -26,8 +26,8 @@ env:
   TZ: America/Phoenix
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  group: coupon-content-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   refresh:
@@ -84,7 +84,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add -A data docs
+          git add -A -- data docs
           if git diff --staged --quiet; then
             echo "No salon changes this month"
           else

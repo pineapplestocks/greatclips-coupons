@@ -231,10 +231,15 @@ COUPON_WIDGET_JS = """(function () {
     .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
     .then(function (feed) {
       var active = (feed.coupons || []).filter(function (c) {
-        var match = /^([0-9]{1,2})[/]([0-9]{1,2})[/]([0-9]{4})$/.exec(c.expiration || '');
-        if (!match) return true;
+        var raw = String(c.expiration || '').trim();
+        var match = /^([0-9]{1,2})[/]([0-9]{1,2})[/]([0-9]{4})$/.exec(raw);
+        var iso = /^([0-9]{4})-([0-9]{2})-([0-9]{2})$/.exec(raw);
+        if (!match && !iso) return true;
+        var year = Number(match ? match[3] : iso[1]);
+        var month = Number(match ? match[1] : iso[2]);
+        var day = Number(match ? match[2] : iso[3]);
         var now = new Date();
-        return Number(match[3]) * 10000 + Number(match[1]) * 100 + Number(match[2]) >= now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
+        return year * 10000 + month * 100 + day >= now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
       });
       wireNationalButton(active);
       var hits = active.filter(reaches);

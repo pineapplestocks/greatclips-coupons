@@ -1,8 +1,8 @@
 name: Scrape Great Clips Coupons
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  group: coupon-content-${{ github.ref }}
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -19,6 +19,9 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      commit_sha: ${{ steps.revision.outputs.sha }}
 
     steps:
       - name: Checkout repository
@@ -38,13 +41,15 @@ jobs:
           playwright install chromium
           playwright install-deps chromium
 
+      - name: Test coupon pipeline before scraping
+        run: |
+          python -m unittest discover -s tests -p 'test_coupon*.py'
+          python scripts/inject_local_links.py --check
+
       - name: Run scraper
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
         run: python scraper.py
-
-      - name: Test coupon expiry and Unicode rendering
-        run: python -m unittest discover -s tests -p test_coupon_expiry.py
 
       - name: Generate website
         run: |
@@ -71,17 +76,22 @@ jobs:
       - name: Refresh local links, months and duplicate pages
         run: |
           python scripts/inject_local_links.py
+          python generate_monthly_pages.py
           python scripts/ensure_static_root_files.py
+          python scripts/audit_coupon_pipeline.py --report "$RUNNER_TEMP/coupon-audit.json"
 
       - name: Commit and push changes (race-safe)
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add -A
+          git add -A -- data docs
           if git diff --staged --quiet; then
             echo "No changes to commit"
             echo "has_changes=false" >> $GITHUB_OUTPUT
           else
+            # Keep the fresh scan even if pulling a concurrent manual edit causes
+            # a stash conflict. Generated pages can be rebuilt; the scan cannot.
+            cp data/coupons.json "$RUNNER_TEMP/scraped-coupons.json"
             git stash
             git pull --rebase origin main
             # A bare `git stash pop || true` used to swallow conflicts here, which
@@ -95,6 +105,7 @@ jobs:
               git reset || true
               git stash drop || true
             fi
+            cp "$RUNNER_TEMP/scraped-coupons.json" data/coupons.json
             # Rebuild in dependency order after the pull: pages first, then the
             # post-processing that depends on them, then the sitemap last so it
             # reflects whatever ended up on disk.
@@ -102,16 +113,43 @@ jobs:
             python scripts/export_coupon_feed.py
             python generate_local_pages.py
             python scripts/inject_local_links.py
+            python generate_monthly_pages.py
             python scripts/ensure_static_root_files.py
+            python scripts/audit_coupon_pipeline.py --report "$RUNNER_TEMP/coupon-audit.json"
             python update_sitemap.py
             # Refuse to publish conflict markers, whatever their source.
             python scripts/check_conflict_markers.py
-            git add -A
+            git add -A -- data docs
             git commit -m "🔄 Update coupons $(date +'%Y-%m-%d %H:%M')"
             git push
             echo "has_changes=true" >> $GITHUB_OUTPUT
           fi
         id: commit
+
+      - name: Record the tested content revision
+        id: revision
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Save pipeline audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: coupon-pipeline-audit
+          path: ${{ runner.temp }}/coupon-audit.json
+          if-no-files-found: ignore
+
+      - name: Summarize scrape result
+        if: always()
+        env:
+          JOB_RESULT: ${{ job.status }}
+          CONTENT_SHA: ${{ steps.revision.outputs.sha }}
+        run: |
+          printf '### Coupon pipeline: %s\n\n' "$JOB_RESULT" >> "$GITHUB_STEP_SUMMARY"
+          if [ -n "$CONTENT_SHA" ]; then
+            printf 'Content revision: `%s`\n' "$CONTENT_SHA" >> "$GITHUB_STEP_SUMMARY"
+          else
+            printf 'No deployable revision was produced. Review the failed step above.\n' >> "$GITHUB_STEP_SUMMARY"
+          fi
 
   deploy:
     needs: scrape
@@ -127,10 +165,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: main
-
-      - name: Pull latest changes
-        run: git pull origin main
+          ref: ${{ needs.scrape.outputs.commit_sha }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -151,3 +186,11 @@ jobs:
       - name: Ping IndexNow (Bing, Yandex, Seznam, Naver)
         if: always()
         run: python3 scripts/indexnow_submit.py --core
+
+      - name: Summarize deployment result
+        if: always()
+        env:
+          JOB_RESULT: ${{ job.status }}
+          CONTENT_SHA: ${{ needs.scrape.outputs.commit_sha }}
+        run: |
+          printf '### Pages deployment: %s\n\nRevision: `%s`\n' "$JOB_RESULT" "$CONTENT_SHA" >> "$GITHUB_STEP_SUMMARY"

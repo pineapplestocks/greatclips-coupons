@@ -21,9 +21,11 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from coupon_validity import is_expired
+import sys
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO_ROOT))
+from coupon_validity import is_expired
 FEED_FILE = REPO_ROOT / "docs" / "data" / "coupons.json"
 
 
@@ -41,7 +43,9 @@ def load_feed(path: Path | None = None) -> dict:
             data = json.load(fh)
     except (json.JSONDecodeError, OSError):
         return {}
-    return data if isinstance(data, dict) else {}
+    if not isinstance(data, dict):
+        return {}
+    return {**data, "coupons": [c for c in data.get("coupons", []) if not is_expired(c)]}
 
 
 def _price_value(coupon: dict) -> float:

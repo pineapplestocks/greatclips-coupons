@@ -179,6 +179,36 @@ def extract_offer_text(page_html):
     return soup, visible_text
 
 
+
+def assess_offer_page(soup, text):
+    """Only real coupon content can refresh a verification date."""
+    for node in soup.find_all(string=True):
+        if not any(phrase in str(node).lower() for phrase in _ENDED_PHRASES):
+            continue
+        hidden = any(parent.has_attr("hidden") or
+                     re.search(r"display\s*:\s*none", parent.get("style", ""), re.I) or
+                     "hidden" in parent.get("class", []) or parent.name in ("script", "style", "template")
+                     for parent in node.parents if getattr(parent, "attrs", None) is not None)
+        if not hidden:
+            return "ended"
+    if not re.search(r"\$\s*\d", text) or not re.search(r"Great\s+Clips|haircut", text, re.I):
+        return "unverifiable"
+    if not (soup.select_one("#description, #terms_and_conditions") or re.search(r"valid|expires?", text, re.I)):
+        return "unverifiable"
+    return "active"
+
+
+def offer_facts(text):
+    facts = {}
+    expiry = re.search(r"expir(?:es?|ation)(?:\s+date)?\s*:?\s*(\d{1,2}/\d{1,2}/\d{4})", text, re.I)
+    price = re.search(r"\$(\d+(?:\.\d{1,2})?)", text)
+    if expiry:
+        facts["expiration"] = expiry.group(1)
+    if price:
+        facts["price"] = "$" + price.group(1)
+    return facts
+
+
 def load_existing_coupons():
     """Load existing coupons from JSON file"""
     if os.path.exists(JSON_FILE):
@@ -286,6 +316,9 @@ def merge_coupons(existing_coupons, new_coupons):
     
     for coupon in new_coupons:
         key = get_coupon_key(coupon)
+        if is_expired(coupon):
+            coupon_dict.pop(key, None)
+            continue
         
         if key not in coupon_dict:
             # New coupon - add it with today's date
@@ -299,6 +332,11 @@ def merge_coupons(existing_coupons, new_coupons):
             # Existing coupon - update last_seen, optionally update expiration
             existing = coupon_dict[key]
             
+            # Refresh parsed terms as well as price when the source reissues a URL.
+            if not existing.get('manual_add'):
+                for field in ('price', 'location_name', 'address', 'city', 'state', 'area_name', 'valid_text', 'image_url'):
+                    if field in coupon and (field != 'state' or coupon[field] != 'UNKNOWN'):
+                        existing[field] = coupon[field]
             # Only update expiration if new one is valid and existing isn't manual
             if coupon.get('expiration') and coupon.get('expiration') != 'N/A':
                 # Don't overwrite manual coupon's expiration unless it's empty
@@ -312,7 +350,7 @@ def merge_coupons(existing_coupons, new_coupons):
     print(f"   ➕ Added {new_count} new coupons")
     print(f"   🔄 Updated {updated_count} existing coupons")
     
-    return list(coupon_dict.values())
+    return [c for c in coupon_dict.values() if not is_expired(c)]
 
 
 def classify_coupon_with_llm(page_text):
@@ -419,18 +457,20 @@ _ENDED_PHRASES = [
 ]
 
 
-def purge_ended_offers(coupons):
+def purge_ended_offers(coupons, verification_report=None):
     """
     Visit every coupon URL and:
     - Remove any whose page shows an 'offer ended' message
     - Re-classify any state='US' coupons missing valid_text (old fallback mis-tags)
-    Manual coupons (manual_add=True) are skipped.
+    Manual pricing/location edits are retained, but ended offers are removed.
     Returns the cleaned list.
     """
-    to_purge_check = [c for c in coupons if c.get('url') and not c.get('manual_add')]
+    to_purge_check = [c for c in coupons if c.get('url')]
     to_reclassify = [c for c in to_purge_check if c.get('state') == 'US' and not c.get('valid_text')]
     to_reclassify_urls = {c['url'] for c in to_reclassify}
 
+    if verification_report is not None:
+        verification_report.update(attempted=len(to_purge_check), verified=0, removed=0, unavailable=0)
     if not to_purge_check:
         return coupons
 
@@ -441,6 +481,7 @@ def purge_ended_offers(coupons):
     ended_urls = set()
     verified_urls = set()
     reclassify_updates = {}  # url -> updated fields
+    unavailable_count = 0
 
     for i, coupon in enumerate(to_purge_check, 1):
         url = coupon['url']
@@ -452,21 +493,26 @@ def purge_ended_offers(coupons):
             if not page_html:
                 raise RuntimeError("empty HTML response")
 
-            _, page_text = extract_offer_text(page_html)
-            verified_urls.add(url)
-
-            # Check for ended offers
-            if any(phrase in page_text.lower() for phrase in _ENDED_PHRASES):
+            soup, page_text = extract_offer_text(page_html)
+            status = assess_offer_page(soup, page_text)
+            if status == "unverifiable":
+                unavailable_count += 1
+                print(f"  ⚠️  [{i}/{len(to_purge_check)}] {code} - Not a readable coupon; verification unchanged")
+                continue
+            facts = offer_facts(page_text)
+            if status == "ended" or has_expired_date(facts):
                 ended_urls.add(url)
                 print(f"  🗑️  [{i}/{len(to_purge_check)}] {code} - Offer ended, removing")
                 continue
 
+            verified_urls.add(url)
+            reclassify_updates[url] = facts
             # Re-classify US coupons that were tagged by the old fallback
             if needs_reclassify:
                 llm = classify_coupon_with_llm(page_text)
                 if llm:
                     ctype = (llm.get('type') or 'UNKNOWN').upper()
-                    update = {'last_verified': today}
+                    update = {**facts, 'last_verified': today}
                     # Capture valid_text if found
                     vm = re.search(
                         r'(Valid[\s\S]{0,400}?(?:Expires\s+\d{1,2}/\d{1,2}/\d{4}|salons?\.))',
@@ -506,6 +552,7 @@ def purge_ended_offers(coupons):
                     print(f"  ⚠️  [{i}/{len(to_purge_check)}] {code} - LLM unavailable, leaving as-is")
 
         except Exception as e:
+            unavailable_count += 1
             print(f"  ⚠️  [{i}/{len(to_purge_check)}] {code} - Unreachable: {str(e)[:40]}")
 
     # Apply all changes
@@ -515,7 +562,12 @@ def purge_ended_offers(coupons):
         if url in ended_urls:
             continue
         if url in reclassify_updates:
-            c.update(reclassify_updates[url])
+            updates = reclassify_updates[url]
+            if c.get('manual_add'):
+                updates = {k: v for k, v in updates.items() if k == 'expiration'}
+            c.update(updates)
+        if is_expired(c):
+            continue
         if url in verified_urls:
             normalize_coupon_record(c, verified_at=today)
         cleaned.append(c)
@@ -525,8 +577,9 @@ def purge_ended_offers(coupons):
         print(f"   🗑️  Removed {removed} ended offer(s)")
     if reclassify_updates:
         print(f"   🔄 Re-classified {len(reclassify_updates)} previously mis-tagged coupon(s)")
-    if not removed and not reclassify_updates:
-        print(f"   ✅ All offers verified")
+    print(f"   Verification: {len(verified_urls)} active, {removed} removed, {unavailable_count} unavailable")
+    if verification_report is not None:
+        verification_report.update(verified=len(verified_urls), removed=removed, unavailable=unavailable_count)
     return cleaned
 
 
@@ -635,7 +688,7 @@ def extract_offer_urls(html_content):
     return list(cleaned_urls)
 
 
-def fetch_offer_details(offer_urls):
+def fetch_offer_details(offer_urls, rejected_urls=None):
     """Visit each offer URL and extract details"""
     print()
     print("🔄 Fetching details from each coupon page...")
@@ -656,8 +709,14 @@ def fetch_offer_details(offer_urls):
 
             soup, page_text = extract_offer_text(page_html)
 
-            # Skip offers that have already ended
-            if "this offer has ended" in page_text.lower():
+            # A challenge/error page is not a successfully verified coupon.
+            status = assess_offer_page(soup, page_text)
+            if status == "unverifiable":
+                print(f"  ⚠️  [{i}/{len(offer_urls)}] {code} - Not a readable coupon, skipping")
+                continue
+            if status == "ended" or has_expired_date(offer_facts(page_text)):
+                if rejected_urls is not None:
+                    rejected_urls.add(url)
                 print(f"  🗑️  [{i}/{len(offer_urls)}] {code} - Offer ended, skipping")
                 continue
 
@@ -720,7 +779,7 @@ def fetch_offer_details(offer_urls):
                 )
                 # 3. Narrow area regex (original, kept for speed)
                 area_match = re.search(
-                    r'(?:participating|only at)\s+([A-Za-z\s]+?)\s+area\s+Great\s+Clips',
+                    r'(?:participating|only at)\s+([A-Za-z][\w\s,.&/’–-]{2,200}?)\s+area\s+(?:Great\s+Clips\s+)?salons?',
                     page_text, re.IGNORECASE
                 )
                 # 4. Broader area fallback
@@ -785,7 +844,7 @@ def fetch_offer_details(offer_urls):
             continue
 
         # Only save coupons that have useful data (price or location)
-        if coupon.get("price") or coupon.get("location_name") or coupon.get("state"):
+        if not is_expired(coupon) and (coupon.get("price") or coupon.get("location_name")):
             normalize_coupon_record(coupon, verified_at=today)
             coupons.append(coupon)
     
@@ -796,7 +855,7 @@ def fetch_offer_details(offer_urls):
     return coupons
 
 
-def save_results(new_coupons):
+def save_results(new_coupons, rejected_urls=None):
     """Merge new coupons with existing ones and save to JSON"""
     print()
     print("💾 Saving results...")
@@ -808,13 +867,19 @@ def save_results(new_coupons):
     
     # Merge new coupons with existing (removes expired, avoids duplicates)
     coupons = merge_coupons(existing_coupons, new_coupons)
+    coupons = [c for c in coupons if c.get("url") not in (rejected_urls or set())]
 
     # Honor manual removals before checking/saving rediscovered offers.
     from generate_website import is_blocked_coupon
     coupons = [coupon for coupon in coupons if not is_blocked_coupon(coupon)]
 
     # Remove any coupons whose offer page now shows "This offer has ended"
-    coupons = purge_ended_offers(coupons)
+    verification = {}
+    coupons = purge_ended_offers(coupons, verification)
+    if verification.get("attempted") and not (verification.get("verified") or verification.get("removed")):
+        raise RuntimeError("No offer pages could be verified; refusing to publish a successful refresh")
+    if verification.get("unavailable"):
+        print(f"::warning::{verification['unavailable']} offer page(s) unavailable; their previous verification dates were retained")
 
     # Sort by price (but keep manual/US-wide coupons at the end for visibility)
     def get_sort_key(c):
@@ -831,6 +896,7 @@ def save_results(new_coupons):
     data = {
         "scraped_at": datetime.now().isoformat(),
         "total_coupons": len(coupons),
+        "verification": verification,
         "coupons": coupons
     }
     
@@ -876,10 +942,11 @@ def main():
         save_results([])
     else:
         # Step 3: Fetch details from each offer page
-        coupons = fetch_offer_details(offer_urls)
-        
+        rejected_urls = set()
+        coupons = fetch_offer_details(offer_urls, rejected_urls)
+
         # Step 4: Save results (merges with existing)
-        save_results(coupons)
+        save_results(coupons, rejected_urls)
     
     print()
     print("✅ Done!")

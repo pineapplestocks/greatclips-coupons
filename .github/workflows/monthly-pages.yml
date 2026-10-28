@@ -15,8 +15,8 @@ env:
   TZ: America/Phoenix
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  group: coupon-content-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   generate-monthly-pages:
@@ -49,7 +49,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add -A docs
+          git add -A -- pages data docs
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
