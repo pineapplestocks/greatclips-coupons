@@ -1244,9 +1244,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips coupon alert: $9.99 haircut in the Hampton Roads & Peninsula area. Expires Nov 6, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#G4aedkn\n\n#GreatClips #HaircutCoupon #Deals"
+    },
+    {
+      "coupon_code": "3xId6vZ",
+      "coupon_url": "https://offers.greatclips.com/3xId6vZ",
+      "post_id": "6ae314f368ebd3a1d773ab22",
+      "posted_at": "2026-10-29T09:42:11Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips coupon alert: $10.99 haircut in the St. Louis Metro & Surrounding area. Expires Nov 6, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#3xId6vZ\n\n#GreatClips #HaircutCoupon #Deals"
     }
   ],
-  "last_post": "2026-10-29T01:39:34Z",
+  "last_post": "2026-10-29T09:42:11Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1264,6 +1273,7 @@
     "https://offers.greatclips.com/3bnhBOt",
     "https://offers.greatclips.com/3n6Hy6K",
     "https://offers.greatclips.com/3spM630",
+    "https://offers.greatclips.com/3xId6vZ",
     "https://offers.greatclips.com/3zK8eV0",
     "https://offers.greatclips.com/4DPZcps",
     "https://offers.greatclips.com/4ECj50d",
