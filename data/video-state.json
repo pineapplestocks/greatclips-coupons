@@ -175,6 +175,21 @@
       "actual_privacy": "public",
       "thumbnail_uploaded": true,
       "captions": "uploaded"
+    },
+    {
+      "id": "e8e5552cd71ffaef349c",
+      "type": "local",
+      "date": "2026-10-29",
+      "offer_keys": [
+        "9ddb0c11292499bb3b1a"
+      ],
+      "status": "uploaded",
+      "location": "Calgary-Lethbridge-Airdrie-Okotoks-Cochrane",
+      "video_id": "uK9jYDMT95c",
+      "requested_privacy": "public",
+      "actual_privacy": "public",
+      "thumbnail_uploaded": true,
+      "captions": "uploaded"
     }
   ]
 }
