@@ -1253,9 +1253,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips coupon alert: $10.99 haircut in the St. Louis Metro & Surrounding area. Expires Nov 6, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#3xId6vZ\n\n#GreatClips #HaircutCoupon #Deals"
+    },
+    {
+      "coupon_code": "gt9ViKG",
+      "coupon_url": "https://offers.greatclips.com/gt9ViKG",
+      "post_id": "6ae3b135f48fe90c600314e2",
+      "posted_at": "2026-10-29T20:48:53Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $11.99 in the Cincinnati area. Expires Nov 6, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#gt9ViKG\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-10-29T09:42:11Z",
+  "last_post": "2026-10-29T20:48:53Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1400,6 +1409,7 @@
     "https://offers.greatclips.com/gGmwxRu",
     "https://offers.greatclips.com/gS1yuyY",
     "https://offers.greatclips.com/gf1mLrF",
+    "https://offers.greatclips.com/gt9ViKG",
     "https://offers.greatclips.com/hN8vUzK",
     "https://offers.greatclips.com/hOlFSQ7",
     "https://offers.greatclips.com/hwWLU3h",
