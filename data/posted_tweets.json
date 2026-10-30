@@ -1271,9 +1271,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $12.99 in the Detroit area. Expires Nov 13, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#wHklWc0\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "e7VQyfc",
+      "coupon_url": "https://offers.greatclips.com/e7VQyfc",
+      "post_id": "6ae467c2ceb12661efdb207f",
+      "posted_at": "2026-10-30T09:47:46Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips coupon alert: $18.99 haircut in the Calgary-Lethbridge-Airdrie-Okotoks-Cochrane area. Expires Nov 4, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#e7VQyfc\n\n#GreatClips #HaircutCoupon #Deals"
     }
   ],
-  "last_post": "2026-10-30T01:45:15Z",
+  "last_post": "2026-10-30T09:47:46Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1408,6 +1417,7 @@
     "https://offers.greatclips.com/dkIygSf",
     "https://offers.greatclips.com/e1j8GvR",
     "https://offers.greatclips.com/e2skyqs",
+    "https://offers.greatclips.com/e7VQyfc",
     "https://offers.greatclips.com/eSWLmcD",
     "https://offers.greatclips.com/ebloYZE",
     "https://offers.greatclips.com/eftOLOl",
