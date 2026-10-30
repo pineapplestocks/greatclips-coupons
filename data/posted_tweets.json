@@ -1280,9 +1280,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips coupon alert: $18.99 haircut in the Calgary-Lethbridge-Airdrie-Okotoks-Cochrane area. Expires Nov 4, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#e7VQyfc\n\n#GreatClips #HaircutCoupon #Deals"
+    },
+    {
+      "coupon_code": "AKZtFDP",
+      "coupon_url": "https://offers.greatclips.com/AKZtFDP",
+      "post_id": "6ae4fc04a11457434969a2e7",
+      "posted_at": "2026-10-30T20:20:21Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $18.99 in the Lower Mnlnd & Van area. Expires Nov 8, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#AKZtFDP\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-10-30T09:47:46Z",
+  "last_post": "2026-10-30T20:20:21Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1323,6 +1332,7 @@
     "https://offers.greatclips.com/8nLBx6P",
     "https://offers.greatclips.com/9dfsvKP",
     "https://offers.greatclips.com/A8jOa9H",
+    "https://offers.greatclips.com/AKZtFDP",
     "https://offers.greatclips.com/Ao59KZQ",
     "https://offers.greatclips.com/CESQzzX",
     "https://offers.greatclips.com/CRfBEM7",
