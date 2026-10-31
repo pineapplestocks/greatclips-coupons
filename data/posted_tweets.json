@@ -1298,9 +1298,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips coupon alert: $5.00 haircut at participating US locations. Limited time offer.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#1toFx3P\n\n#GreatClips #HaircutCoupon #Deals"
+    },
+    {
+      "coupon_code": "zAkPcnJ",
+      "coupon_url": "https://offers.greatclips.com/zAkPcnJ",
+      "post_id": "6ae6443bf0984eef33299523",
+      "posted_at": "2026-10-31T19:40:43Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips savings update: $5.99 coupon in the Toledo area. Expires Nov 13, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#zAkPcnJ\n\n#GreatClips #SaveMoney"
     }
   ],
-  "last_post": "2026-10-31T09:27:46Z",
+  "last_post": "2026-10-31T19:40:43Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1503,6 +1512,7 @@
     "https://offers.greatclips.com/yXQLlHU",
     "https://offers.greatclips.com/yYb1TJ8",
     "https://offers.greatclips.com/yiuVvFj",
+    "https://offers.greatclips.com/zAkPcnJ",
     "https://offers.greatclips.com/zSjOo4J",
     "https://offers.greatclips.com/zzmQCwk"
   ]
