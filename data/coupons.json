@@ -1,13 +1,45 @@
 {
-  "scraped_at": "2026-10-30T15:00:29.607255",
-  "total_coupons": 12,
+  "scraped_at": "2026-10-30T21:31:14.490896",
+  "total_coupons": 18,
   "verification": {
-    "attempted": 12,
-    "verified": 12,
+    "attempted": 18,
+    "verified": 18,
     "removed": 0,
     "unavailable": 0
   },
   "coupons": [
+    {
+      "url": "https://offers.greatclips.com/1toFx3P",
+      "coupon_code": "1toFx3P",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/16207/50707-002-1200x600-US-Sparkfly-1off-10off5.jpg",
+      "location_name": "participating US Area",
+      "state": "AREA",
+      "area_name": "participating US",
+      "price": "$5.00",
+      "market": "US",
+      "expiration": null,
+      "last_verified": "2026-10-30",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating US locations",
+      "added_date": "2026-10-30",
+      "last_seen": "2026-10-30"
+    },
+    {
+      "url": "https://offers.greatclips.com/zAkPcnJ",
+      "coupon_code": "zAkPcnJ",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21540/50707-002-1200x600-5.99.jpg",
+      "expiration": "11/13/2026",
+      "location_name": "participating Toledo Area",
+      "state": "AREA",
+      "area_name": "participating Toledo",
+      "price": "$5.99",
+      "market": "Toledo",
+      "last_verified": "2026-10-30",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Toledo",
+      "added_date": "2026-10-30",
+      "last_seen": "2026-10-30"
+    },
     {
       "url": "https://offers.greatclips.com/dBcUgpB",
       "coupon_code": "dBcUgpB",
@@ -70,6 +102,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in St. Louis Metro & Surrounding",
       "added_date": "2026-10-28",
+      "last_seen": "2026-10-30"
+    },
+    {
+      "url": "https://offers.greatclips.com/p1z0nF2",
+      "coupon_code": "p1z0nF2",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21541/50707-002-1200x600-10.99.jpg",
+      "expiration": "11/13/2026",
+      "location_name": "participating Phoenix & Northern/Western AZ Area",
+      "state": "AREA",
+      "area_name": "participating Phoenix & Northern/Western AZ",
+      "price": "$10.99",
+      "market": "Phoenix & Northern/Western AZ",
+      "last_verified": "2026-10-30",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Phoenix & Northern/Western AZ",
+      "added_date": "2026-10-30",
       "last_seen": "2026-10-30"
     },
     {
@@ -153,6 +201,22 @@
       "last_seen": "2026-10-16"
     },
     {
+      "url": "https://offers.greatclips.com/oHIn7Ey",
+      "coupon_code": "oHIn7Ey",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21544/50707-002-1200x600-14.99.jpg",
+      "expiration": "11/13/2026",
+      "location_name": "participating Greater Western Washington Area",
+      "state": "AREA",
+      "area_name": "participating Greater Western Washington",
+      "price": "$14.99",
+      "market": "Greater Western Washington",
+      "last_verified": "2026-10-30",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Greater Western Washington",
+      "added_date": "2026-10-30",
+      "last_seen": "2026-10-30"
+    },
+    {
       "url": "https://offers.greatclips.com/KQbSyWd",
       "coupon_code": "KQbSyWd",
       "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21368/50707-002-1200x600-15.99.jpg",
@@ -167,6 +231,22 @@
       "participating_location_note": "Valid at participating locations in n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
       "added_date": "2026-10-09",
       "last_seen": "2026-10-16"
+    },
+    {
+      "url": "https://offers.greatclips.com/h6xjIz5",
+      "coupon_code": "h6xjIz5",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21372/50707-002-1200x600-17.99.jpg",
+      "expiration": "11/15/2026",
+      "location_name": "participating Kelowna, Vernon, & Penticton Area",
+      "state": "AREA",
+      "area_name": "participating Kelowna, Vernon, & Penticton",
+      "price": "$17.99",
+      "market": "Kelowna, Vernon, & Penticton",
+      "last_verified": "2026-10-30",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Kelowna, Vernon, & Penticton",
+      "added_date": "2026-10-30",
+      "last_seen": "2026-10-30"
     },
     {
       "url": "https://offers.greatclips.com/e7VQyfc",
@@ -198,6 +278,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Lower Mnlnd & Van",
       "added_date": "2026-10-28",
+      "last_seen": "2026-10-30"
+    },
+    {
+      "url": "https://offers.greatclips.com/Xrs3cUy",
+      "coupon_code": "Xrs3cUy",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21370/50707-002-1200x600-18.99.jpg",
+      "expiration": "11/08/2026",
+      "location_name": "participating K/W, Brantford & Guelph Area",
+      "state": "AREA",
+      "area_name": "participating K/W, Brantford & Guelph",
+      "price": "$18.99",
+      "market": "K/W, Brantford & Guelph",
+      "last_verified": "2026-10-30",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in K/W, Brantford & Guelph",
+      "added_date": "2026-10-30",
       "last_seen": "2026-10-30"
     }
   ]

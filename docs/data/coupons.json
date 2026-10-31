@@ -1,12 +1,58 @@
 {
- "generated_at": "2026-10-30T22:00:46Z",
- "scraped_at": "2026-10-30T15:00:29.607255",
- "total": 12,
+ "generated_at": "2026-10-31T04:31:38Z",
+ "scraped_at": "2026-10-30T21:31:14.490896",
+ "total": 18,
  "scopes": {
-  "area": 8,
-  "unknown": 4
+  "national": 1,
+  "area": 11,
+  "unknown": 6
  },
  "coupons": [
+  {
+   "url": "https://offers.greatclips.com/1toFx3P",
+   "coupon_code": "1toFx3P",
+   "price": "$5.00",
+   "location_name": "participating US Area",
+   "state": "AREA",
+   "area_name": "participating US",
+   "market": "US",
+   "last_verified": "2026-10-30",
+   "participating_location_note": "Valid at participating US locations",
+   "scope": "national",
+   "price_value": 5.0
+  },
+  {
+   "url": "https://offers.greatclips.com/zAkPcnJ",
+   "coupon_code": "zAkPcnJ",
+   "price": "$5.99",
+   "location_name": "participating Toledo Area",
+   "state": "AREA",
+   "area_name": "participating Toledo",
+   "market": "Toledo",
+   "expiration": "11/13/2026",
+   "last_verified": "2026-10-30",
+   "participating_location_note": "Valid at participating locations in Toledo",
+   "scope": "area",
+   "price_value": 5.99,
+   "metro_keys": [
+    "OH/toledo"
+   ],
+   "market_names": [
+    "Toledo, MI/OH"
+   ],
+   "city_keys": [
+    "OH/toledo",
+    "OH/bowling-green",
+    "MI/monroe",
+    "OH/perrysburg",
+    "OH/holland",
+    "MI/lambertville",
+    "OH/maumee",
+    "OH/oregon",
+    "OH/sylvania",
+    "OH/waterville"
+   ]
+  },
   {
    "url": "https://offers.greatclips.com/dBcUgpB",
    "coupon_code": "dBcUgpB",
@@ -238,6 +284,48 @@
     "MO/wentzville",
     "MO/wildwood",
     "IL/wood-river"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/p1z0nF2",
+   "coupon_code": "p1z0nF2",
+   "price": "$10.99",
+   "location_name": "participating Phoenix & Northern/Western AZ Area",
+   "state": "AREA",
+   "area_name": "participating Phoenix & Northern/Western AZ",
+   "market": "Phoenix & Northern/Western AZ",
+   "expiration": "11/13/2026",
+   "last_verified": "2026-10-30",
+   "participating_location_note": "Valid at participating locations in Phoenix & Northern/Western AZ",
+   "scope": "area",
+   "price_value": 10.99,
+   "metro_keys": [
+    "AZ/phoenix"
+   ],
+   "market_names": [
+    "Phoenix, AZ"
+   ],
+   "city_keys": [
+    "AZ/phoenix",
+    "AZ/mesa",
+    "AZ/gilbert",
+    "AZ/glendale",
+    "AZ/chandler",
+    "AZ/peoria",
+    "AZ/scottsdale",
+    "AZ/surprise",
+    "AZ/buckeye",
+    "AZ/goodyear",
+    "AZ/tempe",
+    "AZ/avondale",
+    "AZ/cave-creek",
+    "AZ/sun-city",
+    "AZ/anthem",
+    "AZ/apache-junction",
+    "AZ/fountain-hills",
+    "AZ/laveen",
+    "AZ/litchfield-park",
+    "AZ/sun-city-west"
    ]
   },
   {
@@ -488,6 +576,70 @@
    "price_value": 14.99
   },
   {
+   "url": "https://offers.greatclips.com/oHIn7Ey",
+   "coupon_code": "oHIn7Ey",
+   "price": "$14.99",
+   "location_name": "participating Greater Western Washington Area",
+   "state": "AREA",
+   "area_name": "participating Greater Western Washington",
+   "market": "Greater Western Washington",
+   "expiration": "11/13/2026",
+   "last_verified": "2026-10-30",
+   "participating_location_note": "Valid at participating locations in Greater Western Washington",
+   "scope": "area",
+   "price_value": 14.99,
+   "metro_keys": [
+    "WA/newcastle",
+    "WA/spanaway"
+   ],
+   "market_names": [
+    "Seattle, WA",
+    "Tacoma, WA"
+   ],
+   "city_keys": [
+    "WA/redmond",
+    "WA/seattle",
+    "WA/bellevue",
+    "WA/issaquah",
+    "WA/renton",
+    "WA/sammamish",
+    "WA/bainbridge-island",
+    "WA/bothell",
+    "WA/bremerton",
+    "WA/covington",
+    "WA/des-moines",
+    "WA/duvall",
+    "WA/edmonds",
+    "WA/kenmore",
+    "WA/kent",
+    "WA/kirkland",
+    "WA/maple-valley",
+    "WA/mercer-island",
+    "WA/newcastle",
+    "WA/port-orchard",
+    "WA/poulsbo",
+    "WA/silverdale",
+    "WA/snoqualmie",
+    "WA/west-seattle",
+    "WA/woodinville",
+    "WA/lacey",
+    "WA/puyallup",
+    "WA/tacoma",
+    "WA/federal-way",
+    "WA/gig-harbor",
+    "WA/lakewood",
+    "WA/auburn",
+    "WA/bonney-lake",
+    "WA/graham",
+    "WA/milton",
+    "WA/spanaway",
+    "WA/sumner",
+    "WA/tumwater",
+    "WA/university-place",
+    "WA/yelm"
+   ]
+  },
+  {
    "url": "https://offers.greatclips.com/KQbSyWd",
    "coupon_code": "KQbSyWd",
    "price": "$15.99",
@@ -500,6 +652,20 @@
    "participating_location_note": "Valid at participating locations in n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
    "scope": "unknown",
    "price_value": 15.99
+  },
+  {
+   "url": "https://offers.greatclips.com/h6xjIz5",
+   "coupon_code": "h6xjIz5",
+   "price": "$17.99",
+   "location_name": "participating Kelowna, Vernon, & Penticton Area",
+   "state": "AREA",
+   "area_name": "participating Kelowna, Vernon, & Penticton",
+   "market": "Kelowna, Vernon, & Penticton",
+   "expiration": "11/15/2026",
+   "last_verified": "2026-10-30",
+   "participating_location_note": "Valid at participating locations in Kelowna, Vernon, & Penticton",
+   "scope": "unknown",
+   "price_value": 17.99
   },
   {
    "url": "https://offers.greatclips.com/e7VQyfc",
@@ -526,6 +692,20 @@
    "expiration": "11/08/2026",
    "last_verified": "2026-10-30",
    "participating_location_note": "Valid at participating locations in Lower Mnlnd & Van",
+   "scope": "unknown",
+   "price_value": 18.99
+  },
+  {
+   "url": "https://offers.greatclips.com/Xrs3cUy",
+   "coupon_code": "Xrs3cUy",
+   "price": "$18.99",
+   "location_name": "participating K/W, Brantford & Guelph Area",
+   "state": "AREA",
+   "area_name": "participating K/W, Brantford & Guelph",
+   "market": "K/W, Brantford & Guelph",
+   "expiration": "11/08/2026",
+   "last_verified": "2026-10-30",
+   "participating_location_note": "Valid at participating locations in K/W, Brantford & Guelph",
    "scope": "unknown",
    "price_value": 18.99
   }
