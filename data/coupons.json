@@ -1,9 +1,9 @@
 {
-  "scraped_at": "2026-10-31T21:52:02.803397",
-  "total_coupons": 15,
+  "scraped_at": "2026-11-01T05:49:10.140383",
+  "total_coupons": 16,
   "verification": {
-    "attempted": 15,
-    "verified": 15,
+    "attempted": 16,
+    "verified": 16,
     "removed": 0,
     "unavailable": 0
   },
@@ -18,7 +18,7 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-10-31",
+      "last_verified": "2026-11-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-10-30",
@@ -34,11 +34,11 @@
       "area_name": "participating Toledo",
       "price": "$5.99",
       "market": "Toledo",
-      "last_verified": "2026-10-31",
+      "last_verified": "2026-11-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Toledo",
       "added_date": "2026-10-30",
-      "last_seen": "2026-10-31"
+      "last_seen": "2026-11-01"
     },
     {
       "url": "https://offers.greatclips.com/dBcUgpB",
@@ -50,7 +50,7 @@
       "area_name": "participating Cleveland, Akron, Canton & Sandusky",
       "price": "$7.99",
       "market": "Cleveland, Akron, Canton & Sandusky",
-      "last_verified": "2026-10-31",
+      "last_verified": "2026-11-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Cleveland, Akron, Canton & Sandusky",
       "added_date": "2026-10-28",
@@ -66,7 +66,7 @@
       "area_name": "participating Hampton Roads & Peninsula",
       "price": "$9.99",
       "market": "Hampton Roads & Peninsula",
-      "last_verified": "2026-10-31",
+      "last_verified": "2026-11-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Hampton Roads & Peninsula",
       "added_date": "2026-10-28",
@@ -82,7 +82,7 @@
       "area_name": "participating St. Louis Metro & Surrounding",
       "price": "$10.99",
       "market": "St. Louis Metro & Surrounding",
-      "last_verified": "2026-10-31",
+      "last_verified": "2026-11-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in St. Louis Metro & Surrounding",
       "added_date": "2026-10-28",
@@ -98,11 +98,11 @@
       "area_name": "participating Phoenix & Northern/Western AZ",
       "price": "$10.99",
       "market": "Phoenix & Northern/Western AZ",
-      "last_verified": "2026-10-31",
+      "last_verified": "2026-11-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Phoenix & Northern/Western AZ",
       "added_date": "2026-10-30",
-      "last_seen": "2026-10-31"
+      "last_seen": "2026-11-01"
     },
     {
       "url": "https://offers.greatclips.com/gt9ViKG",
@@ -114,7 +114,7 @@
       "area_name": "participating Cincinnati",
       "price": "$11.99",
       "market": "Cincinnati",
-      "last_verified": "2026-10-31",
+      "last_verified": "2026-11-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Cincinnati",
       "added_date": "2026-10-28",
@@ -130,11 +130,27 @@
       "area_name": "participating Fresno & San Joaquin Valley",
       "price": "$11.99",
       "market": "Fresno & San Joaquin Valley",
-      "last_verified": "2026-10-31",
+      "last_verified": "2026-11-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Fresno & San Joaquin Valley",
       "added_date": "2026-10-31",
       "last_seen": "2026-10-31"
+    },
+    {
+      "url": "https://offers.greatclips.com/5Y3xhBE",
+      "coupon_code": "5Y3xhBE",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21543/50707-002-1200x600-11.99.jpg",
+      "expiration": "11/13/2026",
+      "location_name": "participating Portland Area",
+      "state": "AREA",
+      "area_name": "participating Portland",
+      "price": "$11.99",
+      "market": "Portland",
+      "last_verified": "2026-11-01",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Portland",
+      "added_date": "2026-11-01",
+      "last_seen": "2026-11-01"
     },
     {
       "url": "https://offers.greatclips.com/wHklWc0",
@@ -146,11 +162,11 @@
       "area_name": "participating Detroit",
       "price": "$12.99",
       "market": "Detroit",
-      "last_verified": "2026-10-31",
+      "last_verified": "2026-11-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Detroit",
       "added_date": "2026-10-28",
-      "last_seen": "2026-10-31"
+      "last_seen": "2026-11-01"
     },
     {
       "url": "https://offers.greatclips.com/oHIn7Ey",
@@ -162,11 +178,11 @@
       "area_name": "participating Greater Western Washington",
       "price": "$14.99",
       "market": "Greater Western Washington",
-      "last_verified": "2026-10-31",
+      "last_verified": "2026-11-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Greater Western Washington",
       "added_date": "2026-10-30",
-      "last_seen": "2026-10-31"
+      "last_seen": "2026-11-01"
     },
     {
       "url": "https://offers.greatclips.com/KQbSyWd",
@@ -178,7 +194,7 @@
       "area_name": "n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
       "price": "$15.99",
       "market": "n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
-      "last_verified": "2026-10-31",
+      "last_verified": "2026-11-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in n-Leduc-Ft Sask-Sherwood Park-St Albert-Beaumont-Spruce Grove",
       "added_date": "2026-10-09",
@@ -194,11 +210,11 @@
       "area_name": "participating Kelowna, Vernon, & Penticton",
       "price": "$17.99",
       "market": "Kelowna, Vernon, & Penticton",
-      "last_verified": "2026-10-31",
+      "last_verified": "2026-11-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Kelowna, Vernon, & Penticton",
       "added_date": "2026-10-30",
-      "last_seen": "2026-10-31"
+      "last_seen": "2026-11-01"
     },
     {
       "url": "https://offers.greatclips.com/e7VQyfc",
@@ -210,7 +226,7 @@
       "area_name": "participating Calgary-Lethbridge-Airdrie-Okotoks-Cochrane",
       "price": "$18.99",
       "market": "Calgary-Lethbridge-Airdrie-Okotoks-Cochrane",
-      "last_verified": "2026-10-31",
+      "last_verified": "2026-11-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Calgary-Lethbridge-Airdrie-Okotoks-Cochrane",
       "added_date": "2026-10-28",
@@ -226,11 +242,11 @@
       "area_name": "participating Lower Mnlnd & Van",
       "price": "$18.99",
       "market": "Lower Mnlnd & Van",
-      "last_verified": "2026-10-31",
+      "last_verified": "2026-11-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Lower Mnlnd & Van",
       "added_date": "2026-10-28",
-      "last_seen": "2026-10-31"
+      "last_seen": "2026-11-01"
     },
     {
       "url": "https://offers.greatclips.com/Xrs3cUy",
@@ -242,11 +258,11 @@
       "area_name": "participating K/W, Brantford & Guelph",
       "price": "$18.99",
       "market": "K/W, Brantford & Guelph",
-      "last_verified": "2026-10-31",
+      "last_verified": "2026-11-01",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in K/W, Brantford & Guelph",
       "added_date": "2026-10-30",
-      "last_seen": "2026-10-31"
+      "last_seen": "2026-11-01"
     }
   ]
 }
