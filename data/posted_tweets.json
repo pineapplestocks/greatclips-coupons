@@ -1325,9 +1325,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips savings update: $11.99 coupon in the Fresno & San Joaquin Valley area. Expires Nov 13, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#xFosynR\n\n#GreatClips #SaveMoney"
+    },
+    {
+      "coupon_code": "5Y3xhBE",
+      "coupon_url": "https://offers.greatclips.com/5Y3xhBE",
+      "post_id": "6ae79ba007b774c8fb2a1018",
+      "posted_at": "2026-11-01T20:05:52Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $11.99 in the Portland area. Expires Nov 13, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#5Y3xhBE\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-11-01T10:16:11Z",
+  "last_post": "2026-11-01T20:05:52Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1355,6 +1364,7 @@
     "https://offers.greatclips.com/4n896Ai",
     "https://offers.greatclips.com/5GnlX4D",
     "https://offers.greatclips.com/5T8LS8t",
+    "https://offers.greatclips.com/5Y3xhBE",
     "https://offers.greatclips.com/5oISLcT",
     "https://offers.greatclips.com/5ut1w9s",
     "https://offers.greatclips.com/6bWu89Y",
