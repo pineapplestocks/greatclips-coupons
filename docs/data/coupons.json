@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-10-31T21:07:50Z",
- "scraped_at": "2026-10-31T14:07:36.269993",
- "total": 14,
+ "generated_at": "2026-11-01T04:52:24Z",
+ "scraped_at": "2026-10-31T21:52:02.803397",
+ "total": 15,
  "scopes": {
   "national": 1,
-  "area": 8,
+  "area": 9,
   "unknown": 5
  },
  "coupons": [
@@ -338,6 +338,30 @@
     "OH/south-lebanon",
     "OH/springboro",
     "OH/trenton"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/xFosynR",
+   "coupon_code": "xFosynR",
+   "price": "$11.99",
+   "location_name": "participating Fresno & San Joaquin Valley Area",
+   "state": "AREA",
+   "area_name": "participating Fresno & San Joaquin Valley",
+   "market": "Fresno & San Joaquin Valley",
+   "expiration": "11/13/2026",
+   "last_verified": "2026-10-31",
+   "participating_location_note": "Valid at participating locations in Fresno & San Joaquin Valley",
+   "scope": "area",
+   "price_value": 11.99,
+   "metro_keys": [
+    "CA/fresno"
+   ],
+   "market_names": [
+    "Fresno, CA"
+   ],
+   "city_keys": [
+    "CA/fresno",
+    "CA/clovis"
    ]
   },
   {

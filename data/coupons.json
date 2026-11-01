@@ -1,9 +1,9 @@
 {
-  "scraped_at": "2026-10-31T14:07:36.269993",
-  "total_coupons": 14,
+  "scraped_at": "2026-10-31T21:52:02.803397",
+  "total_coupons": 15,
   "verification": {
-    "attempted": 14,
-    "verified": 14,
+    "attempted": 15,
+    "verified": 15,
     "removed": 0,
     "unavailable": 0
   },
@@ -119,6 +119,22 @@
       "participating_location_note": "Valid at participating locations in Cincinnati",
       "added_date": "2026-10-28",
       "last_seen": "2026-10-30"
+    },
+    {
+      "url": "https://offers.greatclips.com/xFosynR",
+      "coupon_code": "xFosynR",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21503/50707-002-1200x600-11.99.jpg",
+      "expiration": "11/13/2026",
+      "location_name": "participating Fresno & San Joaquin Valley Area",
+      "state": "AREA",
+      "area_name": "participating Fresno & San Joaquin Valley",
+      "price": "$11.99",
+      "market": "Fresno & San Joaquin Valley",
+      "last_verified": "2026-10-31",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Fresno & San Joaquin Valley",
+      "added_date": "2026-10-31",
+      "last_seen": "2026-10-31"
     },
     {
       "url": "https://offers.greatclips.com/wHklWc0",
