@@ -1343,9 +1343,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $14.99 in the Greater Western Washington area. Expires Nov 13, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#oHIn7Ey\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "h6xjIz5",
+      "coupon_url": "https://offers.greatclips.com/h6xjIz5",
+      "post_id": "6ae86a71eea9e6896bc02f0b",
+      "posted_at": "2026-11-02T10:48:17Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $17.99 in the Kelowna, Vernon, & Penticton area. Expires Nov 15, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#h6xjIz5\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-11-02T01:23:22Z",
+  "last_post": "2026-11-02T10:48:17Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1495,6 +1504,7 @@
     "https://offers.greatclips.com/gS1yuyY",
     "https://offers.greatclips.com/gf1mLrF",
     "https://offers.greatclips.com/gt9ViKG",
+    "https://offers.greatclips.com/h6xjIz5",
     "https://offers.greatclips.com/hN8vUzK",
     "https://offers.greatclips.com/hOlFSQ7",
     "https://offers.greatclips.com/hwWLU3h",
