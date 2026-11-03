@@ -331,12 +331,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://greatclipsdeal.com/salons/al/troy</loc>
-    <lastmod>2026-11-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://greatclipsdeal.com/salons/al/trussville</loc>
     <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -7538,12 +7532,6 @@
   </url>
   <url>
     <loc>https://greatclipsdeal.com/salons/mo/arnold</loc>
-    <lastmod>2026-11-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://greatclipsdeal.com/salons/mo/ballwin</loc>
     <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -15260,6 +15248,12 @@
   </url>
   <url>
     <loc>https://greatclipsdeal.com/salons/wv/parkersburg</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://greatclipsdeal.com/salons/wv/south-charleston</loc>
     <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

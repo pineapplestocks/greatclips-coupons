@@ -1,6 +1,6 @@
 {
- "total_cities": 2551,
- "total_metros": 645,
+ "total_cities": 2550,
+ "total_metros": 646,
  "metros": {
   "AK/eagle-river": {
    "name": "Anchorage",
@@ -366,21 +366,6 @@
    "reach_mi": 18.0,
    "city_keys": [
     "AL/sylacauga"
-   ]
-  },
-  "AL/troy": {
-   "name": "Troy",
-   "display_name": "Troy, AL",
-   "anchor_city": "Troy",
-   "anchor_state": "AL",
-   "states": [
-    "AL"
-   ],
-   "salon_count": 1,
-   "city_count": 1,
-   "reach_mi": 18.0,
-   "city_keys": [
-    "AL/troy"
    ]
   },
   "AR/bella-vista": {
@@ -2150,10 +2135,10 @@
    "city_keys": [
     "FL/orlando",
     "FL/clermont",
-    "FL/kissimmee",
+    "FL/davenport",
     "FL/altamonte-springs",
     "FL/apopka",
-    "FL/davenport",
+    "FL/kissimmee",
     "FL/lake-mary",
     "FL/ocoee",
     "FL/oviedo",
@@ -3401,6 +3386,27 @@
     "IL/harrisburg"
    ]
   },
+  "IL/highland": {
+   "name": "Belleville",
+   "display_name": "Belleville, IL",
+   "anchor_city": "Highland",
+   "anchor_state": "IL",
+   "states": [
+    "IL"
+   ],
+   "salon_count": 8,
+   "city_count": 7,
+   "reach_mi": 25.0,
+   "city_keys": [
+    "IL/belleville",
+    "IL/collinsville",
+    "IL/edwardsville",
+    "IL/highland",
+    "IL/ofallon",
+    "IL/swansea",
+    "IL/wood-river"
+   ]
+  },
   "IL/jacksonville": {
    "name": "Jacksonville Area 2",
    "display_name": "Jacksonville Area 2, IL",
@@ -3875,16 +3881,16 @@
    "states": [
     "IN"
    ],
-   "salon_count": 43,
+   "salon_count": 44,
    "city_count": 12,
    "reach_mi": 35.0,
    "city_keys": [
     "IN/indianapolis",
     "IN/noblesville",
+    "IN/westfield",
     "IN/brownsburg",
     "IN/carmel",
     "IN/fishers",
-    "IN/westfield",
     "IN/zionsville",
     "IN/greenfield",
     "IN/mccordsville",
@@ -4259,8 +4265,8 @@
    ]
   },
   "KY/ashland": {
-   "name": "Ashland",
-   "display_name": "Ashland, KY",
+   "name": "Huntington",
+   "display_name": "Huntington Area, KY",
    "anchor_city": "Ashland",
    "anchor_state": "KY",
    "states": [
@@ -4503,7 +4509,7 @@
    "states": [
     "KY"
    ],
-   "salon_count": 13,
+   "salon_count": 12,
    "city_count": 3,
    "reach_mi": 25.0,
    "city_keys": [
@@ -5814,53 +5820,41 @@
     "IL",
     "MO"
    ],
-   "salon_count": 64,
-   "city_count": 43,
-   "reach_mi": 45.0,
+   "salon_count": 50,
+   "city_count": 31,
+   "reach_mi": 35.0,
    "city_keys": [
     "MO/saint-louis",
     "MO/chesterfield",
     "MO/saint-charles",
     "MO/saint-peters",
     "MO/arnold",
-    "IL/belleville",
     "MO/fenton",
     "MO/festus",
-    "MO/lake-saint-louis",
     "IL/alton",
-    "MO/ballwin",
     "MO/bridgeton",
-    "IL/collinsville",
     "IL/columbia",
     "MO/crestwood",
     "MO/desoto",
     "MO/des-peres",
-    "IL/edwardsville",
     "MO/ellisville",
     "MO/eureka",
     "MO/florissant",
     "IL/godfrey",
     "MO/harvester",
     "MO/high-ridge",
-    "IL/highland",
     "MO/imperial",
     "MO/kirkwood",
     "MO/manchester",
     "MO/maryland-heights",
     "MO/o-fallon",
     "MO/ofallon",
-    "IL/ofallon",
     "MO/sunset-hills",
-    "IL/swansea",
-    "MO/troy",
     "MO/twin-oaks",
-    "MO/warrenton",
     "MO/washington",
     "IL/waterloo",
     "MO/webster-groves",
-    "MO/wentzville",
-    "MO/wildwood",
-    "IL/wood-river"
+    "MO/wildwood"
    ]
   },
   "MO/desloge": {
@@ -6034,6 +6028,24 @@
     "MO/springfield",
     "MO/nixa",
     "MO/ozark"
+   ]
+  },
+  "MO/troy": {
+   "name": "Lake Saint Louis",
+   "display_name": "Lake Saint Louis, MO",
+   "anchor_city": "Troy",
+   "anchor_state": "MO",
+   "states": [
+    "MO"
+   ],
+   "salon_count": 5,
+   "city_count": 4,
+   "reach_mi": 25.0,
+   "city_keys": [
+    "MO/lake-saint-louis",
+    "MO/troy",
+    "MO/warrenton",
+    "MO/wentzville"
    ]
   },
   "MO/warrensburg": {
@@ -7759,7 +7771,7 @@
     "KY",
     "OH"
    ],
-   "salon_count": 70,
+   "salon_count": 69,
    "city_count": 36,
    "reach_mi": 45.0,
    "city_keys": [
@@ -8788,7 +8800,7 @@
    "states": [
     "SC"
    ],
-   "salon_count": 28,
+   "salon_count": 27,
    "city_count": 12,
    "reach_mi": 35.0,
    "city_keys": [
@@ -9603,7 +9615,7 @@
    "states": [
     "TX"
    ],
-   "salon_count": 103,
+   "salon_count": 104,
    "city_count": 52,
    "reach_mi": 45.0,
    "city_keys": [
@@ -9624,6 +9636,7 @@
     "TX/keller",
     "TX/lewisville",
     "TX/mansfield",
+    "TX/melissa",
     "TX/mesquite",
     "TX/prosper",
     "TX/richardson",
@@ -9645,7 +9658,6 @@
     "TX/kaufman",
     "TX/little-elm",
     "TX/lucas",
-    "TX/melissa",
     "TX/midlothian",
     "TX/north-richland-hills",
     "TX/pantego",
@@ -9808,7 +9820,7 @@
    "states": [
     "TX"
    ],
-   "salon_count": 75,
+   "salon_count": 76,
    "city_count": 31,
    "reach_mi": 45.0,
    "city_keys": [
@@ -10474,7 +10486,7 @@
    "states": [
     "UT"
    ],
-   "salon_count": 47,
+   "salon_count": 46,
    "city_count": 27,
    "reach_mi": 35.0,
    "city_keys": [
@@ -11468,21 +11480,6 @@
     "WI/wisconsin-rapids"
    ]
   },
-  "WV/barboursville": {
-   "name": "Huntington",
-   "display_name": "Huntington, WV",
-   "anchor_city": "Barboursville",
-   "anchor_state": "WV",
-   "states": [
-    "WV"
-   ],
-   "salon_count": 1,
-   "city_count": 1,
-   "reach_mi": 18.0,
-   "city_keys": [
-    "WV/barboursville"
-   ]
-  },
   "WV/beckley": {
    "name": "Beckley",
    "display_name": "Beckley, WV",
@@ -11498,10 +11495,10 @@
     "WV/beckley"
    ]
   },
-  "WV/cross-lanes": {
+  "WV/charleston": {
    "name": "Cross Lanes",
    "display_name": "Cross Lanes, WV",
-   "anchor_city": "Cross Lanes",
+   "anchor_city": "Charleston",
    "anchor_state": "WV",
    "states": [
     "WV"
@@ -11512,6 +11509,22 @@
    "city_keys": [
     "WV/charleston",
     "WV/cross-lanes",
+    "WV/south-charleston"
+   ]
+  },
+  "WV/hurricane": {
+   "name": "Barboursville",
+   "display_name": "Barboursville, WV",
+   "anchor_city": "Hurricane",
+   "anchor_state": "WV",
+   "states": [
+    "WV"
+   ],
+   "salon_count": 2,
+   "city_count": 2,
+   "reach_mi": 18.0,
+   "city_keys": [
+    "WV/barboursville",
     "WV/hurricane"
    ]
   },
@@ -12121,15 +12134,6 @@
    "lat": 33.17629,
    "lng": -86.286936
   },
-  "AL/troy": {
-   "city": "Troy",
-   "state": "AL",
-   "slug": "troy",
-   "salon_count": 1,
-   "metro_key": "AL/troy",
-   "lat": 31.780464,
-   "lng": -85.95417
-  },
   "AL/trussville": {
    "city": "Trussville",
    "state": "AL",
@@ -12730,8 +12734,8 @@
    "slug": "alameda",
    "salon_count": 1,
    "metro_key": "CA/castro-valley",
-   "lat": 37.757238,
-   "lng": -122.25163
+   "lat": 37.756908,
+   "lng": -122.251623
   },
   "CA/alhambra": {
    "city": "Alhambra",
@@ -14413,8 +14417,8 @@
    "slug": "broomfield",
    "salon_count": 5,
    "metro_key": "CO/wheat-ridge",
-   "lat": 39.946461,
-   "lng": -105.034288
+   "lat": 39.949762,
+   "lng": -105.038201
   },
   "CO/castle-rock": {
    "city": "Castle Rock",
@@ -15221,10 +15225,10 @@
    "city": "Davenport",
    "state": "FL",
    "slug": "davenport",
-   "salon_count": 2,
+   "salon_count": 3,
    "metro_key": "FL/winter-park",
-   "lat": 28.256438,
-   "lng": -81.609091
+   "lat": 28.242106,
+   "lng": -81.620038
   },
   "FL/daytona-beach": {
    "city": "Daytona Beach",
@@ -15455,10 +15459,10 @@
    "city": "Kissimmee",
    "state": "FL",
    "slug": "kissimmee",
-   "salon_count": 3,
+   "salon_count": 2,
    "metro_key": "FL/winter-park",
-   "lat": 28.273185,
-   "lng": -81.441706
+   "lat": 28.244334,
+   "lng": -81.426279
   },
   "FL/lake-city": {
    "city": "Lake City",
@@ -16861,8 +16865,8 @@
    "slug": "marietta",
    "salon_count": 7,
    "metro_key": "GA/tucker",
-   "lat": 33.959036,
-   "lng": -84.535207
+   "lat": 33.958906,
+   "lng": -84.535289
   },
   "GA/martinez": {
    "city": "Martinez",
@@ -17796,7 +17800,7 @@
    "state": "IL",
    "slug": "belleville",
    "salon_count": 2,
-   "metro_key": "MO/des-peres",
+   "metro_key": "IL/highland",
    "lat": 38.516502,
    "lng": -89.98004
   },
@@ -17940,7 +17944,7 @@
    "state": "IL",
    "slug": "collinsville",
    "salon_count": 1,
-   "metro_key": "MO/des-peres",
+   "metro_key": "IL/highland",
    "lat": 38.692345,
    "lng": -89.978316
   },
@@ -18039,7 +18043,7 @@
    "state": "IL",
    "slug": "edwardsville",
    "salon_count": 1,
-   "metro_key": "MO/des-peres",
+   "metro_key": "IL/highland",
    "lat": 38.786369,
    "lng": -89.948851
   },
@@ -18201,7 +18205,7 @@
    "state": "IL",
    "slug": "highland",
    "salon_count": 1,
-   "metro_key": "MO/des-peres",
+   "metro_key": "IL/highland",
    "lat": 38.758018,
    "lng": -89.682521
   },
@@ -18552,7 +18556,7 @@
    "state": "IL",
    "slug": "ofallon",
    "salon_count": 1,
-   "metro_key": "MO/des-peres",
+   "metro_key": "IL/highland",
    "lat": 38.594496,
    "lng": -89.955212
   },
@@ -18840,7 +18844,7 @@
    "state": "IL",
    "slug": "swansea",
    "salon_count": 1,
-   "metro_key": "MO/des-peres",
+   "metro_key": "IL/highland",
    "lat": 38.542465,
    "lng": -89.985337
   },
@@ -18966,7 +18970,7 @@
    "state": "IL",
    "slug": "wood-river",
    "salon_count": 1,
-   "metro_key": "MO/des-peres",
+   "metro_key": "IL/highland",
    "lat": 38.872041,
    "lng": -90.069917
   },
@@ -18985,8 +18989,8 @@
    "slug": "yorkville",
    "salon_count": 1,
    "metro_key": "IL/glen-ellyn",
-   "lat": 41.657235,
-   "lng": -88.444301
+   "lat": 41.655756,
+   "lng": -88.439741
   },
   "IN/anderson": {
    "city": "Anderson",
@@ -19766,10 +19770,10 @@
    "city": "Westfield",
    "state": "IN",
    "slug": "westfield",
-   "salon_count": 3,
+   "salon_count": 4,
    "metro_key": "IN/mccordsville",
-   "lat": 40.021309,
-   "lng": -86.151553
+   "lat": 40.026454,
+   "lng": -86.154461
   },
   "IN/zionsville": {
    "city": "Zionsville",
@@ -20243,10 +20247,10 @@
    "city": "Lexington",
    "state": "KY",
    "slug": "lexington",
-   "salon_count": 9,
+   "salon_count": 8,
    "metro_key": "KY/nicholasville",
-   "lat": 38.013012,
-   "lng": -84.493282
+   "lat": 38.017084,
+   "lng": -84.488574
   },
   "KY/london": {
    "city": "London",
@@ -22939,15 +22943,6 @@
    "lat": 38.426397,
    "lng": -90.389004
   },
-  "MO/ballwin": {
-   "city": "Ballwin",
-   "state": "MO",
-   "slug": "ballwin",
-   "salon_count": 1,
-   "metro_key": "MO/des-peres",
-   "lat": 38.592491,
-   "lng": -90.547976
-  },
   "MO/belton": {
    "city": "Belton",
    "state": "MO",
@@ -23223,7 +23218,7 @@
    "state": "MO",
    "slug": "lake-saint-louis",
    "salon_count": 2,
-   "metro_key": "MO/des-peres",
+   "metro_key": "MO/troy",
    "lat": 38.787608,
    "lng": -90.777216
   },
@@ -23421,7 +23416,7 @@
    "state": "MO",
    "slug": "troy",
    "salon_count": 1,
-   "metro_key": "MO/des-peres",
+   "metro_key": "MO/troy",
    "lat": 38.988064,
    "lng": -90.977262
   },
@@ -23448,7 +23443,7 @@
    "state": "MO",
    "slug": "warrenton",
    "salon_count": 1,
-   "metro_key": "MO/des-peres",
+   "metro_key": "MO/troy",
    "lat": 38.825203,
    "lng": -91.139758
   },
@@ -23484,7 +23479,7 @@
    "state": "MO",
    "slug": "wentzville",
    "salon_count": 1,
-   "metro_key": "MO/des-peres",
+   "metro_key": "MO/troy",
    "lat": 38.81404,
    "lng": -90.873755
   },
@@ -23881,8 +23876,8 @@
    "slug": "fayetteville",
    "salon_count": 4,
    "metro_key": "NC/fayetteville",
-   "lat": 35.031262,
-   "lng": -78.993291
+   "lat": 35.031831,
+   "lng": -78.993179
   },
   "NC/forest-city": {
    "city": "Forest City",
@@ -23926,8 +23921,8 @@
    "slug": "gastonia",
    "salon_count": 4,
    "metro_key": "NC/lincolnton",
-   "lat": 35.239395,
-   "lng": -81.149381
+   "lat": 35.239424,
+   "lng": -81.149426
   },
   "NC/goldsboro": {
    "city": "Goldsboro",
@@ -26219,10 +26214,10 @@
    "city": "Cincinnati",
    "state": "OH",
    "slug": "cincinnati",
-   "salon_count": 22,
+   "salon_count": 21,
    "metro_key": "OH/mason",
-   "lat": 39.18559,
-   "lng": -84.42895
+   "lat": 39.180653,
+   "lng": -84.435107
   },
   "OH/circleville": {
    "city": "Circleville",
@@ -26410,8 +26405,8 @@
    "slug": "fairlawn",
    "salon_count": 2,
    "metro_key": "OH/fairlawn",
-   "lat": 41.131142,
-   "lng": -81.618706
+   "lat": 41.131097,
+   "lng": -81.618931
   },
   "OH/fairview-park": {
    "city": "Fairview Park",
@@ -27652,8 +27647,8 @@
    "slug": "edmond",
    "salon_count": 6,
    "metro_key": "OK/mustang",
-   "lat": 35.646649,
-   "lng": -97.494113
+   "lat": 35.646446,
+   "lng": -97.494235
   },
   "OK/el-reno": {
    "city": "El Reno",
@@ -29342,10 +29337,10 @@
    "city": "Greenville",
    "state": "SC",
    "slug": "greenville",
-   "salon_count": 10,
+   "salon_count": 9,
    "metro_key": "SC/mauldin",
-   "lat": 34.833619,
-   "lng": -82.36414
+   "lat": 34.835121,
+   "lng": -82.374552
   },
   "SC/greenwood": {
    "city": "Greenwood",
@@ -29542,8 +29537,8 @@
    "slug": "rock-hill",
    "salon_count": 3,
    "metro_key": "NC/harrisburg",
-   "lat": 34.958451,
-   "lng": -81.017888
+   "lat": 34.958374,
+   "lng": -81.017922
   },
   "SC/seneca": {
    "city": "Seneca",
@@ -30343,8 +30338,8 @@
    "slug": "amarillo",
    "salon_count": 5,
    "metro_key": "TX/amarillo",
-   "lat": 35.171806,
-   "lng": -101.888072
+   "lat": 35.171796,
+   "lng": -101.888111
   },
   "TX/angleton": {
    "city": "Angleton",
@@ -30847,8 +30842,8 @@
    "slug": "flower-mound",
    "salon_count": 3,
    "metro_key": "TX/farmers-branch",
-   "lat": 33.048433,
-   "lng": -97.074628
+   "lat": 33.04829,
+   "lng": -97.074455
   },
   "TX/forney": {
    "city": "Forney",
@@ -30883,8 +30878,8 @@
    "slug": "fort-worth",
    "salon_count": 14,
    "metro_key": "TX/hudson-oaks",
-   "lat": 32.803969,
-   "lng": -97.34999
+   "lat": 32.803945,
+   "lng": -97.349875
   },
   "TX/fredericksburg": {
    "city": "Fredericksburg",
@@ -31142,10 +31137,10 @@
    "city": "Katy",
    "state": "TX",
    "slug": "katy",
-   "salon_count": 10,
+   "salon_count": 11,
    "metro_key": "TX/houston",
-   "lat": 29.773703,
-   "lng": -95.802812
+   "lat": 29.780287,
+   "lng": -95.807611
   },
   "TX/kaufman": {
    "city": "Kaufman",
@@ -31279,8 +31274,8 @@
    "slug": "lavon",
    "salon_count": 1,
    "metro_key": "TX/greenville",
-   "lat": 33.02281,
-   "lng": -96.448823
+   "lat": 33.022639,
+   "lng": -96.445068
   },
   "TX/league-city": {
    "city": "League City",
@@ -31502,10 +31497,10 @@
    "city": "Melissa",
    "state": "TX",
    "slug": "melissa",
-   "salon_count": 1,
+   "salon_count": 2,
    "metro_key": "TX/farmers-branch",
-   "lat": 33.28449,
-   "lng": -96.562534
+   "lat": 33.276618,
+   "lng": -96.577538
   },
   "TX/mesquite": {
    "city": "Mesquite",
@@ -31909,8 +31904,8 @@
    "slug": "stafford",
    "salon_count": 1,
    "metro_key": "TX/houston",
-   "lat": 29.64198,
-   "lng": -95.573406
+   "lat": 29.64252,
+   "lng": -95.574962
   },
   "TX/stephenville": {
    "city": "Stephenville",
@@ -32474,10 +32469,10 @@
    "city": "Salt Lake City",
    "state": "UT",
    "slug": "salt-lake-city",
-   "salon_count": 9,
+   "salon_count": 8,
    "metro_key": "UT/salt-lake-city",
-   "lat": 40.714882,
-   "lng": -111.846964
+   "lat": 40.710554,
+   "lng": -111.844703
   },
   "UT/sandy": {
    "city": "Sandy",
@@ -33034,8 +33029,8 @@
    "slug": "virginia-beach",
    "salon_count": 11,
    "metro_key": "NC/moyock",
-   "lat": 36.82797,
-   "lng": -76.093132
+   "lat": 36.82806,
+   "lng": -76.093168
   },
   "VA/williamsburg": {
    "city": "Williamsburg",
@@ -33646,8 +33641,8 @@
    "slug": "spokane",
    "salon_count": 7,
    "metro_key": "WA/spokane",
-   "lat": 47.681028,
-   "lng": -117.407181
+   "lat": 47.681019,
+   "lng": -117.40718
   },
   "WA/spokane-valley": {
    "city": "Spokane Valley",
@@ -34428,7 +34423,7 @@
    "state": "WV",
    "slug": "barboursville",
    "salon_count": 1,
-   "metro_key": "WV/barboursville",
+   "metro_key": "WV/hurricane",
    "lat": 38.42181,
    "lng": -82.288667
   },
@@ -34446,7 +34441,7 @@
    "state": "WV",
    "slug": "charleston",
    "salon_count": 1,
-   "metro_key": "WV/cross-lanes",
+   "metro_key": "WV/charleston",
    "lat": 38.318328,
    "lng": -81.717536
   },
@@ -34464,7 +34459,7 @@
    "state": "WV",
    "slug": "cross-lanes",
    "salon_count": 1,
-   "metro_key": "WV/cross-lanes",
+   "metro_key": "WV/charleston",
    "lat": 38.410197,
    "lng": -81.810818
   },
@@ -34473,7 +34468,7 @@
    "state": "WV",
    "slug": "hurricane",
    "salon_count": 1,
-   "metro_key": "WV/cross-lanes",
+   "metro_key": "WV/hurricane",
    "lat": 38.442804,
    "lng": -82.024948
   },
@@ -34521,6 +34516,15 @@
    "metro_key": "WV/parkersburg",
    "lat": 39.219936,
    "lng": -81.546881
+  },
+  "WV/south-charleston": {
+   "city": "South Charleston",
+   "state": "WV",
+   "slug": "south-charleston",
+   "salon_count": 1,
+   "metro_key": "WV/charleston",
+   "lat": 38.362252,
+   "lng": -81.705895
   },
   "WV/triadelphia": {
    "city": "Triadelphia",
