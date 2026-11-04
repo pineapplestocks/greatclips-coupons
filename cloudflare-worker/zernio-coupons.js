@@ -1,6 +1,7 @@
 import { readPair, reservePair } from './zernio-emoji.js';
 import { experimentAction, requestAttribution, experimentReport } from './zernio-experiment.js';
 import { currentOffer } from './whatsapp.js';
+import { queueMembership, membershipAction } from './zernio-membership.js';
 const SITE='https://greatclipsdeal.com', DAY=86400000;
 const one=(e,s,...a)=>e.DB.prepare(s).bind(...a).first();
 const run=(e,s,...a)=>e.DB.prepare(s).bind(...a).run();
@@ -15,6 +16,10 @@ export async function handleZernio(request,env,ctx){
   if(path==='/zernio/config'&&request.method==='GET')return response({enabled:ready(env)});
   if(request.method!=='POST')return response({error:'Method not allowed'},405);
   const raw=await request.text();if(raw.length>65536)return response({error:'Too large'},413);
+  if(path==='/zernio/membership'){
+   if(!env.WHATSAPP_BRIDGE_TOKEN||request.headers.get('Authorization')!=='Bearer '+env.WHATSAPP_BRIDGE_TOKEN)return response({error:'Unauthorized'},401);
+   return response(await membershipAction(env,JSON.parse(raw),send));
+  }
   if(path==='/zernio/experiment/report'){
    if(!env.ADMIN_TOKEN||request.headers.get('Authorization')!=='Bearer '+env.ADMIN_TOKEN)return response({error:'Unauthorized'},401);
    return response(await experimentReport(env));
@@ -47,7 +52,8 @@ export async function handleZernio(request,env,ctx){
   const pair=await reservePair(env,code);
   let attribution=null;try{attribution=await requestAttribution(env,b);}catch{/* Analytics must never block coupons. */}
   await run(env,'INSERT INTO zernio_coupon_requests(code,coupon_url,label,created_at,ip_hash,experiment_id,experiment_visitor) VALUES(?,?,?,?,?,?,?)',code,offer.url,offer.label,Date.now(),hash,attribution?.experiment_id||null,attribution?.visitor_id||null);
-  return response({whatsapp_url:'https://wa.me/'+env.ZERNIO_PHONE+'?text='+encodeURIComponent('Hi! Please send me my Great Clips coupon GC-'+code)});
+  const requestCode='GC-'+code;
+  return response({whatsapp_url:'https://wa.me/'+env.ZERNIO_PHONE+'?text='+encodeURIComponent('Hi! Please send me my Great Clips coupon '+requestCode)});
  }catch(error){return response({error:error.status&&error.status<500?error.message:'Unable to complete this request. Please use email.'},error.status||500);}
 }
 async function send(env,id,conversation,body){
@@ -69,14 +75,19 @@ export async function processZernioEvent(env,b){
   await run(env,'UPDATE zernio_coupon_requests SET cancelled_at=? WHERE conversation_id=? AND sent_at IS NULL',Date.now(),c);return;
  }
  if(await one(env,'SELECT conversation_id FROM zernio_optouts WHERE conversation_id=?',c))return;
- const confirm=/^gc_joined:([A-Z2-9]{8})$/.exec(b.metadata?.interactiveId||'');
+ let confirm=/^gc_joined:([A-Z2-9]{8})$/.exec(b.metadata?.interactiveId||'');
+ if(!confirm&&/^(?:i(?:['’]ve| have|ve) joined|joined)[.!]?$/i.test(text)){
+  const pending=await one(env,`SELECT code FROM zernio_coupon_requests WHERE conversation_id=? AND sender_id=?
+   AND sent_at IS NULL AND cancelled_at IS NULL AND created_at>? ORDER BY created_at DESC LIMIT 1`,c,sender,Date.now()-7*DAY);
+  if(pending)confirm=['',pending.code];
+ }
  const match=/\bGC-([A-Z2-9]{8})\b/i.exec(text);
  let code=(confirm||match)?.[1].toUpperCase();
  if(!code&&/great\s*clips\s+coupon/i.test(text)){
-  const pair=readPair(text),reference=pair?await one(env,'SELECT code FROM zernio_emoji_references WHERE pair=?',pair):null;
-  if(reference)code=reference.code;
-  if(!code){await send(env,'retry:'+b.id,c,{message:'Please open your selected coupon at '+SITE+' and tap the WhatsApp button again. Send the prepared message with the GC code so I can find your coupon.'});return;}
- }
+    const pair=readPair(text),reference=pair?await one(env,'SELECT code FROM zernio_emoji_references WHERE pair=?',pair):null;
+    if(reference)code=reference.code;
+    if(!code){await send(env,'retry:'+b.id,c,{message:'Hi! Please open the selected Great Clips coupon at '+SITE+' and tap the WhatsApp button again. Send the prepared message with the GC code so I can match it to your request.'});return;}
+  }
  if(!code)return; // Leave ordinary chats to the owner.
 
  let r=await one(env,'SELECT * FROM zernio_coupon_requests WHERE code=?',code);
@@ -85,12 +96,7 @@ export async function processZernioEvent(env,b){
   if(r.conversation_id!==c||r.sender_id!==sender||r.sent_at)return;
   if(!await one(env,'SELECT id FROM zernio_outbox WHERE id=? AND sent_at IS NOT NULL','invite:'+code))return;
   await run(env,'UPDATE zernio_coupon_requests SET self_confirmed_at=COALESCE(self_confirmed_at,?) WHERE code=?',Date.now(),code);
-  let offer;
-  try{offer=await currentOffer(r.coupon_url);}catch(error){
-   if(error.status&&error.status<500){await send(env,'expired:'+code,c,{message:'That coupon is no longer available. Pick another current offer at '+SITE});return;}throw error;
-  }
-  await send(env,'coupon:'+code,c,{message:"Here’s your Great Clips coupon! ✂️\n"+offer.url+'\nCheck the offer’s location and terms before your haircut. Reply STOP to stop coupon replies.'});
-  if(await one(env,'SELECT id FROM zernio_outbox WHERE id=? AND sent_at IS NOT NULL','coupon:'+code))await run(env,'UPDATE zernio_coupon_requests SET sent_at=COALESCE(sent_at,?) WHERE code=?',Date.now(),code);
+  await queueMembership(env,r,m);
   return;
  }
  await run(env,'UPDATE zernio_coupon_requests SET conversation_id=?,sender_id=?,claimed_at=? WHERE code=? AND conversation_id IS NULL',c,sender,Date.now(),code);

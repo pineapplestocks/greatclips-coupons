@@ -6,10 +6,11 @@ function fixture(){
  const {db,env:baseEnv}=setup();db.exec(readFileSync(new URL('../cloudflare-worker/migrations/006_zernio_self_confirmation.sql',import.meta.url),'utf8'));
  db.exec(readFileSync(new URL('../cloudflare-worker/migrations/007_zernio_experiment.sql',import.meta.url),'utf8'));
  db.exec(readFileSync(new URL('../cloudflare-worker/migrations/008_zernio_emoji_references.sql',import.meta.url),'utf8'));
- const env={ADMIN_TOKEN:'test-admin',ZERNIO_EXPERIMENT_ENABLED:'true',ZERNIO_COUPONS_ENABLED:'true',ZERNIO_API_KEY:'fake',ZERNIO_WEBHOOK_SECRET:'secret',ZERNIO_ACCOUNT_ID:'account',ZERNIO_PHONE:'15555550123',ZERNIO_GROUP_INVITE:'https://chat.whatsapp.com/example',DB:{prepare(sql){return{bind(...args){const s=db.prepare(sql);return{first:async()=>s.get(...args),all:async()=>({results:s.all(...args)}),run:async()=>({meta:{changes:s.run(...args).changes}})}}}}}};
+ db.exec(readFileSync(new URL('../cloudflare-worker/migrations/009_zernio_verified_membership.sql',import.meta.url),'utf8'));
+ const env={WHATSAPP_BRIDGE_TOKEN:'bridge-test',ZERNIO_GROUP_ID:'group@g.us',ZERNIO_GROUP_NAME:'Deal Dropper',ADMIN_TOKEN:'test-admin',ZERNIO_EXPERIMENT_ENABLED:'true',ZERNIO_COUPONS_ENABLED:'true',ZERNIO_API_KEY:'fake',ZERNIO_WEBHOOK_SECRET:'secret',ZERNIO_ACCOUNT_ID:'account',ZERNIO_PHONE:'15555550123',ZERNIO_GROUP_INVITE:'https://chat.whatsapp.com/example',DB:{prepare(sql){return{bind(...args){const s=db.prepare(sql);return{first:async()=>s.get(...args),all:async()=>({results:s.all(...args)}),run:async()=>({meta:{changes:s.run(...args).changes}})}}}}}};
  const pending=[];const ctx={waitUntil(p){pending.push(p)}};
  const call=async(path,data,signature=true)=>{const raw=JSON.stringify(data);return handleZernio(new Request('https://test/zernio/'+path,{method:'POST',headers:{Origin:'https://greatclipsdeal.com','CF-Connecting-IP':'192.0.2.1','X-Zernio-Signature':signature?createHmac('sha256','secret').update(raw).digest('hex'):'bad'},body:raw}),env,ctx)};
- const event=(text,id='m1',conversation='c1',interactiveId)=>({id,event:'message.received',timestamp:new Date().toISOString(),account:{accountId:'account'},conversation:{id:conversation},message:{id,platformMessageId:id,conversationId:conversation,platform:'whatsapp',direction:'incoming',text,sender:{id:conversation+'-sender'},sentAt:new Date().toISOString()},metadata:{interactiveId}});
+ const event=(text,id='m1',conversation='c1',interactiveId)=>({id,event:'message.received',timestamp:new Date().toISOString(),account:{accountId:'account'},conversation:{id:conversation},message:{id,platformMessageId:id,conversationId:conversation,platform:'whatsapp',direction:'incoming',text,sender:{id:conversation+'-sender',phoneNumber:'15555550123'},sentAt:new Date().toISOString()},metadata:{interactiveId}});
  return {db,env,call,event,flush:async()=>{while(pending.length)await pending.shift()}};
 }
 
@@ -29,7 +30,9 @@ test('real-traffic experiment: stable allocation, excluded preview, deduplicated
   const message=new URL((await r.json()).whatsapp_url).searchParams.get('text');const code=f.db.prepare('SELECT code FROM zernio_coupon_requests').get().code;
   await f.call('webhook',f.event(message));await f.flush();
   await f.call('webhook',f.event('','m2','c1','gc_joined:'+code));await f.flush();
-  await f.call('webhook',f.event('','m2','c1','gc_joined:'+code));await f.flush();assert.equal(sends,2);
+  await f.call('webhook',f.event('','m2','c1','gc_joined:'+code));await f.flush();assert.equal(sends,1);
+  const membership=async body=>handleZernio(new Request('https://test/zernio/membership',{method:'POST',headers:{Authorization:'Bearer bridge-test'},body:JSON.stringify(body)}),f.env,{});
+  const batch=await(await membership({action:'pending'})).json();await membership({...batch.requests[0],action:'check',member:true,group_id:'group@g.us'});assert.equal(sends,2);
   report=await experimentReport(f.env);const row=report.live.find(r=>r.variant===a.variant);
   for(const key of ['viewers','clicks','requests','messages','confirmed','sent','dismissals','exits'])assert.equal(row[key],1,key);
   assert.equal(row.no_click,0);assert.equal(row.member_verified,undefined);assert.equal(report.mature.reduce((n,r)=>n+r.viewers,0),0);
