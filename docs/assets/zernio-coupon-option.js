@@ -100,14 +100,13 @@
     if(isPreview){status.textContent='Preview only. No message is sent.';return;}
     didClick=true;track('click');
     section.dataset.busy='true';button.disabled=true;status.textContent='Opening WhatsApp…';
-    const chat=window.open('about:blank','_blank');if(chat)chat.opener=null;
     try{
      const r=await fetch(api+'/requests',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({coupon_url:url,...(cohort.tracked?{experiment_id:experimentId,experiment_visitor:cohort.visitor_id}:{})}),signal:AbortSignal.timeout(15000)});
      const d=await r.json();if(!r.ok)throw new Error(d.error||'WhatsApp is unavailable. Please try again later.');
      if(!/^https:\/\/wa\.me\/\d+\?/.test(d.whatsapp_url))throw new Error('WhatsApp is unavailable. Please try again later.');
-     if(chat&&!chat.closed)chat.location.replace(d.whatsapp_url);else window.location.assign(d.whatsapp_url);
+     window.location.assign(d.whatsapp_url);
      status.textContent='Tap Send in WhatsApp to continue.';
-    }catch(error){if(chat&&!chat.closed)chat.close();status.textContent='Unable to open WhatsApp. Please try again.';}
+    }catch(error){status.textContent=error.name==='TimeoutError'?'The request took too long. Please try again.':error instanceof TypeError?'Unable to connect. Please check your connection and try again.':error.message||'Unable to open WhatsApp. Please try again.';}
     finally{delete section.dataset.busy;button.disabled=!enabled;}
    };
    section.append(offer,note,button,reassurance,status);form.before(section);updateOffer(section,id);applyVariation(host);

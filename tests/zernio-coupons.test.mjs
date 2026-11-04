@@ -47,16 +47,16 @@ test('emoji routing keeps requests distinct, preserves legacy links and safely h
  try{
   const messages=[];
   for(const n of ['one','two']){const r=await f.call('requests',{coupon_url:'https://offers.greatclips.com/'+n});assert.equal(r.status,200);messages.push(new URL((await r.json()).whatsapp_url).searchParams.get('text'))}
-  assert.ok(messages.every(m=>!m.includes('GC-')));assert.notEqual(messages[0],messages[1]);
+  assert.ok(messages.every(m=>/GC-[A-Z2-9]{8}$/.test(m)));assert.notEqual(messages[0],messages[1]);
   const refs=f.db.prepare('SELECT * FROM zernio_emoji_references').all();assert.equal(refs.length,2);
   const {readPair,EMOJIS}=await import('../cloudflare-worker/zernio-emoji.js');assert.ok(EMOJIS.length>300);
-  const pair=readPair(messages[0]);assert.equal(Array.from(pair).length,2);assert.equal(readPair(messages[0].slice(0,-pair.length)+Array.from(pair).join(' \uFE0F')+'\uFE0F'),pair);
-  await f.call('webhook',f.event(messages[0],'emoji1'));await f.flush();assert.equal(sends.length,1);
+  const pair=refs[0].pair;assert.equal(Array.from(pair).length,2);assert.equal(readPair(Array.from(pair).join(' \uFE0F')+'\uFE0F'),pair);
+  await f.call('webhook',f.event('Hi! Please send me my Great Clips coupon '+pair,'emoji1'));await f.flush();assert.equal(sends.length,1);
   const first=f.db.prepare('SELECT * FROM zernio_coupon_requests WHERE coupon_url LIKE ?').get('%/one');assert.equal(first.conversation_id,'c1');
   await f.call('webhook',f.event('','confirm1','c1','gc_joined:'+first.code));await f.flush();assert.ok(sends[1].message.includes('/one'));
   const second=f.db.prepare('SELECT * FROM zernio_coupon_requests WHERE coupon_url LIKE ?').get('%/two');
   await f.call('webhook',f.event('GC-'+second.code,'legacy','c2'));await f.flush();assert.equal(sends.length,3);
-  await f.call('webhook',f.event('Hi! Please send me my Great Clips coupon','missing','c3'));await f.flush();assert.match(sends.at(-1).message,/both emojis/);
+  await f.call('webhook',f.event('Hi! Please send me my Great Clips coupon','missing','c3'));await f.flush();assert.match(sends.at(-1).message,/GC code/);
   assert.equal(f.db.prepare('SELECT COUNT(*) n FROM zernio_coupon_requests WHERE sent_at IS NOT NULL').get().n,1);
   // Deleted requests leave permanent reference reservations, so old messages cannot route to a later offer.
   f.db.prepare('DELETE FROM zernio_coupon_requests WHERE code=?').run(first.code);
