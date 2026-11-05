@@ -190,6 +190,21 @@
       "actual_privacy": "public",
       "thumbnail_uploaded": true,
       "captions": "uploaded"
+    },
+    {
+      "id": "87b2b53e31ddc3e365ba",
+      "type": "local",
+      "date": "2026-11-05",
+      "offer_keys": [
+        "993cd26f41cbd3797c86"
+      ],
+      "status": "uploaded",
+      "location": "Detroit",
+      "video_id": "MDPXD5ZTDqo",
+      "requested_privacy": "public",
+      "actual_privacy": "public",
+      "thumbnail_uploaded": true,
+      "captions": "uploaded"
     }
   ]
 }
