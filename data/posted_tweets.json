@@ -1370,9 +1370,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $5.00 at participating US locations. Limited time offer.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#CM8GDba\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "P9eOmnn",
+      "coupon_url": "https://offers.greatclips.com/P9eOmnn",
+      "post_id": "6aef8104004e4879a777f0f1",
+      "posted_at": "2026-11-07T19:50:28Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $12.99 in the Idaho Falls & Pocatello area. Expires Nov 20, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#P9eOmnn\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-11-07T09:49:28Z",
+  "last_post": "2026-11-07T19:50:28Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1472,6 +1481,7 @@
     "https://offers.greatclips.com/OK36Ser",
     "https://offers.greatclips.com/OloluXg",
     "https://offers.greatclips.com/P1E13cV",
+    "https://offers.greatclips.com/P9eOmnn",
     "https://offers.greatclips.com/PJb0gN5",
     "https://offers.greatclips.com/PUlEQje",
     "https://offers.greatclips.com/PiUV2AO",
