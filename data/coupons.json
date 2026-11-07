@@ -1,9 +1,9 @@
 {
-  "scraped_at": "2026-11-06T22:00:40.743285",
-  "total_coupons": 24,
+  "scraped_at": "2026-11-07T05:37:16.808424",
+  "total_coupons": 20,
   "verification": {
-    "attempted": 24,
-    "verified": 24,
+    "attempted": 20,
+    "verified": 20,
     "removed": 0,
     "unavailable": 0
   },
@@ -18,7 +18,7 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-10-30",
@@ -34,11 +34,11 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-11-06",
-      "last_seen": "2026-11-06"
+      "last_seen": "2026-11-07"
     },
     {
       "url": "https://offers.greatclips.com/zAkPcnJ",
@@ -50,59 +50,11 @@
       "area_name": "participating Toledo",
       "price": "$5.99",
       "market": "Toledo",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Toledo",
       "added_date": "2026-10-30",
       "last_seen": "2026-11-06"
-    },
-    {
-      "url": "https://offers.greatclips.com/dBcUgpB",
-      "coupon_code": "dBcUgpB",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21517/50707-002-1200x600-7.99.jpg",
-      "expiration": "11/06/2026",
-      "location_name": "participating Cleveland, Akron, Canton & Sandusky Area",
-      "state": "AREA",
-      "area_name": "participating Cleveland, Akron, Canton & Sandusky",
-      "price": "$7.99",
-      "market": "Cleveland, Akron, Canton & Sandusky",
-      "last_verified": "2026-11-06",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Cleveland, Akron, Canton & Sandusky",
-      "added_date": "2026-10-28",
-      "last_seen": "2026-10-30"
-    },
-    {
-      "url": "https://offers.greatclips.com/G4aedkn",
-      "coupon_code": "G4aedkn",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21528/50707-002-1200x600-9.99.jpg",
-      "expiration": "11/06/2026",
-      "location_name": "participating Hampton Roads & Peninsula Area",
-      "state": "AREA",
-      "area_name": "participating Hampton Roads & Peninsula",
-      "price": "$9.99",
-      "market": "Hampton Roads & Peninsula",
-      "last_verified": "2026-11-06",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Hampton Roads & Peninsula",
-      "added_date": "2026-10-28",
-      "last_seen": "2026-10-30"
-    },
-    {
-      "url": "https://offers.greatclips.com/3xId6vZ",
-      "coupon_code": "3xId6vZ",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21400/50707-002-1200x600-10.99.jpg",
-      "expiration": "11/06/2026",
-      "location_name": "participating St. Louis Metro & Surrounding Area",
-      "state": "AREA",
-      "area_name": "participating St. Louis Metro & Surrounding",
-      "price": "$10.99",
-      "market": "St. Louis Metro & Surrounding",
-      "last_verified": "2026-11-06",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in St. Louis Metro & Surrounding",
-      "added_date": "2026-10-28",
-      "last_seen": "2026-10-30"
     },
     {
       "url": "https://offers.greatclips.com/p1z0nF2",
@@ -114,27 +66,11 @@
       "area_name": "participating Phoenix & Northern/Western AZ",
       "price": "$10.99",
       "market": "Phoenix & Northern/Western AZ",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Phoenix & Northern/Western AZ",
       "added_date": "2026-10-30",
       "last_seen": "2026-11-06"
-    },
-    {
-      "url": "https://offers.greatclips.com/gt9ViKG",
-      "coupon_code": "gt9ViKG",
-      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21512/50707-002-1200x600-11.99.jpg",
-      "expiration": "11/06/2026",
-      "location_name": "participating Cincinnati Area",
-      "state": "AREA",
-      "area_name": "participating Cincinnati",
-      "price": "$11.99",
-      "market": "Cincinnati",
-      "last_verified": "2026-11-06",
-      "source": "facebook_ad_library",
-      "participating_location_note": "Valid at participating locations in Cincinnati",
-      "added_date": "2026-10-28",
-      "last_seen": "2026-10-30"
     },
     {
       "url": "https://offers.greatclips.com/xFosynR",
@@ -146,7 +82,7 @@
       "area_name": "participating Fresno & San Joaquin Valley",
       "price": "$11.99",
       "market": "Fresno & San Joaquin Valley",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Fresno & San Joaquin Valley",
       "added_date": "2026-10-31",
@@ -162,7 +98,7 @@
       "area_name": "participating Portland",
       "price": "$11.99",
       "market": "Portland",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Portland",
       "added_date": "2026-11-01",
@@ -178,7 +114,7 @@
       "area_name": "participating Detroit",
       "price": "$12.99",
       "market": "Detroit",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Detroit",
       "added_date": "2026-10-28",
@@ -194,11 +130,11 @@
       "area_name": "participating Idaho Falls & Pocatello",
       "price": "$12.99",
       "market": "Idaho Falls & Pocatello",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Idaho Falls & Pocatello",
       "added_date": "2026-11-06",
-      "last_seen": "2026-11-06"
+      "last_seen": "2026-11-07"
     },
     {
       "url": "https://offers.greatclips.com/0Z16JIk",
@@ -210,11 +146,11 @@
       "area_name": "participating Colorado Springs & Pueblo",
       "price": "$13.99",
       "market": "Colorado Springs & Pueblo",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Colorado Springs & Pueblo",
       "added_date": "2026-11-06",
-      "last_seen": "2026-11-06"
+      "last_seen": "2026-11-07"
     },
     {
       "url": "https://offers.greatclips.com/oHIn7Ey",
@@ -226,7 +162,7 @@
       "area_name": "participating Greater Western Washington",
       "price": "$14.99",
       "market": "Greater Western Washington",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Greater Western Washington",
       "added_date": "2026-10-30",
@@ -244,11 +180,11 @@
       "expiration": "11/20/2026",
       "price": "$14.99",
       "market": "PA",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-11-06",
-      "last_seen": "2026-11-06"
+      "last_seen": "2026-11-07"
     },
     {
       "url": "https://offers.greatclips.com/CAXbi8d",
@@ -262,11 +198,11 @@
       "expiration": "11/20/2026",
       "price": "$14.99",
       "market": "MD",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-11-06",
-      "last_seen": "2026-11-06"
+      "last_seen": "2026-11-07"
     },
     {
       "url": "https://offers.greatclips.com/MCGZKMA",
@@ -280,11 +216,11 @@
       "expiration": "11/20/2026",
       "price": "$14.99",
       "market": "MD",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-11-06",
-      "last_seen": "2026-11-06"
+      "last_seen": "2026-11-07"
     },
     {
       "url": "https://offers.greatclips.com/D2Bu7in",
@@ -298,11 +234,11 @@
       "expiration": "11/20/2026",
       "price": "$14.99",
       "market": "MD",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-11-06",
-      "last_seen": "2026-11-06"
+      "last_seen": "2026-11-07"
     },
     {
       "url": "https://offers.greatclips.com/2m8XGRg",
@@ -316,11 +252,11 @@
       "expiration": "11/20/2026",
       "price": "$14.99",
       "market": "MD",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-11-06",
-      "last_seen": "2026-11-06"
+      "last_seen": "2026-11-07"
     },
     {
       "url": "https://offers.greatclips.com/F9BLgcL",
@@ -334,11 +270,11 @@
       "expiration": "11/20/2026",
       "price": "$14.99",
       "market": "MD",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-11-06",
-      "last_seen": "2026-11-06"
+      "last_seen": "2026-11-07"
     },
     {
       "url": "https://offers.greatclips.com/WtIcxoy",
@@ -352,11 +288,11 @@
       "expiration": "11/20/2026",
       "price": "$14.99",
       "market": "PA",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-11-06",
-      "last_seen": "2026-11-06"
+      "last_seen": "2026-11-07"
     },
     {
       "url": "https://offers.greatclips.com/h6xjIz5",
@@ -368,11 +304,11 @@
       "area_name": "participating Kelowna, Vernon, & Penticton",
       "price": "$17.99",
       "market": "Kelowna, Vernon, & Penticton",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Kelowna, Vernon, & Penticton",
       "added_date": "2026-10-30",
-      "last_seen": "2026-11-06"
+      "last_seen": "2026-11-07"
     },
     {
       "url": "https://offers.greatclips.com/AKZtFDP",
@@ -384,7 +320,7 @@
       "area_name": "participating Lower Mnlnd & Van",
       "price": "$18.99",
       "market": "Lower Mnlnd & Van",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Lower Mnlnd & Van",
       "added_date": "2026-10-28",
@@ -400,7 +336,7 @@
       "area_name": "participating K/W, Brantford & Guelph",
       "price": "$18.99",
       "market": "K/W, Brantford & Guelph",
-      "last_verified": "2026-11-06",
+      "last_verified": "2026-11-07",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in K/W, Brantford & Guelph",
       "added_date": "2026-10-30",
