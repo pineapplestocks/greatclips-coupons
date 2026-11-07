@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-07T14:53:11Z",
- "scraped_at": "2026-11-07T05:37:16.808424",
- "total": 20,
+ "generated_at": "2026-11-07T21:32:22Z",
+ "scraped_at": "2026-11-07T14:32:08.628274",
+ "total": 21,
  "scopes": {
   "national": 2,
-  "area": 8,
+  "area": 9,
   "salon": 7,
   "unknown": 3
  },
@@ -499,6 +499,47 @@
    "participating_location_note": "Valid at participating locations in Kelowna, Vernon, & Penticton",
    "scope": "unknown",
    "price_value": 17.99
+  },
+  {
+   "url": "https://offers.greatclips.com/BSbs0IK",
+   "coupon_code": "BSbs0IK",
+   "price": "$17.99",
+   "location_name": "participating Greater Los Angeles Area",
+   "state": "AREA",
+   "area_name": "participating Greater Los Angeles",
+   "market": "Greater Los Angeles",
+   "expiration": "11/20/2026",
+   "last_verified": "2026-11-07",
+   "participating_location_note": "Valid at participating locations in Greater Los Angeles",
+   "scope": "area",
+   "price_value": 17.99,
+   "metro_keys": [
+    "CA/los-angeles"
+   ],
+   "market_names": [
+    "Los Angeles, CA"
+   ],
+   "city_keys": [
+    "CA/los-angeles",
+    "CA/torrance",
+    "CA/valencia",
+    "CA/agoura-hills",
+    "CA/alhambra",
+    "CA/buena-park",
+    "CA/burbank",
+    "CA/canyon-country",
+    "CA/downey",
+    "CA/la-canada-flintridge",
+    "CA/lakewood",
+    "CA/long-beach",
+    "CA/monrovia",
+    "CA/northridge",
+    "CA/seal-beach",
+    "CA/simi-valley",
+    "CA/thousand-oaks",
+    "CA/west-hills",
+    "CA/whittier"
+   ]
   },
   {
    "url": "https://offers.greatclips.com/AKZtFDP",

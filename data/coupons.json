@@ -1,9 +1,9 @@
 {
-  "scraped_at": "2026-11-07T05:37:16.808424",
-  "total_coupons": 20,
+  "scraped_at": "2026-11-07T14:32:08.628274",
+  "total_coupons": 21,
   "verification": {
-    "attempted": 20,
-    "verified": 20,
+    "attempted": 21,
+    "verified": 21,
     "removed": 0,
     "unavailable": 0
   },
@@ -308,6 +308,22 @@
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Kelowna, Vernon, & Penticton",
       "added_date": "2026-10-30",
+      "last_seen": "2026-11-07"
+    },
+    {
+      "url": "https://offers.greatclips.com/BSbs0IK",
+      "coupon_code": "BSbs0IK",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/21563/50707-002-1200x600-17.99.jpg",
+      "expiration": "11/20/2026",
+      "location_name": "participating Greater Los Angeles Area",
+      "state": "AREA",
+      "area_name": "participating Greater Los Angeles",
+      "price": "$17.99",
+      "market": "Greater Los Angeles",
+      "last_verified": "2026-11-07",
+      "source": "facebook_ad_library",
+      "participating_location_note": "Valid at participating locations in Greater Los Angeles",
+      "added_date": "2026-11-07",
       "last_seen": "2026-11-07"
     },
     {
