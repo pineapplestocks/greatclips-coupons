@@ -1361,9 +1361,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $18.99 in the K/W, Brantford & Guelph area. Expires Nov 8, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#Xrs3cUy\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "CM8GDba",
+      "coupon_url": "https://offers.greatclips.com/CM8GDba",
+      "post_id": "6aeef428d6bbae6fa17a25ac",
+      "posted_at": "2026-11-07T09:49:28Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $5.00 at participating US locations. Limited time offer.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#CM8GDba\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-11-02T23:17:10Z",
+  "last_post": "2026-11-07T09:49:28Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1409,6 +1418,7 @@
     "https://offers.greatclips.com/AKZtFDP",
     "https://offers.greatclips.com/Ao59KZQ",
     "https://offers.greatclips.com/CESQzzX",
+    "https://offers.greatclips.com/CM8GDba",
     "https://offers.greatclips.com/CRfBEM7",
     "https://offers.greatclips.com/CqMFYx7",
     "https://offers.greatclips.com/CwOKgUW",
