@@ -1,16 +1,30 @@
 {
- "generated_at": "2026-11-06T22:48:37Z",
- "scraped_at": "2026-11-06T15:48:19.266015",
- "total": 14,
+ "generated_at": "2026-11-07T05:00:59Z",
+ "scraped_at": "2026-11-06T22:00:40.743285",
+ "total": 24,
  "scopes": {
-  "national": 1,
-  "area": 10,
+  "national": 2,
+  "area": 12,
+  "salon": 7,
   "unknown": 3
  },
  "coupons": [
   {
    "url": "https://offers.greatclips.com/1toFx3P",
    "coupon_code": "1toFx3P",
+   "price": "$5.00",
+   "location_name": "participating US Area",
+   "state": "AREA",
+   "area_name": "participating US",
+   "market": "US",
+   "last_verified": "2026-11-06",
+   "participating_location_note": "Valid at participating US locations",
+   "scope": "national",
+   "price_value": 5.0
+  },
+  {
+   "url": "https://offers.greatclips.com/CM8GDba",
+   "coupon_code": "CM8GDba",
    "price": "$5.00",
    "location_name": "participating US Area",
    "state": "AREA",
@@ -468,6 +482,61 @@
    ]
   },
   {
+   "url": "https://offers.greatclips.com/P9eOmnn",
+   "coupon_code": "P9eOmnn",
+   "price": "$12.99",
+   "location_name": "participating Idaho Falls & Pocatello Area",
+   "state": "AREA",
+   "area_name": "participating Idaho Falls & Pocatello",
+   "market": "Idaho Falls & Pocatello",
+   "expiration": "11/20/2026",
+   "last_verified": "2026-11-06",
+   "participating_location_note": "Valid at participating locations in Idaho Falls & Pocatello",
+   "scope": "area",
+   "price_value": 12.99,
+   "metro_keys": [
+    "ID/idaho-falls",
+    "ID/pocatello"
+   ],
+   "market_names": [
+    "Idaho Falls, ID",
+    "Pocatello, ID"
+   ],
+   "city_keys": [
+    "ID/idaho-falls",
+    "ID/ammon",
+    "ID/pocatello"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/0Z16JIk",
+   "coupon_code": "0Z16JIk",
+   "price": "$13.99",
+   "location_name": "participating Colorado Springs & Pueblo Area",
+   "state": "AREA",
+   "area_name": "participating Colorado Springs & Pueblo",
+   "market": "Colorado Springs & Pueblo",
+   "expiration": "11/20/2026",
+   "last_verified": "2026-11-06",
+   "participating_location_note": "Valid at participating locations in Colorado Springs & Pueblo",
+   "scope": "area",
+   "price_value": 13.99,
+   "metro_keys": [
+    "CO/fountain",
+    "CO/pueblo"
+   ],
+   "market_names": [
+    "Colorado Springs, CO",
+    "Pueblo, CO"
+   ],
+   "city_keys": [
+    "CO/colorado-springs",
+    "CO/falcon",
+    "CO/fountain",
+    "CO/pueblo"
+   ]
+  },
+  {
    "url": "https://offers.greatclips.com/oHIn7Ey",
    "coupon_code": "oHIn7Ey",
    "price": "$14.99",
@@ -529,6 +598,125 @@
     "WA/tumwater",
     "WA/university-place",
     "WA/yelm"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/PbcNdMG",
+   "coupon_code": "PbcNdMG",
+   "price": "$14.99",
+   "location_name": "Richland Marketplace",
+   "city": "Quakertown,",
+   "state": "PA",
+   "address": "674 N West End Blvd",
+   "market": "PA",
+   "expiration": "11/20/2026",
+   "last_verified": "2026-11-06",
+   "scope": "salon",
+   "price_value": 14.99,
+   "city_keys": [
+    "PA/quakertown"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/CAXbi8d",
+   "coupon_code": "CAXbi8d",
+   "price": "$14.99",
+   "location_name": "Lyndwood Square",
+   "city": "Elkridge,",
+   "state": "MD",
+   "address": "6010 Marshalee Dr",
+   "market": "MD",
+   "expiration": "11/20/2026",
+   "last_verified": "2026-11-06",
+   "scope": "salon",
+   "price_value": 14.99,
+   "city_keys": [
+    "MD/elkridge"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/MCGZKMA",
+   "coupon_code": "MCGZKMA",
+   "price": "$14.99",
+   "location_name": "Cranberry Square",
+   "city": "Westminster,",
+   "state": "MD",
+   "address": "405 N Center St",
+   "market": "MD",
+   "expiration": "11/20/2026",
+   "last_verified": "2026-11-06",
+   "scope": "salon",
+   "price_value": 14.99,
+   "city_keys": [
+    "MD/westminster"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/D2Bu7in",
+   "coupon_code": "D2Bu7in",
+   "price": "$14.99",
+   "location_name": "Mount Airy Shopping Center",
+   "city": "Mount Airy,",
+   "state": "MD",
+   "address": "311 E Ridgeville Blvd",
+   "market": "MD",
+   "expiration": "11/20/2026",
+   "last_verified": "2026-11-06",
+   "scope": "salon",
+   "price_value": 14.99,
+   "city_keys": [
+    "MD/mount-airy"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/2m8XGRg",
+   "coupon_code": "2m8XGRg",
+   "price": "$14.99",
+   "location_name": "Dorsey's Search Village",
+   "city": "Ellicott City,",
+   "state": "MD",
+   "address": "4725 Dorsey Hall Dr",
+   "market": "MD",
+   "expiration": "11/20/2026",
+   "last_verified": "2026-11-06",
+   "scope": "salon",
+   "price_value": 14.99,
+   "city_keys": [
+    "MD/ellicott-city"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/F9BLgcL",
+   "coupon_code": "F9BLgcL",
+   "price": "$14.99",
+   "location_name": "Quarry Lake",
+   "city": "Baltimore,",
+   "state": "MD",
+   "address": "2574 Quarry Lake Dr",
+   "market": "MD",
+   "expiration": "11/20/2026",
+   "last_verified": "2026-11-06",
+   "scope": "salon",
+   "price_value": 14.99,
+   "city_keys": [
+    "MD/baltimore"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/WtIcxoy",
+   "coupon_code": "WtIcxoy",
+   "price": "$14.99",
+   "location_name": "Sadsbury Commons",
+   "city": "Parkesburg,",
+   "state": "PA",
+   "address": "328 Commons Dr",
+   "market": "PA",
+   "expiration": "11/20/2026",
+   "last_verified": "2026-11-06",
+   "scope": "salon",
+   "price_value": 14.99,
+   "city_keys": [
+    "PA/parkesburg"
    ]
   },
   {
