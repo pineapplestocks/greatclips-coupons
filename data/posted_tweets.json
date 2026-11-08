@@ -1388,9 +1388,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips savings update: $13.99 coupon in the Colorado Springs & Pueblo area. Expires Nov 20, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#0Z16JIk\n\n#GreatClips #SaveMoney"
+    },
+    {
+      "coupon_code": "BSbs0IK",
+      "coupon_url": "https://offers.greatclips.com/BSbs0IK",
+      "post_id": "6af048afd6bbae6fa1deab93",
+      "posted_at": "2026-11-08T10:02:23Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips savings update: $17.99 coupon in the Greater Los Angeles area. Expires Nov 20, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#BSbs0IK\n\n#GreatClips #SaveMoney"
     }
   ],
-  "last_post": "2026-11-08T01:13:06Z",
+  "last_post": "2026-11-08T10:02:23Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1436,6 +1445,7 @@
     "https://offers.greatclips.com/A8jOa9H",
     "https://offers.greatclips.com/AKZtFDP",
     "https://offers.greatclips.com/Ao59KZQ",
+    "https://offers.greatclips.com/BSbs0IK",
     "https://offers.greatclips.com/CESQzzX",
     "https://offers.greatclips.com/CM8GDba",
     "https://offers.greatclips.com/CRfBEM7",
