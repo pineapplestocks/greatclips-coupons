@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-11-07T21:55:42.230729",
+  "scraped_at": "2026-11-08T05:54:33.908088",
   "total_coupons": 21,
   "verification": {
     "attempted": 21,
@@ -18,7 +18,7 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-10-30",
@@ -34,11 +34,11 @@
       "price": "$5.00",
       "market": "US",
       "expiration": null,
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating US locations",
       "added_date": "2026-11-06",
-      "last_seen": "2026-11-07"
+      "last_seen": "2026-11-08"
     },
     {
       "url": "https://offers.greatclips.com/zAkPcnJ",
@@ -50,7 +50,7 @@
       "area_name": "participating Toledo",
       "price": "$5.99",
       "market": "Toledo",
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Toledo",
       "added_date": "2026-10-30",
@@ -66,7 +66,7 @@
       "area_name": "participating Phoenix & Northern/Western AZ",
       "price": "$10.99",
       "market": "Phoenix & Northern/Western AZ",
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Phoenix & Northern/Western AZ",
       "added_date": "2026-10-30",
@@ -82,7 +82,7 @@
       "area_name": "participating Fresno & San Joaquin Valley",
       "price": "$11.99",
       "market": "Fresno & San Joaquin Valley",
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Fresno & San Joaquin Valley",
       "added_date": "2026-10-31",
@@ -98,7 +98,7 @@
       "area_name": "participating Portland",
       "price": "$11.99",
       "market": "Portland",
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Portland",
       "added_date": "2026-11-01",
@@ -114,7 +114,7 @@
       "area_name": "participating Detroit",
       "price": "$12.99",
       "market": "Detroit",
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Detroit",
       "added_date": "2026-10-28",
@@ -130,11 +130,11 @@
       "area_name": "participating Idaho Falls & Pocatello",
       "price": "$12.99",
       "market": "Idaho Falls & Pocatello",
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Idaho Falls & Pocatello",
       "added_date": "2026-11-06",
-      "last_seen": "2026-11-07"
+      "last_seen": "2026-11-08"
     },
     {
       "url": "https://offers.greatclips.com/0Z16JIk",
@@ -146,11 +146,11 @@
       "area_name": "participating Colorado Springs & Pueblo",
       "price": "$13.99",
       "market": "Colorado Springs & Pueblo",
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Colorado Springs & Pueblo",
       "added_date": "2026-11-06",
-      "last_seen": "2026-11-07"
+      "last_seen": "2026-11-08"
     },
     {
       "url": "https://offers.greatclips.com/oHIn7Ey",
@@ -162,7 +162,7 @@
       "area_name": "participating Greater Western Washington",
       "price": "$14.99",
       "market": "Greater Western Washington",
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Greater Western Washington",
       "added_date": "2026-10-30",
@@ -180,7 +180,7 @@
       "expiration": "11/20/2026",
       "price": "$14.99",
       "market": "PA",
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-11-06",
@@ -198,7 +198,7 @@
       "expiration": "11/20/2026",
       "price": "$14.99",
       "market": "MD",
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-11-06",
@@ -216,11 +216,11 @@
       "expiration": "11/20/2026",
       "price": "$14.99",
       "market": "MD",
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-11-06",
-      "last_seen": "2026-11-07"
+      "last_seen": "2026-11-08"
     },
     {
       "url": "https://offers.greatclips.com/D2Bu7in",
@@ -234,11 +234,11 @@
       "expiration": "11/20/2026",
       "price": "$14.99",
       "market": "MD",
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-11-06",
-      "last_seen": "2026-11-07"
+      "last_seen": "2026-11-08"
     },
     {
       "url": "https://offers.greatclips.com/2m8XGRg",
@@ -252,11 +252,11 @@
       "expiration": "11/20/2026",
       "price": "$14.99",
       "market": "MD",
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-11-06",
-      "last_seen": "2026-11-07"
+      "last_seen": "2026-11-08"
     },
     {
       "url": "https://offers.greatclips.com/F9BLgcL",
@@ -270,7 +270,7 @@
       "expiration": "11/20/2026",
       "price": "$14.99",
       "market": "MD",
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-11-06",
@@ -288,7 +288,7 @@
       "expiration": "11/20/2026",
       "price": "$14.99",
       "market": "PA",
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-11-06",
@@ -304,11 +304,11 @@
       "area_name": "participating Kelowna, Vernon, & Penticton",
       "price": "$17.99",
       "market": "Kelowna, Vernon, & Penticton",
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Kelowna, Vernon, & Penticton",
       "added_date": "2026-10-30",
-      "last_seen": "2026-11-07"
+      "last_seen": "2026-11-08"
     },
     {
       "url": "https://offers.greatclips.com/BSbs0IK",
@@ -320,11 +320,11 @@
       "area_name": "participating Greater Los Angeles",
       "price": "$17.99",
       "market": "Greater Los Angeles",
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Greater Los Angeles",
       "added_date": "2026-11-07",
-      "last_seen": "2026-11-07"
+      "last_seen": "2026-11-08"
     },
     {
       "url": "https://offers.greatclips.com/AKZtFDP",
@@ -336,7 +336,7 @@
       "area_name": "participating Lower Mnlnd & Van",
       "price": "$18.99",
       "market": "Lower Mnlnd & Van",
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in Lower Mnlnd & Van",
       "added_date": "2026-10-28",
@@ -352,7 +352,7 @@
       "area_name": "participating K/W, Brantford & Guelph",
       "price": "$18.99",
       "market": "K/W, Brantford & Guelph",
-      "last_verified": "2026-11-07",
+      "last_verified": "2026-11-08",
       "source": "facebook_ad_library",
       "participating_location_note": "Valid at participating locations in K/W, Brantford & Guelph",
       "added_date": "2026-10-30",
