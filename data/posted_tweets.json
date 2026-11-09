@@ -1415,9 +1415,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Fresh haircut savings: $14.99 in Elkridge, MD. Expires Nov 20, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#CAXbi8d\n\n#GreatClips #HaircutDeals"
+    },
+    {
+      "coupon_code": "iM2JlvW",
+      "coupon_url": "https://offers.greatclips.com/iM2JlvW",
+      "post_id": "6af1aa673c5611da27a7e6c6",
+      "posted_at": "2026-11-09T11:11:35Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $7.00 in Boardman, OH. Expires Nov 25, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#iM2JlvW\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-11-09T01:31:37Z",
+  "last_post": "2026-11-09T11:11:35Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1579,6 +1588,7 @@
     "https://offers.greatclips.com/hOlFSQ7",
     "https://offers.greatclips.com/hwWLU3h",
     "https://offers.greatclips.com/i3vMWCQ",
+    "https://offers.greatclips.com/iM2JlvW",
     "https://offers.greatclips.com/isjblpZ",
     "https://offers.greatclips.com/j6HHWsk",
     "https://offers.greatclips.com/ki2QSE0",
