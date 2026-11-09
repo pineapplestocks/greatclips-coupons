@@ -1,9 +1,9 @@
 {
-  "scraped_at": "2026-11-08T14:47:31.402539",
-  "total_coupons": 21,
+  "scraped_at": "2026-11-08T22:03:26.429534",
+  "total_coupons": 22,
   "verification": {
-    "attempted": 21,
-    "verified": 21,
+    "attempted": 22,
+    "verified": 22,
     "removed": 0,
     "unavailable": 0
   },
@@ -55,6 +55,24 @@
       "participating_location_note": "Valid at participating locations in Toledo",
       "added_date": "2026-10-30",
       "last_seen": "2026-11-06"
+    },
+    {
+      "url": "https://offers.greatclips.com/iM2JlvW",
+      "coupon_code": "iM2JlvW",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8436/50707-002-1200x600-US-Sparkfly-7off.jpg",
+      "valid_text": "Valid at Great Clips Presidential Square at 813 Boardman Poland Rd in Boardman, OH. Not valid with any other offer. Limit one coupon per customer. No copies. Taxes may apply. Expires 11/25/2026",
+      "location_name": "Presidential Square",
+      "address": "813 Boardman Poland Rd",
+      "city": "Boardman,",
+      "state": "OH",
+      "expiration": "11/25/2026",
+      "price": "$7.00",
+      "market": "OH",
+      "last_verified": "2026-11-08",
+      "source": "facebook_ad_library",
+      "participating_location_note": null,
+      "added_date": "2026-11-08",
+      "last_seen": "2026-11-08"
     },
     {
       "url": "https://offers.greatclips.com/p1z0nF2",
@@ -184,7 +202,7 @@
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-11-06",
-      "last_seen": "2026-11-07"
+      "last_seen": "2026-11-08"
     },
     {
       "url": "https://offers.greatclips.com/CAXbi8d",
@@ -202,7 +220,7 @@
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-11-06",
-      "last_seen": "2026-11-07"
+      "last_seen": "2026-11-08"
     },
     {
       "url": "https://offers.greatclips.com/MCGZKMA",
@@ -292,7 +310,7 @@
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-11-06",
-      "last_seen": "2026-11-07"
+      "last_seen": "2026-11-08"
     },
     {
       "url": "https://offers.greatclips.com/h6xjIz5",

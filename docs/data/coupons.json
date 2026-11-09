@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-11-08T21:47:52Z",
- "scraped_at": "2026-11-08T14:47:31.402539",
- "total": 21,
+ "generated_at": "2026-11-09T05:03:45Z",
+ "scraped_at": "2026-11-08T22:03:26.429534",
+ "total": 22,
  "scopes": {
   "national": 2,
   "area": 9,
-  "salon": 7,
+  "salon": 8,
   "unknown": 3
  },
  "coupons": [
@@ -65,6 +65,23 @@
     "OH/oregon",
     "OH/sylvania",
     "OH/waterville"
+   ]
+  },
+  {
+   "url": "https://offers.greatclips.com/iM2JlvW",
+   "coupon_code": "iM2JlvW",
+   "price": "$7.00",
+   "location_name": "Presidential Square",
+   "city": "Boardman,",
+   "state": "OH",
+   "address": "813 Boardman Poland Rd",
+   "market": "OH",
+   "expiration": "11/25/2026",
+   "last_verified": "2026-11-08",
+   "scope": "salon",
+   "price_value": 7.0,
+   "city_keys": [
+    "OH/boardman"
    ]
   },
   {
