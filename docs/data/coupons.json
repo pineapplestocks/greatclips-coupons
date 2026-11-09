@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-09T05:03:45Z",
- "scraped_at": "2026-11-08T22:03:26.429534",
- "total": 22,
+ "generated_at": "2026-11-09T15:28:55Z",
+ "scraped_at": "2026-11-09T08:28:31.179431",
+ "total": 21,
  "scopes": {
   "national": 2,
-  "area": 9,
+  "area": 10,
   "salon": 8,
-  "unknown": 3
+  "unknown": 1
  },
  "coupons": [
   {
@@ -17,7 +17,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -30,7 +30,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -44,7 +44,7 @@
    "area_name": "participating Toledo",
    "market": "Toledo",
    "expiration": "11/13/2026",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "participating_location_note": "Valid at participating locations in Toledo",
    "scope": "area",
    "price_value": 5.99,
@@ -77,7 +77,7 @@
    "address": "813 Boardman Poland Rd",
    "market": "OH",
    "expiration": "11/25/2026",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "scope": "salon",
    "price_value": 7.0,
    "city_keys": [
@@ -93,7 +93,7 @@
    "area_name": "participating Phoenix & Northern/Western AZ",
    "market": "Phoenix & Northern/Western AZ",
    "expiration": "11/13/2026",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "participating_location_note": "Valid at participating locations in Phoenix & Northern/Western AZ",
    "scope": "area",
    "price_value": 10.99,
@@ -135,7 +135,7 @@
    "area_name": "participating Fresno & San Joaquin Valley",
    "market": "Fresno & San Joaquin Valley",
    "expiration": "11/13/2026",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "participating_location_note": "Valid at participating locations in Fresno & San Joaquin Valley",
    "scope": "area",
    "price_value": 11.99,
@@ -159,7 +159,7 @@
    "area_name": "participating Portland",
    "market": "Portland",
    "expiration": "11/13/2026",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "participating_location_note": "Valid at participating locations in Portland",
    "scope": "area",
    "price_value": 11.99,
@@ -201,7 +201,7 @@
    "area_name": "participating Detroit",
    "market": "Detroit",
    "expiration": "11/13/2026",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "participating_location_note": "Valid at participating locations in Detroit",
    "scope": "area",
    "price_value": 12.99,
@@ -274,7 +274,7 @@
    "area_name": "participating Idaho Falls & Pocatello",
    "market": "Idaho Falls & Pocatello",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "participating_location_note": "Valid at participating locations in Idaho Falls & Pocatello",
    "scope": "area",
    "price_value": 12.99,
@@ -293,6 +293,40 @@
    ]
   },
   {
+   "url": "https://offers.greatclips.com/yDxzWGK",
+   "coupon_code": "yDxzWGK",
+   "price": "$12.99",
+   "location_name": "participating San Diego Area",
+   "state": "AREA",
+   "area_name": "participating San Diego",
+   "market": "San Diego",
+   "expiration": "11/20/2026",
+   "last_verified": "2026-11-09",
+   "participating_location_note": "Valid at participating locations in San Diego",
+   "scope": "area",
+   "price_value": 12.99,
+   "metro_keys": [
+    "CA/san-diego"
+   ],
+   "market_names": [
+    "San Diego, CA"
+   ],
+   "city_keys": [
+    "CA/san-diego",
+    "CA/chula-vista",
+    "CA/oceanside",
+    "CA/poway",
+    "CA/el-cajon",
+    "CA/encinitas",
+    "CA/escondido",
+    "CA/imperial-beach",
+    "CA/la-mesa",
+    "CA/san-marcos",
+    "CA/santee",
+    "CA/vista"
+   ]
+  },
+  {
    "url": "https://offers.greatclips.com/0Z16JIk",
    "coupon_code": "0Z16JIk",
    "price": "$13.99",
@@ -301,7 +335,7 @@
    "area_name": "participating Colorado Springs & Pueblo",
    "market": "Colorado Springs & Pueblo",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "participating_location_note": "Valid at participating locations in Colorado Springs & Pueblo",
    "scope": "area",
    "price_value": 13.99,
@@ -329,7 +363,7 @@
    "area_name": "participating Greater Western Washington",
    "market": "Greater Western Washington",
    "expiration": "11/13/2026",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "participating_location_note": "Valid at participating locations in Greater Western Washington",
    "scope": "area",
    "price_value": 14.99,
@@ -394,7 +428,7 @@
    "address": "674 N West End Blvd",
    "market": "PA",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "scope": "salon",
    "price_value": 14.99,
    "city_keys": [
@@ -411,7 +445,7 @@
    "address": "6010 Marshalee Dr",
    "market": "MD",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "scope": "salon",
    "price_value": 14.99,
    "city_keys": [
@@ -428,7 +462,7 @@
    "address": "405 N Center St",
    "market": "MD",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "scope": "salon",
    "price_value": 14.99,
    "city_keys": [
@@ -445,7 +479,7 @@
    "address": "311 E Ridgeville Blvd",
    "market": "MD",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "scope": "salon",
    "price_value": 14.99,
    "city_keys": [
@@ -462,7 +496,7 @@
    "address": "4725 Dorsey Hall Dr",
    "market": "MD",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "scope": "salon",
    "price_value": 14.99,
    "city_keys": [
@@ -479,7 +513,7 @@
    "address": "2574 Quarry Lake Dr",
    "market": "MD",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "scope": "salon",
    "price_value": 14.99,
    "city_keys": [
@@ -496,7 +530,7 @@
    "address": "328 Commons Dr",
    "market": "PA",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "scope": "salon",
    "price_value": 14.99,
    "city_keys": [
@@ -512,7 +546,7 @@
    "area_name": "participating Kelowna, Vernon, & Penticton",
    "market": "Kelowna, Vernon, & Penticton",
    "expiration": "11/15/2026",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "participating_location_note": "Valid at participating locations in Kelowna, Vernon, & Penticton",
    "scope": "unknown",
    "price_value": 17.99
@@ -526,7 +560,7 @@
    "area_name": "participating Greater Los Angeles",
    "market": "Greater Los Angeles",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-08",
+   "last_verified": "2026-11-09",
    "participating_location_note": "Valid at participating locations in Greater Los Angeles",
    "scope": "area",
    "price_value": 17.99,
@@ -557,34 +591,6 @@
     "CA/west-hills",
     "CA/whittier"
    ]
-  },
-  {
-   "url": "https://offers.greatclips.com/AKZtFDP",
-   "coupon_code": "AKZtFDP",
-   "price": "$18.99",
-   "location_name": "participating Lower Mnlnd & Van Area",
-   "state": "AREA",
-   "area_name": "participating Lower Mnlnd & Van",
-   "market": "Lower Mnlnd & Van",
-   "expiration": "11/08/2026",
-   "last_verified": "2026-11-08",
-   "participating_location_note": "Valid at participating locations in Lower Mnlnd & Van",
-   "scope": "unknown",
-   "price_value": 18.99
-  },
-  {
-   "url": "https://offers.greatclips.com/Xrs3cUy",
-   "coupon_code": "Xrs3cUy",
-   "price": "$18.99",
-   "location_name": "participating K/W, Brantford & Guelph Area",
-   "state": "AREA",
-   "area_name": "participating K/W, Brantford & Guelph",
-   "market": "K/W, Brantford & Guelph",
-   "expiration": "11/08/2026",
-   "last_verified": "2026-11-08",
-   "participating_location_note": "Valid at participating locations in K/W, Brantford & Guelph",
-   "scope": "unknown",
-   "price_value": 18.99
   }
  ]
 }
