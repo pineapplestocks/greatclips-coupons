@@ -1442,9 +1442,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Fresh haircut savings: $14.99 in Mount Airy, MD. Expires Nov 20, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#D2Bu7in\n\n#GreatClips #HaircutDeals"
+    },
+    {
+      "coupon_code": "F9BLgcL",
+      "coupon_url": "https://offers.greatclips.com/F9BLgcL",
+      "post_id": "6af2f80b7bf84372febc94bd",
+      "posted_at": "2026-11-10T10:55:07Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $14.99 in Baltimore, MD. Expires Nov 20, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#F9BLgcL\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-11-10T04:00:01Z",
+  "last_post": "2026-11-10T10:55:07Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1508,6 +1517,7 @@
     "https://offers.greatclips.com/EsXCp7M",
     "https://offers.greatclips.com/F2zEagt",
     "https://offers.greatclips.com/F84tFdv",
+    "https://offers.greatclips.com/F9BLgcL",
     "https://offers.greatclips.com/FEDhm2E",
     "https://offers.greatclips.com/FEY2BPH",
     "https://offers.greatclips.com/FNfcvQo",
