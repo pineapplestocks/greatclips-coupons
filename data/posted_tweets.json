@@ -1433,9 +1433,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $12.99 in the San Diego area. Expires Nov 20, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#yDxzWGK\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "D2Bu7in",
+      "coupon_url": "https://offers.greatclips.com/D2Bu7in",
+      "post_id": "6af296c126f9e6aeeae14ba3",
+      "posted_at": "2026-11-10T04:00:01Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $14.99 in Mount Airy, MD. Expires Nov 20, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#D2Bu7in\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-11-09T23:56:27Z",
+  "last_post": "2026-11-10T04:00:01Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1489,6 +1498,7 @@
     "https://offers.greatclips.com/CRfBEM7",
     "https://offers.greatclips.com/CqMFYx7",
     "https://offers.greatclips.com/CwOKgUW",
+    "https://offers.greatclips.com/D2Bu7in",
     "https://offers.greatclips.com/DG4ITzd",
     "https://offers.greatclips.com/EDIVtMW",
     "https://offers.greatclips.com/ENSRaLu",
