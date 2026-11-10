@@ -1451,9 +1451,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $14.99 in Baltimore, MD. Expires Nov 20, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#F9BLgcL\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "MCGZKMA",
+      "coupon_url": "https://offers.greatclips.com/MCGZKMA",
+      "post_id": "6af38e9ba1e37f4188ffdc76",
+      "posted_at": "2026-11-10T21:37:32Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $14.99 in Westminster, MD. Expires Nov 20, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#MCGZKMA\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-11-10T10:55:07Z",
+  "last_post": "2026-11-10T21:37:32Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1547,6 +1556,7 @@
     "https://offers.greatclips.com/Lg8M6iE",
     "https://offers.greatclips.com/Luz2UyB",
     "https://offers.greatclips.com/M1oQbW8",
+    "https://offers.greatclips.com/MCGZKMA",
     "https://offers.greatclips.com/MSVhpN1",
     "https://offers.greatclips.com/MUqHtOe",
     "https://offers.greatclips.com/MXqjG8F",
