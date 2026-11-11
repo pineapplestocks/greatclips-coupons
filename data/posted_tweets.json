@@ -1469,9 +1469,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips coupon alert: $14.99 haircut in Quakertown, PA. Expires Nov 20, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#PbcNdMG\n\n#GreatClips #HaircutCoupon #Deals"
+    },
+    {
+      "coupon_code": "WtIcxoy",
+      "coupon_url": "https://offers.greatclips.com/WtIcxoy",
+      "post_id": "6af444d8658ef0788e251a59",
+      "posted_at": "2026-11-11T10:35:04Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips coupon alert: $14.99 haircut in Parkesburg, PA. Expires Nov 20, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#WtIcxoy\n\n#GreatClips #HaircutCoupon #Deals"
     }
   ],
-  "last_post": "2026-11-11T01:46:35Z",
+  "last_post": "2026-11-11T10:35:04Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1597,6 +1606,7 @@
     "https://offers.greatclips.com/VvNG05O",
     "https://offers.greatclips.com/W2GZYMS",
     "https://offers.greatclips.com/WA4FJ3X",
+    "https://offers.greatclips.com/WtIcxoy",
     "https://offers.greatclips.com/WwsRrEB",
     "https://offers.greatclips.com/XDcpSFp",
     "https://offers.greatclips.com/XWc0Vrw",
