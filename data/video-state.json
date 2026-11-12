@@ -205,6 +205,21 @@
       "actual_privacy": "public",
       "thumbnail_uploaded": true,
       "captions": "uploaded"
+    },
+    {
+      "id": "591bb08fcd4c4206bbae",
+      "type": "local",
+      "date": "2026-11-12",
+      "offer_keys": [
+        "bce244315593b6c6a009"
+      ],
+      "status": "uploaded",
+      "location": "Baltimore",
+      "video_id": "fh0tTjNzUFg",
+      "requested_privacy": "public",
+      "actual_privacy": "public",
+      "thumbnail_uploaded": true,
+      "captions": "uploaded"
     }
   ]
 }
