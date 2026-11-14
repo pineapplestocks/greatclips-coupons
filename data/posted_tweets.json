@@ -1487,9 +1487,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips savings update: $12.99 coupon in the Honolulu area. Expires Nov 27, 2026.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#iknFpNS\n\n#GreatClips #SaveMoney"
+    },
+    {
+      "coupon_code": "90e1ema",
+      "coupon_url": "https://offers.greatclips.com/90e1ema",
+      "post_id": "6af8c2bbc5b364e06214bebe",
+      "posted_at": "2026-11-14T20:21:15Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $16.99 in Novato, CA. Expires Nov 23, 2026.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#90e1ema\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-11-14T09:59:29Z",
+  "last_post": "2026-11-14T20:21:15Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1532,6 +1541,7 @@
     "https://offers.greatclips.com/8Ti2aVG",
     "https://offers.greatclips.com/8k2v1IW",
     "https://offers.greatclips.com/8nLBx6P",
+    "https://offers.greatclips.com/90e1ema",
     "https://offers.greatclips.com/9dfsvKP",
     "https://offers.greatclips.com/A8jOa9H",
     "https://offers.greatclips.com/AKZtFDP",
