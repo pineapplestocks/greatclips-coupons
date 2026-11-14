@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-13T23:20:39Z",
- "scraped_at": "2026-11-13T16:20:20.993063",
- "total": 21,
+ "generated_at": "2026-11-14T05:22:40Z",
+ "scraped_at": "2026-11-13T22:22:23.958336",
+ "total": 24,
  "scopes": {
   "national": 2,
-  "area": 10,
-  "salon": 8,
-  "unknown": 1
+  "area": 11,
+  "salon": 9,
+  "unknown": 2
  },
  "coupons": [
   {
@@ -327,6 +327,34 @@
    ]
   },
   {
+   "url": "https://offers.greatclips.com/iknFpNS",
+   "coupon_code": "iknFpNS",
+   "price": "$12.99",
+   "location_name": "participating Honolulu Area",
+   "state": "AREA",
+   "area_name": "participating Honolulu",
+   "market": "Honolulu",
+   "expiration": "11/27/2026",
+   "last_verified": "2026-11-13",
+   "participating_location_note": "Valid at participating locations in Honolulu",
+   "scope": "area",
+   "price_value": 12.99,
+   "metro_keys": [
+    "HI/honolulu"
+   ],
+   "market_names": [
+    "Honolulu, HI"
+   ],
+   "city_keys": [
+    "HI/honolulu",
+    "HI/ewa-beach",
+    "HI/kailua",
+    "HI/kapolei",
+    "HI/mililani",
+    "HI/pearl-city"
+   ]
+  },
+  {
    "url": "https://offers.greatclips.com/0Z16JIk",
    "coupon_code": "0Z16JIk",
    "price": "$13.99",
@@ -538,6 +566,23 @@
    ]
   },
   {
+   "url": "https://offers.greatclips.com/90e1ema",
+   "coupon_code": "90e1ema",
+   "price": "$16.99",
+   "location_name": "Novato Fair S.C.",
+   "city": "Novato,",
+   "state": "CA",
+   "address": "922 Diablo Ave",
+   "market": "CA",
+   "expiration": "11/23/2026",
+   "last_verified": "2026-11-13",
+   "scope": "salon",
+   "price_value": 16.99,
+   "city_keys": [
+    "CA/novato"
+   ]
+  },
+  {
    "url": "https://offers.greatclips.com/h6xjIz5",
    "coupon_code": "h6xjIz5",
    "price": "$17.99",
@@ -591,6 +636,20 @@
     "CA/west-hills",
     "CA/whittier"
    ]
+  },
+  {
+   "url": "https://offers.greatclips.com/kcVkbZb",
+   "coupon_code": "kcVkbZb",
+   "price": "$18.99",
+   "location_name": "Kingston Centre",
+   "city": "Kingston,",
+   "state": "ON",
+   "address": "1046 Princess St",
+   "market": "ON",
+   "expiration": "11/24/2026",
+   "last_verified": "2026-11-13",
+   "scope": "unknown",
+   "price_value": 18.99
   }
  ]
 }
