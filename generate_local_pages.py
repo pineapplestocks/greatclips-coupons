@@ -305,6 +305,7 @@ function gcEnsureModal() {
 }
 
 function gcOpenModal(coupon, salon) {
+  if (window.GCDayPass?.open(coupon?.url)) return;
   if (gcIsSubscriber()) {
     if (coupon && coupon.url) window.open(coupon.url, '_blank', 'noopener');
     return;

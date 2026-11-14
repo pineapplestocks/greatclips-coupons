@@ -1303,6 +1303,7 @@
         }
 
         function getCoupon(url, price, location_name, city, state) {
+            if (window.GCDayPass?.open(url)) return;
             if (isSubscriber()) {
                 window.open(url, '_blank', 'noopener');
                 return;

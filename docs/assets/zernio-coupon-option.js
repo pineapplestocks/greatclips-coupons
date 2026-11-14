@@ -1,5 +1,6 @@
 (() => {
  if(window.gcZernioOption)return;window.gcZernioOption=true;
+ const passScript=document.createElement('script');passScript.src='/assets/coupon-day-pass.js?v=1';document.head.append(passScript);
  const api='https://greatclips-email.mehulchaudhari.workers.dev/zernio';
  const experimentId='zernio-popup-v1';
  const preview=new URLSearchParams(location.search).get('zernio_preview');

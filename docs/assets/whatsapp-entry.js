@@ -149,6 +149,6 @@
   }
   for(const name of ['getCoupon','gcOpenModal']){
     if(typeof window[name]!=='function')continue;
-    window[name]=function(...args){const url=name==='getCoupon'?args[0]:args[0]?.url;if(url)open(url);};
+    window[name]=function(...args){const url=name==='getCoupon'?args[0]:args[0]?.url;if(window.GCDayPass?.open(url))return;if(url)open(url);};
   }
 })();
