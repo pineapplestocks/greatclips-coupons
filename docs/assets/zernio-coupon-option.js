@@ -1,6 +1,6 @@
 (() => {
  if(window.gcZernioOption)return;window.gcZernioOption=true;
- const passScript=document.createElement('script');passScript.src='/assets/coupon-day-pass.js?v=1';document.head.append(passScript);
+ const passScript=document.createElement('script');passScript.src='/assets/coupon-day-pass.js?v=2';document.head.append(passScript);
  const api='https://greatclips-email.mehulchaudhari.workers.dev/zernio';
  const experimentId='zernio-popup-v1';
  const preview=new URLSearchParams(location.search).get('zernio_preview');
@@ -32,7 +32,7 @@
  }
  addEventListener('pagehide',()=>{if(sawPopup&&!didClick)track('exit')});
  function applyVariation(host){
-  if(!cohort.copy)return;
+  if(!cohort.copy||(!cohort.tracked&&!isPreview))return;
   const h=host.querySelector('h3'),intro=h?.nextElementSibling;
   if(h&&h.textContent!==cohort.copy.title)h.textContent=cohort.copy.title;
   if(intro?.tagName==='P'&&intro.textContent!==cohort.copy.copy)intro.textContent=cohort.copy.copy;
@@ -81,7 +81,7 @@
    const existing=host.querySelector('.gc-whatsapp-option');
    if(existing){updateOffer(existing,id);existing.querySelector('button').disabled=!enabled||!assignmentReady||existing.dataset.busy==='true';applyVariation(host);continue;}
    const heading=host.querySelector('h3');if(heading)heading.textContent='Get Your Great Clips Coupon on WhatsApp';
-   const intro=heading?.nextElementSibling;if(intro?.tagName==='P'){intro.hidden=false;intro.textContent='Join my deals group to get this coupon—and discover more haircut savings and Amazon deals.';}
+   const intro=heading?.nextElementSibling;if(intro?.tagName==='P'){intro.hidden=false;intro.textContent='Send the prepared WhatsApp message and we’ll reply directly with your selected coupon. No group or payment required.';}
    const section=document.createElement('div');section.className='gc-whatsapp-option';
    section.style.cssText='margin:0;text-align:center';
    const offer=document.createElement('div');offer.style.cssText='text-align:left;background:linear-gradient(120deg,#f3ecff,#f5f0fd);border:1px solid #e0d2ff;border-radius:14px;padding:17px 18px;margin:0 0 20px';
@@ -90,10 +90,10 @@
    const location=document.createElement('p');location.className='gc-selected-location';location.style.cssText='font-size:14px;line-height:1.5;color:#64748b;margin:5px 0 0';
    offer.append(label,title,location);
    const button=document.createElement('button');button.disabled=!enabled||!assignmentReady;button.type='button';button.className='gc-chat-cta';
-   button.innerHTML='<svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.87 11.87 0 0 0 12.05 0C5.47 0 .12 5.35.12 11.93c0 2.1.55 4.15 1.59 5.96L0 24l6.27-1.64a11.9 11.9 0 0 0 5.78 1.47h.01C18.63 23.83 24 18.48 24 11.9c0-3.18-1.24-6.17-3.48-8.42ZM12.06 21.8a9.9 9.9 0 0 1-5.05-1.38l-.36-.22-3.72.98.99-3.63-.24-.37a9.88 9.88 0 0 1-1.52-5.25c0-5.46 4.45-9.91 9.91-9.91a9.85 9.85 0 0 1 7.01 2.91 9.85 9.85 0 0 1 2.9 7.01c0 5.46-4.45 9.86-9.92 9.86Zm5.43-7.4c-.3-.15-1.76-.87-2.03-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.8-1.49-1.78-1.66-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.21 5.09 4.5.71.3 1.27.49 1.71.63.72.23 1.37.2 1.88.12.57-.08 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35Z"/></svg><span>Join &amp; Get My Coupon</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg>';
+   button.innerHTML='<svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.87 11.87 0 0 0 12.05 0C5.47 0 .12 5.35.12 11.93c0 2.1.55 4.15 1.59 5.96L0 24l6.27-1.64a11.9 11.9 0 0 0 5.78 1.47h.01C18.63 23.83 24 18.48 24 11.9c0-3.18-1.24-6.17-3.48-8.42ZM12.06 21.8a9.9 9.9 0 0 1-5.05-1.38l-.36-.22-3.72.98.99-3.63-.24-.37a9.88 9.88 0 0 1-1.52-5.25c0-5.46 4.45-9.91 9.91-9.91a9.85 9.85 0 0 1 7.01 2.91 9.85 9.85 0 0 1 2.9 7.01c0 5.46-4.45 9.86-9.92 9.86Zm5.43-7.4c-.3-.15-1.76-.87-2.03-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.8-1.49-1.78-1.66-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.21 5.09 4.5.71.3 1.27.49 1.71.63.72.23 1.37.2 1.88.12.57-.08 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35Z"/></svg><span>Message Me My Coupon</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg>';
    const note=document.createElement('ol');note.className='gc-steps';
-   for(const [i,text] of ['Join our WhatsApp group','Tap “I’ve joined” to get your coupon'].entries()){const li=document.createElement('li'),number=document.createElement('span'),copy=document.createElement('span');number.className='gc-step-number';number.textContent=String(i+1);number.setAttribute('aria-hidden','true');copy.textContent=text;li.append(number,copy);note.append(li);}
-   const reassurance=document.createElement('p');reassurance.textContent='Opens WhatsApp · Leave anytime';reassurance.style.cssText='font-size:13px;color:#74839c;margin:22px 0 0';
+   for(const [i,text] of ['Send the prepared WhatsApp message','Receive your coupon directly in the chat'].entries()){const li=document.createElement('li'),number=document.createElement('span'),copy=document.createElement('span');number.className='gc-step-number';number.textContent=String(i+1);number.setAttribute('aria-hidden','true');copy.textContent=text;li.append(number,copy);note.append(li);}
+   const reassurance=document.createElement('p');reassurance.textContent='Free coupon delivery · No group required';reassurance.style.cssText='font-size:13px;color:#74839c;margin:22px 0 0';
    const status=document.createElement('p');status.setAttribute('role','status');status.style.cssText='font-size:14px;color:#64748b';if(loaded&&!enabled)status.textContent='WhatsApp is temporarily unavailable. Please try again later.';
    button.onclick=async()=>{
     const url=id==='emailFormView'?(typeof pendingCouponUrl==='undefined'?'':pendingCouponUrl):window.gcPending?.url;

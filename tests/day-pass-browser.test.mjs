@@ -15,14 +15,14 @@ test('success URL alone cannot activate a pass, checkout is explicit and free op
  const {dom,w,calls}=await setup({stored:false});
  assert.equal(w.document.querySelector('#gc-pass-banner'),null);
  assert.equal(w.GCDayPass.open('https://offers.greatclips.com/test'),false);
- assert.ok(w.document.querySelector('.gc-day-pass button').textContent.includes('$0.75'));
+ assert.equal(w.document.querySelector('.gc-day-pass button'),null);
  assert.ok(w.document.querySelector('.gc-whatsapp-option'));
  assert.equal(calls.filter(c=>c.url.endsWith('/create-checkout')).length,0);dom.window.close();
 });
 test('verified pass is shown without another checkout and expiry comes from server',async()=>{
  const {dom,w,calls}=await setup({active:true});
  assert.match(w.document.querySelector('#gc-pass-banner').textContent,/Day pass active/);
- assert.equal(w.document.querySelector('.gc-day-pass button').textContent,'Open my coupon');
+ assert.equal(w.document.querySelector('.gc-day-pass button'),null);
  assert.equal(w.document.querySelector('#pass-action').textContent,'Open my coupon');
  assert.equal(calls.filter(c=>c.url.endsWith('/create-checkout')).length,0);dom.window.close();
 });

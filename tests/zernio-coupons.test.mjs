@@ -13,6 +13,28 @@ function fixture(){
  const verify=async(code,member=true)=>{const b=await (await membership({action:'pending'})).json();const r=b.requests.find(r=>r.code===code);assert.ok(r,'membership request queued');return membership({...r,action:'check',member,group_id:'group@g.us'});};
  return {db,env,call,event,membership,verify,flush:async()=>{while(pending.length)await pending.shift()}};
 }
+test('direct mode sends the verified coupon without group membership, then gates contribution on feedback',async()=>{
+ const f=fixture(),original=globalThis.fetch,sends=[];
+ f.env.ZERNIO_DIRECT_COUPONS='true';f.env.ZERNIO_GROUP_INVITE='';f.env.COUPON_FEEDBACK_ENABLED='true';f.env.HAIRCUT_SUPPORT_LINK='https://buy.stripe.com/example';
+ f.db.exec(readFileSync(new URL('../cloudflare-worker/migrations/011_coupon_feedback_pilot.sql',import.meta.url),'utf8'));
+ globalThis.fetch=async(url,opts)=>{
+  if(String(url).includes('/data/coupons.json'))return Response.json({coupons:[{url:'https://offers.greatclips.com/valid',last_verified:new Date().toISOString().slice(0,10)}]});
+  sends.push(JSON.parse(opts.body));return Response.json({data:{messageId:'out'+sends.length}});
+ };
+ try{
+  assert.equal((await f.call('requests',{coupon_url:'https://offers.greatclips.com/valid'})).status,200);
+  const code=f.db.prepare('SELECT code FROM zernio_coupon_requests').get().code;
+  await f.call('webhook',f.event('GC-'+code,'direct'));await f.flush();
+  assert.equal(sends.length,1);assert.ok(sends[0].message.includes('https://offers.greatclips.com/valid'));
+  assert.ok(!sends[0].message.includes('chat.whatsapp.com'));assert.equal(sends[0].buttons.length,3);
+  assert.equal(f.db.prepare('SELECT COUNT(*) n FROM zernio_membership_checks').get().n,0);
+  assert.ok(f.db.prepare('SELECT sent_at FROM zernio_coupon_requests').get().sent_at);
+  await f.call('webhook',f.event('GC-'+code,'duplicate'));await f.flush();assert.equal(sends.length,1);
+  await f.call('webhook',f.event('','wrong','stranger','gc_feedback:'+code+':worked'));await f.flush();assert.equal(sends.length,1);
+  await f.call('webhook',f.event('','worked','c1','gc_feedback:'+code+':worked'));await f.flush();assert.equal(sends.length,2);assert.ok(!sends[1].message.includes('buy.stripe.com'));
+  await f.call('webhook',f.event('','support','c1','gc_feedback:'+code+':support'));await f.flush();assert.equal(sends.length,3);assert.ok(sends[2].message.includes('buy.stripe.com'));
+ }finally{globalThis.fetch=original;f.db.close();}
+});
 test('official webhook: request -> invitation -> self-confirmation -> selected coupon, deduplicated and bound to requester',async()=>{
  const f=fixture(),original=globalThis.fetch,sends=[];
  globalThis.fetch=async(url,options)=>{if(String(url).includes('/data/coupons.json'))return Response.json({coupons:[{url:'https://offers.greatclips.com/valid',last_verified:new Date().toISOString().slice(0,10)}]});sends.push({body:JSON.parse(options.body),key:options.headers['Idempotency-Key']});return Response.json({data:{messageId:'out'+sends.length}})};

@@ -3,6 +3,13 @@ const one=(e,s,...a)=>e.DB.prepare(s).bind(...a).first();
 const run=(e,s,...a)=>e.DB.prepare(s).bind(...a).run();
 const button=(code,title,action)=>({type:'postback',title,payload:`gc_feedback:${code}:${action}`});
 const enabled=e=>e.COUPON_FEEDBACK_ENABLED==='true';
+export async function directFeedbackButtons(env,r,message){
+ if(!enabled(env))return [];
+ await run(env,'INSERT OR IGNORE INTO coupon_feedback_pilot(code,conversation_id,sender_id,variant,created_at,last_inbound_at) VALUES(?,?,?,?,?,?)',r.code,r.conversation_id,r.sender_id,await supportVariant(r.sender_id),Date.now(),Date.parse(message.sentAt));
+ const p=await one(env,'SELECT * FROM coupon_feedback_pilot WHERE code=?',r.code);
+ if(!p||p.feedback||p.declined_at)return [];
+ return [button(r.code,'Yes, it worked','worked'),button(r.code,'Not yet','later'),button(r.code,'Had a problem','problem')];
+}
 async function sent(e,id){return !!await one(e,'SELECT id FROM zernio_outbox WHERE id=? AND sent_at IS NOT NULL',id);}
 export async function feedbackPilot(env,body,send){
  if(!enabled(env))return {enabled:false};
@@ -44,7 +51,7 @@ export async function feedbackReply(env,b,send){
  if(!p||p.conversation_id!==b.conversation.id||p.sender_id!==m.sender.id||p.declined_at)return true;
  if(now-Date.parse(m.sentAt)>23*3600000||Date.parse(m.sentAt)>now+300000)return true;
  if(await one(env,'SELECT conversation_id FROM zernio_optouts WHERE conversation_id=?',p.conversation_id))return true;
- if(!await sent(env,'feedback-check:'+code))return true;
+ if(!await sent(env,'feedback-check:'+code)&&!await sent(env,'coupon:'+code))return true;
  await run(env,'UPDATE coupon_feedback_pilot SET last_inbound_at=MAX(last_inbound_at,?) WHERE code=?',Date.parse(m.sentAt),code);
  if(action==='decline'){await run(env,'UPDATE coupon_feedback_pilot SET declined_at=COALESCE(declined_at,?) WHERE code=?',now,code);return true;}
  if(['worked','later','problem'].includes(action)){

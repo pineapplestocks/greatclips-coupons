@@ -2,11 +2,11 @@ import { readPair, reservePair } from './zernio-emoji.js';
 import { experimentAction, requestAttribution, experimentReport } from './zernio-experiment.js';
 import { currentOffer } from './whatsapp.js';
 import { queueMembership, membershipAction } from './zernio-membership.js';
-import { feedbackPilot, feedbackReply } from './coupon-feedback.js';
+import { feedbackPilot, feedbackReply, directFeedbackButtons } from './coupon-feedback.js';
 const SITE='https://greatclipsdeal.com', DAY=86400000;
 const one=(e,s,...a)=>e.DB.prepare(s).bind(...a).first();
 const run=(e,s,...a)=>e.DB.prepare(s).bind(...a).run();
-const ready=e=>e.ZERNIO_COUPONS_ENABLED==='true'&&!!e.ZERNIO_API_KEY&&!!e.ZERNIO_WEBHOOK_SECRET&&!!e.ZERNIO_ACCOUNT_ID&&/^\d{8,15}$/.test(e.ZERNIO_PHONE||'')&&/^https:\/\/chat\.whatsapp\.com\/[A-Za-z0-9]+$/.test(e.ZERNIO_GROUP_INVITE||'');
+const ready=e=>e.ZERNIO_COUPONS_ENABLED==='true'&&!!e.ZERNIO_API_KEY&&!!e.ZERNIO_WEBHOOK_SECRET&&!!e.ZERNIO_ACCOUNT_ID&&/^\d{8,15}$/.test(e.ZERNIO_PHONE||'')&&(e.ZERNIO_DIRECT_COUPONS==='true'||/^https:\/\/chat\.whatsapp\.com\/[A-Za-z0-9]+$/.test(e.ZERNIO_GROUP_INVITE||''));
 const response=(body,status=200)=>new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store','Access-Control-Allow-Origin':SITE,'Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type, Authorization'}});
 async function mac(secret,text){const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(secret),{name:'HMAC',hash:'SHA-256'},false,['sign']);return Array.from(new Uint8Array(await crypto.subtle.sign('HMAC',key,new TextEncoder().encode(text))),v=>v.toString(16).padStart(2,'0')).join('');}
 export async function validSignature(secret,raw,signature){if(!secret||!signature||!/^[a-f0-9]{64}$/.test(signature))return false;const expected=await mac(secret,raw);return [...expected].reduce((n,c,i)=>n|(c.charCodeAt(0)^signature.charCodeAt(i)),0)===0;}
@@ -17,12 +17,22 @@ export async function handleZernio(request,env,ctx){
   if(path==='/zernio/config'&&request.method==='GET')return response({enabled:ready(env)});
   if(request.method!=='POST')return response({error:'Method not allowed'},405);
   const raw=await request.text();if(raw.length>65536)return response({error:'Too large'},413);
+  if(path==='/zernio/direct-pending'){
+   if(!env.ADMIN_TOKEN||request.headers.get('Authorization')!=='Bearer '+env.ADMIN_TOKEN)return response({error:'Unauthorized'},401);
+   if(env.ZERNIO_DIRECT_COUPONS!=='true')return response({error:'Direct delivery is disabled'},409);
+   const rows=(await env.DB.prepare(`SELECT r.*,q.last_inbound_at FROM zernio_coupon_requests r JOIN zernio_membership_checks q ON q.code=r.code WHERE r.sent_at IS NULL AND r.cancelled_at IS NULL AND r.conversation_id IS NOT NULL AND r.sender_id IS NOT NULL AND q.last_inbound_at>? AND NOT EXISTS(SELECT 1 FROM zernio_optouts o WHERE o.conversation_id=r.conversation_id) ORDER BY r.created_at LIMIT 10`).bind(Date.now()-23*3600000).all()).results||[];
+   if(JSON.parse(raw||'{}').action!=='send')return response({pending:rows.length});
+   let delivered=0;
+   for(const r of rows){await processZernioEvent(env,{id:'direct-pending:'+r.code,conversation:{id:r.conversation_id},message:{text:'GC-'+r.code,sender:{id:r.sender_id},sentAt:new Date(r.last_inbound_at).toISOString()}});if((await one(env,'SELECT sent_at FROM zernio_coupon_requests WHERE code=?',r.code))?.sent_at)delivered++;}
+   return response({processed:rows.length,delivered});
+  }
   if(path==='/zernio/feedback-pilot'){
    if(!env.ADMIN_TOKEN||request.headers.get('Authorization')!=='Bearer '+env.ADMIN_TOKEN)return response({error:'Unauthorized'},401);
    return response(await feedbackPilot(env,JSON.parse(raw),send));
   }
   if(path==='/zernio/membership'){
    if(!env.WHATSAPP_BRIDGE_TOKEN||request.headers.get('Authorization')!=='Bearer '+env.WHATSAPP_BRIDGE_TOKEN)return response({error:'Unauthorized'},401);
+   if(env.ZERNIO_DIRECT_COUPONS==='true')return response({enabled:false,requests:[],status:'direct_delivery'});
    return response(await membershipAction(env,JSON.parse(raw),send));
   }
   if(path==='/zernio/experiment/report'){
@@ -118,6 +128,18 @@ export async function processZernioEvent(env,b){
 
  let r=await one(env,'SELECT * FROM zernio_coupon_requests WHERE code=?',code);
  if(!r||r.cancelled_at||Date.now()-r.created_at>7*DAY)return;
+ if(env.ZERNIO_DIRECT_COUPONS==='true'){
+  await run(env,'UPDATE zernio_coupon_requests SET conversation_id=?,sender_id=?,claimed_at=? WHERE code=? AND conversation_id IS NULL',c,sender,Date.now(),code);
+  r=await one(env,'SELECT * FROM zernio_coupon_requests WHERE code=?',code);
+  if(r.conversation_id!==c||r.sender_id!==sender||r.sent_at)return;
+  let offer;try{offer=await currentOffer(r.coupon_url);}catch(error){
+   if(error.status&&error.status<500){await send(env,'expired:'+code,c,{message:'That coupon is no longer available. Choose a current offer at '+SITE});return;}throw error;
+  }
+  const buttons=await directFeedbackButtons(env,r,m);
+  await send(env,'coupon:'+code,c,{message:'Here’s your Great Clips coupon! ✂️\n'+offer.url+'\n\nNo group membership or payment is required. Check the offer’s location, expiration and terms before your haircut.'+(buttons.length?'\n\nAfter you’ve used it at the salon, tap below to tell us whether it worked.':'')+'\nReply STOP to stop messages.',...(buttons.length?{buttons}:{})});
+  if(await one(env,'SELECT id FROM zernio_outbox WHERE id=? AND sent_at IS NOT NULL','coupon:'+code))await run(env,'UPDATE zernio_coupon_requests SET sent_at=COALESCE(sent_at,?) WHERE code=?',Date.now(),code);
+  return;
+ }
  if(confirm){
   if(r.conversation_id!==c||r.sender_id!==sender||r.sent_at)return;
   if(!await one(env,'SELECT id FROM zernio_outbox WHERE id=? AND sent_at IS NOT NULL','invite:'+code))return;

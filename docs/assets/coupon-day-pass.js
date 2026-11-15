@@ -21,13 +21,7 @@
  function selected(id){return id==='emailFormView'?(typeof pendingCouponUrl==='undefined'?'':pendingCouponUrl):window.gcPending?.url;}
  function message(text){for(const el of document.querySelectorAll('[data-pass-status]'))if(el.textContent!==text)el.textContent=text;}
  function render(){
-  for(const id of ['emailFormView','gcFormView']){
-   const host=document.getElementById(id);if(!host||!available||host.querySelector('.gc-day-pass'))continue;
-   const panel=document.createElement('div');panel.className='gc-day-pass';
-   panel.innerHTML='<h4>Skip the group steps for a day</h4><p><strong>$0.75 once</strong> · Unlimited coupon requests for 24 hours in this browser. No subscription.</p><button type="button">Unlock 24 hours — $0.75</button><p class="gc-pass-small">Website access only, not a haircut. Offer and salon restrictions apply. Keep this browser’s site data to retain your pass.</p><p data-pass-status role="status" aria-live="polite"></p><div class="gc-pass-divider">Or get your coupon free through WhatsApp</div>';
-   panel.querySelector('button').onclick=()=>checkout(selected(id));
-   const wa=host.querySelector('.gc-whatsapp-option');if(wa)wa.before(panel);else host.append(panel);
-  }
+  // Existing paid passes remain valid; new visitors receive coupons free in WhatsApp.
   for(const button of document.querySelectorAll('.gc-day-pass button')){
    const label=pass.active?'Open my coupon':'Unlock 24 hours — $0.75';if(button.textContent!==label)button.textContent=label;
    if(button.disabled!==busy)button.disabled=busy;
