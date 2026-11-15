@@ -8,7 +8,7 @@ export async function directFeedbackButtons(env,r,message){
  await run(env,'INSERT OR IGNORE INTO coupon_feedback_pilot(code,conversation_id,sender_id,variant,created_at,last_inbound_at) VALUES(?,?,?,?,?,?)',r.code,r.conversation_id,r.sender_id,await supportVariant(r.sender_id),Date.now(),Date.parse(message.sentAt));
  const p=await one(env,'SELECT * FROM coupon_feedback_pilot WHERE code=?',r.code);
  if(!p||p.feedback||p.declined_at)return [];
- return [button(r.code,'Yes, it worked','worked'),button(r.code,'Not yet','later'),button(r.code,'Had a problem','problem')];
+ return [button(r.code,'Yes, it worked','worked'),button(r.code,'No, it didn’t','problem')];
 }
 async function sent(e,id){return !!await one(e,'SELECT id FROM zernio_outbox WHERE id=? AND sent_at IS NOT NULL',id);}
 export async function feedbackPilot(env,body,send){
@@ -36,7 +36,7 @@ export async function feedbackPilot(env,body,send){
  for(const p of pending){
   try{
    const id='feedback-check:'+p.code;
-   await send(env,id,p.conversation_id,{message:'Hey! Quick check on the Great Clips coupon link we sent: have you used it, and did it work at the salon? ✂️\n\nPlease choose below. No pressure if you haven’t used it yet. Reply STOP to stop messages.',buttons:[button(p.code,'Yes, it worked','worked'),button(p.code,'Not yet','later'),button(p.code,'Had a problem','problem')]});
+   await send(env,id,p.conversation_id,{message:'Hey! Quick check on the Great Clips coupon link we sent: did it work at the salon? ✂️\n\nPlease answer after you’ve tried it. Reply STOP to stop messages.',buttons:[button(p.code,'Yes, it worked','worked'),button(p.code,'No, it didn’t','problem')]});
    if(await sent(env,id)){await run(env,'UPDATE coupon_feedback_pilot SET checkin_sent_at=? WHERE code=?',Date.now(),p.code);delivered++;}
   }catch{failed++;}
  }

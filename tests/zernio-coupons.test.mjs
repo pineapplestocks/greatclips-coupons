@@ -26,7 +26,7 @@ test('direct mode sends the verified coupon without group membership, then gates
   const code=f.db.prepare('SELECT code FROM zernio_coupon_requests').get().code;
   await f.call('webhook',f.event('GC-'+code,'direct'));await f.flush();
   assert.equal(sends.length,1);assert.ok(sends[0].message.includes('https://offers.greatclips.com/valid'));
-  assert.ok(!sends[0].message.includes('chat.whatsapp.com'));assert.equal(sends[0].buttons.length,3);
+  assert.ok(!sends[0].message.includes('chat.whatsapp.com'));assert.deepEqual(sends[0].buttons.map(b=>b.title),['Yes, it worked','No, it didn’t']);
   assert.equal(f.db.prepare('SELECT COUNT(*) n FROM zernio_membership_checks').get().n,0);
   assert.ok(f.db.prepare('SELECT sent_at FROM zernio_coupon_requests').get().sent_at);
   await f.call('webhook',f.event('GC-'+code,'duplicate'));await f.flush();assert.equal(sends.length,1);
