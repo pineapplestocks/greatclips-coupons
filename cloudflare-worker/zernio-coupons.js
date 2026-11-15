@@ -2,6 +2,7 @@ import { readPair, reservePair } from './zernio-emoji.js';
 import { experimentAction, requestAttribution, experimentReport } from './zernio-experiment.js';
 import { currentOffer } from './whatsapp.js';
 import { queueMembership, membershipAction } from './zernio-membership.js';
+import { feedbackPilot, feedbackReply } from './coupon-feedback.js';
 const SITE='https://greatclipsdeal.com', DAY=86400000;
 const one=(e,s,...a)=>e.DB.prepare(s).bind(...a).first();
 const run=(e,s,...a)=>e.DB.prepare(s).bind(...a).run();
@@ -16,6 +17,10 @@ export async function handleZernio(request,env,ctx){
   if(path==='/zernio/config'&&request.method==='GET')return response({enabled:ready(env)});
   if(request.method!=='POST')return response({error:'Method not allowed'},405);
   const raw=await request.text();if(raw.length>65536)return response({error:'Too large'},413);
+  if(path==='/zernio/feedback-pilot'){
+   if(!env.ADMIN_TOKEN||request.headers.get('Authorization')!=='Bearer '+env.ADMIN_TOKEN)return response({error:'Unauthorized'},401);
+   return response(await feedbackPilot(env,JSON.parse(raw),send));
+  }
   if(path==='/zernio/membership'){
    if(!env.WHATSAPP_BRIDGE_TOKEN||request.headers.get('Authorization')!=='Bearer '+env.WHATSAPP_BRIDGE_TOKEN)return response({error:'Unauthorized'},401);
    return response(await membershipAction(env,JSON.parse(raw),send));
@@ -23,6 +28,26 @@ export async function handleZernio(request,env,ctx){
   if(path==='/zernio/experiment/report'){
    if(!env.ADMIN_TOKEN||request.headers.get('Authorization')!=='Bearer '+env.ADMIN_TOKEN)return response({error:'Unauthorized'},401);
    return response(await experimentReport(env));
+  }
+  if(path==='/zernio/replay'){
+   if(!env.ADMIN_TOKEN||request.headers.get('Authorization')!=='Bearer '+env.ADMIN_TOKEN)return response({error:'Unauthorized'},401);
+   const payload=raw ? JSON.parse(raw) : {};
+   const days=Number(payload.days||3);
+   const since=Date.now() - Math.max(1, Math.min(30, Number.isFinite(days) ? days : 3)) * DAY;
+   const rows=(await env.DB.prepare("SELECT * FROM zernio_events WHERE created_at>=? AND state!='done' ORDER BY created_at LIMIT 200").bind(since).all()).results || [];
+   let processed=0;
+   for(const item of rows){
+    try{
+     const body=JSON.parse(item.payload||'{}');
+     await processZernioEvent(env,body);
+     await run(env,"UPDATE zernio_events SET state='done',payload='{}' WHERE id=?",item.id);
+     processed++;
+    }catch(error){
+     console.error('Zernio replay failed:', error);
+     await run(env,"UPDATE zernio_events SET attempts=attempts+1, lease_until=? WHERE id=?",Date.now()+120000,item.id);
+    }
+   }
+   return response({ok:true,processed,window_days:days,total_rows:rows.length});
   }
   if(path==='/zernio/experiment'){
    if(![SITE,'https://www.greatclipsdeal.com'].includes(request.headers.get('Origin')))return response({error:'Use the website'},403);
@@ -75,8 +100,9 @@ export async function processZernioEvent(env,b){
   await run(env,'UPDATE zernio_coupon_requests SET cancelled_at=? WHERE conversation_id=? AND sent_at IS NULL',Date.now(),c);return;
  }
  if(await one(env,'SELECT conversation_id FROM zernio_optouts WHERE conversation_id=?',c))return;
+ if(await feedbackReply(env,b,send))return;
  let confirm=/^gc_joined:([A-Z2-9]{8})$/.exec(b.metadata?.interactiveId||'');
- if(!confirm&&/^(?:i(?:['’]ve| have|ve) joined|joined)[.!]?$/i.test(text)){
+ if(!confirm&&/^(?:i(?:['’]ve| have|ve) (?:already )?joined|(?:already )?joined|i(?:['’]m| am|m) already (?:in (?:the |your )?group|a member)|already (?:in (?:the |your )?group|a member)|check membership)[.!]?$/i.test(text)){
   const pending=await one(env,`SELECT code FROM zernio_coupon_requests WHERE conversation_id=? AND sender_id=?
    AND sent_at IS NULL AND cancelled_at IS NULL AND created_at>? ORDER BY created_at DESC LIMIT 1`,c,sender,Date.now()-7*DAY);
   if(pending)confirm=['',pending.code];
@@ -102,7 +128,10 @@ export async function processZernioEvent(env,b){
  await run(env,'UPDATE zernio_coupon_requests SET conversation_id=?,sender_id=?,claimed_at=? WHERE code=? AND conversation_id IS NULL',c,sender,Date.now(),code);
  r=await one(env,'SELECT * FROM zernio_coupon_requests WHERE code=?',code);
  if(r.conversation_id!==c||r.sender_id!==sender||r.sent_at)return;
- await send(env,'invite:'+code,c,{message:"Hey, I’m Kumar! Join my deals group here:\n"+env.ZERNIO_GROUP_INVITE+"\n\nThen tap “I’ve joined” below and I’ll send your selected Great Clips coupon. Reply STOP to cancel.",buttons:[{type:'postback',title:"I’ve joined",payload:'gc_joined:'+code}]});
+ await send(env,'invite:'+code,c,{message:"Hey, I’m Kumar! I’ll check your Deal Dropper membership and send your selected Great Clips coupon.\n\nAlready in the group? You don’t need to join again or tap a button. We’ll verify your current membership automatically.\n\nIf you haven’t joined yet, use this link with the same WhatsApp number:\n"+env.ZERNIO_GROUP_INVITE+"\n\nYou can tap “Check membership” to check again. Reply STOP to cancel.",buttons:[{type:'postback',title:"Check membership",payload:'gc_joined:'+code}]});
+ // The explicit coupon request is sufficient to check current membership;
+ // existing members have no new join event and need no self-confirmation.
+ await queueMembership(env,r,m);
 }
 export async function drainZernio(env){
  if(!ready(env))return;

@@ -20,7 +20,7 @@ export async function membershipAction(env,b,send){
   const rows=(await env.DB.prepare(`SELECT r.code,r.sender_id,q.sender_phone FROM zernio_membership_checks q
    JOIN zernio_coupon_requests r ON r.code=q.code
    WHERE q.state='pending' AND q.lease_until<?
-   AND q.last_inbound_at>? AND r.created_at>? AND r.self_confirmed_at IS NOT NULL
+   AND q.last_inbound_at>? AND r.created_at>? AND r.conversation_id IS NOT NULL AND r.sender_id IS NOT NULL
    AND r.sent_at IS NULL AND r.cancelled_at IS NULL
    AND NOT EXISTS(SELECT 1 FROM zernio_optouts o WHERE o.conversation_id=r.conversation_id)
    ORDER BY q.requested_at LIMIT 10`).bind(now,now-23*3600000,now-7*DAY).all()).results||[];
@@ -40,7 +40,7 @@ export async function membershipAction(env,b,send){
   FROM zernio_coupon_requests r JOIN zernio_membership_checks q ON q.code=r.code WHERE r.code=?`,String(b.code||''));
  if(!r||r.cancelled_at||r.sent_at||r.membership_state!=='pending')return {status:'inactive'};
  if(r.sender_id!==b.sender_id||!b.lease_token||r.lease_token!==b.lease_token||r.lease_until<=now)fail('Membership check expired; check again.',409);
- if(!r.self_confirmed_at||now-r.created_at>7*DAY||now-r.last_inbound_at>23*3600000)return {status:'expired'};
+ if(!r.conversation_id||!r.sender_id||now-r.created_at>7*DAY||now-r.last_inbound_at>23*3600000)return {status:'expired'};
  if(await one(env,'SELECT conversation_id FROM zernio_optouts WHERE conversation_id=?',r.conversation_id))return {status:'cancelled'};
  await run(env,'UPDATE zernio_membership_checks SET checked_at=?,member=?,verified_at=? WHERE code=?',now,b.member?1:0,b.member?now:null,r.code);
  if(!b.member){

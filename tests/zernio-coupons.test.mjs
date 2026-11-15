@@ -111,3 +111,41 @@ test('emoji routing keeps requests distinct, preserves legacy links and safely h
   assert.equal(f.db.prepare('SELECT code FROM zernio_emoji_references WHERE pair=?').get(pair).code,first.code);
  }finally{globalThis.fetch=original}
 });
+
+test('existing group member receives requested coupon without confirmation or a new join event',async()=>{
+ const f=fixture(),original=globalThis.fetch,sends=[];
+ globalThis.fetch=async(url,options)=>{
+  if(String(url).includes('/data/coupons.json'))return Response.json({coupons:[{url:'https://offers.greatclips.com/valid',last_verified:new Date().toISOString().slice(0,10)}]});
+  sends.push(JSON.parse(options.body));return Response.json({data:{messageId:'out'+sends.length}});
+ };
+ try{
+  await f.call('requests',{coupon_url:'https://offers.greatclips.com/valid'});
+  const code=f.db.prepare('SELECT code FROM zernio_coupon_requests').get().code;
+  await f.call('webhook',f.event('GC-'+code));await f.flush();
+  assert.match(sends[0].message,/Already in the group/);
+  assert.equal(f.db.prepare('SELECT self_confirmed_at FROM zernio_coupon_requests').get().self_confirmed_at,null);
+  await f.verify(code,true);
+  assert.equal(sends.length,2);assert.match(sends[1].message,/offers.greatclips.com\/valid/);
+  assert.ok(f.db.prepare('SELECT sent_at FROM zernio_coupon_requests').get().sent_at);
+  assert.equal((await(await f.membership({action:'pending'})).json()).requests.length,0);
+  await f.call('webhook',f.event('GC-'+code,'repeat'));await f.flush();assert.equal(sends.length,2);
+ }finally{globalThis.fetch=original}
+});
+
+test('already-member replies queue old requests but never substitute for a verified roster check',async()=>{
+ const f=fixture(),original=globalThis.fetch,sends=[];
+ globalThis.fetch=async(url,options)=>{
+  if(String(url).includes('/data/coupons.json'))return Response.json({coupons:[{url:'https://offers.greatclips.com/valid',last_verified:new Date().toISOString().slice(0,10)}]});
+  sends.push(JSON.parse(options.body));return Response.json({data:{messageId:'out'+sends.length}});
+ };
+ try{
+  await f.call('requests',{coupon_url:'https://offers.greatclips.com/valid'});
+  const code=f.db.prepare('SELECT code FROM zernio_coupon_requests').get().code;
+  await f.call('webhook',f.event('GC-'+code));await f.flush();
+  f.db.exec('DELETE FROM zernio_membership_checks');
+  await f.call('webhook',f.event("I'm already in the group",'existing'));await f.flush();
+  await f.verify(code,false);assert.equal(sends.length,2);assert.match(sends[1].message,/Please join/);
+  assert.equal(f.db.prepare('SELECT sent_at FROM zernio_coupon_requests').get().sent_at,null);
+  await f.verify(code,true);assert.equal(sends.length,3);
+ }finally{globalThis.fetch=original}
+});
