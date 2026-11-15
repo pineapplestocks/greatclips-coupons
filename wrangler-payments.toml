@@ -4,7 +4,7 @@ compatibility_date = "2024-01-01"
 workers_dev = true
 
 [vars]
-DAY_PASS_ENABLED = "false"
+DAY_PASS_ENABLED = "true"
 SITE_ORIGIN = "https://greatclipsdeal.com"
 
 [[d1_databases]]
