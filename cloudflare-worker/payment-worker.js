@@ -52,7 +52,7 @@ export default {
   const path=new URL(request.url).pathname;
   try{
    if(request.method==='OPTIONS')return new Response(null,{status:204,headers});
-   if(path==='/config'&&request.method==='GET')return json({enabled:enabled(env),amount_cents:PRICE_CENTS,currency:'usd',duration_hours:24,recurring:false});
+   if(path==='/config'&&request.method==='GET')return json({enabled:enabled(env),sales_enabled:enabled(env)&&env.DAY_PASS_SALES_ENABLED!=='false',amount_cents:PRICE_CENTS,currency:'usd',duration_hours:24,recurring:false});
    if(!enabled(env))return json({error:'Day passes are not available yet. Please use the free coupon option.'},503);
    if(!origins.has(origin))return json({error:'Please use the coupon website.'},403);
    if(request.method!=='POST')return json({error:'Method not allowed'},405);
@@ -67,6 +67,7 @@ export default {
     return json({url:offer.url,expires_at:pass.expires_at});
    }
    if(path!=='/create-checkout')return json({error:'Not found'},404);
+   if(env.DAY_PASS_SALES_ENABLED==='false')return json({error:'Day-pass sales have ended. Get coupons free through our WhatsApp deals group.'},410);
    // Verify the visitor's selected offer is still listed before taking payment.
    if(body.coupon_url)await currentOffer(body.coupon_url);
    const existing=await one(env,'SELECT * FROM coupon_day_passes WHERE token_hash=?',hash);

@@ -21,6 +21,13 @@ function setup(){
  const call=async(path,body={},token='a'.repeat(64),origin='https://greatclipsdeal.com')=>{const r=await worker.fetch(new Request('https://worker.test'+path,{method:'POST',headers:{Origin:origin,Authorization:'Bearer '+token},body:JSON.stringify(body)}),env);return {status:r.status,data:await r.json()};};
  return {db,env,call};
 }
+test('retiring sales blocks new checkout while existing pass verification remains available',async()=>{
+ const {db,env,call}=setup();env.DAY_PASS_SALES_ENABLED='false';
+ assert.equal((await call('/create-checkout')).status,410);
+ assert.equal((await call('/status')).status,200);
+ const config=await(await worker.fetch(new Request('https://worker.test/config'),env)).json();
+ assert.equal(config.enabled,true);assert.equal(config.sales_enabled,false);db.close();
+});
 test('checkout amount is fixed, retries reuse checkout, unlimited requests reverify payment',async t=>{
  const {db,call}=setup();t.after(()=>db.close());let session,creates=0,params;
  t.mock.method(globalThis,'fetch',async(input,init)=>{

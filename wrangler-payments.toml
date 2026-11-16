@@ -5,6 +5,7 @@ workers_dev = true
 
 [vars]
 DAY_PASS_ENABLED = "true"
+DAY_PASS_SALES_ENABLED = "false"
 SITE_ORIGIN = "https://greatclipsdeal.com"
 
 [[d1_databases]]
