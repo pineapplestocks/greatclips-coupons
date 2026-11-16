@@ -150,6 +150,11 @@ export async function processZernioEvent(env,b){
  await run(env,'UPDATE zernio_coupon_requests SET conversation_id=?,sender_id=?,claimed_at=? WHERE code=? AND conversation_id IS NULL',c,sender,Date.now(),code);
  r=await one(env,'SELECT * FROM zernio_coupon_requests WHERE code=?',code);
  if(r.conversation_id!==c||r.sender_id!==sender||r.sent_at)return;
+ const returningMember=await one(env,`SELECT r.code FROM zernio_coupon_requests r JOIN zernio_membership_checks q ON q.code=r.code WHERE r.sender_id=? AND r.conversation_id=? AND r.sent_at IS NOT NULL AND q.member=1 LIMIT 1`,sender,c);
+ if(returningMember){
+  await send(env,'invite:'+code,c,{message:'Welcome back! I’ll check your current Deal Dropper membership and send this coupon. You don’t need to join again if you’re already in the group. Reply STOP to cancel.'});
+  await queueMembership(env,r,m);return;
+ }
  await send(env,'invite:'+code,c,{message:"Hey, I’m Kumar! I’ll check your Deal Dropper membership and send your selected Great Clips coupon.\n\nAlready in the group? You don’t need to join again or tap a button. We’ll verify your current membership automatically.\n\nIf you haven’t joined yet, use this link with the same WhatsApp number:\n"+env.ZERNIO_GROUP_INVITE+"\n\nYou can tap “Check membership” to check again. Reply STOP to cancel.",buttons:[{type:'postback',title:"Check membership",payload:'gc_joined:'+code}]});
  // The explicit coupon request is sufficient to check current membership;
  // existing members have no new join event and need no self-confirmation.

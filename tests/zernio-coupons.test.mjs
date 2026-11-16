@@ -13,6 +13,24 @@ function fixture(){
  const verify=async(code,member=true)=>{const b=await (await membership({action:'pending'})).json();const r=b.requests.find(r=>r.code===code);assert.ok(r,'membership request queued');return membership({...r,action:'check',member,group_id:'group@g.us'});};
  return {db,env,call,event,membership,verify,flush:async()=>{while(pending.length)await pending.shift()}};
 }
+test('existing members can request multiple coupons without joining or confirming again',async()=>{
+ const f=fixture(),original=globalThis.fetch,sends=[];
+ globalThis.fetch=async(url,opts)=>{
+  if(String(url).includes('/data/coupons.json'))return Response.json({coupons:[{url:'https://offers.greatclips.com/valid',last_verified:new Date().toISOString().slice(0,10)}]});
+  sends.push(JSON.parse(opts.body));return Response.json({data:{messageId:'out'+sends.length}});
+ };
+ try{
+  for(let i=0;i<3;i++){
+   await f.call('requests',{coupon_url:'https://offers.greatclips.com/valid'});
+   const code=f.db.prepare('SELECT code FROM zernio_coupon_requests ORDER BY rowid DESC LIMIT 1').get().code;
+   await f.call('webhook',f.event('GC-'+code,'repeat-'+i));await f.flush();
+   if(i>0){assert.match(sends.at(-1).message,/Welcome back/);assert.ok(!sends.at(-1).message.includes('chat.whatsapp.com'));}
+   await f.verify(code,true);assert.ok(f.db.prepare('SELECT sent_at FROM zernio_coupon_requests WHERE code=?').get(code).sent_at);
+   assert.match(sends.at(-1).message,/Need another coupon/);
+  }
+  assert.equal(f.db.prepare('SELECT COUNT(*) n FROM zernio_coupon_requests WHERE sent_at IS NOT NULL AND self_confirmed_at IS NULL').get().n,3);
+ }finally{globalThis.fetch=original;f.db.close();}
+});
 test('direct mode sends the verified coupon without group membership, then gates contribution on feedback',async()=>{
  const f=fixture(),original=globalThis.fetch,sends=[];
  f.env.ZERNIO_DIRECT_COUPONS='true';f.env.ZERNIO_GROUP_INVITE='';f.env.COUPON_FEEDBACK_ENABLED='true';f.env.HAIRCUT_SUPPORT_LINK='https://buy.stripe.com/example';

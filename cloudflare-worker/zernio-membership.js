@@ -56,7 +56,7 @@ export async function membershipAction(env,b,send){
    return {status:'expired'};
   }throw error;
  }
- await send(env,'coupon:'+r.code,r.conversation_id,{message:'Here’s your Great Clips coupon! ✂️\n'+offer.url+'\nCheck the offer’s location and terms before your haircut. Reply STOP to stop coupon replies.'});
+ await send(env,'coupon:'+r.code,r.conversation_id,{message:'Here’s your Great Clips coupon! ✂️\n'+offer.url+'\nCheck the offer’s location and terms before your haircut.\n\nNeed another coupon? Choose an offer at https://greatclipsdeal.com and send its WhatsApp request. Existing group members don’t need to join again—we verify your membership automatically.\n\nReply STOP to stop coupon replies.'});
  if(await one(env,'SELECT id FROM zernio_outbox WHERE id=? AND sent_at IS NOT NULL','coupon:'+r.code)){
   await run(env,'UPDATE zernio_coupon_requests SET sent_at=COALESCE(sent_at,?) WHERE code=?',Date.now(),r.code);
   await run(env,"UPDATE zernio_membership_checks SET state='sent',lease_until=0,lease_token=NULL WHERE code=?",r.code);
