@@ -1505,9 +1505,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Fresh haircut savings: $18.99 in Kingston, ON. Expires Nov 24, 2026.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#kcVkbZb\n\n#GreatClips #HaircutDeals"
+    },
+    {
+      "coupon_code": "xR8wOkq",
+      "coupon_url": "https://offers.greatclips.com/xR8wOkq",
+      "post_id": "6afe2b69a588bd6687a0d74b",
+      "posted_at": "2026-11-18T22:49:13Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips coupon alert: $6.99 haircut in El Paso, TX. Expires Dec 1, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#xR8wOkq\n\n#GreatClips #HaircutCoupon #Deals"
     }
   ],
-  "last_post": "2026-11-15T01:38:12Z",
+  "last_post": "2026-11-18T22:49:13Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1724,6 +1733,7 @@
     "https://offers.greatclips.com/xFosynR",
     "https://offers.greatclips.com/xHe7OEx",
     "https://offers.greatclips.com/xQnCtp8",
+    "https://offers.greatclips.com/xR8wOkq",
     "https://offers.greatclips.com/xqTb01a",
     "https://offers.greatclips.com/xz28zQU",
     "https://offers.greatclips.com/yDxzWGK",
