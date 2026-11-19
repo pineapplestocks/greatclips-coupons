@@ -1,14 +1,24 @@
 {
- "generated_at": "2026-11-18T23:59:35Z",
- "scraped_at": "2026-11-18T16:59:15.470274",
- "total": 18,
+ "generated_at": "2026-11-19T07:16:49Z",
+ "scraped_at": "2026-11-19T00:16:31.883546",
+ "total": 19,
  "scopes": {
+  "unknown": 2,
   "national": 2,
   "salon": 10,
-  "area": 5,
-  "unknown": 1
+  "area": 5
  },
  "coupons": [
+  {
+   "url": "https://offers.greatclips.com/SeG55Gu",
+   "coupon_code": "SeG55Gu",
+   "price": "$4.99",
+   "state": "Other",
+   "market": "UNKNOWN",
+   "last_verified": "2026-11-19",
+   "scope": "unknown",
+   "price_value": 4.99
+  },
   {
    "url": "https://offers.greatclips.com/1toFx3P",
    "coupon_code": "1toFx3P",
@@ -17,7 +27,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-11-18",
+   "last_verified": "2026-11-19",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -30,7 +40,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-11-18",
+   "last_verified": "2026-11-19",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -45,7 +55,7 @@
    "address": "11100 Sean Haggerty Dr",
    "market": "TX",
    "expiration": "12/01/2026",
-   "last_verified": "2026-11-18",
+   "last_verified": "2026-11-19",
    "scope": "salon",
    "price_value": 6.99,
    "city_keys": [
@@ -62,7 +72,7 @@
    "address": "813 Boardman Poland Rd",
    "market": "OH",
    "expiration": "11/25/2026",
-   "last_verified": "2026-11-18",
+   "last_verified": "2026-11-19",
    "scope": "salon",
    "price_value": 7.0,
    "city_keys": [
@@ -78,7 +88,7 @@
    "area_name": "participating Idaho Falls & Pocatello",
    "market": "Idaho Falls & Pocatello",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-18",
+   "last_verified": "2026-11-19",
    "participating_location_note": "Valid at participating locations in Idaho Falls & Pocatello",
    "scope": "area",
    "price_value": 12.99,
@@ -105,7 +115,7 @@
    "area_name": "participating San Diego",
    "market": "San Diego",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-18",
+   "last_verified": "2026-11-19",
    "participating_location_note": "Valid at participating locations in San Diego",
    "scope": "area",
    "price_value": 12.99,
@@ -139,7 +149,7 @@
    "area_name": "participating Honolulu",
    "market": "Honolulu",
    "expiration": "11/27/2026",
-   "last_verified": "2026-11-18",
+   "last_verified": "2026-11-19",
    "participating_location_note": "Valid at participating locations in Honolulu",
    "scope": "area",
    "price_value": 12.99,
@@ -167,7 +177,7 @@
    "area_name": "participating Colorado Springs & Pueblo",
    "market": "Colorado Springs & Pueblo",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-18",
+   "last_verified": "2026-11-19",
    "participating_location_note": "Valid at participating locations in Colorado Springs & Pueblo",
    "scope": "area",
    "price_value": 13.99,
@@ -196,7 +206,7 @@
    "address": "674 N West End Blvd",
    "market": "PA",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-18",
+   "last_verified": "2026-11-19",
    "scope": "salon",
    "price_value": 14.99,
    "city_keys": [
@@ -213,7 +223,7 @@
    "address": "6010 Marshalee Dr",
    "market": "MD",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-18",
+   "last_verified": "2026-11-19",
    "scope": "salon",
    "price_value": 14.99,
    "city_keys": [
@@ -230,7 +240,7 @@
    "address": "405 N Center St",
    "market": "MD",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-18",
+   "last_verified": "2026-11-19",
    "scope": "salon",
    "price_value": 14.99,
    "city_keys": [
@@ -247,7 +257,7 @@
    "address": "311 E Ridgeville Blvd",
    "market": "MD",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-18",
+   "last_verified": "2026-11-19",
    "scope": "salon",
    "price_value": 14.99,
    "city_keys": [
@@ -264,7 +274,7 @@
    "address": "4725 Dorsey Hall Dr",
    "market": "MD",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-18",
+   "last_verified": "2026-11-19",
    "scope": "salon",
    "price_value": 14.99,
    "city_keys": [
@@ -281,7 +291,7 @@
    "address": "2574 Quarry Lake Dr",
    "market": "MD",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-18",
+   "last_verified": "2026-11-19",
    "scope": "salon",
    "price_value": 14.99,
    "city_keys": [
@@ -298,7 +308,7 @@
    "address": "328 Commons Dr",
    "market": "PA",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-18",
+   "last_verified": "2026-11-19",
    "scope": "salon",
    "price_value": 14.99,
    "city_keys": [
@@ -315,7 +325,7 @@
    "address": "922 Diablo Ave",
    "market": "CA",
    "expiration": "11/23/2026",
-   "last_verified": "2026-11-18",
+   "last_verified": "2026-11-19",
    "scope": "salon",
    "price_value": 16.99,
    "city_keys": [
@@ -331,7 +341,7 @@
    "area_name": "participating Greater Los Angeles",
    "market": "Greater Los Angeles",
    "expiration": "11/20/2026",
-   "last_verified": "2026-11-18",
+   "last_verified": "2026-11-19",
    "participating_location_note": "Valid at participating locations in Greater Los Angeles",
    "scope": "area",
    "price_value": 17.99,
@@ -373,7 +383,7 @@
    "address": "1046 Princess St",
    "market": "ON",
    "expiration": "11/24/2026",
-   "last_verified": "2026-11-18",
+   "last_verified": "2026-11-19",
    "scope": "unknown",
    "price_value": 18.99
   }
