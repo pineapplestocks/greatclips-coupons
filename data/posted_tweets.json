@@ -1514,9 +1514,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips coupon alert: $6.99 haircut in El Paso, TX. Expires Dec 1, 2026.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#xR8wOkq\n\n#GreatClips #HaircutCoupon #Deals"
+    },
+    {
+      "coupon_code": "SeG55Gu",
+      "coupon_url": "https://offers.greatclips.com/SeG55Gu",
+      "post_id": "6afedbdf7daa148ac19597b1",
+      "posted_at": "2026-11-19T11:22:07Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips coupon alert: $4.99 haircut in UNKNOWN. Limited time offer.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#SeG55Gu\n\n#GreatClips #HaircutCoupon #Deals"
     }
   ],
-  "last_post": "2026-11-18T22:49:13Z",
+  "last_post": "2026-11-19T11:22:07Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1634,6 +1643,7 @@
     "https://offers.greatclips.com/R12OToz",
     "https://offers.greatclips.com/RM5iPmQ",
     "https://offers.greatclips.com/RtEvBAF",
+    "https://offers.greatclips.com/SeG55Gu",
     "https://offers.greatclips.com/Sotihua",
     "https://offers.greatclips.com/VGLk34N",
     "https://offers.greatclips.com/VRDfsr4",
