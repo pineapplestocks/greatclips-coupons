@@ -1,9 +1,9 @@
 {
-  "scraped_at": "2026-11-19T13:05:34.220227",
-  "total_coupons": 19,
+  "scraped_at": "2026-11-19T23:06:25.780346",
+  "total_coupons": 21,
   "verification": {
-    "attempted": 19,
-    "verified": 19,
+    "attempted": 21,
+    "verified": 21,
     "removed": 0,
     "unavailable": 0
   },
@@ -89,6 +89,34 @@
       "participating_location_note": null,
       "added_date": "2026-11-08",
       "last_seen": "2026-11-18"
+    },
+    {
+      "url": "https://offers.greatclips.com/yJoSr8A",
+      "coupon_code": "yJoSr8A",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8458/50707-002-1200x600-8.99.jpg",
+      "state": "UNKNOWN",
+      "price": "$8.99",
+      "market": "UNKNOWN",
+      "expiration": null,
+      "last_verified": "2026-11-19",
+      "source": "facebook_ad_library",
+      "participating_location_note": null,
+      "added_date": "2026-11-19",
+      "last_seen": "2026-11-19"
+    },
+    {
+      "url": "https://offers.greatclips.com/1wbpUOD",
+      "coupon_code": "1wbpUOD",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8460/50707-002-1200x600-9.99.jpg",
+      "state": "UNKNOWN",
+      "price": "$9.99",
+      "market": "UNKNOWN",
+      "expiration": null,
+      "last_verified": "2026-11-19",
+      "source": "facebook_ad_library",
+      "participating_location_note": null,
+      "added_date": "2026-11-19",
+      "last_seen": "2026-11-19"
     },
     {
       "url": "https://offers.greatclips.com/P9eOmnn",

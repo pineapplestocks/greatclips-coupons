@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-11-19T20:05:45Z",
- "scraped_at": "2026-11-19T13:05:34.220227",
- "total": 19,
+ "generated_at": "2026-11-20T06:06:41Z",
+ "scraped_at": "2026-11-19T23:06:25.780346",
+ "total": 21,
  "scopes": {
-  "unknown": 2,
+  "unknown": 4,
   "national": 2,
   "salon": 10,
   "area": 5
@@ -78,6 +78,26 @@
    "city_keys": [
     "OH/boardman"
    ]
+  },
+  {
+   "url": "https://offers.greatclips.com/yJoSr8A",
+   "coupon_code": "yJoSr8A",
+   "price": "$8.99",
+   "state": "Other",
+   "market": "UNKNOWN",
+   "last_verified": "2026-11-19",
+   "scope": "unknown",
+   "price_value": 8.99
+  },
+  {
+   "url": "https://offers.greatclips.com/1wbpUOD",
+   "coupon_code": "1wbpUOD",
+   "price": "$9.99",
+   "state": "Other",
+   "market": "UNKNOWN",
+   "last_verified": "2026-11-19",
+   "scope": "unknown",
+   "price_value": 9.99
   },
   {
    "url": "https://offers.greatclips.com/P9eOmnn",
