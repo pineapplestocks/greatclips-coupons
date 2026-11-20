@@ -1532,9 +1532,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "New Great Clips deal found: $8.99 in UNKNOWN. Limited time offer.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#yJoSr8A\n\n#GreatClips #Coupons"
+    },
+    {
+      "coupon_code": "1wbpUOD",
+      "coupon_url": "https://offers.greatclips.com/1wbpUOD",
+      "post_id": "6b00c9979ffbc8503cddabd7",
+      "posted_at": "2026-11-20T22:28:39Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "New Great Clips deal found: $9.99 in UNKNOWN. Limited time offer.\n\nSee current coupons: https://greatclipsdeal.com/coupon-codes/#1wbpUOD\n\n#GreatClips #Coupons"
     }
   ],
-  "last_post": "2026-11-20T11:11:10Z",
+  "last_post": "2026-11-20T22:28:39Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1544,6 +1553,7 @@
     "https://offers.greatclips.com/1Ps7to7",
     "https://offers.greatclips.com/1pRqio1",
     "https://offers.greatclips.com/1toFx3P",
+    "https://offers.greatclips.com/1wbpUOD",
     "https://offers.greatclips.com/2IzGTRB",
     "https://offers.greatclips.com/2KAdGYv",
     "https://offers.greatclips.com/2SXfKr1",
