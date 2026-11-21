@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-21T05:59:30Z",
- "scraped_at": "2026-11-20T22:59:09.779225",
- "total": 33,
+ "generated_at": "2026-11-21T14:32:17Z",
+ "scraped_at": "2026-11-21T07:31:59.476193",
+ "total": 23,
  "scopes": {
-  "unknown": 16,
+  "unknown": 17,
   "national": 2,
-  "salon": 10,
-  "area": 5
+  "salon": 3,
+  "area": 1
  },
  "coupons": [
   {
@@ -15,7 +15,7 @@
    "price": "$4.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "scope": "unknown",
    "price_value": 4.99
   },
@@ -27,7 +27,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -40,7 +40,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -55,7 +55,7 @@
    "address": "11100 Sean Haggerty Dr",
    "market": "TX",
    "expiration": "12/01/2026",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "scope": "salon",
    "price_value": 6.99,
    "city_keys": [
@@ -72,7 +72,7 @@
    "address": "813 Boardman Poland Rd",
    "market": "OH",
    "expiration": "11/25/2026",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "scope": "salon",
    "price_value": 7.0,
    "city_keys": [
@@ -85,7 +85,7 @@
    "price": "$7.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "scope": "unknown",
    "price_value": 7.99
   },
@@ -95,7 +95,7 @@
    "price": "$7.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "scope": "unknown",
    "price_value": 7.99
   },
@@ -105,7 +105,7 @@
    "price": "$7.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "scope": "unknown",
    "price_value": 7.99
   },
@@ -115,7 +115,7 @@
    "price": "$8.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "scope": "unknown",
    "price_value": 8.99
   },
@@ -125,7 +125,7 @@
    "price": "$8.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "scope": "unknown",
    "price_value": 8.99
   },
@@ -135,7 +135,7 @@
    "price": "$9.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "scope": "unknown",
    "price_value": 9.99
   },
@@ -145,7 +145,7 @@
    "price": "$9.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "scope": "unknown",
    "price_value": 9.99
   },
@@ -155,7 +155,20 @@
    "price": "$9.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
+   "scope": "unknown",
+   "price_value": 9.99
+  },
+  {
+   "url": "https://offers.greatclips.com/0lzmnh6",
+   "coupon_code": "0lzmnh6",
+   "price": "$9.99",
+   "location_name": "participating CSRA Area",
+   "state": "AREA",
+   "area_name": "participating CSRA",
+   "market": "CSRA",
+   "last_verified": "2026-11-21",
+   "participating_location_note": "Valid at participating locations in CSRA",
    "scope": "unknown",
    "price_value": 9.99
   },
@@ -165,70 +178,9 @@
    "price": "$11.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "scope": "unknown",
    "price_value": 11.99
-  },
-  {
-   "url": "https://offers.greatclips.com/P9eOmnn",
-   "coupon_code": "P9eOmnn",
-   "price": "$12.99",
-   "location_name": "participating Idaho Falls & Pocatello Area",
-   "state": "AREA",
-   "area_name": "participating Idaho Falls & Pocatello",
-   "market": "Idaho Falls & Pocatello",
-   "expiration": "11/20/2026",
-   "last_verified": "2026-11-20",
-   "participating_location_note": "Valid at participating locations in Idaho Falls & Pocatello",
-   "scope": "area",
-   "price_value": 12.99,
-   "metro_keys": [
-    "ID/idaho-falls",
-    "ID/pocatello"
-   ],
-   "market_names": [
-    "Idaho Falls, ID",
-    "Pocatello, ID"
-   ],
-   "city_keys": [
-    "ID/idaho-falls",
-    "ID/ammon",
-    "ID/pocatello"
-   ]
-  },
-  {
-   "url": "https://offers.greatclips.com/yDxzWGK",
-   "coupon_code": "yDxzWGK",
-   "price": "$12.99",
-   "location_name": "participating San Diego Area",
-   "state": "AREA",
-   "area_name": "participating San Diego",
-   "market": "San Diego",
-   "expiration": "11/20/2026",
-   "last_verified": "2026-11-20",
-   "participating_location_note": "Valid at participating locations in San Diego",
-   "scope": "area",
-   "price_value": 12.99,
-   "metro_keys": [
-    "CA/san-diego"
-   ],
-   "market_names": [
-    "San Diego, CA"
-   ],
-   "city_keys": [
-    "CA/san-diego",
-    "CA/chula-vista",
-    "CA/oceanside",
-    "CA/poway",
-    "CA/el-cajon",
-    "CA/encinitas",
-    "CA/escondido",
-    "CA/imperial-beach",
-    "CA/la-mesa",
-    "CA/san-marcos",
-    "CA/santee",
-    "CA/vista"
-   ]
   },
   {
    "url": "https://offers.greatclips.com/iknFpNS",
@@ -239,7 +191,7 @@
    "area_name": "participating Honolulu",
    "market": "Honolulu",
    "expiration": "11/27/2026",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "participating_location_note": "Valid at participating locations in Honolulu",
    "scope": "area",
    "price_value": 12.99,
@@ -264,7 +216,7 @@
    "price": "$12.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "scope": "unknown",
    "price_value": 12.99
   },
@@ -274,156 +226,9 @@
    "price": "$12.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "scope": "unknown",
    "price_value": 12.99
-  },
-  {
-   "url": "https://offers.greatclips.com/0Z16JIk",
-   "coupon_code": "0Z16JIk",
-   "price": "$13.99",
-   "location_name": "participating Colorado Springs & Pueblo Area",
-   "state": "AREA",
-   "area_name": "participating Colorado Springs & Pueblo",
-   "market": "Colorado Springs & Pueblo",
-   "expiration": "11/20/2026",
-   "last_verified": "2026-11-20",
-   "participating_location_note": "Valid at participating locations in Colorado Springs & Pueblo",
-   "scope": "area",
-   "price_value": 13.99,
-   "metro_keys": [
-    "CO/fountain",
-    "CO/pueblo"
-   ],
-   "market_names": [
-    "Colorado Springs, CO",
-    "Pueblo, CO"
-   ],
-   "city_keys": [
-    "CO/colorado-springs",
-    "CO/falcon",
-    "CO/fountain",
-    "CO/pueblo"
-   ]
-  },
-  {
-   "url": "https://offers.greatclips.com/PbcNdMG",
-   "coupon_code": "PbcNdMG",
-   "price": "$14.99",
-   "location_name": "Richland Marketplace",
-   "city": "Quakertown,",
-   "state": "PA",
-   "address": "674 N West End Blvd",
-   "market": "PA",
-   "expiration": "11/20/2026",
-   "last_verified": "2026-11-20",
-   "scope": "salon",
-   "price_value": 14.99,
-   "city_keys": [
-    "PA/quakertown"
-   ]
-  },
-  {
-   "url": "https://offers.greatclips.com/CAXbi8d",
-   "coupon_code": "CAXbi8d",
-   "price": "$14.99",
-   "location_name": "Lyndwood Square",
-   "city": "Elkridge,",
-   "state": "MD",
-   "address": "6010 Marshalee Dr",
-   "market": "MD",
-   "expiration": "11/20/2026",
-   "last_verified": "2026-11-20",
-   "scope": "salon",
-   "price_value": 14.99,
-   "city_keys": [
-    "MD/elkridge"
-   ]
-  },
-  {
-   "url": "https://offers.greatclips.com/MCGZKMA",
-   "coupon_code": "MCGZKMA",
-   "price": "$14.99",
-   "location_name": "Cranberry Square",
-   "city": "Westminster,",
-   "state": "MD",
-   "address": "405 N Center St",
-   "market": "MD",
-   "expiration": "11/20/2026",
-   "last_verified": "2026-11-20",
-   "scope": "salon",
-   "price_value": 14.99,
-   "city_keys": [
-    "MD/westminster"
-   ]
-  },
-  {
-   "url": "https://offers.greatclips.com/D2Bu7in",
-   "coupon_code": "D2Bu7in",
-   "price": "$14.99",
-   "location_name": "Mount Airy Shopping Center",
-   "city": "Mount Airy,",
-   "state": "MD",
-   "address": "311 E Ridgeville Blvd",
-   "market": "MD",
-   "expiration": "11/20/2026",
-   "last_verified": "2026-11-20",
-   "scope": "salon",
-   "price_value": 14.99,
-   "city_keys": [
-    "MD/mount-airy"
-   ]
-  },
-  {
-   "url": "https://offers.greatclips.com/2m8XGRg",
-   "coupon_code": "2m8XGRg",
-   "price": "$14.99",
-   "location_name": "Dorsey's Search Village",
-   "city": "Ellicott City,",
-   "state": "MD",
-   "address": "4725 Dorsey Hall Dr",
-   "market": "MD",
-   "expiration": "11/20/2026",
-   "last_verified": "2026-11-20",
-   "scope": "salon",
-   "price_value": 14.99,
-   "city_keys": [
-    "MD/ellicott-city"
-   ]
-  },
-  {
-   "url": "https://offers.greatclips.com/F9BLgcL",
-   "coupon_code": "F9BLgcL",
-   "price": "$14.99",
-   "location_name": "Quarry Lake",
-   "city": "Baltimore,",
-   "state": "MD",
-   "address": "2574 Quarry Lake Dr",
-   "market": "MD",
-   "expiration": "11/20/2026",
-   "last_verified": "2026-11-20",
-   "scope": "salon",
-   "price_value": 14.99,
-   "city_keys": [
-    "MD/baltimore"
-   ]
-  },
-  {
-   "url": "https://offers.greatclips.com/WtIcxoy",
-   "coupon_code": "WtIcxoy",
-   "price": "$14.99",
-   "location_name": "Sadsbury Commons",
-   "city": "Parkesburg,",
-   "state": "PA",
-   "address": "328 Commons Dr",
-   "market": "PA",
-   "expiration": "11/20/2026",
-   "last_verified": "2026-11-20",
-   "scope": "salon",
-   "price_value": 14.99,
-   "city_keys": [
-    "PA/parkesburg"
-   ]
   },
   {
    "url": "https://offers.greatclips.com/vlvGBO2",
@@ -431,7 +236,7 @@
    "price": "$14.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "scope": "unknown",
    "price_value": 14.99
   },
@@ -441,7 +246,7 @@
    "price": "$15.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "scope": "unknown",
    "price_value": 15.99
   },
@@ -455,52 +260,11 @@
    "address": "922 Diablo Ave",
    "market": "CA",
    "expiration": "11/23/2026",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "scope": "salon",
    "price_value": 16.99,
    "city_keys": [
     "CA/novato"
-   ]
-  },
-  {
-   "url": "https://offers.greatclips.com/BSbs0IK",
-   "coupon_code": "BSbs0IK",
-   "price": "$17.99",
-   "location_name": "participating Greater Los Angeles Area",
-   "state": "AREA",
-   "area_name": "participating Greater Los Angeles",
-   "market": "Greater Los Angeles",
-   "expiration": "11/20/2026",
-   "last_verified": "2026-11-20",
-   "participating_location_note": "Valid at participating locations in Greater Los Angeles",
-   "scope": "area",
-   "price_value": 17.99,
-   "metro_keys": [
-    "CA/los-angeles"
-   ],
-   "market_names": [
-    "Los Angeles, CA"
-   ],
-   "city_keys": [
-    "CA/los-angeles",
-    "CA/torrance",
-    "CA/valencia",
-    "CA/agoura-hills",
-    "CA/alhambra",
-    "CA/buena-park",
-    "CA/burbank",
-    "CA/canyon-country",
-    "CA/downey",
-    "CA/la-canada-flintridge",
-    "CA/lakewood",
-    "CA/long-beach",
-    "CA/monrovia",
-    "CA/northridge",
-    "CA/seal-beach",
-    "CA/simi-valley",
-    "CA/thousand-oaks",
-    "CA/west-hills",
-    "CA/whittier"
    ]
   },
   {
@@ -509,7 +273,7 @@
    "price": "$17.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "scope": "unknown",
    "price_value": 17.99
   },
@@ -523,7 +287,7 @@
    "address": "1046 Princess St",
    "market": "ON",
    "expiration": "11/24/2026",
-   "last_verified": "2026-11-20",
+   "last_verified": "2026-11-21",
    "scope": "unknown",
    "price_value": 18.99
   }
