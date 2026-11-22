@@ -1568,9 +1568,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips coupon alert: $7.99 haircut in UNKNOWN. Limited time offer.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#ZGSPrvl\n\n#GreatClips #HaircutCoupon #Deals"
+    },
+    {
+      "coupon_code": "mvoeYl6",
+      "coupon_url": "https://offers.greatclips.com/mvoeYl6",
+      "post_id": "6b02ca9acc364169c14880c5",
+      "posted_at": "2026-11-22T10:57:30Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Great Clips coupon alert: $7.99 haircut in UNKNOWN. Limited time offer.\n\nGet the details: https://greatclipsdeal.com/coupon-codes/#mvoeYl6\n\n#GreatClips #HaircutCoupon #Deals"
     }
   ],
-  "last_post": "2026-11-22T01:59:05Z",
+  "last_post": "2026-11-22T10:57:30Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1756,6 +1765,7 @@
     "https://offers.greatclips.com/lgNo1Rl",
     "https://offers.greatclips.com/llFADfo",
     "https://offers.greatclips.com/miieZuZ",
+    "https://offers.greatclips.com/mvoeYl6",
     "https://offers.greatclips.com/n5ot5sF",
     "https://offers.greatclips.com/n7XAL9e",
     "https://offers.greatclips.com/nk46Jaj",
