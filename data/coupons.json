@@ -1,9 +1,9 @@
 {
-  "scraped_at": "2026-11-21T15:52:13.636668",
-  "total_coupons": 23,
+  "scraped_at": "2026-11-21T22:33:52.352922",
+  "total_coupons": 24,
   "verification": {
-    "attempted": 23,
-    "verified": 23,
+    "attempted": 24,
+    "verified": 24,
     "removed": 0,
     "unavailable": 0
   },
@@ -288,6 +288,20 @@
       "source": "facebook_ad_library",
       "participating_location_note": null,
       "added_date": "2026-11-20",
+      "last_seen": "2026-11-21"
+    },
+    {
+      "url": "https://offers.greatclips.com/W0rGf4Y",
+      "coupon_code": "W0rGf4Y",
+      "image_url": "https://5cfac31ce2fbf02462a3-5c2a4595f00d000c62f38115ac0c4e4e.ssl.cf1.rackcdn.com/uploads_production/promotion_images/file/8470/50707-002-1200x600-14.99.jpg",
+      "state": "UNKNOWN",
+      "price": "$14.99",
+      "market": "UNKNOWN",
+      "expiration": null,
+      "last_verified": "2026-11-21",
+      "source": "facebook_ad_library",
+      "participating_location_note": null,
+      "added_date": "2026-11-21",
       "last_seen": "2026-11-21"
     },
     {

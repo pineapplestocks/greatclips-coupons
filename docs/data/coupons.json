@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-11-21T22:52:29Z",
- "scraped_at": "2026-11-21T15:52:13.636668",
- "total": 23,
+ "generated_at": "2026-11-22T05:34:12Z",
+ "scraped_at": "2026-11-21T22:33:52.352922",
+ "total": 24,
  "scopes": {
-  "unknown": 17,
+  "unknown": 18,
   "national": 2,
   "salon": 3,
   "area": 1
@@ -233,6 +233,16 @@
   {
    "url": "https://offers.greatclips.com/vlvGBO2",
    "coupon_code": "vlvGBO2",
+   "price": "$14.99",
+   "state": "Other",
+   "market": "UNKNOWN",
+   "last_verified": "2026-11-21",
+   "scope": "unknown",
+   "price_value": 14.99
+  },
+  {
+   "url": "https://offers.greatclips.com/W0rGf4Y",
+   "coupon_code": "W0rGf4Y",
    "price": "$14.99",
    "state": "Other",
    "market": "UNKNOWN",
