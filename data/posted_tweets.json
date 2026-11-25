@@ -1649,9 +1649,18 @@
       "provider": "buffer",
       "tweet_id": null,
       "tweet_text": "Great Clips savings update: $12.99 coupon in UNKNOWN. Limited time offer.\n\nCheck availability: https://greatclipsdeal.com/coupon-codes/#vkxJKK5\n\n#GreatClips #SaveMoney"
+    },
+    {
+      "coupon_code": "KHSPc6s",
+      "coupon_url": "https://offers.greatclips.com/KHSPc6s",
+      "post_id": "6b06d3bba98b4d223dacaa22",
+      "posted_at": "2026-11-25T12:25:31Z",
+      "provider": "buffer",
+      "tweet_id": null,
+      "tweet_text": "Fresh haircut savings: $14.99 in UNKNOWN. Limited time offer.\n\nMore coupons: https://greatclipsdeal.com/coupon-codes/#KHSPc6s\n\n#GreatClips #HaircutDeals"
     }
   ],
-  "last_post": "2026-11-25T04:49:24Z",
+  "last_post": "2026-11-25T12:25:31Z",
   "posted": [
     "https://offers.greatclips.com/0EauRlu",
     "https://offers.greatclips.com/0GYOPx2",
@@ -1740,6 +1749,7 @@
     "https://offers.greatclips.com/JQx3e5q",
     "https://offers.greatclips.com/K5gVU2t",
     "https://offers.greatclips.com/KEpDQCZ",
+    "https://offers.greatclips.com/KHSPc6s",
     "https://offers.greatclips.com/KIyxTax",
     "https://offers.greatclips.com/KN98e0E",
     "https://offers.greatclips.com/KQbSyWd",
