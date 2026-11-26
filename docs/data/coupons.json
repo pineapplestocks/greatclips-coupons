@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-11-25T21:13:32Z",
- "scraped_at": "2026-11-25T14:13:11.587177",
- "total": 26,
+ "generated_at": "2026-11-26T07:19:53Z",
+ "scraped_at": "2026-11-26T00:19:40.294903",
+ "total": 28,
  "scopes": {
-  "unknown": 21,
+  "unknown": 24,
   "national": 2,
-  "salon": 2,
+  "salon": 1,
   "area": 1
  },
  "coupons": [
@@ -15,7 +15,7 @@
    "price": "$4.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 4.99
   },
@@ -27,7 +27,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -40,7 +40,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -55,28 +55,11 @@
    "address": "11100 Sean Haggerty Dr",
    "market": "TX",
    "expiration": "12/01/2026",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "scope": "salon",
    "price_value": 6.99,
    "city_keys": [
     "TX/el-paso"
-   ]
-  },
-  {
-   "url": "https://offers.greatclips.com/iM2JlvW",
-   "coupon_code": "iM2JlvW",
-   "price": "$7.00",
-   "location_name": "Presidential Square",
-   "city": "Boardman,",
-   "state": "OH",
-   "address": "813 Boardman Poland Rd",
-   "market": "OH",
-   "expiration": "11/25/2026",
-   "last_verified": "2026-11-25",
-   "scope": "salon",
-   "price_value": 7.0,
-   "city_keys": [
-    "OH/boardman"
    ]
   },
   {
@@ -85,7 +68,7 @@
    "price": "$7.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 7.99
   },
@@ -95,7 +78,7 @@
    "price": "$7.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 7.99
   },
@@ -105,7 +88,7 @@
    "price": "$7.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 7.99
   },
@@ -115,7 +98,7 @@
    "price": "$7.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 7.99
   },
@@ -125,7 +108,7 @@
    "price": "$8.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 8.99
   },
@@ -135,7 +118,7 @@
    "price": "$8.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 8.99
   },
@@ -145,7 +128,7 @@
    "price": "$9.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 9.99
   },
@@ -155,7 +138,7 @@
    "price": "$9.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 9.99
   },
@@ -165,7 +148,7 @@
    "price": "$9.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 9.99
   },
@@ -177,7 +160,7 @@
    "state": "AREA",
    "area_name": "participating CSRA",
    "market": "CSRA",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "participating_location_note": "Valid at participating locations in CSRA",
    "scope": "unknown",
    "price_value": 9.99
@@ -188,7 +171,27 @@
    "price": "$10.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
+   "scope": "unknown",
+   "price_value": 10.99
+  },
+  {
+   "url": "https://offers.greatclips.com/tM4Zi4q",
+   "coupon_code": "tM4Zi4q",
+   "price": "$10.99",
+   "state": "Other",
+   "market": "UNKNOWN",
+   "last_verified": "2026-11-26",
+   "scope": "unknown",
+   "price_value": 10.99
+  },
+  {
+   "url": "https://offers.greatclips.com/tIF9wfx",
+   "coupon_code": "tIF9wfx",
+   "price": "$10.99",
+   "state": "Other",
+   "market": "UNKNOWN",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 10.99
   },
@@ -198,7 +201,7 @@
    "price": "$11.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 11.99
   },
@@ -211,7 +214,7 @@
    "area_name": "participating Honolulu",
    "market": "Honolulu",
    "expiration": "11/27/2026",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "participating_location_note": "Valid at participating locations in Honolulu",
    "scope": "area",
    "price_value": 12.99,
@@ -236,7 +239,7 @@
    "price": "$12.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 12.99
   },
@@ -246,7 +249,7 @@
    "price": "$12.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 12.99
   },
@@ -256,7 +259,7 @@
    "price": "$14.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 14.99
   },
@@ -266,7 +269,7 @@
    "price": "$14.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 14.99
   },
@@ -276,7 +279,7 @@
    "price": "$14.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 14.99
   },
@@ -286,7 +289,7 @@
    "price": "$14.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 14.99
   },
@@ -296,7 +299,7 @@
    "price": "$15.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 15.99
   },
@@ -306,7 +309,17 @@
    "price": "$17.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-25",
+   "last_verified": "2026-11-26",
+   "scope": "unknown",
+   "price_value": 17.99
+  },
+  {
+   "url": "https://offers.greatclips.com/r4rTqaV",
+   "coupon_code": "r4rTqaV",
+   "price": "$17.99",
+   "state": "Other",
+   "market": "UNKNOWN",
+   "last_verified": "2026-11-26",
    "scope": "unknown",
    "price_value": 17.99
   }
