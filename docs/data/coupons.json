@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-26T21:02:25Z",
- "scraped_at": "2026-11-26T14:02:09.771507",
+ "generated_at": "2026-11-27T07:11:33Z",
+ "scraped_at": "2026-11-27T00:11:15.239199",
  "total": 28,
  "scopes": {
   "unknown": 24,
@@ -15,7 +15,7 @@
    "price": "$4.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 4.99
   },
@@ -27,7 +27,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -40,7 +40,7 @@
    "state": "AREA",
    "area_name": "participating US",
    "market": "US",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "participating_location_note": "Valid at participating US locations",
    "scope": "national",
    "price_value": 5.0
@@ -55,7 +55,7 @@
    "address": "11100 Sean Haggerty Dr",
    "market": "TX",
    "expiration": "12/01/2026",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "salon",
    "price_value": 6.99,
    "city_keys": [
@@ -68,7 +68,7 @@
    "price": "$7.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 7.99
   },
@@ -78,7 +78,7 @@
    "price": "$7.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 7.99
   },
@@ -88,7 +88,7 @@
    "price": "$7.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 7.99
   },
@@ -98,7 +98,7 @@
    "price": "$7.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 7.99
   },
@@ -108,7 +108,7 @@
    "price": "$8.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 8.99
   },
@@ -118,7 +118,7 @@
    "price": "$8.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 8.99
   },
@@ -128,7 +128,7 @@
    "price": "$9.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 9.99
   },
@@ -138,7 +138,7 @@
    "price": "$9.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 9.99
   },
@@ -148,7 +148,7 @@
    "price": "$9.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 9.99
   },
@@ -160,7 +160,7 @@
    "state": "AREA",
    "area_name": "participating CSRA",
    "market": "CSRA",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "participating_location_note": "Valid at participating locations in CSRA",
    "scope": "unknown",
    "price_value": 9.99
@@ -171,7 +171,7 @@
    "price": "$10.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 10.99
   },
@@ -181,7 +181,7 @@
    "price": "$10.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 10.99
   },
@@ -191,7 +191,7 @@
    "price": "$10.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 10.99
   },
@@ -201,7 +201,7 @@
    "price": "$11.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 11.99
   },
@@ -214,7 +214,7 @@
    "area_name": "participating Honolulu",
    "market": "Honolulu",
    "expiration": "11/27/2026",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "participating_location_note": "Valid at participating locations in Honolulu",
    "scope": "area",
    "price_value": 12.99,
@@ -239,7 +239,7 @@
    "price": "$12.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 12.99
   },
@@ -249,7 +249,7 @@
    "price": "$12.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 12.99
   },
@@ -259,7 +259,7 @@
    "price": "$14.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 14.99
   },
@@ -269,7 +269,7 @@
    "price": "$14.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 14.99
   },
@@ -279,7 +279,7 @@
    "price": "$14.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 14.99
   },
@@ -289,7 +289,7 @@
    "price": "$14.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 14.99
   },
@@ -299,7 +299,7 @@
    "price": "$15.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 15.99
   },
@@ -309,7 +309,7 @@
    "price": "$17.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 17.99
   },
@@ -319,7 +319,7 @@
    "price": "$17.99",
    "state": "Other",
    "market": "UNKNOWN",
-   "last_verified": "2026-11-26",
+   "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 17.99
   }
