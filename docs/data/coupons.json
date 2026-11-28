@@ -1,12 +1,11 @@
 {
- "generated_at": "2026-11-28T06:44:19Z",
+ "generated_at": "2026-11-28T16:51:31Z",
  "scraped_at": "2026-11-27T23:44:05.784759",
- "total": 28,
+ "total": 27,
  "scopes": {
   "unknown": 24,
   "national": 2,
-  "salon": 1,
-  "area": 1
+  "salon": 1
  },
  "coupons": [
   {
@@ -204,34 +203,6 @@
    "last_verified": "2026-11-27",
    "scope": "unknown",
    "price_value": 11.99
-  },
-  {
-   "url": "https://offers.greatclips.com/iknFpNS",
-   "coupon_code": "iknFpNS",
-   "price": "$12.99",
-   "location_name": "participating Honolulu Area",
-   "state": "AREA",
-   "area_name": "participating Honolulu",
-   "market": "Honolulu",
-   "expiration": "11/27/2026",
-   "last_verified": "2026-11-27",
-   "participating_location_note": "Valid at participating locations in Honolulu",
-   "scope": "area",
-   "price_value": 12.99,
-   "metro_keys": [
-    "HI/honolulu"
-   ],
-   "market_names": [
-    "Honolulu, HI"
-   ],
-   "city_keys": [
-    "HI/honolulu",
-    "HI/ewa-beach",
-    "HI/kailua",
-    "HI/kapolei",
-    "HI/mililani",
-    "HI/pearl-city"
-   ]
   },
   {
    "url": "https://offers.greatclips.com/vkxJKK5",
